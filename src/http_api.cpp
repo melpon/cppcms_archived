@@ -477,17 +477,14 @@ namespace cgi {
 							h(booster::system::error_code(errc::protocol_violation,cppcms_category),s);
 							return s;
 						}
-						if(strcmp(name,"STATUS")==0) {
-							response_line_ = "HTTP/1.0 ";
-							response_line_ +=value;
-							response_line_ +="\r\n";
-							return write_response(h,s);
+						if(strcmp(name,"PROTOCOL")==0) {
+							response_protocol_ = value;
+						} else if(strcmp(name,"STATUS")==0) {
+							response_status_ = value;
 						}
 					}
 					break;
 				case parser::end_of_headers:
-					response_line_ = "HTTP/1.0 200 Ok\r\n";
-
 					return write_response(h,s);
 				case parser::error_observerd:
 					h(booster::system::error_code(errc::protocol_violation,cppcms_category),0);
@@ -502,13 +499,24 @@ namespace cgi {
 				"Server: CppCMS-Embedded/" CPPCMS_PACKAGE_VERSION "\r\n"
 				"Connection: close\r\n";
 
-			response_line_.append(addon);
+			if (response_protocol_.empty()) {
+				response_protocol_ = "HTTP/1.0";
+			}
+			if (response_status_.empty()) {
+				response_protocol_ += " 200 OK";
+			} else {
+				response_protocol_ += " ";
+				response_protocol_ += response_status_;
+			}
+			response_protocol_ += "\r\n";
+
+			response_protocol_.append(addon);
 
 			booster::aio::const_buffer packet = 
-				io::buffer(response_line_) 
+				io::buffer(response_protocol_) 
 				+ io::buffer(output_body_);
 #ifdef DEBUG_HTTP_PARSER
-			std::cerr<<"["<<response_line_<<std::string(output_body_.begin(),output_body_.end())
+			std::cerr<<"["<<response_protocol_<<std::string(output_body_.begin(),output_body_.end())
 				<<"]"<<std::endl;
 #endif
 			headers_done_=true;
@@ -678,7 +686,8 @@ namespace cgi {
 		::cppcms::http::impl::parser output_parser_;
 
 
-		std::string response_line_;
+		std::string response_protocol_;
+		std::string response_status_;
 		char *request_method_;
 		char *request_uri_;
 		bool headers_done_;

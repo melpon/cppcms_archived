@@ -233,11 +233,17 @@ void response::write_http_headers(std::ostream &out)
 	_data::headers_type::const_iterator p = d->headers.end();
 
 	if(context_.service().cached_settings().service.generate_http_headers) {
+		p=d->headers.find("Protocol");
+		if(p == d->headers.end())
+			out << "HTTP/1.0 ";
+		else
+			out << p->second << " ";
+
 		p=d->headers.find("Status");
 		if(p == d->headers.end())
-			out << "HTTP/1.0 200 Ok\r\n";
+			out << "200 Ok\r\n";
 		else
-			out << "HTTP/1.0 " << p->second <<"\r\n";
+			out << p->second <<"\r\n";
 	}
 	
 	for(_data::headers_type::const_iterator h=d->headers.begin();h!=d->headers.end();++h) {
@@ -429,6 +435,7 @@ void response::pragma(std::string const &s) { set_header("Pragma",s); }
 void response::proxy_authenticate(std::string const &s) { set_header("Proxy-Authenticate",s); }
 void response::retry_after(unsigned n) { set_header("Retry-After",itoa(n)); }
 void response::retry_after(std::string const &s) { set_header("Retry-After",s); }
+void response::protocol(int major, int minor) { set_header("Protocol","HTTP/"+itoa(major)+"."+itoa(minor)); }
 void response::status(int code)
 {
 	status(code,status_to_string(code));

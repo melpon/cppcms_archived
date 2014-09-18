@@ -179,6 +179,10 @@ namespace http {
 		///
 		void retry_after(unsigned);
 		///
+		/// Set Protocol, default protocol is HTTP/1.0
+		///
+		void protocol(int major, int minor);
+		///
 		/// Set GCI Status Header, the message is created according to the code automatically
 		///
 		void status(int code);
