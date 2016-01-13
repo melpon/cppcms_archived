@@ -119,10 +119,10 @@ public:
 				case '"':
 					state_=quote_expected;
 					break;
-				case '(':
-					state_=closing_bracket_expected;
-					bracket_counter_++;
-					break;
+				// case '(':
+				// 	state_=closing_bracket_expected;
+				// 	bracket_counter_++;
+				// 	break;
 				default:
 					state_=input_observed;
 				}
@@ -158,10 +158,10 @@ public:
 				case '"':
 					state_=quote_expected;
 					break;
-				case '(':
-					state_=closing_bracket_expected;
-					bracket_counter_++;
-					break;
+				// case '(':
+				// 	state_=closing_bracket_expected;
+				// 	bracket_counter_++;
+				// 	break;
 				default:
 					state_=input_observed;
 				}
