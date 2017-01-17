@@ -1,0 +1,132 @@
+\section{booster\-:\-:locale\-:\-:hold\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1hold__ptr}\index{booster\-::locale\-::hold\-\_\-ptr$<$ T $>$@{booster\-::locale\-::hold\-\_\-ptr$<$ T $>$}}
+
+
+a smart pointer similar to std\-::auto\-\_\-ptr but it is non-\/copyable and the underlying object has the same constness as the pointer itself (unlike an ordinary pointer).  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/hold\-\_\-ptr.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf hold\-\_\-ptr} ()
+\item 
+{\bf hold\-\_\-ptr} (T $\ast$v)
+\item 
+{\bf $\sim$hold\-\_\-ptr} ()
+\item 
+T const $\ast$ {\bf get} () const 
+\item 
+T $\ast$ {\bf get} ()
+\item 
+T const \& {\bf operator$\ast$} () const 
+\item 
+T \& {\bf operator$\ast$} ()
+\item 
+T const $\ast$ {\bf operator-\/$>$} () const 
+\item 
+T $\ast$ {\bf operator-\/$>$} ()
+\item 
+T $\ast$ {\bf release} ()
+\item 
+void {\bf reset} (T $\ast$p=0)
+\item 
+void {\bf swap} ({\bf hold\-\_\-ptr} \&other)\label{classbooster_1_1locale_1_1hold__ptr_a087519c5a4e04ae848d04faab24e5f4c}
+
+\begin{DoxyCompactList}\small\item\em Swap two pointers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class booster\-::locale\-::hold\-\_\-ptr$<$ T $>$}
+
+a smart pointer similar to std\-::auto\-\_\-ptr but it is non-\/copyable and the underlying object has the same constness as the pointer itself (unlike an ordinary pointer). 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!hold\-\_\-ptr@{hold\-\_\-ptr}}
+\index{hold\-\_\-ptr@{hold\-\_\-ptr}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{hold\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::{\bf hold\-\_\-ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_a9c6e9c5006ea6d9f23e9834608ed5ffe}
+Create new empty pointer \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!hold\-\_\-ptr@{hold\-\_\-ptr}}
+\index{hold\-\_\-ptr@{hold\-\_\-ptr}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{hold\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::{\bf hold\-\_\-ptr} (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{classbooster_1_1locale_1_1hold__ptr_a41cf7c5a34d61fd12a7933d932403256}
+Create a pointer that holds {\itshape v}, ownership is transferred to smart pointer \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!$\sim$hold\-\_\-ptr@{$\sim$hold\-\_\-ptr}}
+\index{$\sim$hold\-\_\-ptr@{$\sim$hold\-\_\-ptr}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{$\sim$hold\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::$\sim${\bf hold\-\_\-ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_aa1203a2600c06abd83ffeb6343817fa4}
+Destroy smart pointer and the object it owns. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!get@{get}}
+\index{get@{get}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T const$\ast$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_a8e886544a4ff7d1920500d550e721962}
+Get a const pointer to the object \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!get@{get}}
+\index{get@{get}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_a783aefb4e4d791a1f494fde0a0bb74c4}
+Get a mutable pointer to the object \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T const\& {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_a94b0e0dc6be2f768b704eeb2a0cc9c21}
+Get a const reference to the object \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T\& {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_ace5344aa8c456c30771631fe8515590f}
+Get a mutable reference to the object \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T const$\ast$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_ab787b7196c58d8446845710e39743947}
+Get a const pointer to the object \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_afc2844c6e2dfe35937eab07f36604f8f}
+Get a mutable pointer to the object \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!release@{release}}
+\index{release@{release}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ T$\ast$ {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_a6be7fbc6995c69a44f79ee4acdaecb44}
+Transfer an ownership on the pointer to user \index{booster\-::locale\-::hold\-\_\-ptr@{booster\-::locale\-::hold\-\_\-ptr}!reset@{reset}}
+\index{reset@{reset}!booster::locale::hold_ptr@{booster\-::locale\-::hold\-\_\-ptr}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T$>$ void {\bf booster\-::locale\-::hold\-\_\-ptr}$<$ T $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{p = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1hold__ptr_a33bd6bb2d9f1644470b0285858c02f86}
+Set new value to pointer, previous object is destroyed, ownership on new object is transferred 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/hold\-\_\-ptr.\-h\end{DoxyCompactItemize}

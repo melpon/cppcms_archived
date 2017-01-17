@@ -1,0 +1,79 @@
+\section{booster\-:\-:intrusive\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classbooster_1_1intrusive__ptr}\index{booster\-::intrusive\-\_\-ptr$<$ T $>$@{booster\-::intrusive\-\_\-ptr$<$ T $>$}}
+
+
+\doxyref{intrusive\-\_\-ptr}{p.}{classbooster_1_1intrusive__ptr} is the class taken as-\/is from boost.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/intrusive\-\_\-ptr.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T {\bfseries element\-\_\-type}\label{classbooster_1_1intrusive__ptr_ad80ce0a24af3fdf7eea9eb15e2f0ca3a}
+
+\item 
+typedef T $\ast$this\-\_\-type\-::$\ast$ {\bfseries unspecified\-\_\-bool\-\_\-type}\label{classbooster_1_1intrusive__ptr_aed8f3686c3e672a1bb7e565c8b785429}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries intrusive\-\_\-ptr} (T $\ast$p, bool add\-\_\-ref=true)\label{classbooster_1_1intrusive__ptr_a690b87444145883053aa4765f8551dd5}
+
+\item 
+{\bfseries intrusive\-\_\-ptr} ({\bf intrusive\-\_\-ptr} const \&rhs)\label{classbooster_1_1intrusive__ptr_a4c2d946b94f16b4a6dcc15d220598885}
+
+\item 
+{\footnotesize template$<$class U $>$ }\\{\bfseries intrusive\-\_\-ptr} ({\bf intrusive\-\_\-ptr}$<$ U $>$ const \&rhs)\label{classbooster_1_1intrusive__ptr_a34292c6b01add25de35ca60ae0f2217f}
+
+\item 
+{\bf intrusive\-\_\-ptr} \& {\bfseries operator=} ({\bf intrusive\-\_\-ptr} const \&rhs)\label{classbooster_1_1intrusive__ptr_a589806f957b70fbdfd3b4306ab712e7f}
+
+\item 
+{\bf intrusive\-\_\-ptr} \& {\bfseries operator=} (T $\ast$rhs)\label{classbooster_1_1intrusive__ptr_af2f7d069f01ae1c67ea94006806a1d87}
+
+\item 
+T $\ast$ {\bfseries get} () const \label{classbooster_1_1intrusive__ptr_aedf1de239f6d3afa47580e66493426bf}
+
+\item 
+T \& {\bfseries operator$\ast$} () const \label{classbooster_1_1intrusive__ptr_a43db4f9bd0c01fe313db46d2b423de08}
+
+\item 
+T $\ast$ {\bfseries operator-\/$>$} () const \label{classbooster_1_1intrusive__ptr_a0747ec75989dc79e5b03d39140312fff}
+
+\item 
+{\bfseries operator unspecified\-\_\-bool\-\_\-type} () const \label{classbooster_1_1intrusive__ptr_a1852981788a6567f5b8daed7c91a2c00}
+
+\item 
+bool {\bfseries operator!} () const \label{classbooster_1_1intrusive__ptr_ab214af87dc4812e5fe04ca2d2f63482c}
+
+\item 
+void {\bfseries swap} ({\bf intrusive\-\_\-ptr} \&rhs)\label{classbooster_1_1intrusive__ptr_a4a6239f1f9438e088fa424e8fb6ea6f1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$class booster\-::intrusive\-\_\-ptr$<$ T $>$}
+
+\doxyref{intrusive\-\_\-ptr}{p.}{classbooster_1_1intrusive__ptr} is the class taken as-\/is from boost. 
+
+A smart pointer that uses intrusive reference counting.
+
+Relies on unqualified calls to \begin{DoxyVerb}void intrusive_ptr_add_ref(T * p);
+void intrusive_ptr_release(T * p);
+
+    (p != 0)
+\end{DoxyVerb}
+
+
+The object is responsible for destroying itself.
+
+See\-: {\tt http\-://www.\-boost.\-org/doc/libs/release/libs/smart\-\_\-ptr} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/intrusive\-\_\-ptr.\-h\end{DoxyCompactItemize}

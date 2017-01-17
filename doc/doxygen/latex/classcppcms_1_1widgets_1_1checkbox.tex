@@ -1,0 +1,115 @@
+\section{cppcms\-:\-:widgets\-:\-:checkbox Class Reference}
+\label{classcppcms_1_1widgets_1_1checkbox}\index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}}
+
+
+This class represent an H\-T\-M\-L checkbox input element.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:checkbox\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classcppcms_1_1widgets_1_1checkbox}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf checkbox} (std\-::string const \&type)
+\item 
+{\bf checkbox} ()
+\item 
+bool {\bf value} ()
+\item 
+void {\bf value} (bool is\-\_\-set)
+\item 
+std\-::string {\bf identification} ()
+\item 
+void {\bf identification} (std\-::string const \&)
+\item 
+virtual void {\bf render\-\_\-value} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represent an H\-T\-M\-L checkbox input element. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!checkbox@{checkbox}}
+\index{checkbox@{checkbox}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{checkbox}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::checkbox\-::checkbox (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{type}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1checkbox_ab64c3216029dba87860c7fdd04ced47d}
+The constructor that allows you to specify {\ttfamily type} H\-T\-M\-L attribute. It is passed to the constructor of the \doxyref{base\-\_\-html\-\_\-input}{p.}{classcppcms_1_1widgets_1_1base__html__input} class. \index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!checkbox@{checkbox}}
+\index{checkbox@{checkbox}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{checkbox}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::checkbox\-::checkbox (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1checkbox_accaaae0613a6f1b77d3e15e96544c1c2}
+Default constructor. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!identification@{identification}}
+\index{identification@{identification}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{identification}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::widgets\-::checkbox\-::identification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1checkbox_a7684910e7839280e2fa384344d17b3ef}
+Get the unique identification string of the checkbox. \index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!identification@{identification}}
+\index{identification@{identification}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{identification}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::checkbox\-::identification (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1checkbox_ad89f0192be96890cc767a0f6f77fa000}
+Set the unique identification string of the checkbox. It is useful when you want to have many options with the same name. \index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!load@{load}}
+\index{load@{load}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::checkbox\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1checkbox_a07910eeb823fe4ffd4e32fb8c2d0dc54}
+Load the form information from the provided {\tt http\-::context} {\itshape context}. A user can call this function to load all information from the raw P\-O\-S\-T/\-G\-E\-T data into the internal widget representation. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!render\-\_\-value@{render\-\_\-value}}
+\index{render\-\_\-value@{render\-\_\-value}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{render\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::checkbox\-::render\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1checkbox_aace5a796739449ade14f1d203f5d4b7d}
+Write the actual value of the H\-T\-M\-L tag. Derived classes must implement this. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-html\-\_\-input} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__html__input_afd2f99f7dd7b8ebe75e63f1f005068cb}.
+
+\index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!value@{value}}
+\index{value@{value}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::checkbox\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1checkbox_a6e0e8154193ff93fb6a591263b815c04}
+Return true if the checkbox was checked (selected). \index{cppcms\-::widgets\-::checkbox@{cppcms\-::widgets\-::checkbox}!value@{value}}
+\index{value@{value}!cppcms::widgets::checkbox@{cppcms\-::widgets\-::checkbox}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::checkbox\-::value (
+\begin{DoxyParamCaption}
+\item[{bool}]{is\-\_\-set}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1checkbox_a6432de905e92a7ab263bcd72d532a5b4}
+Set the state as {\itshape checked}. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

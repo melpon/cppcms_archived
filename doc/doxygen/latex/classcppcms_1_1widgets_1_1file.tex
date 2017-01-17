@@ -1,0 +1,179 @@
+\section{cppcms\-:\-:widgets\-:\-:file Class Reference}
+\label{classcppcms_1_1widgets_1_1file}\index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}}
+
+
+This class represents a file upload form entry.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:file\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classcppcms_1_1widgets_1_1file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf non\-\_\-empty} ()
+\item 
+void {\bf limits} (int min, int max)
+\item 
+std\-::pair$<$ int, int $>$ {\bf limits} ()
+\item 
+void {\bf filename} ({\bf booster\-::regex} const \&fn)
+\item 
+{\bf booster\-::regex} {\bf filename} ()
+\item 
+void {\bf validate\-\_\-filename\-\_\-charset} (bool)
+\item 
+bool {\bf validate\-\_\-filename\-\_\-charset} ()
+\item 
+{\bf booster\-::shared\-\_\-ptr}$<$ {\bf http\-::file} $>$ {\bf value} ()
+\item 
+void {\bf mime} (std\-::string const \&)
+\item 
+void {\bf mime} ({\bf booster\-::regex} const \&expr)
+\item 
+void {\bf add\-\_\-valid\-\_\-magic} (std\-::string const \&)
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)
+\item 
+virtual void {\bf render\-\_\-value} ({\bf form\-\_\-context} \&context)
+\item 
+virtual bool {\bf validate} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents a file upload form entry. 
+
+If the file was not uploaded, \doxyref{set()}{p.}{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f} will be false and an attempt to access the member function \doxyref{value()}{p.}{classcppcms_1_1widgets_1_1file_a56ee053415b1bd98944bb3599e3392b1} will throw. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!add\-\_\-valid\-\_\-magic@{add\-\_\-valid\-\_\-magic}}
+\index{add\-\_\-valid\-\_\-magic@{add\-\_\-valid\-\_\-magic}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{add\-\_\-valid\-\_\-magic}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::add\-\_\-valid\-\_\-magic (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a1d53934bdd93266e3bfbec26a8afe09e}
+Add a string that represents a valid magic number that shoud exist on begging of file.
+
+By default no tests are performed. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!filename@{filename}}
+\index{filename@{filename}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::filename (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{fn}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a4b60527ec447de253d8f8dbb728869cb}
+Set the filename validation pattern. For example \char`\"{}.$\ast$\textbackslash{}\textbackslash{}.(jpg$\vert$jpeg$\vert$png)\char`\"{}.
+
+Please, note that it is a good idea to check magic numbers as well and not rely on file name only.
+
+See \doxyref{add\-\_\-valid\-\_\-magic()}{p.}{classcppcms_1_1widgets_1_1file_a1d53934bdd93266e3bfbec26a8afe09e} function \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!filename@{filename}}
+\index{filename@{filename}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::regex} cppcms\-::widgets\-::file\-::filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_ad5e888416710dfd7b3ba9c0651b4b476}
+Get the regular expression for the filename validation. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!limits@{limits}}
+\index{limits@{limits}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{limits}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::limits (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a348f7619cd476672c8018e6a8c9e2ed1}
+Set the minimum and maximum limits for the file size. Note\-: max == -\/1 indicates that there is no maximum limit; min==0 indicates that there is no minimum limit. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!limits@{limits}}
+\index{limits@{limits}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{limits}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$int,int$>$ cppcms\-::widgets\-::file\-::limits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_aba42fd04191fbd11e148907f0441b649}
+Get the minimum and maximum size limits. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!load@{load}}
+\index{load@{load}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::file\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1file_acd5589f0f6a99c6f5590ee2787d407d7}
+Load the form information from the provided {\tt http\-::context} {\itshape context}. A user can call this function to load all information from the raw P\-O\-S\-T/\-G\-E\-T data into the internal widget representation. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!mime@{mime}}
+\index{mime@{mime}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{mime}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::mime (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a5acb1facf885ee351e0fd0ffb2900e0d}
+Set the required file mime type. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!mime@{mime}}
+\index{mime@{mime}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{mime}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::mime (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{expr}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a39eebaccd0036cd0568e8f61b9787c0f}
+Set the regular expression to validate the mime type. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!non\-\_\-empty@{non\-\_\-empty}}
+\index{non\-\_\-empty@{non\-\_\-empty}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{non\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::non\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_aa85b2dd9f67c7042b87c7c917a3a3c47}
+Ensure that a file is uploaded (for the validation). \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!render\-\_\-value@{render\-\_\-value}}
+\index{render\-\_\-value@{render\-\_\-value}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{render\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::file\-::render\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1file_aa607511349c879b6e0c1a395f270f76d}
+Write the actual value of the H\-T\-M\-L tag. Derived classes must implement this. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-html\-\_\-input} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__html__input_afd2f99f7dd7b8ebe75e63f1f005068cb}.
+
+\index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::widgets\-::file\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1file_addfa723594f3658578787843fa030486}
+Validate the form. If not overridden, it sets the widget to {\itshape valid}. 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}.
+
+\index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!validate\-\_\-filename\-\_\-charset@{validate\-\_\-filename\-\_\-charset}}
+\index{validate\-\_\-filename\-\_\-charset@{validate\-\_\-filename\-\_\-charset}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{validate\-\_\-filename\-\_\-charset}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::file\-::validate\-\_\-filename\-\_\-charset (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a7993906a8b128c903ad44f9f4101848d}
+Validate or not the filename's charset. The default is {\itshape true}. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!validate\-\_\-filename\-\_\-charset@{validate\-\_\-filename\-\_\-charset}}
+\index{validate\-\_\-filename\-\_\-charset@{validate\-\_\-filename\-\_\-charset}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{validate\-\_\-filename\-\_\-charset}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::file\-::validate\-\_\-filename\-\_\-charset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a12727b17d2e869ad7634442b9de5a9c2}
+Get the validation option for the filename's charset. \index{cppcms\-::widgets\-::file@{cppcms\-::widgets\-::file}!value@{value}}
+\index{value@{value}!cppcms::widgets::file@{cppcms\-::widgets\-::file}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::shared\-\_\-ptr}$<${\bf http\-::file}$>$ cppcms\-::widgets\-::file\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1file_a56ee053415b1bd98944bb3599e3392b1}
+Get the uploaded file. This throws \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error} if \doxyref{set()}{p.}{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f} == false, i.\-e. if no file was uploaded. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

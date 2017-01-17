@@ -1,0 +1,143 @@
+\section{cppcms\-:\-:session\-\_\-api Class Reference}
+\label{classcppcms_1_1session__api}\index{cppcms\-::session\-\_\-api@{cppcms\-::session\-\_\-api}}
+
+
+This class represents the most generic implementation of session storage device.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-api.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:session\-\_\-api\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.604651cm]{classcppcms_1_1session__api}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf save} ({\bf session\-\_\-interface} \&iface, std\-::string const \&data, time\-\_\-t timeout, bool new\-\_\-data, bool on\-\_\-server)=0
+\item 
+virtual bool {\bf load} ({\bf session\-\_\-interface} \&iface, std\-::string \&data, time\-\_\-t \&timeout)=0
+\item 
+virtual void {\bf clear} ({\bf session\-\_\-interface} \&iface)=0
+\item 
+virtual bool {\bf is\-\_\-blocking} ()=0
+\item 
+virtual {\bf $\sim$session\-\_\-api} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents the most generic implementation of session storage device. 
+
+This classes are created using \doxyref{session\-\_\-api\-\_\-factory}{p.}{classcppcms_1_1session__api__factory} and are designed to be reimplemented by users to provide an additional backends.
+
+This class is most generic that does not provide any goodies with exception of setting or getting session cookie, the user should generally take a look on \doxyref{sessions\-::session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} or \doxyref{sessions\-::encryptor}{p.}{classcppcms_1_1sessions_1_1encryptor} for easier implementation of session storage
+
+Note\-: these objects must be thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::session\-\_\-api@{cppcms\-::session\-\_\-api}!$\sim$session\-\_\-api@{$\sim$session\-\_\-api}}
+\index{$\sim$session\-\_\-api@{$\sim$session\-\_\-api}!cppcms::session_api@{cppcms\-::session\-\_\-api}}
+\subsubsection[{$\sim$session\-\_\-api}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::session\-\_\-api\-::$\sim$session\-\_\-api (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1session__api_a1e9b8751c49df3a942b66031d2952594}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::session\-\_\-api@{cppcms\-::session\-\_\-api}!clear@{clear}}
+\index{clear@{clear}!cppcms::session_api@{cppcms\-::session\-\_\-api}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::session\-\_\-api\-::clear (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{iface}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api_ab755441f1f95bf01d138560d9fb68bca}
+Remove the session object
+
+
+\begin{DoxyParams}{Parameters}
+{\em iface} & -\/ the \doxyref{session\-\_\-interface}{p.}{classcppcms_1_1session__interface} object that allows read and set session cookie \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in {\bf cppcms\-::sessions\-::session\-\_\-cookies} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__cookies_a911f8f3841860ea49f08adaf93edd6a1}, {\bf cppcms\-::sessions\-::session\-\_\-dual} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__dual_a5dd7ec9523785c68a07050ba1235c73c}, and {\bf cppcms\-::sessions\-::session\-\_\-sid} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__sid_aea760185043e39e806e0b09ec9e50d5a}.
+
+\index{cppcms\-::session\-\_\-api@{cppcms\-::session\-\_\-api}!is\-\_\-blocking@{is\-\_\-blocking}}
+\index{is\-\_\-blocking@{is\-\_\-blocking}!cppcms::session_api@{cppcms\-::session\-\_\-api}}
+\subsubsection[{is\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::session\-\_\-api\-::is\-\_\-blocking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api_ac110761dd1b104702a8863221716547d}
+Return true if the session store or save operations are blocking or very cpu intensive 
+
+Implemented in {\bf cppcms\-::sessions\-::session\-\_\-cookies} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__cookies_adc1f55578b79db6ec48a982e8fca9364}, {\bf cppcms\-::sessions\-::session\-\_\-dual} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__dual_a0599c839c6815015277be36cd061b826}, and {\bf cppcms\-::sessions\-::session\-\_\-sid} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__sid_aa0869cccf4198d93c230c25160cde95c}.
+
+\index{cppcms\-::session\-\_\-api@{cppcms\-::session\-\_\-api}!load@{load}}
+\index{load@{load}!cppcms::session_api@{cppcms\-::session\-\_\-api}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::session\-\_\-api\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{iface, }
+\item[{std\-::string \&}]{data, }
+\item[{time\-\_\-t \&}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api_a6fad2ca45e09b43c9eae519f38888611}
+Load session's data
+
+
+\begin{DoxyParams}{Parameters}
+{\em iface} & -\/ the \doxyref{session\-\_\-interface}{p.}{classcppcms_1_1session__interface} object that allows read and set session cookie \\
+\hline
+{\em data} & -\/ the string that should be filled with session data \\
+\hline
+{\em timeout} & -\/ the expiration time of this session object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true of session was loaded, false otherwise 
+\end{DoxyReturn}
+
+
+Implemented in {\bf cppcms\-::sessions\-::session\-\_\-cookies} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__cookies_ae863147e8c605fcdfce047154ade22d4}, {\bf cppcms\-::sessions\-::session\-\_\-dual} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__dual_a2cfb3baf2a5c031eb307cd12f386f886}, and {\bf cppcms\-::sessions\-::session\-\_\-sid} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__sid_a179189dd0185185b9fd683e41276b258}.
+
+\index{cppcms\-::session\-\_\-api@{cppcms\-::session\-\_\-api}!save@{save}}
+\index{save@{save}!cppcms::session_api@{cppcms\-::session\-\_\-api}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::session\-\_\-api\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{iface, }
+\item[{std\-::string const \&}]{data, }
+\item[{time\-\_\-t}]{timeout, }
+\item[{bool}]{new\-\_\-data, }
+\item[{bool}]{on\-\_\-server}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api_a9388c15001d0e55d31b6d54c9a1edca0}
+Save session's data\-:
+
+
+\begin{DoxyParams}{Parameters}
+{\em iface} & -\/ the \doxyref{session\-\_\-interface}{p.}{classcppcms_1_1session__interface} object that allows set session cookie \\
+\hline
+{\em data} & -\/ the data that should be stored in the session \\
+\hline
+{\em timeout} & -\/ the absolute expiration P\-O\-S\-I\-X time \\
+\hline
+{\em new\-\_\-data} & -\/ flag that marks that new session object should be created regardless of current cookie value \\
+\hline
+{\em on\-\_\-server} & -\/ flag that marks that the data must be stored on the server and not in cookies only \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in {\bf cppcms\-::sessions\-::session\-\_\-cookies} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__cookies_aa4ccbed688edfd0387b64f5f2a9b24f5}, {\bf cppcms\-::sessions\-::session\-\_\-dual} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__dual_a17e40652c13b789101ed01c16026ae61}, and {\bf cppcms\-::sessions\-::session\-\_\-sid} \doxyref{}{p.}{classcppcms_1_1sessions_1_1session__sid_a5415158a4b4b0bf9eb565884ceb318c8}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-api.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,101 @@
+\section{cppcms\-:\-:triggers\-\_\-recorder Class Reference}
+\label{classcppcms_1_1triggers__recorder}\index{cppcms\-::triggers\-\_\-recorder@{cppcms\-::triggers\-\_\-recorder}}
+
+
+\doxyref{triggers\-\_\-recorder}{p.}{classcppcms_1_1triggers__recorder} is a class that allows you to record all triggers added in certain scope.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/cache\-\_\-interface.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:triggers\-\_\-recorder\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1triggers__recorder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf triggers\-\_\-recorder} ({\bf cache\-\_\-interface} \&)
+\item 
+{\bf $\sim$triggers\-\_\-recorder} ()
+\item 
+std\-::set$<$ std\-::string $>$ {\bf detach} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries cache\-\_\-interface}\label{classcppcms_1_1triggers__recorder_a391674585380cfbf7bc6b079a2dc70fa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{triggers\-\_\-recorder}{p.}{classcppcms_1_1triggers__recorder} is a class that allows you to record all triggers added in certain scope. 
+
+It is useful to have have \char`\"{}sub-\/dependencies\char`\"{} for smaller parts.
+
+For example\-:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{if}(cache().fetch\_page(\textcolor{stringliteral}{"news"}))
+   \textcolor{keywordflow}{return};
+   \textcolor{comment}{// something there}
+   \textcolor{keywordflow}{if}(cache().fetch\_frame(\textcolor{stringliteral}{"politics"},text))
+     response().out() << text;
+   \textcolor{keywordflow}{else} \{
+     copy\_filter politics(respone().out());
+     triggers_recorder politics\_triggers(cache());
+     \textcolor{comment}{// some thing else there}
+     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<articles.size();i++) \{
+       \textcolor{keywordflow}{if}(cache().fetch\_frame(article\_tag,text);
+         response().out() << text;
+       \textcolor{keywordflow}{else} \{
+         copy\_filter article(respone().out());
+         \textcolor{comment}{// generate article }
+         cache().store\_frame(article\_tag,article.detach()); 
+       \}
+    \}
+    cache().store\_frame(\textcolor{stringliteral}{"polotics"},
+                 politics.detach(), \textcolor{comment}{// the recorded content of politics}
+                 politics\_triggers.detach());
+   \}
+   ...
+\end{DoxyCode}
+
+
+So tag \char`\"{}politics\char`\"{} records all added triggers like \char`\"{}article\-\_\-234\char`\"{} and now rise of \char`\"{}article\-\_\-234\char`\"{} would invalidate \char`\"{}politics\char`\"{} section as well as we automatically record all triggers inserted in \doxyref{triggers\-\_\-recorder}{p.}{classcppcms_1_1triggers__recorder} scope. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::triggers\-\_\-recorder@{cppcms\-::triggers\-\_\-recorder}!triggers\-\_\-recorder@{triggers\-\_\-recorder}}
+\index{triggers\-\_\-recorder@{triggers\-\_\-recorder}!cppcms::triggers_recorder@{cppcms\-::triggers\-\_\-recorder}}
+\subsubsection[{triggers\-\_\-recorder}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::triggers\-\_\-recorder\-::triggers\-\_\-recorder (
+\begin{DoxyParamCaption}
+\item[{{\bf cache\-\_\-interface} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1triggers__recorder_afc50569a88a7f4c86c1049403e3abcee}
+Start recording all triggers \index{cppcms\-::triggers\-\_\-recorder@{cppcms\-::triggers\-\_\-recorder}!$\sim$triggers\-\_\-recorder@{$\sim$triggers\-\_\-recorder}}
+\index{$\sim$triggers\-\_\-recorder@{$\sim$triggers\-\_\-recorder}!cppcms::triggers_recorder@{cppcms\-::triggers\-\_\-recorder}}
+\subsubsection[{$\sim$triggers\-\_\-recorder}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::triggers\-\_\-recorder\-::$\sim$triggers\-\_\-recorder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1triggers__recorder_af7999b3e2e30e8bbfe94fd9e19e489af}
+Stop recording triggers 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::triggers\-\_\-recorder@{cppcms\-::triggers\-\_\-recorder}!detach@{detach}}
+\index{detach@{detach}!cppcms::triggers_recorder@{cppcms\-::triggers\-\_\-recorder}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<$std\-::string$>$ cppcms\-::triggers\-\_\-recorder\-::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1triggers__recorder_a524607a3c67d38b42c72e4381208af68}
+Stop recording triggers and get the set of all triggers being added in its scope 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/cache\-\_\-interface.\-h\end{DoxyCompactItemize}

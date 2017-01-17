@@ -1,0 +1,131 @@
+\section{booster\-:\-:shared\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classbooster_1_1shared__ptr}\index{booster\-::shared\-\_\-ptr$<$ T $>$@{booster\-::shared\-\_\-ptr$<$ T $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef T {\bfseries element\-\_\-type}\label{classbooster_1_1shared__ptr_a39185bbbcb2b45c05078b172aba40d18}
+
+\item 
+typedef T {\bfseries value\-\_\-type}\label{classbooster_1_1shared__ptr_a4e47f9bb1d99914dae9c423decd5b212}
+
+\item 
+typedef T $\ast$ {\bfseries pointer}\label{classbooster_1_1shared__ptr_aacdf919530faee7137bd7316c09b7858}
+
+\item 
+typedef \\*
+{\bf booster\-::detail\-::shared\-\_\-ptr\-\_\-traits}\\*
+$<$ T $>$\-::reference {\bfseries reference}\label{classbooster_1_1shared__ptr_af6612466646e048e063db10122e48099}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} (Y $\ast$p)\label{classbooster_1_1shared__ptr_a000d34a3137fb015ed5ae9db556e74ef}
+
+\item 
+{\footnotesize template$<$class Y , class D $>$ }\\{\bfseries shared\-\_\-ptr} (Y $\ast$p, D d)\label{classbooster_1_1shared__ptr_ab948babd840ab3e92749913822a8e35e}
+
+\item 
+{\footnotesize template$<$class Y , class D , class A $>$ }\\{\bfseries shared\-\_\-ptr} (Y $\ast$p, D d, A a)\label{classbooster_1_1shared__ptr_af89da328e704618bd72f004adb9774a8}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf weak\-\_\-ptr}$<$ Y $>$ const \&r)\label{classbooster_1_1shared__ptr_aa560f8dcc41497299bce00164e38351f}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf weak\-\_\-ptr}$<$ Y $>$ const \&r, {\bf booster\-::detail\-::sp\-\_\-nothrow\-\_\-tag})\label{classbooster_1_1shared__ptr_ae21dac4b7740cb0e7d4a9db2836467d2}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, typename {\bf detail\-::sp\-\_\-enable\-\_\-if\-\_\-convertible}$<$ Y, T $>$\-::type={\bf detail\-::sp\-\_\-empty}())\label{classbooster_1_1shared__ptr_a9bb741eb049e2a649559dfe4ece4f71c}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, T $\ast$p)\label{classbooster_1_1shared__ptr_a44784c6272196f79fb3444bde231e77e}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, {\bf booster\-::detail\-::static\-\_\-cast\-\_\-tag})\label{classbooster_1_1shared__ptr_adb9df3d8151db16629c27c0a0ba5d679}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, {\bf booster\-::detail\-::const\-\_\-cast\-\_\-tag})\label{classbooster_1_1shared__ptr_a54495528ad6cf397e70ee93229bb06d7}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, {\bf booster\-::detail\-::dynamic\-\_\-cast\-\_\-tag})\label{classbooster_1_1shared__ptr_a1dd5601d4269b3c910161b4e8e50909d}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, {\bf booster\-::detail\-::polymorphic\-\_\-cast\-\_\-tag})\label{classbooster_1_1shared__ptr_a8e409a60bd414785c527ab491f7dfdbd}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bfseries shared\-\_\-ptr} (std\-::auto\-\_\-ptr$<$ Y $>$ \&r)\label{classbooster_1_1shared__ptr_a2f90610c40f0e09521f52ffe25eec577}
+
+\item 
+{\footnotesize template$<$class Ap $>$ }\\{\bfseries shared\-\_\-ptr} (Ap r, typename {\bf booster\-::detail\-::sp\-\_\-enable\-\_\-if\-\_\-auto\-\_\-ptr}$<$ Ap, int $>$\-::type=0)\label{classbooster_1_1shared__ptr_a9880988bc8604ef1aa3749f005cf8606}
+
+\item 
+{\bf shared\-\_\-ptr} \& {\bfseries operator=} ({\bf shared\-\_\-ptr} const \&r)\label{classbooster_1_1shared__ptr_a951b8a3df82ad97bdafc95597fdbf521}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bf shared\-\_\-ptr} \& {\bfseries operator=} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r)\label{classbooster_1_1shared__ptr_aa1bd334187b21a8a31ba5444d975bfd7}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\{\bf shared\-\_\-ptr} \& {\bfseries operator=} (std\-::auto\-\_\-ptr$<$ Y $>$ \&r)\label{classbooster_1_1shared__ptr_ac8a3db645f7de85640295868fbc4f026}
+
+\item 
+{\footnotesize template$<$class Ap $>$ }\\{\bf booster\-::detail\-::sp\-\_\-enable\-\_\-if\-\_\-auto\-\_\-ptr}\\*
+$<$ Ap, {\bf shared\-\_\-ptr} \& $>$\-::type {\bfseries operator=} (Ap r)\label{classbooster_1_1shared__ptr_af5a66535e99a277e8978907cca6fff94}
+
+\item 
+void {\bfseries reset} ()\label{classbooster_1_1shared__ptr_a717dbef22f028012e7add2674b87729d}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\void {\bfseries reset} (Y $\ast$p)\label{classbooster_1_1shared__ptr_a4f4524d782c5e6a87ba28607bc99674e}
+
+\item 
+{\footnotesize template$<$class Y , class D $>$ }\\void {\bfseries reset} (Y $\ast$p, D d)\label{classbooster_1_1shared__ptr_aa04c7a4f022b560408d66518b7c116ff}
+
+\item 
+{\footnotesize template$<$class Y , class D , class A $>$ }\\void {\bfseries reset} (Y $\ast$p, D d, A a)\label{classbooster_1_1shared__ptr_acff6191062f3a6ba1c4cf4bb8477ea11}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\void {\bfseries reset} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&r, T $\ast$p)\label{classbooster_1_1shared__ptr_a982b7dd9a9897bc539194c0a69f56851}
+
+\item 
+reference {\bfseries operator$\ast$} () const \label{classbooster_1_1shared__ptr_a41d1cb065b9e10152333148be2124d59}
+
+\item 
+T $\ast$ {\bfseries operator-\/$>$} () const \label{classbooster_1_1shared__ptr_ab2f5866801861c8a80468d28be225459}
+
+\item 
+T $\ast$ {\bfseries get} () const \label{classbooster_1_1shared__ptr_a0b3b71ea33c2284ae4fc52c350ff19b4}
+
+\item 
+bool {\bfseries unique} () const \label{classbooster_1_1shared__ptr_a852bb19a9dbba89a526c3f10bee70489}
+
+\item 
+long {\bfseries use\-\_\-count} () const \label{classbooster_1_1shared__ptr_a99907f1bd1bc3b992d091b78455ca17c}
+
+\item 
+void {\bfseries swap} ({\bf shared\-\_\-ptr}$<$ T $>$ \&other)\label{classbooster_1_1shared__ptr_af3cbdb878ddb9e4691bea4dfffb6ffd5}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\bool {\bfseries \-\_\-internal\-\_\-less} ({\bf shared\-\_\-ptr}$<$ Y $>$ const \&rhs) const \label{classbooster_1_1shared__ptr_a3b4f56f5e1c30ed8c2c7ff206b1ce3d2}
+
+\item 
+void $\ast$ {\bfseries \-\_\-internal\-\_\-get\-\_\-deleter} (detail\-::sp\-\_\-typeinfo const \&ti) const \label{classbooster_1_1shared__ptr_ae1f59324d5aae7890617e51ebdeee365}
+
+\item 
+bool {\bfseries \-\_\-internal\-\_\-equiv} ({\bf shared\-\_\-ptr} const \&r) const \label{classbooster_1_1shared__ptr_a7da6eb1a5ea8e47fcc091785c28cf3dc}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class Y $>$ }\\class {\bfseries shared\-\_\-ptr}\label{classbooster_1_1shared__ptr_ab2104fa6e839672da3c30400e8325e52}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\class {\bfseries weak\-\_\-ptr}\label{classbooster_1_1shared__ptr_a27df6e2a1650d985bdeda33f0303c83f}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\-h}\item 
+booster/shared\-\_\-ptr.\-h\end{DoxyCompactItemize}

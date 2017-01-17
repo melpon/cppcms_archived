@@ -1,0 +1,31 @@
+\section{booster\-:\-:locale\-:\-:gnu\-\_\-gettext Namespace Reference}
+\label{namespacebooster_1_1locale_1_1gnu__gettext}\index{booster\-::locale\-::gnu\-\_\-gettext@{booster\-::locale\-::gnu\-\_\-gettext}}
+
+
+This namespace holds classes that provide G\-N\-U Gettext message catalogs support.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf messages\-\_\-info}
+\begin{DoxyCompactList}\small\item\em This structure holds all information required for creating gnu-\/gettext message catalogs,. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf message\-\_\-format}$<$ Char\-Type $>$ $\ast$ {\bf create\-\_\-messages\-\_\-facet} ({\bf messages\-\_\-info} const \&{\bf info})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace holds classes that provide G\-N\-U Gettext message catalogs support. 
+
+\subsection{Function Documentation}
+\index{booster\-::locale\-::gnu\-\_\-gettext@{booster\-::locale\-::gnu\-\_\-gettext}!create\-\_\-messages\-\_\-facet@{create\-\_\-messages\-\_\-facet}}
+\index{create\-\_\-messages\-\_\-facet@{create\-\_\-messages\-\_\-facet}!booster::locale::gnu_gettext@{booster\-::locale\-::gnu\-\_\-gettext}}
+\subsubsection[{create\-\_\-messages\-\_\-facet}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf message\-\_\-format}$<$Char\-Type$>$$\ast$ booster\-::locale\-::gnu\-\_\-gettext\-::create\-\_\-messages\-\_\-facet (
+\begin{DoxyParamCaption}
+\item[{messages\-\_\-info const \&}]{info}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1locale_1_1gnu__gettext_aa2e59adbc91dee3b5029b2672d41cb8f}
+Create a \doxyref{message\-\_\-format}{p.}{classbooster_1_1locale_1_1message__format} facet using G\-N\-U Gettext catalogs. It uses {\itshape info} structure to get information about where to read them from and uses it for character set conversion (if needed) 

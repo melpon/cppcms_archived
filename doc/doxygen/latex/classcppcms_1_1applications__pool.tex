@@ -1,0 +1,90 @@
+\section{cppcms\-:\-:applications\-\_\-pool Class Reference}
+\label{classcppcms_1_1applications__pool}\index{cppcms\-::applications\-\_\-pool@{cppcms\-::applications\-\_\-pool}}
+
+
+Application pool is the central class that holds user created applications.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/applications\-\_\-pool.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf factory}
+\begin{DoxyCompactList}\small\item\em a base class for user application factories \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf mount} (std\-::auto\-\_\-ptr$<$ {\bf factory} $>$ aps)
+\item 
+void {\bf mount} (std\-::auto\-\_\-ptr$<$ {\bf factory} $>$ aps, {\bf mount\-\_\-point} const \&point)
+\item 
+void {\bf mount} ({\bf booster\-::intrusive\-\_\-ptr}$<$ {\bf application} $>$ app)
+\item 
+void {\bf mount} ({\bf booster\-::intrusive\-\_\-ptr}$<$ {\bf application} $>$ app, {\bf mount\-\_\-point} const \&point)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Application pool is the central class that holds user created applications. 
+
+Form the user perspective this class provides an A\-P\-I for mounting user application to the Cpp\-C\-M\-S service.
+
+There are two kind of {\itshape mount} member functions, that allow\-:
+
+
+\begin{DoxyItemize}
+\item Mounting a {\itshape factory} of user applications -- for execution of synchronous requests by multiple instances of application.
+\item Mounting single application -- for processing asynchronous requests by single instance of an application
+\end{DoxyItemize}
+
+The life cycle of synchronous application is defined by application pool itself, and the life cycle of asynchronous depends on its own reference count.
+
+This class is thread safe and can be accessed from multiple threads simultaneously. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::applications\-\_\-pool@{cppcms\-::applications\-\_\-pool}!mount@{mount}}
+\index{mount@{mount}!cppcms::applications_pool@{cppcms\-::applications\-\_\-pool}}
+\subsubsection[{mount}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::applications\-\_\-pool\-::mount (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf factory} $>$}]{aps}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1applications__pool_a190d75c5f93abbe2365f2f37ef7b0977}
+Mount an application factory {\itshape aps} for processing of any incoming requests. Application would receive P\-A\-T\-H\-\_\-\-I\-N\-F\-O C\-G\-I variable for U\-R\-L matching.
+
+This member function is thread safe. \index{cppcms\-::applications\-\_\-pool@{cppcms\-::applications\-\_\-pool}!mount@{mount}}
+\index{mount@{mount}!cppcms::applications_pool@{cppcms\-::applications\-\_\-pool}}
+\subsubsection[{mount}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::applications\-\_\-pool\-::mount (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf factory} $>$}]{aps, }
+\item[{{\bf mount\-\_\-point} const \&}]{point}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1applications__pool_ad02e20c6259dd131b9550ba0f3d5f041}
+Mount an application factory {\itshape app} by \doxyref{mount\-\_\-point}{p.}{classcppcms_1_1mount__point} {\itshape point} application matching and U\-R\-L selection rules
+
+This member function is thread safe. \index{cppcms\-::applications\-\_\-pool@{cppcms\-::applications\-\_\-pool}!mount@{mount}}
+\index{mount@{mount}!cppcms::applications_pool@{cppcms\-::applications\-\_\-pool}}
+\subsubsection[{mount}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::applications\-\_\-pool\-::mount (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::intrusive\-\_\-ptr}$<$ {\bf application} $>$}]{app}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1applications__pool_a5df195e454c857c4c064f8593c76fc45}
+Mount an asynchronous application {\itshape app} for processing of any incoming requests. Application would receive P\-A\-T\-H\-\_\-\-I\-N\-F\-O C\-G\-I variable for U\-R\-L matching.
+
+This member function is thread safe. \index{cppcms\-::applications\-\_\-pool@{cppcms\-::applications\-\_\-pool}!mount@{mount}}
+\index{mount@{mount}!cppcms::applications_pool@{cppcms\-::applications\-\_\-pool}}
+\subsubsection[{mount}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::applications\-\_\-pool\-::mount (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::intrusive\-\_\-ptr}$<$ {\bf application} $>$}]{app, }
+\item[{{\bf mount\-\_\-point} const \&}]{point}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1applications__pool_a3fefe91fd5a4012ae0cf66aecc0bcbc4}
+Mount an asynchronous application {\itshape app} by \doxyref{mount\-\_\-point}{p.}{classcppcms_1_1mount__point} {\itshape point} application matching and U\-R\-L selection rules
+
+This member function is thread safe. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/applications\-\_\-pool.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,462 @@
+\section{cppcms\-:\-:url\-\_\-mapper Class Reference}
+\label{classcppcms_1_1url__mapper}\index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}}
+
+
+class for mapping U\-R\-Ls -\/ the opposite of dispatch  
+
+
+
+
+{\ttfamily \#include $<$cppcms/url\-\_\-mapper.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:url\-\_\-mapper\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1url__mapper}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf root} ()
+\item 
+void {\bf root} (std\-::string const \&r)
+\item 
+void {\bf assign} (std\-::string const \&key, std\-::string const \&url)
+\item 
+void {\bf assign} (std\-::string const \&url)
+\item 
+void {\bf set\-\_\-value} (std\-::string const \&key, std\-::string const \&value)
+\item 
+void {\bf clear\-\_\-value} (std\-::string const \&key)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path, {\bf filters\-::streamable} const \&p1)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4, {\bf filters\-::streamable} const \&p5)
+\item 
+void {\bf map} (std\-::ostream \&out, char const $\ast$path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4, {\bf filters\-::streamable} const \&p5, {\bf filters\-::streamable} const \&p6)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path, {\bf filters\-::streamable} const \&p1)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4, {\bf filters\-::streamable} const \&p5)
+\item 
+void {\bf map} (std\-::ostream \&out, std\-::string const \&path, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4, {\bf filters\-::streamable} const \&p5, {\bf filters\-::streamable} const \&p6)
+\item 
+void {\bf mount} (std\-::string const \&name, std\-::string const \&url, {\bf application} \&app)
+\item 
+{\bf url\-\_\-mapper} \& {\bf child} (std\-::string const \&name)
+\item 
+{\bf url\-\_\-mapper} \& {\bf parent} ()
+\item 
+{\bf url\-\_\-mapper} \& {\bf topmost} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class for mapping U\-R\-Ls -\/ the opposite of dispatch 
+
+This class is useful for mapping between different page identifications that represent different classes/view and the U\-R\-L.
+
+The U\-R\-L mapping is done in hierarchy of applications where each application has its own name and they bundler into single hierarchy. Each application in hierarchy can be referred by its key and location. It may have different \char`\"{}urls\char`\"{} for mapping different values.
+
+For example, we develop a content management system with following tools\-:
+
+
+\begin{DoxyItemize}
+\item site
+\begin{DoxyItemize}
+\item news
+\begin{DoxyItemize}
+\item article
+\item category
+\end{DoxyItemize}
+\item forums
+\begin{DoxyItemize}
+\item topics
+\item threads
+\end{DoxyItemize}
+\item users
+\begin{DoxyItemize}
+\item management
+\item registration
+\item profile
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+Each node above is represented my \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} and its children mounted to it. In order to access each U\-R\-L we use \char`\"{}file system\char`\"{} like convention\-:
+
+
+\begin{DoxyItemize}
+\item \char`\"{}/\char`\"{} -\/ the default site page
+\item \char`\"{}/news\char`\"{} -\/ the default news page
+\item \char`\"{}/news/article\char`\"{} -\/ the default article page
+\item \char`\"{}/news/category/by\-\_\-date\char`\"{} -\/ the categories pages sorted by data
+\item \char`\"{}/news/category/by\-\_\-interest\char`\"{} -\/ the categories pages sorted by interest
+\item \char`\"{}/news/category\char`\"{} -\/ the default category pages
+\end{DoxyItemize}
+
+And so on.
+
+Each application can be referred by its full path from root or by its relative path, so if we for example in article sub-\/application and we want to refer to \char`\"{}category\char`\"{} U\-R\-L we would use something like map(out(),\char`\"{}../category/by\-\_\-interest\char`\"{},category\-\_\-id);
+
+In order to all this process work, each application should mount its children by some name, like\-:
+
+
+\begin{DoxyCode}
+site::site(cppcms::service &s) : 
+      cppcms::application(s),
+      news\_(s),
+      forums\_(s),
+      users\_(s)
+\{
+    add(news\_);
+    mapper().mount(\textcolor{stringliteral}{"news"},\textcolor{stringliteral}{"/news\{1\}"},news\_);
+    add(forums\_);
+    mapper().mount(\textcolor{stringliteral}{"forums"},\textcolor{stringliteral}{"/forums\{1\}"},forums\_);
+    ...
+\end{DoxyCode}
+
+
+You can also use \doxyref{cppcms\-::application\-::add}{p.}{classcppcms_1_1application_afc8693d6a8f20fc21a9141d2f377c2f9} and \doxyref{cppcms\-::application\-::attach}{p.}{classcppcms_1_1application_a6bf61f58b723d3dc93bdd144c1b0b45b} that allows to provide mapping for \doxyref{url\-\_\-dispatcher}{p.}{classcppcms_1_1url__dispatcher} and \doxyref{url\-\_\-mapper}{p.}{classcppcms_1_1url__mapper} in a single command like\-:
+
+
+\begin{DoxyCode}
+add(news\_,
+    \textcolor{stringliteral}{"news"},\textcolor{stringliteral}{"/news\{1\}"},
+    \textcolor{stringliteral}{"/news((/.*)?)"},1);
+\end{DoxyCode}
+
+
+Which effectively the same as\-:
+
+
+\begin{DoxyCode}
+add(news\_);
+mapper().mount(\textcolor{stringliteral}{"news"},\textcolor{stringliteral}{"/news\{1\}"},news\_);
+dispatcher().mount(\textcolor{stringliteral}{"/news((/.*)?)"},news\_,1);
+\end{DoxyCode}
+
+
+Such system allows using \char`\"{}url\char`\"{} tag in templates system easily as"
+
+
+\begin{DoxyCode}
+<a href=\textcolor{stringliteral}{"<% url "}/news/article\textcolor{stringliteral}{" using article id %>"} >...</a>
+\end{DoxyCode}
+
+
+Each mounted application may a default U\-R\-L (something like index.\-html) which is mapped when mounted application is referred. So for example there are may be following U\-R\-Ls\-:
+
+
+\begin{DoxyItemize}
+\item \char`\"{}/news/article\char`\"{} or \char`\"{}/news/article/\char`\"{} -\/ the default U\-R\-L
+\item \char`\"{}/news/article/preview\char`\"{} -\/ preview unpublished article U\-R\-L.
+\end{DoxyItemize}
+
+They can be defined in article class as following\-:
+
+
+\begin{DoxyCode}
+article::article(cppcms::service &s) : cppcms::application(s)
+\{
+   mapper().assign(\textcolor{stringliteral}{"/\{1\}"}); \textcolor{comment}{// the default URL}
+   dispatcher().assign(\textcolor{stringliteral}{"/(\(\backslash\)\(\backslash\)d+)"},&article::display,\textcolor{keyword}{this},1);
+   mapper().assign(\textcolor{stringliteral}{"preview"},\textcolor{stringliteral}{"/\{1\}/preview"}); \textcolor{comment}{// the preview URL}
+   dispatcher().assign(\textcolor{stringliteral}{"/(\(\backslash\)\(\backslash\)d+)/preview"},&article::preview,\textcolor{keyword}{this},1);
+\}
+\end{DoxyCode}
+
+
+Additional supported feature is \char`\"{}named\char`\"{} parameters which are usually set to some default value using set\-\_\-value, they are defined by special keywords between instead of numbers.
+
+For example assign(\char`\"{}article\char`\"{}, \char`\"{}/article/\{lang\}/\{1\}\char`\"{}) were \char`\"{}lang\char`\"{} is special value for language defined by set\-\_\-value(\char`\"{}lang\char`\"{},\char`\"{}en\char`\"{}), so mapping map(out(),\char`\"{}article\char`\"{},10) would create a U\-R\-L \char`\"{}/article/en/10\char`\"{}
+
+Sometimes it is useful to change such values there are two ways to do it\-:
+
+
+\begin{DoxyItemize}
+\item Overloading keyword with different parameters number assign(\char`\"{}article\char`\"{},\char`\"{}/article/\{1\}/\{2\}\char`\"{}) and then calling map(out(),\char`\"{}article\char`\"{},\char`\"{}ru\char`\"{},10) for U\-R\-L like \char`\"{}/article/ru/10\char`\"{}.
+\item Using naming of parameters at mapping level by prepending comma separated keywords at the end of the path line after \char`\"{};\char`\"{} map(out(),\char`\"{}article;lang\char`\"{},\char`\"{}ru\char`\"{},10) -\/ which would effectively work like temporary calling set\-\_\-value(\char`\"{}lang\char`\"{},\char`\"{}ru\char`\"{}) and then calling map(out(),\char`\"{}article\char`\"{},10). Unlike the previous case it also allows to do such changes globally. \par
+ For example if \char`\"{}news\char`\"{} application mounts article using \char`\"{}/\{lang\}/\{1\}\char`\"{} then using such mapping would affect top level U\-R\-L that does not belong to specific application. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string const \&}]{url}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a74417773cabc11bfae3af290e52e1d3c}
+Provide a mapping between special {\itshape key} and a {\itshape url} pattern.
+
+U\-R\-L patter is a string that includes mapped patters between \char`\"{}\{\char`\"{} and \char`\"{}\}\char`\"{} brackets. For example \char`\"{}/page/\{1\}\char`\"{} where \char`\"{}\{1\}\char`\"{} is being substituted by the first parameter in map functions.
+
+The ids can be numbers -\/ 1 to 6 and special keys that can be changed in the run time using set\-\_\-value functions. For example\-:
+
+\char`\"{}/wiki/\{lang\}/page/\{1\}\char`\"{}
+
+Where \char`\"{}lang\char`\"{} can be defined by \char`\"{}set\-\_\-value\char`\"{}. For example.
+
+For the url above with \char`\"{}lang\char`\"{} set to \char`\"{}en\char`\"{} and first parameter \char`\"{}cppcms\char`\"{} the string would be \char`\"{}/wiki/en/page/cppcms\char`\"{}
+
+Note the keys may be overloaded by number of parameters as for example\-:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily assign(\char`\"{}page\char`\"{},\char`\"{}/wiki/\{1\}/page/\{2\}\char`\"{});}
+\item {\ttfamily assign(\char`\"{}page\char`\"{},\char`\"{}/wiki/\{lang\}/page/\{1\}\char`\"{});}
+\item {\ttfamily assign(\char`\"{}page\char`\"{},\char`\"{}/wiki/\{lang\}/page/main\char`\"{});}
+\end{DoxyItemize}
+
+Then map(output,\char`\"{}page\char`\"{}) -\/ would create \char`\"{}/wiki/en/page/main\char`\"{}, map(output,\char`\"{}page\char`\"{},134) would create \char`\"{}/wiki/en/page/132\char`\"{} and map(output,\char`\"{}page\char`\"{},\char`\"{}ru\char`\"{},\char`\"{}cppcms\char`\"{}) would create \char`\"{}/wiki/ru/page/cppcms\char`\"{}
+
+Note\-: They keys containing \char`\"{}/\char`\"{}, \char`\"{},\char`\"{} or \char`\"{};\char`\"{} and keys with values \char`\"{}..\char`\"{}, \char`\"{}.\char`\"{}, \char`\"{}\char`\"{} are prohibited as they have special meanings \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{url}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a249e59de419f7fd0241cab6634c68393}
+Map the default key for the application, {\itshape url} has same rules as for assign(key,url) but they rather refer to default application's U\-R\-L when it is used in hierarchy. \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!child@{child}}
+\index{child@{child}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{child}]{\setlength{\rightskip}{0pt plus 5cm}{\bf url\-\_\-mapper}\& cppcms\-::url\-\_\-mapper\-::child (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_ab943e685cedcf3ef70f53ede5f1578e5}
+Get a mapper of mounted application by its name \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!clear\-\_\-value@{clear\-\_\-value}}
+\index{clear\-\_\-value@{clear\-\_\-value}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{clear\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::clear\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a5204a86050711455039f062b42c1d78c}
+Clear the special value -\/ reset to empty
+
+Note\-: this value is cleared globally for all applications hierarchy and not only for this specific application \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_ad13998224be836fc02edcbf18b1a7865}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 0 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_aa870ff175265390ca1990f09a8728c46}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 1 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a552a75ffde8d1ab03f7cac71a34621fa}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 2 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_ab70ea1c1e37928cfca96114acb12e00e}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 3 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a17d8174143cdf650d2f1c68c3db47502}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 4 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4, }
+\item[{{\bf filters\-::streamable} const \&}]{p5}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a1b94903d4c3f8e11c3c0d7ee0a576286}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 5 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{char const $\ast$}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4, }
+\item[{{\bf filters\-::streamable} const \&}]{p5, }
+\item[{{\bf filters\-::streamable} const \&}]{p6}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_ad005c550b48e2180fd0bf893ba1d0832}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 6 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a550f480caf0bcdadda4ce7d1234d8df2}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 0 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a0581cbbd31d8ffc4c36dac0f20012254}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 1 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a627e9c657a5e4daf3fcf945016fd40ae}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 2 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a7e06cd4de31fd1e3ba872a584c0df781}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 3 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_ac86b132c6525630e1a32fa22bf25939e}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 4 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4, }
+\item[{{\bf filters\-::streamable} const \&}]{p5}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a30539f446044eb26ff3de4e13df61a3c}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 5 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!map@{map}}
+\index{map@{map}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{map}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::map (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4, }
+\item[{{\bf filters\-::streamable} const \&}]{p5, }
+\item[{{\bf filters\-::streamable} const \&}]{p6}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a5bf853a13f3e399d5bfb1309d5bbf8fc}
+Write the U\-R\-L to output stream {\itshape out} for the U\-R\-L {\itshape path} with 6 parameters \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!mount@{mount}}
+\index{mount@{mount}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{mount}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::mount (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{url, }
+\item[{{\bf application} \&}]{app}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a04c3d15d87100991b95c5e83b8201527}
+Mount sub application {\itshape app} using name {\itshape name} to {\itshape url}.
+
+The U\-R\-L format as in assign but it requires a single parameter \{1\} which would be substituted with the mapping of the U\-R\-L of sub-\/application instead of using \char`\"{}root\char`\"{} patch \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!parent@{parent}}
+\index{parent@{parent}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf url\-\_\-mapper}\& cppcms\-::url\-\_\-mapper\-::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a9a9f6d4cf9b29b162a7c30b875d69a0c}
+Get a parent mapper, if not exists throws \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error} \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!root@{root}}
+\index{root@{root}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::url\-\_\-mapper\-::root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_afe939bb2cc0b61bee16533dbffd54f0c}
+Get the root of the application -\/ the string that is added to the any U\-R\-L patter like \char`\"{}/forum\char`\"{} or \char`\"{}http\-://my.\-site.\-com\char`\"{} \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!root@{root}}
+\index{root@{root}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::root (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a9c1f86471fde908dc75a06d82d4a1bec}
+Set the root of the application -\/ the string that is added to the any U\-R\-L patter like \char`\"{}/forum\char`\"{} or \char`\"{}http\-://my.\-site.\-com\char`\"{} \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!set\-\_\-value@{set\-\_\-value}}
+\index{set\-\_\-value@{set\-\_\-value}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{set\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-mapper\-::set\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string const \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a5660f96affb7c4c0987e0b4ded8a0e8c}
+Set special value for a key that would be used in U\-R\-L mapping, for example set\-\_\-value(\char`\"{}lang\char`\"{},\char`\"{}en\char`\"{})
+
+Note\-: this value is defined globally for all applications hierarchy and not only for this specific application \index{cppcms\-::url\-\_\-mapper@{cppcms\-::url\-\_\-mapper}!topmost@{topmost}}
+\index{topmost@{topmost}!cppcms::url_mapper@{cppcms\-::url\-\_\-mapper}}
+\subsubsection[{topmost}]{\setlength{\rightskip}{0pt plus 5cm}{\bf url\-\_\-mapper}\& cppcms\-::url\-\_\-mapper\-::topmost (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__mapper_a4f06f66e8f1b8c4f2d38b21bf8e7bd8d}
+Get a topmost mapper, if have no parents returns reference to {\ttfamily this}. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/url\-\_\-mapper.\-h\end{DoxyCompactItemize}

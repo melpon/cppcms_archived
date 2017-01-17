@@ -1,0 +1,107 @@
+\section{cppcms\-:\-:rpc\-:\-:json\-\_\-call Class Reference}
+\label{classcppcms_1_1rpc_1_1json__call}\index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}}
+
+
+This class represents single call of json-\/rpc method.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/rpc\-\_\-json.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:rpc\-:\-:json\-\_\-call\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1rpc_1_1json__call}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf $\sim$json\-\_\-call} ()
+\item 
+std\-::string {\bf method} ()
+\item 
+bool {\bf notification} ()
+\item 
+{\bf json\-::array} const \& {\bf params} ()
+\item 
+{\bf http\-::context} \& {\bf context} ()
+\item 
+void {\bf return\-\_\-result} ({\bf json\-::value} const \&)
+\item 
+void {\bf return\-\_\-error} ({\bf json\-::value} const \&)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries json\-\_\-rpc\-\_\-server}\label{classcppcms_1_1rpc_1_1json__call_a8dd011073d823ff3117bf38149bd960e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents single call of json-\/rpc method. 
+
+It is used for handling asynchronous responses only. Similar A\-P\-I is provided in \doxyref{json\-\_\-rpc\-\_\-server}{p.}{classcppcms_1_1rpc_1_1json__rpc__server} class for synchronous methods. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!$\sim$json\-\_\-call@{$\sim$json\-\_\-call}}
+\index{$\sim$json\-\_\-call@{$\sim$json\-\_\-call}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{$\sim$json\-\_\-call}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::rpc\-::json\-\_\-call\-::$\sim$json\-\_\-call (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_ac3cc9865d973568df814e7aab428162a}
+Destructor. Automatically deletes appropriate context as once it given to user it owns it. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!context@{context}}
+\index{context@{context}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf http\-::context}\& cppcms\-::rpc\-::json\-\_\-call\-::context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_a8ef7d2f3b159b76a4ce7ce87562427bd}
+Get context associated with the call. This you may wait on events like async\-\_\-on\-\_\-peer\-\_\-reset of {\tt http\-::context} via this member. \index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!method@{method}}
+\index{method@{method}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{method}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::rpc\-::json\-\_\-call\-::method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_a7913aa56f29772a952a3a00e1df2a727}
+Get the name of method that was called \index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!notification@{notification}}
+\index{notification@{notification}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{notification}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::rpc\-::json\-\_\-call\-::notification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_a789ffc3d7aeec694b832ca0b3860840f}
+Check if method call is notification only. You should not return a value.
+
+Note\-: if you do not add restriction when binding json-\/rpc method on the role of the call you should always check this value. Otherwise trying to call return\-\_\-result or return\-\_\-error would throw. \index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!params@{params}}
+\index{params@{params}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::array} const\& cppcms\-::rpc\-::json\-\_\-call\-::params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_a623454f8b23600ca193f12240ec26dda}
+Get call parameters as \doxyref{json\-::array}{p.}{namespacecppcms_1_1json_aefdab4e43ce88b19e1a73eecfe02d799} (vector of \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value}) \index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!return\-\_\-error@{return\-\_\-error}}
+\index{return\-\_\-error@{return\-\_\-error}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{return\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-call\-::return\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_aaa3464e046c9ffad8a89c9fa1bcc0f82}
+Complete method response with a error. Throws \doxyref{call\-\_\-error}{p.}{classcppcms_1_1rpc_1_1call__error} if the method was called as notification \index{cppcms\-::rpc\-::json\-\_\-call@{cppcms\-::rpc\-::json\-\_\-call}!return\-\_\-result@{return\-\_\-result}}
+\index{return\-\_\-result@{return\-\_\-result}!cppcms::rpc::json_call@{cppcms\-::rpc\-::json\-\_\-call}}
+\subsubsection[{return\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-call\-::return\-\_\-result (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__call_a837bedb8818cc46e588ac7d868b17807}
+Complete method response with a result. Throws \doxyref{call\-\_\-error}{p.}{classcppcms_1_1rpc_1_1call__error} if the method was called as notification 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/rpc\-\_\-json.\-h\end{DoxyCompactItemize}

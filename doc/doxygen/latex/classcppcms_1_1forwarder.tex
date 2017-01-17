@@ -1,0 +1,47 @@
+\section{cppcms\-:\-:forwarder Class Reference}
+\label{classcppcms_1_1forwarder}\index{cppcms\-::forwarder@{cppcms\-::forwarder}}
+
+
+Class responsble for automaticall forwarding of H\-T\-T\-P/\-C\-G\-I requests to other hosts over S\-C\-G\-I.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/forwarder.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add\-\_\-forwarding\-\_\-rule} ({\bf booster\-::shared\-\_\-ptr}$<$ {\bf mount\-\_\-point} $>$ p, std\-::string const \&ip, int port)
+\item 
+void {\bf remove\-\_\-forwarding\-\_\-rule} ({\bf booster\-::shared\-\_\-ptr}$<$ {\bf mount\-\_\-point} $>$ p)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class responsble for automaticall forwarding of H\-T\-T\-P/\-C\-G\-I requests to other hosts over S\-C\-G\-I. 
+
+This class allows you to strasfer connections transparently and efficiently for specific applications like single server responsible for Comet processing 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::forwarder@{cppcms\-::forwarder}!add\-\_\-forwarding\-\_\-rule@{add\-\_\-forwarding\-\_\-rule}}
+\index{add\-\_\-forwarding\-\_\-rule@{add\-\_\-forwarding\-\_\-rule}!cppcms::forwarder@{cppcms\-::forwarder}}
+\subsubsection[{add\-\_\-forwarding\-\_\-rule}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::forwarder\-::add\-\_\-forwarding\-\_\-rule (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::shared\-\_\-ptr}$<$ {\bf mount\-\_\-point} $>$}]{p, }
+\item[{std\-::string const \&}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1forwarder_ab941e4e78513ecbcea3ec46a82f00143}
+Add forwarding of request that match a \doxyref{mount\-\_\-point}{p.}{classcppcms_1_1mount__point} {\itshape p} over S\-C\-G\-I {\itshape ip} and {\itshape port}. \index{cppcms\-::forwarder@{cppcms\-::forwarder}!remove\-\_\-forwarding\-\_\-rule@{remove\-\_\-forwarding\-\_\-rule}}
+\index{remove\-\_\-forwarding\-\_\-rule@{remove\-\_\-forwarding\-\_\-rule}!cppcms::forwarder@{cppcms\-::forwarder}}
+\subsubsection[{remove\-\_\-forwarding\-\_\-rule}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::forwarder\-::remove\-\_\-forwarding\-\_\-rule (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::shared\-\_\-ptr}$<$ {\bf mount\-\_\-point} $>$}]{p}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1forwarder_a400234dddc24f08dd8c03ada4d355d5e}
+Remove the forwarding request, you need to use smake pointer you used in add\-\_\-forwarding\-\_\-rule 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/forwarder.\-h\end{DoxyCompactItemize}

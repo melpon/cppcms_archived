@@ -1,0 +1,423 @@
+\section{I/\-O Stream manipulators}
+\label{group__manipulators}\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::posix} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::number} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::currency} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::percent} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::date} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::time} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::datetime} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::strftime} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::spellout} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::ordinal} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::currency\-\_\-default} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::currency\-\_\-iso} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::currency\-\_\-national} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::time\-\_\-default} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::time\-\_\-short} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::time\-\_\-medium} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::time\-\_\-long} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::time\-\_\-full} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::date\-\_\-default} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::date\-\_\-short} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::date\-\_\-medium} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::date\-\_\-long} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::date\-\_\-full} (std\-::ios\-\_\-base \&ios)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\details\-::add\-\_\-ftime$<$ Char\-Type $>$ {\bf booster\-::locale\-::as\-::ftime} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&format)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\details\-::add\-\_\-ftime$<$ Char\-Type $>$ {\bf booster\-::locale\-::as\-::ftime} (Char\-Type const $\ast$format)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::gmt} (std\-::ios\-\_\-base \&ios)
+\item 
+std\-::ios\-\_\-base \& {\bf booster\-::locale\-::as\-::local\-\_\-time} (std\-::ios\-\_\-base \&ios)
+\item 
+details\-::set\-\_\-timezone {\bf booster\-::locale\-::as\-::time\-\_\-zone} (char const $\ast$id)
+\item 
+details\-::set\-\_\-timezone {\bf booster\-::locale\-::as\-::time\-\_\-zone} (std\-::string const \&id)
+\item 
+details\-::set\-\_\-domain {\bf booster\-::locale\-::as\-::domain} (std\-::string const \&id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!currency@{currency}}
+\index{currency@{currency}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{currency}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::currency (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga9b74193a9cdfe2d2ba252a918edcc4c3}
+Format currency, number is treated like amount of money 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!currency\-\_\-default@{currency\-\_\-default}}
+\index{currency\-\_\-default@{currency\-\_\-default}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{currency\-\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::currency\-\_\-default (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gac462c9951013cba242fda6d5ed8f03c2}
+Set default currency formatting style -- national, like \char`\"{}\$\char`\"{} 
+
+References booster\-::locale\-::ios\-\_\-info\-::currency\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!currency\-\_\-iso@{currency\-\_\-iso}}
+\index{currency\-\_\-iso@{currency\-\_\-iso}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{currency\-\_\-iso}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::currency\-\_\-iso (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gaf7450c47250a427e9dac24c298bbdbcc}
+Set I\-S\-O currency formatting style, like \char`\"{}\-U\-S\-D\char`\"{}, (requires I\-C\-U $>$= 4.\-2) 
+
+References booster\-::locale\-::ios\-\_\-info\-::currency\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!currency\-\_\-national@{currency\-\_\-national}}
+\index{currency\-\_\-national@{currency\-\_\-national}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{currency\-\_\-national}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::currency\-\_\-national (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga8376816cb5cae9c6b25fe379553ce0a1}
+Set national currency formatting style, like \char`\"{}\$\char`\"{} 
+
+References booster\-::locale\-::ios\-\_\-info\-::currency\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!date@{date}}
+\index{date@{date}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{date}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::date (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga7206f72e1da8219b2c8ee79db7a98321}
+Format a date, number is treated as P\-O\-S\-I\-X time 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!date\-\_\-default@{date\-\_\-default}}
+\index{date\-\_\-default@{date\-\_\-default}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{date\-\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::date\-\_\-default (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gac7d5e66855e249601a9870ec7ff17717}
+set default (medium) date formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!date\-\_\-full@{date\-\_\-full}}
+\index{date\-\_\-full@{date\-\_\-full}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{date\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::date\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gab945f4b917449127d2def58f9dadf629}
+set full date formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!date\-\_\-long@{date\-\_\-long}}
+\index{date\-\_\-long@{date\-\_\-long}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{date\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::date\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga24fd8fa3dfb425dac5cda14559d05273}
+set long date formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!date\-\_\-medium@{date\-\_\-medium}}
+\index{date\-\_\-medium@{date\-\_\-medium}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{date\-\_\-medium}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::date\-\_\-medium (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga67f27b519322d3ef8a1d676f8b73b19b}
+set medium date formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!date\-\_\-short@{date\-\_\-short}}
+\index{date\-\_\-short@{date\-\_\-short}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{date\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::date\-\_\-short (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga4808c475c4aa3261e9b2fa517e9e0556}
+set short date formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!datetime@{datetime}}
+\index{datetime@{datetime}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{datetime}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::datetime (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga1641c29ac8bc97d9f3b536114318ea18}
+Format a date and time, number is treated as P\-O\-S\-I\-X time 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!domain@{domain}}
+\index{domain@{domain}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}details\-::set\-\_\-domain booster\-::locale\-::as\-::domain (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gacf49438756ecc49453c0d1193def7cc9}
+Manipulator for switching message domain in ostream,
+
+\begin{DoxyNote}{Note}
+The returned object throws std\-::bad\-\_\-cast if the I/\-O stream does not have \doxyref{message\-\_\-format}{p.}{classbooster_1_1locale_1_1message__format} facet installed 
+\end{DoxyNote}
+
+
+Referenced by booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::str().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!ftime@{ftime}}
+\index{ftime@{ftime}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{ftime}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ details\-::add\-\_\-ftime$<$Char\-Type$>$ booster\-::locale\-::as\-::ftime (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{format}
+\end{DoxyParamCaption}
+)}\label{group__manipulators_ga3b395c47f31b0354a0ddb09fcf4ed96f}
+Set strftime like formatting string
+
+Please note, formatting flags are very similar but not exactly the same as flags for C function strftime. Differences\-: some flags as \char`\"{}\%e\char`\"{} do not add blanks to fill text up to two spaces, not all flags supported.
+
+Flags\-:
+\begin{DoxyItemize}
+\item \char`\"{}\%a\char`\"{} -- Abbreviated weekday (Sun.)
+\item \char`\"{}\%\-A\char`\"{} -- Full weekday (Sunday)
+\item \char`\"{}\%b\char`\"{} -- Abbreviated month (Jan.)
+\item \char`\"{}\%\-B\char`\"{} -- Full month (January)
+\item \char`\"{}\%c\char`\"{} -- Locale date-\/time format. {\bfseries Note\-:} prefer using \char`\"{}as\-::datetime\char`\"{}
+\item \char`\"{}\%d\char`\"{} -- Day of Month [01,31]
+\item \char`\"{}\%e\char`\"{} -- Day of Month [1,31]
+\item \char`\"{}\%h\char`\"{} -- Same as \char`\"{}\%b\char`\"{}
+\item \char`\"{}\%\-H\char`\"{} -- 24 clock hour [00,23]
+\item \char`\"{}\%\-I\char`\"{} -- 12 clock hour [01,12]
+\item \char`\"{}\%j\char`\"{} -- Day of year [1,366]
+\item \char`\"{}\%m\char`\"{} -- Month [01,12]
+\item \char`\"{}\%\-M\char`\"{} -- Minute [00,59]
+\item \char`\"{}\%n\char`\"{} -- New Line
+\item \char`\"{}\%p\char`\"{} -- A\-M/\-P\-M in locale representation
+\item \char`\"{}\%r\char`\"{} -- Time with A\-M/\-P\-M, same as \char`\"{}\%\-I\-:\%\-M\-:\%\-S \%p\char`\"{}
+\item \char`\"{}\%\-R\char`\"{} -- Same as \char`\"{}\%\-H\-:\%\-M\char`\"{}
+\item \char`\"{}\%\-S\char`\"{} -- Second [00,61]
+\item \char`\"{}\%t\char`\"{} -- Tab character
+\item \char`\"{}\%\-T\char`\"{} -- Same as \char`\"{}\%\-H\-:\%\-M\-:\%\-S\char`\"{}
+\item \char`\"{}\%x\char`\"{} -- Local date representation. {\bfseries Note\-:} prefer using \char`\"{}as\-::date\char`\"{}
+\item \char`\"{}\%\-X\char`\"{} -- Local time representation. {\bfseries Note\-:} prefer using \char`\"{}as\-::time\char`\"{}
+\item \char`\"{}\%y\char`\"{} -- Year [00,99]
+\item \char`\"{}\%\-Y\char`\"{} -- 4 digits year. (2009)
+\item \char`\"{}\%\-Z\char`\"{} -- Time Zone
+\item \char`\"{}\%\%\char`\"{} -- Percent symbol 
+\end{DoxyItemize}\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!ftime@{ftime}}
+\index{ftime@{ftime}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{ftime}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ details\-::add\-\_\-ftime$<$Char\-Type$>$ booster\-::locale\-::as\-::ftime (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{format}
+\end{DoxyParamCaption}
+)}\label{group__manipulators_ga502908f7db2bc726d1b4078c850affda}
+See \doxyref{ftime(std\-::basic\-\_\-string$<$\-Char\-Type$>$ const \&format)}{p.}{group__manipulators_ga3b395c47f31b0354a0ddb09fcf4ed96f} \index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!gmt@{gmt}}
+\index{gmt@{gmt}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{gmt}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::gmt (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gadfdf83c92a6b56c8f8a5ad3fdfc85f9c}
+Set G\-M\-T time zone to stream 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-zone().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!local\-\_\-time@{local\-\_\-time}}
+\index{local\-\_\-time@{local\-\_\-time}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::local\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga6c8f76e9a9023fcffb651d845e00f852}
+Set local time zone to stream 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), booster\-::locale\-::time\-\_\-zone\-::global(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-zone().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!number@{number}}
+\index{number@{number}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::number (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga0e4c392a5f03e9e88d73c886a1c4b850}
+Format a number. Note, unlike standard number formatting, integers would be treated like real numbers when std\-::fixed or std\-::scientific manipulators were applied 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!ordinal@{ordinal}}
+\index{ordinal@{ordinal}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{ordinal}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::ordinal (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga0e979d9117cd9fb9b92feb3f4a0bc766}
+Write an order of the number like 4th. 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!percent@{percent}}
+\index{percent@{percent}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{percent}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::percent (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga073dea7d5eeac4c6fb85aa736838e8ec}
+Format percent, value 0.\-3 is treated as 30\%. 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!posix@{posix}}
+\index{posix@{posix}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{posix}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::posix (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga68c2e049bb9ddfa1ccff39dded9f8225}
+Format values with \char`\"{}\-P\-O\-S\-I\-X\char`\"{} or \char`\"{}\-C\char`\"{} locale. Note, if locale was created with additional non-\/classic locale then These numbers may be localized 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!spellout@{spellout}}
+\index{spellout@{spellout}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{spellout}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::spellout (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga535752aa23b46dc3a8bb74669733f301}
+Spell the number, like \char`\"{}one hundred and ten\char`\"{} 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!strftime@{strftime}}
+\index{strftime@{strftime}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{strftime}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::strftime (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga91a9c3087d6e4c86b598d9577ed9e442}
+Create formatted date time, Please note, this manipulator only changes formatting mode, and not format itself, so you are probably looking for ftime manipulator 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time@{time}}
+\index{time@{time}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::time (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga7ef04454ad2736a51c55c3cd0270d80c}
+Format a time, number is treated as P\-O\-S\-I\-X time 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), and booster\-::locale\-::ios\-\_\-info\-::get().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-default@{time\-\_\-default}}
+\index{time\-\_\-default@{time\-\_\-default}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-default}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::time\-\_\-default (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga4a171af637e48cca779ea7cd022c1c18}
+set default (medium) time formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-full@{time\-\_\-full}}
+\index{time\-\_\-full@{time\-\_\-full}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-full}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::time\-\_\-full (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga73e5c32c654eb5228ce7b83861b96600}
+set full time formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-long@{time\-\_\-long}}
+\index{time\-\_\-long@{time\-\_\-long}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-long}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::time\-\_\-long (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga7dc07e3958556a1554e26410a877a673}
+set long time formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-medium@{time\-\_\-medium}}
+\index{time\-\_\-medium@{time\-\_\-medium}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-medium}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::time\-\_\-medium (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_gabfec069b336395ed653e30c7e01fbe4c}
+set medium time formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-short@{time\-\_\-short}}
+\index{time\-\_\-short@{time\-\_\-short}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-short}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ios\-\_\-base\& booster\-::locale\-::as\-::time\-\_\-short (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga27c8e333a6c4eaffb9b60527e9358845}
+set short time formatting style 
+
+References booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags().
+
+\index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-zone@{time\-\_\-zone}}
+\index{time\-\_\-zone@{time\-\_\-zone}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}details\-::set\-\_\-timezone booster\-::locale\-::as\-::time\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga7fccade6c21806619c75a438602f8e2f}
+Set time zone using {\itshape id} \index{I/\-O Stream manipulators@{I/\-O Stream manipulators}!time\-\_\-zone@{time\-\_\-zone}}
+\index{time\-\_\-zone@{time\-\_\-zone}!I/O Stream manipulators@{I/\-O Stream manipulators}}
+\subsubsection[{time\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}details\-::set\-\_\-timezone booster\-::locale\-::as\-::time\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__manipulators_ga457f341f55723d824b4578c7fdc7ce63}
+Set time zone using {\itshape id} 

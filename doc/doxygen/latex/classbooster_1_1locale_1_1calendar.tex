@@ -1,0 +1,209 @@
+\section{booster\-:\-:locale\-:\-:calendar Class Reference}
+\label{classbooster_1_1locale_1_1calendar}\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}}
+
+
+this class provides an access to general calendar information.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf calendar} (std\-::ios\-\_\-base \&ios)
+\item 
+{\bf calendar} (std\-::locale const \&l, std\-::string const \&zone)
+\item 
+{\bf calendar} (std\-::locale const \&l)
+\item 
+{\bf calendar} (std\-::string const \&zone)
+\item 
+{\bf calendar} ()
+\item 
+{\bf calendar} ({\bf calendar} const \&other)
+\item 
+{\bf calendar} const \& {\bf operator=} ({\bf calendar} const \&other)
+\item 
+int {\bf minimum} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf greatest\-\_\-minimum} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf maximum} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf least\-\_\-maximum} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf first\-\_\-day\-\_\-of\-\_\-week} () const \label{classbooster_1_1locale_1_1calendar_a4d841c494c16326e691c9c1668c5cd0f}
+
+\begin{DoxyCompactList}\small\item\em Get first day of week for specific calendar, for example for U\-S it is 1 -\/ Sunday for France it is 2 -\/ Monday. \end{DoxyCompactList}\item 
+std\-::locale {\bf get\-\_\-locale} () const 
+\item 
+std\-::string {\bf get\-\_\-time\-\_\-zone} () const 
+\item 
+bool {\bf is\-\_\-gregorian} () const 
+\item 
+bool {\bf operator==} ({\bf calendar} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf calendar} const \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries date\-\_\-time}\label{classbooster_1_1locale_1_1calendar_a7c627d823bfb1186af76ed36016cbb31}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class provides an access to general calendar information. 
+
+This information is not connected to specific date but generic to locale, and timezone. It is used in obtaining general information about calendar and is essential for creation of \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} objects. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!calendar@{calendar}}
+\index{calendar@{calendar}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::calendar\-::calendar (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_ae7318fd3d9756e98e442a41998763424}
+Create calendar taking locale and timezone information from ios\-\_\-base instance.
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if ios does not have a locale with installed \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!calendar@{calendar}}
+\index{calendar@{calendar}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::calendar\-::calendar (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{l, }
+\item[{std\-::string const \&}]{zone}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_aacb45467dbc3832c4b43708600a03f06}
+Create calendar with locale {\itshape l} and \doxyref{time\-\_\-zone}{p.}{namespacebooster_1_1locale_1_1time__zone} {\itshape zone} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!calendar@{calendar}}
+\index{calendar@{calendar}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::calendar\-::calendar (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{l}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_a27cb3ad4e768b9a7cbf0c21db2822a15}
+Create calendar with locale {\itshape l} and default timezone
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!calendar@{calendar}}
+\index{calendar@{calendar}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::calendar\-::calendar (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{zone}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_a9a9e9fa61f472d2a0329a7dcfd518024}
+Create calendar with default locale and timezone {\itshape zone} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if global locale does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!calendar@{calendar}}
+\index{calendar@{calendar}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::calendar\-::calendar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_a3e29e5d3b3465d6cb18f89b6d3fe4ee2}
+Create calendar with default locale and timezone
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if global locale does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!calendar@{calendar}}
+\index{calendar@{calendar}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{calendar}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::calendar\-::calendar (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_a816dd85577624ca74beb106a34012967}
+copy calendar 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!get\-\_\-locale@{get\-\_\-locale}}
+\index{get\-\_\-locale@{get\-\_\-locale}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{get\-\_\-locale}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale booster\-::locale\-::calendar\-::get\-\_\-locale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_a0c53b89d5338205694683dc494c9e8a3}
+get calendar's locale \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!get\-\_\-time\-\_\-zone@{get\-\_\-time\-\_\-zone}}
+\index{get\-\_\-time\-\_\-zone@{get\-\_\-time\-\_\-zone}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{get\-\_\-time\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::calendar\-::get\-\_\-time\-\_\-zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_ac2e2a9492ac3407229c51f93a0c3947b}
+get calendar's time zone \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!greatest\-\_\-minimum@{greatest\-\_\-minimum}}
+\index{greatest\-\_\-minimum@{greatest\-\_\-minimum}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{greatest\-\_\-minimum}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::calendar\-::greatest\-\_\-minimum (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_a0c75264f1eacc8dd49d3aa4748ea2a4b}
+Get greatest possible minimum value for period f, For example for \doxyref{period\-::day}{p.}{namespacebooster_1_1locale_1_1period_a84cfa24d9d69f3ba03589b714c70c90e} it is 1, but may be different for other calendars. \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!is\-\_\-gregorian@{is\-\_\-gregorian}}
+\index{is\-\_\-gregorian@{is\-\_\-gregorian}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{is\-\_\-gregorian}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::calendar\-::is\-\_\-gregorian (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_ad66cf40d938403e05ffcb9a1c61af6f6}
+Check if the calendar is Gregorian \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!least\-\_\-maximum@{least\-\_\-maximum}}
+\index{least\-\_\-maximum@{least\-\_\-maximum}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{least\-\_\-maximum}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::calendar\-::least\-\_\-maximum (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_a2f9d5fbade5b8b21379f2c01b5b74129}
+Get least maximum value for period f, For example for Gregorian calendar's maximum \doxyref{period\-::day}{p.}{namespacebooster_1_1locale_1_1period_a84cfa24d9d69f3ba03589b714c70c90e} it is 28. \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!maximum@{maximum}}
+\index{maximum@{maximum}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{maximum}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::calendar\-::maximum (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_abdeb3dc8176288abf3d7a31cf22d7918}
+Get maximum value for period f, For example for Gregorian calendar's maximum \doxyref{period\-::day}{p.}{namespacebooster_1_1locale_1_1period_a84cfa24d9d69f3ba03589b714c70c90e} it is 31. \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!minimum@{minimum}}
+\index{minimum@{minimum}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{minimum}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::calendar\-::minimum (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_abb98cb6babc21ff10e618971fe8fed26}
+Get minimum value for period f, For example for \doxyref{period\-::day}{p.}{namespacebooster_1_1locale_1_1period_a84cfa24d9d69f3ba03589b714c70c90e} it is 1. \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::calendar\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_aaa5cbb062d3ea0573c7a74f230d6cc74}
+Opposite of == \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf calendar} const\& booster\-::locale\-::calendar\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1calendar_ace0c0c4f1bb086a8d3c125186da874a5}
+assign calendar \index{booster\-::locale\-::calendar@{booster\-::locale\-::calendar}!operator==@{operator==}}
+\index{operator==@{operator==}!booster::locale::calendar@{booster\-::locale\-::calendar}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::calendar\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1calendar_ab8e4de8997a647ac64545ca9322485f3}
+Compare calendars for equivalence\-: i.\-e. calendar types, time zones etc. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time.\-h\end{DoxyCompactItemize}

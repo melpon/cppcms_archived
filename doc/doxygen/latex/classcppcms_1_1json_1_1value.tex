@@ -1,0 +1,610 @@
+\section{cppcms\-:\-:json\-:\-:value Class Reference}
+\label{classcppcms_1_1json_1_1value}\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}}
+
+
+This class is central representation of json objects.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/json.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf json\-\_\-type} {\bf type} () const 
+\item 
+bool {\bf is\-\_\-undefined} () const 
+\item 
+bool {\bf is\-\_\-null} () const 
+\item 
+bool const \& {\bf boolean} () const 
+\item 
+double const \& {\bf number} () const 
+\item 
+std\-::string const \& {\bf str} () const 
+\item 
+{\bf json\-::object} const \& {\bf object} () const 
+\item 
+{\bf json\-::array} const \& {\bf array} () const 
+\item 
+bool \& {\bf boolean} ()
+\item 
+double \& {\bf number} ()
+\item 
+std\-::string \& {\bf str} ()
+\item 
+{\bf json\-::object} \& {\bf object} ()
+\item 
+{\bf json\-::array} \& {\bf array} ()
+\item 
+void {\bf undefined} ()
+\item 
+void {\bf null} ()
+\item 
+void {\bf boolean} (bool)
+\item 
+void {\bf number} (double)
+\item 
+void {\bf str} (std\-::string const \&)
+\item 
+void {\bf object} ({\bf json\-::object} const \&)
+\item 
+void {\bf array} ({\bf json\-::array} const \&)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bf get\-\_\-value} () const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf set\-\_\-value} (T const \&v)
+\item 
+{\bf value} const \& {\bf find} (std\-::string const \&path) const 
+\item 
+{\bf value} const \& {\bf find} (char const $\ast$path) const 
+\item 
+{\bf value} const \& {\bf at} (std\-::string const \&path) const 
+\item 
+{\bf value} const \& {\bf at} (char const $\ast$path) const 
+\item 
+{\bf value} \& {\bf at} (std\-::string const \&path)
+\item 
+{\bf value} \& {\bf at} (char const $\ast$path)
+\item 
+void {\bf at} (std\-::string const \&path, {\bf value} const \&v)
+\item 
+void {\bf at} (char const $\ast$path, {\bf value} const \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\{\bf value} (T const \&v)
+\item 
+{\bf json\-\_\-type} {\bf type} (std\-::string const \&path) const 
+\item 
+{\bf json\-\_\-type} {\bf type} (char const $\ast$path) const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf set} (std\-::string const \&path, T const \&v)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf set} (char const $\ast$path, T const \&v)
+\item 
+std\-::string {\bf get} (std\-::string const \&path, char const $\ast$def) const 
+\item 
+std\-::string {\bf get} (char const $\ast$path, char const $\ast$def) const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bf get} (std\-::string const \&path) const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bf get} (char const $\ast$path) const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bf get} (char const $\ast$path, T const \&def) const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bf get} (std\-::string const \&path, T const \&def) const 
+\item 
+{\bf value} \& {\bf operator[$\,$]} (std\-::string const \&name)
+\item 
+{\bf value} const \& {\bf operator[$\,$]} (std\-::string const \&name) const 
+\item 
+{\bf value} \& {\bf operator[$\,$]} (size\-\_\-t n)
+\item 
+{\bf value} const \& {\bf operator[$\,$]} (size\-\_\-t n) const 
+\item 
+std\-::string {\bf save} (int how={\bf compact}) const 
+\item 
+void {\bf save} (std\-::ostream \&out, int how={\bf compact}) const 
+\item 
+bool {\bf load} (std\-::istream \&in, bool full, int $\ast$line\-\_\-number=0)
+\item 
+bool {\bf operator==} ({\bf value} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf value} const \&other) const 
+\item 
+{\bf value} ({\bf value} const \&other)
+\item 
+{\bf value} const \& {\bf operator=} ({\bf value} const \&other)
+\item 
+{\bf value} ()
+\item 
+{\bf $\sim$value} ()
+\item 
+void {\bf swap} ({\bf value} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries copyable}\label{classcppcms_1_1json_1_1value_ac6407ff93c6a0525479ebf1eb0a33acc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is central representation of json objects. 
+
+It can be a value from any type including scalar, object, array and undefined 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!value@{value}}
+\index{value@{value}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ cppcms\-::json\-::value\-::value (
+\begin{DoxyParamCaption}
+\item[{T const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a38ac466b0d55aa407cd40024c87234be}
+Creates a value from and object {\itshape v} of type T \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!value@{value}}
+\index{value@{value}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::json\-::value\-::value (
+\begin{DoxyParamCaption}
+\item[{{\bf value} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a72580ce870d3fb1125d808d6b058ec7d}
+Copy constructor \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!value@{value}}
+\index{value@{value}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::json\-::value\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_afa4a97d3043e800fac71c45670381086}
+Default value -\/ creates a value of undefined type \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!$\sim$value@{$\sim$value}}
+\index{$\sim$value@{$\sim$value}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{$\sim$value}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::json\-::value\-::$\sim$value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_aec12855f0a7ab8e61ee46d9f0a634f36}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!array@{array}}
+\index{array@{array}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::array} const\& cppcms\-::json\-::value\-::array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_aa883e6ec2f9d8c4a11bd48c6a4d40025}
+Convert value to \doxyref{json\-::array}{p.}{namespacecppcms_1_1json_aefdab4e43ce88b19e1a73eecfe02d799}, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if value's type is not array \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!array@{array}}
+\index{array@{array}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::array}\& cppcms\-::json\-::value\-::array (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a991b18dccfb3ec0971c89eda5641482f}
+Get reference to array variable that represents this value, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if type is invalid \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!array@{array}}
+\index{array@{array}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::array (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::array} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a614212c1ffc126513f70c9b81be9e6a4}
+Set value to array type and assign it \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!at@{at}}
+\index{at@{at}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::at (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a928f339caabf7d1d107b7cbf1b90c2a6}
+Searches a value in the path {\itshape path}, if not found throw \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast}.
+
+For example if the \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} represents \{ \char`\"{}x\char`\"{} \-: \{ \char`\"{}y\char`\"{} \-: 10 \} \}, then find(\char`\"{}x.\-y\char`\"{}) would return a reference to value that hold a number 10, find(\char`\"{}x\char`\"{}) returns a reference to a value that holds an object \{ \char`\"{}y\char`\"{} \-: 10 \} and find(\char`\"{}foo\char`\"{}) throws \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!at@{at}}
+\index{at@{at}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::at (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_ac8bcaa686b3ec1ad0cc22d663bce4566}
+Searches a value in the path {\itshape path}, if not found throw \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast}.
+
+For example if the \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} represents \{ \char`\"{}x\char`\"{} \-: \{ \char`\"{}y\char`\"{} \-: 10 \} \}, then find(\char`\"{}x.\-y\char`\"{}) would return a reference to value that hold a number 10, find(\char`\"{}x\char`\"{}) returns a reference to a value that holds an object \{ \char`\"{}y\char`\"{} \-: 10 \} and find(\char`\"{}foo\char`\"{}) throws \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!at@{at}}
+\index{at@{at}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value}\& cppcms\-::json\-::value\-::at (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a71e5cacd07816bae809649c572a9f0f3}
+Searches a value in the path {\itshape path}, if not found throw \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast}.
+
+For example if the \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} represents \{ \char`\"{}x\char`\"{} \-: \{ \char`\"{}y\char`\"{} \-: 10 \} \}, then find(\char`\"{}x.\-y\char`\"{}) would return a reference to value that hold a number 10, find(\char`\"{}x\char`\"{}) returns a reference to a value that holds an object \{ \char`\"{}y\char`\"{} \-: 10 \} and find(\char`\"{}foo\char`\"{}) throws \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!at@{at}}
+\index{at@{at}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value}\& cppcms\-::json\-::value\-::at (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_adbde3d2a81097f0d02a2ee28c9dd275a}
+Searches a value in the path {\itshape path}, if not found throw \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast}.
+
+For example if the \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} represents \{ \char`\"{}x\char`\"{} \-: \{ \char`\"{}y\char`\"{} \-: 10 \} \}, then find(\char`\"{}x.\-y\char`\"{}) would return a reference to value that hold a number 10, find(\char`\"{}x\char`\"{}) returns a reference to a value that holds an object \{ \char`\"{}y\char`\"{} \-: 10 \} and find(\char`\"{}foo\char`\"{}) throws \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!at@{at}}
+\index{at@{at}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::at (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path, }
+\item[{{\bf value} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a2bddf94dacc99979e7dc9d505a885c14}
+Sets the value {\itshape v} at the path {\itshape path}, if the path invalid, creates it. \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!at@{at}}
+\index{at@{at}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::at (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path, }
+\item[{{\bf value} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a378c17afcac394739478c288bdfde696}
+Sets the value {\itshape v} at the path {\itshape path}, if the path invalid, creates it. \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!boolean@{boolean}}
+\index{boolean@{boolean}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{boolean}]{\setlength{\rightskip}{0pt plus 5cm}bool const\& cppcms\-::json\-::value\-::boolean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_aba280db3052d4f340675ed1ac76f0159}
+Convert value to boolean, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if value's type is not boolean \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!boolean@{boolean}}
+\index{boolean@{boolean}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{boolean}]{\setlength{\rightskip}{0pt plus 5cm}bool\& cppcms\-::json\-::value\-::boolean (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_ae96c56907b7511533de06ee969cc34b9}
+Get reference to bool variable that represents this value, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if type is invalid \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!boolean@{boolean}}
+\index{boolean@{boolean}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{boolean}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::boolean (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a6feb59d58080befaf88b531e91ba0fa1}
+Set value to boolean type and assign it \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!find@{find}}
+\index{find@{find}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::find (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_ae71c554737d7d9364de6d8589ac9add5}
+Searches a value in the path {\itshape path} 
+
+For example if the \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} represents \{ \char`\"{}x\char`\"{} \-: \{ \char`\"{}y\char`\"{} \-: 10 \} \}, then find(\char`\"{}x.\-y\char`\"{}) would return a reference to value that hold a number 10, find(\char`\"{}x\char`\"{}) returns a reference to a value that holds an object \{ \char`\"{}y\char`\"{} \-: 10 \} and find(\char`\"{}foo\char`\"{}) would return value of undefined type. \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!find@{find}}
+\index{find@{find}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::find (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a345daaa0fcf0082edc139ff69b5fc19d}
+Searches a value in the path {\itshape path} 
+
+For example if the \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} represents \{ \char`\"{}x\char`\"{} \-: \{ \char`\"{}y\char`\"{} \-: 10 \} \}, then find(\char`\"{}x.\-y\char`\"{}) would return a reference to value that hold a number 10, find(\char`\"{}x\char`\"{}) returns a reference to a value that holds an object \{ \char`\"{}y\char`\"{} \-: 10 \} and find(\char`\"{}foo\char`\"{}) would return value of undefined type. \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get@{get}}
+\index{get@{get}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::json\-::value\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path, }
+\item[{char const $\ast$}]{def}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_aee08914f26c35374cd4878cde590181a}
+Get a string value from a path {\itshape path}. If the path is not invalid or the object is not of type string at this path, returns {\itshape def} instead 
+
+References get\-\_\-value(), and is\-\_\-undefined().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get@{get}}
+\index{get@{get}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::json\-::value\-::get (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path, }
+\item[{char const $\ast$}]{def}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a7360e7799bf2659f7f148ad6c6f0ee4f}
+Get a string value from a path {\itshape path}. If the path is not invalid or the object is not of type string at this path, returns {\itshape def} instead 
+
+References get\-\_\-value(), and is\-\_\-undefined().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get@{get}}
+\index{get@{get}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T cppcms\-::json\-::value\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a122ff95e6a777372ea38f47d3370762f}
+Get an object of type T from the path {\itshape path}. Throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if such path does not exists of conversion can't be done \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get@{get}}
+\index{get@{get}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T cppcms\-::json\-::value\-::get (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a9b9fce0bb7e77b6385ecf4101dc8f313}
+Get an object of type T from the path {\itshape path}. Throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if such path does not exists of conversion can't be done \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get@{get}}
+\index{get@{get}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T cppcms\-::json\-::value\-::get (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path, }
+\item[{T const \&}]{def}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a496dc0a8dfcb2e54ef270890c6088213}
+Get an object of type T from the path {\itshape path}. Returns {\itshape def} if such path does not exists of conversion can't be done 
+
+References get\-\_\-value(), and is\-\_\-undefined().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get@{get}}
+\index{get@{get}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T cppcms\-::json\-::value\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path, }
+\item[{T const \&}]{def}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a77050b43a3cc8f928929e6aec13919da}
+Get an object of type T from the path {\itshape path}. Returns {\itshape def} if such path does not exists of conversion can't be done 
+
+References get\-\_\-value(), and is\-\_\-undefined().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!get\-\_\-value@{get\-\_\-value}}
+\index{get\-\_\-value@{get\-\_\-value}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{get\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T cppcms\-::json\-::value\-::get\-\_\-value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a502e0d34488d3a84d99d5c4bc19c9285}
+Convert the value to type T, using \doxyref{json\-::traits}{p.}{structcppcms_1_1json_1_1traits}, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if conversion is not possible 
+
+References cppcms\-::json\-::traits$<$ T $>$\-::get().
+
+
+
+Referenced by get().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!is\-\_\-null@{is\-\_\-null}}
+\index{is\-\_\-null@{is\-\_\-null}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{is\-\_\-null}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::json\-::value\-::is\-\_\-null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a64e6d514e18b993490f3dd3e7a0455f4}
+Returns true if \doxyref{type()}{p.}{classcppcms_1_1json_1_1value_a59b47ac0b2ce58fe603befb35725d80d}==\doxyref{json\-::is\-\_\-null}{p.}{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa22c479e93d944ace38a553dc49826d89} \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!is\-\_\-undefined@{is\-\_\-undefined}}
+\index{is\-\_\-undefined@{is\-\_\-undefined}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{is\-\_\-undefined}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::json\-::value\-::is\-\_\-undefined (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a7d1e8dfbc5c09f8843f7ce0035fd0eff}
+Returns true if \doxyref{type()}{p.}{classcppcms_1_1json_1_1value_a59b47ac0b2ce58fe603befb35725d80d}==\doxyref{json\-::is\-\_\-undefined}{p.}{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa81b825f1da773b3b5366d1d4a50d62ee} 
+
+Referenced by get().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!load@{load}}
+\index{load@{load}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::json\-::value\-::load (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{in, }
+\item[{bool}]{full, }
+\item[{int $\ast$}]{line\-\_\-number = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a8c5e7a150d4d7f448e4a51cd36cbc82e}
+Read a value from std\-::istream.
+
+Note\-: only J\-S\-O\-N object and J\-S\-O\-N array are considered valid values
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & the std\-::istream used to read the data \\
+\hline
+{\em full} & require E\-O\-F once the object is read, otherwise consider it as syntax error \\
+\hline
+{\em line\-\_\-number} & return a number of the line where syntax error occurred \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if the value was read successfully, otherwise returns false to indicate a syntax error. 
+\end{DoxyReturn}
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!null@{null}}
+\index{null@{null}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{null}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::null (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a321f30aad7c28858985d6fc4ae2b3893}
+Set value to null type \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!number@{number}}
+\index{number@{number}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}double const\& cppcms\-::json\-::value\-::number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a9ea56516479af76e2e8f0a2cd6ba5043}
+Convert value to double, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if value's type is not number \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!number@{number}}
+\index{number@{number}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}double\& cppcms\-::json\-::value\-::number (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_ad89839bea8e1a49bebc70db91fefbb47}
+Get reference to double variable that represents this value, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if type is invalid \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!number@{number}}
+\index{number@{number}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{number}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::number (
+\begin{DoxyParamCaption}
+\item[{double}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_aac274d62d13f36b56174ac374f6276ea}
+Set value to numeric type and assign it \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!object@{object}}
+\index{object@{object}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::object} const\& cppcms\-::json\-::value\-::object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_aa42bb35c356312bdee5a37bc0350264c}
+Convert value to \doxyref{json\-::object}{p.}{namespacecppcms_1_1json_a4849268540ccdea30cfa408d6706d0c9}, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if value's type is not object \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!object@{object}}
+\index{object@{object}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::object}\& cppcms\-::json\-::value\-::object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a65cae2c10d8695a042308db2f630f412}
+Get reference to object variable that represents this value, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if type is invalid \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!object@{object}}
+\index{object@{object}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{object}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::object (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::object} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_af97646f2d5fba0ec74240e2c8c600166}
+Set value to object type and assign it \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::json\-::value\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf value} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a8687ac2d279358587cae9bdcad949a25}
+Compare two values objects, return false if they are same \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf value} const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a4edb3fe5328b9a755f697c9d3c2d16b3}
+Assignment operator \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::json\-::value\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf value} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a44c796c66449f569ed37154d80a223c7}
+Compare two values objects, return true if they are same \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value}\& cppcms\-::json\-::value\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_ad521e30dcb5abc912c0e4088faca2304}
+Returns a reference to the node {\itshape name} of the value. For value = \{\char`\"{}x\char`\"{},10\} and name == \char`\"{}x\char`\"{} return a value that holds 10.
+
+If value is not object it's type set to object. If such node does not exits, it is created with undefined value \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a1dc82ab40109077439c8b7216cae8cbf}
+Returns reference to the node {\itshape name} of the value. For value = \{\char`\"{}x\char`\"{},10\} and name == \char`\"{}x\char`\"{} return a value that holds 10.
+
+If value is not object or such node does not exits, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value}\& cppcms\-::json\-::value\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a05afa51b2e3779a168227121de9804fd}
+Returns a reference to {\itshape n} 'th entry of the array. If the value is not an array it is reset to array, of the array is too small it is resized to size of at least n+1 \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} const\& cppcms\-::json\-::value\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a9ddbb1a4a9b00c421f95cd67eda27082}
+Returns a reference to {\itshape n} 'th entry of array, if the value is not array or n is too big, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!save@{save}}
+\index{save@{save}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::json\-::value\-::save (
+\begin{DoxyParamCaption}
+\item[{int}]{how = {\ttfamily {\bf compact}}}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_ab53056fed7567db9d3cef7b3c5e5b157}
+Convert a value to std\-::string, if {\itshape how} has value {\itshape readable} it is converted with indentation \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!save@{save}}
+\index{save@{save}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::save (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{int}]{how = {\ttfamily {\bf compact}}}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a28d67146573f891db8f85beac1c89a21}
+Write a value to std\-::ostream, if {\itshape how} has value {\itshape readable} it is converted with indentation \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!set@{set}}
+\index{set@{set}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void cppcms\-::json\-::value\-::set (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path, }
+\item[{T const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_af6a26d71592704e37f969d6bee94870a}
+Convert an object {\itshape v} of type T to a value at specific path, same as at(path,value(v)) \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!set@{set}}
+\index{set@{set}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void cppcms\-::json\-::value\-::set (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path, }
+\item[{T const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_ac6744b0d723d87020d8e986795eafcef}
+Convert an object {\itshape v} of type T to a value at specific path, same as at(path,value(v)) \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!set\-\_\-value@{set\-\_\-value}}
+\index{set\-\_\-value@{set\-\_\-value}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{set\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void cppcms\-::json\-::value\-::set\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{T const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a590e1d965aa4c60e099e7cb9ace63151}
+Convert the object {\itshape v} of type T to the value 
+
+References cppcms\-::json\-::traits$<$ T $>$\-::set().
+
+\index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!str@{str}}
+\index{str@{str}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string const\& cppcms\-::json\-::value\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a6937085eeb1b048d0a66a3eb35c4761b}
+Convert value to strng, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if value's type is not string \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!str@{str}}
+\index{str@{str}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string\& cppcms\-::json\-::value\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a8b6eec0b21339fd232d4b404258f0025}
+Get reference to string variable that represents this value, throws \doxyref{bad\-\_\-value\-\_\-cast}{p.}{classcppcms_1_1json_1_1bad__value__cast} if type is invalid \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!str@{str}}
+\index{str@{str}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a430972dbadd39a2f1672a79f38ac03b2}
+Set value to string type and assign it \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!swap@{swap}}
+\index{swap@{swap}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf value} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a6665e8a9f18c84b9412e98f460a55bf4}
+Swaps two values, does not throw. \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!type@{type}}
+\index{type@{type}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-\_\-type} cppcms\-::json\-::value\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1json_1_1value_a59b47ac0b2ce58fe603befb35725d80d}
+Get the type of the value \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!type@{type}}
+\index{type@{type}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-\_\-type} cppcms\-::json\-::value\-::type (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a9afa18404f15cc82e27d339c60e4a468}
+Returns the type of variable in path, if not found returns undefined
+
+Same as find(path).\doxyref{type()}{p.}{classcppcms_1_1json_1_1value_a59b47ac0b2ce58fe603befb35725d80d} \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!type@{type}}
+\index{type@{type}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-\_\-type} cppcms\-::json\-::value\-::type (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{path}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1json_1_1value_a1928f961100d0e0d712928af650f496c}
+Returns the type of variable in path, if not found returns undefined
+
+Same as find(path).\doxyref{type()}{p.}{classcppcms_1_1json_1_1value_a59b47ac0b2ce58fe603befb35725d80d} \index{cppcms\-::json\-::value@{cppcms\-::json\-::value}!undefined@{undefined}}
+\index{undefined@{undefined}!cppcms::json::value@{cppcms\-::json\-::value}}
+\subsubsection[{undefined}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::json\-::value\-::undefined (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1json_1_1value_a8b571c3c58f41d04863c341aeff8f0a8}
+Set value to undefined type 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/json.\-h\end{DoxyCompactItemize}

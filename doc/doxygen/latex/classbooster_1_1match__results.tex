@@ -1,0 +1,98 @@
+\section{booster\-:\-:match\-\_\-results$<$ Iterator $>$ Class Template Reference}
+\label{classbooster_1_1match__results}\index{booster\-::match\-\_\-results$<$ Iterator $>$@{booster\-::match\-\_\-results$<$ Iterator $>$}}
+
+
+The object that hold the result of matching a regular expression against the text using regex\-\_\-match and regex\-\_\-search functions.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/regex\-\_\-match.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf sub\-\_\-match}$<$ Iterator $>$ {\bf value\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf match\-\_\-results} ()
+\item 
+{\bf value\-\_\-type} {\bf operator[$\,$]} (int n) const 
+\item 
+size\-\_\-t {\bf size} () const 
+\item 
+{\bf value\-\_\-type} {\bf suffix} ()
+\item 
+{\bf value\-\_\-type} {\bf prefix} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Iterator$>$class booster\-::match\-\_\-results$<$ Iterator $>$}
+
+The object that hold the result of matching a regular expression against the text using regex\-\_\-match and regex\-\_\-search functions. 
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::match\-\_\-results@{booster\-::match\-\_\-results}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!booster::match_results@{booster\-::match\-\_\-results}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ typedef {\bf sub\-\_\-match}$<$Iterator$>$ {\bf booster\-::match\-\_\-results}$<$ Iterator $>$\-::{\bf value\-\_\-type}}\label{classbooster_1_1match__results_a27633c3c3840e26cc860a5b4c3ad0575}
+The type of subexpression returned by operator[] 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::match\-\_\-results@{booster\-::match\-\_\-results}!match\-\_\-results@{match\-\_\-results}}
+\index{match\-\_\-results@{match\-\_\-results}!booster::match_results@{booster\-::match\-\_\-results}}
+\subsubsection[{match\-\_\-results}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf booster\-::match\-\_\-results}$<$ Iterator $>$\-::{\bf match\-\_\-results} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1match__results_a0f575a6aa28e9c4dca25e377d6deda36}
+Creates default empty matched result. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::match\-\_\-results@{booster\-::match\-\_\-results}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!booster::match_results@{booster\-::match\-\_\-results}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf value\-\_\-type} {\bf booster\-::match\-\_\-results}$<$ Iterator $>$\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1match__results_adb7c7e5ac1c2b2c6787be579b21e4dca}
+Get the \doxyref{sub\-\_\-match}{p.}{classbooster_1_1sub__match} for subexpression {\itshape n}. If n $<$ 0 or n $>$= \doxyref{size()}{p.}{classbooster_1_1match__results_a02eac536ec00db516007b6ac1b15cb04} returns an empty \doxyref{sub\-\_\-match}{p.}{classbooster_1_1sub__match} 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::matched.
+
+\index{booster\-::match\-\_\-results@{booster\-::match\-\_\-results}!prefix@{prefix}}
+\index{prefix@{prefix}!booster::match_results@{booster\-::match\-\_\-results}}
+\subsubsection[{prefix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf value\-\_\-type} {\bf booster\-::match\-\_\-results}$<$ Iterator $>$\-::prefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1match__results_a358a6672749919ceff07f120a1ad6059}
+Get the text range after the matched expression. Always empty for \doxyref{match\-\_\-results}{p.}{classbooster_1_1match__results} 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::matched.
+
+\index{booster\-::match\-\_\-results@{booster\-::match\-\_\-results}!size@{size}}
+\index{size@{size}!booster::match_results@{booster\-::match\-\_\-results}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ size\-\_\-t {\bf booster\-::match\-\_\-results}$<$ Iterator $>$\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1match__results_a02eac536ec00db516007b6ac1b15cb04}
+Get the number of captured subexpressions in the regular expression. \index{booster\-::match\-\_\-results@{booster\-::match\-\_\-results}!suffix@{suffix}}
+\index{suffix@{suffix}!booster::match_results@{booster\-::match\-\_\-results}}
+\subsubsection[{suffix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf value\-\_\-type} {\bf booster\-::match\-\_\-results}$<$ Iterator $>$\-::suffix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1match__results_a4edc8682bc61ba5d7cab45b10e039e24}
+Get the text range before the matched expression. Always empty for \doxyref{match\-\_\-results}{p.}{classbooster_1_1match__results} 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::matched.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/regex\-\_\-match.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\section{booster\-:\-:io\-\_\-device Class Reference}
+\label{classbooster_1_1io__device}\index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}}
+
+
+This class is a base class of generic I/\-O device that can be used in very simple manner with \doxyref{booster\-::streambuf}{p.}{classbooster_1_1streambuf} allowing to create iostreams easily.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/streambuf.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf pos\-\_\-type} \{ {\bf set}, 
+{\bf cur}, 
+{\bf end}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\-\_\-t {\bf read} (char $\ast$, size\-\_\-t)
+\item 
+virtual size\-\_\-t {\bf write} (char const $\ast$, size\-\_\-t)
+\item 
+virtual long long {\bf seek} (long long, {\bf pos\-\_\-type}={\bf set})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is a base class of generic I/\-O device that can be used in very simple manner with \doxyref{booster\-::streambuf}{p.}{classbooster_1_1streambuf} allowing to create iostreams easily. 
+
+\subsection{Member Enumeration Documentation}
+\index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!pos\-\_\-type@{pos\-\_\-type}}
+\index{pos\-\_\-type@{pos\-\_\-type}!booster::io_device@{booster\-::io\-\_\-device}}
+\subsubsection[{pos\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::io\-\_\-device\-::pos\-\_\-type}}\label{classbooster_1_1io__device_ad76eba6aa1fc067f45bd2852fa74e9f3}
+Seek reference \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{set@{set}!booster\-::io\-\_\-device@{booster\-::io\-\_\-device}}\index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!set@{set}}\item[{\em 
+set\label{classbooster_1_1io__device_ad76eba6aa1fc067f45bd2852fa74e9f3a267b90145bc845264dd9ff9174cd2f11}
+}]Set actual position (i.\-e. S\-E\-E\-K\-\_\-\-C\-U\-R) \index{cur@{cur}!booster\-::io\-\_\-device@{booster\-::io\-\_\-device}}\index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!cur@{cur}}\item[{\em 
+cur\label{classbooster_1_1io__device_ad76eba6aa1fc067f45bd2852fa74e9f3abc7c580f938f02afefed9e72d5214211}
+}]Set relatively to current position (i.\-e. S\-E\-E\-K\-\_\-\-C\-U\-R) \index{end@{end}!booster\-::io\-\_\-device@{booster\-::io\-\_\-device}}\index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!end@{end}}\item[{\em 
+end\label{classbooster_1_1io__device_ad76eba6aa1fc067f45bd2852fa74e9f3a3a53100cb165070e6e63f9d1fc50181d}
+}]Set relatively to end of file (i.\-e. S\-E\-E\-K\-\_\-\-E\-N\-D) \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!read@{read}}
+\index{read@{read}!booster::io_device@{booster\-::io\-\_\-device}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\-\_\-t booster\-::io\-\_\-device\-::read (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1io__device_a39d127cfc2eae3b251a13a062291f24c}
+Read {\itshape length} bytes from the stream to buffer {\itshape pos}, return number of bytes actually read. If return value is less then length, it is considered end of file
+
+If the stream is write only, do not implement (returns E\-O\-F by default) \index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!seek@{seek}}
+\index{seek@{seek}!booster::io_device@{booster\-::io\-\_\-device}}
+\subsubsection[{seek}]{\setlength{\rightskip}{0pt plus 5cm}virtual long long booster\-::io\-\_\-device\-::seek (
+\begin{DoxyParamCaption}
+\item[{long}]{long, }
+\item[{{\bf pos\-\_\-type}}]{ = {\ttfamily {\bf set}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1io__device_ab5f97e35200ac085ff34507157f34708}
+Seek the device to {\itshape position} relatively to {\itshape pos}. Return current position in file.
+
+If error occurs return -\/1.
+
+If the stream is not seekable do not reimplement, returns -\/1 by default. \index{booster\-::io\-\_\-device@{booster\-::io\-\_\-device}!write@{write}}
+\index{write@{write}!booster::io_device@{booster\-::io\-\_\-device}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\-\_\-t booster\-::io\-\_\-device\-::write (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{, }
+\item[{size\-\_\-t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1io__device_a8499f152e7b7616b03c33c911737d843}
+Write {\itshape length} bytes to the devise from buffer {\itshape pos}, return number of bytes actually written, if the result is less then {\itshape length}, considered as E\-O\-F.
+
+If the stream is read only, do not implement (returns E\-O\-F by default) 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/streambuf.\-h\end{DoxyCompactItemize}

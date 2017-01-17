@@ -1,0 +1,64 @@
+\section{cppcms\-:\-:base\-\_\-content\-:\-:app\-\_\-guard Class Reference}
+\label{classcppcms_1_1base__content_1_1app__guard}\index{cppcms\-::base\-\_\-content\-::app\-\_\-guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}}
+
+
+Special guard class that allows setting and resetting content's rendeding according to the specific scope.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/base\-\_\-content.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf app\-\_\-guard} ({\bf base\-\_\-content} \&c, {\bf application} \&a)
+\item 
+{\bf app\-\_\-guard} ({\bf base\-\_\-content} \&c, {\bf base\-\_\-content} \&parent)
+\item 
+{\bf $\sim$app\-\_\-guard} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Special guard class that allows setting and resetting content's rendeding according to the specific scope. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::base\-\_\-content\-::app\-\_\-guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}!app\-\_\-guard@{app\-\_\-guard}}
+\index{app\-\_\-guard@{app\-\_\-guard}!cppcms::base_content::app_guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}}
+\subsubsection[{app\-\_\-guard}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::base\-\_\-content\-::app\-\_\-guard\-::app\-\_\-guard (
+\begin{DoxyParamCaption}
+\item[{{\bf base\-\_\-content} \&}]{c, }
+\item[{{\bf application} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1base__content_1_1app__guard_aa4291a024905c14dee1b6f81f433ceb4}
+Initialize set the applicaton {\itshape to} a content {\itshape c} if have not one ready 
+
+References cppcms\-::base\-\_\-content\-::app(), and cppcms\-::base\-\_\-content\-::has\-\_\-app().
+
+\index{cppcms\-::base\-\_\-content\-::app\-\_\-guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}!app\-\_\-guard@{app\-\_\-guard}}
+\index{app\-\_\-guard@{app\-\_\-guard}!cppcms::base_content::app_guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}}
+\subsubsection[{app\-\_\-guard}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::base\-\_\-content\-::app\-\_\-guard\-::app\-\_\-guard (
+\begin{DoxyParamCaption}
+\item[{{\bf base\-\_\-content} \&}]{c, }
+\item[{{\bf base\-\_\-content} \&}]{parent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1base__content_1_1app__guard_a74de13a3a8e77db44307e520ac2a72ed}
+Assign the application to {\itshape c} from the {\itshape parent's} application.
+
+It is assigned if it is not already defined 
+
+References cppcms\-::base\-\_\-content\-::app(), and cppcms\-::base\-\_\-content\-::has\-\_\-app().
+
+\index{cppcms\-::base\-\_\-content\-::app\-\_\-guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}!$\sim$app\-\_\-guard@{$\sim$app\-\_\-guard}}
+\index{$\sim$app\-\_\-guard@{$\sim$app\-\_\-guard}!cppcms::base_content::app_guard@{cppcms\-::base\-\_\-content\-::app\-\_\-guard}}
+\subsubsection[{$\sim$app\-\_\-guard}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::base\-\_\-content\-::app\-\_\-guard\-::$\sim$app\-\_\-guard (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1base__content_1_1app__guard_a561d78a9495c08b6dbe2bbe4b23678e6}
+Reset the application if the content if it was assigned in constructor 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/base\-\_\-content.\-h\end{DoxyCompactItemize}

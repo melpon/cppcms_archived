@@ -1,0 +1,479 @@
+\section{Message Formatting (translation)}
+\label{group__message}\index{Message Formatting (translation)@{Message Formatting (translation)}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+{\bf I/\-O Stream manipulators}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf booster\-::locale\-::gnu\-\_\-gettext}
+\begin{DoxyCompactList}\small\item\em This namespace holds classes that provide G\-N\-U Gettext message catalogs support. \end{DoxyCompactList}\item 
+{\bf booster\-::locale\-::as}
+\begin{DoxyCompactList}\small\item\em This namespace includes all manipulators that can be used on I\-O streams. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$}
+\begin{DoxyCompactList}\small\item\em This facet provides message formatting abilities. \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$}
+\begin{DoxyCompactList}\small\item\em This class represents a message that can be converted to a specific locale message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\-Type {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::char\-\_\-type}
+\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ Char\-Type $>$ {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::string\-\_\-type}
+\item 
+typedef Char\-Type {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::char\-\_\-type}\label{group__message_ga5cb546ceb92830ddf7ea2913e6651b9e}
+
+\begin{DoxyCompactList}\small\item\em The character this message object is used with. \end{DoxyCompactList}\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ char\-\_\-type $>$ {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::string\-\_\-type}\label{group__message_ga90b2267af78f4df23fb621e3c1443707}
+
+\begin{DoxyCompactList}\small\item\em The string type this object can be used with. \end{DoxyCompactList}\item 
+typedef message\-\_\-format$<$ char\-\_\-type $>$ {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::facet\-\_\-type}\label{group__message_ga07188bff8c00be4a1b81323d45525b65}
+
+\begin{DoxyCompactList}\small\item\em The type of the facet the messages are fetched with. \end{DoxyCompactList}\item 
+typedef basic\-\_\-message$<$ char $>$ {\bf booster\-::locale\-::message}
+\item 
+typedef basic\-\_\-message$<$ wchar\-\_\-t $>$ {\bf booster\-::locale\-::wmessage}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::message\-\_\-format} (size\-\_\-t refs=0)
+\item 
+virtual char\-\_\-type const $\ast$ {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::get} (int domain\-\_\-id, char\-\_\-type const $\ast$context, char\-\_\-type const $\ast$id) const =0
+\item 
+virtual char\-\_\-type const $\ast$ {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::get} (int domain\-\_\-id, char\-\_\-type const $\ast$context, char\-\_\-type const $\ast$single\-\_\-id, int n) const =0
+\item 
+virtual int {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::domain} (std\-::string const \&domain) const =0
+\item 
+virtual char\-\_\-type const $\ast$ {\bf booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$\-::convert} (char\-\_\-type const $\ast$msg, string\-\_\-type \&buffer) const =0
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} ()
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (char\-\_\-type const $\ast$id)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (char\-\_\-type const $\ast$single, char\-\_\-type const $\ast$plural, int n)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (char\-\_\-type const $\ast$context, char\-\_\-type const $\ast$id)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (char\-\_\-type const $\ast$context, char\-\_\-type const $\ast$single, char\-\_\-type const $\ast$plural, int n)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (string\-\_\-type const \&id)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (string\-\_\-type const \&single, string\-\_\-type const \&plural, int number)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (string\-\_\-type const \&context, string\-\_\-type const \&id)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (string\-\_\-type const \&context, string\-\_\-type const \&single, string\-\_\-type const \&plural, int number)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::basic\-\_\-message} (basic\-\_\-message const \&other)
+\item 
+basic\-\_\-message const \& {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::operator=} (basic\-\_\-message const \&other)
+\item 
+void {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::swap} (basic\-\_\-message \&other)
+\item 
+{\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::operator string\-\_\-type} () const 
+\item 
+string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::str} () const 
+\item 
+string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::str} (std\-::locale const \&locale) const 
+\item 
+string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::str} (std\-::locale const \&locale, std\-::string const \&domain\-\_\-id) const 
+\item 
+string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::str} (std\-::string const \&domain\-\_\-id) const 
+\item 
+string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::str} (std\-::locale const \&loc, int id) const 
+\item 
+void {\bf booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::write} (std\-::basic\-\_\-ostream$<$ char\-\_\-type $>$ \&out) const 
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \& {\bf booster\-::locale\-::operator$<$$<$} (std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&out, basic\-\_\-message$<$ Char\-Type $>$ const \&msg)
+\end{DoxyCompactItemize}
+\subsection*{Indirect message translation function family}
+\label{_amgrp32a7bab11d00770484c96c0058512efc}%
+\label{group__message_boost_locale_translate_family}%
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (Char\-Type const $\ast$msg)\label{group__message_ga1e19b04292af4a56d7b3b0e204eef9ab}
+
+\begin{DoxyCompactList}\small\item\em Translate a message, {\itshape msg} is not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (Char\-Type const $\ast$context, Char\-Type const $\ast$msg)\label{group__message_gaa6b5e26be335f12706ad100511370271}
+
+\begin{DoxyCompactList}\small\item\em Translate a message in context, {\itshape msg} and {\itshape context} are not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (Char\-Type const $\ast$single, Char\-Type const $\ast$plural, int n)\label{group__message_ga8f7af44648fc76d60414905acced7bab}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message form, {\itshape single} and {\itshape plural} are not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (Char\-Type const $\ast$context, Char\-Type const $\ast$single, Char\-Type const $\ast$plural, int n)\label{group__message_ga3e14314807728ae638ade1ce2d319a11}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message from in constext, {\itshape context}, {\itshape single} and {\itshape plural} are not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&msg)\label{group__message_gabd16e791be7bd808ea346bbe276e1755}
+
+\begin{DoxyCompactList}\small\item\em Translate a message, {\itshape msg} is copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&context, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&msg)\label{group__message_ga8152471156fffd00a8235c6ae72c2108}
+
+\begin{DoxyCompactList}\small\item\em Translate a message in context,{\itshape context} and {\itshape msg} is copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&context, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&single, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&plural, int n)\label{group__message_ga07fdc05d5cffac2d24366df517ecc567}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message form in constext, {\itshape context}, {\itshape single} and {\itshape plural} are copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\basic\-\_\-message$<$ Char\-Type $>$ {\bf booster\-::locale\-::translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&single, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&plural, int n)\label{group__message_ga4790a494bd1f76e839a9e4eeba4ea378}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message form, {\itshape single} and {\itshape plural} are copied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Direct message translation functions family}
+\label{_amgrp365823f5317287b5d67977a7fc724307}%
+\label{group__message_boost_locale_gettext_family}%
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::gettext} (Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::ngettext} (Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::dgettext} (char const $\ast$domain, Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::dngettext} (char const $\ast$domain, Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::pgettext} (Char\-Type const $\ast$context, Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::npgettext} (Char\-Type const $\ast$context, Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::dpgettext} (char const $\ast$domain, Char\-Type const $\ast$context, Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::dnpgettext} (char const $\ast$domain, Char\-Type const $\ast$context, Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module provides message translation functionality, i.\-e. allow your application to speak native language 
+
+\subsection{Typedef Documentation}
+\index{Message Formatting (translation)@{Message Formatting (translation)}!char\-\_\-type@{char\-\_\-type}}
+\index{char\-\_\-type@{char\-\_\-type}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{char\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ typedef Char\-Type {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::char\-\_\-type}\label{group__message_gaf015bcdd33b90c5356b6b67011eb57fb}
+Character type \index{Message Formatting (translation)@{Message Formatting (translation)}!message@{message}}
+\index{message@{message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}typedef basic\-\_\-message$<$char$>$ {\bf booster\-::locale\-::message}}\label{group__message_gaf3f50828c78db8b38441f97a472e6725}
+Convenience typedef for char \index{Message Formatting (translation)@{Message Formatting (translation)}!string\-\_\-type@{string\-\_\-type}}
+\index{string\-\_\-type@{string\-\_\-type}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{string\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ typedef std\-::basic\-\_\-string$<$Char\-Type$>$ {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::string\-\_\-type}\label{group__message_gadfc158fcdd92ecc130d27a12ef7ea7a3}
+String type \index{Message Formatting (translation)@{Message Formatting (translation)}!wmessage@{wmessage}}
+\index{wmessage@{wmessage}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{wmessage}]{\setlength{\rightskip}{0pt plus 5cm}typedef basic\-\_\-message$<$wchar\-\_\-t$>$ {\bf booster\-::locale\-::wmessage}}\label{group__message_ga1f26ee1a1fa899a599a90fa6a10ab0ad}
+Convenience typedef for wchar\-\_\-t 
+
+\subsection{Function Documentation}
+\index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_gad6fc6a7b7db4e43495e071f25566acc5}
+Create default empty message \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_gac4beb390678e882252d78624a4ea2e50}
+Create a simple message from 0 terminated string. The string should exist until the message is destroyed. Generally useful with static constant strings \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{single, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{plural, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_ga17a73648475bee96b05be2843d5bbd02}
+Create a simple plural form message from 0 terminated strings. The strings should exist until the message is destroyed. Generally useful with static constant strings.
+
+{\itshape n} is the number, {\itshape single} and {\itshape plural} are singular and plural forms of the message \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{context, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_ga4bbf924846819f014e973b5210b55fb7}
+Create a simple message from 0 terminated strings, with context information. The string should exist until the message is destroyed. Generally useful with static constant strings \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{context, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{single, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{plural, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_gaedd039db159d3befd1d4d202148b7afa}
+Create a simple plural form message from 0 terminated strings, with context. The strings should exist until the message is destroyed. Generally useful with static constant strings.
+
+{\itshape n} is the number, {\itshape single} and {\itshape plural} are singular and plural forms of the message \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-type} const \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_ga4783257a7ef0e9799bd445d744b63ed8}
+Create a simple message from a string. \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-type} const \&}]{single, }
+\item[{{\bf string\-\_\-type} const \&}]{plural, }
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_ga488d3633e0194e27648ee6582236d15b}
+Create a simple plural form message from strings.
+
+{\itshape n} is the number, {\itshape single} and {\itshape plural} are single and plural forms of the message \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-type} const \&}]{context, }
+\item[{{\bf string\-\_\-type} const \&}]{id}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_gad8ae26d398677c3cc19e6e4b71a57135}
+Create a simple message from a string with context. \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-type} const \&}]{context, }
+\item[{{\bf string\-\_\-type} const \&}]{single, }
+\item[{{\bf string\-\_\-type} const \&}]{plural, }
+\item[{int}]{number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{group__message_ga9fa68ae5ed291530c36ab135e02e720c}
+Create a simple plural form message from strings.
+
+{\itshape n} is the number, {\itshape single} and {\itshape plural} are single and plural forms of the message \index{Message Formatting (translation)@{Message Formatting (translation)}!basic\-\_\-message@{basic\-\_\-message}}
+\index{basic\-\_\-message@{basic\-\_\-message}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{basic\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::basic\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf basic\-\_\-message}$<$ Char\-Type $>$ const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_gaf7695a207a595730b9467f452373cc5c}
+Copy an object \index{Message Formatting (translation)@{Message Formatting (translation)}!convert@{convert}}
+\index{convert@{convert}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ virtual char\-\_\-type const$\ast$ {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::convert (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{msg, }
+\item[{{\bf string\-\_\-type} \&}]{buffer}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{group__message_ga13c6542e4fa898b6936abd7eca05e7de}
+Convert the string {\itshape msg} to target locale's encoding. If {\itshape msg} is already in target encoding it would be returned otherwise the converted string is stored in temporary {\itshape buffer} and buffer.\-c\-\_\-str() is returned.
+
+Note\-: for char\-\_\-type that is char16\-\_\-t, char32\-\_\-t and wchar\-\_\-t it is no-\/op, returns msg \index{Message Formatting (translation)@{Message Formatting (translation)}!dgettext@{dgettext}}
+\index{dgettext@{dgettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{dgettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::dgettext (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{domain, }
+\item[{Char\-Type const $\ast$}]{id, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_gab57d8344e44b2285b376be27d535ee0f}
+Translate message {\itshape id} according to locale {\itshape loc} in domain {\itshape domain} \index{Message Formatting (translation)@{Message Formatting (translation)}!dngettext@{dngettext}}
+\index{dngettext@{dngettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{dngettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::dngettext (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{domain, }
+\item[{Char\-Type const $\ast$}]{s, }
+\item[{Char\-Type const $\ast$}]{p, }
+\item[{int}]{n, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_gaebe3aefc9c367391f9540cad2d6e5674}
+Translate plural form according to locale {\itshape loc} in domain {\itshape domain} \index{Message Formatting (translation)@{Message Formatting (translation)}!dnpgettext@{dnpgettext}}
+\index{dnpgettext@{dnpgettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{dnpgettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::dnpgettext (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{domain, }
+\item[{Char\-Type const $\ast$}]{context, }
+\item[{Char\-Type const $\ast$}]{s, }
+\item[{Char\-Type const $\ast$}]{p, }
+\item[{int}]{n, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_ga683da52e7e036aac5bd76f9d7908071a}
+Translate plural form according to locale {\itshape loc} in domain {\itshape domain} in context {\itshape context} \index{Message Formatting (translation)@{Message Formatting (translation)}!domain@{domain}}
+\index{domain@{domain}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ virtual int {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::domain (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{domain}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{group__message_gaa8a00d0086b338b4ae1533e1866b4363}
+Convert a string that defines {\itshape domain} to the integer id used by {\itshape get} functions \index{Message Formatting (translation)@{Message Formatting (translation)}!dpgettext@{dpgettext}}
+\index{dpgettext@{dpgettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{dpgettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::dpgettext (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{domain, }
+\item[{Char\-Type const $\ast$}]{context, }
+\item[{Char\-Type const $\ast$}]{id, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_gac7c3ef335e591ac7ca88281bcbfb8cbc}
+Translate message {\itshape id} according to locale {\itshape loc} in domain {\itshape domain} in context {\itshape context} \index{Message Formatting (translation)@{Message Formatting (translation)}!get@{get}}
+\index{get@{get}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ virtual char\-\_\-type const$\ast$ {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::get (
+\begin{DoxyParamCaption}
+\item[{int}]{domain\-\_\-id, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{context, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{group__message_gad4ac1100425b6cb679e8272e2d7d1da1}
+This function returns a pointer to the string for a message defined by a {\itshape context} and identification string {\itshape id}. Both create a single key for message lookup in a domain defined by {\itshape domain\-\_\-id}.
+
+If {\itshape context} is N\-U\-L\-L it is not considered to be a part of the key
+
+If a translated string is found, it is returned, otherwise N\-U\-L\-L is returned \index{Message Formatting (translation)@{Message Formatting (translation)}!get@{get}}
+\index{get@{get}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ virtual char\-\_\-type const$\ast$ {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::get (
+\begin{DoxyParamCaption}
+\item[{int}]{domain\-\_\-id, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{context, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{single\-\_\-id, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{group__message_ga1db6b623500bad351b3a1b359fba6f5d}
+This function returns a pointer to the string for a plural message defined by a {\itshape context} and identification string {\itshape single\-\_\-id}.
+
+If {\itshape context} is N\-U\-L\-L it is not considered to be a part of the key
+
+Both create a single key for message lookup in a domain defined {\itshape domain\-\_\-id}. {\itshape n} is used to pick the correct translation string for a specific number.
+
+If a translated string is found, it is returned, otherwise N\-U\-L\-L is returned \index{Message Formatting (translation)@{Message Formatting (translation)}!gettext@{gettext}}
+\index{gettext@{gettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{gettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::gettext (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{id, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_ga7d81d3abf25f31530d2ce059af3e63a1}
+Translate message {\itshape id} according to locale {\itshape loc} \index{Message Formatting (translation)@{Message Formatting (translation)}!message\-\_\-format@{message\-\_\-format}}
+\index{message\-\_\-format@{message\-\_\-format}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{message\-\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::message\-\_\-format}$<$ Char\-Type $>$\-::message\-\_\-format (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{refs = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_gadf2f1ee9a5e80250552ac8430caa61af}
+Default constructor \index{Message Formatting (translation)@{Message Formatting (translation)}!ngettext@{ngettext}}
+\index{ngettext@{ngettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{ngettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::ngettext (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{s, }
+\item[{Char\-Type const $\ast$}]{p, }
+\item[{int}]{n, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_ga6eb8ab1cd45918a74ddaf9d88e0af2a0}
+Translate plural form according to locale {\itshape loc} \index{Message Formatting (translation)@{Message Formatting (translation)}!npgettext@{npgettext}}
+\index{npgettext@{npgettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{npgettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::npgettext (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{context, }
+\item[{Char\-Type const $\ast$}]{s, }
+\item[{Char\-Type const $\ast$}]{p, }
+\item[{int}]{n, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_ga058a17889fb13bc8fb1a25cb7ca534ea}
+Translate plural form according to locale {\itshape loc} in context {\itshape context} \index{Message Formatting (translation)@{Message Formatting (translation)}!operator string\-\_\-type@{operator string\-\_\-type}}
+\index{operator string\-\_\-type@{operator string\-\_\-type}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{operator string\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::operator string\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga565c8da24b6dc83bd61b4333a8b20a25}
+Message class can be explicitly converted to string class \index{Message Formatting (translation)@{Message Formatting (translation)}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-ostream$<$Char\-Type$>$\& booster\-::locale\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&}]{out, }
+\item[{basic\-\_\-message$<$ Char\-Type $>$ const \&}]{msg}
+\end{DoxyParamCaption}
+)}\label{group__message_ga20c8fc97879533af37be23f58bb4243f}
+Translate message {\itshape msg} and write it to stream 
+
+References booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::write().
+
+\index{Message Formatting (translation)@{Message Formatting (translation)}!operator=@{operator=}}
+\index{operator=@{operator=}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ basic\-\_\-message const\& {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf basic\-\_\-message}$<$ Char\-Type $>$ const \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga70890b5e70f15cde337a6e67414c7236}
+Assign other message object to this one \index{Message Formatting (translation)@{Message Formatting (translation)}!pgettext@{pgettext}}
+\index{pgettext@{pgettext}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{pgettext}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::pgettext (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{context, }
+\item[{Char\-Type const $\ast$}]{id, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__message_ga589333e578fdfa65afc0471602b19bc2}
+Translate message {\itshape id} according to locale {\itshape loc} in context {\itshape context} \index{Message Formatting (translation)@{Message Formatting (translation)}!str@{str}}
+\index{str@{str}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga4b2cd7cd89d1d9f730c4afb46f0f21af}
+Translate message to a string in the default global locale, using default domain 
+
+Referenced by booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::operator string\-\_\-type(), booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::str(), and booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$\-::write().
+
+\index{Message Formatting (translation)@{Message Formatting (translation)}!str@{str}}
+\index{str@{str}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{locale}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga66f8a9f35235dc17f5477e0b76a35aa1}
+Translate message to a string in the locale {\itshape locale}, using default domain \index{Message Formatting (translation)@{Message Formatting (translation)}!str@{str}}
+\index{str@{str}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{locale, }
+\item[{std\-::string const \&}]{domain\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_gae75fb2d23810c854e02e3d2d36e5f816}
+Translate message to a string using locale {\itshape locale} and message domain {\itshape domain\-\_\-id} \index{Message Formatting (translation)@{Message Formatting (translation)}!str@{str}}
+\index{str@{str}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{domain\-\_\-id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga54a82f411dcdab9e5ca930f97be6c975}
+Translate message to a string using the default locale and message domain {\itshape domain\-\_\-id} \index{Message Formatting (translation)@{Message Formatting (translation)}!str@{str}}
+\index{str@{str}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ string\-\_\-type {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc, }
+\item[{int}]{id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga56c5e317bf6ccdbf80ec407717e19c40}
+Translate message to a string using locale {\itshape loc} and message domain index {\itshape id} \index{Message Formatting (translation)@{Message Formatting (translation)}!swap@{swap}}
+\index{swap@{swap}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ void {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf basic\-\_\-message}$<$ Char\-Type $>$ \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga08ca6d02f4b6974dd9048d15d88e8e1c}
+Swap two message objects 
+
+Referenced by booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::operator=().
+
+\index{Message Formatting (translation)@{Message Formatting (translation)}!write@{write}}
+\index{write@{write}!Message Formatting (translation)@{Message Formatting (translation)}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type$>$ void {\bf booster\-::locale\-::basic\-\_\-message}$<$ Char\-Type $>$\-::write (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ {\bf char\-\_\-type} $>$ \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{group__message_ga24c22967863a2e044d9dcf9bd8031bce}
+Translate message and write to stream {\itshape out}, using imbued locale and domain set to the stream 
+
+Referenced by booster\-::locale\-::operator$<$$<$(), booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::str(), and booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::write().
+

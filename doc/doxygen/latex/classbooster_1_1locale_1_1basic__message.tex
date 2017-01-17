@@ -1,0 +1,77 @@
+\section{booster\-:\-:locale\-:\-:basic\-\_\-message$<$ Char\-Type $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1basic__message}\index{booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$@{booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$}}
+
+
+This class represents a message that can be converted to a specific locale message.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/message.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\-Type {\bf char\-\_\-type}\label{group__message_ga5cb546ceb92830ddf7ea2913e6651b9e}
+
+\begin{DoxyCompactList}\small\item\em The character this message object is used with. \end{DoxyCompactList}\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ {\bf char\-\_\-type} $>$ {\bf string\-\_\-type}\label{group__message_ga90b2267af78f4df23fb621e3c1443707}
+
+\begin{DoxyCompactList}\small\item\em The string type this object can be used with. \end{DoxyCompactList}\item 
+typedef {\bf message\-\_\-format}$<$ {\bf char\-\_\-type} $>$ {\bf facet\-\_\-type}\label{group__message_ga07188bff8c00be4a1b81323d45525b65}
+
+\begin{DoxyCompactList}\small\item\em The type of the facet the messages are fetched with. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf basic\-\_\-message} ()
+\item 
+{\bf basic\-\_\-message} ({\bf char\-\_\-type} const $\ast$id)
+\item 
+{\bf basic\-\_\-message} ({\bf char\-\_\-type} const $\ast$single, {\bf char\-\_\-type} const $\ast$plural, int n)
+\item 
+{\bf basic\-\_\-message} ({\bf char\-\_\-type} const $\ast$context, {\bf char\-\_\-type} const $\ast$id)
+\item 
+{\bf basic\-\_\-message} ({\bf char\-\_\-type} const $\ast$context, {\bf char\-\_\-type} const $\ast$single, {\bf char\-\_\-type} const $\ast$plural, int n)
+\item 
+{\bf basic\-\_\-message} ({\bf string\-\_\-type} const \&id)
+\item 
+{\bf basic\-\_\-message} ({\bf string\-\_\-type} const \&single, {\bf string\-\_\-type} const \&plural, int number)
+\item 
+{\bf basic\-\_\-message} ({\bf string\-\_\-type} const \&context, {\bf string\-\_\-type} const \&id)
+\item 
+{\bf basic\-\_\-message} ({\bf string\-\_\-type} const \&context, {\bf string\-\_\-type} const \&single, {\bf string\-\_\-type} const \&plural, int number)
+\item 
+{\bf basic\-\_\-message} ({\bf basic\-\_\-message} const \&other)
+\item 
+{\bf basic\-\_\-message} const \& {\bf operator=} ({\bf basic\-\_\-message} const \&other)
+\item 
+void {\bf swap} ({\bf basic\-\_\-message} \&other)
+\item 
+{\bf operator string\-\_\-type} () const 
+\item 
+{\bf string\-\_\-type} {\bf str} () const 
+\item 
+{\bf string\-\_\-type} {\bf str} (std\-::locale const \&locale) const 
+\item 
+{\bf string\-\_\-type} {\bf str} (std\-::locale const \&locale, std\-::string const \&domain\-\_\-id) const 
+\item 
+{\bf string\-\_\-type} {\bf str} (std\-::string const \&domain\-\_\-id) const 
+\item 
+{\bf string\-\_\-type} {\bf str} (std\-::locale const \&loc, int id) const 
+\item 
+void {\bf write} (std\-::basic\-\_\-ostream$<$ {\bf char\-\_\-type} $>$ \&out) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\-Type$>$class booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$}
+
+This class represents a message that can be converted to a specific locale message. 
+
+It holds the original A\-S\-C\-I\-I string that is queried in the dictionary when converting to the output string. The created string may be U\-T\-F-\/8, U\-T\-F-\/16, U\-T\-F-\/32 or other 8-\/bit encoded string according to the target character type and locale encoding. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/message.\-h\end{DoxyCompactItemize}

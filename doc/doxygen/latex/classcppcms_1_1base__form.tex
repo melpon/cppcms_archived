@@ -1,0 +1,112 @@
+\section{cppcms\-:\-:base\-\_\-form Class Reference}
+\label{classcppcms_1_1base__form}\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}}
+
+
+This class is the base class for any form or form widget used in Cpp\-C\-M\-S.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:base\-\_\-form\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.057971cm]{classcppcms_1_1base__form}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf render} ({\bf form\-\_\-context} \&context)=0
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)=0
+\item 
+virtual bool {\bf validate} ()=0
+\item 
+virtual void {\bf clear} ()=0
+\item 
+virtual void {\bf parent} ({\bf base\-\_\-form} $\ast$subform)=0
+\item 
+virtual {\bf base\-\_\-form} $\ast$ {\bf parent} ()=0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is the base class for any form or form widget used in Cpp\-C\-M\-S. 
+
+It provides basic, abstract operations that every widget or form should implement. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}!clear@{clear}}
+\index{clear@{clear}!cppcms::base_form@{cppcms\-::base\-\_\-form}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::base\-\_\-form\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1base__form_a69e995615d0cd577245480eb80ec834a}
+Clear the form from all user provided data. 
+
+Implemented in {\bf cppcms\-::widgets\-::select\-\_\-base} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__base_ac30a6f632f3a423aff9aac4c13d95b6f}, {\bf cppcms\-::widgets\-::select\-\_\-multiple} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__multiple_a8c4d064583a42de69a9eb6400f446174}, {\bf cppcms\-::widgets\-::numeric$<$ T $>$} \doxyref{}{p.}{classcppcms_1_1widgets_1_1numeric_ac8b010ab4af4e999bc63f8f2d6de782f}, {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a957f7c7a63f5ea9489b52c3ec1043b81}, and {\bf cppcms\-::form} \doxyref{}{p.}{classcppcms_1_1form_a9c97ed57900d7404396135bbae33b809}.
+
+\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}!load@{load}}
+\index{load@{load}!cppcms::base_form@{cppcms\-::base\-\_\-form}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::base\-\_\-form\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}
+Load the form information from the provided {\tt http\-::context} {\itshape context}. A user can call this function to load all information from the raw P\-O\-S\-T/\-G\-E\-T data into the internal widget representation. 
+
+Implemented in {\bf cppcms\-::widgets\-::submit} \doxyref{}{p.}{classcppcms_1_1widgets_1_1submit_a9d3c6b1ba7dfc9e1db899dc0067659b1}, {\bf cppcms\-::widgets\-::file} \doxyref{}{p.}{classcppcms_1_1widgets_1_1file_acd5589f0f6a99c6f5590ee2787d407d7}, {\bf cppcms\-::widgets\-::select\-\_\-base} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__base_a8d41cdd6066ce4e37d937905c5807f5a}, {\bf cppcms\-::widgets\-::select\-\_\-multiple} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__multiple_aca348bf9b1f56f8ad4bae380275bd03a}, {\bf cppcms\-::widgets\-::checkbox} \doxyref{}{p.}{classcppcms_1_1widgets_1_1checkbox_a07910eeb823fe4ffd4e32fb8c2d0dc54}, {\bf cppcms\-::widgets\-::numeric$<$ T $>$} \doxyref{}{p.}{classcppcms_1_1widgets_1_1numeric_abe1b3a1f4d16f9a56a5dcf8b3bbff0c5}, {\bf cppcms\-::widgets\-::base\-\_\-text} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__text_a41dc2c33655df59ccdbd680d35793b42}, and {\bf cppcms\-::form} \doxyref{}{p.}{classcppcms_1_1form_a56a59de72f0112b51f068f7511241912}.
+
+\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}!parent@{parent}}
+\index{parent@{parent}!cppcms::base_form@{cppcms\-::base\-\_\-form}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::base\-\_\-form\-::parent (
+\begin{DoxyParamCaption}
+\item[{{\bf base\-\_\-form} $\ast$}]{subform}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1base__form_a10c4c5ff417028c72a919740a868bfcd}
+Set the parent of this form. Used internally. You should not use it. 
+
+Implemented in {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_aacf20e24298b292a833640e601123a07}, and {\bf cppcms\-::form} \doxyref{}{p.}{classcppcms_1_1form_a969d343a9a2a9db291940c12f3412937}.
+
+\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}!parent@{parent}}
+\index{parent@{parent}!cppcms::base_form@{cppcms\-::base\-\_\-form}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf base\-\_\-form}$\ast$ cppcms\-::base\-\_\-form\-::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1base__form_aff998866cd4e17f4c9cf9c7ede1837e5}
+Get the parent of this form. If this is the topmost form, N\-U\-L\-L is returned. 
+
+Implemented in {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a19bb5e10c4e167d6d3f0056d00387264}, and {\bf cppcms\-::form} \doxyref{}{p.}{classcppcms_1_1form_a78aaad925d3f30b10e5a3ccc80bc88bf}.
+
+\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}!render@{render}}
+\index{render@{render}!cppcms::base_form@{cppcms\-::base\-\_\-form}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::base\-\_\-form\-::render (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1base__form_adb1c6edd653196f575fcacb2aa0fd995}
+Render the widget to the output set in {\itshape \doxyref{cppcms\-::form\-\_\-context\-::out()}{p.}{classcppcms_1_1form__context_a2e5e63fa14dd10b59919235ca6ec5f30}} according to the control flags set in {\itshape \doxyref{cppcms\-::form\-\_\-flags}{p.}{structcppcms_1_1form__flags}}. Usually this function is called directly by the template rendering functions. 
+
+Implemented in {\bf cppcms\-::widgets\-::hidden} \doxyref{}{p.}{classcppcms_1_1widgets_1_1hidden_a10e8ebc158a8776c346a567d3f4844df}, {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a4d62e2342bb41a1b80a2ff0af5c9042b}, and {\bf cppcms\-::form} \doxyref{}{p.}{classcppcms_1_1form_a21c66118d0e80a6496ba2c17baf557b6}.
+
+\index{cppcms\-::base\-\_\-form@{cppcms\-::base\-\_\-form}!validate@{validate}}
+\index{validate@{validate}!cppcms::base_form@{cppcms\-::base\-\_\-form}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::base\-\_\-form\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1base__form_af7d0a7b4c760b43ea3161181906ee4d0}
+Validate the form according to defined rules. If all checks are O\-K, true is returned. If some widget or form fails, false is returned. 
+
+Implemented in {\bf cppcms\-::widgets\-::file} \doxyref{}{p.}{classcppcms_1_1widgets_1_1file_addfa723594f3658578787843fa030486}, {\bf cppcms\-::widgets\-::select\-\_\-base} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__base_aa2af8d30009d2e366d0608b9503a6551}, {\bf cppcms\-::widgets\-::select\-\_\-multiple} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__multiple_a0e1c51984aeeb59f5bfa402a5eae2fbf}, {\bf cppcms\-::widgets\-::regex\-\_\-field} \doxyref{}{p.}{classcppcms_1_1widgets_1_1regex__field_a054bf9405d82e1129032b93397ad053e}, {\bf cppcms\-::widgets\-::password} \doxyref{}{p.}{classcppcms_1_1widgets_1_1password_a62059db5f0ff7c43635f2a6ae3455d11}, {\bf cppcms\-::widgets\-::numeric$<$ T $>$} \doxyref{}{p.}{classcppcms_1_1widgets_1_1numeric_a79f8e92aa9991836949978d1b367fe9c}, {\bf cppcms\-::widgets\-::base\-\_\-text} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__text_a8accbd9e605d1e4dc87337afff6d5b38}, {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}, and {\bf cppcms\-::form} \doxyref{}{p.}{classcppcms_1_1form_a268423c0c006cddde3fea2f6183bf487}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

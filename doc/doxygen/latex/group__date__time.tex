@@ -1,0 +1,112 @@
+\section{Date, Time, Timezone and Calendar manipulations}
+\label{group__date__time}\index{Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf booster\-::locale\-::period}
+\begin{DoxyCompactList}\small\item\em Namespace that contains various types for manipulation with dates. \end{DoxyCompactList}\item 
+{\bf booster\-::locale\-::time\-\_\-zone}
+\begin{DoxyCompactList}\small\item\em namespace that holds functions for operating with global time zone \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\-::locale\-::date\-\_\-time\-\_\-error}
+\begin{DoxyCompactList}\small\item\em This error is thrown in case of invalid state that occurred. \end{DoxyCompactList}\item 
+struct {\bf booster\-::locale\-::date\-\_\-time\-\_\-period}
+\begin{DoxyCompactList}\small\item\em This class represents a pair of period\-\_\-type and the integer values that describes its amount. For example 3 days or 4 years. \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}
+\begin{DoxyCompactList}\small\item\em this class that represents a set of periods, \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::calendar}
+\begin{DoxyCompactList}\small\item\em this class provides an access to general calendar information. \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::date\-\_\-time}
+\begin{DoxyCompactList}\small\item\em this class represents a date time and allows to perform various operation according to the locale settings. \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::date\-\_\-time\-\_\-duration}
+\begin{DoxyCompactList}\small\item\em This class represents a period\-: a pair of two \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+date\-\_\-time\-\_\-period\-\_\-set {\bf booster\-::locale\-::operator+} (date\-\_\-time\-\_\-period\-\_\-set const \&a, date\-\_\-time\-\_\-period\-\_\-set const \&b)
+\item 
+date\-\_\-time\-\_\-period\-\_\-set {\bf booster\-::locale\-::operator-\/} (date\-\_\-time\-\_\-period\-\_\-set const \&a, date\-\_\-time\-\_\-period\-\_\-set const \&b)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \& {\bf booster\-::locale\-::operator$<$$<$} (std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&out, date\-\_\-time const \&t)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-istream$<$ Char\-Type $>$ \& {\bf booster\-::locale\-::operator$>$$>$} (std\-::basic\-\_\-istream$<$ Char\-Type $>$ \&in, date\-\_\-time \&t)
+\item 
+date\-\_\-time\-\_\-duration {\bf booster\-::locale\-::operator-\/} (date\-\_\-time const \&later, date\-\_\-time const \&earlier)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module provides various calendar, timezone and date time services 
+
+\subsection{Function Documentation}
+\index{Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}!operator+@{operator+}}
+\index{operator+@{operator+}!Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}date\-\_\-time\-\_\-period\-\_\-set booster\-::locale\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{date\-\_\-time\-\_\-period\-\_\-set const \&}]{a, }
+\item[{date\-\_\-time\-\_\-period\-\_\-set const \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__date__time_gabc5bab4c33ac439e2f5aef96988554bd}
+Append two periods sets. Note this operator is not commutative 
+
+References booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::add(), and booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::size().
+
+\index{Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}date\-\_\-time\-\_\-period\-\_\-set booster\-::locale\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{date\-\_\-time\-\_\-period\-\_\-set const \&}]{a, }
+\item[{date\-\_\-time\-\_\-period\-\_\-set const \&}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__date__time_ga05efee16420d9fbaf9fae4f4339b7c98}
+Append two period sets when all periods of set {\bfseries change} their sign 
+
+References booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::add(), and booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::size().
+
+\index{Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}date\-\_\-time\-\_\-duration booster\-::locale\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{date\-\_\-time const \&}]{later, }
+\item[{date\-\_\-time const \&}]{earlier}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{group__date__time_ga42f9d016f9cd71640a2d09a70da408c0}
+Calculates the difference between two dates, the left operand is a later point on time line. Returns \doxyref{date\-\_\-time\-\_\-duration}{p.}{classbooster_1_1locale_1_1date__time__duration} object. \index{Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-ostream$<$Char\-Type$>$\& booster\-::locale\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&}]{out, }
+\item[{date\-\_\-time const \&}]{t}
+\end{DoxyParamCaption}
+)}\label{group__date__time_gab320b5ed42594f946aa3846ab0c20616}
+Writes \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} {\itshape t} to output stream {\itshape out}.
+
+This function uses locale, calendar and time zone of the target stream {\itshape in}.
+
+For example\-: 
+\begin{DoxyCode}
+date\_time now(time(0),hebrew\_calendar)
+cout << "Year: " << period::year(now) <<" Full Date:"<< now;
+\end{DoxyCode}
+
+
+The output may be Year\-:5770 Full Date\-:Jan 1, 2010 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::date\-\_\-time\-::time().
+
+\index{Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Date, Time, Timezone and Calendar manipulations@{Date, Time, Timezone and Calendar manipulations}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-istream$<$Char\-Type$>$\& booster\-::locale\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-istream$<$ Char\-Type $>$ \&}]{in, }
+\item[{date\-\_\-time \&}]{t}
+\end{DoxyParamCaption}
+)}\label{group__date__time_gaa0034fd74b4847e8f43a088771cc9a4d}
+Reads \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} {\itshape t} from output stream {\itshape in} 
+
+This function uses locale, calendar and time zone of the source stream {\itshape in}. 
+
+References booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags(), booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::date\-\_\-time\-::time().
+

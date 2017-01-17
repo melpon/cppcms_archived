@@ -1,0 +1,83 @@
+\section{cppcms\-:\-:serialization\-\_\-traits$<$ Object $>$ Struct Template Reference}
+\label{structcppcms_1_1serialization__traits}\index{cppcms\-::serialization\-\_\-traits$<$ Object $>$@{cppcms\-::serialization\-\_\-traits$<$ Object $>$}}
+
+
+This is the traits class for serialization traits.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/serialization\-\_\-classes.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf load} (std\-::string const \&serialized\-\_\-object, Object \&real\-\_\-object)
+\item 
+static void {\bf save} (Object const \&real\-\_\-object, std\-::string \&serialized\-\_\-object)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Object$>$struct cppcms\-::serialization\-\_\-traits$<$ Object $>$}
+
+This is the traits class for serialization traits. 
+
+It allows user to use arbitrary serialization libraries or use its own serialization rules, for example you can use boost\-::serialization.
+
+For this purpose user should specialize the \doxyref{serialization\-\_\-traits}{p.}{structcppcms_1_1serialization__traits} struct for his type.
+
+For example\-: We want to allow a serialization of a point class\-:
+
+
+\begin{DoxyCode}
+/ \textcolor{keyword}{namespace }cppcms \{
+    \textcolor{keyword}{template}<>
+    \textcolor{keyword}{struct }serialization\_traits<point> \{
+  
+      \textcolor{keywordtype}{void} load(std::string \textcolor{keyword}{const} &serialized\_object,point &real\_object)
+      \{
+           std::stringstream ss(serialized\_object);
+           ss >> real\_object.x >> real\_object.y;
+         \}
+         \textcolor{keywordtype}{void} save(point \textcolor{keyword}{const} &real\_object,std::string &serialized\_object)
+         \{
+           std::stringstream ss;
+           ss << real\_object.x << \textcolor{charliteral}{' '} << real\_object.y;
+           serialized\_object = ss.str();
+         \}
+    \};
+  \} \textcolor{comment}{// cppcms}
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::serialization\-\_\-traits@{cppcms\-::serialization\-\_\-traits}!load@{load}}
+\index{load@{load}!cppcms::serialization_traits@{cppcms\-::serialization\-\_\-traits}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ static void {\bf cppcms\-::serialization\-\_\-traits}$<$ Object $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{serialized\-\_\-object, }
+\item[{Object \&}]{real\-\_\-object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{structcppcms_1_1serialization__traits_ae7e5ac1fb11c1b7d16e0e36a42c1bb3d}
+Load {\itshape real\-\_\-object} from the {\itshape serialized\-\_\-object} representation (std\-::string) 
+
+Referenced by cppcms\-::session\-\_\-interface\-::fetch\-\_\-data(), and cppcms\-::cache\-\_\-interface\-::fetch\-\_\-data().
+
+\index{cppcms\-::serialization\-\_\-traits@{cppcms\-::serialization\-\_\-traits}!save@{save}}
+\index{save@{save}!cppcms::serialization_traits@{cppcms\-::serialization\-\_\-traits}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ static void {\bf cppcms\-::serialization\-\_\-traits}$<$ Object $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{Object const \&}]{real\-\_\-object, }
+\item[{std\-::string \&}]{serialized\-\_\-object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{structcppcms_1_1serialization__traits_a2ce806b83fd214dc58f3f00fa70c0713}
+Save {\itshape real\-\_\-object} to the {\itshape serialized\-\_\-object} representation (std\-::string) 
+
+Referenced by cppcms\-::session\-\_\-interface\-::store\-\_\-data(), and cppcms\-::cache\-\_\-interface\-::store\-\_\-data().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/serialization\-\_\-classes.\-h\end{DoxyCompactItemize}

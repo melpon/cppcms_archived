@@ -1,0 +1,48 @@
+\section{cppcms\-:\-:sessions\-:\-:encryptor\-\_\-factory Class Reference}
+\label{classcppcms_1_1sessions_1_1encryptor__factory}\index{cppcms\-::sessions\-::encryptor\-\_\-factory@{cppcms\-::sessions\-::encryptor\-\_\-factory}}
+
+
+This is an interface for an object that creates new encryptors.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-cookies.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::auto\-\_\-ptr$<$ {\bf encryptor} $>$ {\bf get} ()=0
+\item 
+virtual {\bf $\sim$encryptor\-\_\-factory} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is an interface for an object that creates new encryptors. 
+
+This class must be thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::sessions\-::encryptor\-\_\-factory@{cppcms\-::sessions\-::encryptor\-\_\-factory}!$\sim$encryptor\-\_\-factory@{$\sim$encryptor\-\_\-factory}}
+\index{$\sim$encryptor\-\_\-factory@{$\sim$encryptor\-\_\-factory}!cppcms::sessions::encryptor_factory@{cppcms\-::sessions\-::encryptor\-\_\-factory}}
+\subsubsection[{$\sim$encryptor\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::sessions\-::encryptor\-\_\-factory\-::$\sim$encryptor\-\_\-factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1encryptor__factory_a218ecc309922e59dc8f8db57b87182ed}
+Destructor -\/ cleanup everything 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::sessions\-::encryptor\-\_\-factory@{cppcms\-::sessions\-::encryptor\-\_\-factory}!get@{get}}
+\index{get@{get}!cppcms::sessions::encryptor_factory@{cppcms\-::sessions\-::encryptor\-\_\-factory}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::auto\-\_\-ptr$<${\bf encryptor}$>$ cppcms\-::sessions\-::encryptor\-\_\-factory\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1encryptor__factory_acbdd9228dc8036809270e007e7042b76}
+Return a pointer to a newly created encryptor. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-cookies.\-h\end{DoxyCompactItemize}

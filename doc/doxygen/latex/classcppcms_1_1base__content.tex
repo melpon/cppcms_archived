@@ -1,0 +1,82 @@
+\section{cppcms\-:\-:base\-\_\-content Class Reference}
+\label{classcppcms_1_1base__content}\index{cppcms\-::base\-\_\-content@{cppcms\-::base\-\_\-content}}
+
+
+This is a simple polymorphic class that every content for templates rendering should be derided from it. It does not carry much information with exception of R\-T\-T\-I that allows type-\/safe casting of user provided content instances to target content class that is used by specific template.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/base\-\_\-content.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf app\-\_\-guard}
+\begin{DoxyCompactList}\small\item\em Special guard class that allows setting and resetting content's rendeding according to the specific scope. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries base\-\_\-content} ({\bf base\-\_\-content} const \&)\label{classcppcms_1_1base__content_aba96310a3514bab82d71da66c782ee8c}
+
+\item 
+{\bf base\-\_\-content} const \& {\bfseries operator=} ({\bf base\-\_\-content} const \&)\label{classcppcms_1_1base__content_a4c3460503272387cbfd12f0bb9ab04b5}
+
+\item 
+{\bf application} \& {\bf app} ()
+\item 
+void {\bf app} ({\bf application} \&app)
+\item 
+void {\bf reset\-\_\-app} ()
+\item 
+bool {\bf has\-\_\-app} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a simple polymorphic class that every content for templates rendering should be derided from it. It does not carry much information with exception of R\-T\-T\-I that allows type-\/safe casting of user provided content instances to target content class that is used by specific template. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::base\-\_\-content@{cppcms\-::base\-\_\-content}!app@{app}}
+\index{app@{app}!cppcms::base_content@{cppcms\-::base\-\_\-content}}
+\subsubsection[{app}]{\setlength{\rightskip}{0pt plus 5cm}{\bf application}\& cppcms\-::base\-\_\-content\-::app (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1base__content_ada3ec851082b722d9a5cca75db6002e9}
+Get the application that renders current content, throw \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error} if the application was not set 
+
+Referenced by cppcms\-::base\-\_\-content\-::app\-\_\-guard\-::app\-\_\-guard().
+
+\index{cppcms\-::base\-\_\-content@{cppcms\-::base\-\_\-content}!app@{app}}
+\index{app@{app}!cppcms::base_content@{cppcms\-::base\-\_\-content}}
+\subsubsection[{app}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::base\-\_\-content\-::app (
+\begin{DoxyParamCaption}
+\item[{{\bf application} \&}]{app}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1base__content_afb771b04d698c80e5647310ccaf2f54f}
+Set the application that renders current
+
+Called automatically by \doxyref{application\-::render}{p.}{classcppcms_1_1application_a46054c0f0e55b2638cc73fc8eb07fe4f} \index{cppcms\-::base\-\_\-content@{cppcms\-::base\-\_\-content}!has\-\_\-app@{has\-\_\-app}}
+\index{has\-\_\-app@{has\-\_\-app}!cppcms::base_content@{cppcms\-::base\-\_\-content}}
+\subsubsection[{has\-\_\-app}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::base\-\_\-content\-::has\-\_\-app (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1base__content_a237b1ea01dfbff4fd5722c84fdc8f280}
+Returns true of the application is assigned 
+
+Referenced by cppcms\-::base\-\_\-content\-::app\-\_\-guard\-::app\-\_\-guard().
+
+\index{cppcms\-::base\-\_\-content@{cppcms\-::base\-\_\-content}!reset\-\_\-app@{reset\-\_\-app}}
+\index{reset\-\_\-app@{reset\-\_\-app}!cppcms::base_content@{cppcms\-::base\-\_\-content}}
+\subsubsection[{reset\-\_\-app}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::base\-\_\-content\-::reset\-\_\-app (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1base__content_a9adc5be937d264fcd2ebf5d17b25cdb7}
+Resets the application 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/base\-\_\-content.\-h\end{DoxyCompactItemize}

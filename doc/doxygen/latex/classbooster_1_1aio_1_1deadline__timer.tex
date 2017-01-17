@@ -1,0 +1,156 @@
+\section{booster\-:\-:aio\-:\-:deadline\-\_\-timer Class Reference}
+\label{classbooster_1_1aio_1_1deadline__timer}\index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}}
+
+
+A timer object.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/deadline\-\_\-timer.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:deadline\-\_\-timer\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1aio_1_1deadline__timer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf deadline\-\_\-timer} ()
+\item 
+{\bf deadline\-\_\-timer} ({\bf io\-\_\-service} \&srv)
+\item 
+{\bf io\-\_\-service} \& {\bf get\-\_\-io\-\_\-service} ()
+\item 
+void {\bf set\-\_\-io\-\_\-service} ({\bf io\-\_\-service} \&srv)
+\item 
+void {\bf reset\-\_\-io\-\_\-service} ()
+\item 
+void {\bf expires\-\_\-from\-\_\-now} ({\bf ptime} t)
+\item 
+{\bf ptime} {\bf expires\-\_\-from\-\_\-now} ()
+\item 
+void {\bf expires\-\_\-at} ({\bf ptime} t)
+\item 
+{\bf ptime} {\bf expires\-\_\-at} ()
+\item 
+void {\bf wait} ()
+\item 
+void {\bf async\-\_\-wait} ({\bf event\-\_\-handler} const \&h)
+\item 
+void {\bf cancel} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries waiter}\label{classbooster_1_1aio_1_1deadline__timer_a5c2d8ad3dc03a2fcae52cb8a99db61cc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A timer object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!deadline\-\_\-timer@{deadline\-\_\-timer}}
+\index{deadline\-\_\-timer@{deadline\-\_\-timer}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{deadline\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::deadline\-\_\-timer\-::deadline\-\_\-timer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a10c5a351425da3102852dd5749d1d2b0}
+Create a new timer object \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!deadline\-\_\-timer@{deadline\-\_\-timer}}
+\index{deadline\-\_\-timer@{deadline\-\_\-timer}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{deadline\-\_\-timer}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::deadline\-\_\-timer\-::deadline\-\_\-timer (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_af5421f825484cd6928faed18c161a56f}
+Create a new timer object connected to the \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} {\itshape srv} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!async\-\_\-wait@{async\-\_\-wait}}
+\index{async\-\_\-wait@{async\-\_\-wait}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{async\-\_\-wait}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::async\-\_\-wait (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a792d60c0eb9f04d3f3a4bf54e6583c5c}
+Wait asynchronously for the timer.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via {\itshape h} \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!cancel@{cancel}}
+\index{cancel@{cancel}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{cancel}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::cancel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a056b1472d6c76b9688f6d94240695d26}
+Cancel asynchronous operation. The active handler is immediately scheduled for execution with booster\-::aio\-::aio\-\_\-error\-::cancel error code in booster\-::aio\-::aio\-\_\-error\-\_\-cat category.
+
+It allows to distinguish between operation cancellation and normal completion \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!expires\-\_\-at@{expires\-\_\-at}}
+\index{expires\-\_\-at@{expires\-\_\-at}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{expires\-\_\-at}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::expires\-\_\-at (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime}}]{t}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a4b581b931e0f9cb1039e54b795d6baf1}
+Set an absolute expiration time
+
+If the function is called during the wait operation the behavior is undefined \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!expires\-\_\-at@{expires\-\_\-at}}
+\index{expires\-\_\-at@{expires\-\_\-at}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{expires\-\_\-at}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ptime} booster\-::aio\-::deadline\-\_\-timer\-::expires\-\_\-at (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_ae465226b8b180698d640cbf40e9d5628}
+Get an absolute expiration time \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!expires\-\_\-from\-\_\-now@{expires\-\_\-from\-\_\-now}}
+\index{expires\-\_\-from\-\_\-now@{expires\-\_\-from\-\_\-now}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{expires\-\_\-from\-\_\-now}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::expires\-\_\-from\-\_\-now (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime}}]{t}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a83e31e7cd377e0167c0ba5e4e04abe28}
+Set an expiration time relativelty to the current point with an offset {\itshape t} 
+
+If the function is called during the wait operation the behavior is undefined \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!expires\-\_\-from\-\_\-now@{expires\-\_\-from\-\_\-now}}
+\index{expires\-\_\-from\-\_\-now@{expires\-\_\-from\-\_\-now}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{expires\-\_\-from\-\_\-now}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ptime} booster\-::aio\-::deadline\-\_\-timer\-::expires\-\_\-from\-\_\-now (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a92a91be95e439c8e367fa7883801ab86}
+Get an expiration time relativelty to the current point with an offset {\itshape t} \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!get\-\_\-io\-\_\-service@{get\-\_\-io\-\_\-service}}
+\index{get\-\_\-io\-\_\-service@{get\-\_\-io\-\_\-service}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{get\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf io\-\_\-service}\& booster\-::aio\-::deadline\-\_\-timer\-::get\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_af38f6201fba327069f89292839d42bf2}
+Returns the connected \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}, throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if no \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} connected \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!reset\-\_\-io\-\_\-service@{reset\-\_\-io\-\_\-service}}
+\index{reset\-\_\-io\-\_\-service@{reset\-\_\-io\-\_\-service}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{reset\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::reset\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a38864af40a6153479fbd1b0874d5b180}
+Unsets the \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. Cancels all pending asynchronous operations on the connected \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!set\-\_\-io\-\_\-service@{set\-\_\-io\-\_\-service}}
+\index{set\-\_\-io\-\_\-service@{set\-\_\-io\-\_\-service}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{set\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::set\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_aee4978be7d5c43cd4627a16df6b7da69}
+Sets new \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. Cancels all pending asynchronous operations on the connected \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. \index{booster\-::aio\-::deadline\-\_\-timer@{booster\-::aio\-::deadline\-\_\-timer}!wait@{wait}}
+\index{wait@{wait}!booster::aio::deadline_timer@{booster\-::aio\-::deadline\-\_\-timer}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::deadline\-\_\-timer\-::wait (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1deadline__timer_a4f22f7875d1ae32af184937456a5f084}
+Wait synchronously for the timer 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/deadline\-\_\-timer.\-h\end{DoxyCompactItemize}

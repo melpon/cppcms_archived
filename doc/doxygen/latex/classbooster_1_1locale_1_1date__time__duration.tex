@@ -1,0 +1,98 @@
+\section{booster\-:\-:locale\-:\-:date\-\_\-time\-\_\-duration Class Reference}
+\label{classbooster_1_1locale_1_1date__time__duration}\index{booster\-::locale\-::date\-\_\-time\-\_\-duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}}
+
+
+This class represents a period\-: a pair of two \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} objects.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf date\-\_\-time\-\_\-duration} ({\bf date\-\_\-time} const \&first, {\bf date\-\_\-time} const \&second)
+\item 
+int {\bf get} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf operator/} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf start} () const 
+\item 
+{\bf date\-\_\-time} const \& {\bf end} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a period\-: a pair of two \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} objects. 
+
+It is generally used as syntactic sugar to calculate difference between two dates.
+
+Note\-: it stores references to the original objects, so it is not recommended to be used outside of the equation you calculate the difference in. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}!date\-\_\-time\-\_\-duration@{date\-\_\-time\-\_\-duration}}
+\index{date\-\_\-time\-\_\-duration@{date\-\_\-time\-\_\-duration}!booster::locale::date_time_duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}}
+\subsubsection[{date\-\_\-time\-\_\-duration}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-\_\-duration\-::date\-\_\-time\-\_\-duration (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{first, }
+\item[{{\bf date\-\_\-time} const \&}]{second}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__duration_a5cf6a58854ecc278a35644f9bd843a8f}
+Create an object were {\itshape first} represents earlier point on time line and {\itshape second} is later point. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}!end@{end}}
+\index{end@{end}!booster::locale::date_time_duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-\_\-duration\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__duration_a60fcd4b77044604399d0186584675406}
+Get ending point 
+
+Referenced by get(), and operator/().
+
+\index{booster\-::locale\-::date\-\_\-time\-\_\-duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}!get@{get}}
+\index{get@{get}!booster::locale::date_time_duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-\_\-duration\-::get (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__duration_a1d1c1150236727cd182d85b45713ff14}
+find a difference in terms of period\-\_\-type {\itshape f} 
+
+References booster\-::locale\-::date\-\_\-time\-::difference(), end(), and start().
+
+
+
+Referenced by booster\-::locale\-::period\-::am\-\_\-pm(), booster\-::locale\-::period\-::day(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-week(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-week\-\_\-in\-\_\-month(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-week\-\_\-local(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-year(), booster\-::locale\-::period\-::era(), booster\-::locale\-::period\-::extended\-\_\-year(), booster\-::locale\-::period\-::first\-\_\-day\-\_\-of\-\_\-week(), booster\-::locale\-::period\-::hour(), booster\-::locale\-::period\-::hour\-\_\-12(), booster\-::locale\-::period\-::minute(), booster\-::locale\-::period\-::month(), booster\-::locale\-::period\-::second(), booster\-::locale\-::period\-::week\-\_\-of\-\_\-month(), booster\-::locale\-::period\-::week\-\_\-of\-\_\-year(), and booster\-::locale\-::period\-::year().
+
+\index{booster\-::locale\-::date\-\_\-time\-\_\-duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}!operator/@{operator/}}
+\index{operator/@{operator/}!booster::locale::date_time_duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-\_\-duration\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__duration_a2533306f6d7924567b65f9c3890b8e45}
+Syntactic sugar for get(f) 
+
+References booster\-::locale\-::date\-\_\-time\-::difference(), end(), and start().
+
+\index{booster\-::locale\-::date\-\_\-time\-\_\-duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}!start@{start}}
+\index{start@{start}!booster::locale::date_time_duration@{booster\-::locale\-::date\-\_\-time\-\_\-duration}}
+\subsubsection[{start}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-\_\-duration\-::start (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__duration_a82dd7a774c3ba26615ea5ab996be2db9}
+Get starting point 
+
+Referenced by get(), and operator/().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time.\-h\end{DoxyCompactItemize}

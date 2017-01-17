@@ -1,0 +1,156 @@
+\section{cppcms\-:\-:http\-:\-:content\-\_\-type Class Reference}
+\label{classcppcms_1_1http_1_1content__type}\index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}}
+
+
+Class that represents parsed Content-\/\-Type header, this is immutable class. Once it is created its values does not change.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/http\-\_\-content\-\_\-type.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf type} () const 
+\item 
+std\-::string {\bf subtype} () const 
+\item 
+std\-::string {\bf media\-\_\-type} () const 
+\item 
+std\-::string {\bf charset} () const 
+\item 
+std\-::map$<$ std\-::string, \\*
+std\-::string $>$ {\bf parameters} () const 
+\item 
+std\-::string {\bf parameter\-\_\-by\-\_\-key} (std\-::string const \&key) const 
+\item 
+bool {\bf parameter\-\_\-is\-\_\-set} (std\-::string const \&key) const 
+\item 
+{\bf content\-\_\-type} (std\-::string const \&ct)
+\item 
+{\bf content\-\_\-type} (char const $\ast$ct)
+\item 
+{\bf content\-\_\-type} (char const $\ast$begin, char const $\ast$end)
+\item 
+{\bf content\-\_\-type} ()
+\item 
+{\bf content\-\_\-type} ({\bf content\-\_\-type} const \&)
+\item 
+{\bf content\-\_\-type} const \& {\bf operator=} ({\bf content\-\_\-type} const \&)
+\item 
+{\bf $\sim$content\-\_\-type} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents parsed Content-\/\-Type header, this is immutable class. Once it is created its values does not change. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::content\-\_\-type\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{ct}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_a8ca32018b9f26d6d36d01644325bc1be}
+Parse content type {\itshape ct} and create the class \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::content\-\_\-type\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{ct}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_a432f9bf9ac47a98c77c3db61ccab897c}
+Parse content type {\itshape ct} and create the class \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::content\-\_\-type\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_aab6c2029cd156f3ca473ebabbbcabcc6}
+Parse content type in range [begin,end) and create the class \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::content\-\_\-type\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_ac0a5db595e4e3aafed2c01d693678c02}
+Empty one... \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::content\-\_\-type\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{{\bf content\-\_\-type} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_a83798fd889f5949a3476424213fa3bf8}
+Copy constructor \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!$\sim$content\-\_\-type@{$\sim$content\-\_\-type}}
+\index{$\sim$content\-\_\-type@{$\sim$content\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{$\sim$content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::content\-\_\-type\-::$\sim$content\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_a3cfc56a4071faeef2dfba42b324d169f}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!charset@{charset}}
+\index{charset@{charset}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{charset}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::content\-\_\-type\-::charset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_a265c09ef5ae8c82c7371398011b55de5}
+Charset parameter, if given, for example, for \char`\"{}text/html; charset=\-U\-T\-F-\/8\char`\"{} it would be \char`\"{}\-U\-T\-F-\/8\char`\"{}. If charset is not specified, it would return an empty string \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!media\-\_\-type@{media\-\_\-type}}
+\index{media\-\_\-type@{media\-\_\-type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{media\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::content\-\_\-type\-::media\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_a67114242a60b8cab2787ad97f2104fba}
+The full media type of content type, for example, for \char`\"{}text/html; charset=\-U\-T\-F-\/8\char`\"{} it would be \char`\"{}text/html\char`\"{} in lower case \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf content\-\_\-type} const\& cppcms\-::http\-::content\-\_\-type\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf content\-\_\-type} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1content__type_a075af9ec4d38104d069da618a8ec6c4e}
+Assignment operator \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!parameter\-\_\-by\-\_\-key@{parameter\-\_\-by\-\_\-key}}
+\index{parameter\-\_\-by\-\_\-key@{parameter\-\_\-by\-\_\-key}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{parameter\-\_\-by\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::content\-\_\-type\-::parameter\-\_\-by\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_a84436875c61d1da495dc2d2961f3539d}
+Get parameter's value by key (should be in lowercase), returns empty string if not set \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!parameter\-\_\-is\-\_\-set@{parameter\-\_\-is\-\_\-set}}
+\index{parameter\-\_\-is\-\_\-set@{parameter\-\_\-is\-\_\-set}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{parameter\-\_\-is\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::http\-::content\-\_\-type\-::parameter\-\_\-is\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_a8b26f1daf90f5d45067bb96ee1782c64}
+Check if the parameter is set using key (should be in lowercase) \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!parameters@{parameters}}
+\index{parameters@{parameters}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{parameters}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string,std\-::string$>$ cppcms\-::http\-::content\-\_\-type\-::parameters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_ac79a6ec633d805a1b479c6ccd8c1dc20}
+All parameters, all parameter keys are in lower case, the values are given as is. \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!subtype@{subtype}}
+\index{subtype@{subtype}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{subtype}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::content\-\_\-type\-::subtype (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_a98f4bdf669f9511c5b0acddf113eba6d}
+The subtype part of content type, for example, for \char`\"{}text/html; charset=\-U\-T\-F-\/8\char`\"{} it would be \char`\"{}html\char`\"{} in lower case \index{cppcms\-::http\-::content\-\_\-type@{cppcms\-::http\-::content\-\_\-type}!type@{type}}
+\index{type@{type}!cppcms::http::content_type@{cppcms\-::http\-::content\-\_\-type}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::content\-\_\-type\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1content__type_a77fd1a4dc12b840e952bd28e1761b5fa}
+The type part of content type, for example, for \char`\"{}text/html; charset=\-U\-T\-F-\/8\char`\"{} it would be \char`\"{}text\char`\"{} in lower case 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\-\_\-content\-\_\-type.\-h\end{DoxyCompactItemize}

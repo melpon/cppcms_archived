@@ -1,0 +1,58 @@
+\section{booster\-:\-:condition\-\_\-variable Class Reference}
+\label{classbooster_1_1condition__variable}\index{booster\-::condition\-\_\-variable@{booster\-::condition\-\_\-variable}}
+
+
+This is conditional variable object.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf wait} ({\bf unique\-\_\-lock}$<$ {\bf mutex} $>$ \&m)
+\item 
+void {\bf notify\-\_\-one} ()
+\item 
+void {\bf notify\-\_\-all} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is conditional variable object. 
+
+For detailed description of the concept read {\tt http\-://en.\-wikipedia.\-org/wiki/\-Monitor\-\_\-(synchronization)} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::condition\-\_\-variable@{booster\-::condition\-\_\-variable}!notify\-\_\-all@{notify\-\_\-all}}
+\index{notify\-\_\-all@{notify\-\_\-all}!booster::condition_variable@{booster\-::condition\-\_\-variable}}
+\subsubsection[{notify\-\_\-all}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::condition\-\_\-variable\-::notify\-\_\-all (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1condition__variable_a20df4804871906279c1d8ba8761e5a14}
+Notify all waiting process on the condition. If no process waits then the notification would be ignored \index{booster\-::condition\-\_\-variable@{booster\-::condition\-\_\-variable}!notify\-\_\-one@{notify\-\_\-one}}
+\index{notify\-\_\-one@{notify\-\_\-one}!booster::condition_variable@{booster\-::condition\-\_\-variable}}
+\subsubsection[{notify\-\_\-one}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::condition\-\_\-variable\-::notify\-\_\-one (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1condition__variable_a034a1848fb8f9ba626f357d846b3f1dc}
+Notify exactly one waiting process on the condition. If no process waits then the notification would be ignored \index{booster\-::condition\-\_\-variable@{booster\-::condition\-\_\-variable}!wait@{wait}}
+\index{wait@{wait}!booster::condition_variable@{booster\-::condition\-\_\-variable}}
+\subsubsection[{wait}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::condition\-\_\-variable\-::wait (
+\begin{DoxyParamCaption}
+\item[{{\bf unique\-\_\-lock}$<$ {\bf mutex} $>$ \&}]{m}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1condition__variable_acf588964e6df14e1d2ba90de5d0dab1b}
+Wait for the condition atomically unlocking the mutex referenced by m.
+
+When the condition occurs the lock on the mutex would be acquired again.
+
+Note it is unspecified whether suspicious wakes can occur. It is good idea to check whether the condition hold after this function returns. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

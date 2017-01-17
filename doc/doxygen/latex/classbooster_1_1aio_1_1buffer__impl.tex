@@ -1,0 +1,89 @@
+\section{booster\-:\-:aio\-:\-:buffer\-\_\-impl$<$ Pointer $>$ Class Template Reference}
+\label{classbooster_1_1aio_1_1buffer__impl}\index{booster\-::aio\-::buffer\-\_\-impl$<$ Pointer $>$@{booster\-::aio\-::buffer\-\_\-impl$<$ Pointer $>$}}
+
+
+This is a base class that represents a buffer -\/ a set of contiguous chunks of memory that can be transfered over network.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/buffer.\-h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf entry}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::pair$<$ {\bf entry} const \\*
+$\ast$, size\-\_\-t $>$ {\bf buffer\-\_\-data\-\_\-type}\label{classbooster_1_1aio_1_1buffer__impl_af62874c2d9d31b2b3de2a1a8ad1021f1}
+
+\begin{DoxyCompactList}\small\item\em A pair that defined the chunk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf buffer\-\_\-impl} ()
+\item 
+std\-::pair$<$ {\bf entry} const $\ast$, size\-\_\-t $>$ {\bf get} () const 
+\item 
+void {\bf add} (Pointer p, size\-\_\-t s)
+\item 
+bool {\bf empty} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Pointer$>$class booster\-::aio\-::buffer\-\_\-impl$<$ Pointer $>$}
+
+This is a base class that represents a buffer -\/ a set of contiguous chunks of memory that can be transfered over network. 
+
+The {\itshape Pointer} parameter should be either {\ttfamily char const $\ast$} or {\ttfamily char $\ast$} 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::buffer\-\_\-impl@{booster\-::aio\-::buffer\-\_\-impl}!buffer\-\_\-impl@{buffer\-\_\-impl}}
+\index{buffer\-\_\-impl@{buffer\-\_\-impl}!booster::aio::buffer_impl@{booster\-::aio\-::buffer\-\_\-impl}}
+\subsubsection[{buffer\-\_\-impl}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Pointer$>$ {\bf booster\-::aio\-::buffer\-\_\-impl}$<$ Pointer $>$\-::{\bf buffer\-\_\-impl} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1aio_1_1buffer__impl_adba3a72dbe48a73a1cc7173b224a7a8d}
+Create an empty buffer 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::buffer\-\_\-impl@{booster\-::aio\-::buffer\-\_\-impl}!add@{add}}
+\index{add@{add}!booster::aio::buffer_impl@{booster\-::aio\-::buffer\-\_\-impl}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Pointer$>$ void {\bf booster\-::aio\-::buffer\-\_\-impl}$<$ Pointer $>$\-::add (
+\begin{DoxyParamCaption}
+\item[{Pointer}]{p, }
+\item[{size\-\_\-t}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1aio_1_1buffer__impl_ac60e6ab00fa30929d7174aae1ddd683d}
+Append a chunk to the buffer 
+
+Referenced by booster\-::aio\-::buffer().
+
+\index{booster\-::aio\-::buffer\-\_\-impl@{booster\-::aio\-::buffer\-\_\-impl}!empty@{empty}}
+\index{empty@{empty}!booster::aio::buffer_impl@{booster\-::aio\-::buffer\-\_\-impl}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Pointer$>$ bool {\bf booster\-::aio\-::buffer\-\_\-impl}$<$ Pointer $>$\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1aio_1_1buffer__impl_a239dddcd9990cb80dfbd1b4e88fdc45e}
+Check if the buffer is empty \index{booster\-::aio\-::buffer\-\_\-impl@{booster\-::aio\-::buffer\-\_\-impl}!get@{get}}
+\index{get@{get}!booster::aio::buffer_impl@{booster\-::aio\-::buffer\-\_\-impl}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Pointer$>$ std\-::pair$<${\bf entry} const $\ast$,size\-\_\-t$>$ {\bf booster\-::aio\-::buffer\-\_\-impl}$<$ Pointer $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1aio_1_1buffer__impl_af890c2c31103ae60a44a23d69242345e}
+Get a first chunk 
+
+Referenced by booster\-::aio\-::const\-\_\-buffer\-::const\-\_\-buffer().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/buffer.\-h\end{DoxyCompactItemize}

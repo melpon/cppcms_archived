@@ -1,0 +1,86 @@
+\section{booster\-:\-:recursive\-\_\-shared\-\_\-mutex Class Reference}
+\label{classbooster_1_1recursive__shared__mutex}\index{booster\-::recursive\-\_\-shared\-\_\-mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}}
+
+
+Recursuve Shared mutex or a.\-k.\-a. Read-\/\-Write Lock that can be recursively locked by {\bfseries readers}.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+Inheritance diagram for booster\-:\-:recursive\-\_\-shared\-\_\-mutex\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1recursive__shared__mutex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unique\-\_\-lock} ()
+\item 
+void {\bf shared\-\_\-lock} ()
+\item 
+void {\bf unlock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Recursuve Shared mutex or a.\-k.\-a. Read-\/\-Write Lock that can be recursively locked by {\bfseries readers}. 
+
+This class provides two options of locking unique -\/ nobody but me can use the object shared anybody with shared lock can use the object. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::recursive\-\_\-shared\-\_\-mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}!lock@{lock}}
+\index{lock@{lock}!booster::recursive_shared_mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::recursive\-\_\-shared\-\_\-mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1recursive__shared__mutex_a7c95f0499dad9233665e381a83ee711a}
+Same as \doxyref{unique\-\_\-lock()}{p.}{classbooster_1_1recursive__shared__mutex_a481f377d080a814f57c67d1ed578e66f}
+
+\begin{DoxyNote}{Note}
+this function is not recursive 
+\end{DoxyNote}
+\index{booster\-::recursive\-\_\-shared\-\_\-mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}!shared\-\_\-lock@{shared\-\_\-lock}}
+\index{shared\-\_\-lock@{shared\-\_\-lock}!booster::recursive_shared_mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}}
+\subsubsection[{shared\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::recursive\-\_\-shared\-\_\-mutex\-::shared\-\_\-lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1recursive__shared__mutex_a69409ed91ec78c701338b95d06a5ecc1}
+Acquire a shared lock on the object. \begin{DoxySeeAlso}{See Also}
+\doxyref{booster\-::shared\-\_\-lock}{p.}{classbooster_1_1shared__lock}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+the \doxyref{shared\-\_\-lock()}{p.}{classbooster_1_1recursive__shared__mutex_a69409ed91ec78c701338b95d06a5ecc1} member function is recursive, that means that same thread may acquire it multiple times. 
+\end{DoxyNote}
+\index{booster\-::recursive\-\_\-shared\-\_\-mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}!unique\-\_\-lock@{unique\-\_\-lock}}
+\index{unique\-\_\-lock@{unique\-\_\-lock}!booster::recursive_shared_mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}}
+\subsubsection[{unique\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::recursive\-\_\-shared\-\_\-mutex\-::unique\-\_\-lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1recursive__shared__mutex_a481f377d080a814f57c67d1ed578e66f}
+Acquire a unique lock on the object. \begin{DoxySeeAlso}{See Also}
+\doxyref{booster\-::unique\-\_\-lock}{p.}{classbooster_1_1unique__lock}
+\end{DoxySeeAlso}
+\begin{DoxyNote}{Note}
+this function is not recursive 
+\end{DoxyNote}
+\index{booster\-::recursive\-\_\-shared\-\_\-mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!booster::recursive_shared_mutex@{booster\-::recursive\-\_\-shared\-\_\-mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::recursive\-\_\-shared\-\_\-mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1recursive__shared__mutex_abbd23168ccf8cd2f822d7b967c05c14b}
+Release the lock 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

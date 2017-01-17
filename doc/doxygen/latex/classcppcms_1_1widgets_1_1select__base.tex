@@ -1,0 +1,182 @@
+\section{cppcms\-:\-:widgets\-:\-:select\-\_\-base Class Reference}
+\label{classcppcms_1_1widgets_1_1select__base}\index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}}
+
+
+This is the base class for \char`\"{}select\char`\"{} like widgets which include dropdown lists and radio button sets.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:select\-\_\-base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classcppcms_1_1widgets_1_1select__base}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf element}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add} (std\-::string const \&string)
+\item 
+void {\bf add} (std\-::string const \&string, std\-::string const \&{\bf id})
+\item 
+void {\bf add} ({\bf locale\-::message} const \&msg)
+\item 
+void {\bf add} ({\bf locale\-::message} const \&msg, std\-::string const \&{\bf id})
+\item 
+int {\bf selected} ()
+\item 
+std\-::string {\bf selected\-\_\-id} ()
+\item 
+void {\bf selected} (int no)
+\item 
+void {\bf selected\-\_\-id} (std\-::string {\bf id})
+\item 
+void {\bf non\-\_\-empty} ()
+\item 
+virtual void {\bf render\-\_\-input} ({\bf form\-\_\-context} \&context)=0
+\item 
+virtual bool {\bf validate} ()
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)
+\item 
+virtual void {\bf clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::vector$<$ {\bf element} $>$ {\bfseries elements\-\_\-}\label{classcppcms_1_1widgets_1_1select__base_a5a142374c97fa63b64f5b6c8976e0d81}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the base class for \char`\"{}select\char`\"{} like widgets which include dropdown lists and radio button sets. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::add (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{string}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a5297440506afbe0dcedb6c84a6e85bae}
+Add a new entry to the selection list. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::add (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{string, }
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a1b5f4efae1db9ab1c58452a806105b9b}
+Add to the selection list a new entry with the unique identification string {\itshape id}. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{msg}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a97410e6559a6a9238b68be8a321a0bfb}
+Add a new localized entry to the selection list. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{msg, }
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a5f4c8a460eb1e793d8f87a3e0685e1f5}
+Add to the selection list a new localized entry with the unique identification string {\itshape id}. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!clear@{clear}}
+\index{clear@{clear}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::select\-\_\-base\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__base_ac30a6f632f3a423aff9aac4c13d95b6f}
+Clear the form. It also calls set(false). 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a957f7c7a63f5ea9489b52c3ec1043b81}.
+
+\index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!load@{load}}
+\index{load@{load}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::select\-\_\-base\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__base_a8d41cdd6066ce4e37d937905c5807f5a}
+Load the form information from the provided {\tt http\-::context} {\itshape context}. A user can call this function to load all information from the raw P\-O\-S\-T/\-G\-E\-T data into the internal widget representation. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!non\-\_\-empty@{non\-\_\-empty}}
+\index{non\-\_\-empty@{non\-\_\-empty}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{non\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::non\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a3d6248c31b7782a8cde920dc9fce1198}
+Require that one item in the list should be selected (for the validation). \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!render\-\_\-input@{render\-\_\-input}}
+\index{render\-\_\-input@{render\-\_\-input}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{render\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::select\-\_\-base\-::render\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1widgets_1_1select__base_ab1119401ddea3d4beb266e8a7cb9afee}
+This is a virtual member function that should be implemented by each widget. It executes the actual rendering of the H\-T\-M\-L form. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a03394613be620bb0d6aeb62818f56b8f}.
+
+
+
+Implemented in {\bf cppcms\-::widgets\-::radio} \doxyref{}{p.}{classcppcms_1_1widgets_1_1radio_ae34173f78d1df5ac05053b5349b03131}, and {\bf cppcms\-::widgets\-::select} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select_a4bced34474dcca17418fd20a21d4b529}.
+
+\index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!selected@{selected}}
+\index{selected@{selected}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{selected}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::widgets\-::select\-\_\-base\-::selected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_ad59c85ad04ffb550579ea4feef9e28d8}
+Return the number of the selected entry in the list. Entries are numbered starting from 0. -\/1 indicates that nothing was selected. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!selected@{selected}}
+\index{selected@{selected}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{selected}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::selected (
+\begin{DoxyParamCaption}
+\item[{int}]{no}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a9e7bc59695acef9b2aa135c6548ae6e9}
+Select the entry numbered {\itshape no}. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!selected\-\_\-id@{selected\-\_\-id}}
+\index{selected\-\_\-id@{selected\-\_\-id}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{selected\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::widgets\-::select\-\_\-base\-::selected\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_ad1a5e79b6f21a0660d0767030a294697}
+Return the identification string of the selected entry in the list. An empty string indicates that nothing was selected. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!selected\-\_\-id@{selected\-\_\-id}}
+\index{selected\-\_\-id@{selected\-\_\-id}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{selected\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-base\-::selected\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{id}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__base_a63e75aacf855ea48fac766d9e8bd1d3e}
+Select the entry with the identification string {\itshape id}. \index{cppcms\-::widgets\-::select\-\_\-base@{cppcms\-::widgets\-::select\-\_\-base}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::select_base@{cppcms\-::widgets\-::select\-\_\-base}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::widgets\-::select\-\_\-base\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__base_aa2af8d30009d2e366d0608b9503a6551}
+Validate the form. If not overridden, it sets the widget to {\itshape valid}. 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

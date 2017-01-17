@@ -1,0 +1,32 @@
+\section{cppcms\-:\-:http Namespace Reference}
+\label{namespacecppcms_1_1http}\index{cppcms\-::http@{cppcms\-::http}}
+
+
+This namespace represent classes that are directly connected to handing H\-T\-T\-P requests and responses.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf content\-\_\-type}
+\begin{DoxyCompactList}\small\item\em Class that represents parsed Content-\/\-Type header, this is immutable class. Once it is created its values does not change. \end{DoxyCompactList}\item 
+class {\bf context}
+\begin{DoxyCompactList}\small\item\em context is a central class that holds all specific connection related information. It encapsulates C\-G\-I request and response, cache, session and locale information \end{DoxyCompactList}\item 
+class {\bf cookie}
+\begin{DoxyCompactList}\small\item\em Class that represents single H\-T\-T\-P Cookie Generally used in context of {\tt http\-::request} and {\tt http\-::response}. \end{DoxyCompactList}\item 
+class {\bf file}
+\begin{DoxyCompactList}\small\item\em This class holds a uploaded file, it is generally fetched via \doxyref{widgets\-::file}{p.}{classcppcms_1_1widgets_1_1file} or via {\tt http\-::request\-::files}. \end{DoxyCompactList}\item 
+class {\bf request}
+\begin{DoxyCompactList}\small\item\em This class represents all information related to the H\-T\-T\-P/\-C\-G\-I request. \end{DoxyCompactList}\item 
+class {\bf response}
+\begin{DoxyCompactList}\small\item\em this class represents all H\-T\-T\-P/\-C\-G\-I response related A\-P\-I, generation of output content and H\-T\-T\-P headers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I \& {\bfseries operator$<$$<$} (std\-::ostream \&, {\bf cookie} const \&)\label{namespacecppcms_1_1http_a0ef918f1a429500cd4600c617652d689}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace represent classes that are directly connected to handing H\-T\-T\-P requests and responses. 

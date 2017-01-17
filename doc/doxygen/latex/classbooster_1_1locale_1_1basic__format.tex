@@ -1,0 +1,184 @@
+\section{booster\-:\-:locale\-:\-:basic\-\_\-format$<$ Char\-Type $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1basic__format}\index{booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$@{booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$}}
+
+
+a printf like class that allows type-\/safe and locale aware message formatting  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/format.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\-Type {\bf char\-\_\-type}\label{classbooster_1_1locale_1_1basic__format_aede1e07e1af98a6cf4edea1c2ed8cd89}
+
+\begin{DoxyCompactList}\small\item\em Underlying character type. \end{DoxyCompactList}\item 
+typedef {\bf basic\-\_\-message}$<$ {\bf char\-\_\-type} $>$ {\bf message\-\_\-type}
+\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ Char\-Type $>$ {\bf string\-\_\-type}\label{classbooster_1_1locale_1_1basic__format_a591c3a0ed5134105230987e4f6017a18}
+
+\begin{DoxyCompactList}\small\item\em string type for this type of character \end{DoxyCompactList}\item 
+typedef std\-::basic\-\_\-ostream\\*
+$<$ Char\-Type $>$ {\bf stream\-\_\-type}\label{classbooster_1_1locale_1_1basic__format_aa73e07b4d2ff3f3bc36ceb8ab1a5794b}
+
+\begin{DoxyCompactList}\small\item\em output stream type for this type of character \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf basic\-\_\-format} ({\bf string\-\_\-type} format\-\_\-string)
+\item 
+{\bf basic\-\_\-format} ({\bf message\-\_\-type} const \&trans)
+\item 
+{\footnotesize template$<$typename Formattible $>$ }\\{\bf basic\-\_\-format} \& {\bf operator\%} (Formattible const \&object)
+\item 
+{\bf string\-\_\-type} {\bf str} (std\-::locale const \&loc=std\-::locale()) const 
+\item 
+void {\bf write} ({\bf stream\-\_\-type} \&out) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\-Type$>$class booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$}
+
+a printf like class that allows type-\/safe and locale aware message formatting 
+
+This class creates a formatted message similar to printf or boost\-::format and receives formatted entries via operator \%.
+
+For example 
+\begin{DoxyCode}
+cout << format(\textcolor{stringliteral}{"Hello \{1\}, you are \{2\} years old"}) % name % age << endl;
+\end{DoxyCode}
+
+
+Formatting is enclosed between curly brackets {\ttfamily \{} {\ttfamily \}} and defined by a comma separated list of flags in the format key[=value] value may also be text included between single quotes {\ttfamily '} that is used for special purposes where inclusion of non-\/\-A\-S\-C\-I\-I text is allowed
+
+Including of literal {\ttfamily \{} and {\ttfamily \}} is possible by specifying double brackets {\ttfamily \{\{} and {\ttfamily \}\}} accordingly.
+
+For example\-:
+
+
+\begin{DoxyCode}
+cout << format(\textcolor{stringliteral}{"The height of water at \{1,time\} is \{2,num=fixed,precision=3\}"}) % 
+      time % height;
+\end{DoxyCode}
+
+
+The special key -- a number without a value defines the position of an input parameter. List of keys\-:
+\begin{DoxyItemize}
+\item {\ttfamily }[0-\/9]+ -- digits, the index of a formatted parameter -- mandatory key.
+\item {\ttfamily num} or {\ttfamily number} -- format a number. Optional values are\-:
+\begin{DoxyItemize}
+\item {\ttfamily hex} -- display hexadecimal number
+\item {\ttfamily oct} -- display in octal format
+\item {\ttfamily sci} or {\ttfamily scientific} -- display in scientific format
+\item {\ttfamily fix} or {\ttfamily fixed} -- display in fixed format
+\end{DoxyItemize}For example {\ttfamily number=sci} 
+\item {\ttfamily cur} or {\ttfamily currency} -- format currency. Optional values are\-:
+\begin{DoxyItemize}
+\item {\ttfamily iso} -- display using I\-S\-O currency symbol.
+\item {\ttfamily nat} or {\ttfamily national} -- display using national currency symbol.
+\end{DoxyItemize}
+\item {\ttfamily per} or {\ttfamily percent} -- format percent value.
+\item {\ttfamily date}, {\ttfamily time} , {\ttfamily datetime} or {\ttfamily dt} -- format date, time or date and time. Optional values are\-:
+\begin{DoxyItemize}
+\item {\ttfamily s} or {\ttfamily short} -- display in short format
+\item {\ttfamily m} or {\ttfamily medium} -- display in medium format.
+\item {\ttfamily l} or {\ttfamily long} -- display in long format.
+\item {\ttfamily f} or {\ttfamily full} -- display in full format.
+\end{DoxyItemize}
+\item {\ttfamily ftime} with string (quoted) parameter -- display as with {\ttfamily strftime} see, {\ttfamily \doxyref{as\-::ftime}{p.}{group__manipulators_ga3b395c47f31b0354a0ddb09fcf4ed96f}} manipulator
+\item {\ttfamily spell} or {\ttfamily spellout} -- spell the number.
+\item {\ttfamily ord} or {\ttfamily ordinal} -- format ordinal number (1st, 2nd... etc)
+\item {\ttfamily left} or {\ttfamily $<$} -- align to left.
+\item {\ttfamily right} or {\ttfamily $>$} -- align to right.
+\item {\ttfamily width} or {\ttfamily w} -- set field width (requires parameter).
+\item {\ttfamily precision} or {\ttfamily p} -- set precision (requires parameter).
+\item {\ttfamily locale} -- with parameter -- switch locale for current operation. This command generates locale with formatting facets giving more fine grained control of formatting. For example\-: 
+\begin{DoxyCode}
+cout << format(\textcolor{stringliteral}{"Today \{1,date\} (\{1,date,locale=he\_IL.UTF-8@calendar=hebrew,date\} Hebrew Date)"}) % 
+      date;
+\end{DoxyCode}
+
+\item {\ttfamily timezone} or {\ttfamily tz} -- the name of the timezone to display the time in. For example\-:\par
+
+\begin{DoxyCode}
+cout << format(\textcolor{stringliteral}{"Time is: Local \{1,time\}, (\{1,time,tz=EET\} Eastern European Time)"}) % 
+      date;
+\end{DoxyCode}
+
+\item {\ttfamily local} -\/ display the time in local time
+\item {\ttfamily gmt} -\/ display the time in U\-T\-C time scale 
+\begin{DoxyCode}
+cout << format(\textcolor{stringliteral}{"Local time is: \{1,time,local\}, universal time is \{1,time,gmt\}"}) % 
+      time;
+\end{DoxyCode}
+
+\end{DoxyItemize}
+
+Invalid formatting strings are slightly ignored. This would prevent from translator to crash the program in unexpected location. 
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::locale\-::basic\-\_\-format@{booster\-::locale\-::basic\-\_\-format}!message\-\_\-type@{message\-\_\-type}}
+\index{message\-\_\-type@{message\-\_\-type}!booster::locale::basic_format@{booster\-::locale\-::basic\-\_\-format}}
+\subsubsection[{message\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ typedef {\bf basic\-\_\-message}$<${\bf char\-\_\-type}$>$ {\bf booster\-::locale\-::basic\-\_\-format}$<$ Char\-Type $>$\-::{\bf message\-\_\-type}}\label{classbooster_1_1locale_1_1basic__format_a2d21b82a34b4d0e95dac16ce310053ce}
+The translation message type 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::basic\-\_\-format@{booster\-::locale\-::basic\-\_\-format}!basic\-\_\-format@{basic\-\_\-format}}
+\index{basic\-\_\-format@{basic\-\_\-format}!booster::locale::basic_format@{booster\-::locale\-::basic\-\_\-format}}
+\subsubsection[{basic\-\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf booster\-::locale\-::basic\-\_\-format}$<$ Char\-Type $>$\-::{\bf basic\-\_\-format} (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-type}}]{format\-\_\-string}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1basic__format_a9a703676d3f99dace1f7b16af406d4f9}
+Create a format class for {\itshape format\-\_\-string} \index{booster\-::locale\-::basic\-\_\-format@{booster\-::locale\-::basic\-\_\-format}!basic\-\_\-format@{basic\-\_\-format}}
+\index{basic\-\_\-format@{basic\-\_\-format}!booster::locale::basic_format@{booster\-::locale\-::basic\-\_\-format}}
+\subsubsection[{basic\-\_\-format}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf booster\-::locale\-::basic\-\_\-format}$<$ Char\-Type $>$\-::{\bf basic\-\_\-format} (
+\begin{DoxyParamCaption}
+\item[{{\bf message\-\_\-type} const \&}]{trans}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1basic__format_ac21c8eff853ce4f3da44d1742311f23b}
+Create a format class using message {\itshape trans}. The message if translated first according to the rules of target locale and then interpreted as format string 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::basic\-\_\-format@{booster\-::locale\-::basic\-\_\-format}!operator\%@{operator\%}}
+\index{operator\%@{operator\%}!booster::locale::basic_format@{booster\-::locale\-::basic\-\_\-format}}
+\subsubsection[{operator\%}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ template$<$typename Formattible $>$ {\bf basic\-\_\-format}\& {\bf booster\-::locale\-::basic\-\_\-format}$<$ Char\-Type $>$\-::operator\% (
+\begin{DoxyParamCaption}
+\item[{Formattible const \&}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1basic__format_a2fb9cfa5b07ccc47b3b285cd3d8c2b44}
+Add new parameter to format list. The object should be a type with defined expression out $<$$<$ object where {\ttfamily out} is {\ttfamily std\-::basic\-\_\-ostream}. \index{booster\-::locale\-::basic\-\_\-format@{booster\-::locale\-::basic\-\_\-format}!str@{str}}
+\index{str@{str}!booster::locale::basic_format@{booster\-::locale\-::basic\-\_\-format}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf string\-\_\-type} {\bf booster\-::locale\-::basic\-\_\-format}$<$ Char\-Type $>$\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1basic__format_a9f9dc98c186e001079bc73e805db7054}
+Format a string using a locale {\itshape loc} 
+
+References booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$\-::write().
+
+\index{booster\-::locale\-::basic\-\_\-format@{booster\-::locale\-::basic\-\_\-format}!write@{write}}
+\index{write@{write}!booster::locale::basic_format@{booster\-::locale\-::basic\-\_\-format}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ void {\bf booster\-::locale\-::basic\-\_\-format}$<$ Char\-Type $>$\-::write (
+\begin{DoxyParamCaption}
+\item[{{\bf stream\-\_\-type} \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1basic__format_a96a673722f6b51dc5068edf18e435a3b}
+write a formatted string to output stream {\itshape out} using out's locale 
+
+References booster\-::locale\-::ios\-\_\-info\-::domain\-\_\-id(), booster\-::locale\-::ios\-\_\-info\-::get(), and booster\-::locale\-::basic\-\_\-message$<$ Char\-Type $>$\-::str().
+
+
+
+Referenced by booster\-::locale\-::operator$<$$<$(), and booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$\-::str().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/format.\-h\end{DoxyCompactItemize}

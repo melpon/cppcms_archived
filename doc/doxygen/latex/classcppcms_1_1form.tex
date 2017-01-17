@@ -1,0 +1,203 @@
+\section{cppcms\-:\-:form Class Reference}
+\label{classcppcms_1_1form}\index{cppcms\-::form@{cppcms\-::form}}
+
+
+The {\itshape form} is a container used to collect other widgets and forms into a single unit.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:form\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcppcms_1_1form}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf iterator}
+\begin{DoxyCompactList}\small\item\em Input iterator used to iterate over all the widgets in a form. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf render} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&cont)
+\item 
+virtual bool {\bf validate} ()
+\item 
+virtual void {\bf clear} ()
+\item 
+void {\bf add} ({\bf form} \&subform)
+\item 
+void {\bf attach} ({\bf form} $\ast$subform)
+\item 
+void {\bf add} ({\bf widgets\-::base\-\_\-widget} \&widget)
+\item 
+void {\bf attach} ({\bf widgets\-::base\-\_\-widget} $\ast$widget)
+\item 
+C\-P\-P\-C\-M\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D {\bf form} \& {\bf operator+} ({\bf form} \&f)
+\item 
+C\-P\-P\-C\-M\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D {\bf form} \& {\bf operator+} ({\bf widgets\-::base\-\_\-widget} \&f)
+\item 
+virtual void {\bf parent} ({\bf base\-\_\-form} $\ast$subform)
+\item 
+virtual {\bf form} $\ast$ {\bf parent} ()
+\item 
+{\bf iterator} {\bf begin} ()
+\item 
+{\bf iterator} {\bf end} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries iterator}\label{classcppcms_1_1form_a67171474c4da6cc8efe0c7fafefd2b2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The {\itshape form} is a container used to collect other widgets and forms into a single unit. 
+
+Generally various widgets and forms are combined into a single form in order to simplify their rendering and validation of the forms that include more than one widget. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::form@{cppcms\-::form}!add@{add}}
+\index{add@{add}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf form} \&}]{subform}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_a6b74acbbcb63dba5d1b4662ad9ee183c}
+Add {\itshape subform} to form. The ownership is not transferred to the parent. \index{cppcms\-::form@{cppcms\-::form}!add@{add}}
+\index{add@{add}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf widgets\-::base\-\_\-widget} \&}]{widget}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_a30ed5b2f98b0b6876639f7368d4673ce}
+Add {\itshape widget} to form. The ownership is not transferred to to the parent. \index{cppcms\-::form@{cppcms\-::form}!attach@{attach}}
+\index{attach@{attach}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf form} $\ast$}]{subform}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_a774b66dee1c2b6b488d12243bc37a4b4}
+Add {\itshape subform} to form. The ownership is transferred to the parent and the subform will be destroyed together with the parent. \index{cppcms\-::form@{cppcms\-::form}!attach@{attach}}
+\index{attach@{attach}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf widgets\-::base\-\_\-widget} $\ast$}]{widget}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_a8a21e075c3a19394a5680bfeb4b04ba9}
+Add {\itshape widget} to form. The ownership is transferred to the parent and the widget will be destroyed together with the parent. \index{cppcms\-::form@{cppcms\-::form}!begin@{begin}}
+\index{begin@{begin}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator} cppcms\-::form\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_a64868bcf7a10d8c80f82e40afe7ae780}
+Returns the iterator to the first widget. \index{cppcms\-::form@{cppcms\-::form}!clear@{clear}}
+\index{clear@{clear}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::form\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1form_a9c97ed57900d7404396135bbae33b809}
+Clear all subforms and widgets from all loaded data. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a69e995615d0cd577245480eb80ec834a}.
+
+\index{cppcms\-::form@{cppcms\-::form}!end@{end}}
+\index{end@{end}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator} cppcms\-::form\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_ab267e93f7d7026742ebfb7b2047fb690}
+Returns the end of the range iterator. \index{cppcms\-::form@{cppcms\-::form}!load@{load}}
+\index{load@{load}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::form\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{cont}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1form_a56a59de72f0112b51f068f7511241912}
+Load all the widget information from {\tt http\-::context} {\itshape cont}. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::form@{cppcms\-::form}!operator+@{operator+}}
+\index{operator+@{operator+}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}C\-P\-P\-C\-M\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D {\bf form}\& cppcms\-::form\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf form} \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_aad7b901df499bc6d50eb8b156c6499a9}
+\begin{DoxyRefDesc}{Deprecated}
+\item[{\bf Deprecated}]Use \doxyref{add(form \&)}{p.}{classcppcms_1_1form_a6b74acbbcb63dba5d1b4662ad9ee183c} instead\end{DoxyRefDesc}
+
+
+Shortcut to {\itshape add}. \index{cppcms\-::form@{cppcms\-::form}!operator+@{operator+}}
+\index{operator+@{operator+}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}C\-P\-P\-C\-M\-S\-\_\-\-D\-E\-P\-R\-E\-C\-A\-T\-E\-D {\bf form}\& cppcms\-::form\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf widgets\-::base\-\_\-widget} \&}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_a1722113d29b257ece3e9416c7df2aa18}
+\begin{DoxyRefDesc}{Deprecated}
+\item[{\bf Deprecated}]Use \doxyref{add(widgets\-::base\-\_\-widget \&)}{p.}{classcppcms_1_1form_a30ed5b2f98b0b6876639f7368d4673ce} instead\end{DoxyRefDesc}
+
+
+Shortcut to {\itshape add}. \index{cppcms\-::form@{cppcms\-::form}!parent@{parent}}
+\index{parent@{parent}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::form\-::parent (
+\begin{DoxyParamCaption}
+\item[{{\bf base\-\_\-form} $\ast$}]{subform}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1form_a969d343a9a2a9db291940c12f3412937}
+Set the parent of this form. It is used internally; you should not use it. It is called when the form is added or attached to another form. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a10c4c5ff417028c72a919740a868bfcd}.
+
+\index{cppcms\-::form@{cppcms\-::form}!parent@{parent}}
+\index{parent@{parent}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf form}$\ast$ cppcms\-::form\-::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1form_a78aaad925d3f30b10e5a3ccc80bc88bf}
+Get the parent of this form. If this is the topmost form, N\-U\-L\-L is returned. It is assumed that the parent is always a form. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_aff998866cd4e17f4c9cf9c7ede1837e5}.
+
+\index{cppcms\-::form@{cppcms\-::form}!render@{render}}
+\index{render@{render}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::form\-::render (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1form_a21c66118d0e80a6496ba2c17baf557b6}
+Render all the widgets and sub-\/forms to the {\itshape output}, using the flags defined in the {\itshape context}. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_adb1c6edd653196f575fcacb2aa0fd995}.
+
+\index{cppcms\-::form@{cppcms\-::form}!validate@{validate}}
+\index{validate@{validate}!cppcms::form@{cppcms\-::form}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::form\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1form_a268423c0c006cddde3fea2f6183bf487}
+Validate all subforms and widgets. If at least one of them fails, false is returned. Otherwise, true is returned. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_af7d0a7b4c760b43ea3161181906ee4d0}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

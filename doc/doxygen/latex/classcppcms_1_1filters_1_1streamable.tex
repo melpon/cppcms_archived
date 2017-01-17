@@ -1,0 +1,84 @@
+\section{cppcms\-:\-:filters\-:\-:streamable Class Reference}
+\label{classcppcms_1_1filters_1_1streamable}\index{cppcms\-::filters\-::streamable@{cppcms\-::filters\-::streamable}}
+
+
+A special proxy object for writing any object to a std\-::ostream.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/filters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries streamable} ({\bf streamable} const \&other)\label{classcppcms_1_1filters_1_1streamable_ab2847ed122852c83b8dada0591d81f4f}
+
+\item 
+{\bf streamable} const \& {\bfseries operator=} ({\bf streamable} const \&other)\label{classcppcms_1_1filters_1_1streamable_aeede5599537edce3553e0f4d2e17648c}
+
+\item 
+{\footnotesize template$<$typename S $>$ }\\{\bf streamable} (S const \&ptr)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T const \& {\bf get} () const 
+\item 
+{\bf streamable} (char const $\ast$ptr)
+\item 
+void {\bf operator()} (std\-::ostream \&output) const 
+\item 
+std\-::string {\bf get} (std\-::ios \&ios) const 
+\item 
+{\footnotesize template$<$$>$ }\\C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf streamable} (std\-::string const \&str)\label{classcppcms_1_1filters_1_1streamable_a67d00ea938dace623a4ab7e3d734da0e}
+
+\begin{DoxyCompactList}\small\item\em we can specialize for string because std\-::string get(ios \&) const may be much more efficient. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A special proxy object for writing any object to a std\-::ostream. 
+
+This is special object that is used to store a reference to any other object that can be written to std\-::ostream, giving as easy way to write a filter for any object that can be written to stream 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::filters\-::streamable@{cppcms\-::filters\-::streamable}!streamable@{streamable}}
+\index{streamable@{streamable}!cppcms::filters::streamable@{cppcms\-::filters\-::streamable}}
+\subsubsection[{streamable}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename S $>$ cppcms\-::filters\-::streamable\-::streamable (
+\begin{DoxyParamCaption}
+\item[{S const \&}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1filters_1_1streamable_a7cdd4550fd6e8946ede0684b83608826}
+Create a streamable object from arbitrary object that can be written to stream \index{cppcms\-::filters\-::streamable@{cppcms\-::filters\-::streamable}!streamable@{streamable}}
+\index{streamable@{streamable}!cppcms::filters::streamable@{cppcms\-::filters\-::streamable}}
+\subsubsection[{streamable}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::streamable\-::streamable (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1streamable_a5393605f3cb8fcb0fc6fba845de8fc73}
+Create a streamable object from C string 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::filters\-::streamable@{cppcms\-::filters\-::streamable}!get@{get}}
+\index{get@{get}!cppcms::filters::streamable@{cppcms\-::filters\-::streamable}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T const\& cppcms\-::filters\-::streamable\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1filters_1_1streamable_a2a592c1da576d00c3197484e2910ebf9}
+Get the reference to \char`\"{}streamed object\char`\"{}, throws std\-::bad\-\_\-cast if the type is wrong \index{cppcms\-::filters\-::streamable@{cppcms\-::filters\-::streamable}!get@{get}}
+\index{get@{get}!cppcms::filters::streamable@{cppcms\-::filters\-::streamable}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::filters\-::streamable\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::ios \&}]{ios}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1filters_1_1streamable_a11120ea8c9c2d94e72f07fecbf2383c7}
+Convert the object to string using settings and locale in ios class \index{cppcms\-::filters\-::streamable@{cppcms\-::filters\-::streamable}!operator()@{operator()}}
+\index{operator()@{operator()}!cppcms::filters::streamable@{cppcms\-::filters\-::streamable}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::filters\-::streamable\-::operator() (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{output}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1filters_1_1streamable_aa8d2810e6ba0324f4abf3cf97b9292da}
+Write the object to output stream 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/filters.\-h\end{DoxyCompactItemize}

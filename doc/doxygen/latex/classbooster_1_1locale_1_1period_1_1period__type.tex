@@ -1,0 +1,80 @@
+\section{booster\-:\-:locale\-:\-:period\-:\-:period\-\_\-type Class Reference}
+\label{classbooster_1_1locale_1_1period_1_1period__type}\index{booster\-::locale\-::period\-::period\-\_\-type@{booster\-::locale\-::period\-::period\-\_\-type}}
+
+
+This class holds a type that represents certain period of time like year, hour, second and so on.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time\-\_\-facet.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf period\-\_\-type} ({\bf marks\-::period\-\_\-mark} m={\bf marks\-::invalid})
+\item 
+{\bf marks\-::period\-\_\-mark} {\bf mark} () const 
+\item 
+bool {\bf operator==} ({\bf period\-\_\-type} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf period\-\_\-type} const \&other) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds a type that represents certain period of time like year, hour, second and so on. 
+
+It can be created from either \doxyref{marks\-::period\-\_\-mark}{p.}{namespacebooster_1_1locale_1_1period_1_1marks_a088e16937a13070e5545d25feaca4a65} type or by using shortcuts in period namespace -\/ calling functions like \doxyref{period\-::year()}{p.}{namespacebooster_1_1locale_1_1period_a65a036fe7b7b05582a9b8fe6dea36fdb}, \doxyref{period\-::hour()}{p.}{namespacebooster_1_1locale_1_1period_aadc79acfc40516c1662ccefad034e6f8} and so on.
+
+Basically it represents the same object as enum \doxyref{marks\-::period\-\_\-mark}{p.}{namespacebooster_1_1locale_1_1period_1_1marks_a088e16937a13070e5545d25feaca4a65} but allows to provide save operator overloading that would not collide with casing of enum to numeric values. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::period\-::period\-\_\-type@{booster\-::locale\-::period\-::period\-\_\-type}!period\-\_\-type@{period\-\_\-type}}
+\index{period\-\_\-type@{period\-\_\-type}!booster::locale::period::period_type@{booster\-::locale\-::period\-::period\-\_\-type}}
+\subsubsection[{period\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::period\-::period\-\_\-type\-::period\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{{\bf marks\-::period\-\_\-mark}}]{m = {\ttfamily {\bf marks\-::invalid}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1period_1_1period__type_ad11b497527aac6010c296b161b4264d0}
+Create a period of specific type, default is invalid. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::period\-::period\-\_\-type@{booster\-::locale\-::period\-::period\-\_\-type}!mark@{mark}}
+\index{mark@{mark}!booster::locale::period::period_type@{booster\-::locale\-::period\-::period\-\_\-type}}
+\subsubsection[{mark}]{\setlength{\rightskip}{0pt plus 5cm}{\bf marks\-::period\-\_\-mark} booster\-::locale\-::period\-::period\-\_\-type\-::mark (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1period_1_1period__type_a3fa191cf44948ce5328ceee0720ea345}
+Get the value of \doxyref{marks\-::period\-\_\-mark}{p.}{namespacebooster_1_1locale_1_1period_1_1marks_a088e16937a13070e5545d25feaca4a65} it was created with. 
+
+Referenced by operator!=(), and operator==().
+
+\index{booster\-::locale\-::period\-::period\-\_\-type@{booster\-::locale\-::period\-::period\-\_\-type}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!booster::locale::period::period_type@{booster\-::locale\-::period\-::period\-\_\-type}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::period\-::period\-\_\-type\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-\_\-type} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1period_1_1period__type_a1998e943a4b0455b73cc9cf953fc953e}
+Check if two periods are different 
+
+References mark().
+
+\index{booster\-::locale\-::period\-::period\-\_\-type@{booster\-::locale\-::period\-::period\-\_\-type}!operator==@{operator==}}
+\index{operator==@{operator==}!booster::locale::period::period_type@{booster\-::locale\-::period\-::period\-\_\-type}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::period\-::period\-\_\-type\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-\_\-type} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1period_1_1period__type_ad91fc7cacb85d6e39f165e8c8170d6c5}
+Check if two periods are the same 
+
+References mark().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time\-\_\-facet.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,111 @@
+\section{booster\-:\-:log\-:\-:message Class Reference}
+\label{classbooster_1_1log_1_1message}\index{booster\-::log\-::message@{booster\-::log\-::message}}
+
+
+This class represents a single message that should be written to log.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/log.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf message} ({\bf level\-\_\-type} l, char const $\ast$m, char const $\ast$name, int line)
+\item 
+{\bf message} ()
+\item 
+{\bf message} ({\bf message} \&)\label{classbooster_1_1log_1_1message_ab5b7d4620c6b5f39cf591d951a65ec40}
+
+\begin{DoxyCompactList}\small\item\em Copy message. \end{DoxyCompactList}\item 
+{\bf message} \& {\bf operator=} ({\bf message} \&)\label{classbooster_1_1log_1_1message_aea54ac03ee2f5b6c9315b0c720e76c67}
+
+\begin{DoxyCompactList}\small\item\em Assign the message. \end{DoxyCompactList}\item 
+{\bf level\-\_\-type} {\bf level} () const 
+\item 
+char const $\ast$ {\bf module} () const 
+\item 
+char const $\ast$ {\bf file\-\_\-name} () const 
+\item 
+int {\bf file\-\_\-line} () const 
+\item 
+std\-::string {\bf log\-\_\-message} () const 
+\item 
+std\-::ostream \& {\bf out} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a single message that should be written to log. 
+
+Note, it is some generalization of data that allows you to format any generic data, it generally used by logging sinks rather then by end users 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::log\-::message@{booster\-::log\-::message}!message@{message}}
+\index{message@{message}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::log\-::message\-::message (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{l, }
+\item[{char const $\ast$}]{m, }
+\item[{char const $\ast$}]{name, }
+\item[{int}]{line}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1message_a413ef25933b35c78376e7ffa0567d330}
+Create message with severity level {\itshape l}, sent from module {\itshape m} in file {\itshape name} in line {\itshape line} \index{booster\-::log\-::message@{booster\-::log\-::message}!message@{message}}
+\index{message@{message}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::log\-::message\-::message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1message_a66b3eaefca46180a59e51a8566825591}
+Default constructable 
+
+\subsection{Member Function Documentation}
+\index{booster\-::log\-::message@{booster\-::log\-::message}!file\-\_\-line@{file\-\_\-line}}
+\index{file\-\_\-line@{file\-\_\-line}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{file\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::log\-::message\-::file\-\_\-line (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1log_1_1message_a5bf9475ffc34945e1a732454c0ca67d5}
+Get the number of line in the file \index{booster\-::log\-::message@{booster\-::log\-::message}!file\-\_\-name@{file\-\_\-name}}
+\index{file\-\_\-name@{file\-\_\-name}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{file\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ booster\-::log\-::message\-::file\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1log_1_1message_afdfec272bd9567a2b597816aa67f4590}
+Get the file name \index{booster\-::log\-::message@{booster\-::log\-::message}!level@{level}}
+\index{level@{level}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{level}]{\setlength{\rightskip}{0pt plus 5cm}{\bf level\-\_\-type} booster\-::log\-::message\-::level (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1log_1_1message_aee48f4e6f922a9a243e1ba1637da3ee1}
+Get the severity level for the message \index{booster\-::log\-::message@{booster\-::log\-::message}!log\-\_\-message@{log\-\_\-message}}
+\index{log\-\_\-message@{log\-\_\-message}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{log\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::log\-::message\-::log\-\_\-message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1log_1_1message_a2eaa07a38f6ca13014e0eda203b54cc8}
+Get the actual message that should be written \index{booster\-::log\-::message@{booster\-::log\-::message}!module@{module}}
+\index{module@{module}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{module}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ booster\-::log\-::message\-::module (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1log_1_1message_ab65ec2406a3cb5033933939db874566a}
+Get the module name \index{booster\-::log\-::message@{booster\-::log\-::message}!out@{out}}
+\index{out@{out}!booster::log::message@{booster\-::log\-::message}}
+\subsubsection[{out}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& booster\-::log\-::message\-::out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1message_a8973dfbce4654cdc3472f4f1bcfcc0ed}
+Get the output stream that consumes the message 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\-h}\end{DoxyCompactItemize}

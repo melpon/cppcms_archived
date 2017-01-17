@@ -1,0 +1,48 @@
+\section{Format}
+\label{group__format}\index{Format@{Format}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$}
+\begin{DoxyCompactList}\small\item\em a printf like class that allows type-\/safe and locale aware message formatting \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef basic\-\_\-format$<$ char $>$ {\bf booster\-::locale\-::format}
+\item 
+typedef basic\-\_\-format$<$ wchar\-\_\-t $>$ {\bf booster\-::locale\-::wformat}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \& {\bf booster\-::locale\-::operator$<$$<$} (std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&out, basic\-\_\-format$<$ Char\-Type $>$ const \&fmt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module provides printf like functionality integrated into iostreams and suitable for localization 
+
+\subsection{Typedef Documentation}
+\index{Format@{Format}!format@{format}}
+\index{format@{format}!Format@{Format}}
+\subsubsection[{format}]{\setlength{\rightskip}{0pt plus 5cm}typedef basic\-\_\-format$<$char$>$ {\bf booster\-::locale\-::format}}\label{group__format_gad4c72ba8b238dfcd2189a7aaf6486e59}
+Definition of char based format \index{Format@{Format}!wformat@{wformat}}
+\index{wformat@{wformat}!Format@{Format}}
+\subsubsection[{wformat}]{\setlength{\rightskip}{0pt plus 5cm}typedef basic\-\_\-format$<$wchar\-\_\-t$>$ {\bf booster\-::locale\-::wformat}}\label{group__format_gace89c8ee420b2b91a3dc234463767b4f}
+Definition of wchar\-\_\-t based format 
+
+\subsection{Function Documentation}
+\index{Format@{Format}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Format@{Format}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-ostream$<$Char\-Type$>$\& booster\-::locale\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&}]{out, }
+\item[{basic\-\_\-format$<$ Char\-Type $>$ const \&}]{fmt}
+\end{DoxyParamCaption}
+)}\label{group__format_ga26601745d8a454bc931e89cc46a7d0a9}
+Write formatted message to stream.
+
+This operator actually causes actual text formatting. It uses the locale of {\itshape out} stream 
+
+References booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$\-::write().
+

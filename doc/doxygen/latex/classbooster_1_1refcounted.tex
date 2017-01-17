@@ -1,0 +1,43 @@
+\section{booster\-:\-:refcounted Class Reference}
+\label{classbooster_1_1refcounted}\index{booster\-::refcounted@{booster\-::refcounted}}
+
+
+This class is used as base class for reference counted objects that use \doxyref{intrusive\-\_\-ptr}{p.}{classbooster_1_1intrusive__ptr}. Deriving from this class allows simple way to manage reference counting for single object.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/refcounted.\-h$>$}
+
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf intrusive\-\_\-ptr\-\_\-add\-\_\-ref} ({\bf refcounted} $\ast$)
+\item 
+void {\bf intrusive\-\_\-ptr\-\_\-release} ({\bf refcounted} $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used as base class for reference counted objects that use \doxyref{intrusive\-\_\-ptr}{p.}{classbooster_1_1intrusive__ptr}. Deriving from this class allows simple way to manage reference counting for single object. 
+
+\subsection{Friends And Related Function Documentation}
+\index{booster\-::refcounted@{booster\-::refcounted}!intrusive\-\_\-ptr\-\_\-add\-\_\-ref@{intrusive\-\_\-ptr\-\_\-add\-\_\-ref}}
+\index{intrusive\-\_\-ptr\-\_\-add\-\_\-ref@{intrusive\-\_\-ptr\-\_\-add\-\_\-ref}!booster::refcounted@{booster\-::refcounted}}
+\subsubsection[{intrusive\-\_\-ptr\-\_\-add\-\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}void intrusive\-\_\-ptr\-\_\-add\-\_\-ref (
+\begin{DoxyParamCaption}
+\item[{{\bf refcounted} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classbooster_1_1refcounted_a96f813b4a14805d308b64f28b2e02b7a}
+Increase reference count \index{booster\-::refcounted@{booster\-::refcounted}!intrusive\-\_\-ptr\-\_\-release@{intrusive\-\_\-ptr\-\_\-release}}
+\index{intrusive\-\_\-ptr\-\_\-release@{intrusive\-\_\-ptr\-\_\-release}!booster::refcounted@{booster\-::refcounted}}
+\subsubsection[{intrusive\-\_\-ptr\-\_\-release}]{\setlength{\rightskip}{0pt plus 5cm}void intrusive\-\_\-ptr\-\_\-release (
+\begin{DoxyParamCaption}
+\item[{{\bf refcounted} $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\label{classbooster_1_1refcounted_a0ca17f8309fbf18578d8f5bff8cbd605}
+Decrease reference count, if it goes to 0, destroy the object 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/refcounted.\-h\end{DoxyCompactItemize}

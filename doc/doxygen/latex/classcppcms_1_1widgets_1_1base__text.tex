@@ -1,0 +1,142 @@
+\section{cppcms\-:\-:widgets\-:\-:base\-\_\-text Class Reference}
+\label{classcppcms_1_1widgets_1_1base__text}\index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}}
+
+
+This widget is used as base for text input fields.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:base\-\_\-text\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.987523cm]{classcppcms_1_1widgets_1_1base__text}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf value} ()
+\item 
+void {\bf value} (std\-::string v)
+\item 
+void {\bf non\-\_\-empty} ()
+\item 
+void {\bf limits} (int min, int max)
+\item 
+std\-::pair$<$ int, int $>$ {\bf limits} ()
+\item 
+void {\bf validate\-\_\-charset} (bool)
+\item 
+bool {\bf validate\-\_\-charset} ()
+\item 
+virtual bool {\bf validate} ()
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This widget is used as base for text input fields. 
+
+This widget is used as the base class for other widgets that are used for text input like\-: \doxyref{text}{p.}{classcppcms_1_1widgets_1_1text}, \doxyref{textarea}{p.}{classcppcms_1_1widgets_1_1textarea}, etc.
+
+This widget does much more than reading simple text data from the P\-O\-S\-T or G\-E\-T form. It also performs charset validation. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!limits@{limits}}
+\index{limits@{limits}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{limits}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-text\-::limits (
+\begin{DoxyParamCaption}
+\item[{int}]{min, }
+\item[{int}]{max}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_a04c3311a56bb10bb5f1b120c586bb58c}
+Set the minimum and maximum limits of the text size. Note\-: max == -\/1 indicates that there is no maximum limit; min==0 indicates that there is no minimum limit.
+
+Note\-: these numbers represent the length in Unicode code points (even if the encoding is not Unicode). If the character set validation is disabled, then these numbers represent the number of octets in the string. \index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!limits@{limits}}
+\index{limits@{limits}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{limits}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$int,int$>$ cppcms\-::widgets\-::base\-\_\-text\-::limits (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_a82bd9d00700e3bb77393689cb97cfa97}
+Get the minimum and maximum size limits, \index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!load@{load}}
+\index{load@{load}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-text\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__text_a41dc2c33655df59ccdbd680d35793b42}
+Load the widget for {\tt http\-::context}. It uses the locale given in the context to validate the text. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!non\-\_\-empty@{non\-\_\-empty}}
+\index{non\-\_\-empty@{non\-\_\-empty}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{non\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-text\-::non\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_ad5679b1b2f77fa37ee696ea21c1db8d7}
+Inform the validator that this text widget should contain some text. It is similar to limits(1,-\/1). \index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::widgets\-::base\-\_\-text\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__text_a8accbd9e605d1e4dc87337afff6d5b38}
+Validate the widget content according to the rules and to the charset encoding.
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item The charset validation is very efficient for variable length U\-T\-F-\/8 encoding as well as for most popular fixed length encodings like I\-S\-O-\/8859-\/$\ast$, windows-\/125$\ast$ and koi8$\ast$. For other encodings, character set conversion is used for the actual validation.
+\item Special characters (that are not allowed in H\-T\-M\-L) are assumed to be forbidden, even if they are valid code points (like N\-U\-L = 0 or D\-E\-L=127). 
+\end{DoxyItemize}
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}.
+
+
+
+Reimplemented in {\bf cppcms\-::widgets\-::regex\-\_\-field} \doxyref{}{p.}{classcppcms_1_1widgets_1_1regex__field_a054bf9405d82e1129032b93397ad053e}, and {\bf cppcms\-::widgets\-::password} \doxyref{}{p.}{classcppcms_1_1widgets_1_1password_a62059db5f0ff7c43635f2a6ae3455d11}.
+
+\index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!validate\-\_\-charset@{validate\-\_\-charset}}
+\index{validate\-\_\-charset@{validate\-\_\-charset}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{validate\-\_\-charset}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-text\-::validate\-\_\-charset (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_a919c491c5ede4da6279d9a14dacd28b5}
+Inform the validator whether it should check the validity of the charset. The default is enabled (true).
+
+Generally you should not use this option to disable the charset validation unless you want to load some raw data as form input, or the character set is different from the one defined in the locale. \index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!validate\-\_\-charset@{validate\-\_\-charset}}
+\index{validate\-\_\-charset@{validate\-\_\-charset}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{validate\-\_\-charset}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-text\-::validate\-\_\-charset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_a8d95f66180c043bd36bbf104a3f5dfec}
+Return true if the charset validation is enabled. \index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!value@{value}}
+\index{value@{value}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::widgets\-::base\-\_\-text\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_a465f7cf0e9fee2c9913adf686d1a54f5}
+Get the string that contains the input value of the widget. \index{cppcms\-::widgets\-::base\-\_\-text@{cppcms\-::widgets\-::base\-\_\-text}!value@{value}}
+\index{value@{value}!cppcms::widgets::base_text@{cppcms\-::widgets\-::base\-\_\-text}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-text\-::value (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__text_aba4241c990dec98201766cc911976838}
+Set the widget content to the value {\itshape v} before rendering. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

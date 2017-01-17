@@ -1,0 +1,358 @@
+\section{Text Conversions}
+\label{group__convert}\index{Text Conversions@{Text Conversions}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\-::locale\-::converter\-\_\-base}
+\begin{DoxyCompactList}\small\item\em This class provides base flags for text manipulation. It is used as base for converter facet. \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::converter$<$ Char\-Type $>$}
+\item 
+class {\bf booster\-::locale\-::converter$<$ char $>$}
+\item 
+class {\bf booster\-::locale\-::converter$<$ wchar\-\_\-t $>$}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf booster\-::locale\-::norm\-\_\-type} \{ \\*
+{\bf booster\-::locale\-::norm\-\_\-nfd}, 
+{\bf booster\-::locale\-::norm\-\_\-nfc}, 
+{\bf booster\-::locale\-::norm\-\_\-nfkd}, 
+{\bf booster\-::locale\-::norm\-\_\-nfkc}, 
+\\*
+{\bf booster\-::locale\-::norm\-\_\-default} = norm\-\_\-nfc
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::normalize} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, norm\-\_\-type n=norm\-\_\-default, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::normalize} (Char\-Type const $\ast$str, norm\-\_\-type n=norm\-\_\-default, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::normalize} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, norm\-\_\-type n=norm\-\_\-default, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-upper} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-upper} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-upper} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-lower} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-lower} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-lower} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-title} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-title} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::to\-\_\-title} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::fold\-\_\-case} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::fold\-\_\-case} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf booster\-::locale\-::fold\-\_\-case} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This module provides various function for string manipulation like Unicode normalization, case conversion etc. 
+
+\subsection{Enumeration Type Documentation}
+\index{Text Conversions@{Text Conversions}!norm\-\_\-type@{norm\-\_\-type}}
+\index{norm\-\_\-type@{norm\-\_\-type}!Text Conversions@{Text Conversions}}
+\subsubsection[{norm\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::norm\-\_\-type}}\label{group__convert_ga821e7131c7d5ec834cdd9820f1dcf2b5}
+The type that defined {\tt normalization form} \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{norm\-\_\-nfd@{norm\-\_\-nfd}!Text Conversions@{Text Conversions}}\index{Text Conversions@{Text Conversions}!norm\-\_\-nfd@{norm\-\_\-nfd}}\item[{\em 
+norm\-\_\-nfd\label{group__convert_gga821e7131c7d5ec834cdd9820f1dcf2b5a1cc0a61dd3f42777615ead65dd118b4c}
+}]Canonical decomposition. \index{norm\-\_\-nfc@{norm\-\_\-nfc}!Text Conversions@{Text Conversions}}\index{Text Conversions@{Text Conversions}!norm\-\_\-nfc@{norm\-\_\-nfc}}\item[{\em 
+norm\-\_\-nfc\label{group__convert_gga821e7131c7d5ec834cdd9820f1dcf2b5a53c3e4662720b3c49339aec72c39104f}
+}]Canonical decomposition followed by canonical composition. \index{norm\-\_\-nfkd@{norm\-\_\-nfkd}!Text Conversions@{Text Conversions}}\index{Text Conversions@{Text Conversions}!norm\-\_\-nfkd@{norm\-\_\-nfkd}}\item[{\em 
+norm\-\_\-nfkd\label{group__convert_gga821e7131c7d5ec834cdd9820f1dcf2b5aee690f3fa841bb45ed84dbb0391eb45b}
+}]Compatibility decomposition. \index{norm\-\_\-nfkc@{norm\-\_\-nfkc}!Text Conversions@{Text Conversions}}\index{Text Conversions@{Text Conversions}!norm\-\_\-nfkc@{norm\-\_\-nfkc}}\item[{\em 
+norm\-\_\-nfkc\label{group__convert_gga821e7131c7d5ec834cdd9820f1dcf2b5a876c98a4a8d54ed78e6e066f997c0be4}
+}]Compatibility decomposition followed by canonical composition. \index{norm\-\_\-default@{norm\-\_\-default}!Text Conversions@{Text Conversions}}\index{Text Conversions@{Text Conversions}!norm\-\_\-default@{norm\-\_\-default}}\item[{\em 
+norm\-\_\-default\label{group__convert_gga821e7131c7d5ec834cdd9820f1dcf2b5a0ddee8df773494bac9ad57ee78e4283e}
+}]Default normalization -\/ canonical decomposition followed by canonical composition. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{Text Conversions@{Text Conversions}!fold\-\_\-case@{fold\-\_\-case}}
+\index{fold\-\_\-case@{fold\-\_\-case}!Text Conversions@{Text Conversions}}
+\subsubsection[{fold\-\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::fold\-\_\-case (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga3968a5d38c64ecf4e2e071c52cb99a61}
+Fold case of a string {\itshape str} according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::case\-\_\-folding.
+
+\index{Text Conversions@{Text Conversions}!fold\-\_\-case@{fold\-\_\-case}}
+\index{fold\-\_\-case@{fold\-\_\-case}!Text Conversions@{Text Conversions}}
+\subsubsection[{fold\-\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::fold\-\_\-case (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga6468e921f60e6eede9680ad421479fcd}
+Fold case of a N\-U\-L terminated string {\itshape str} according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::case\-\_\-folding.
+
+\index{Text Conversions@{Text Conversions}!fold\-\_\-case@{fold\-\_\-case}}
+\index{fold\-\_\-case@{fold\-\_\-case}!Text Conversions@{Text Conversions}}
+\subsubsection[{fold\-\_\-case}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::fold\-\_\-case (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{begin, }
+\item[{Char\-Type const $\ast$}]{end, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga888573e72077e437820ddf85bb49e168}
+Fold case of a string in range [begin,end) according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::case\-\_\-folding.
+
+\index{Text Conversions@{Text Conversions}!normalize@{normalize}}
+\index{normalize@{normalize}!Text Conversions@{Text Conversions}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::normalize (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{str, }
+\item[{norm\-\_\-type}]{n = {\ttfamily norm\-\_\-default}, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gae0766796b3b364c9b53f4421c10105ea}
+Normalize Unicode string {\itshape str} according to \doxyref{normalization form}{p.}{group__convert_ga821e7131c7d5ec834cdd9820f1dcf2b5} {\itshape n} 
+
+Note\-: This function receives only Unicode strings, i.\-e.\-: U\-T\-F-\/8, U\-T\-F-\/16 or U\-T\-F-\/32. It does not take in account the locale encoding, because Unicode decomposition and composition are meaningless outside of a Unicode character set.
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::normalization.
+
+
+
+Referenced by booster\-::ptime\-::ptime().
+
+\index{Text Conversions@{Text Conversions}!normalize@{normalize}}
+\index{normalize@{normalize}!Text Conversions@{Text Conversions}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::normalize (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{str, }
+\item[{norm\-\_\-type}]{n = {\ttfamily norm\-\_\-default}, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gafb0bce5397f8c93007dc112eb876970d}
+Normalize N\-U\-L terminated Unicode string {\itshape str} according to \doxyref{normalization form}{p.}{group__convert_ga821e7131c7d5ec834cdd9820f1dcf2b5} {\itshape n} 
+
+Note\-: This function receives only Unicode strings, i.\-e.\-: U\-T\-F-\/8, U\-T\-F-\/16 or U\-T\-F-\/32. It does not take in account the locale encoding, because Unicode decomposition and composition are meaningless outside of a Unicode character set.
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::normalization.
+
+\index{Text Conversions@{Text Conversions}!normalize@{normalize}}
+\index{normalize@{normalize}!Text Conversions@{Text Conversions}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::normalize (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{begin, }
+\item[{Char\-Type const $\ast$}]{end, }
+\item[{norm\-\_\-type}]{n = {\ttfamily norm\-\_\-default}, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga4bcca36b3cf8c8e4360ac4e114a0f4d8}
+Normalize Unicode string in range [begin,end) according to \doxyref{normalization form}{p.}{group__convert_ga821e7131c7d5ec834cdd9820f1dcf2b5} {\itshape n} 
+
+Note\-: This function receives only Unicode strings, i.\-e.\-: U\-T\-F-\/8, U\-T\-F-\/16 or U\-T\-F-\/32. It does not take in account the locale encoding, because Unicode decomposition and composition are meaningless outside of a Unicode character set.
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::normalization.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-lower@{to\-\_\-lower}}
+\index{to\-\_\-lower@{to\-\_\-lower}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-lower}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-lower (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga0964f4ae685a73ae338099be725838e8}
+Convert a string {\itshape str} to lower case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::lower\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-lower@{to\-\_\-lower}}
+\index{to\-\_\-lower@{to\-\_\-lower}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-lower}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-lower (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gaaf33fd48ad964fd98761520d05ca196e}
+Convert a N\-U\-L terminated string {\itshape str} to lower case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::lower\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-lower@{to\-\_\-lower}}
+\index{to\-\_\-lower@{to\-\_\-lower}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-lower}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-lower (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{begin, }
+\item[{Char\-Type const $\ast$}]{end, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga26b4fe0ebe7419e5832a84a16a1e0b52}
+Convert a string in range [begin,end) to lower case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::lower\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-title@{to\-\_\-title}}
+\index{to\-\_\-title@{to\-\_\-title}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-title}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-title (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gaf9e689a5b492dd9fae7b7a6d18659c5a}
+Convert a string {\itshape str} to title case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::title\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-title@{to\-\_\-title}}
+\index{to\-\_\-title@{to\-\_\-title}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-title}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-title (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga9322b730174e2f28e909bf5170229213}
+Convert a N\-U\-L terminated string {\itshape str} to title case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::title\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-title@{to\-\_\-title}}
+\index{to\-\_\-title@{to\-\_\-title}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-title}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-title (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{begin, }
+\item[{Char\-Type const $\ast$}]{end, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gaa96364215cdb5276eceac6764630bc1b}
+Convert a string in range [begin,end) to title case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::title\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-upper@{to\-\_\-upper}}
+\index{to\-\_\-upper@{to\-\_\-upper}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-upper}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-upper (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gaefe4b2ccf742489cfc15354da62ab6a7}
+Convert a string {\itshape str} to upper case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::upper\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-upper@{to\-\_\-upper}}
+\index{to\-\_\-upper@{to\-\_\-upper}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-upper}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-upper (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{str, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_ga76c7da31a8aed2d8e007b3e4a8c5d6fe}
+Convert a N\-U\-L terminated string {\itshape str} to upper case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::upper\-\_\-case.
+
+\index{Text Conversions@{Text Conversions}!to\-\_\-upper@{to\-\_\-upper}}
+\index{to\-\_\-upper@{to\-\_\-upper}!Text Conversions@{Text Conversions}}
+\subsubsection[{to\-\_\-upper}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::to\-\_\-upper (
+\begin{DoxyParamCaption}
+\item[{Char\-Type const $\ast$}]{begin, }
+\item[{Char\-Type const $\ast$}]{end, }
+\item[{std\-::locale const \&}]{loc = {\ttfamily std\-:\-:locale()}}
+\end{DoxyParamCaption}
+)}\label{group__convert_gaf0d7091fa8400372b8892952c872f31f}
+Convert a string in range [begin,end) to upper case according to locale {\itshape loc} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if loc does not have \doxyref{converter}{p.}{classbooster_1_1locale_1_1converter} facet installed 
+\end{DoxyNote}
+
+
+References booster\-::locale\-::converter\-\_\-base\-::upper\-\_\-case.
+

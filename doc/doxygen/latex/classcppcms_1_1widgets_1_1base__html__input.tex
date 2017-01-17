@@ -1,0 +1,84 @@
+\section{cppcms\-:\-:widgets\-:\-:base\-\_\-html\-\_\-input Class Reference}
+\label{classcppcms_1_1widgets_1_1base__html__input}\index{cppcms\-::widgets\-::base\-\_\-html\-\_\-input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}}
+
+
+This class represents a basic widget that generates H\-T\-M\-L form elements the widgets that use the $<$input \textbackslash{}/$>$ H\-T\-M\-L tag.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:base\-\_\-html\-\_\-input\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.156200cm]{classcppcms_1_1widgets_1_1base__html__input}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf base\-\_\-html\-\_\-input} (std\-::string const \&type)
+\item 
+virtual {\bf $\sim$base\-\_\-html\-\_\-input} ()
+\item 
+virtual void {\bf render\-\_\-input} ({\bf form\-\_\-context} \&context)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf render\-\_\-value} ({\bf form\-\_\-context} \&context)=0
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents a basic widget that generates H\-T\-M\-L form elements the widgets that use the $<$input \textbackslash{}/$>$ H\-T\-M\-L tag. 
+
+It allows you to create your own widgets more easily. It does most of job required to generate the H\-T\-M\-L. The user is only required to generate the actual value like value=\char`\"{}10.\-34\char`\"{} as with a numeric widget. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::widgets\-::base\-\_\-html\-\_\-input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}!base\-\_\-html\-\_\-input@{base\-\_\-html\-\_\-input}}
+\index{base\-\_\-html\-\_\-input@{base\-\_\-html\-\_\-input}!cppcms::widgets::base_html_input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}}
+\subsubsection[{base\-\_\-html\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::base\-\_\-html\-\_\-input\-::base\-\_\-html\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{type}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__html__input_aea0331a34cc39f1dd6e3e9f9aaaf3ee6}
+Create a new instance. {\itshape type} is the H\-T\-M\-L type tag of the input element, for example \char`\"{}text\char`\"{} or \char`\"{}password\char`\"{}. \index{cppcms\-::widgets\-::base\-\_\-html\-\_\-input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}!$\sim$base\-\_\-html\-\_\-input@{$\sim$base\-\_\-html\-\_\-input}}
+\index{$\sim$base\-\_\-html\-\_\-input@{$\sim$base\-\_\-html\-\_\-input}!cppcms::widgets::base_html_input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}}
+\subsubsection[{$\sim$base\-\_\-html\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::widgets\-::base\-\_\-html\-\_\-input\-::$\sim$base\-\_\-html\-\_\-input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__html__input_a633a8c103c59270bbd2c6af567f1da23}
+Virtual destructor. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::base\-\_\-html\-\_\-input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}!render\-\_\-input@{render\-\_\-input}}
+\index{render\-\_\-input@{render\-\_\-input}!cppcms::widgets::base_html_input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}}
+\subsubsection[{render\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-html\-\_\-input\-::render\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__html__input_adfab958294d9a6027d0b77c25afba2c1}
+This function generates the actual H\-T\-M\-L. It calls render\-\_\-value where needed. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a03394613be620bb0d6aeb62818f56b8f}.
+
+\index{cppcms\-::widgets\-::base\-\_\-html\-\_\-input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}!render\-\_\-value@{render\-\_\-value}}
+\index{render\-\_\-value@{render\-\_\-value}!cppcms::widgets::base_html_input@{cppcms\-::widgets\-::base\-\_\-html\-\_\-input}}
+\subsubsection[{render\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-html\-\_\-input\-::render\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classcppcms_1_1widgets_1_1base__html__input_afd2f99f7dd7b8ebe75e63f1f005068cb}
+Write the actual value of the H\-T\-M\-L tag. Derived classes must implement this. 
+
+Implemented in {\bf cppcms\-::widgets\-::submit} \doxyref{}{p.}{classcppcms_1_1widgets_1_1submit_aeb759bc831400b0ceb964e69ad3d6121}, {\bf cppcms\-::widgets\-::file} \doxyref{}{p.}{classcppcms_1_1widgets_1_1file_aa607511349c879b6e0c1a395f270f76d}, {\bf cppcms\-::widgets\-::checkbox} \doxyref{}{p.}{classcppcms_1_1widgets_1_1checkbox_aace5a796739449ade14f1d203f5d4b7d}, {\bf cppcms\-::widgets\-::numeric$<$ T $>$} \doxyref{}{p.}{classcppcms_1_1widgets_1_1numeric_a81a3fad3834e6d791cc1b173b44ce4ce}, and {\bf cppcms\-::widgets\-::text} \doxyref{}{p.}{classcppcms_1_1widgets_1_1text_acbd7f7a5e7f49e19b73c432232080059}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

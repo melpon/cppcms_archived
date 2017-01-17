@@ -1,0 +1,556 @@
+\section{cppcms\-:\-:http\-:\-:response Class Reference}
+\label{classcppcms_1_1http_1_1response}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}}
+
+
+this class represents all H\-T\-T\-P/\-C\-G\-I response related A\-P\-I, generation of output content and H\-T\-T\-P headers.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/http\-\_\-response.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:http\-:\-:response\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1response}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf status\-\_\-type} \{ \\*
+{\bfseries continue\-\_\-transfer} = 100, 
+{\bfseries switching\-\_\-protocol} = 101, 
+{\bfseries ok} = 200, 
+{\bfseries created} = 201, 
+\\*
+{\bfseries accepted} = 202, 
+{\bfseries non\-\_\-authoritative\-\_\-information} = 203, 
+{\bfseries no\-\_\-content} = 204, 
+{\bfseries reset\-\_\-content} = 205, 
+\\*
+{\bfseries partial\-\_\-content} = 206, 
+{\bfseries multiple\-\_\-choices} = 300, 
+{\bfseries moved\-\_\-permanently} = 301, 
+{\bfseries found} = 302, 
+\\*
+{\bfseries see\-\_\-other} = 303, 
+{\bfseries not\-\_\-modified} = 304, 
+{\bfseries use\-\_\-proxy} = 305, 
+{\bfseries temporary\-\_\-redirect} = 307, 
+\\*
+{\bfseries bad\-\_\-request} = 400, 
+{\bfseries unauthorized} = 401, 
+{\bfseries payment\-\_\-required} = 402, 
+{\bfseries forbidden} = 403, 
+\\*
+{\bfseries not\-\_\-found} = 404, 
+{\bfseries method\-\_\-not\-\_\-allowed} = 405, 
+{\bfseries not\-\_\-acceptable} = 406, 
+{\bfseries proxy\-\_\-authentication\-\_\-required} = 407, 
+\\*
+{\bfseries request\-\_\-time\-\_\-out} = 408, 
+{\bfseries conflict} = 409, 
+{\bfseries gone} = 410, 
+{\bfseries precondition\-\_\-failed} = 412, 
+\\*
+{\bfseries request\-\_\-entity\-\_\-too\-\_\-large} = 413, 
+{\bfseries request\-\_\-uri\-\_\-too\-\_\-large} = 414, 
+{\bfseries unsupported\-\_\-media\-\_\-type} = 415, 
+{\bfseries requested\-\_\-range\-\_\-not\-\_\-satisfiable} = 416, 
+\\*
+{\bfseries expectation\-\_\-failed} = 417, 
+{\bfseries internal\-\_\-server\-\_\-error} = 500, 
+{\bfseries not\-\_\-implemented} = 501, 
+{\bfseries bad\-\_\-gateway} = 502, 
+\\*
+{\bfseries service\-\_\-unavailable} = 503, 
+{\bfseries gateway\-\_\-timeout} = 504, 
+{\bfseries http\-\_\-version\-\_\-not\-\_\-supported} = 505
+ \}
+\item 
+enum {\bf io\-\_\-mode\-\_\-type} \{ \\*
+{\bf normal}, 
+{\bf nogzip}, 
+{\bf raw}, 
+{\bf asynchronous}, 
+\\*
+{\bf asynchronous\-\_\-raw}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf accept\-\_\-ranges} (std\-::string const \&)
+\item 
+void {\bf age} (unsigned seconds)
+\item 
+void {\bf allow} (std\-::string const \&)
+\item 
+void {\bf cache\-\_\-control} (std\-::string const \&)
+\item 
+void {\bf content\-\_\-encoding} (std\-::string const \&)
+\item 
+void {\bf content\-\_\-language} (std\-::string const \&)
+\item 
+void {\bf content\-\_\-length} (unsigned long long len)
+\item 
+void {\bf content\-\_\-location} (std\-::string const \&)
+\item 
+void {\bf content\-\_\-md5} (std\-::string const \&)
+\item 
+void {\bf content\-\_\-range} (std\-::string const \&)
+\item 
+void {\bf content\-\_\-type} (std\-::string const \&)
+\item 
+void {\bf date} (time\-\_\-t)
+\item 
+void {\bf etag} (std\-::string const \&)
+\item 
+void {\bf expires} (time\-\_\-t t)
+\item 
+void {\bf last\-\_\-modified} (time\-\_\-t t)
+\item 
+void {\bf location} (std\-::string const \&)
+\item 
+void {\bf pragma} (std\-::string const \&)
+\item 
+void {\bf proxy\-\_\-authenticate} (std\-::string const \&)
+\item 
+void {\bf retry\-\_\-after} (std\-::string const \&)
+\item 
+void {\bf retry\-\_\-after} (unsigned)
+\item 
+void {\bf status} (int code)
+\item 
+void {\bf status} (int code, std\-::string const \&message)
+\item 
+void {\bf trailer} (std\-::string const \&)
+\item 
+void {\bf transfer\-\_\-encoding} (std\-::string const \&)
+\item 
+void {\bf vary} (std\-::string const \&)
+\item 
+void {\bf via} (std\-::string const \&)
+\item 
+void {\bf warning} (std\-::string const \&)
+\item 
+void {\bf www\-\_\-authenticate} (std\-::string const \&)
+\item 
+void {\bf set\-\_\-header} (std\-::string const \&name, std\-::string const \&value)
+\item 
+std\-::string {\bf get\-\_\-header} (std\-::string const \&name)
+\item 
+void {\bf erase\-\_\-header} (std\-::string const \&h)
+\item 
+void {\bf set\-\_\-content\-\_\-header} (std\-::string const \&{\bf content\-\_\-type})
+\item 
+void {\bf set\-\_\-html\-\_\-header} ()
+\item 
+void {\bf set\-\_\-xhtml\-\_\-header} ()
+\item 
+void {\bf set\-\_\-plain\-\_\-text\-\_\-header} ()
+\item 
+void {\bf set\-\_\-redirect\-\_\-header} (std\-::string const \&{\bf location}, int {\bf status}=found)
+\item 
+void {\bf set\-\_\-cookie} ({\bf cookie} const \&)
+\item 
+void {\bf make\-\_\-error\-\_\-response} (int stat, std\-::string const \&msg=std\-::string())
+\item 
+{\bf io\-\_\-mode\-\_\-type} {\bf io\-\_\-mode} ()
+\item 
+void {\bf io\-\_\-mode} ({\bf io\-\_\-mode\-\_\-type})
+\item 
+std\-::ostream \& {\bf out} ()
+\item 
+bool {\bf some\-\_\-output\-\_\-was\-\_\-written} ()
+\item 
+void {\bf finalize} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string {\bf make\-\_\-http\-\_\-time} (time\-\_\-t)
+\item 
+static char const $\ast$ {\bf status\-\_\-to\-\_\-string} (int {\bf status})
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries impl\-::cgi\-::connection}\label{classcppcms_1_1http_1_1response_a35a6637347117934569e84977b6f5143}
+
+\item 
+class {\bfseries \-::cppcms\-::cache\-\_\-interface}\label{classcppcms_1_1http_1_1response_a0e48920ed561a8c07f81eed0e36ecb68}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class represents all H\-T\-T\-P/\-C\-G\-I response related A\-P\-I, generation of output content and H\-T\-T\-P headers. 
+
+\subsection{Member Enumeration Documentation}
+\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!io\-\_\-mode\-\_\-type@{io\-\_\-mode\-\_\-type}}
+\index{io\-\_\-mode\-\_\-type@{io\-\_\-mode\-\_\-type}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{io\-\_\-mode\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::http\-::response\-::io\-\_\-mode\-\_\-type}}\label{classcppcms_1_1http_1_1response_ab88544816b81e2935a8825842c8d97cd}
+This enum represents different types of I\-O modes giving fine grained control over H\-T\-T\-P output.
+
+These modes are set via io\-\_\-mode member function \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{normal@{normal}!cppcms\-::http\-::response@{cppcms\-::http\-::response}}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!normal@{normal}}\item[{\em 
+normal\label{classcppcms_1_1http_1_1response_ab88544816b81e2935a8825842c8d97cda8709ef70bb0439d0912a9a86fcaaa168}
+}]Synchronous I\-O. Write the request, it is buffered and possible compressed using gzip. \index{nogzip@{nogzip}!cppcms\-::http\-::response@{cppcms\-::http\-::response}}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!nogzip@{nogzip}}\item[{\em 
+nogzip\label{classcppcms_1_1http_1_1response_ab88544816b81e2935a8825842c8d97cdaf7a55de75b022cddff4e032d6e9972fa}
+}]Same as normal but disable gzip compression. \index{raw@{raw}!cppcms\-::http\-::response@{cppcms\-::http\-::response}}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!raw@{raw}}\item[{\em 
+raw\label{classcppcms_1_1http_1_1response_ab88544816b81e2935a8825842c8d97cdafe73d157379a0fd3f6d2e615aa62ab88}
+}]User has full control over the output, it is also fully responsible for generation of H\-T\-T\-P headers, no-\/session management given. \index{asynchronous@{asynchronous}!cppcms\-::http\-::response@{cppcms\-::http\-::response}}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!asynchronous@{asynchronous}}\item[{\em 
+asynchronous\label{classcppcms_1_1http_1_1response_ab88544816b81e2935a8825842c8d97cda1c198308ba8dfd9252d361f4d7e3fa47}
+}]In this mode the data is buffered and never transferred unless it is requested by async\-\_\-flush\-\_\-output, or async\-\_\-complete\-\_\-response member functions of {\tt http\-::context} explicitly. \index{asynchronous\-\_\-raw@{asynchronous\-\_\-raw}!cppcms\-::http\-::response@{cppcms\-::http\-::response}}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!asynchronous\-\_\-raw@{asynchronous\-\_\-raw}}\item[{\em 
+asynchronous\-\_\-raw\label{classcppcms_1_1http_1_1response_ab88544816b81e2935a8825842c8d97cda3505e72a31d3ee91c6800ca1c647b8d0}
+}]Same as asynchronous but the user is responsible for generation of its own H\-T\-T\-P headers. \end{description}
+\end{Desc}
+\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!status\-\_\-type@{status\-\_\-type}}
+\index{status\-\_\-type@{status\-\_\-type}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{status\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::http\-::response\-::status\-\_\-type}}\label{classcppcms_1_1http_1_1response_a453b2705e7437ca330acdf3d91843fa6}
+This type represent the enum of H\-T\-T\-P Status type as of R\-F\-C 2616 sec. 6.\-1.\-1 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!accept\-\_\-ranges@{accept\-\_\-ranges}}
+\index{accept\-\_\-ranges@{accept\-\_\-ranges}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{accept\-\_\-ranges}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::accept\-\_\-ranges (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ac0e8aca86686c9248f49d3efbb946ff0}
+Set H\-T\-T\-P Header Accept-\/\-Ranges \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!age@{age}}
+\index{age@{age}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{age}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::age (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{seconds}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ab6526e9343edb8c7ab6c4c0f13cb9059}
+Set H\-T\-T\-P Header Age \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!allow@{allow}}
+\index{allow@{allow}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{allow}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::allow (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a4a22b6fd1e35f3a78399564a4fd5148d}
+Set H\-T\-T\-P Header Allow \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!cache\-\_\-control@{cache\-\_\-control}}
+\index{cache\-\_\-control@{cache\-\_\-control}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{cache\-\_\-control}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::cache\-\_\-control (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ae30007856890ab9ce461fb691fdd4f5d}
+Set H\-T\-T\-P Header Cache-\/\-Control \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-encoding@{content\-\_\-encoding}}
+\index{content\-\_\-encoding@{content\-\_\-encoding}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-encoding (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ae5c8e9633be3bd7d3604a66545e543e9}
+Set H\-T\-T\-P Header Content-\/\-Encoding.
+
+Note\-: if you set this header manually, gzip compression will be automatically disabled. \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-language@{content\-\_\-language}}
+\index{content\-\_\-language@{content\-\_\-language}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-language}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-language (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_afe667f731c9e4fb4c922114d94ce6ae5}
+Set H\-T\-T\-P Header Content-\/\-Language \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-length@{content\-\_\-length}}
+\index{content\-\_\-length@{content\-\_\-length}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-length (
+\begin{DoxyParamCaption}
+\item[{unsigned long long}]{len}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ac4617c473b8e04a560cd6f613d0a9793}
+Set H\-T\-T\-P Header Content-\/\-Length \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-location@{content\-\_\-location}}
+\index{content\-\_\-location@{content\-\_\-location}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-location}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-location (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_aae9da458c34e621311c93630855f90be}
+Set H\-T\-T\-P Header Content-\/\-Location \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-md5@{content\-\_\-md5}}
+\index{content\-\_\-md5@{content\-\_\-md5}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-md5}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-md5 (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a9ab8a189c0aa42e8d50cfd63a442d46b}
+Set H\-T\-T\-P Header Content-\/\-Md5 \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-range@{content\-\_\-range}}
+\index{content\-\_\-range@{content\-\_\-range}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-range (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ad1d4fbb3565893b972401d0a55e311df}
+Set H\-T\-T\-P Header Content-\/\-Range \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a8fb156db7d2b0350fb6fee9ce9d300be}
+Set H\-T\-T\-P Header Content-\/\-Type \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!date@{date}}
+\index{date@{date}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{date}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::date (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ae55b4b018e6c1782f4b07be562029ea7}
+Set H\-T\-T\-P Header Date \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!erase\-\_\-header@{erase\-\_\-header}}
+\index{erase\-\_\-header@{erase\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{erase\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::erase\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_af76ab8a7ff52412e8918e4d05cd2875b}
+Erase specific header {\itshape h} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!etag@{etag}}
+\index{etag@{etag}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{etag}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::etag (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a4b47aa1ab0570e56326a97f732403098}
+Set H\-T\-T\-P Header Etag \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!expires@{expires}}
+\index{expires@{expires}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{expires}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::expires (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a24850c474fa3c7a7fbe280e64db6b75e}
+Set H\-T\-T\-P Header Expires, it is formatted as H\-T\-T\-P Date-\/\-Time from the P\-O\-S\-I\-X time {\itshape t} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!finalize@{finalize}}
+\index{finalize@{finalize}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::finalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a38f08aa68dfdb767a89c45143953d69d}
+Finalize an output request. Generally this function is called automatically for synchronous application, however when working with asynchronous requests you should call this function before calling async\-\_\-complete\-\_\-response. \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!get\-\_\-header@{get\-\_\-header}}
+\index{get\-\_\-header@{get\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{get\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::response\-::get\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a60ada54cc9dff51ee73df2cdd98cedd4}
+Get output header value, returns empty string if it is not set \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!io\-\_\-mode@{io\-\_\-mode}}
+\index{io\-\_\-mode@{io\-\_\-mode}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{io\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf io\-\_\-mode\-\_\-type} cppcms\-::http\-::response\-::io\-\_\-mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a1ee67536d9a1b4f66c37147879c148de}
+Get current io\-\_\-mode, see a description for io\-\_\-mode\-\_\-type. \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!io\-\_\-mode@{io\-\_\-mode}}
+\index{io\-\_\-mode@{io\-\_\-mode}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{io\-\_\-mode}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::io\-\_\-mode (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-mode\-\_\-type}}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ab2e6494c329f13c20694407917a7d485}
+Set current io\-\_\-mode, see a description for io\-\_\-mode\-\_\-type.
+
+Note\-: you can't change it after requesting for output stream, i.\-e. calling \doxyref{out()}{p.}{classcppcms_1_1http_1_1response_a39e48c676a3f2c79b26d60b8d455658c} member function. \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!last\-\_\-modified@{last\-\_\-modified}}
+\index{last\-\_\-modified@{last\-\_\-modified}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{last\-\_\-modified}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::last\-\_\-modified (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a7201f06f483bf7966fc63031b150e12c}
+Set H\-T\-T\-P Header Last-\/\-Modified, it is formatted as H\-T\-T\-P Date-\/\-Time from the P\-O\-S\-I\-X time {\itshape t} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!location@{location}}
+\index{location@{location}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{location}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::location (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a0d6ab248cb964d6a2e2fd217d03adad9}
+Set H\-T\-T\-P Header Location \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!make\-\_\-error\-\_\-response@{make\-\_\-error\-\_\-response}}
+\index{make\-\_\-error\-\_\-response@{make\-\_\-error\-\_\-response}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{make\-\_\-error\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::make\-\_\-error\-\_\-response (
+\begin{DoxyParamCaption}
+\item[{int}]{stat, }
+\item[{std\-::string const \&}]{msg = {\ttfamily std\-:\-:string()}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ae84eed88b24a7bfc093f90462145bd35}
+This creates a default H\-T\-T\-P response (including H\-T\-M\-L body) with a status {\itshape stat} a message {\itshape msg}.
+
+Note\-: if {\itshape msg} is empty default message for H\-T\-T\-P Status code {\itshape stat} is used. \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!make\-\_\-http\-\_\-time@{make\-\_\-http\-\_\-time}}
+\index{make\-\_\-http\-\_\-time@{make\-\_\-http\-\_\-time}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{make\-\_\-http\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string cppcms\-::http\-::response\-::make\-\_\-http\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1http_1_1response_ad7a02b4c00709009a28c05878b2bc613}
+Create an H\-T\-T\-P time string from P\-O\-S\-I\-X time as of R\-F\-C 2616 \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!out@{out}}
+\index{out@{out}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{out}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cppcms\-::http\-::response\-::out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a39e48c676a3f2c79b26d60b8d455658c}
+Request an output stream to write the body of H\-T\-T\-P response after writing headers.
+
+Note\-:
+
+
+\begin{DoxyItemize}
+\item it triggers saving changes in the session, so further changes will have no effect.
+\item it triggers writing all headers to output stream, such that changing any header or adding cookies will have no effect.
+\item it is impossible to change an io\-\_\-mode after calling this function. 
+\end{DoxyItemize}\index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!pragma@{pragma}}
+\index{pragma@{pragma}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{pragma}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::pragma (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_aa5329000888c31b900f0d1ee837fe832}
+Set H\-T\-T\-P Header Pragma \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!proxy\-\_\-authenticate@{proxy\-\_\-authenticate}}
+\index{proxy\-\_\-authenticate@{proxy\-\_\-authenticate}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{proxy\-\_\-authenticate}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::proxy\-\_\-authenticate (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a1e777fa8f0902fd6cd792085faa4a711}
+Set H\-T\-T\-P Header Proxy-\/\-Authenticate \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!retry\-\_\-after@{retry\-\_\-after}}
+\index{retry\-\_\-after@{retry\-\_\-after}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{retry\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::retry\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a3d5515f800e4846829c79e1f414a780e}
+Set H\-T\-T\-P Header Retry-\/\-After \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!retry\-\_\-after@{retry\-\_\-after}}
+\index{retry\-\_\-after@{retry\-\_\-after}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{retry\-\_\-after}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::retry\-\_\-after (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a8365b5bceb9aff26bc5e5f29a7cf7a01}
+Set H\-T\-T\-P Header Retry-\/\-After \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-content\-\_\-header@{set\-\_\-content\-\_\-header}}
+\index{set\-\_\-content\-\_\-header@{set\-\_\-content\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-content\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-content\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{content\-\_\-type}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a50ae55ff605bc655f5b19021f0f4f71d}
+This function set H\-T\-T\-P Content-\/\-Type header, but unlike contet\-\_\-type function it also adds current locale charset encoding (unless localization.\-disable\-\_\-charset\-\_\-in\-\_\-content\-\_\-type set to true in configuration) \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-cookie@{set\-\_\-cookie}}
+\index{set\-\_\-cookie@{set\-\_\-cookie}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-cookie}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-cookie (
+\begin{DoxyParamCaption}
+\item[{{\bf cookie} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a372c784dcef97dabc2d79d2b63104f8d}
+Set H\-T\-T\-P Cookie \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-header@{set\-\_\-header}}
+\index{set\-\_\-header@{set\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a37b0c6c284c9d8f319a87c86d182f021}
+Set Generic H\-T\-T\-P header \char`\"{}name\-: value\char`\"{} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-html\-\_\-header@{set\-\_\-html\-\_\-header}}
+\index{set\-\_\-html\-\_\-header@{set\-\_\-html\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-html\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-html\-\_\-header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_afdf49a3b991151ccb1c1ed330e0fd489}
+Shortcut to set\-\_\-content\-\_\-header(\char`\"{}text/html\char`\"{}) -\/ this is the default content-\/type header \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-plain\-\_\-text\-\_\-header@{set\-\_\-plain\-\_\-text\-\_\-header}}
+\index{set\-\_\-plain\-\_\-text\-\_\-header@{set\-\_\-plain\-\_\-text\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-plain\-\_\-text\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-plain\-\_\-text\-\_\-header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a1dff01813a535caa46a91c3e242462b3}
+Shortcut to set\-\_\-content\-\_\-header(\char`\"{}text/plain\char`\"{}) \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-redirect\-\_\-header@{set\-\_\-redirect\-\_\-header}}
+\index{set\-\_\-redirect\-\_\-header@{set\-\_\-redirect\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-redirect\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-redirect\-\_\-header (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{location, }
+\item[{int}]{status = {\ttfamily found}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_aee692b361154cc98d02996859750e8d9}
+Redirect to other {\itshape location} by setting H\-T\-T\-P Location header and a Status header with a status {\itshape status} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!set\-\_\-xhtml\-\_\-header@{set\-\_\-xhtml\-\_\-header}}
+\index{set\-\_\-xhtml\-\_\-header@{set\-\_\-xhtml\-\_\-header}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{set\-\_\-xhtml\-\_\-header}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::set\-\_\-xhtml\-\_\-header (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a2587bdadf8afd9593960497e6dbe9d2e}
+Shortcut to set\-\_\-content\-\_\-header(\char`\"{}text/xhtml\char`\"{}) \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!some\-\_\-output\-\_\-was\-\_\-written@{some\-\_\-output\-\_\-was\-\_\-written}}
+\index{some\-\_\-output\-\_\-was\-\_\-written@{some\-\_\-output\-\_\-was\-\_\-written}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{some\-\_\-output\-\_\-was\-\_\-written}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::http\-::response\-::some\-\_\-output\-\_\-was\-\_\-written (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_afe02e9e26349d3ec86b7122a0b217feb}
+Check if \doxyref{out()}{p.}{classcppcms_1_1http_1_1response_a39e48c676a3f2c79b26d60b8d455658c} member function was called, (so it is impossible to do some tasks like changing H\-T\-T\-P headers. See out description for more details \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!status@{status}}
+\index{status@{status}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::status (
+\begin{DoxyParamCaption}
+\item[{int}]{code}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_afe9da31cf977bc2aac66aa951dc249cc}
+Set G\-C\-I Status Header, the message is created according to the code automatically \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!status@{status}}
+\index{status@{status}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{status}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::status (
+\begin{DoxyParamCaption}
+\item[{int}]{code, }
+\item[{std\-::string const \&}]{message}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_af1d38f29f4d6f3daba886f444ab635c3}
+Set H\-T\-T\-P Header Status with the status code {\itshape code} and a custom {\itshape message} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!status\-\_\-to\-\_\-string@{status\-\_\-to\-\_\-string}}
+\index{status\-\_\-to\-\_\-string@{status\-\_\-to\-\_\-string}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{status\-\_\-to\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}static char const$\ast$ cppcms\-::http\-::response\-::status\-\_\-to\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{int}]{status}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1http_1_1response_a231ab5f89717894c59d236d3eeadc37b}
+Return a string that represents a message for H\-T\-T\-P status code {\itshape status} \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!trailer@{trailer}}
+\index{trailer@{trailer}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{trailer}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::trailer (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_ada89ccfc62399652d16cf0a1d6177328}
+Set H\-T\-T\-P Header Trailer \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!transfer\-\_\-encoding@{transfer\-\_\-encoding}}
+\index{transfer\-\_\-encoding@{transfer\-\_\-encoding}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{transfer\-\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::transfer\-\_\-encoding (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a1a82219a8047cab9252f51cff9473715}
+Set H\-T\-T\-P Header Transfer-\/\-Encoding, note \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!vary@{vary}}
+\index{vary@{vary}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{vary}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::vary (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a3603c1c69e532fb6ec86be5071b374f4}
+Set H\-T\-T\-P Header Vary \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!via@{via}}
+\index{via@{via}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{via}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::via (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a7f3436305fbc971e9020bc41ecd12ad9}
+Set H\-T\-T\-P Header Via \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!warning@{warning}}
+\index{warning@{warning}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{warning}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::warning (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a635f82d677518fa3b4254668a381f56a}
+Set H\-T\-T\-P Header Warning \index{cppcms\-::http\-::response@{cppcms\-::http\-::response}!www\-\_\-authenticate@{www\-\_\-authenticate}}
+\index{www\-\_\-authenticate@{www\-\_\-authenticate}!cppcms::http::response@{cppcms\-::http\-::response}}
+\subsubsection[{www\-\_\-authenticate}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::response\-::www\-\_\-authenticate (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1response_a3d620b53dd065027f0dd539a23c27836}
+Set H\-T\-T\-P Header W\-W\-W-\/\-Authenticate 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\-\_\-response.\-h\end{DoxyCompactItemize}

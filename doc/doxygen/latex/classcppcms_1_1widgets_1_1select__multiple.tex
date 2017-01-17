@@ -1,0 +1,207 @@
+\section{cppcms\-:\-:widgets\-:\-:select\-\_\-multiple Class Reference}
+\label{classcppcms_1_1widgets_1_1select__multiple}\index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+
+
+This widget represents an H\-T\-M\-L multiple select form element.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:select\-\_\-multiple\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcppcms_1_1widgets_1_1select__multiple}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add} (std\-::string const \&msg, bool selected=false)
+\item 
+void {\bf add} (std\-::string const \&msg, std\-::string const \&{\bf id}, bool selected=false)
+\item 
+void {\bf add} ({\bf locale\-::message} const \&msg, bool selected=false)
+\item 
+void {\bf add} ({\bf locale\-::message} const \&msg, std\-::string const \&{\bf id}, bool selected=false)
+\item 
+std\-::vector$<$ bool $>$ {\bf selected\-\_\-map} ()
+\item 
+std\-::set$<$ std\-::string $>$ {\bf selected\-\_\-ids} ()
+\item 
+unsigned {\bf at\-\_\-least} ()
+\item 
+void {\bf at\-\_\-least} (unsigned v)
+\item 
+unsigned {\bf at\-\_\-most} ()
+\item 
+void {\bf at\-\_\-most} (unsigned v)
+\item 
+void {\bf non\-\_\-empty} ()
+\item 
+unsigned {\bf rows} ()
+\item 
+void {\bf rows} (unsigned n)
+\item 
+virtual void {\bf render\-\_\-input} ({\bf form\-\_\-context} \&context)
+\item 
+virtual bool {\bf validate} ()
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)
+\item 
+virtual void {\bf clear} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This widget represents an H\-T\-M\-L multiple select form element. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::add (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{msg, }
+\item[{bool}]{selected = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a3b4e17f09588df43a0135f18910c8ec3}
+Add to the multiple select a new option with the display name {\itshape msg}, and specify if it is initially selected. The default is {\itshape false}. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::add (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{msg, }
+\item[{std\-::string const \&}]{id, }
+\item[{bool}]{selected = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_ac2a84d2693c46173197aa50c866f9471}
+Add to the multiple select a new option with the display name {\itshape msg}, and specify if it is initially selected (the default is {\itshape false}), providing a unique identification string to use as the element's {\itshape id}. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{msg, }
+\item[{bool}]{selected = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_aa53bcc3ff8787276d3090398e6424b45}
+Add to the multiple select a new option with the localized display name {\itshape msg}, and specify if it is initially selected. The default is {\itshape false}. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!add@{add}}
+\index{add@{add}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{msg, }
+\item[{std\-::string const \&}]{id, }
+\item[{bool}]{selected = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a9b635f6566c8088c16e7227a4de6dcb0}
+Add to the multiple select a new option with the localized display name {\itshape msg}, and specify if it is initially selected (the default is {\itshape false}), providing a unique identification string to use as the element's {\itshape id}. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!at\-\_\-least@{at\-\_\-least}}
+\index{at\-\_\-least@{at\-\_\-least}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{at\-\_\-least}]{\setlength{\rightskip}{0pt plus 5cm}unsigned cppcms\-::widgets\-::select\-\_\-multiple\-::at\-\_\-least (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_ad938e988cc6187b29e149a58da32e35f}
+Get the minimum amount of options that can be chosen. The default is {\itshape 0}. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!at\-\_\-least@{at\-\_\-least}}
+\index{at\-\_\-least@{at\-\_\-least}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{at\-\_\-least}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::at\-\_\-least (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a2253cfebbf2c3dbd8f35b8dc4713f0b5}
+Set the minimum amount of options that can be chosen. The default is {\itshape 0}. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!at\-\_\-most@{at\-\_\-most}}
+\index{at\-\_\-most@{at\-\_\-most}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{at\-\_\-most}]{\setlength{\rightskip}{0pt plus 5cm}unsigned cppcms\-::widgets\-::select\-\_\-multiple\-::at\-\_\-most (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_ae86e38ff7feaf5396bbd87448ebbdf9c}
+Get the maximum amount of options that can be chosen. The default is unlimited. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!at\-\_\-most@{at\-\_\-most}}
+\index{at\-\_\-most@{at\-\_\-most}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{at\-\_\-most}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::at\-\_\-most (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_aad0be3c3db86d93ea7a22726ad5dca23}
+Set the maximum amount of options that can be chosen. The default is unlimited. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!clear@{clear}}
+\index{clear@{clear}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::select\-\_\-multiple\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__multiple_a8c4d064583a42de69a9eb6400f446174}
+Clear the form. It also calls set(false). 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a957f7c7a63f5ea9489b52c3ec1043b81}.
+
+\index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!load@{load}}
+\index{load@{load}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::select\-\_\-multiple\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__multiple_aca348bf9b1f56f8ad4bae380275bd03a}
+Load the form information from the provided {\tt http\-::context} {\itshape context}. A user can call this function to load all information from the raw P\-O\-S\-T/\-G\-E\-T data into the internal widget representation. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!non\-\_\-empty@{non\-\_\-empty}}
+\index{non\-\_\-empty@{non\-\_\-empty}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{non\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::non\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a5a904074f5b8a07efad93fb3ad4cb3b6}
+Same as at\-\_\-least(1). \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!render\-\_\-input@{render\-\_\-input}}
+\index{render\-\_\-input@{render\-\_\-input}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{render\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::select\-\_\-multiple\-::render\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__multiple_aa31c3a9b5fb0cd21aae7e4e85e797433}
+This is a virtual member function that should be implemented by each widget. It executes the actual rendering of the H\-T\-M\-L form. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a03394613be620bb0d6aeb62818f56b8f}.
+
+\index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!rows@{rows}}
+\index{rows@{rows}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}unsigned cppcms\-::widgets\-::select\-\_\-multiple\-::rows (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a4136730c63fc000197204ff6e7468e0e}
+Get the number of rows used to display the widget. The default is {\itshape 0} -- undefined. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!rows@{rows}}
+\index{rows@{rows}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{rows}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::select\-\_\-multiple\-::rows (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_ae9dbb3c3c89b4e4ef97b0906464640ab}
+Set the number of rows used to display the widget. The default is {\itshape 0} -- undefined. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!selected\-\_\-ids@{selected\-\_\-ids}}
+\index{selected\-\_\-ids@{selected\-\_\-ids}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{selected\-\_\-ids}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<$std\-::string$>$ cppcms\-::widgets\-::select\-\_\-multiple\-::selected\-\_\-ids (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a2695819dae8f3bd1e85d6de5da1fe1c8}
+Get all the selected items ids according to the order they where added to the list. If no specific id was given, a string like \char`\"{}0\char`\"{}, \char`\"{}1\char`\"{}... will be used. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!selected\-\_\-map@{selected\-\_\-map}}
+\index{selected\-\_\-map@{selected\-\_\-map}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{selected\-\_\-map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$bool$>$ cppcms\-::widgets\-::select\-\_\-multiple\-::selected\-\_\-map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1select__multiple_a768b6e399015de58e13f7d42a2e1e414}
+Get the mapping of all the selected items according to the order they where added to the multiple select list. \index{cppcms\-::widgets\-::select\-\_\-multiple@{cppcms\-::widgets\-::select\-\_\-multiple}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::select_multiple@{cppcms\-::widgets\-::select\-\_\-multiple}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::widgets\-::select\-\_\-multiple\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1select__multiple_a0e1c51984aeeb59f5bfa402a5eae2fbf}
+Validate the form. If not overridden, it sets the widget to {\itshape valid}. 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

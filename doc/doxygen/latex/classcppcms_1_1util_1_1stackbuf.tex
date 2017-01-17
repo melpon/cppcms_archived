@@ -1,0 +1,95 @@
+\section{cppcms\-:\-:util\-:\-:stackbuf$<$ On\-Stack\-Size $>$ Class Template Reference}
+\label{classcppcms_1_1util_1_1stackbuf}\index{cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$@{cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$}}
+
+
+Very simple output stream buffer that uses stack for small chunks of text and then allocates memory of the default buffer is too small.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/steal\-\_\-buf.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:util\-:\-:stackbuf$<$ On\-Stack\-Size $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1util_1_1stackbuf}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ {\bf begin} ()
+\item 
+char $\ast$ {\bf end} ()
+\item 
+char $\ast$ {\bf c\-\_\-str} ()
+\item 
+std\-::string {\bf str} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries overflow} (int c)\label{classcppcms_1_1util_1_1stackbuf_a52cd01fae4eae067e0363a21814afebb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\-\_\-t On\-Stack\-Size = 128$>$class cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$}
+
+Very simple output stream buffer that uses stack for small chunks of text and then allocates memory of the default buffer is too small. 
+
+It is something like std\-::stringbuf with small string optimization, it also allows to access the memory without actually creating the string itself.
+
+The template parameter defines how many characters should be allocated on stack by default before heap is used. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::util\-::stackbuf@{cppcms\-::util\-::stackbuf}!begin@{begin}}
+\index{begin@{begin}!cppcms::util::stackbuf@{cppcms\-::util\-::stackbuf}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t On\-Stack\-Size = 128$>$ char$\ast$ {\bf cppcms\-::util\-::stackbuf}$<$ On\-Stack\-Size $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackbuf_a767fb4464a3c4ebec571a7ce8e6ac794}
+get the pointer to the beginning of the output buffer 
+
+Referenced by cppcms\-::util\-::stackstream$<$ Size $>$\-::begin(), cppcms\-::util\-::stackbuf$<$ Size $>$\-::c\-\_\-str(), and cppcms\-::util\-::stackbuf$<$ Size $>$\-::str().
+
+\index{cppcms\-::util\-::stackbuf@{cppcms\-::util\-::stackbuf}!c\-\_\-str@{c\-\_\-str}}
+\index{c\-\_\-str@{c\-\_\-str}!cppcms::util::stackbuf@{cppcms\-::util\-::stackbuf}}
+\subsubsection[{c\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t On\-Stack\-Size = 128$>$ char$\ast$ {\bf cppcms\-::util\-::stackbuf}$<$ On\-Stack\-Size $>$\-::c\-\_\-str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackbuf_a478ef3273135a18093dc7318884ac5a4}
+get the 0 terminated string from the buffer. 
+
+Referenced by cppcms\-::util\-::stackstream$<$ Size $>$\-::c\-\_\-str().
+
+\index{cppcms\-::util\-::stackbuf@{cppcms\-::util\-::stackbuf}!end@{end}}
+\index{end@{end}!cppcms::util::stackbuf@{cppcms\-::util\-::stackbuf}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t On\-Stack\-Size = 128$>$ char$\ast$ {\bf cppcms\-::util\-::stackbuf}$<$ On\-Stack\-Size $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackbuf_adecea844df3d11a5c3106f518d056b52}
+get the pointer to the end of the output buffer 
+
+Referenced by cppcms\-::util\-::stackstream$<$ Size $>$\-::end(), and cppcms\-::util\-::stackbuf$<$ Size $>$\-::str().
+
+\index{cppcms\-::util\-::stackbuf@{cppcms\-::util\-::stackbuf}!str@{str}}
+\index{str@{str}!cppcms::util::stackbuf@{cppcms\-::util\-::stackbuf}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t On\-Stack\-Size = 128$>$ std\-::string {\bf cppcms\-::util\-::stackbuf}$<$ On\-Stack\-Size $>$\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackbuf_a2fd174719d8209f5a40c2efddec58584}
+get the std\-::string from the buffer. 
+
+Referenced by cppcms\-::util\-::stackstream$<$ Size $>$\-::str().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/steal\-\_\-buf.\-h\end{DoxyCompactItemize}

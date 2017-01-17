@@ -1,0 +1,44 @@
+/*!
+\page examples_page Examples
+
+Basics:
+
+- \subpage ex_hello_world
+- \subpage ex_templates
+- \subpage ex_url_mapping
+- \subpage ex_hierarchy
+- \subpage ex_templates_inheritance
+
+Forms:
+
+- \subpage ex_forms
+- \subpage ex_uploads
+
+Important Tasks:
+
+- \subpage ex_basic_cache
+- \subpage ex_localization
+- \subpage ex_sessions
+- \subpage ex_serialization
+
+Security:
+
+- \subpage ex_xss
+
+JSON:
+
+- \subpage ex_json
+- \subpage ex_json_rpc
+
+Comet:
+
+- \subpage ex_chat
+- \subpage ex_json_rpc_chat
+- \subpage ex_aio
+
+Applications:
+
+- \subpage ex_message_board
+
+
+*/

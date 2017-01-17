@@ -1,0 +1,530 @@
+\section{booster\-:\-:locale\-:\-:date\-\_\-time Class Reference}
+\label{classbooster_1_1locale_1_1date__time}\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}}
+
+
+this class represents a date time and allows to perform various operation according to the locale settings.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf date\-\_\-time} ()
+\item 
+{\bf date\-\_\-time} ({\bf date\-\_\-time} const \&other)
+\item 
+{\bf date\-\_\-time} ({\bf date\-\_\-time} const \&other, {\bf date\-\_\-time\-\_\-period\-\_\-set} const \&{\bf set})
+\item 
+{\bf date\-\_\-time} const \& {\bf operator=} ({\bf date\-\_\-time} const \&other)
+\item 
+{\bf date\-\_\-time} (double {\bf time})
+\item 
+{\bf date\-\_\-time} (double {\bf time}, {\bf calendar} const \&cal)
+\item 
+{\bf date\-\_\-time} ({\bf calendar} const \&cal)
+\item 
+{\bf date\-\_\-time} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&{\bf set})
+\item 
+{\bf date\-\_\-time} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&{\bf set}, {\bf calendar} const \&cal)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator=} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&f)
+\item 
+void {\bf set} ({\bf period\-::period\-\_\-type} f, int v)
+\item 
+int {\bf get} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf operator/} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+{\bf date\-\_\-time} {\bf operator+} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+{\bf date\-\_\-time} {\bf operator-\/} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf operator+=} ({\bf period\-::period\-\_\-type} f)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator-\/=} ({\bf period\-::period\-\_\-type} f)
+\item 
+{\bf date\-\_\-time} {\bf operator$<$$<$} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+{\bf date\-\_\-time} {\bf operator$>$$>$} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf operator$<$$<$=} ({\bf period\-::period\-\_\-type} f)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator$>$$>$=} ({\bf period\-::period\-\_\-type} f)
+\item 
+{\bf date\-\_\-time} {\bf operator+} ({\bf date\-\_\-time\-\_\-period} const \&v) const 
+\item 
+{\bf date\-\_\-time} {\bf operator-\/} ({\bf date\-\_\-time\-\_\-period} const \&v) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf operator+=} ({\bf date\-\_\-time\-\_\-period} const \&v)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator-\/=} ({\bf date\-\_\-time\-\_\-period} const \&v)
+\item 
+{\bf date\-\_\-time} {\bf operator$<$$<$} ({\bf date\-\_\-time\-\_\-period} const \&v) const 
+\item 
+{\bf date\-\_\-time} {\bf operator$>$$>$} ({\bf date\-\_\-time\-\_\-period} const \&v) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf operator$<$$<$=} ({\bf date\-\_\-time\-\_\-period} const \&v)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator$>$$>$=} ({\bf date\-\_\-time\-\_\-period} const \&v)
+\item 
+{\bf date\-\_\-time} {\bf operator+} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v) const 
+\item 
+{\bf date\-\_\-time} {\bf operator-\/} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf operator+=} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator-\/=} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v)
+\item 
+{\bf date\-\_\-time} {\bf operator$<$$<$} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v) const 
+\item 
+{\bf date\-\_\-time} {\bf operator$>$$>$} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v) const 
+\item 
+{\bf date\-\_\-time} const \& {\bf operator$<$$<$=} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v)
+\item 
+{\bf date\-\_\-time} const \& {\bf operator$>$$>$=} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&v)
+\item 
+double {\bf time} () const 
+\item 
+void {\bf time} (double v)
+\item 
+bool {\bf operator==} ({\bf date\-\_\-time} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf date\-\_\-time} const \&other) const 
+\item 
+bool {\bf operator$<$} ({\bf date\-\_\-time} const \&other) const 
+\item 
+bool {\bf operator$>$} ({\bf date\-\_\-time} const \&other) const 
+\item 
+bool {\bf operator$<$=} ({\bf date\-\_\-time} const \&other) const 
+\item 
+bool {\bf operator$>$=} ({\bf date\-\_\-time} const \&other) const 
+\item 
+void {\bf swap} ({\bf date\-\_\-time} \&other)
+\item 
+int {\bf difference} ({\bf date\-\_\-time} const \&other, {\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf minimum} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+int {\bf maximum} ({\bf period\-::period\-\_\-type} f) const 
+\item 
+bool {\bf is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class represents a date time and allows to perform various operation according to the locale settings. 
+
+This class allows to manipulate various aspects of dates and times easily using arithmetic operations with periods.
+
+General arithmetic functions\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} + \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} = \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time}\-: move time point forward by specific periods like \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} + month;
+\item \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} -\/ \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} = \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time}\-: move time point backward by specific periods like \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} -\/ month;
+\item \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} $<$$<$ \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} = \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time}\-: roll time point forward by specific periods with rolling to begin if overflows\-: like \char`\"{}2010-\/01-\/31\char`\"{} $<$$<$ 2$\ast$ day == \char`\"{}2010-\/01-\/02\char`\"{} instead of \char`\"{}2010-\/02-\/02\char`\"{}
+\item \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} $>$$>$ \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} = \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time}\-: roll time point backward by specific periods with rolling to end if overflows\-: like \char`\"{}2010-\/01-\/02\char`\"{} $>$$>$ 2$\ast$ day == \char`\"{}2010-\/01-\/31\char`\"{} instead of \char`\"{}2009-\/12-\/30\char`\"{}
+\item \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} / period\-\_\-type = int -\/ current period value\-: like \char`\"{}2010-\/12-\/21\char`\"{} / month == 12. \char`\"{}2010-\/12-\/21\char`\"{} / year = 2010
+\item (\doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} -\/ \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time}) / period\-\_\-type = int\-: distance between dates in period\-\_\-type. Like (\char`\"{}2010-\/12-\/01\char`\"{} -\/ \char`\"{}2008-\/12-\/01\char`\"{}) / month = 24.
+\end{DoxyItemize}
+
+You can also assign specific periods using assignment operator like\-: some\-\_\-time = year $\ast$ 1995 that sets the year to 1995. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_acead3a4fbe31beb83dce5ffd2489c7ba}
+Dafault constructor, uses default calendar initialized \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} object to current time.
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if the global locale does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a5a8c791fbbbd93743acd851939e662e1}
+copy \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other, }
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{set}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_ad2897d5650731e7bef67ee8222cf2078}
+copy \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} and change some fields according to the {\itshape set} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{double}]{time}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a0d707cdc94a5e9d0b79b323a6b94e74d}
+Create a \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} object using P\-O\-S\-I\-X time {\itshape time} and default calendar
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if the global locale does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{double}]{time, }
+\item[{{\bf calendar} const \&}]{cal}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a60480aaf44b89991a76ca5a261aa64dd}
+Create a \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} object using P\-O\-S\-I\-X time {\itshape time} and calendar {\itshape cal} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar} const \&}]{cal}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_ad17fc18f5cd3d39a9f661202936746fc}
+Create a \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} object using calendar {\itshape cal} and initializes it to current time. \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{set}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_afb7779d9cfff7728031e069928d09c7b}
+Create a \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} object using default calendar and define values given in {\itshape set} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if the global locale does not have \doxyref{calendar\-\_\-facet}{p.}{classbooster_1_1locale_1_1calendar__facet} facet installed 
+\end{DoxyNote}
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!date\-\_\-time@{date\-\_\-time}}
+\index{date\-\_\-time@{date\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{date\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-::date\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{set, }
+\item[{{\bf calendar} const \&}]{cal}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_aafdad7110d555fb4071929695c4b6255}
+Create a \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} object using calendar {\itshape cal} and define values given in {\itshape set} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!difference@{difference}}
+\index{difference@{difference}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{difference}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-::difference (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other, }
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_ae55801252b8d12cda3645136d585fff3}
+calculate the distance from this \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} to {\itshape other} in terms of perios {\itshape f} 
+
+Referenced by booster\-::locale\-::date\-\_\-time\-\_\-duration\-::get(), and booster\-::locale\-::date\-\_\-time\-\_\-duration\-::operator/().
+
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!get@{get}}
+\index{get@{get}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-::get (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a47b51d1010082a8cdd0470ac4477f924}
+get specific period {\itshape f} value 
+
+Referenced by booster\-::locale\-::period\-::am\-\_\-pm(), booster\-::locale\-::period\-::day(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-week(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-week\-\_\-in\-\_\-month(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-week\-\_\-local(), booster\-::locale\-::period\-::day\-\_\-of\-\_\-year(), booster\-::locale\-::period\-::era(), booster\-::locale\-::period\-::extended\-\_\-year(), booster\-::locale\-::period\-::first\-\_\-day\-\_\-of\-\_\-week(), booster\-::locale\-::period\-::hour(), booster\-::locale\-::period\-::hour\-\_\-12(), booster\-::locale\-::period\-::minute(), booster\-::locale\-::period\-::month(), booster\-::locale\-::period\-::second(), booster\-::locale\-::period\-::week\-\_\-of\-\_\-month(), booster\-::locale\-::period\-::week\-\_\-of\-\_\-year(), and booster\-::locale\-::period\-::year().
+
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time@{is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time}}
+\index{is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time@{is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::is\-\_\-in\-\_\-daylight\-\_\-saving\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_aaecde4e865fb188475a83944632fab8a}
+Check if $\ast$this time point is in daylight saving time \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!maximum@{maximum}}
+\index{maximum@{maximum}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{maximum}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-::maximum (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_aade66fcd5402dd8c59c7966b207fdce6}
+Get minimal possible value for $\ast$this time point for a period {\itshape f}. For example in February maximum(day) may be 28 or 29, in January maximum(day)==31 \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!minimum@{minimum}}
+\index{minimum@{minimum}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{minimum}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-::minimum (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_ae12cb5a01ba00319d7ef3593d71f0f54}
+Get minimal possible value for $\ast$this time point for a period {\itshape f}. \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a208602e4aeb568359a98fa4ae051cac0}
+compare \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} in the timeline (ignores difference in calendar, timezone etc) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_a6dd26b5a9e2a87b7549494b1d72a1ff3}
+add single period f to the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a9f38031932fadc766a27db8c31bbf5d2}
+add \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} to the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_adef2b7182e4b44d6a1be087018035120}
+add \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v to the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_ac24c59dacd4201de3b63a195f780ad82}
+add single period f to the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a6909df0561dce1dc6fdc4b08bce44f45}
+add \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} to the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a34f130ee5af60508b79ec82fb97067a8}
+add \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v to the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_af04ae157c196a8a261c544fca7fb11b0}
+subtract single period f from the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a583076e4d2d28400ba2744e7e33dc383}
+subtract \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} from the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_abe48060b1ccaee72416e5b7fda0ad337}
+subtract \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v from the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_a7f3149e4d107b8331e085696f5eaccab}
+subtract single period f from the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a1d706ce5cac26ab3a5c7772ccf9753af}
+subtract \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} from the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator-\/=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a880936cc3844972e388e7e360e7e8e22}
+subtract \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v from the current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator/@{operator/}}
+\index{operator/@{operator/}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator/}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-::operator/ (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_aa6b2878700b923578fde2d1a34761ed5}
+syntactic sugar for get(f) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a1115ddbb6293750cc807336fd266c422}
+compare \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} in the timeline (ignores difference in calendar, timezone etc) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_a277842c35cbdf33ed9081418413086bc}
+roll forward a date by single period f. \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a06f0fb39e671162df06070766fe953a2}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} forward by \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a4568706febe5724854461225278229c3}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} forward by \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$$<$=@{operator$<$$<$=}}
+\index{operator$<$$<$=@{operator$<$$<$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$$<$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator$<$$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_a4a98af38eb16832a5dde603a3dd7f62d}
+roll forward a date by single period f. \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$$<$=@{operator$<$$<$=}}
+\index{operator$<$$<$=@{operator$<$$<$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$$<$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator$<$$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a288b5938a3292179854d8718c988dd7f}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} forward by \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$$<$=@{operator$<$$<$=}}
+\index{operator$<$$<$=@{operator$<$$<$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$$<$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator$<$$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_ae0a5b84e692d10e4cb0e336251cf793d}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} forward by \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_aabc5b1ae6ffe654d7c7a6b10a11d77e5}
+compare \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} in the timeline (ignores difference in calendar, timezone etc) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_abee58b0dfaa24051aeedc9a236ac17a3}
+assign the \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{f}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_ab89debb291351baeb795863b8c41571d}
+assign values to various periods in set {\itshape f} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator==@{operator==}}
+\index{operator==@{operator==}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a71d2d89fea4537e931c8ddd0fd0982e1}
+compare \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} in the timeline (ignores difference in calendar, timezone etc) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a2b6d30dde261871efdd929433238e873}
+compare \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} in the timeline (ignores difference in calendar, timezone etc) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::date\-\_\-time\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} const \&}]{other}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_a2a1273efff92ebd30316893b3d321274}
+compare \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} in the timeline (ignores difference in calendar, timezone etc) \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_a4a4b46dbc228dc5036e52da2642fdf7d}
+roll backward a date by single period f. \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_ae561ae5df60857d2fef1d1f270f3a8a9}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} backward by \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} booster\-::locale\-::date\-\_\-time\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_ab64ffb834a2967cb8c3f3b5db4a6af53}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} backward by \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$$>$=@{operator$>$$>$=}}
+\index{operator$>$$>$=@{operator$>$$>$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$$>$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator$>$$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time_a2bf696678a4df118338f939f6f550bcd}
+roll backward a date by single period f. \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$$>$=@{operator$>$$>$=}}
+\index{operator$>$$>$=@{operator$>$$>$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$$>$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator$>$$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a4deceb0be9b6305a5b2fb8ae87eda782}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} backward by \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!operator$>$$>$=@{operator$>$$>$=}}
+\index{operator$>$$>$=@{operator$>$$>$=}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{operator$>$$>$=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time} const\& booster\-::locale\-::date\-\_\-time\-::operator$>$$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period\-\_\-set} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_af7d271462905017019f7dd60158108c0}
+roll current \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} backward by \doxyref{date\-\_\-time\-\_\-period\-\_\-set}{p.}{classbooster_1_1locale_1_1date__time__period__set} v \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!set@{set}}
+\index{set@{set}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::date\-\_\-time\-::set (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f, }
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a669432d750dfbbd1d6fbbae4ee7b2e02}
+set specific period {\itshape f} value to {\itshape v} \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!swap@{swap}}
+\index{swap@{swap}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::date\-\_\-time\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time} \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_a51a5c4677ad9f0779c03cbfffcf41068}
+swaps two dates -\/ efficient, does not throw \index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!time@{time}}
+\index{time@{time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}double booster\-::locale\-::date\-\_\-time\-::time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1date__time_aae79d4f1d00acb8b15b34c98463aa1b8}
+Get P\-O\-S\-I\-X time
+
+The P\-O\-S\-I\-X time is number of seconds since January 1st, 1970 00\-:00 U\-T\-C, ignoring leap seconds. 
+
+Referenced by booster\-::locale\-::operator$<$$<$(), and booster\-::locale\-::operator$>$$>$().
+
+\index{booster\-::locale\-::date\-\_\-time@{booster\-::locale\-::date\-\_\-time}!time@{time}}
+\index{time@{time}!booster::locale::date_time@{booster\-::locale\-::date\-\_\-time}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::date\-\_\-time\-::time (
+\begin{DoxyParamCaption}
+\item[{double}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1date__time_ae521b9b6fde9788ffb1cd543e27e2caf}
+set P\-O\-S\-I\-X time
+
+The P\-O\-S\-I\-X time is number of seconds since January 1st, 1970 00\-:00 U\-T\-C, ignoring leap seconds. This time can be fetched from Operating system clock using C function time, gettimeofday and others. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time.\-h\end{DoxyCompactItemize}

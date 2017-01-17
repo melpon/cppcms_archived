@@ -1,0 +1,85 @@
+\section{cppcms\-:\-:sessions\-:\-:session\-\_\-storage Class Reference}
+\label{classcppcms_1_1sessions_1_1session__storage}\index{cppcms\-::sessions\-::session\-\_\-storage@{cppcms\-::sessions\-::session\-\_\-storage}}
+
+
+session\-\_\-server\-\_\-storage is an abstract class that allows user to implements custom session storage device like, database storage device  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-storage.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:sessions\-:\-:session\-\_\-storage\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1sessions_1_1session__storage}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf save} (std\-::string const \&sid, time\-\_\-t timeout, std\-::string const \&in)=0
+\item 
+virtual bool {\bf load} (std\-::string const \&sid, time\-\_\-t \&timeout, std\-::string \&out)=0
+\item 
+virtual void {\bf remove} (std\-::string const \&sid)=0
+\item 
+virtual bool {\bf is\-\_\-blocking} ()=0
+\item 
+virtual {\bf $\sim$session\-\_\-storage} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+session\-\_\-server\-\_\-storage is an abstract class that allows user to implements custom session storage device like, database storage device 
+
+Note\-: if the member functions save/load/remove are thread safe -- can be called from different threads, than you may create a single session and return {\itshape shared\-\_\-ptr} to a single instance, otherwise you have to create multiple instances of object 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-storage@{cppcms\-::sessions\-::session\-\_\-storage}!$\sim$session\-\_\-storage@{$\sim$session\-\_\-storage}}
+\index{$\sim$session\-\_\-storage@{$\sim$session\-\_\-storage}!cppcms::sessions::session_storage@{cppcms\-::sessions\-::session\-\_\-storage}}
+\subsubsection[{$\sim$session\-\_\-storage}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::sessions\-::session\-\_\-storage\-::$\sim$session\-\_\-storage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__storage_af9406121890d376f8e3dd04857bb0bf4}
+Destroy an object 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-storage@{cppcms\-::sessions\-::session\-\_\-storage}!is\-\_\-blocking@{is\-\_\-blocking}}
+\index{is\-\_\-blocking@{is\-\_\-blocking}!cppcms::sessions::session_storage@{cppcms\-::sessions\-::session\-\_\-storage}}
+\subsubsection[{is\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-storage\-::is\-\_\-blocking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1session__storage_ad7eb0573c52e5ec5acf2518429a41963}
+Return true of the save or load operations can be blocking \index{cppcms\-::sessions\-::session\-\_\-storage@{cppcms\-::sessions\-::session\-\_\-storage}!load@{load}}
+\index{load@{load}!cppcms::sessions::session_storage@{cppcms\-::sessions\-::session\-\_\-storage}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-storage\-::load (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{sid, }
+\item[{time\-\_\-t \&}]{timeout, }
+\item[{std\-::string \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1session__storage_aff5f1f5c71716f2c57991c219b51919c}
+Load session with {\itshape sid}, put its end of life time to {\itshape timeout} and return its value to {\itshape out} \index{cppcms\-::sessions\-::session\-\_\-storage@{cppcms\-::sessions\-::session\-\_\-storage}!remove@{remove}}
+\index{remove@{remove}!cppcms::sessions::session_storage@{cppcms\-::sessions\-::session\-\_\-storage}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-storage\-::remove (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{sid}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1session__storage_ac463522832a542bb2cb3296514b40bc1}
+Remove a session with id {\itshape sid} from the storage \index{cppcms\-::sessions\-::session\-\_\-storage@{cppcms\-::sessions\-::session\-\_\-storage}!save@{save}}
+\index{save@{save}!cppcms::sessions::session_storage@{cppcms\-::sessions\-::session\-\_\-storage}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-storage\-::save (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{sid, }
+\item[{time\-\_\-t}]{timeout, }
+\item[{std\-::string const \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1session__storage_a7f746705bc40e80491488c011387e031}
+Save session with end of life time at {\itshape timeout} using session id {\itshape sid} and content {\itshape in} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-storage.\-h\end{DoxyCompactItemize}

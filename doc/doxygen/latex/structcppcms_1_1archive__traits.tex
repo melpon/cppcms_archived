@@ -1,0 +1,55 @@
+\section{cppcms\-:\-:archive\-\_\-traits$<$ Object $>$ Struct Template Reference}
+\label{structcppcms_1_1archive__traits}\index{cppcms\-::archive\-\_\-traits$<$ Object $>$@{cppcms\-::archive\-\_\-traits$<$ Object $>$}}
+
+
+Special traits class that describes how to serialize various objects that are not defived from \doxyref{serializable\-\_\-base}{p.}{classcppcms_1_1serializable__base}.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/serialization\-\_\-classes.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf save} (Object const \&d, {\bf archive} \&a)
+\item 
+static void {\bf load} (Object \&d, {\bf archive} \&a)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Object$>$struct cppcms\-::archive\-\_\-traits$<$ Object $>$}
+
+Special traits class that describes how to serialize various objects that are not defived from \doxyref{serializable\-\_\-base}{p.}{classcppcms_1_1serializable__base}. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::archive\-\_\-traits@{cppcms\-::archive\-\_\-traits}!load@{load}}
+\index{load@{load}!cppcms::archive_traits@{cppcms\-::archive\-\_\-traits}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ static void {\bf cppcms\-::archive\-\_\-traits}$<$ Object $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{Object \&}]{d, }
+\item[{{\bf archive} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{structcppcms_1_1archive__traits_aa1f8400b5ae34ee663600c24635c0e4c}
+Load object from archive function 
+
+Referenced by cppcms\-::operator\&(), and cppcms\-::operator$>$$>$().
+
+\index{cppcms\-::archive\-\_\-traits@{cppcms\-::archive\-\_\-traits}!save@{save}}
+\index{save@{save}!cppcms::archive_traits@{cppcms\-::archive\-\_\-traits}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Object $>$ static void {\bf cppcms\-::archive\-\_\-traits}$<$ Object $>$\-::save (
+\begin{DoxyParamCaption}
+\item[{Object const \&}]{d, }
+\item[{{\bf archive} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{structcppcms_1_1archive__traits_ab880c09eeaf941991302fc33247b30e9}
+Save object to archive function 
+
+Referenced by cppcms\-::operator$<$$<$().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/serialization\-\_\-classes.\-h\end{DoxyCompactItemize}

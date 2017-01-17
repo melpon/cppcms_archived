@@ -1,0 +1,48 @@
+\section{booster\-:\-:log Namespace Reference}
+\label{namespacebooster_1_1log}\index{booster\-::log@{booster\-::log}}
+
+
+This namespace includes Booster.\-Log related classes.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf sinks}
+\begin{DoxyCompactList}\small\item\em This namespace includes various output devices (sinks) for logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf message}
+\begin{DoxyCompactList}\small\item\em This class represents a single message that should be written to log. \end{DoxyCompactList}\item 
+class {\bf sink}
+\begin{DoxyCompactList}\small\item\em This is the abstract interface to general sink -\/ the consumer of the logged messages. \end{DoxyCompactList}\item 
+class {\bf logger}
+\begin{DoxyCompactList}\small\item\em This is the central class that manages all logging operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf level\-\_\-type} \{ \\*
+{\bfseries emergency} = 0, 
+{\bfseries alert} = 10, 
+{\bfseries critical} = 20, 
+{\bfseries error} = 30, 
+\\*
+{\bfseries warning} = 40, 
+{\bfseries notice} = 50, 
+{\bfseries info} = 60, 
+{\bfseries debug} = 70, 
+\\*
+{\bfseries all} = 100
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace includes Booster.\-Log related classes. 
+
+\subsection{Enumeration Type Documentation}
+\index{booster\-::log@{booster\-::log}!level\-\_\-type@{level\-\_\-type}}
+\index{level\-\_\-type@{level\-\_\-type}!booster::log@{booster\-::log}}
+\subsubsection[{level\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::log\-::level\-\_\-type}}\label{namespacebooster_1_1log_a0a69b474a88e026659cb55eb485c7c2e}
+This enum defined severity level of logged messages 

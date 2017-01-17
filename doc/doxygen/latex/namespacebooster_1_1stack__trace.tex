@@ -1,0 +1,61 @@
+\section{booster\-:\-:stack\-\_\-trace Namespace Reference}
+\label{namespacebooster_1_1stack__trace}\index{booster\-::stack\-\_\-trace@{booster\-::stack\-\_\-trace}}
+
+
+Namespace that holds basic operations for implementing stack trace.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I int {\bf trace} (void $\ast$$\ast$addresses, int size)
+\begin{DoxyCompactList}\small\item\em Record stack frame. \end{DoxyCompactList}\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I void {\bf write\-\_\-symbols} (void $\ast$const $\ast$addresses, int size, std\-::ostream \&)
+\begin{DoxyCompactList}\small\item\em Print stack trace. \end{DoxyCompactList}\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf get\-\_\-symbol} (void $\ast$address)\label{namespacebooster_1_1stack__trace_afb62d4812c194295d7188e4345622761}
+
+\begin{DoxyCompactList}\small\item\em Get stack trace information about a single address recorded. \end{DoxyCompactList}\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf get\-\_\-symbols} (void $\ast$const $\ast$address, int size)\label{namespacebooster_1_1stack__trace_a2ad1e0a677d8e211591fd9b04e995d6f}
+
+\begin{DoxyCompactList}\small\item\em Get stack trace information about multiple address recorded. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace that holds basic operations for implementing stack trace. 
+
+\subsection{Function Documentation}
+\index{booster\-::stack\-\_\-trace@{booster\-::stack\-\_\-trace}!trace@{trace}}
+\index{trace@{trace}!booster::stack_trace@{booster\-::stack\-\_\-trace}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I int booster\-::stack\-\_\-trace\-::trace (
+\begin{DoxyParamCaption}
+\item[{void $\ast$$\ast$}]{addresses, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1stack__trace_a902d62e00adcffe03fff22c36cb924ba}
+
+
+Record stack frame. 
+
+Records at most {\itshape size} stack frames returning the pointers to the running code into {\itshape addresses} vector that should have at least size places
+
+returns that number of actually recorded frames 
+
+Referenced by booster\-::backtrace\-::backtrace().
+
+\index{booster\-::stack\-\_\-trace@{booster\-::stack\-\_\-trace}!write\-\_\-symbols@{write\-\_\-symbols}}
+\index{write\-\_\-symbols@{write\-\_\-symbols}!booster::stack_trace@{booster\-::stack\-\_\-trace}}
+\subsubsection[{write\-\_\-symbols}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I void booster\-::stack\-\_\-trace\-::write\-\_\-symbols (
+\begin{DoxyParamCaption}
+\item[{void $\ast$const $\ast$}]{addresses, }
+\item[{int}]{size, }
+\item[{std\-::ostream \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1stack__trace_ac0e0d57792b0d183ce5e63786c701ea4}
+
+
+Print stack trace. 
+
+Writes stack trace recorded \doxyref{trace}{p.}{namespacebooster_1_1stack__trace_a902d62e00adcffe03fff22c36cb924ba} function of {\itshape size} size to the output stream 
+
+Referenced by booster\-::backtrace\-::trace(), and booster\-::backtrace\-::trace\-\_\-line().
+

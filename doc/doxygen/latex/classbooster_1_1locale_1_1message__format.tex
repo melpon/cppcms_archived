@@ -1,0 +1,48 @@
+\section{booster\-:\-:locale\-:\-:message\-\_\-format$<$ Char\-Type $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1message__format}\index{booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$@{booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$}}
+
+
+This facet provides message formatting abilities.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/message.\-h$>$}
+
+Inheritance diagram for booster\-:\-:locale\-:\-:message\-\_\-format$<$ Char\-Type $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1locale_1_1message__format}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\-Type {\bf char\-\_\-type}
+\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ Char\-Type $>$ {\bf string\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf message\-\_\-format} (size\-\_\-t refs=0)
+\item 
+virtual {\bf char\-\_\-type} const $\ast$ {\bf get} (int domain\-\_\-id, {\bf char\-\_\-type} const $\ast$context, {\bf char\-\_\-type} const $\ast$id) const =0
+\item 
+virtual {\bf char\-\_\-type} const $\ast$ {\bf get} (int domain\-\_\-id, {\bf char\-\_\-type} const $\ast$context, {\bf char\-\_\-type} const $\ast$single\-\_\-id, int n) const =0
+\item 
+virtual int {\bf domain} (std\-::string const \&domain) const =0
+\item 
+virtual {\bf char\-\_\-type} const $\ast$ {\bf convert} ({\bf char\-\_\-type} const $\ast$msg, {\bf string\-\_\-type} \&buffer) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\-Type$>$class booster\-::locale\-::message\-\_\-format$<$ Char\-Type $>$}
+
+This facet provides message formatting abilities. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/message.\-h\end{DoxyCompactItemize}

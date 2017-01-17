@@ -1,0 +1,154 @@
+\section{cppcms\-:\-:form\-:\-:iterator Class Reference}
+\label{classcppcms_1_1form_1_1iterator}\index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}}
+
+
+Input iterator used to iterate over all the widgets in a form.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:form\-:\-:iterator\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1form_1_1iterator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf iterator} ()
+\item 
+{\bf iterator} ({\bf form} \&)
+\item 
+{\bf $\sim$iterator} ()
+\item 
+{\bf iterator} ({\bf iterator} const \&other)
+\item 
+{\bf iterator} const \& {\bf operator=} ({\bf iterator} const \&other)
+\item 
+{\bf widgets\-::base\-\_\-widget} $\ast$ {\bf operator-\/$>$} () const 
+\item 
+{\bf widgets\-::base\-\_\-widget} \& {\bf operator$\ast$} () const 
+\item 
+bool {\bf operator==} ({\bf iterator} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf iterator} const \&other) const 
+\item 
+{\bf iterator} {\bf operator++} (int)
+\item 
+{\bf iterator} \& {\bf operator++} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries form}\label{classcppcms_1_1form_1_1iterator_a062234ad322e5e57a08b72940341e971}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Input iterator used to iterate over all the widgets in a form. 
+
+This class is mainly used by templates to render widgets. It recursively iterates over all the widgets and subforms.
+
+\begin{DoxyNote}{Note}
+it iterates over widgets only and never \doxyref{form}{p.}{classcppcms_1_1form} objects.
+\end{DoxyNote}
+
+\begin{DoxyCode}
+iterator p=f.begin();
+\textcolor{keywordflow}{if}(p!=f.end())
+  \textcolor{keywordflow}{if} p!=f.end() --> *p is derived from widgets::base\_widget.
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-::iterator\-::iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_1_1iterator_ab405937329cbb1e5f2e24736a7bb9d8f}
+End iterator. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-::iterator\-::iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf form} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_1_1iterator_ab875ac1e89ad52ed73832310c9e3dced}
+Create a widget iterator. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!$\sim$iterator@{$\sim$iterator}}
+\index{$\sim$iterator@{$\sim$iterator}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{$\sim$iterator}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-::iterator\-::$\sim$iterator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_1_1iterator_a60194a12ddf0540094856bfd0e983a02}
+Destructor. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!iterator@{iterator}}
+\index{iterator@{iterator}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{iterator}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-::iterator\-::iterator (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_1_1iterator_a7d49b399e5a760c82f7fd0100bc29612}
+Copy the iterator. This operation is not cheap. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::form\-::iterator\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_1_1iterator_a62715ce39209cb4ff1dfa1f62fcb9212}
+Check if two iterators point to different elements. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf widgets\-::base\-\_\-widget}\& cppcms\-::form\-::iterator\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_1_1iterator_afc143f01a2529afa1f643b5e91e06dc7}
+Return the underlying widget. Condition\-: $\ast$this!=\doxyref{iterator()}{p.}{classcppcms_1_1form_1_1iterator_ab405937329cbb1e5f2e24736a7bb9d8f}. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator} cppcms\-::form\-::iterator\-::operator++ (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_1_1iterator_ad4e56a89c81ecc5296d7222360c3561e}
+Post increment operator. It forwards the iterator to the next widget. Note it does not point to the higher level form container.
+
+Note\-: it is preferable to use ++i rather than i++ as copying iterators is not cheap. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator++@{operator++}}
+\index{operator++@{operator++}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator}\& cppcms\-::form\-::iterator\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_1_1iterator_a25249db1d45b122bf20a6edf465bc08a}
+Increment operator. It forwards the iterator to the next widget. Note it does not point to the higher level form container. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf widgets\-::base\-\_\-widget}$\ast$ cppcms\-::form\-::iterator\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_1_1iterator_a5ec60e32c15ea85b157071dd58dd6a58}
+Return the underlying widget. Condition\-: $\ast$this!=\doxyref{iterator()}{p.}{classcppcms_1_1form_1_1iterator_ab405937329cbb1e5f2e24736a7bb9d8f}. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf iterator} const\& cppcms\-::form\-::iterator\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form_1_1iterator_a8f97b98c99db7c38fe3f8d3e5319f3dc}
+Assign the iterator. This operation is not cheap. \index{cppcms\-::form\-::iterator@{cppcms\-::form\-::iterator}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms::form::iterator@{cppcms\-::form\-::iterator}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::form\-::iterator\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf iterator} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1form_1_1iterator_abd69040377052c511bb45e23a1307622}
+Check if two iterators point to the same element. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

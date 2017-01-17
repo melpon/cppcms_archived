@@ -1,0 +1,34 @@
+\section{cppcms\-:\-:sessions Namespace Reference}
+\label{namespacecppcms_1_1sessions}\index{cppcms\-::sessions@{cppcms\-::sessions}}
+
+
+this namespace keeps various session storage backends  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf encryptor}
+\begin{DoxyCompactList}\small\item\em This is an interface to generic session cookies encryption or signing A\-P\-I. \end{DoxyCompactList}\item 
+class {\bf encryptor\-\_\-factory}
+\begin{DoxyCompactList}\small\item\em This is an interface for an object that creates new encryptors. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-cookies}
+\begin{DoxyCompactList}\small\item\em The implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} using encrypted or signed cookies. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-dual}
+\begin{DoxyCompactList}\small\item\em Client and Server side storage implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api}. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-sid}
+\begin{DoxyCompactList}\small\item\em An implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} that stores the data using \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} and unique session id. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-storage}
+\begin{DoxyCompactList}\small\item\em session\-\_\-server\-\_\-storage is an abstract class that allows user to implements custom session storage device like, database storage device \end{DoxyCompactList}\item 
+class {\bf session\-\_\-storage\-\_\-factory}
+\begin{DoxyCompactList}\small\item\em The factory is an interface to a factory that creates \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} objects, it should be thread safe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf session\-\_\-storage\-\_\-factory} $\ast$($\ast$ {\bfseries cppcms\-\_\-session\-\_\-storage\-\_\-generator\-\_\-type} )({\bf cppcms\-::json\-::value} const \&options)\label{namespacecppcms_1_1sessions_ae3a8424c8af60d1277b852597df35aee}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this namespace keeps various session storage backends 

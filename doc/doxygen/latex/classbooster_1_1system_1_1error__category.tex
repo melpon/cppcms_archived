@@ -1,0 +1,78 @@
+\section{booster\-:\-:system\-:\-:error\-\_\-category Class Reference}
+\label{classbooster_1_1system_1_1error__category}\index{booster\-::system\-::error\-\_\-category@{booster\-::system\-::error\-\_\-category}}
+
+
+this class represents a category of errors.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/system\-\_\-error.\-h$>$}
+
+Inheritance diagram for booster\-:\-:system\-:\-:error\-\_\-category\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1system_1_1error__category}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual char const $\ast$ {\bf name} () const =0
+\item 
+virtual std\-::string {\bf message} (int ev) const =0
+\item 
+bool {\bfseries operator==} ({\bf error\-\_\-category} const \&other) const \label{classbooster_1_1system_1_1error__category_a775326448f9af52050624e6ed6e04dac}
+
+\item 
+bool {\bfseries operator!=} ({\bf error\-\_\-category} const \&other) const \label{classbooster_1_1system_1_1error__category_a65ec91048d455e9395f0162729a00ba9}
+
+\item 
+bool {\bfseries operator$<$} ({\bf error\-\_\-category} const \&other) const \label{classbooster_1_1system_1_1error__category_a909b7541700f5a5b71118b3ee28109ce}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class represents a category of errors. 
+
+Technically it allows to convert a numerical error representation to human readable error message.
+
+This class is just an interface that should be implemented for each specific category 
+
+\subsection{Member Function Documentation}
+\index{booster\-::system\-::error\-\_\-category@{booster\-::system\-::error\-\_\-category}!message@{message}}
+\index{message@{message}!booster::system::error_category@{booster\-::system\-::error\-\_\-category}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string booster\-::system\-::error\-\_\-category\-::message (
+\begin{DoxyParamCaption}
+\item[{int}]{ev}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1system_1_1error__category_a5d623952b3a0fb89b85f7db8249c3435}
+Convert the error code representation to the human readable text 
+
+Implemented in {\bf booster\-::aio\-::aio\-\_\-error\-::category} \doxyref{}{p.}{classbooster_1_1aio_1_1aio__error_1_1category_a64ecec92aeb8448331377385353abe39}.
+
+
+
+Referenced by booster\-::system\-::error\-\_\-code\-::message().
+
+\index{booster\-::system\-::error\-\_\-category@{booster\-::system\-::error\-\_\-category}!name@{name}}
+\index{name@{name}!booster::system::error_category@{booster\-::system\-::error\-\_\-category}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ booster\-::system\-::error\-\_\-category\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1system_1_1error__category_ab10c7c52b884367cb5cf8e76bf07ce41}
+The name of the category 
+
+Implemented in {\bf booster\-::aio\-::aio\-\_\-error\-::category} \doxyref{}{p.}{classbooster_1_1aio_1_1aio__error_1_1category_a4734a55fb7f4736d539dfb4da45fce4d}.
+
+
+
+Referenced by booster\-::system\-::error\-\_\-code\-::message().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/system\-\_\-error.\-h\end{DoxyCompactItemize}

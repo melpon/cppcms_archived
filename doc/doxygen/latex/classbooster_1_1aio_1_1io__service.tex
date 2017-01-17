@@ -1,0 +1,179 @@
+\section{booster\-:\-:aio\-:\-:io\-\_\-service Class Reference}
+\label{classbooster_1_1aio_1_1io__service}\index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}}
+
+
+this is the central event loop that dispatches all requests.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/io\-\_\-service.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:io\-\_\-service\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1aio_1_1io__service}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf io\-\_\-service} (int reactor\-\_\-type)
+\item 
+{\bf io\-\_\-service} ()
+\item 
+{\bf $\sim$io\-\_\-service} ()
+\item 
+void {\bf set\-\_\-io\-\_\-event} ({\bf native\-\_\-type} fd, int event, {\bf event\-\_\-handler} const \&h)
+\item 
+void {\bf cancel\-\_\-io\-\_\-events} ({\bf native\-\_\-type} fd)
+\item 
+int {\bf set\-\_\-timer\-\_\-event} ({\bf ptime} const \&point, {\bf event\-\_\-handler} const \&h)
+\item 
+void {\bf cancel\-\_\-timer\-\_\-event} (int event\-\_\-id)
+\item 
+void {\bf run} ()
+\item 
+void {\bf run} ({\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf reset} ()
+\item 
+void {\bf stop} ()
+\item 
+void {\bf post} ({\bf handler} const \&h)
+\item 
+std\-::string {\bf reactor\-\_\-name} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+this is the central event loop that dispatches all requests. 
+
+This all this class member functions are thread safe unless specified otherwise.
+
+However only {\bfseries single} thread may execute \doxyref{run()}{p.}{classbooster_1_1aio_1_1io__service_aacb757b7c636335e206fb15cc017bcf5} member function and dispatch its handlers, this class also can be safely created before fork and used after it 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!io\-\_\-service@{io\-\_\-service}}
+\index{io\-\_\-service@{io\-\_\-service}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::io\-\_\-service\-::io\-\_\-service (
+\begin{DoxyParamCaption}
+\item[{int}]{reactor\-\_\-type}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a65549a67ad26ffe1d28e58b7e110655b}
+Create io service using specific reactor type and not default one (see reactor's class use\-\_\-$\ast$ constants) \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!io\-\_\-service@{io\-\_\-service}}
+\index{io\-\_\-service@{io\-\_\-service}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::io\-\_\-service\-::io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_aa7f52cc209f7ef21873add4979a905a1}
+Create io service using default reactor \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!$\sim$io\-\_\-service@{$\sim$io\-\_\-service}}
+\index{$\sim$io\-\_\-service@{$\sim$io\-\_\-service}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{$\sim$io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::io\-\_\-service\-::$\sim$io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a038e4b9a79f236e7c6476b5710f1f762}
+Destroy \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. It should be stopped before!. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!cancel\-\_\-io\-\_\-events@{cancel\-\_\-io\-\_\-events}}
+\index{cancel\-\_\-io\-\_\-events@{cancel\-\_\-io\-\_\-events}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{cancel\-\_\-io\-\_\-events}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::cancel\-\_\-io\-\_\-events (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a42cbef31fb642f45209bac3776562414}
+Cancel all io-\/events for file descriptor {\itshape fd}. Event handlers associated with this descriptor are dispatched asynchronously with \doxyref{aio\-\_\-error\-::canceled}{p.}{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a0d2280b25248e5cc14ddd84129918cc6} error code. \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!cancel\-\_\-timer\-\_\-event@{cancel\-\_\-timer\-\_\-event}}
+\index{cancel\-\_\-timer\-\_\-event@{cancel\-\_\-timer\-\_\-event}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{cancel\-\_\-timer\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::cancel\-\_\-timer\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{int}]{event\-\_\-id}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a03ec278cafa2217400fa8c497fa6b1d1}
+Cancel timer created with \doxyref{set\-\_\-timer\-\_\-event()}{p.}{classbooster_1_1aio_1_1io__service_ac3b4e20b7a714984e2ac6f90b526d1ca} asynchronously, \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!post@{post}}
+\index{post@{post}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::post (
+\begin{DoxyParamCaption}
+\item[{{\bf handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a8a027668047469988aebd7224e0f6b73}
+Post a single handler {\itshape h} for immediate execution in the event loop queue. Useful for execution of some job in the thread that runs the event loop of the \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!reactor\-\_\-name@{reactor\-\_\-name}}
+\index{reactor\-\_\-name@{reactor\-\_\-name}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{reactor\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::aio\-::io\-\_\-service\-::reactor\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a8c389d4dd937fd8570fccdcdb11c9f42}
+Get the real name of the reactor that \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} uses (calls \doxyref{reactor\-::name()}{p.}{classbooster_1_1aio_1_1reactor_aaa2cb8e2e4cd06ee4fbcca4ba440d27e}) \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!reset@{reset}}
+\index{reset@{reset}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a383cab9ccc4942f10c5b9425174dc4f8}
+Prepare the service after it was stopped. This function is not thread safe. \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!run@{run}}
+\index{run@{run}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_aacb757b7c636335e206fb15cc017bcf5}
+Run main event loop. This function starts actual event loop. It does not return until stop is called or error occurs.
+
+If error occurs (exception is thrown) you may try to restart the event loop by calling run once again.
+
+However if \doxyref{run()}{p.}{classbooster_1_1aio_1_1io__service_aacb757b7c636335e206fb15cc017bcf5} is exited normally (i.\-e. by calling \doxyref{stop()}{p.}{classbooster_1_1aio_1_1io__service_a6090f13b9c3b0caa06067408bda1daeb}) then you need to call \doxyref{reset()}{p.}{classbooster_1_1aio_1_1io__service_a383cab9ccc4942f10c5b9425174dc4f8} member function before next call of \doxyref{run()}{p.}{classbooster_1_1aio_1_1io__service_aacb757b7c636335e206fb15cc017bcf5}. \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!run@{run}}
+\index{run@{run}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::run (
+\begin{DoxyParamCaption}
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_ab910b4f8431095f3897e8fa529c90da9}
+Same as \doxyref{run()}{p.}{classbooster_1_1aio_1_1io__service_aacb757b7c636335e206fb15cc017bcf5}, but, event-\/loop specific errors are reported via {\itshape e} error code rather then by throwing. Note, event handlers still may throw. \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!set\-\_\-io\-\_\-event@{set\-\_\-io\-\_\-event}}
+\index{set\-\_\-io\-\_\-event@{set\-\_\-io\-\_\-event}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{set\-\_\-io\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::set\-\_\-io\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd, }
+\item[{int}]{event, }
+\item[{{\bf event\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a019a2ca610ac1939548e5f86930a58fa}
+Set event handler {\itshape h} for file descriptor {\itshape fd}. {\itshape event} can be io\-\_\-events\-::in, io\-\_\-events\-::out or io\-\_\-events\-::in $\vert$ io\-\_\-events\-::out.
+
+Error handling\-:
+
+
+\begin{DoxyItemize}
+\item If invalid {\itshape event} type is given, std\-::invalid\-\_\-argument is throw.
+\item All other applicative errors are always reported using event handler {\itshape h} and never thrown directly. 
+\end{DoxyItemize}\index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!set\-\_\-timer\-\_\-event@{set\-\_\-timer\-\_\-event}}
+\index{set\-\_\-timer\-\_\-event@{set\-\_\-timer\-\_\-event}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{set\-\_\-timer\-\_\-event}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::aio\-::io\-\_\-service\-::set\-\_\-timer\-\_\-event (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{point, }
+\item[{{\bf event\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_ac3b4e20b7a714984e2ac6f90b526d1ca}
+Create a timer that expires in {\itshape point} time, that is handled with {\itshape h} handler. the handler will be called only in two cases\-:
+
+
+\begin{DoxyItemize}
+\item When the current time $>$= {\itshape point}.
+\item Timer was canceled. {\itshape h} will be dispatched with \doxyref{aio\-\_\-error\-::canceled}{p.}{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a0d2280b25248e5cc14ddd84129918cc6} error code.
+\end{DoxyItemize}
+
+The return value is special identification for the specific timer, it can be used for timer cancellation. Once cancel\-\_\-timer\-\_\-event is called with this unique identification, it should never be called again with this id as other timer may receive this identification. \index{booster\-::aio\-::io\-\_\-service@{booster\-::aio\-::io\-\_\-service}!stop@{stop}}
+\index{stop@{stop}!booster::aio::io_service@{booster\-::aio\-::io\-\_\-service}}
+\subsubsection[{stop}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::io\-\_\-service\-::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1io__service_a6090f13b9c3b0caa06067408bda1daeb}
+Stop the service. All threads executing \doxyref{run()}{p.}{classbooster_1_1aio_1_1io__service_aacb757b7c636335e206fb15cc017bcf5} function will exit from it. You can't use this service till you call \doxyref{reset()}{p.}{classbooster_1_1aio_1_1io__service_a383cab9ccc4942f10c5b9425174dc4f8} function. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/io\-\_\-service.\-h\end{DoxyCompactItemize}

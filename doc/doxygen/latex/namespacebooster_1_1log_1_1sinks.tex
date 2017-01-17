@@ -1,0 +1,43 @@
+\section{booster\-:\-:log\-:\-:sinks Namespace Reference}
+\label{namespacebooster_1_1log_1_1sinks}\index{booster\-::log\-::sinks@{booster\-::log\-::sinks}}
+
+
+This namespace includes various output devices (sinks) for logger.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf standard\-\_\-error}
+\begin{DoxyCompactList}\small\item\em stderr based sink -\/ sends messages to standard error output \end{DoxyCompactList}\item 
+class {\bf file}
+\begin{DoxyCompactList}\small\item\em log file based sink -\/ sends messages to log file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf format\-\_\-plain\-\_\-text\-\_\-message} ({\bf message} const \&msg)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz} ({\bf message} const \&msg, int timezone\-\_\-offset=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace includes various output devices (sinks) for logger. It includes several standard devices that can be used in most applications 
+
+\subsection{Function Documentation}
+\index{booster\-::log\-::sinks@{booster\-::log\-::sinks}!format\-\_\-plain\-\_\-text\-\_\-message@{format\-\_\-plain\-\_\-text\-\_\-message}}
+\index{format\-\_\-plain\-\_\-text\-\_\-message@{format\-\_\-plain\-\_\-text\-\_\-message}!booster::log::sinks@{booster\-::log\-::sinks}}
+\subsubsection[{format\-\_\-plain\-\_\-text\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string booster\-::log\-::sinks\-::format\-\_\-plain\-\_\-text\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{message const \&}]{msg}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1log_1_1sinks_aee90860ff181a5a3d06f86f3b837de44}
+Convert a logging message to a string with all the data that can be written to file, the displayed time is local time \index{booster\-::log\-::sinks@{booster\-::log\-::sinks}!format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz@{format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz}}
+\index{format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz@{format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz}!booster::log::sinks@{booster\-::log\-::sinks}}
+\subsubsection[{format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string booster\-::log\-::sinks\-::format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz (
+\begin{DoxyParamCaption}
+\item[{message const \&}]{msg, }
+\item[{int}]{timezone\-\_\-offset = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1log_1_1sinks_ad28f5b08f9bf9917e53f82ab04175a6a}
+Convert a logging message to a string with all the data that can be written to file, the displayed time is G\-M\-T+{\itshape timezone\-\_\-offset}. timezone\-\_\-offset should be represented in seconds, for example for timezone G\-M\-T+2\-:00 it should be 7200 

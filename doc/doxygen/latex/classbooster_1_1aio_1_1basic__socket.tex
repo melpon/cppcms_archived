@@ -1,0 +1,182 @@
+\section{booster\-:\-:aio\-:\-:basic\-\_\-socket Class Reference}
+\label{classbooster_1_1aio_1_1basic__socket}\index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}}
+
+
+This class represents a basic Socket object.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/basic\-\_\-socket.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:basic\-\_\-socket\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbooster_1_1aio_1_1basic__socket}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf boolean\-\_\-option\-\_\-type} \{ {\bfseries tcp\-\_\-no\-\_\-delay}, 
+{\bfseries keep\-\_\-alive}, 
+{\bfseries reuse\-\_\-address}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf basic\-\_\-socket} ()
+\item 
+{\bf basic\-\_\-socket} ({\bf io\-\_\-service} \&srv)
+\item 
+void {\bf open} ({\bf family\-\_\-type} d, {\bf socket\-\_\-type} t)
+\item 
+void {\bf open} ({\bf family\-\_\-type} d, {\bf socket\-\_\-type} t, {\bf system\-::error\-\_\-code} \&e)
+\item 
+{\bf endpoint} {\bf local\-\_\-endpoint} ({\bf system\-::error\-\_\-code} \&e)
+\item 
+{\bf endpoint} {\bf local\-\_\-endpoint} ()
+\item 
+{\bf endpoint} {\bf remote\-\_\-endpoint} ({\bf system\-::error\-\_\-code} \&e)
+\item 
+{\bf endpoint} {\bf remote\-\_\-endpoint} ()
+\item 
+bool {\bf get\-\_\-option} ({\bf boolean\-\_\-option\-\_\-type} opt, {\bf system\-::error\-\_\-code} \&e)
+\item 
+bool {\bf get\-\_\-option} ({\bf boolean\-\_\-option\-\_\-type} opt)
+\item 
+void {\bf set\-\_\-option} ({\bf boolean\-\_\-option\-\_\-type} opt, bool v, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf set\-\_\-option} ({\bf boolean\-\_\-option\-\_\-type} opt, bool v)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents a basic Socket object. 
+
+\subsection{Member Enumeration Documentation}
+\index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!boolean\-\_\-option\-\_\-type@{boolean\-\_\-option\-\_\-type}}
+\index{boolean\-\_\-option\-\_\-type@{boolean\-\_\-option\-\_\-type}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{boolean\-\_\-option\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::aio\-::basic\-\_\-socket\-::boolean\-\_\-option\-\_\-type}}\label{classbooster_1_1aio_1_1basic__socket_ab60864711436fd648ed7235a4295f28b}
+Boolean socket options list 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!basic\-\_\-socket@{basic\-\_\-socket}}
+\index{basic\-\_\-socket@{basic\-\_\-socket}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{basic\-\_\-socket}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::basic\-\_\-socket\-::basic\-\_\-socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a50acca0717c6d4f404b62eff5f560085}
+Create a new socket object \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!basic\-\_\-socket@{basic\-\_\-socket}}
+\index{basic\-\_\-socket@{basic\-\_\-socket}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{basic\-\_\-socket}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::basic\-\_\-socket\-::basic\-\_\-socket (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a99abb7e089a806edac4b47b839c6c363}
+Create a new socket object and connect to the \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} {\itshape srv} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!get\-\_\-option@{get\-\_\-option}}
+\index{get\-\_\-option@{get\-\_\-option}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{get\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::aio\-::basic\-\_\-socket\-::get\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{{\bf boolean\-\_\-option\-\_\-type}}]{opt, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_ad6052ec984f273427d6d5f2bef23336c}
+Get a value for a boolean\-\_\-option\-\_\-type
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!get\-\_\-option@{get\-\_\-option}}
+\index{get\-\_\-option@{get\-\_\-option}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{get\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::aio\-::basic\-\_\-socket\-::get\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{{\bf boolean\-\_\-option\-\_\-type}}]{opt}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a1be5a4cf77c1b066f45ba06d92ac43e6}
+Get a value for a boolean\-\_\-option\-\_\-type Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!local\-\_\-endpoint@{local\-\_\-endpoint}}
+\index{local\-\_\-endpoint@{local\-\_\-endpoint}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{local\-\_\-endpoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf endpoint} booster\-::aio\-::basic\-\_\-socket\-::local\-\_\-endpoint (
+\begin{DoxyParamCaption}
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_af878ef58d67c2f8c3f29374ae80cf6f9}
+Get a local endpoint for the socket
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!local\-\_\-endpoint@{local\-\_\-endpoint}}
+\index{local\-\_\-endpoint@{local\-\_\-endpoint}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{local\-\_\-endpoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf endpoint} booster\-::aio\-::basic\-\_\-socket\-::local\-\_\-endpoint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a71260a04f3b934a8da0b6ea7b6c58262}
+Get a local endpoint for the socket
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!open@{open}}
+\index{open@{open}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-socket\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf family\-\_\-type}}]{d, }
+\item[{{\bf socket\-\_\-type}}]{t}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a44e1dd60570723ab3ba8eebe375f5d62}
+Open a socket of \doxyref{family\-\_\-type}{p.}{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa} {\itshape d} and of the protocol (\doxyref{socket\-\_\-type}{p.}{namespacebooster_1_1aio_a0416bbe59893fe8f42b1a12fad7f6e10}) {\itshape t} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!open@{open}}
+\index{open@{open}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-socket\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf family\-\_\-type}}]{d, }
+\item[{{\bf socket\-\_\-type}}]{t, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a487cedd7f1699fb41e224da2c3d717c2}
+Opens a new stream socket of a \doxyref{family\-\_\-type}{p.}{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa} {\itshape d} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!remote\-\_\-endpoint@{remote\-\_\-endpoint}}
+\index{remote\-\_\-endpoint@{remote\-\_\-endpoint}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{remote\-\_\-endpoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf endpoint} booster\-::aio\-::basic\-\_\-socket\-::remote\-\_\-endpoint (
+\begin{DoxyParamCaption}
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_aa84287670c2b47389f756ca7a803e409}
+Get a remote endpoint for the socket
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!remote\-\_\-endpoint@{remote\-\_\-endpoint}}
+\index{remote\-\_\-endpoint@{remote\-\_\-endpoint}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{remote\-\_\-endpoint}]{\setlength{\rightskip}{0pt plus 5cm}{\bf endpoint} booster\-::aio\-::basic\-\_\-socket\-::remote\-\_\-endpoint (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a3df0c49be90438df9a30b3854d35deb8}
+Get a remote endpoint for the socket
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!set\-\_\-option@{set\-\_\-option}}
+\index{set\-\_\-option@{set\-\_\-option}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{set\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-socket\-::set\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{{\bf boolean\-\_\-option\-\_\-type}}]{opt, }
+\item[{bool}]{v, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a7548662a981240cfb5e2f5ca1614f21f}
+Set a value for a boolean\-\_\-option\-\_\-type
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-socket@{booster\-::aio\-::basic\-\_\-socket}!set\-\_\-option@{set\-\_\-option}}
+\index{set\-\_\-option@{set\-\_\-option}!booster::aio::basic_socket@{booster\-::aio\-::basic\-\_\-socket}}
+\subsubsection[{set\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-socket\-::set\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{{\bf boolean\-\_\-option\-\_\-type}}]{opt, }
+\item[{bool}]{v}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__socket_a19bfa7308302334af52dd2b9e69b01e0}
+Set a value for a boolean\-\_\-option\-\_\-type
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/basic\-\_\-socket.\-h\end{DoxyCompactItemize}

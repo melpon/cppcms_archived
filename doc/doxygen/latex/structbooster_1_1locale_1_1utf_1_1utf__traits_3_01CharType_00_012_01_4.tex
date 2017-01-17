@@ -1,0 +1,67 @@
+\section{booster\-:\-:locale\-:\-:utf\-:\-:utf\-\_\-traits$<$ Char\-Type, 2 $>$ Struct Template Reference}
+\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4}\index{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$@{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\-Type {\bfseries char\-\_\-type}\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a24037040212016660fb8a88387aafd08}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bfseries is\-\_\-first\-\_\-surrogate} (uint16\-\_\-t x)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_add80e12cf8f4bb52e180118c147fc54d}
+
+\item 
+static bool {\bfseries is\-\_\-second\-\_\-surrogate} (uint16\-\_\-t x)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_afc1b219747eb2b47eccd1295a21f60d9}
+
+\item 
+static {\bf code\-\_\-point} {\bfseries combine\-\_\-surrogate} (uint16\-\_\-t w1, uint16\-\_\-t w2)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_aaf34f1c07f27b1137a6b116626cf08f0}
+
+\item 
+static int {\bfseries trail\-\_\-length} (char\-\_\-type c)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a939e0a29bda3a804bc0c027d776637b4}
+
+\item 
+static bool {\bf is\-\_\-trail} (char\-\_\-type c)
+\item 
+static bool {\bf is\-\_\-lead} (char\-\_\-type c)
+\item 
+{\footnotesize template$<$typename It $>$ }\\static {\bf code\-\_\-point} {\bfseries decode} (It \&current, It last)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a71279ef230545c73984ccad8e4e280bb}
+
+\item 
+{\footnotesize template$<$typename It $>$ }\\static {\bf code\-\_\-point} {\bfseries decode\-\_\-valid} (It \&current)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a6f3c786bc58653ce50b9e4840f78a5e6}
+
+\item 
+static int {\bfseries width} ({\bf code\-\_\-point} u)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a7a40488d3788d83b0891014584af3a2e}
+
+\item 
+{\footnotesize template$<$typename It $>$ }\\static It {\bfseries encode} ({\bf code\-\_\-point} u, It out)\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a83055d2c0b2301c7cec9729a6ba6256b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries max\-\_\-width} = 2\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_aa30133d1a7b1d905f42a8cdcdd4a9916}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$@{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$}!is\-\_\-lead@{is\-\_\-lead}}
+\index{is\-\_\-lead@{is\-\_\-lead}!booster::locale::utf::utf_traits< CharType, 2 >@{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$}}
+\subsubsection[{is\-\_\-lead}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ static bool {\bf booster\-::locale\-::utf\-::utf\-\_\-traits}$<$ Char\-Type, 2 $>$\-::is\-\_\-lead (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-type}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_abe8ce82a2d34bba19288352b381ea96f}
+Returns true if c is lead code unit, always true of U\-T\-F-\/32 \index{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$@{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$}!is\-\_\-trail@{is\-\_\-trail}}
+\index{is\-\_\-trail@{is\-\_\-trail}!booster::locale::utf::utf_traits< CharType, 2 >@{booster\-::locale\-::utf\-::utf\-\_\-traits$<$ Char\-Type, 2 $>$}}
+\subsubsection[{is\-\_\-trail}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ static bool {\bf booster\-::locale\-::utf\-::utf\-\_\-traits}$<$ Char\-Type, 2 $>$\-::is\-\_\-trail (
+\begin{DoxyParamCaption}
+\item[{char\-\_\-type}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{structbooster_1_1locale_1_1utf_1_1utf__traits_3_01CharType_00_012_01_4_a07e712ede212961aa65677c207519388}
+Returns true if c is trail code unit, always false for U\-T\-F-\/32 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/utf.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,75 @@
+\section{cppcms\-:\-:session\-\_\-pool Class Reference}
+\label{classcppcms_1_1session__pool}\index{cppcms\-::session\-\_\-pool@{cppcms\-::session\-\_\-pool}}
+
+
+This class provides an access to session management backends an allow customization.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-pool.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:session\-\_\-pool\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1session__pool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf backend} (std\-::auto\-\_\-ptr$<$ {\bf session\-\_\-api\-\_\-factory} $>$ b)
+\item 
+void {\bf encryptor} (std\-::auto\-\_\-ptr$<$ {\bf sessions\-::encryptor\-\_\-factory} $>$ e)
+\item 
+void {\bf storage} (std\-::auto\-\_\-ptr$<$ {\bf sessions\-::session\-\_\-storage\-\_\-factory} $>$ s)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bfseries cookies\-\_\-factory}\label{classcppcms_1_1session__pool_a81eeb665cdbab54798e990c4e0900e9b}
+
+\item 
+struct {\bfseries dual\-\_\-factory}\label{classcppcms_1_1session__pool_ac470d2419c14e3e4c16a9e7ca382621e}
+
+\item 
+struct {\bfseries sid\-\_\-factory}\label{classcppcms_1_1session__pool_a6c1be951f614d1517f76cb8125d204b6}
+
+\item 
+class {\bfseries gc\-\_\-job}\label{classcppcms_1_1session__pool_acb3d58f4fa611a0a8c0821433da7ad2e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides an access to session management backends an allow customization. 
+
+When user implements its own \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api}, \doxyref{sessions\-::encryptor}{p.}{classcppcms_1_1sessions_1_1encryptor} or \doxyref{sessions\-::session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} interfaces it may set their factories to these classes 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::session\-\_\-pool@{cppcms\-::session\-\_\-pool}!backend@{backend}}
+\index{backend@{backend}!cppcms::session_pool@{cppcms\-::session\-\_\-pool}}
+\subsubsection[{backend}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-pool\-::backend (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf session\-\_\-api\-\_\-factory} $>$}]{b}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__pool_a98fd16627cefac50b3ede748478ada54}
+Assign your own implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} passing pointer to \doxyref{session\-\_\-api\-\_\-factory}{p.}{classcppcms_1_1session__api__factory}. \index{cppcms\-::session\-\_\-pool@{cppcms\-::session\-\_\-pool}!encryptor@{encryptor}}
+\index{encryptor@{encryptor}!cppcms::session_pool@{cppcms\-::session\-\_\-pool}}
+\subsubsection[{encryptor}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-pool\-::encryptor (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf sessions\-::encryptor\-\_\-factory} $>$}]{e}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__pool_abf586a514a579632e57a47a804e5c225}
+Assign your own implementation of \doxyref{sessions\-::encryptor}{p.}{classcppcms_1_1sessions_1_1encryptor} that would be used for client side session management by passing pointer to \doxyref{sessions\-::encryptor\-\_\-factory}{p.}{classcppcms_1_1sessions_1_1encryptor__factory} \index{cppcms\-::session\-\_\-pool@{cppcms\-::session\-\_\-pool}!storage@{storage}}
+\index{storage@{storage}!cppcms::session_pool@{cppcms\-::session\-\_\-pool}}
+\subsubsection[{storage}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-pool\-::storage (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf sessions\-::session\-\_\-storage\-\_\-factory} $>$}]{s}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__pool_a5bc0c8aefa8c0b658b923d722ce96098}
+Assign your own implementation of \doxyref{sessions\-::session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} that would be used for server side session management by passing pointer to \doxyref{sessions\-::session\-\_\-storage\-\_\-factory}{p.}{classcppcms_1_1sessions_1_1session__storage__factory} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-pool.\-h\end{DoxyCompactItemize}

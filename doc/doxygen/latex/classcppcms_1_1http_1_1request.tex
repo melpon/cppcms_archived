@@ -1,0 +1,567 @@
+\section{cppcms\-:\-:http\-:\-:request Class Reference}
+\label{classcppcms_1_1http_1_1request}\index{cppcms\-::http\-::request@{cppcms\-::http\-::request}}
+
+
+This class represents all information related to the H\-T\-T\-P/\-C\-G\-I request.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/http\-\_\-request.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:http\-:\-:request\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1request}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::multimap\\*
+$<$ std\-::string, std\-::string $>$ {\bf form\-\_\-type}
+\item 
+typedef std\-::map$<$ std\-::string, \\*
+{\bf cookie} $>$ {\bf cookies\-\_\-type}
+\item 
+typedef std\-::vector\\*
+$<$ {\bf booster\-::shared\-\_\-ptr}$<$ {\bf file} $>$ $>$ {\bf files\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf auth\-\_\-type} ()
+\item 
+unsigned long long {\bf content\-\_\-length} ()
+\item 
+std\-::string {\bf content\-\_\-type} ()
+\item 
+{\bf cppcms\-::http\-::content\-\_\-type} {\bf content\-\_\-type\-\_\-parsed} ()
+\item 
+std\-::string {\bf gateway\-\_\-interface} ()
+\item 
+std\-::string {\bf path\-\_\-info} ()
+\item 
+std\-::string {\bf path\-\_\-translated} ()
+\item 
+std\-::string {\bf query\-\_\-string} ()
+\item 
+std\-::string {\bf remote\-\_\-addr} ()
+\item 
+std\-::string {\bf remote\-\_\-host} ()
+\item 
+std\-::string {\bf remote\-\_\-ident} ()
+\item 
+std\-::string {\bf remote\-\_\-user} ()
+\item 
+std\-::string {\bf request\-\_\-method} ()
+\item 
+std\-::string {\bf script\-\_\-name} ()
+\item 
+std\-::string {\bf server\-\_\-name} ()
+\item 
+unsigned {\bf server\-\_\-port} ()
+\item 
+std\-::string {\bf server\-\_\-protocol} ()
+\item 
+std\-::string {\bf server\-\_\-software} ()
+\item 
+std\-::string {\bf http\-\_\-accept} ()
+\item 
+std\-::string {\bf http\-\_\-accept\-\_\-charset} ()
+\item 
+std\-::string {\bf http\-\_\-accept\-\_\-encoding} ()
+\item 
+std\-::string {\bf http\-\_\-accept\-\_\-language} ()
+\item 
+std\-::string {\bf http\-\_\-accept\-\_\-ranges} ()
+\item 
+std\-::string {\bf http\-\_\-authorization} ()
+\item 
+std\-::string {\bf http\-\_\-cache\-\_\-control} ()
+\item 
+std\-::string {\bf http\-\_\-connection} ()
+\item 
+std\-::string {\bf http\-\_\-cookie} ()
+\item 
+std\-::string {\bf http\-\_\-expect} ()
+\item 
+std\-::string {\bf http\-\_\-form} ()
+\item 
+std\-::string {\bf http\-\_\-host} ()
+\item 
+std\-::string {\bf http\-\_\-if\-\_\-match} ()
+\item 
+std\-::string {\bf http\-\_\-if\-\_\-none\-\_\-match} ()
+\item 
+std\-::pair$<$ bool, unsigned $>$ {\bf http\-\_\-max\-\_\-forwards} ()
+\item 
+std\-::string {\bf http\-\_\-pragma} ()
+\item 
+std\-::string {\bf http\-\_\-proxy\-\_\-authorization} ()
+\item 
+std\-::string {\bf http\-\_\-range} ()
+\item 
+std\-::string {\bf http\-\_\-referer} ()
+\item 
+std\-::string {\bf http\-\_\-te} ()
+\item 
+std\-::string {\bf http\-\_\-upgrade} ()
+\item 
+std\-::string {\bf http\-\_\-user\-\_\-agent} ()
+\item 
+std\-::string {\bf http\-\_\-via} ()
+\item 
+std\-::string {\bf http\-\_\-warn} ()
+\item 
+std\-::string {\bf getenv} (std\-::string const \&)
+\item 
+std\-::string {\bf getenv} (char const $\ast$)
+\item 
+char const $\ast$ {\bf cgetenv} (char const $\ast$)
+\item 
+std\-::map$<$ std\-::string, \\*
+std\-::string $>$ {\bf getenv} ()
+\item 
+{\bf cookies\-\_\-type} const \& {\bf cookies} ()
+\item 
+{\bf cookie} const \& {\bf cookie\-\_\-by\-\_\-name} (std\-::string const \&name)
+\item 
+std\-::string {\bf get} (std\-::string const \&name)
+\item 
+std\-::string {\bf post} (std\-::string const \&name)
+\item 
+{\bf form\-\_\-type} const \& {\bf get} ()
+\item 
+{\bf form\-\_\-type} const \& {\bf post} ()
+\item 
+{\bf form\-\_\-type} const \& {\bf post\-\_\-or\-\_\-get} ()
+\item 
+{\bf files\-\_\-type} {\bf files} ()
+\item 
+std\-::pair$<$ void $\ast$, size\-\_\-t $>$ {\bf raw\-\_\-post\-\_\-data} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries impl\-::cgi\-::connection}\label{classcppcms_1_1http_1_1request_a35a6637347117934569e84977b6f5143}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents all information related to the H\-T\-T\-P/\-C\-G\-I request. 
+
+It is usually accessed via {\tt http\-::context} or application class 
+
+\subsection{Member Typedef Documentation}
+\index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!cookies\-\_\-type@{cookies\-\_\-type}}
+\index{cookies\-\_\-type@{cookies\-\_\-type}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{cookies\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::map$<$std\-::string,{\bf cookie}$>$ {\bf cppcms\-::http\-::request\-::cookies\-\_\-type}}\label{classcppcms_1_1http_1_1request_a3d5c29f83af82a86ebb8304192a5e2b4}
+Type of a map of cookie name to the cookie value \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!files\-\_\-type@{files\-\_\-type}}
+\index{files\-\_\-type@{files\-\_\-type}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{files\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::vector$<${\bf booster\-::shared\-\_\-ptr}$<${\bf file}$>$ $>$ {\bf cppcms\-::http\-::request\-::files\-\_\-type}}\label{classcppcms_1_1http_1_1request_a1a331ac87ef3bd7d332c4405e4132f91}
+Type that represents all files uploaded in this request \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!form\-\_\-type@{form\-\_\-type}}
+\index{form\-\_\-type@{form\-\_\-type}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{form\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::multimap$<$std\-::string,std\-::string$>$ {\bf cppcms\-::http\-::request\-::form\-\_\-type}}\label{classcppcms_1_1http_1_1request_af80022c2dddaf68330eb7f3f23ec84fc}
+Type that represents from-\/data key-\/value pairs 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!auth\-\_\-type@{auth\-\_\-type}}
+\index{auth\-\_\-type@{auth\-\_\-type}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{auth\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::auth\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a7d6127a3a63d951465ddaffee7e7e4d6}
+C\-G\-I A\-U\-T\-H\-\_\-\-T\-Y\-P\-E environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!cgetenv@{cgetenv}}
+\index{cgetenv@{cgetenv}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{cgetenv}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\-::http\-::request\-::cgetenv (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aafe770ee0e5be833b50ae6998e74b69a}
+Get C\-G\-I environment variable by name. Returns empty string if the variable is not set \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!content\-\_\-length@{content\-\_\-length}}
+\index{content\-\_\-length@{content\-\_\-length}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{content\-\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long cppcms\-::http\-::request\-::content\-\_\-length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aa4d3f26066d7302696ab5096d4f0ef6a}
+C\-G\-I C\-O\-N\-T\-E\-N\-T\-\_\-\-L\-E\-N\-G\-T\-H environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!content\-\_\-type@{content\-\_\-type}}
+\index{content\-\_\-type@{content\-\_\-type}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{content\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::content\-\_\-type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a87495fcfdb08adf5c954760e43ccedef}
+C\-G\-I C\-O\-N\-T\-E\-N\-T\-\_\-\-T\-Y\-P\-E environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!content\-\_\-type\-\_\-parsed@{content\-\_\-type\-\_\-parsed}}
+\index{content\-\_\-type\-\_\-parsed@{content\-\_\-type\-\_\-parsed}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{content\-\_\-type\-\_\-parsed}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::http\-::content\-\_\-type} cppcms\-::http\-::request\-::content\-\_\-type\-\_\-parsed (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ac9b2fc7e931cb0e26706e715e7b8add1}
+Parsed C\-G\-I C\-O\-N\-T\-E\-N\-T\-\_\-\-T\-Y\-P\-E environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!cookie\-\_\-by\-\_\-name@{cookie\-\_\-by\-\_\-name}}
+\index{cookie\-\_\-by\-\_\-name@{cookie\-\_\-by\-\_\-name}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{cookie\-\_\-by\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cookie} const\& cppcms\-::http\-::request\-::cookie\-\_\-by\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ab717ec97723fa3a400387d8b99af60f3}
+Get cookie by its name, if not assigned returns empty cookie \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!cookies@{cookies}}
+\index{cookies@{cookies}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{cookies}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cookies\-\_\-type} const\& cppcms\-::http\-::request\-::cookies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_afb7dbf6144956e20f33ac1ef1eaf546e}
+Get all cookies sent with this request \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!files@{files}}
+\index{files@{files}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{files}]{\setlength{\rightskip}{0pt plus 5cm}{\bf files\-\_\-type} cppcms\-::http\-::request\-::files (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aca0e091e97f2c23496d801ac76211cd4}
+Get all uploaded files \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!gateway\-\_\-interface@{gateway\-\_\-interface}}
+\index{gateway\-\_\-interface@{gateway\-\_\-interface}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{gateway\-\_\-interface}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::gateway\-\_\-interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a44bd851a535fa874fd0c8dc8e1596358}
+C\-G\-I G\-A\-T\-E\-W\-A\-Y\-\_\-\-I\-N\-T\-E\-R\-F\-A\-C\-E environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!get@{get}}
+\index{get@{get}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a9558b7cf069445329bf5c3a7cc8e4044}
+Fetch G\-E\-T value by name, if name not exists or more then one entry with same name exists, empty string is returned \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!get@{get}}
+\index{get@{get}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf form\-\_\-type} const\& cppcms\-::http\-::request\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a36d72816584f61d3c5b7e510d61a5f58}
+form-\/data G\-E\-T part of request \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!getenv@{getenv}}
+\index{getenv@{getenv}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{getenv}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::getenv (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ae1027cdea2ba8a41a041269df8092ae3}
+Get C\-G\-I environment variable by name. Returns empty string if the variable is not set \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!getenv@{getenv}}
+\index{getenv@{getenv}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{getenv}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::getenv (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a70d0d96026bc33f2df7c472b2f39a8b2}
+Get C\-G\-I environment variable by name. Returns empty string if the variable is not set \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!getenv@{getenv}}
+\index{getenv@{getenv}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{getenv}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$std\-::string,std\-::string$>$ cppcms\-::http\-::request\-::getenv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a92bc86f75e4e1f9480967ce3fd1e4f65}
+Get map of all C\-G\-I environment variable as key-\/value pairs. \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-accept@{http\-\_\-accept}}
+\index{http\-\_\-accept@{http\-\_\-accept}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-accept}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-accept (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ad845617278f4de01d329fbfd86945107}
+C\-G\-I H\-T\-T\-P\-\_\-\-A\-C\-C\-E\-P\-T variable representing Accept H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-accept\-\_\-charset@{http\-\_\-accept\-\_\-charset}}
+\index{http\-\_\-accept\-\_\-charset@{http\-\_\-accept\-\_\-charset}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-accept\-\_\-charset}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-accept\-\_\-charset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a3ff0b714cbd8a3b4748e62a4a16da926}
+C\-G\-I H\-T\-T\-P\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-C\-H\-A\-R\-S\-E\-T variable representing Accept-\/\-Charset H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-accept\-\_\-encoding@{http\-\_\-accept\-\_\-encoding}}
+\index{http\-\_\-accept\-\_\-encoding@{http\-\_\-accept\-\_\-encoding}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-accept\-\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-accept\-\_\-encoding (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aeaa7c6a6e61a517bee0f7bc2ea0b7268}
+C\-G\-I H\-T\-T\-P\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-E\-N\-C\-O\-D\-I\-N\-G variable representing Accept-\/\-Encoding H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-accept\-\_\-language@{http\-\_\-accept\-\_\-language}}
+\index{http\-\_\-accept\-\_\-language@{http\-\_\-accept\-\_\-language}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-accept\-\_\-language}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-accept\-\_\-language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ad763caa53a4c1ec810b42148386fea34}
+C\-G\-I H\-T\-T\-P\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-L\-A\-N\-G\-U\-A\-G\-E variable representing Accept-\/\-Language H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-accept\-\_\-ranges@{http\-\_\-accept\-\_\-ranges}}
+\index{http\-\_\-accept\-\_\-ranges@{http\-\_\-accept\-\_\-ranges}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-accept\-\_\-ranges}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-accept\-\_\-ranges (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ac266409683ade1e3f1c5583954a3dfa6}
+C\-G\-I H\-T\-T\-P\-\_\-\-A\-C\-C\-E\-P\-T\-\_\-\-R\-A\-N\-G\-E\-S variable representing Accept-\/\-Ranges H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-authorization@{http\-\_\-authorization}}
+\index{http\-\_\-authorization@{http\-\_\-authorization}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-authorization}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-authorization (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aed50a3b66b6b02249cbf2fbe3aaee9a2}
+C\-G\-I H\-T\-T\-P\-\_\-\-A\-U\-T\-H\-O\-R\-I\-Z\-A\-T\-I\-O\-N variable representing Authorization H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-cache\-\_\-control@{http\-\_\-cache\-\_\-control}}
+\index{http\-\_\-cache\-\_\-control@{http\-\_\-cache\-\_\-control}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-cache\-\_\-control}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-cache\-\_\-control (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a18b2b89d14f8800ab2921653ac291707}
+C\-G\-I H\-T\-T\-P\-\_\-\-C\-A\-C\-H\-E\-\_\-\-C\-O\-N\-T\-R\-O\-L variable representing Cache-\/\-Control H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-connection@{http\-\_\-connection}}
+\index{http\-\_\-connection@{http\-\_\-connection}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-connection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a61844e9166645183c3b42c08479ec9c7}
+C\-G\-I H\-T\-T\-P\-\_\-\-C\-O\-N\-N\-E\-C\-T\-I\-O\-N variable representing Connection H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-cookie@{http\-\_\-cookie}}
+\index{http\-\_\-cookie@{http\-\_\-cookie}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-cookie}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-cookie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a48737865ad66b2b8a8d5f68c91f7f32b}
+C\-G\-I H\-T\-T\-P\-\_\-\-C\-O\-O\-K\-I\-E variable representing Cookie H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-expect@{http\-\_\-expect}}
+\index{http\-\_\-expect@{http\-\_\-expect}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-expect}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-expect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a5a9a89365dfa365cec700a3ff951b23b}
+C\-G\-I H\-T\-T\-P\-\_\-\-E\-X\-P\-E\-C\-T variable representing Expect H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-form@{http\-\_\-form}}
+\index{http\-\_\-form@{http\-\_\-form}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-form}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-form (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aafbca5869e613fd88e26add2bb5b82c5}
+C\-G\-I H\-T\-T\-P\-\_\-\-F\-O\-R\-M variable representing Form H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-host@{http\-\_\-host}}
+\index{http\-\_\-host@{http\-\_\-host}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a0dc145f6fb337cd352c64a7011bd2142}
+C\-G\-I H\-T\-T\-P\-\_\-\-H\-O\-S\-T variable representing Host H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-if\-\_\-match@{http\-\_\-if\-\_\-match}}
+\index{http\-\_\-if\-\_\-match@{http\-\_\-if\-\_\-match}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-if\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-if\-\_\-match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a9f751aa3587fe1d82f4ea773e87c4743}
+C\-G\-I H\-T\-T\-P\-\_\-\-I\-F\-\_\-\-M\-A\-T\-C\-H variable representing If-\/\-Match H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-if\-\_\-none\-\_\-match@{http\-\_\-if\-\_\-none\-\_\-match}}
+\index{http\-\_\-if\-\_\-none\-\_\-match@{http\-\_\-if\-\_\-none\-\_\-match}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-if\-\_\-none\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-if\-\_\-none\-\_\-match (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ab088999855524add8bf8116564936fa4}
+C\-G\-I H\-T\-T\-P\-\_\-\-I\-F\-\_\-\-N\-O\-N\-E\-\_\-\-M\-A\-T\-C\-H variable representing If-\/\-None-\/\-Match H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-max\-\_\-forwards@{http\-\_\-max\-\_\-forwards}}
+\index{http\-\_\-max\-\_\-forwards@{http\-\_\-max\-\_\-forwards}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-max\-\_\-forwards}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$bool,unsigned$>$ cppcms\-::http\-::request\-::http\-\_\-max\-\_\-forwards (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a08894b397570b640a10ef63bde354e8b}
+G\-G\-I H\-T\-T\-P\-\_\-\-M\-A\-X\-\_\-\-F\-O\-R\-W\-A\-R\-D\-S variable representing Http-\/\-Max-\/\-Forwards
+
+Returns a pair of \{true,H\-T\-T\-P\-\_\-\-M\-A\-X\-\_\-\-F\-O\-R\-W\-A\-R\-D\-S\} if set or \{false,0\} otherwise \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-pragma@{http\-\_\-pragma}}
+\index{http\-\_\-pragma@{http\-\_\-pragma}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-pragma}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-pragma (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a5e30c3cd3cca9cba12bf46312f7f72e2}
+C\-G\-I H\-T\-T\-P\-\_\-\-P\-R\-A\-G\-M\-A variable representing Pragma H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-proxy\-\_\-authorization@{http\-\_\-proxy\-\_\-authorization}}
+\index{http\-\_\-proxy\-\_\-authorization@{http\-\_\-proxy\-\_\-authorization}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-proxy\-\_\-authorization}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-proxy\-\_\-authorization (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a8e0722d8e1e617b0f8925d864dd2d0fe}
+C\-G\-I H\-T\-T\-P\-\_\-\-P\-R\-O\-X\-Y\-\_\-\-A\-U\-T\-H\-O\-R\-I\-Z\-A\-T\-I\-O\-N variable representing Proxy-\/\-Authorization H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-range@{http\-\_\-range}}
+\index{http\-\_\-range@{http\-\_\-range}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-range}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-range (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a0e40d8982e9add36b00768e315ba6f94}
+C\-G\-I H\-T\-T\-P\-\_\-\-R\-A\-N\-G\-E variable representing Range H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-referer@{http\-\_\-referer}}
+\index{http\-\_\-referer@{http\-\_\-referer}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-referer}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-referer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a1667749afa0a6bc85761a26a19c53cf4}
+C\-G\-I H\-T\-T\-P\-\_\-\-R\-E\-F\-E\-R\-E\-R variable representing Referer H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-te@{http\-\_\-te}}
+\index{http\-\_\-te@{http\-\_\-te}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-te}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-te (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a46592f5bfb539131294777cf507cbf43}
+C\-G\-I H\-T\-T\-P\-\_\-\-T\-E variable representing Te H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-upgrade@{http\-\_\-upgrade}}
+\index{http\-\_\-upgrade@{http\-\_\-upgrade}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-upgrade}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-upgrade (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ac7d486f2059cacb830f661376d1ddb98}
+C\-G\-I H\-T\-T\-P\-\_\-\-U\-P\-G\-R\-A\-D\-E variable representing Upgrade H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-user\-\_\-agent@{http\-\_\-user\-\_\-agent}}
+\index{http\-\_\-user\-\_\-agent@{http\-\_\-user\-\_\-agent}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-user\-\_\-agent}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-user\-\_\-agent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_acf459af5df4438140947f16c0640c3e1}
+C\-G\-I H\-T\-T\-P\-\_\-\-U\-S\-E\-R\-\_\-\-A\-G\-E\-N\-T variable representing User-\/\-Agent H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-via@{http\-\_\-via}}
+\index{http\-\_\-via@{http\-\_\-via}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-via}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-via (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a0848e2f8ffee5dd56f8a0a2a6dff7a36}
+C\-G\-I H\-T\-T\-P\-\_\-\-V\-I\-A variable representing Via H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!http\-\_\-warn@{http\-\_\-warn}}
+\index{http\-\_\-warn@{http\-\_\-warn}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{http\-\_\-warn}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::http\-\_\-warn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a47d260d1b4fdc1dfa81f3a34427c91fc}
+C\-G\-I H\-T\-T\-P\-\_\-\-W\-A\-R\-N variable representing Warn H\-T\-T\-P header \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!path\-\_\-info@{path\-\_\-info}}
+\index{path\-\_\-info@{path\-\_\-info}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{path\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::path\-\_\-info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a9dc5c7b77f9f5a5284c022e699d331d6}
+C\-G\-I P\-A\-T\-H\-\_\-\-I\-N\-F\-O environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!path\-\_\-translated@{path\-\_\-translated}}
+\index{path\-\_\-translated@{path\-\_\-translated}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{path\-\_\-translated}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::path\-\_\-translated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ab11311b140a082c4e3180a70224193e1}
+C\-G\-I P\-A\-T\-H\-\_\-\-T\-R\-A\-N\-S\-L\-A\-T\-E\-D environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!post@{post}}
+\index{post@{post}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::post (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a40db64bca94ef0418e91bdcfdc42e2a6}
+Fetch P\-O\-S\-T value by name, if name not exists or more then one entry with same name exists, empty string is returned \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!post@{post}}
+\index{post@{post}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}{\bf form\-\_\-type} const\& cppcms\-::http\-::request\-::post (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a1251218cb85013e26a087746ce762da0}
+form-\/data P\-O\-S\-T part of request \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!post\-\_\-or\-\_\-get@{post\-\_\-or\-\_\-get}}
+\index{post\-\_\-or\-\_\-get@{post\-\_\-or\-\_\-get}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{post\-\_\-or\-\_\-get}]{\setlength{\rightskip}{0pt plus 5cm}{\bf form\-\_\-type} const\& cppcms\-::http\-::request\-::post\-\_\-or\-\_\-get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a0d9ff833540a1a78c5f290aec99cdd90}
+form-\/data P\-O\-S\-T or G\-E\-T according to reuqest\-\_\-method() 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load().
+
+\index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!query\-\_\-string@{query\-\_\-string}}
+\index{query\-\_\-string@{query\-\_\-string}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{query\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::query\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a0581bc1df0fd02fd4e4d1e1b405b7473}
+C\-G\-I Q\-U\-E\-R\-Y\-\_\-\-S\-T\-R\-I\-N\-G environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!raw\-\_\-post\-\_\-data@{raw\-\_\-post\-\_\-data}}
+\index{raw\-\_\-post\-\_\-data@{raw\-\_\-post\-\_\-data}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{raw\-\_\-post\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$void $\ast$,size\-\_\-t$>$ cppcms\-::http\-::request\-::raw\-\_\-post\-\_\-data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ab222607ab63e51f28c52cdde48c3a1d7}
+Access to raw bits of P\-O\-S\-T data. If the P\-O\-S\-T request is empty or the request\-\_\-type in not P\-O\-S\-T \{N\-U\-L\-L,0\} will be returned.
+
+Note\-: when processing multipart/form-\/data P\-O\-S\-T request this function will always return \{N\-U\-L\-L,0\} as such requests maybe huge (file uploads of multiple hundreds of M\-B or even G\-B) that are would be stored in temporary files instead of memory. In order to get access to P\-O\-S\-T data you'll have to use \doxyref{post()}{p.}{classcppcms_1_1http_1_1request_a1251218cb85013e26a087746ce762da0}, \doxyref{get()}{p.}{classcppcms_1_1http_1_1request_a36d72816584f61d3c5b7e510d61a5f58}, or \doxyref{files()}{p.}{classcppcms_1_1http_1_1request_aca0e091e97f2c23496d801ac76211cd4} member functions. \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!remote\-\_\-addr@{remote\-\_\-addr}}
+\index{remote\-\_\-addr@{remote\-\_\-addr}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{remote\-\_\-addr}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::remote\-\_\-addr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a6f9d8f160c4f6fd0f848389f0ef65df4}
+C\-G\-I R\-E\-M\-O\-T\-E\-\_\-\-A\-D\-D\-R environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!remote\-\_\-host@{remote\-\_\-host}}
+\index{remote\-\_\-host@{remote\-\_\-host}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{remote\-\_\-host}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::remote\-\_\-host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_af21f78cecfd837cc0f6491cc0a328595}
+C\-G\-I R\-E\-M\-O\-T\-E\-\_\-\-H\-O\-S\-T environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!remote\-\_\-ident@{remote\-\_\-ident}}
+\index{remote\-\_\-ident@{remote\-\_\-ident}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{remote\-\_\-ident}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::remote\-\_\-ident (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ae101634d5fd457d6f43d21a1d5dc52fc}
+C\-G\-I R\-E\-M\-O\-T\-E\-\_\-\-I\-D\-E\-N\-T environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!remote\-\_\-user@{remote\-\_\-user}}
+\index{remote\-\_\-user@{remote\-\_\-user}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{remote\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::remote\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aa94c7977b09a89e83bd4335c31a9e6c8}
+C\-G\-I R\-E\-M\-O\-T\-E\-\_\-\-U\-S\-E\-R environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!request\-\_\-method@{request\-\_\-method}}
+\index{request\-\_\-method@{request\-\_\-method}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{request\-\_\-method}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::request\-\_\-method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_afd8eac5059e7bd4c0f2b1b3d4d3d68aa}
+C\-G\-I R\-E\-Q\-U\-E\-S\-T\-\_\-\-M\-E\-T\-H\-O\-D environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!script\-\_\-name@{script\-\_\-name}}
+\index{script\-\_\-name@{script\-\_\-name}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{script\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::script\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_aca952efcc6f6b2ac32790900fe444a90}
+C\-G\-I S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!server\-\_\-name@{server\-\_\-name}}
+\index{server\-\_\-name@{server\-\_\-name}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{server\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::server\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a36a2b5d48d7852664ec34abc44a88259}
+C\-G\-I S\-E\-R\-V\-E\-R\-\_\-\-N\-A\-M\-E environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!server\-\_\-port@{server\-\_\-port}}
+\index{server\-\_\-port@{server\-\_\-port}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{server\-\_\-port}]{\setlength{\rightskip}{0pt plus 5cm}unsigned cppcms\-::http\-::request\-::server\-\_\-port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ace3a3d5ff291083a5d26d66b69f899fb}
+C\-G\-I S\-E\-R\-V\-E\-R\-\_\-\-P\-O\-R\-T environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!server\-\_\-protocol@{server\-\_\-protocol}}
+\index{server\-\_\-protocol@{server\-\_\-protocol}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{server\-\_\-protocol}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::server\-\_\-protocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_a47ca73a4e4b12a6d10cad4cf5f2a7ef0}
+C\-G\-I S\-E\-R\-V\-E\-R\-\_\-\-P\-R\-O\-T\-O\-C\-O\-L environment variable \index{cppcms\-::http\-::request@{cppcms\-::http\-::request}!server\-\_\-software@{server\-\_\-software}}
+\index{server\-\_\-software@{server\-\_\-software}!cppcms::http::request@{cppcms\-::http\-::request}}
+\subsubsection[{server\-\_\-software}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::request\-::server\-\_\-software (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1request_ae32cb5c64a178018063161313e80aafa}
+C\-G\-I S\-E\-R\-V\-E\-R\-\_\-\-S\-O\-F\-T\-W\-A\-R\-E environment variable 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\-\_\-request.\-h\end{DoxyCompactItemize}

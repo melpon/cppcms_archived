@@ -1,0 +1,64 @@
+\section{booster\-:\-:copy\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classbooster_1_1copy__ptr}\index{booster\-::copy\-\_\-ptr$<$ T $>$@{booster\-::copy\-\_\-ptr$<$ T $>$}}
+
+
+a smart pointer similar to std\-::auto\-\_\-ptr but it copies underlying object on pointer copy instead of moving its ownership.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/copy\-\_\-ptr.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries copy\-\_\-ptr} (T $\ast$v)\label{classbooster_1_1copy__ptr_accc428d4c2e0bbc215dcdfaa19e76dc6}
+
+\item 
+{\bfseries copy\-\_\-ptr} ({\bf copy\-\_\-ptr} const \&other)\label{classbooster_1_1copy__ptr_a8990363c8a2ea8b66d34a3099fae9bd4}
+
+\item 
+{\bf copy\-\_\-ptr} const \& {\bfseries operator=} ({\bf copy\-\_\-ptr} const \&other)\label{classbooster_1_1copy__ptr_a692c395662fd08916ca79b3e5cc01df9}
+
+\item 
+T const $\ast$ {\bfseries get} () const \label{classbooster_1_1copy__ptr_ab2bafeae3949e6d137fc75f4dc47c154}
+
+\item 
+T $\ast$ {\bfseries get} ()\label{classbooster_1_1copy__ptr_a691964944093292970331a92bed64848}
+
+\item 
+T const \& {\bfseries operator$\ast$} () const \label{classbooster_1_1copy__ptr_a759a3effd74fd7d77e4a291fca62f99b}
+
+\item 
+T \& {\bfseries operator$\ast$} ()\label{classbooster_1_1copy__ptr_ab62472e58eab77c44ba703e96a5cf6bc}
+
+\item 
+T const $\ast$ {\bfseries operator-\/$>$} () const \label{classbooster_1_1copy__ptr_a47548c62ecc194e384ab8dd21bd4c1ff}
+
+\item 
+T $\ast$ {\bfseries operator-\/$>$} ()\label{classbooster_1_1copy__ptr_aa12d0c6e0e12a4354256d15b82daeb9e}
+
+\item 
+T $\ast$ {\bfseries release} ()\label{classbooster_1_1copy__ptr_a4b9ebbe86e33e45bcd9aa0f47d57c9cd}
+
+\item 
+void {\bfseries reset} (T $\ast$p=0)\label{classbooster_1_1copy__ptr_a94831913ae1253ba483c9356a440c71b}
+
+\item 
+void {\bfseries swap} ({\bf copy\-\_\-ptr} \&other)\label{classbooster_1_1copy__ptr_a3ae4ac0b6041dd1cd226d76333333e00}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class booster\-::copy\-\_\-ptr$<$ T $>$}
+
+a smart pointer similar to std\-::auto\-\_\-ptr but it copies underlying object on pointer copy instead of moving its ownership. 
+
+Note\-: Underlying object has same constness as the pointer itself (not like in ordinary pointer).
+
+Don't use it with polymorphic classes. Prefer \doxyref{clone\-\_\-ptr}{p.}{classbooster_1_1clone__ptr} instead. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/copy\-\_\-ptr.\-h\end{DoxyCompactItemize}

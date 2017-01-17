@@ -1,0 +1,171 @@
+\section{booster\-:\-:sub\-\_\-match$<$ Iterator $>$ Class Template Reference}
+\label{classbooster_1_1sub__match}\index{booster\-::sub\-\_\-match$<$ Iterator $>$@{booster\-::sub\-\_\-match$<$ Iterator $>$}}
+
+
+This class represents a single captures subexpression.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/regex\-\_\-match.\-h$>$}
+
+Inheritance diagram for booster\-:\-:sub\-\_\-match$<$ Iterator $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1sub__match}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Iterator {\bfseries iterator}\label{classbooster_1_1sub__match_a9842de417a3b1de73b678584e4b416d9}
+
+\item 
+typedef std\-::iterator\-\_\-traits\\*
+$<$ Iterator $>$\-::value\-\_\-type {\bfseries value\-\_\-type}\label{classbooster_1_1sub__match_ac35e6f9a594f9cd1cb17db3c251f30b8}
+
+\item 
+typedef std\-::iterator\-\_\-traits\\*
+$<$ Iterator $>$\-::difference\-\_\-type {\bfseries difference\-\_\-type}\label{classbooster_1_1sub__match_a83804c17c7c080fef16f42808c443fd9}
+
+\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ value\-\_\-type $>$ {\bf string\-\_\-type}
+\item 
+typedef std\-::pair$<$ Iterator, \\*
+Iterator $>$ {\bfseries pair\-\_\-type}\label{classbooster_1_1sub__match_a222201907ccf033bb9b11eda6b5266f0}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+difference\-\_\-type {\bf length} () const 
+\item 
+{\bf operator string\-\_\-type} () const 
+\item 
+{\bf string\-\_\-type} {\bf str} () const 
+\item 
+int {\bf compare} ({\bf sub\-\_\-match} const \&other) const 
+\item 
+int {\bf compare} ({\bf string\-\_\-type} const \&other) const 
+\item 
+int {\bf compare} (value\-\_\-type const $\ast$s) const 
+\item 
+{\bf sub\-\_\-match} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf matched}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Iterator$>$class booster\-::sub\-\_\-match$<$ Iterator $>$}
+
+This class represents a single captures subexpression. 
+
+The subexpressions captured text is found between [first,second). 
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!string\-\_\-type@{string\-\_\-type}}
+\index{string\-\_\-type@{string\-\_\-type}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{string\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ typedef std\-::basic\-\_\-string$<$value\-\_\-type$>$ {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::{\bf string\-\_\-type}}\label{classbooster_1_1sub__match_a2fe1f52372f9789cdb8d12250646a249}
+The string type that this expression can be converted into, generally std\-::string. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!sub\-\_\-match@{sub\-\_\-match}}
+\index{sub\-\_\-match@{sub\-\_\-match}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{sub\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::{\bf sub\-\_\-match} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_ab4bc1c29a04fcb9843cc8287894c7599}
+Default not-\/matched subexpressions. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!compare@{compare}}
+\index{compare@{compare}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ int {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf sub\-\_\-match}$<$ Iterator $>$ const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_a2d630e01751e0d6f58e994788991d939}
+Compare two subexpressions. Same as \doxyref{str()}{p.}{classbooster_1_1sub__match_ade417d9c12ef635abe3c1667a2ec909f}.compare(other.\-str()) 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::str().
+
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!compare@{compare}}
+\index{compare@{compare}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ int {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-type} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_a51265ea7e1d89abd83cd42f46f9a19fc}
+Compare two subexpressions. Same as \doxyref{str()}{p.}{classbooster_1_1sub__match_ade417d9c12ef635abe3c1667a2ec909f}.compare(other) 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::str().
+
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!compare@{compare}}
+\index{compare@{compare}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ int {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::compare (
+\begin{DoxyParamCaption}
+\item[{value\-\_\-type const $\ast$}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_aa5f511d1f35818822c7bed68b305b7d9}
+Compare two subexpressions. Same as \doxyref{str()}{p.}{classbooster_1_1sub__match_ade417d9c12ef635abe3c1667a2ec909f}.compare(s) 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::str().
+
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!length@{length}}
+\index{length@{length}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ difference\-\_\-type {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_ac54ca4cd2144abab98e30bbd773a8f4b}
+The length of captured subexpression, 0 if matched==false. 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::matched.
+
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!operator string\-\_\-type@{operator string\-\_\-type}}
+\index{operator string\-\_\-type@{operator string\-\_\-type}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{operator string\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::operator {\bf string\-\_\-type} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_ad7226ee27750c6cb4bf7a6fb68991f5f}
+Explicit conversion operator to string 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::str().
+
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!str@{str}}
+\index{str@{str}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ {\bf string\-\_\-type} {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1sub__match_ade417d9c12ef635abe3c1667a2ec909f}
+Convert the subexpression to string. If matched is false, return empty string. 
+
+References booster\-::sub\-\_\-match$<$ Iterator $>$\-::matched.
+
+
+
+Referenced by booster\-::sub\-\_\-match$<$ Iterator $>$\-::compare(), and booster\-::sub\-\_\-match$<$ Iterator $>$\-::operator string\-\_\-type().
+
+
+
+\subsection{Member Data Documentation}
+\index{booster\-::sub\-\_\-match@{booster\-::sub\-\_\-match}!matched@{matched}}
+\index{matched@{matched}!booster::sub_match@{booster\-::sub\-\_\-match}}
+\subsubsection[{matched}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Iterator $>$ bool {\bf booster\-::sub\-\_\-match}$<$ Iterator $>$\-::matched}\label{classbooster_1_1sub__match_a33435c506f5ff4e3cdf4ae7bc21c5bd8}
+This flag is true if the expression was matched, false otherwise. if matched is false then there is no guarantees that first or second are valid iterators. 
+
+Referenced by booster\-::sub\-\_\-match$<$ Iterator $>$\-::length(), booster\-::match\-\_\-results$<$ Iterator $>$\-::operator[$\,$](), booster\-::match\-\_\-results$<$ Iterator $>$\-::prefix(), booster\-::sub\-\_\-match$<$ Iterator $>$\-::str(), and booster\-::match\-\_\-results$<$ Iterator $>$\-::suffix().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/regex\-\_\-match.\-h\end{DoxyCompactItemize}

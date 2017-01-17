@@ -1,0 +1,84 @@
+\section{booster\-:\-:locale\-:\-:date\-\_\-time\-\_\-period Struct Reference}
+\label{structbooster_1_1locale_1_1date__time__period}\index{booster\-::locale\-::date\-\_\-time\-\_\-period@{booster\-::locale\-::date\-\_\-time\-\_\-period}}
+
+
+This class represents a pair of period\-\_\-type and the integer values that describes its amount. For example 3 days or 4 years.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf date\-\_\-time\-\_\-period} {\bf operator+} () const 
+\item 
+{\bf date\-\_\-time\-\_\-period} {\bf operator-\/} () const 
+\item 
+{\bf date\-\_\-time\-\_\-period} ({\bf period\-::period\-\_\-type} f={\bf period\-::period\-\_\-type}(), int v=1)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf period\-::period\-\_\-type} {\bf type}\label{structbooster_1_1locale_1_1date__time__period_a19fc27a6b8cb6946fd6dc4c57a0d0d50}
+
+\begin{DoxyCompactList}\small\item\em The type of period, i.\-e. era, year, day etc. \end{DoxyCompactList}\item 
+int {\bf value}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents a pair of period\-\_\-type and the integer values that describes its amount. For example 3 days or 4 years. 
+
+Usually obtained as product of period\-\_\-type and integer or my calling a representative functions For example day()$\ast$3 == date\-\_\-time\-\_\-period(day(),3) == day(3) 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period@{booster\-::locale\-::date\-\_\-time\-\_\-period}!date\-\_\-time\-\_\-period@{date\-\_\-time\-\_\-period}}
+\index{date\-\_\-time\-\_\-period@{date\-\_\-time\-\_\-period}!booster::locale::date_time_period@{booster\-::locale\-::date\-\_\-time\-\_\-period}}
+\subsubsection[{date\-\_\-time\-\_\-period}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-\_\-period\-::date\-\_\-time\-\_\-period (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f = {\ttfamily {\bf period\-::period\-\_\-type}()}, }
+\item[{int}]{v = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1date__time__period_a562a41045b0fd520f6d38b741efe2a99}
+Constructor that creates \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} from period\-\_\-type {\itshape f} and a value {\itshape v} -- default 1. 
+
+Referenced by operator-\/().
+
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period@{booster\-::locale\-::date\-\_\-time\-\_\-period}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::locale::date_time_period@{booster\-::locale\-::date\-\_\-time\-\_\-period}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time\-\_\-period} booster\-::locale\-::date\-\_\-time\-\_\-period\-::operator+ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1date__time__period_a0676f002c3342bb5ae042dc02156681b}
+Operator + returns copy of itself \index{booster\-::locale\-::date\-\_\-time\-\_\-period@{booster\-::locale\-::date\-\_\-time\-\_\-period}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!booster::locale::date_time_period@{booster\-::locale\-::date\-\_\-time\-\_\-period}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time\-\_\-period} booster\-::locale\-::date\-\_\-time\-\_\-period\-::operator-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1date__time__period_adaaf8c58b3d95a736bbabd34733de1d5}
+Operator -\/, switches the sign of period 
+
+References date\-\_\-time\-\_\-period(), type, and value.
+
+
+
+\subsection{Member Data Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period@{booster\-::locale\-::date\-\_\-time\-\_\-period}!value@{value}}
+\index{value@{value}!booster::locale::date_time_period@{booster\-::locale\-::date\-\_\-time\-\_\-period}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::date\-\_\-time\-\_\-period\-::value}\label{structbooster_1_1locale_1_1date__time__period_a3c5dd191feae2a75b52d143ad29a0cc1}
+The value the actual number of {\itshape periods} 
+
+Referenced by booster\-::locale\-::period\-::operator$\ast$(), and operator-\/().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time.\-h\end{DoxyCompactItemize}

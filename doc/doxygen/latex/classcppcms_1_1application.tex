@@ -1,0 +1,567 @@
+\section{cppcms\-:\-:application Class Reference}
+\label{classcppcms_1_1application}\index{cppcms\-::application@{cppcms\-::application}}
+
+
+application class is the base class for all user created applications.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/application.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:application\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcppcms_1_1application}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf application} ({\bf cppcms\-::service} \&srv)
+\item 
+virtual {\bf $\sim$application} ()
+\item 
+{\bf cppcms\-::service} \& {\bf service} ()
+\item 
+{\bf json\-::value} const \& {\bf settings} ()
+\item 
+{\bf http\-::context} \& {\bf context} ()
+\item 
+{\bf http\-::request} \& {\bf request} ()
+\item 
+{\bf http\-::response} \& {\bf response} ()
+\item 
+{\bf url\-\_\-dispatcher} \& {\bf dispatcher} ()
+\item 
+{\bf url\-\_\-mapper} \& {\bf mapper} ()
+\item 
+{\bf cache\-\_\-interface} \& {\bf cache} ()
+\item 
+{\bf session\-\_\-interface} \& {\bf session} ()
+\item 
+void {\bf render} (std\-::string template\-\_\-name, {\bf base\-\_\-content} \&content)
+\item 
+void {\bf render} (std\-::string skin, std\-::string template\-\_\-name, {\bf base\-\_\-content} \&content)
+\item 
+void {\bf render} (std\-::string template\-\_\-name, std\-::ostream \&out, {\bf base\-\_\-content} \&content)
+\item 
+void {\bf render} (std\-::string skin, std\-::string template\-\_\-name, std\-::ostream \&out, {\bf base\-\_\-content} \&content)
+\item 
+void {\bf add} ({\bf application} \&app)
+\item 
+void {\bf add} ({\bf application} \&app, std\-::string const \&regex, int part)
+\item 
+void {\bf add} ({\bf application} \&app, std\-::string const \&name, std\-::string const \&{\bf url}, std\-::string const \&regex, int part)
+\item 
+void {\bf add} ({\bf application} \&app, std\-::string const \&name, std\-::string const \&{\bf url})
+\item 
+void {\bf attach} ({\bf application} $\ast$app)
+\item 
+void {\bf attach} ({\bf application} $\ast$app, std\-::string const \&regex, int part)
+\item 
+void {\bf attach} ({\bf application} $\ast$app, std\-::string const \&name, std\-::string const \&{\bf url})
+\item 
+void {\bf attach} ({\bf application} $\ast$app, std\-::string const \&name, std\-::string const \&{\bf url}, std\-::string const \&regex, int part)
+\item 
+{\bf application} $\ast$ {\bf parent} ()
+\item 
+{\bf application} $\ast$ {\bf root} ()
+\item 
+{\bf booster\-::shared\-\_\-ptr}\\*
+$<$ {\bf http\-::context} $>$ {\bf release\-\_\-context} ()
+\item 
+{\bf booster\-::shared\-\_\-ptr}\\*
+$<$ {\bf http\-::context} $>$ {\bf get\-\_\-context} ()
+\item 
+void {\bf assign\-\_\-context} ({\bf booster\-::shared\-\_\-ptr}$<$ {\bf http\-::context} $>$ conn)
+\item 
+bool {\bf is\-\_\-asynchronous} ()
+\item 
+virtual void {\bf main} (std\-::string {\bf url})
+\item 
+virtual void {\bf init} ()
+\item 
+virtual void {\bf clear} ()
+\item 
+std\-::string {\bf translate} (char const $\ast${\bf context}, char const $\ast$message)
+\item 
+std\-::string {\bf translate} (char const $\ast$message)
+\item 
+std\-::string {\bf translate} (char const $\ast${\bf context}, char const $\ast$single, char const $\ast$plural, int n)
+\item 
+std\-::string {\bf translate} (char const $\ast$single, char const $\ast$plural, int n)
+\item 
+std\-::string {\bf url} (std\-::string const \&key)
+\item 
+std\-::string {\bf url} (std\-::string const \&key, {\bf filters\-::streamable} const \&p1)
+\item 
+std\-::string {\bf url} (std\-::string const \&key, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2)
+\item 
+std\-::string {\bf url} (std\-::string const \&key, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3)
+\item 
+std\-::string {\bf url} (std\-::string const \&key, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4)
+\item 
+std\-::string {\bf url} (std\-::string const \&key, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4, {\bf filters\-::streamable} const \&p5)
+\item 
+std\-::string {\bf url} (std\-::string const \&key, {\bf filters\-::streamable} const \&p1, {\bf filters\-::streamable} const \&p2, {\bf filters\-::streamable} const \&p3, {\bf filters\-::streamable} const \&p4, {\bf filters\-::streamable} const \&p5, {\bf filters\-::streamable} const \&p6)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries applications\-\_\-pool}\label{classcppcms_1_1application_a30f874a0e0276d427a1e284dc94255fc}
+
+\item 
+void {\bfseries booster\-::intrusive\-\_\-ptr\-\_\-add\-\_\-ref} ({\bf application} $\ast$p)\label{classcppcms_1_1application_a50711b8cb60f6581fa5330de7c7f9a59}
+
+\item 
+void {\bfseries booster\-::intrusive\-\_\-ptr\-\_\-release} ({\bf application} $\ast$p)\label{classcppcms_1_1application_a089c8bd8e37fe23e20b1f3d4b8a7e080}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+application class is the base class for all user created applications. 
+
+This class is the base for all user actions required for web page generation. User application classes are created upon web page request and then cached in {\itshape application\-\_\-pool}.
+
+Applications can be bundled to hierarchies. You may add a sub application to hierarchy, and they will always be connected with topmost application and their lifetime would be binded to them.
+
+application class is reference counted and may be used with {\itshape intrusive\-\_\-ptr}. But reference count semantics is very different form an ordinary semantics for other classes derived from {\itshape cppcms\-::refcounted}.
+
+
+\begin{DoxyEnumerate}
+\item All hierarchy share the counter of the topmost application. Thus, when all bundle is counted as a single unit allowing passing intrusive\-\_\-ptr to itself to the central service safely. When the topmost application is destroyed, it destroys all its children application classes.
+\item When reference count goes to 0, the application is not destroyed but rather recycled to the application pool for future use.
+\item The above hold only for synchronous applications, asynchronous one are destroyed when all reference count goes to 0.
+\end{DoxyEnumerate}
+
+There two ways to add sub-\/applications to hierarchy\-:
+
+
+\begin{DoxyEnumerate}
+\item Using member function family {\itshape add}, usually used with direct members of the parent class. Such child are not destroyed explicitly.
+\item Using member function family {\itshape attach}. The ownership on the application is moved to the parent class and it destroys an attached class with delete. 
+\end{DoxyEnumerate}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::application@{cppcms\-::application}!application@{application}}
+\index{application@{application}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{application}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::application\-::application (
+\begin{DoxyParamCaption}
+\item[{{\bf cppcms\-::service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_af7ea30dd5b894bbe194eb644ee5f9b80}
+Create a new application running on service {\itshape srv}, with a parent {\itshape parent} \index{cppcms\-::application@{cppcms\-::application}!$\sim$application@{$\sim$application}}
+\index{$\sim$application@{$\sim$application}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{$\sim$application}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::application\-::$\sim$application (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1application_a1345754d889871fe130aec26f4399afe}
+Destroys an application and all assigned application children. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::application@{cppcms\-::application}!add@{add}}
+\index{add@{add}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf application} \&}]{app}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_afc8693d6a8f20fc21a9141d2f377c2f9}
+Register an application {\itshape app} as child. Ownership of app is not transfered to parent, however it would shared it's parent reference count. \index{cppcms\-::application@{cppcms\-::application}!add@{add}}
+\index{add@{add}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf application} \&}]{app, }
+\item[{std\-::string const \&}]{regex, }
+\item[{int}]{part}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a33ac6e2c219e9b619986f339e64694f9}
+Register an application {\itshape app} as child and mount it into url dispatched calling \doxyref{dispatcher()}{p.}{classcppcms_1_1application_aec990ef8b6799f1758447d812feada33}.mount(regex,app,part);
+
+Ownership of app is not transfered to parent, however it would shared it's parent reference count. \index{cppcms\-::application@{cppcms\-::application}!add@{add}}
+\index{add@{add}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf application} \&}]{app, }
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{url, }
+\item[{std\-::string const \&}]{regex, }
+\item[{int}]{part}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_acd1c5660860aa6ba87987577950b290a}
+Register an application {\itshape app} as child and mount it into\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{url\-\_\-dispatcher}{p.}{classcppcms_1_1url__dispatcher} calling \doxyref{dispatcher()}{p.}{classcppcms_1_1application_aec990ef8b6799f1758447d812feada33}.mount(regex,app,part);
+\item \doxyref{url\-\_\-mapper}{p.}{classcppcms_1_1url__mapper} calling \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.mount(name,url,app);
+
+Ownership of app is not transfered to parent, however it would shared it's parent reference count. 
+\end{DoxyItemize}\index{cppcms\-::application@{cppcms\-::application}!add@{add}}
+\index{add@{add}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf application} \&}]{app, }
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{url}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a7152d901ee841424ddd513eb45053e7f}
+Register an application {\itshape app} as child and mount it into \doxyref{url\-\_\-mapper}{p.}{classcppcms_1_1url__mapper} calling \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.mount(name,url,app);
+
+Ownership of app is not transfered to parent, however it would shared it's parent reference count. \index{cppcms\-::application@{cppcms\-::application}!assign\-\_\-context@{assign\-\_\-context}}
+\index{assign\-\_\-context@{assign\-\_\-context}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{assign\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::assign\-\_\-context (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::shared\-\_\-ptr}$<$ {\bf http\-::context} $>$}]{conn}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ac87a8ae7d0e15a21850c722c8fe781b3}
+Set context to the application. The application gets shared ownership on the context.
+
+Note\-: because application hierarchy shared same context, it affects all classes in it. \index{cppcms\-::application@{cppcms\-::application}!attach@{attach}}
+\index{attach@{attach}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf application} $\ast$}]{app}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a6bf61f58b723d3dc93bdd144c1b0b45b}
+Register an application {\itshape app} as child. Ownership of app is transfered to parent \index{cppcms\-::application@{cppcms\-::application}!attach@{attach}}
+\index{attach@{attach}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf application} $\ast$}]{app, }
+\item[{std\-::string const \&}]{regex, }
+\item[{int}]{part}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ab69de715e0871a5a96c9c88145bb4629}
+Register an application {\itshape app} as child and mount it into \doxyref{url\-\_\-dispatcher}{p.}{classcppcms_1_1url__dispatcher} calling \doxyref{dispatcher()}{p.}{classcppcms_1_1application_aec990ef8b6799f1758447d812feada33}.mount(regex,$\ast$app,part);
+
+Ownership of app is transfered to parent. \index{cppcms\-::application@{cppcms\-::application}!attach@{attach}}
+\index{attach@{attach}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf application} $\ast$}]{app, }
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{url}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ab31985c608cfb176bbbf0958f438fbf7}
+Register an application {\itshape app} as child and mount it into \doxyref{url\-\_\-mapper}{p.}{classcppcms_1_1url__mapper} calling \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.mount(name,url,$\ast$app);
+
+Ownership of app is transfered to parent. \index{cppcms\-::application@{cppcms\-::application}!attach@{attach}}
+\index{attach@{attach}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf application} $\ast$}]{app, }
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{url, }
+\item[{std\-::string const \&}]{regex, }
+\item[{int}]{part}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ac9a8c01d43c5364ed1cb6b1fb517ef33}
+Register an application {\itshape app} as child and mount it into\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{url\-\_\-dispatcher}{p.}{classcppcms_1_1url__dispatcher} calling \doxyref{dispatcher()}{p.}{classcppcms_1_1application_aec990ef8b6799f1758447d812feada33}.mount(regex,$\ast$app,part);
+\item \doxyref{url\-\_\-mapper}{p.}{classcppcms_1_1url__mapper} calling \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.mount(name,url,$\ast$app);
+
+Ownership of app is transfered to parent. 
+\end{DoxyItemize}\index{cppcms\-::application@{cppcms\-::application}!cache@{cache}}
+\index{cache@{cache}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{cache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cache\-\_\-interface}\& cppcms\-::application\-::cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a426513fdad556bfc0f6ecd7c6108b835}
+Get a \doxyref{cache\-\_\-interface}{p.}{classcppcms_1_1cache__interface} instance. Same as \doxyref{context()}{p.}{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}.\doxyref{cache()}{p.}{classcppcms_1_1application_a426513fdad556bfc0f6ecd7c6108b835}; \index{cppcms\-::application@{cppcms\-::application}!clear@{clear}}
+\index{clear@{clear}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::application\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1application_ab59160d2fa14ea50dafe18df4a0d5ce3}
+This function is used for cleanup unused stuff, it should not throw \index{cppcms\-::application@{cppcms\-::application}!context@{context}}
+\index{context@{context}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf http\-::context}\& cppcms\-::application\-::context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}
+Get a context of the single H\-T\-T\-P request/response. \index{cppcms\-::application@{cppcms\-::application}!dispatcher@{dispatcher}}
+\index{dispatcher@{dispatcher}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{dispatcher}]{\setlength{\rightskip}{0pt plus 5cm}{\bf url\-\_\-dispatcher}\& cppcms\-::application\-::dispatcher (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_aec990ef8b6799f1758447d812feada33}
+Get a dispatched class -- class that responsible on mapping between U\-R\-Ls and a member functions of application class.
+
+This member function is application specific and not Connection specific. \index{cppcms\-::application@{cppcms\-::application}!get\-\_\-context@{get\-\_\-context}}
+\index{get\-\_\-context@{get\-\_\-context}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{get\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::shared\-\_\-ptr}$<${\bf http\-::context}$>$ cppcms\-::application\-::get\-\_\-context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a11c3e02cbb9eda7a35de06748d8d1a2c}
+Get reference counted pointer to the {\tt http\-::context} \index{cppcms\-::application@{cppcms\-::application}!init@{init}}
+\index{init@{init}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::application\-::init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1application_a06ee23e49ee18546120f02c287e7de87}
+This member function called when U\-R\-L is dispatched to this application, it is useful when member functions of applications are called, by default does nothing \index{cppcms\-::application@{cppcms\-::application}!is\-\_\-asynchronous@{is\-\_\-asynchronous}}
+\index{is\-\_\-asynchronous@{is\-\_\-asynchronous}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{is\-\_\-asynchronous}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::application\-::is\-\_\-asynchronous (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a596b56e426770b8f7a71afda167d50a4}
+Returns true if current application was created as asynchronous application. \index{cppcms\-::application@{cppcms\-::application}!main@{main}}
+\index{main@{main}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::application\-::main (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{url}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1application_a8c884a9309d107237e8946446feba8f8}
+This is main function of the application that is called when it is matched according to the regular expression in the \doxyref{applications\-\_\-pool}{p.}{classcppcms_1_1applications__pool} class.
+
+By default, main calls \doxyref{dispatcher()}{p.}{classcppcms_1_1application_aec990ef8b6799f1758447d812feada33}.dispatch(url). And if the last fails, it creates 404 Error page. This allows developers to create its own hooks for reaction on incoming U\-R\-L as, initialization and cleanup of general resources, Custom 404 and error handlers etc. 
+
+Reimplemented in {\bf cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server} \doxyref{}{p.}{classcppcms_1_1rpc_1_1json__rpc__server_a59719adc406c2a762fd1c3363762539c}.
+
+\index{cppcms\-::application@{cppcms\-::application}!mapper@{mapper}}
+\index{mapper@{mapper}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{mapper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf url\-\_\-mapper}\& cppcms\-::application\-::mapper (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}
+Get a \doxyref{url\-\_\-mapper}{p.}{classcppcms_1_1url__mapper} class -- class that responsible on mapping between real objects and urls displayer on the page.
+
+This member function is application specific and not Connection specific. \index{cppcms\-::application@{cppcms\-::application}!parent@{parent}}
+\index{parent@{parent}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf application}$\ast$ cppcms\-::application\-::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ad250fd76afc88dfd7a9b6c47327b2512}
+Get the parent of the application, if the application is the topmost class in hierarchy, it would return {\itshape this}, So, if you want to check if the application has any parent test app-\/$>$\doxyref{parent()}{p.}{classcppcms_1_1application_ad250fd76afc88dfd7a9b6c47327b2512}!=app; \index{cppcms\-::application@{cppcms\-::application}!release\-\_\-context@{release\-\_\-context}}
+\index{release\-\_\-context@{release\-\_\-context}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{release\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::shared\-\_\-ptr}$<${\bf http\-::context}$>$ cppcms\-::application\-::release\-\_\-context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a2c7b2090110eacd9e4499c569c9fa017}
+Request from an application give-\/up on ownership of the {\tt http\-::context} class and give it to the user control. Usually it is required for processing asynchronous requests.
+
+Note\-: because application hierarchy shared same context, it affects all classes in it. \index{cppcms\-::application@{cppcms\-::application}!render@{render}}
+\index{render@{render}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::render (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{template\-\_\-name, }
+\item[{{\bf base\-\_\-content} \&}]{content}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a46054c0f0e55b2638cc73fc8eb07fe4f}
+Render a template {\itshape template\-\_\-name} of default skin using content {\itshape content}.
+
+Side effect requires\-: output stream for response class, causes all updated session data be saved and all headers be written. You can't change headers after calling this function. \index{cppcms\-::application@{cppcms\-::application}!render@{render}}
+\index{render@{render}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::render (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{skin, }
+\item[{std\-::string}]{template\-\_\-name, }
+\item[{{\bf base\-\_\-content} \&}]{content}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_aa68b4c88d0e81a41474933043690aa1a}
+Render a template {\itshape template\-\_\-name} of {\itshape skin} skin using content {\itshape content}.
+
+Side effect requires\-: output stream for response class, causes all updated session data be saved and all headers be written. You can't change headers after calling this function. \index{cppcms\-::application@{cppcms\-::application}!render@{render}}
+\index{render@{render}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::render (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{template\-\_\-name, }
+\item[{std\-::ostream \&}]{out, }
+\item[{{\bf base\-\_\-content} \&}]{content}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a58581e959b24512b24bd1ba8329fefb5}
+Render a template {\itshape template\-\_\-name} of default skin using content {\itshape content} to an output stream {\itshape out}. Note\-: You are responsible to imbue suitable locale to the stream.
+
+You should use \doxyref{context()}{p.}{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}.locale() or \doxyref{service()}{p.}{classcppcms_1_1application_ac026d7001308c5ce3af069099a4071e8}.generator() to create such locales. \index{cppcms\-::application@{cppcms\-::application}!render@{render}}
+\index{render@{render}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::application\-::render (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{skin, }
+\item[{std\-::string}]{template\-\_\-name, }
+\item[{std\-::ostream \&}]{out, }
+\item[{{\bf base\-\_\-content} \&}]{content}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a3a1342b4834c8cdb79c2619dff010319}
+Render a template {\itshape template\-\_\-name} of a skin {\itshape skin} using content {\itshape content} to an output stream {\itshape out}. Note\-: You are responsible to imbue suitable locale to the stream.
+
+You should use \doxyref{context()}{p.}{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}.locale() or \doxyref{service()}{p.}{classcppcms_1_1application_ac026d7001308c5ce3af069099a4071e8}.generator() to create such locales. \index{cppcms\-::application@{cppcms\-::application}!request@{request}}
+\index{request@{request}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf http\-::request}\& cppcms\-::application\-::request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_af3ac844948e622984ad74ba9d21a6129}
+Get a H\-T\-T\-P request information class, same as \doxyref{context()}{p.}{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}.\doxyref{request()}{p.}{classcppcms_1_1application_af3ac844948e622984ad74ba9d21a6129}; \index{cppcms\-::application@{cppcms\-::application}!response@{response}}
+\index{response@{response}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}{\bf http\-::response}\& cppcms\-::application\-::response (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a0ed941320a30f96b6a773e5e180115db}
+Get a H\-T\-T\-P response information class, same as \doxyref{context()}{p.}{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}.\doxyref{response()}{p.}{classcppcms_1_1application_a0ed941320a30f96b6a773e5e180115db}; \index{cppcms\-::application@{cppcms\-::application}!root@{root}}
+\index{root@{root}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{root}]{\setlength{\rightskip}{0pt plus 5cm}{\bf application}$\ast$ cppcms\-::application\-::root (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_af9400ccd07eb76959d58ec50404ff954}
+Get the root application of the hierarchy. Note, if the application is the topmost one, {\itshape this} pointer would be returned \index{cppcms\-::application@{cppcms\-::application}!service@{service}}
+\index{service@{service}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::service}\& cppcms\-::application\-::service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ac026d7001308c5ce3af069099a4071e8}
+Get the main service \index{cppcms\-::application@{cppcms\-::application}!session@{session}}
+\index{session@{session}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf session\-\_\-interface}\& cppcms\-::application\-::session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a5180f8d3c58b541cdf1bf832ce4617c9}
+Get current \doxyref{session\-\_\-interface}{p.}{classcppcms_1_1session__interface} instance. Same as \doxyref{context()}{p.}{classcppcms_1_1application_a9accdd2b94f33ed19cbb19cc2afbf75e}.\doxyref{session()}{p.}{classcppcms_1_1application_a5180f8d3c58b541cdf1bf832ce4617c9}; \index{cppcms\-::application@{cppcms\-::application}!settings@{settings}}
+\index{settings@{settings}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::value} const\& cppcms\-::application\-::settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a997acdced35b7ecfcc9478f96cbff3e8}
+Get global service settings \index{cppcms\-::application@{cppcms\-::application}!translate@{translate}}
+\index{translate@{translate}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::translate (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{context, }
+\item[{char const $\ast$}]{message}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a17d78c2ac65b7d0c2b45b7b1fb7d1d4d}
+Translate a message in current locale for given {\itshape message} in {\itshape context} \index{cppcms\-::application@{cppcms\-::application}!translate@{translate}}
+\index{translate@{translate}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::translate (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{message}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a1f92744c91f74c3b4439e284ac3446f1}
+Translate a message in current locale for given {\itshape message} \index{cppcms\-::application@{cppcms\-::application}!translate@{translate}}
+\index{translate@{translate}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::translate (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{context, }
+\item[{char const $\ast$}]{single, }
+\item[{char const $\ast$}]{plural, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_ab74d77d7fb6b14eac48cf2b9462154d6}
+Translate a message in current locale for given {\itshape single} and {\itshape plural} form for number {\itshape n} in {\itshape context}. \index{cppcms\-::application@{cppcms\-::application}!translate@{translate}}
+\index{translate@{translate}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{translate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::translate (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{single, }
+\item[{char const $\ast$}]{plural, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a999a79c03b4122b56bed89de5b118a6d}
+Translate a message in current locale for given {\itshape single} and {\itshape plural} form for number {\itshape n} \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a683702a184a10080f3dc37c248a67eca}
+Map url-\/key {\itshape key} to actual U\-R\-L, without parameters
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{{\bf filters\-::streamable} const \&}]{p1}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a89b4b2c765c4f7b2321086ba08a694bc}
+Map url-\/key {\itshape key} to actual U\-R\-L, with parameter p1
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_af68ef596146d07e7cb5caf09b5001477}
+Map url-\/key {\itshape key} to actual U\-R\-L, with parameters p1, p2
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a9936fb0e9566c4cc03d1059700b1d1ec}
+Map url-\/key {\itshape key} to actual U\-R\-L, with parameters p1, p2, p3
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_afb856ce33d7e644803345ce22c8e1a62}
+Map url-\/key {\itshape key} to actual U\-R\-L, with parameters p1, p2, p3, p4
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4, }
+\item[{{\bf filters\-::streamable} const \&}]{p5}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a204c1e0aa6ab60314e1845a821f07b46}
+Map url-\/key {\itshape key} to actual U\-R\-L, with parameters p1, p2, p3, p4, p5
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) \index{cppcms\-::application@{cppcms\-::application}!url@{url}}
+\index{url@{url}!cppcms::application@{cppcms\-::application}}
+\subsubsection[{url}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::application\-::url (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{{\bf filters\-::streamable} const \&}]{p1, }
+\item[{{\bf filters\-::streamable} const \&}]{p2, }
+\item[{{\bf filters\-::streamable} const \&}]{p3, }
+\item[{{\bf filters\-::streamable} const \&}]{p4, }
+\item[{{\bf filters\-::streamable} const \&}]{p5, }
+\item[{{\bf filters\-::streamable} const \&}]{p6}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1application_a7b667872a8e30105d62378464227652c}
+Map url-\/key {\itshape key} to actual U\-R\-L, with parameters p1, p2, p3, p4, p5, p6
+
+Effectively it calls \doxyref{mapper()}{p.}{classcppcms_1_1application_a146c62da586922ee00d2af89efc2614f}.map(...) 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/application.\-h\end{DoxyCompactItemize}

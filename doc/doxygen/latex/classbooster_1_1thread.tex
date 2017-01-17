@@ -1,0 +1,79 @@
+\section{booster\-:\-:thread Class Reference}
+\label{classbooster_1_1thread}\index{booster\-::thread@{booster\-::thread}}
+
+
+the class that allows to start an execution thread  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+Inheritance diagram for booster\-:\-:thread\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1thread}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf thread} ({\bf function}$<$ void()$>$ const \&cb)
+\item 
+void {\bf join} ()
+\item 
+void {\bf detach} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned {\bf hardware\-\_\-concurrency} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bfseries booster\-\_\-thread\-\_\-func} (void $\ast$)\label{classbooster_1_1thread_a43f901dbff4f76ecba6c6903170ac7c5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the class that allows to start an execution thread 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::thread@{booster\-::thread}!thread@{thread}}
+\index{thread@{thread}!booster::thread@{booster\-::thread}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::thread\-::thread (
+\begin{DoxyParamCaption}
+\item[{{\bf function}$<$ void()$>$ const \&}]{cb}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1thread_aacc0f01f495b4bdd01b86c6e9c3d0a1d}
+Run a function {\itshape cb} in separate thread 
+
+\subsection{Member Function Documentation}
+\index{booster\-::thread@{booster\-::thread}!detach@{detach}}
+\index{detach@{detach}!booster::thread@{booster\-::thread}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::thread\-::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1thread_ae162e0e25df6b8057e911733e69862b9}
+Detach from the thread \index{booster\-::thread@{booster\-::thread}!hardware\-\_\-concurrency@{hardware\-\_\-concurrency}}
+\index{hardware\-\_\-concurrency@{hardware\-\_\-concurrency}!booster::thread@{booster\-::thread}}
+\subsubsection[{hardware\-\_\-concurrency}]{\setlength{\rightskip}{0pt plus 5cm}static unsigned booster\-::thread\-::hardware\-\_\-concurrency (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1thread_a9cfcb482a7d57881131ce21b3f66a1f3}
+Get number of C\-P\-U\-S, returns 0 if the number is unknown \index{booster\-::thread@{booster\-::thread}!join@{join}}
+\index{join@{join}!booster::thread@{booster\-::thread}}
+\subsubsection[{join}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::thread\-::join (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1thread_a28730382c82310fba0da047bc11c207a}
+Join existing thread 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+\section{cppcms\-:\-:widgets\-:\-:numeric$<$ T $>$ Class Template Reference}
+\label{classcppcms_1_1widgets_1_1numeric}\index{cppcms\-::widgets\-::numeric$<$ T $>$@{cppcms\-::widgets\-::numeric$<$ T $>$}}
+
+
+Widget for number input. It is a template class that assumes that T is a number.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:numeric$<$ T $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classcppcms_1_1widgets_1_1numeric}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf non\-\_\-empty} ()
+\item 
+T {\bf value} ()
+\item 
+void {\bf value} (T v)
+\item 
+void {\bf low} (T a)
+\item 
+void {\bf high} (T b)
+\item 
+void {\bf range} (T a, T b)
+\item 
+virtual void {\bf render\-\_\-value} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf clear} ()
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)
+\item 
+virtual bool {\bf validate} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class cppcms\-::widgets\-::numeric$<$ T $>$}
+
+Widget for number input. It is a template class that assumes that T is a number. 
+
+This class parses the input and checks if it is input text is a valid numeric value. If it is valid, the \doxyref{set()}{p.}{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f} would return true be true.
+
+If the value was not defined, access to \doxyref{value()}{p.}{classcppcms_1_1widgets_1_1numeric_a94df84f8eeac61328f90cd67e64bd30f} will throw an exception. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!clear@{clear}}
+\index{clear@{clear}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1numeric_ac8b010ab4af4e999bc63f8f2d6de782f}
+Clear the form. It also calls set(false). 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a957f7c7a63f5ea9489b52c3ec1043b81}.
+
+
+
+References cppcms\-::widgets\-::base\-\_\-widget\-::clear().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!high@{high}}
+\index{high@{high}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{high}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::high (
+\begin{DoxyParamCaption}
+\item[{T}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1widgets_1_1numeric_a1f012b6ac9cabc61ba89e54971b7b829}
+Set the maximum valid value. 
+
+References cppcms\-::widgets\-::numeric$<$ T $>$\-::non\-\_\-empty().
+
+
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::range().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!load@{load}}
+\index{load@{load}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1numeric_abe1b3a1f4d16f9a56a5dcf8b3bbff0c5}
+Load the widget data. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+
+
+References cppcms\-::http\-::context\-::locale(), cppcms\-::widgets\-::base\-\_\-widget\-::name(), cppcms\-::http\-::request\-::post\-\_\-or\-\_\-get(), cppcms\-::widgets\-::base\-\_\-widget\-::pre\-\_\-load(), cppcms\-::http\-::context\-::request(), cppcms\-::widgets\-::base\-\_\-widget\-::set(), and cppcms\-::widgets\-::base\-\_\-widget\-::valid().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!low@{low}}
+\index{low@{low}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{low}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::low (
+\begin{DoxyParamCaption}
+\item[{T}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1widgets_1_1numeric_a487ab1759abd53407cb1e3263770059e}
+Set the minimum valid value. 
+
+References cppcms\-::widgets\-::numeric$<$ T $>$\-::non\-\_\-empty().
+
+
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::range().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!non\-\_\-empty@{non\-\_\-empty}}
+\index{non\-\_\-empty@{non\-\_\-empty}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{non\-\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::non\-\_\-empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1widgets_1_1numeric_aff28ad400e618f00e54e203b31444484}
+Inform the validator that this widget should contain some value. 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::high(), and cppcms\-::widgets\-::numeric$<$ T $>$\-::low().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!range@{range}}
+\index{range@{range}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{range}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::range (
+\begin{DoxyParamCaption}
+\item[{T}]{a, }
+\item[{T}]{b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1widgets_1_1numeric_a0f60eb550940700a38ce515a6449732c}
+Same as low(a); high(b); 
+
+References cppcms\-::widgets\-::numeric$<$ T $>$\-::high(), and cppcms\-::widgets\-::numeric$<$ T $>$\-::low().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!render\-\_\-value@{render\-\_\-value}}
+\index{render\-\_\-value@{render\-\_\-value}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{render\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::render\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1numeric_a81a3fad3834e6d791cc1b173b44ce4ce}
+Render the first part of the widget. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-html\-\_\-input} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__html__input_afd2f99f7dd7b8ebe75e63f1f005068cb}.
+
+
+
+References cppcms\-::util\-::escape(), cppcms\-::form\-\_\-context\-::out(), and cppcms\-::widgets\-::base\-\_\-widget\-::set().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ virtual bool {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1numeric_a79f8e92aa9991836949978d1b367fe9c}
+Validate the widget. 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}.
+
+
+
+References cppcms\-::widgets\-::base\-\_\-widget\-::set(), and cppcms\-::widgets\-::base\-\_\-widget\-::valid().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!value@{value}}
+\index{value@{value}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1widgets_1_1numeric_a94df84f8eeac61328f90cd67e64bd30f}
+Get numeric value that was loaded from the P\-O\-S\-T or G\-E\-T data.
+
+\begin{DoxyNote}{Note}
+if the value was not set (empty field for example) then this function will throw. So it is good idea to check if \doxyref{set()}{p.}{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f} returns true before using this function. 
+\end{DoxyNote}
+
+
+References cppcms\-::widgets\-::base\-\_\-widget\-::set().
+
+\index{cppcms\-::widgets\-::numeric@{cppcms\-::widgets\-::numeric}!value@{value}}
+\index{value@{value}!cppcms::widgets::numeric@{cppcms\-::widgets\-::numeric}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf cppcms\-::widgets\-::numeric}$<$ T $>$\-::value (
+\begin{DoxyParamCaption}
+\item[{T}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1widgets_1_1numeric_a3efb73a136596b1aefe84f6aa7d132d8}
+Set the value of the widget. 
+
+References cppcms\-::widgets\-::base\-\_\-widget\-::set().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

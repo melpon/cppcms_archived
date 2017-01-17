@@ -1,0 +1,95 @@
+\section{cppcms\-:\-:b64url Namespace Reference}
+\label{namespacecppcms_1_1b64url}\index{cppcms\-::b64url@{cppcms\-::b64url}}
+
+
+this namespace provides functions useful for modified Base64 encoding for U\-R\-L. This encoding does not insert newline characters, do not pad the text with = character and use \char`\"{}\-\_\-\char`\"{} and \char`\"{}-\/\char`\"{} instead of \char`\"{}+\char`\"{} and \char`\"{}/\char`\"{} characters reserved by U\-R\-L format for special purposes.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf encoded\-\_\-size} (size\-\_\-t s)
+\item 
+int C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf decoded\-\_\-size} (size\-\_\-t s)
+\item 
+unsigned char C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I $\ast$ {\bf encode} (unsigned char const $\ast$begin, unsigned char const $\ast$end, unsigned char $\ast$target)
+\item 
+void {\bf encode} (unsigned char const $\ast$begin, unsigned char const $\ast$end, std\-::ostream \&output)
+\item 
+unsigned char C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I $\ast$ {\bf decode} (unsigned char const $\ast$begin, unsigned char const $\ast$end, unsigned char $\ast$target)
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf decode} (std\-::string const \&input, std\-::string \&output)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf encode} (std\-::string const \&input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this namespace provides functions useful for modified Base64 encoding for U\-R\-L. This encoding does not insert newline characters, do not pad the text with = character and use \char`\"{}\-\_\-\char`\"{} and \char`\"{}-\/\char`\"{} instead of \char`\"{}+\char`\"{} and \char`\"{}/\char`\"{} characters reserved by U\-R\-L format for special purposes. 
+
+\subsection{Function Documentation}
+\index{cppcms\-::b64url@{cppcms\-::b64url}!decode@{decode}}
+\index{decode@{decode}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I$\ast$ cppcms\-::b64url\-::decode (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{begin, }
+\item[{unsigned char const $\ast$}]{end, }
+\item[{unsigned char $\ast$}]{target}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_a71cb9fdaf22cca0a1c077d8c11727f1b}
+Perform base64 U\-R\-L decoding of the binary data in range [{\itshape begin},{\itshape end}), and store it to output buffer {\itshape target}. The size of target storage should have a capacity calculated with encoded\-\_\-size(end-\/begin).
+
+Pointer to the first character directly after text string ends is returned. Invalid codes are substituted by 0 values. \index{cppcms\-::b64url@{cppcms\-::b64url}!decode@{decode}}
+\index{decode@{decode}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::b64url\-::decode (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{input, }
+\item[{std\-::string \&}]{output}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_a76d9fe5d5790226cf0bcd7100e960fdf}
+Perform base64 U\-R\-L decoding of the textual data {\itshape input}, and store it to {\itshape output}.
+
+If the source is invalid returns false \index{cppcms\-::b64url@{cppcms\-::b64url}!decoded\-\_\-size@{decoded\-\_\-size}}
+\index{decoded\-\_\-size@{decoded\-\_\-size}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{decoded\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::b64url\-::decoded\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_a63c9028f6b4e1ec6bd9abd75932a65a5}
+Calculate required buffer size of base64-\/url compatible decoding for source of size {\itshape s} 
+
+Note, if original size is invalid, negative value is returned \index{cppcms\-::b64url@{cppcms\-::b64url}!encode@{encode}}
+\index{encode@{encode}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I$\ast$ cppcms\-::b64url\-::encode (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{begin, }
+\item[{unsigned char const $\ast$}]{end, }
+\item[{unsigned char $\ast$}]{target}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_abe85aeb129117558e0f4e2681e111ae6}
+Perform base64 U\-R\-L encoding of the binary data in range [{\itshape begin},{\itshape end}), and store it to output buffer {\itshape target}. The size of target storage should have a capacity calculated with encoded\-\_\-size(end-\/begin).
+
+Pointer to the first character directly after text string ends is returned. \index{cppcms\-::b64url@{cppcms\-::b64url}!encode@{encode}}
+\index{encode@{encode}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::b64url\-::encode (
+\begin{DoxyParamCaption}
+\item[{unsigned char const $\ast$}]{begin, }
+\item[{unsigned char const $\ast$}]{end, }
+\item[{std\-::ostream \&}]{output}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_a6e7c8d5c16766da7d81ee0a221258f58}
+Perform base64 U\-R\-L encoding of the binary data in range [{\itshape begin},{\itshape end}), and write it to output stream \index{cppcms\-::b64url@{cppcms\-::b64url}!encode@{encode}}
+\index{encode@{encode}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::b64url\-::encode (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{input}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_af88cbf1b5b5128c7b71617ed3677131e}
+Perform base64 U\-R\-L encoding of the binary data {\itshape input}, and return it \index{cppcms\-::b64url@{cppcms\-::b64url}!encoded\-\_\-size@{encoded\-\_\-size}}
+\index{encoded\-\_\-size@{encoded\-\_\-size}!cppcms::b64url@{cppcms\-::b64url}}
+\subsubsection[{encoded\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::b64url\-::encoded\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1b64url_a76f68c7c4e1be33c8db798cac941d85f}
+Calculate required buffer size of base64-\/url compatible encoding for source of size {\itshape s} 

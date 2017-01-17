@@ -1,0 +1,51 @@
+\section{booster\-:\-:clone\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classbooster_1_1clone__ptr}\index{booster\-::clone\-\_\-ptr$<$ T $>$@{booster\-::clone\-\_\-ptr$<$ T $>$}}
+
+
+a smart pointer similar to std\-::auto\-\_\-ptr but it clones (by calling T\-::clone()) underlying object on copy instead of moving its ownership.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/clone\-\_\-ptr.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries clone\-\_\-ptr} (T $\ast$v)\label{classbooster_1_1clone__ptr_a25bbc5298997ae57cd05fe4c004ed974}
+
+\item 
+{\bfseries clone\-\_\-ptr} ({\bf clone\-\_\-ptr} const \&other)\label{classbooster_1_1clone__ptr_a5e3b4ce855dc0b77f57879804230bbd5}
+
+\item 
+{\bf clone\-\_\-ptr} const \& {\bfseries operator=} ({\bf clone\-\_\-ptr} const \&other)\label{classbooster_1_1clone__ptr_ae7ade5f1b8410f2dfa56970d444d92bc}
+
+\item 
+T $\ast$ {\bfseries get} () const \label{classbooster_1_1clone__ptr_a2bc6c2017db9f1290e9fa378188d9d29}
+
+\item 
+T \& {\bfseries operator$\ast$} () const \label{classbooster_1_1clone__ptr_aee7534f5dcc06d0a2190c395f2fec2f6}
+
+\item 
+T $\ast$ {\bfseries operator-\/$>$} () const \label{classbooster_1_1clone__ptr_aee5a76d527f1901f95fdeb7180d3c6ce}
+
+\item 
+T $\ast$ {\bfseries release} ()\label{classbooster_1_1clone__ptr_a17c074b003bfc15b5c89d09b0145bcc6}
+
+\item 
+void {\bfseries reset} (T $\ast$p=0)\label{classbooster_1_1clone__ptr_a281dba30ac967d1f69d3ca866a3b66cd}
+
+\item 
+void {\bfseries swap} ({\bf clone\-\_\-ptr} \&other)\label{classbooster_1_1clone__ptr_ab0731bd2561a7c6a825b8010656f5e2c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class booster\-::clone\-\_\-ptr$<$ T $>$}
+
+a smart pointer similar to std\-::auto\-\_\-ptr but it clones (by calling T\-::clone()) underlying object on copy instead of moving its ownership. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/clone\-\_\-ptr.\-h\end{DoxyCompactItemize}

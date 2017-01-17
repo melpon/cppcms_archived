@@ -1,0 +1,182 @@
+\section{cppcms\-:\-:archive Class Reference}
+\label{classcppcms_1_1archive}\index{cppcms\-::archive@{cppcms\-::archive}}
+
+
+Class that represents a binary archive that can be stored in persistent storage or transfered.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/serialization\-\_\-classes.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf mode\-\_\-type} \{ {\bfseries save\-\_\-to\-\_\-archive}, 
+{\bfseries load\-\_\-from\-\_\-archive}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf reserve} (size\-\_\-t size)
+\item 
+void {\bf write\-\_\-chunk} (void const $\ast$begin, size\-\_\-t len)
+\item 
+void {\bf read\-\_\-chunk} (void $\ast$begin, size\-\_\-t len)
+\item 
+size\-\_\-t {\bf next\-\_\-chunk\-\_\-size} ()
+\item 
+bool {\bf eof} ()
+\item 
+std\-::string {\bf read\-\_\-chunk\-\_\-as\-\_\-string} ()
+\item 
+void {\bf mode} ({\bf mode\-\_\-type} m)
+\item 
+{\bf mode\-\_\-type} {\bf mode} ()
+\item 
+void {\bf reset} ()
+\item 
+std\-::string {\bf str} ()
+\item 
+void {\bf str} (std\-::string const \&str)
+\item 
+{\bf archive} ()
+\item 
+{\bf $\sim$archive} ()
+\item 
+{\bf archive} ({\bf archive} const \&)
+\item 
+{\bf archive} const \& {\bf operator=} ({\bf archive} const \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents a binary archive that can be stored in persistent storage or transfered. 
+
+\subsection{Member Enumeration Documentation}
+\index{cppcms\-::archive@{cppcms\-::archive}!mode\-\_\-type@{mode\-\_\-type}}
+\index{mode\-\_\-type@{mode\-\_\-type}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{mode\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::archive\-::mode\-\_\-type}}\label{classcppcms_1_1archive_a46fa7dca190eadf25c66ccd50d090fa5}
+Operations mode on archive 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::archive@{cppcms\-::archive}!archive@{archive}}
+\index{archive@{archive}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{archive}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::archive\-::archive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_ace4d87706d13845807f76cb53da36c89}
+Create new archive, by default in save\-\_\-to\-\_\-archive mode \index{cppcms\-::archive@{cppcms\-::archive}!$\sim$archive@{$\sim$archive}}
+\index{$\sim$archive@{$\sim$archive}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{$\sim$archive}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::archive\-::$\sim$archive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a9be4ac7e156e78f07bc30512f9228b37}
+Destructor \index{cppcms\-::archive@{cppcms\-::archive}!archive@{archive}}
+\index{archive@{archive}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{archive}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::archive\-::archive (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_ab2cfb65276577d4a984276fe1476af3b}
+Copy archive (avoid it) 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::archive@{cppcms\-::archive}!eof@{eof}}
+\index{eof@{eof}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{eof}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::archive\-::eof (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a51b8f12712932526d15b7679b7be60f5}
+Get if we got to the end of archive while reading \index{cppcms\-::archive@{cppcms\-::archive}!mode@{mode}}
+\index{mode@{mode}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::archive\-::mode (
+\begin{DoxyParamCaption}
+\item[{{\bf mode\-\_\-type}}]{m}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a21d11b76aabfcd5702cae34031eeb890}
+Set I\-O mode, resets pointer 
+
+Referenced by cppcms\-::operator\&().
+
+\index{cppcms\-::archive@{cppcms\-::archive}!mode@{mode}}
+\index{mode@{mode}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mode\-\_\-type} cppcms\-::archive\-::mode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a3d50427180c0ed663f1c833bcf31b78e}
+Get I\-O mode \index{cppcms\-::archive@{cppcms\-::archive}!next\-\_\-chunk\-\_\-size@{next\-\_\-chunk\-\_\-size}}
+\index{next\-\_\-chunk\-\_\-size@{next\-\_\-chunk\-\_\-size}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{next\-\_\-chunk\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cppcms\-::archive\-::next\-\_\-chunk\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a5a146e203a30a644af14b2edf651ceca}
+Get the size of the next chunk that can be read \index{cppcms\-::archive@{cppcms\-::archive}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf archive} const\& cppcms\-::archive\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a95dc7728b064e04a7ad77429b0b14c10}
+Assign archive (avoid it) \index{cppcms\-::archive@{cppcms\-::archive}!read\-\_\-chunk@{read\-\_\-chunk}}
+\index{read\-\_\-chunk@{read\-\_\-chunk}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{read\-\_\-chunk}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::archive\-::read\-\_\-chunk (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{begin, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a479f94fb64e07ee40ef0193c0ad0d877}
+Read a chunk of size len from archive \index{cppcms\-::archive@{cppcms\-::archive}!read\-\_\-chunk\-\_\-as\-\_\-string@{read\-\_\-chunk\-\_\-as\-\_\-string}}
+\index{read\-\_\-chunk\-\_\-as\-\_\-string@{read\-\_\-chunk\-\_\-as\-\_\-string}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{read\-\_\-chunk\-\_\-as\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::archive\-::read\-\_\-chunk\-\_\-as\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_adb0aa39b5062fe8a02168660221f27e4}
+Read next chunk as std\-::string \index{cppcms\-::archive@{cppcms\-::archive}!reserve@{reserve}}
+\index{reserve@{reserve}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{reserve}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::archive\-::reserve (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_ace76201b57090ee058419329c40979dc}
+Reserve some memory before we write actual data \index{cppcms\-::archive@{cppcms\-::archive}!reset@{reset}}
+\index{reset@{reset}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::archive\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a2203d52ea2a3ef7092bc6251d8e0b5a1}
+Reset I\-O pointer \index{cppcms\-::archive@{cppcms\-::archive}!str@{str}}
+\index{str@{str}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::archive\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_a4d1c05bf04123e91c7a96dd03f12daef}
+Get serialized object memory \index{cppcms\-::archive@{cppcms\-::archive}!str@{str}}
+\index{str@{str}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::archive\-::str (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{str}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_aab5bdd07069c4695827dcf5bdea3ed99}
+Set serialized object memory, sets mode to load\-\_\-from\-\_\-archive \index{cppcms\-::archive@{cppcms\-::archive}!write\-\_\-chunk@{write\-\_\-chunk}}
+\index{write\-\_\-chunk@{write\-\_\-chunk}!cppcms::archive@{cppcms\-::archive}}
+\subsubsection[{write\-\_\-chunk}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::archive\-::write\-\_\-chunk (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{begin, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1archive_ab4169104a497e4ec692cd4b2c420bc4d}
+Write a chunk of size len to archive 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/serialization\-\_\-classes.\-h\end{DoxyCompactItemize}

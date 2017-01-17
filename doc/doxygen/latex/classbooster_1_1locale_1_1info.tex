@@ -1,0 +1,172 @@
+\section{booster\-:\-:locale\-:\-:info Class Reference}
+\label{classbooster_1_1locale_1_1info}\index{booster\-::locale\-::info@{booster\-::locale\-::info}}
+
+
+a facet that holds general information about locale  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/info.\-h$>$}
+
+Inheritance diagram for booster\-:\-:locale\-:\-:info\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1locale_1_1info}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf string\-\_\-propery} \{ \\*
+{\bf language\-\_\-property}, 
+{\bf country\-\_\-property}, 
+{\bf variant\-\_\-property}, 
+{\bf encoding\-\_\-property}, 
+\\*
+{\bf name\-\_\-property}
+ \}
+\item 
+enum {\bf integer\-\_\-property} \{ {\bf utf8\-\_\-property}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf info} (size\-\_\-t refs=0)
+\item 
+std\-::string {\bf language} () const 
+\item 
+std\-::string {\bf country} () const 
+\item 
+std\-::string {\bf variant} () const 
+\item 
+std\-::string {\bf encoding} () const 
+\item 
+std\-::string {\bf name} () const 
+\item 
+bool {\bf utf8} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::locale\-::id {\bf id}\label{classbooster_1_1locale_1_1info_aa3300572409ad20043a3ad629aa761df}
+
+\begin{DoxyCompactList}\small\item\em This member uniquely defines this facet, required by S\-T\-L. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string {\bf get\-\_\-string\-\_\-property} ({\bf string\-\_\-propery} v) const =0
+\item 
+virtual int {\bf get\-\_\-integer\-\_\-property} ({\bf integer\-\_\-property} v) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+a facet that holds general information about locale 
+
+This facet should be always created in order to make all Boost.\-Locale functions work 
+
+\subsection{Member Enumeration Documentation}
+\index{booster\-::locale\-::info@{booster\-::locale\-::info}!integer\-\_\-property@{integer\-\_\-property}}
+\index{integer\-\_\-property@{integer\-\_\-property}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{integer\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::info\-::integer\-\_\-property}}\label{classbooster_1_1locale_1_1info_ad613831a52d478f9f91e1fbebfd6d70f}
+Integer information about locale \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{utf8\-\_\-property@{utf8\-\_\-property}!booster\-::locale\-::info@{booster\-::locale\-::info}}\index{booster\-::locale\-::info@{booster\-::locale\-::info}!utf8\-\_\-property@{utf8\-\_\-property}}\item[{\em 
+utf8\-\_\-property\label{classbooster_1_1locale_1_1info_ad613831a52d478f9f91e1fbebfd6d70fa27fe34152b30e2f01b4f39e953215bfa}
+}]Non zero value if uses U\-T\-F-\/8 encoding. \end{description}
+\end{Desc}
+\index{booster\-::locale\-::info@{booster\-::locale\-::info}!string\-\_\-propery@{string\-\_\-propery}}
+\index{string\-\_\-propery@{string\-\_\-propery}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{string\-\_\-propery}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::info\-::string\-\_\-propery}}\label{classbooster_1_1locale_1_1info_a8f2f9b1357b9ac7b14b0cec68dd12280}
+String information about the locale \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{language\-\_\-property@{language\-\_\-property}!booster\-::locale\-::info@{booster\-::locale\-::info}}\index{booster\-::locale\-::info@{booster\-::locale\-::info}!language\-\_\-property@{language\-\_\-property}}\item[{\em 
+language\-\_\-property\label{classbooster_1_1locale_1_1info_a8f2f9b1357b9ac7b14b0cec68dd12280aa79e24d89a892fbb1ea708634ccbe7cb}
+}]I\-S\-O 639 language id. \index{country\-\_\-property@{country\-\_\-property}!booster\-::locale\-::info@{booster\-::locale\-::info}}\index{booster\-::locale\-::info@{booster\-::locale\-::info}!country\-\_\-property@{country\-\_\-property}}\item[{\em 
+country\-\_\-property\label{classbooster_1_1locale_1_1info_a8f2f9b1357b9ac7b14b0cec68dd12280a3e472c2e80356ccf2a29dd46db62aa09}
+}]I\-S\-O 3166 country id. \index{variant\-\_\-property@{variant\-\_\-property}!booster\-::locale\-::info@{booster\-::locale\-::info}}\index{booster\-::locale\-::info@{booster\-::locale\-::info}!variant\-\_\-property@{variant\-\_\-property}}\item[{\em 
+variant\-\_\-property\label{classbooster_1_1locale_1_1info_a8f2f9b1357b9ac7b14b0cec68dd12280aca08d08b0b353a3fa6b2e346d3dbb025}
+}]Variant for locale. \index{encoding\-\_\-property@{encoding\-\_\-property}!booster\-::locale\-::info@{booster\-::locale\-::info}}\index{booster\-::locale\-::info@{booster\-::locale\-::info}!encoding\-\_\-property@{encoding\-\_\-property}}\item[{\em 
+encoding\-\_\-property\label{classbooster_1_1locale_1_1info_a8f2f9b1357b9ac7b14b0cec68dd12280aa433fd29b9f09d8a3d410b23ca825e8a}
+}]encoding name \index{name\-\_\-property@{name\-\_\-property}!booster\-::locale\-::info@{booster\-::locale\-::info}}\index{booster\-::locale\-::info@{booster\-::locale\-::info}!name\-\_\-property@{name\-\_\-property}}\item[{\em 
+name\-\_\-property\label{classbooster_1_1locale_1_1info_a8f2f9b1357b9ac7b14b0cec68dd12280ab546abc4b8f49982825eada6b8b2f788}
+}]locale name \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::info@{booster\-::locale\-::info}!info@{info}}
+\index{info@{info}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{info}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::info\-::info (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{refs = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_aa21312bebf80e46c2d0571f0629898ab}
+Standard facet's constructor 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::info@{booster\-::locale\-::info}!country@{country}}
+\index{country@{country}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{country}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::info\-::country (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_a1aa6a77bd2236a872ec44286c2fa4160}
+Get country name \index{booster\-::locale\-::info@{booster\-::locale\-::info}!encoding@{encoding}}
+\index{encoding@{encoding}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{encoding}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::info\-::encoding (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_a5317aea85169f700dd590bb54905fcda}
+Get encoding \index{booster\-::locale\-::info@{booster\-::locale\-::info}!get\-\_\-integer\-\_\-property@{get\-\_\-integer\-\_\-property}}
+\index{get\-\_\-integer\-\_\-property@{get\-\_\-integer\-\_\-property}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{get\-\_\-integer\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}virtual int booster\-::locale\-::info\-::get\-\_\-integer\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf integer\-\_\-property}}]{v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1info_af8e76a1cf9a37a30128989e27857702c}
+Get integer property by its id {\itshape v} \index{booster\-::locale\-::info@{booster\-::locale\-::info}!get\-\_\-string\-\_\-property@{get\-\_\-string\-\_\-property}}
+\index{get\-\_\-string\-\_\-property@{get\-\_\-string\-\_\-property}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{get\-\_\-string\-\_\-property}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string booster\-::locale\-::info\-::get\-\_\-string\-\_\-property (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-propery}}]{v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1info_a59c98b336017b4e5249b4c50cf707bf8}
+Get string property by its id {\itshape v} \index{booster\-::locale\-::info@{booster\-::locale\-::info}!language@{language}}
+\index{language@{language}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{language}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::info\-::language (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_a8cb8101b3a7f2a9a3f96eb8e0af1203e}
+Get language name \index{booster\-::locale\-::info@{booster\-::locale\-::info}!name@{name}}
+\index{name@{name}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::info\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_a0d5bab29c66e9ed6cda1a993adadf135}
+Get the name of the locale, like en\-\_\-\-U\-S.\-U\-T\-F-\/8 \index{booster\-::locale\-::info@{booster\-::locale\-::info}!utf8@{utf8}}
+\index{utf8@{utf8}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{utf8}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::info\-::utf8 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_af97a3335c21f8a48c2631f69890fda78}
+True if the underlying encoding is U\-T\-F-\/8 (for char streams and strings) \index{booster\-::locale\-::info@{booster\-::locale\-::info}!variant@{variant}}
+\index{variant@{variant}!booster::locale::info@{booster\-::locale\-::info}}
+\subsubsection[{variant}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::info\-::variant (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1info_a4faa09d4cfc03abe896c7b24b91caa67}
+Get locale variant 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/info.\-h\end{DoxyCompactItemize}

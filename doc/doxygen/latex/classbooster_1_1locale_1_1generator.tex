@@ -1,0 +1,243 @@
+\section{booster\-:\-:locale\-:\-:generator Class Reference}
+\label{classbooster_1_1locale_1_1generator}\index{booster\-::locale\-::generator@{booster\-::locale\-::generator}}
+
+
+the major class used for locale generation  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/generator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf generator} ()
+\item 
+{\bf generator} ({\bf localization\-\_\-backend\-\_\-manager} const \&)
+\item 
+void {\bf categories} ({\bf locale\-\_\-category\-\_\-type} cats)
+\item 
+{\bf locale\-\_\-category\-\_\-type} {\bf categories} () const 
+\item 
+void {\bf characters} ({\bf character\-\_\-facet\-\_\-type} chars)
+\item 
+{\bf character\-\_\-facet\-\_\-type} {\bf characters} () const 
+\item 
+void {\bf add\-\_\-messages\-\_\-domain} (std\-::string const \&domain)
+\item 
+void {\bf set\-\_\-default\-\_\-messages\-\_\-domain} (std\-::string const \&domain)
+\item 
+void {\bf clear\-\_\-domains} ()
+\item 
+void {\bf add\-\_\-messages\-\_\-path} (std\-::string const \&path)
+\item 
+void {\bf clear\-\_\-paths} ()
+\item 
+void {\bf clear\-\_\-cache} ()
+\item 
+void {\bf locale\-\_\-cache\-\_\-enabled} (bool on)
+\item 
+bool {\bf locale\-\_\-cache\-\_\-enabled} () const 
+\item 
+bool {\bf use\-\_\-ansi\-\_\-encoding} () const 
+\item 
+void {\bf use\-\_\-ansi\-\_\-encoding} (bool enc)
+\item 
+std\-::locale {\bf generate} (std\-::string const \&id) const 
+\item 
+std\-::locale {\bf generate} (std\-::locale const \&base, std\-::string const \&id) const 
+\item 
+std\-::locale {\bf operator()} (std\-::string const \&id) const 
+\item 
+void {\bf set\-\_\-option} (std\-::string const \&name, std\-::string const \&value)
+\item 
+void {\bf clear\-\_\-options} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the major class used for locale generation 
+
+This class is used for specification of all parameters required for locale generation and caching. This class const member functions are thread safe if locale class implementation is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!generator@{generator}}
+\index{generator@{generator}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{generator}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::generator\-::generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a148d57754179e7715250df4d9a64b510}
+Create new generator using global \doxyref{localization\-\_\-backend\-\_\-manager}{p.}{classbooster_1_1locale_1_1localization__backend__manager} \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!generator@{generator}}
+\index{generator@{generator}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{generator}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::generator\-::generator (
+\begin{DoxyParamCaption}
+\item[{{\bf localization\-\_\-backend\-\_\-manager} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_abb62862dbec8d3567bccc3fe809001d4}
+Create new generator using specific \doxyref{localization\-\_\-backend\-\_\-manager}{p.}{classbooster_1_1locale_1_1localization__backend__manager} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!add\-\_\-messages\-\_\-domain@{add\-\_\-messages\-\_\-domain}}
+\index{add\-\_\-messages\-\_\-domain@{add\-\_\-messages\-\_\-domain}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{add\-\_\-messages\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::add\-\_\-messages\-\_\-domain (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{domain}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a2e4900bba1c3c50caea4ae19414ca4fc}
+Add a new domain of messages that would be generated. It should be set in order to enable messages support.
+
+Messages domain has following format\-: \char`\"{}name\char`\"{} or \char`\"{}name/encoding\char`\"{} where name is the base name of the \char`\"{}mo\char`\"{} file where the catalog is stored without \char`\"{}.\-mo\char`\"{} extension. For example for file {\ttfamily /usr/share/locale/he/\-L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S/blog}.mo it would be {\ttfamily blog}.
+
+You can optionally specify the encoding of the keys in the sources by adding \char`\"{}/encoding\-\_\-name\char`\"{} For example blog/cp1255.
+
+If not defined all keys are assumed to be U\-T\-F-\/8 encoded.
+
+\begin{DoxyNote}{Note}
+When you select a domain for the program using dgettext or message A\-P\-I, you do not specify the encoding part. So for example if the provided domain name was \char`\"{}blog/windows-\/1255\char`\"{} then for translation you should use dgettext(\char`\"{}blog\char`\"{},\char`\"{}\-Hello\char`\"{}) 
+\end{DoxyNote}
+\index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!add\-\_\-messages\-\_\-path@{add\-\_\-messages\-\_\-path}}
+\index{add\-\_\-messages\-\_\-path@{add\-\_\-messages\-\_\-path}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{add\-\_\-messages\-\_\-path}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::add\-\_\-messages\-\_\-path (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a3c20905e020384ebd1dd883e2ab53d62}
+Add a search path where dictionaries are looked in.
+
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+
+\begin{DoxyItemize}
+\item Under the Windows platform the path is treated as a path in the locale's encoding so if you create locale \char`\"{}en\-\_\-\-U\-S.\-windows-\/1251\char`\"{} then path would be treated as cp1255, and if it is en\-\_\-\-U\-S.\-U\-T\-F-\/8 it is treated as U\-T\-F-\/8. File name is always opened with a wide file name as wide file names are the native file name on Windows.
+\item Under P\-O\-S\-I\-X platforms all paths passed as-\/is regardless of encoding as narrow encodings are the native encodings for P\-O\-S\-I\-X platforms. 
+\end{DoxyItemize}\index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!categories@{categories}}
+\index{categories@{categories}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{categories}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::categories (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-\_\-category\-\_\-type}}]{cats}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_aa912f08b120ce31ea52f44a3fd38f5f1}
+Set types of facets that should be generated, default all \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!categories@{categories}}
+\index{categories@{categories}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{categories}]{\setlength{\rightskip}{0pt plus 5cm}{\bf locale\-\_\-category\-\_\-type} booster\-::locale\-::generator\-::categories (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1generator_a1b211a771974210eb7d5aa7f7891bf05}
+Get types of facets that should be generated, default all \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!characters@{characters}}
+\index{characters@{characters}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{characters}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::characters (
+\begin{DoxyParamCaption}
+\item[{{\bf character\-\_\-facet\-\_\-type}}]{chars}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a41278dd38e191012c69b61d79a2a76a9}
+Set the characters type for which the facets should be generated, default all supported \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!characters@{characters}}
+\index{characters@{characters}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{characters}]{\setlength{\rightskip}{0pt plus 5cm}{\bf character\-\_\-facet\-\_\-type} booster\-::locale\-::generator\-::characters (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1generator_add9838d30723c209f02065d517dadf22}
+Get the characters type for which the facets should be generated, default all supported \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!clear\-\_\-cache@{clear\-\_\-cache}}
+\index{clear\-\_\-cache@{clear\-\_\-cache}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{clear\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::clear\-\_\-cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_ade51592b8c8089494d7b20c78a099810}
+Remove all cached locales \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!clear\-\_\-domains@{clear\-\_\-domains}}
+\index{clear\-\_\-domains@{clear\-\_\-domains}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{clear\-\_\-domains}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::clear\-\_\-domains (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a2a521dd5a316ec8b4a1cc5ee4f866f4d}
+Remove all added domains from the list \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!clear\-\_\-options@{clear\-\_\-options}}
+\index{clear\-\_\-options@{clear\-\_\-options}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{clear\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::clear\-\_\-options (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a31553684c7c2f373c4957bd0d3135ae4}
+Clear backend specific options \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!clear\-\_\-paths@{clear\-\_\-paths}}
+\index{clear\-\_\-paths@{clear\-\_\-paths}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{clear\-\_\-paths}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::clear\-\_\-paths (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a2fe5bdc321756d07b3ecab113bc5c7bf}
+Remove all added paths \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!generate@{generate}}
+\index{generate@{generate}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale booster\-::locale\-::generator\-::generate (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1generator_a38109b479a0b73b1fa7fa542c0381eec}
+Generate a locale with id {\itshape id} \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!generate@{generate}}
+\index{generate@{generate}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale booster\-::locale\-::generator\-::generate (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{base, }
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1generator_aceb34ea50e7734b0994b3780f4f22e0d}
+Generate a locale with id {\itshape id}. Use {\itshape base} as a locale to which all facets are added, instead of std\-::locale\-::classic(). \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!locale\-\_\-cache\-\_\-enabled@{locale\-\_\-cache\-\_\-enabled}}
+\index{locale\-\_\-cache\-\_\-enabled@{locale\-\_\-cache\-\_\-enabled}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{locale\-\_\-cache\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::locale\-\_\-cache\-\_\-enabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{on}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a7e04821fc72fb9ec68c1ab15a3bc9bac}
+Turn locale caching O\-N \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!locale\-\_\-cache\-\_\-enabled@{locale\-\_\-cache\-\_\-enabled}}
+\index{locale\-\_\-cache\-\_\-enabled@{locale\-\_\-cache\-\_\-enabled}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{locale\-\_\-cache\-\_\-enabled}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::generator\-::locale\-\_\-cache\-\_\-enabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1generator_ae4cb98b4fcd9eea36b90d6bd2ad86992}
+Get locale cache option \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!operator()@{operator()}}
+\index{operator()@{operator()}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale booster\-::locale\-::generator\-::operator() (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{id}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1generator_a4995d067f25ba8d230ebaf18d16ef7d8}
+Shortcut to generate(id) \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!set\-\_\-default\-\_\-messages\-\_\-domain@{set\-\_\-default\-\_\-messages\-\_\-domain}}
+\index{set\-\_\-default\-\_\-messages\-\_\-domain@{set\-\_\-default\-\_\-messages\-\_\-domain}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{set\-\_\-default\-\_\-messages\-\_\-domain}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::set\-\_\-default\-\_\-messages\-\_\-domain (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{domain}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a6dd84eeb63326040cd49c7ba7217a379}
+Set default message domain. If this member was not called, the first added messages domain is used. If the domain {\itshape domain} is not added yet it is added. \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!set\-\_\-option@{set\-\_\-option}}
+\index{set\-\_\-option@{set\-\_\-option}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{set\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::set\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{value}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_aaa55503d61d1c15bc61e1c975a702778}
+Set backend specific option \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!use\-\_\-ansi\-\_\-encoding@{use\-\_\-ansi\-\_\-encoding}}
+\index{use\-\_\-ansi\-\_\-encoding@{use\-\_\-ansi\-\_\-encoding}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{use\-\_\-ansi\-\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::generator\-::use\-\_\-ansi\-\_\-encoding (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1generator_ad326ada25826be46151af22868772419}
+Check if by default A\-N\-S\-I encoding is selected or U\-T\-F-\/8 onces. The default is false. \index{booster\-::locale\-::generator@{booster\-::locale\-::generator}!use\-\_\-ansi\-\_\-encoding@{use\-\_\-ansi\-\_\-encoding}}
+\index{use\-\_\-ansi\-\_\-encoding@{use\-\_\-ansi\-\_\-encoding}!booster::locale::generator@{booster\-::locale\-::generator}}
+\subsubsection[{use\-\_\-ansi\-\_\-encoding}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::generator\-::use\-\_\-ansi\-\_\-encoding (
+\begin{DoxyParamCaption}
+\item[{bool}]{enc}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1generator_a6509ed06916aa49b00bf3de97b6d604f}
+Select A\-N\-S\-I encodings as default system encoding rather then U\-T\-F-\/8 by default under Windows.
+
+The default is the most portable and most powerful encoding, U\-T\-F-\/8, but the user can select \char`\"{}system\char`\"{} one if dealing with legacy applications 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/generator.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\section{booster\-:\-:streambuf Class Reference}
+\label{classbooster_1_1streambuf}\index{booster\-::streambuf@{booster\-::streambuf}}
+
+
+this is an implementation of generic streambuffer  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/streambuf.\-h$>$}
+
+Inheritance diagram for booster\-:\-:streambuf\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbooster_1_1streambuf}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf streambuf} ()
+\item 
+void {\bf device} (std\-::auto\-\_\-ptr$<$ {\bf io\-\_\-device} $>$ d)
+\item 
+void {\bf device} ({\bf io\-\_\-device} \&d)
+\item 
+void {\bf reset\-\_\-device} ()
+\item 
+{\bf io\-\_\-device} \& {\bf device} ()
+\item 
+void {\bf set\-\_\-buffer\-\_\-size} (size\-\_\-t n)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::streampos {\bfseries seekoff} (std\-::streamoff off, std\-::ios\-\_\-base\-::seekdir way, std\-::ios\-\_\-base\-::openmode m=std\-::ios\-\_\-base\-::in$\vert$std\-::ios\-\_\-base\-::out)\label{classbooster_1_1streambuf_a80be308b2dd9dc1c169be6165d13346c}
+
+\item 
+virtual std\-::streampos {\bfseries seekpos} (std\-::streampos pos, std\-::ios\-\_\-base\-::openmode m=std\-::ios\-\_\-base\-::in$\vert$std\-::ios\-\_\-base\-::out)\label{classbooster_1_1streambuf_acde301a203adfdba01018e0d731ca1e7}
+
+\item 
+virtual int {\bfseries underflow} ()\label{classbooster_1_1streambuf_a5eddf5795673dcf64b9434baee3fe199}
+
+\item 
+virtual int {\bfseries pbackfail} (int c=E\-O\-F)\label{classbooster_1_1streambuf_a8f8f628c89dc560e59bcb0bf4ac9b2d7}
+
+\item 
+virtual int {\bfseries overflow} (int c=E\-O\-F)\label{classbooster_1_1streambuf_aa8c95ad1df332e233054aa93495dcd85}
+
+\item 
+virtual int {\bfseries sync} ()\label{classbooster_1_1streambuf_abfe92edba83fbc8afa7bd9f3cef26e59}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this is an implementation of generic streambuffer 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::streambuf@{booster\-::streambuf}!streambuf@{streambuf}}
+\index{streambuf@{streambuf}!booster::streambuf@{booster\-::streambuf}}
+\subsubsection[{streambuf}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::streambuf\-::streambuf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1streambuf_a397b946167ec28605e53a8e84cca57e3}
+Create a new stream buffer -\/ without a stream 
+
+\subsection{Member Function Documentation}
+\index{booster\-::streambuf@{booster\-::streambuf}!device@{device}}
+\index{device@{device}!booster::streambuf@{booster\-::streambuf}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::streambuf\-::device (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf io\-\_\-device} $>$}]{d}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1streambuf_a09b51f73de68f9f4cf157161df952885}
+Assign an \doxyref{io\-\_\-device}{p.}{classbooster_1_1io__device} to the streambuf transferring an ownership on it \index{booster\-::streambuf@{booster\-::streambuf}!device@{device}}
+\index{device@{device}!booster::streambuf@{booster\-::streambuf}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::streambuf\-::device (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-device} \&}]{d}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1streambuf_a54bb136fff8cfaab98c4a333fd10524d}
+Assign an existing \doxyref{io\-\_\-device}{p.}{classbooster_1_1io__device} to the streambuf. \index{booster\-::streambuf@{booster\-::streambuf}!device@{device}}
+\index{device@{device}!booster::streambuf@{booster\-::streambuf}}
+\subsubsection[{device}]{\setlength{\rightskip}{0pt plus 5cm}{\bf io\-\_\-device}\& booster\-::streambuf\-::device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1streambuf_a21feb7873b26a6d911665e77774f5191}
+Get the \doxyref{io\-\_\-device}{p.}{classbooster_1_1io__device} that is in use \index{booster\-::streambuf@{booster\-::streambuf}!reset\-\_\-device@{reset\-\_\-device}}
+\index{reset\-\_\-device@{reset\-\_\-device}!booster::streambuf@{booster\-::streambuf}}
+\subsubsection[{reset\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::streambuf\-::reset\-\_\-device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1streambuf_a069cae6acb1eb1edbd204716e2c4bed6}
+Detach currently attached \doxyref{io\-\_\-device}{p.}{classbooster_1_1io__device} from the streambuf. If it is owned, it is destroyed. \index{booster\-::streambuf@{booster\-::streambuf}!set\-\_\-buffer\-\_\-size@{set\-\_\-buffer\-\_\-size}}
+\index{set\-\_\-buffer\-\_\-size@{set\-\_\-buffer\-\_\-size}!booster::streambuf@{booster\-::streambuf}}
+\subsubsection[{set\-\_\-buffer\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::streambuf\-::set\-\_\-buffer\-\_\-size (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1streambuf_a8ac99ca92ad92f6351ce748b96149b0b}
+Set the size of the internal buffer that is used for read and write operations. Default is 1024 bytes for each direction 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/streambuf.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,211 @@
+\section{booster\-:\-:locale\-:\-:ios\-\_\-info Class Reference}
+\label{classbooster_1_1locale_1_1ios__info}\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}}
+
+
+This class holds an external data -\/ beyond existing fmtflags that std\-::ios\-\_\-base holds.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/formatting.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf display\-\_\-flags} (uint64\-\_\-t flags)
+\item 
+void {\bf currency\-\_\-flags} (uint64\-\_\-t flags)
+\item 
+void {\bf date\-\_\-flags} (uint64\-\_\-t flags)
+\item 
+void {\bf time\-\_\-flags} (uint64\-\_\-t flags)
+\item 
+void {\bf datetime\-\_\-flags} (uint64\-\_\-t flags)
+\item 
+void {\bf domain\-\_\-id} (int)
+\item 
+void {\bf time\-\_\-zone} (std\-::string const \&)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\void {\bf date\-\_\-time\-\_\-pattern} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str)
+\item 
+uint64\-\_\-t {\bf display\-\_\-flags} () const 
+\item 
+uint64\-\_\-t {\bf currency\-\_\-flags} () const 
+\item 
+uint64\-\_\-t {\bf date\-\_\-flags} () const 
+\item 
+uint64\-\_\-t {\bf time\-\_\-flags} () const 
+\item 
+uint64\-\_\-t {\bf datetime\-\_\-flags} () const 
+\item 
+int {\bf domain\-\_\-id} () const 
+\item 
+std\-::string {\bf time\-\_\-zone} () const 
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf date\-\_\-time\-\_\-pattern} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf ios\-\_\-info} \& {\bf get} (std\-::ios\-\_\-base \&ios)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds an external data -\/ beyond existing fmtflags that std\-::ios\-\_\-base holds. 
+
+You should almost never create this object directly. Instead, you should access it via ios\-\_\-info\-::get(stream\-\_\-object) static member function. It automatically creates default formatting data for that stream 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!currency\-\_\-flags@{currency\-\_\-flags}}
+\index{currency\-\_\-flags@{currency\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{currency\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::currency\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_a2a9f70e2a1e2568a0ea96f0b1d1703ab}
+Set a flags that define how to format currency 
+
+Referenced by booster\-::locale\-::as\-::currency\-\_\-default(), booster\-::locale\-::as\-::currency\-\_\-iso(), and booster\-::locale\-::as\-::currency\-\_\-national().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!currency\-\_\-flags@{currency\-\_\-flags}}
+\index{currency\-\_\-flags@{currency\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{currency\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t booster\-::locale\-::ios\-\_\-info\-::currency\-\_\-flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_a8f43722d637ff01ce35301ba72f55d4f}
+Get a flags that define how to format currency \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!date\-\_\-flags@{date\-\_\-flags}}
+\index{date\-\_\-flags@{date\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{date\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_a78ed46560fe661ae5d9702cc24d0276e}
+Set a flags that define how to format date 
+
+Referenced by booster\-::locale\-::as\-::date\-\_\-default(), booster\-::locale\-::as\-::date\-\_\-full(), booster\-::locale\-::as\-::date\-\_\-long(), booster\-::locale\-::as\-::date\-\_\-medium(), and booster\-::locale\-::as\-::date\-\_\-short().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!date\-\_\-flags@{date\-\_\-flags}}
+\index{date\-\_\-flags@{date\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{date\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t booster\-::locale\-::ios\-\_\-info\-::date\-\_\-flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_aa7b2d2f70c6640b33a9e53bc1c7e2311}
+Get a flags that define how to format date \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!date\-\_\-time\-\_\-pattern@{date\-\_\-time\-\_\-pattern}}
+\index{date\-\_\-time\-\_\-pattern@{date\-\_\-time\-\_\-pattern}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{date\-\_\-time\-\_\-pattern}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ void booster\-::locale\-::ios\-\_\-info\-::date\-\_\-time\-\_\-pattern (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1ios__info_adf8011ca10705896df3f7d5245f7b3b6}
+Set date/time pattern (strftime like) \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!date\-\_\-time\-\_\-pattern@{date\-\_\-time\-\_\-pattern}}
+\index{date\-\_\-time\-\_\-pattern@{date\-\_\-time\-\_\-pattern}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{date\-\_\-time\-\_\-pattern}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ std\-::basic\-\_\-string$<$Char\-Type$>$ booster\-::locale\-::ios\-\_\-info\-::date\-\_\-time\-\_\-pattern (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1ios__info_a95779e010fad140265dece668a4896dc}
+Get date/time pattern (strftime like) \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!datetime\-\_\-flags@{datetime\-\_\-flags}}
+\index{datetime\-\_\-flags@{datetime\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{datetime\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::datetime\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_a79e755c0838aa22af2aa10417be2fb3a}
+Set a flags that define how to format both date and time \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!datetime\-\_\-flags@{datetime\-\_\-flags}}
+\index{datetime\-\_\-flags@{datetime\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{datetime\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t booster\-::locale\-::ios\-\_\-info\-::datetime\-\_\-flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_a3453ef5918ac2f22398eefe2ac0c09a8}
+Get a flags that define how to format both date and time \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!display\-\_\-flags@{display\-\_\-flags}}
+\index{display\-\_\-flags@{display\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{display\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_a20dcf954d3cb80af2b52437df4a8394a}
+Set a flags that define a way for format data like number, spell, currency etc. 
+
+Referenced by booster\-::locale\-::as\-::currency(), booster\-::locale\-::as\-::date(), booster\-::locale\-::as\-::datetime(), booster\-::locale\-::as\-::number(), booster\-::locale\-::operator$<$$<$(), booster\-::locale\-::operator$>$$>$(), booster\-::locale\-::as\-::ordinal(), booster\-::locale\-::as\-::percent(), booster\-::locale\-::as\-::posix(), booster\-::locale\-::as\-::spellout(), booster\-::locale\-::as\-::strftime(), and booster\-::locale\-::as\-::time().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!display\-\_\-flags@{display\-\_\-flags}}
+\index{display\-\_\-flags@{display\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{display\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t booster\-::locale\-::ios\-\_\-info\-::display\-\_\-flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_a0be60870b4ecaaf00314741802c0a192}
+Get a flags that define a way for format data like number, spell, currency etc. \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!domain\-\_\-id@{domain\-\_\-id}}
+\index{domain\-\_\-id@{domain\-\_\-id}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{domain\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::domain\-\_\-id (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_afdbed1d49eb35a22de9fa25052e8d5ff}
+Set special message domain identification 
+
+Referenced by booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$\-::write(), and booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::write().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!domain\-\_\-id@{domain\-\_\-id}}
+\index{domain\-\_\-id@{domain\-\_\-id}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{domain\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::locale\-::ios\-\_\-info\-::domain\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_a32b40f97a6bb17a3f2c9d3c6d0c2bbfb}
+Get special message domain identification \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!get@{get}}
+\index{get@{get}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ios\-\_\-info}\& booster\-::locale\-::ios\-\_\-info\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::ios\-\_\-base \&}]{ios}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1locale_1_1ios__info_adf7985872a849202e49136bc285788f9}
+Get \doxyref{ios\-\_\-info}{p.}{classbooster_1_1locale_1_1ios__info} instance for specific stream object 
+
+Referenced by booster\-::locale\-::as\-::currency(), booster\-::locale\-::as\-::currency\-\_\-default(), booster\-::locale\-::as\-::currency\-\_\-iso(), booster\-::locale\-::as\-::currency\-\_\-national(), booster\-::locale\-::as\-::date(), booster\-::locale\-::as\-::date\-\_\-default(), booster\-::locale\-::as\-::date\-\_\-full(), booster\-::locale\-::as\-::date\-\_\-long(), booster\-::locale\-::as\-::date\-\_\-medium(), booster\-::locale\-::as\-::date\-\_\-short(), booster\-::locale\-::as\-::datetime(), booster\-::locale\-::as\-::gmt(), booster\-::locale\-::as\-::local\-\_\-time(), booster\-::locale\-::as\-::number(), booster\-::locale\-::operator$<$$<$(), booster\-::locale\-::operator$>$$>$(), booster\-::locale\-::as\-::ordinal(), booster\-::locale\-::as\-::percent(), booster\-::locale\-::as\-::posix(), booster\-::locale\-::as\-::spellout(), booster\-::locale\-::as\-::strftime(), booster\-::locale\-::as\-::time(), booster\-::locale\-::as\-::time\-\_\-default(), booster\-::locale\-::as\-::time\-\_\-full(), booster\-::locale\-::as\-::time\-\_\-long(), booster\-::locale\-::as\-::time\-\_\-medium(), booster\-::locale\-::as\-::time\-\_\-short(), booster\-::locale\-::basic\-\_\-format$<$ Char\-Type $>$\-::write(), and booster\-::locale\-::basic\-\_\-message$<$ char\-\_\-type $>$\-::write().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!time\-\_\-flags@{time\-\_\-flags}}
+\index{time\-\_\-flags@{time\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{time\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags (
+\begin{DoxyParamCaption}
+\item[{uint64\-\_\-t}]{flags}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_ab188468f5e4606f118828e74794a6743}
+Set a flags that define how to format time 
+
+Referenced by booster\-::locale\-::as\-::time\-\_\-default(), booster\-::locale\-::as\-::time\-\_\-full(), booster\-::locale\-::as\-::time\-\_\-long(), booster\-::locale\-::as\-::time\-\_\-medium(), and booster\-::locale\-::as\-::time\-\_\-short().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!time\-\_\-flags@{time\-\_\-flags}}
+\index{time\-\_\-flags@{time\-\_\-flags}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{time\-\_\-flags}]{\setlength{\rightskip}{0pt plus 5cm}uint64\-\_\-t booster\-::locale\-::ios\-\_\-info\-::time\-\_\-flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_aa305c792dc0bafb5f8af0901f58d9940}
+Get a flags that define how to format time \index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!time\-\_\-zone@{time\-\_\-zone}}
+\index{time\-\_\-zone@{time\-\_\-zone}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{time\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::ios\-\_\-info\-::time\-\_\-zone (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1ios__info_adf1e422dfa21cd1da80225ab71a9b355}
+Set time zone for formatting dates and time 
+
+Referenced by booster\-::locale\-::as\-::gmt(), and booster\-::locale\-::as\-::local\-\_\-time().
+
+\index{booster\-::locale\-::ios\-\_\-info@{booster\-::locale\-::ios\-\_\-info}!time\-\_\-zone@{time\-\_\-zone}}
+\index{time\-\_\-zone@{time\-\_\-zone}!booster::locale::ios_info@{booster\-::locale\-::ios\-\_\-info}}
+\subsubsection[{time\-\_\-zone}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::locale\-::ios\-\_\-info\-::time\-\_\-zone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1ios__info_abe745ea5b40ae22fa29f7ad8c1ba3b59}
+Get time zone for formatting dates and time 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/formatting.\-h\end{DoxyCompactItemize}

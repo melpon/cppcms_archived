@@ -1,0 +1,84 @@
+\section{cppcms\-:\-:crypto\-:\-:hmac Class Reference}
+\label{classcppcms_1_1crypto_1_1hmac}\index{cppcms\-::crypto\-::hmac@{cppcms\-::crypto\-::hmac}}
+
+
+This object calculates the H\-M\-A\-C signature for the input data.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/crypto.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:crypto\-:\-:hmac\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1crypto_1_1hmac}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf hmac} (std\-::auto\-\_\-ptr$<$ {\bf message\-\_\-digest} $>$ digest, {\bf key} const \&k)
+\item 
+{\bf hmac} (std\-::string const \&name, {\bf key} const \&k)
+\item 
+unsigned {\bf digest\-\_\-size} () const 
+\item 
+void {\bf append} (void const $\ast$ptr, size\-\_\-t size)
+\item 
+void {\bf readout} (void $\ast$ptr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This object calculates the H\-M\-A\-C signature for the input data. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::crypto\-::hmac@{cppcms\-::crypto\-::hmac}!hmac@{hmac}}
+\index{hmac@{hmac}!cppcms::crypto::hmac@{cppcms\-::crypto\-::hmac}}
+\subsubsection[{hmac}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::hmac\-::hmac (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf message\-\_\-digest} $>$}]{digest, }
+\item[{{\bf key} const \&}]{k}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1hmac_aad696ca248903c169d0e18eb47d0c507}
+Create hmac that uses given {\itshape digest} algorithm and a binary key -\/ {\itshape key} \index{cppcms\-::crypto\-::hmac@{cppcms\-::crypto\-::hmac}!hmac@{hmac}}
+\index{hmac@{hmac}!cppcms::crypto::hmac@{cppcms\-::crypto\-::hmac}}
+\subsubsection[{hmac}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::hmac\-::hmac (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{{\bf key} const \&}]{k}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1hmac_a0c88f8b97da2c10a5577a5640d9bc1cb}
+Create hmac that uses message digest algorithm called {\itshape name} and use a binary key -\/ {\itshape key} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::crypto\-::hmac@{cppcms\-::crypto\-::hmac}!append@{append}}
+\index{append@{append}!cppcms::crypto::hmac@{cppcms\-::crypto\-::hmac}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::crypto\-::hmac\-::append (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1hmac_a0104fabdf04075644921e51ea0ab882b}
+Add data for signing \index{cppcms\-::crypto\-::hmac@{cppcms\-::crypto\-::hmac}!digest\-\_\-size@{digest\-\_\-size}}
+\index{digest\-\_\-size@{digest\-\_\-size}!cppcms::crypto::hmac@{cppcms\-::crypto\-::hmac}}
+\subsubsection[{digest\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}unsigned cppcms\-::crypto\-::hmac\-::digest\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1crypto_1_1hmac_a22f872f9e947472a3c669ae60b1e6e21}
+Get the size of the signtature \index{cppcms\-::crypto\-::hmac@{cppcms\-::crypto\-::hmac}!readout@{readout}}
+\index{readout@{readout}!cppcms::crypto::hmac@{cppcms\-::crypto\-::hmac}}
+\subsubsection[{readout}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::crypto\-::hmac\-::readout (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1hmac_a53ba508269e0472a57535904473c222c}
+Get the signature for all the data, after calling this function the state of the hmac is reset and it can be used for signing again
+
+Note\-: provided buffer must be \doxyref{digest\-\_\-size()}{p.}{classcppcms_1_1crypto_1_1hmac_a22f872f9e947472a3c669ae60b1e6e21} bytes long. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/crypto.\-h\end{DoxyCompactItemize}

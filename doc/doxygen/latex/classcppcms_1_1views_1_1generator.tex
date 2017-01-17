@@ -1,0 +1,92 @@
+\section{cppcms\-:\-:views\-:\-:generator Class Reference}
+\label{classcppcms_1_1views_1_1generator}\index{cppcms\-::views\-::generator@{cppcms\-::views\-::generator}}
+
+
+The class that represents a single skin and generates its views.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/views\-\_\-pool.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:views\-:\-:generator\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1views_1_1generator}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::auto\-\_\-ptr$<$ {\bf base\-\_\-view} $>$ {\bf view\-\_\-factory\-\_\-type} (std\-::ostream \&, {\bf base\-\_\-content} $\ast$c)\label{classcppcms_1_1views_1_1generator_af51d091d42138b8c06fbc2cba5d71c83}
+
+\begin{DoxyCompactList}\small\item\em The callback that creates a single view. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename View , typename Content $>$ }\\void {\bf add\-\_\-view} (std\-::string const \&view\-\_\-name, bool safe=true)
+\item 
+void {\bf add\-\_\-factory} (std\-::string const \&{\bf name}, {\bf view\-\_\-factory\-\_\-type} $\ast$factory)
+\item 
+std\-::string {\bf name} () const 
+\item 
+void {\bf name} (std\-::string const \&n)
+\item 
+std\-::auto\-\_\-ptr$<$ {\bf base\-\_\-view} $>$ {\bf create} (std\-::string const \&view\-\_\-name, std\-::ostream \&output, {\bf base\-\_\-content} $\ast$content) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The class that represents a single skin and generates its views. 
+
+Usually used by templates compiler 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::views\-::generator@{cppcms\-::views\-::generator}!add\-\_\-factory@{add\-\_\-factory}}
+\index{add\-\_\-factory@{add\-\_\-factory}!cppcms::views::generator@{cppcms\-::views\-::generator}}
+\subsubsection[{add\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::views\-::generator\-::add\-\_\-factory (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{{\bf view\-\_\-factory\-\_\-type} $\ast$}]{factory}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1generator_a00a7cb5d52a914064947d762c2dfa9ee}
+Add a view that uses a callback \index{cppcms\-::views\-::generator@{cppcms\-::views\-::generator}!add\-\_\-view@{add\-\_\-view}}
+\index{add\-\_\-view@{add\-\_\-view}!cppcms::views::generator@{cppcms\-::views\-::generator}}
+\subsubsection[{add\-\_\-view}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename View , typename Content $>$ void cppcms\-::views\-::generator\-::add\-\_\-view (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{view\-\_\-name, }
+\item[{bool}]{safe = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1views_1_1generator_ac8bf17dc58d0dcbac00057c8a4e9d77c}
+Add a single view of type {\itshape View} that uses content of type {\itshape Content} Using name {\itshape view\-\_\-name}.
+
+If {\itshape safe} is true that dynamic cast is used to ensure that content has proper type otherwise static cast.
+
+Usually used by templates generator \index{cppcms\-::views\-::generator@{cppcms\-::views\-::generator}!create@{create}}
+\index{create@{create}!cppcms::views::generator@{cppcms\-::views\-::generator}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}std\-::auto\-\_\-ptr$<${\bf base\-\_\-view}$>$ cppcms\-::views\-::generator\-::create (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{view\-\_\-name, }
+\item[{std\-::ostream \&}]{output, }
+\item[{{\bf base\-\_\-content} $\ast$}]{content}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1views_1_1generator_a2b4036950bec7374d8e9e2b16c49285d}
+Create a view by its name that writes that data to {\itshape outout} using a content {\itshape content}. \index{cppcms\-::views\-::generator@{cppcms\-::views\-::generator}!name@{name}}
+\index{name@{name}!cppcms::views::generator@{cppcms\-::views\-::generator}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::views\-::generator\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1views_1_1generator_a5990fa09cf8ff8092571c711dbe3a7f9}
+Get skin name \index{cppcms\-::views\-::generator@{cppcms\-::views\-::generator}!name@{name}}
+\index{name@{name}!cppcms::views::generator@{cppcms\-::views\-::generator}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::views\-::generator\-::name (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1generator_a4b9d9d0a371aeaf5ffd22880bafeb9c1}
+Set skin name 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/views\-\_\-pool.\-h\end{DoxyCompactItemize}

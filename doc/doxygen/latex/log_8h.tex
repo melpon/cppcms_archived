@@ -1,0 +1,126 @@
+\section{booster/log.h File Reference}
+\label{log_8h}\index{booster/log.\-h@{booster/log.\-h}}
+{\ttfamily \#include $<$booster/config.\-h$>$}\\*
+{\ttfamily \#include $<$iosfwd$>$}\\*
+{\ttfamily \#include $<$memory$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$booster/copy\-\_\-ptr.\-h$>$}\\*
+{\ttfamily \#include $<$booster/hold\-\_\-ptr.\-h$>$}\\*
+{\ttfamily \#include $<$booster/noncopyable.\-h$>$}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\-::shared\-\_\-ptr$<$ T $>$}
+\item 
+class {\bf booster\-::weak\-\_\-ptr$<$ T $>$}
+\item 
+class {\bf booster\-::log\-::message}
+\begin{DoxyCompactList}\small\item\em This class represents a single message that should be written to log. \end{DoxyCompactList}\item 
+class {\bf booster\-::log\-::sink}
+\begin{DoxyCompactList}\small\item\em This is the abstract interface to general sink -\/ the consumer of the logged messages. \end{DoxyCompactList}\item 
+class {\bf booster\-::log\-::logger}
+\begin{DoxyCompactList}\small\item\em This is the central class that manages all logging operations. \end{DoxyCompactList}\item 
+class {\bf booster\-::log\-::sinks\-::standard\-\_\-error}
+\begin{DoxyCompactList}\small\item\em stderr based sink -\/ sends messages to standard error output \end{DoxyCompactList}\item 
+class {\bf booster\-::log\-::sinks\-::file}
+\begin{DoxyCompactList}\small\item\em log file based sink -\/ sends messages to log file \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf booster}
+\begin{DoxyCompactList}\small\item\em Booster library namespace. The library that implements Boost Like A\-P\-I in A\-B\-I backward compatible way. \end{DoxyCompactList}\item 
+{\bf booster\-::log}
+\begin{DoxyCompactList}\small\item\em This namespace includes Booster.\-Log related classes. \end{DoxyCompactList}\item 
+{\bf booster\-::log\-::sinks}
+\begin{DoxyCompactList}\small\item\em This namespace includes various output devices (sinks) for logger. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(level, module)
+\begin{DoxyCompactList}\small\item\em Log a message with severity {\itshape level} of the {\itshape module} to the log device if applicable. \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-E\-M\-E\-R\-G}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(emergency,m)\label{log_8h_a2b48136fdbf4bf73dd5514be88d0ab6a}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(emergency,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-L\-E\-R\-T}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(alert,m)\label{log_8h_a784f023a0364f55a47927ec2bb5214f3}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(alert,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-C\-R\-I\-T\-I\-C\-A\-L}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(critical,m)\label{log_8h_a616d1fa2e12307898ba68bd5edebb0cc}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(critical,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-E\-R\-R\-O\-R}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(error,m)\label{log_8h_ae21052f327febe950f61e9df89a97e85}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(error,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N\-I\-N\-G}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(warning,m)\label{log_8h_a2d4a2ebc97e39c086bbaed4cc705ebb6}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(warning,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-N\-O\-T\-I\-C\-E}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(notice,m)\label{log_8h_ae30605c345d085ab520c38b74f0666a8}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(notice,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-I\-N\-F\-O}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(info,m)\label{log_8h_ad72c04b343b713729e43f4df0f22807d}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(info,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\item 
+\#define {\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-D\-E\-B\-U\-G}(m)~{\bf B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}(debug,m)\label{log_8h_a817933c81c2ac9cf4a5f4f622512f73f}
+
+\begin{DoxyCompactList}\small\item\em Same as \doxyref{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(debug,m)}{p.}{log_8h_ad31e43c165b348707877b9b46aec71f1} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf booster\-::log\-::level\-\_\-type} \{ \\*
+{\bfseries emergency} = 0, 
+{\bfseries alert} = 10, 
+{\bfseries critical} = 20, 
+{\bfseries error} = 30, 
+\\*
+{\bfseries warning} = 40, 
+{\bfseries notice} = 50, 
+{\bfseries info} = 60, 
+{\bfseries debug} = 70, 
+\\*
+{\bfseries all} = 100
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf booster\-::log\-::sinks\-::format\-\_\-plain\-\_\-text\-\_\-message} (message const \&msg)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf booster\-::log\-::sinks\-::format\-\_\-plain\-\_\-text\-\_\-message\-\_\-tz} (message const \&msg, int timezone\-\_\-offset=0)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{log.\-h@{log.\-h}!B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G@{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}}
+\index{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G@{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}!log.h@{log.\-h}}
+\subsubsection[{B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define B\-O\-O\-S\-T\-E\-R\-\_\-\-L\-O\-G(
+\begin{DoxyParamCaption}
+\item[{}]{level, }
+\item[{}]{module}
+\end{DoxyParamCaption}
+)}\label{log_8h_ad31e43c165b348707877b9b46aec71f1}
+{\bfseries Value\-:}
+\begin{DoxyCode}
+::booster::log::logger::instance().should_be_logged(::booster::log::level,module)       \(\backslash\)
+                && ::booster::log::message(::booster::log::level,module,\_\_FILE\_\_,\_\_LINE\_\_).out()
+\end{DoxyCode}
+
+
+Log a message with severity {\itshape level} of the {\itshape module} to the log device if applicable. 
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item it first checks of the message should be logged at all, and if not, all the rest is not called
+\item the message is logged in the destruction of the output stream object
+\item the parameter {\itshape level} should be given as is \char`\"{}warning\char`\"{} or \char`\"{}debug\char`\"{} the namespace flags would be added withing macro
+\item It may be more convenient to use B\-O\-O\-S\-T\-E\-R\-\_\-\-W\-A\-R\-N\-I\-N\-G or B\-O\-O\-S\-T\-E\-R\-\_\-\-D\-E\-B\-U\-G macros
+\end{DoxyItemize}
+
+Example\-:
+
+
+\begin{DoxyCode}
+BOOSTER_LOG(warning,\textcolor{stringliteral}{"file\_system"}) << \textcolor{stringliteral}{"Failed to open file name "} << name;
+BOOSTER_CRITICAL(\textcolor{stringliteral}{"core"}) << \textcolor{stringliteral}{"Failed to allocate memory"};
+\end{DoxyCode}
+ 

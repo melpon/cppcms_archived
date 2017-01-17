@@ -1,0 +1,270 @@
+\section{booster\-:\-:aio\-:\-:basic\-\_\-io\-\_\-device Class Reference}
+\label{classbooster_1_1aio_1_1basic__io__device}\index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+
+
+This is a basic object that allows execution of asynchronous operations.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/basic\-\_\-io\-\_\-device.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:basic\-\_\-io\-\_\-device\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbooster_1_1aio_1_1basic__io__device}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf basic\-\_\-io\-\_\-device} ()
+\item 
+{\bf basic\-\_\-io\-\_\-device} ({\bf io\-\_\-service} \&srv)
+\item 
+virtual {\bf $\sim$basic\-\_\-io\-\_\-device} ()
+\item 
+bool {\bf has\-\_\-io\-\_\-service} ()
+\item 
+{\bf io\-\_\-service} \& {\bf get\-\_\-io\-\_\-service} ()
+\item 
+void {\bf set\-\_\-io\-\_\-service} ({\bf io\-\_\-service} \&srv)
+\item 
+void {\bf reset\-\_\-io\-\_\-service} ()
+\item 
+void {\bf attach} ({\bf native\-\_\-type} fd)
+\item 
+void {\bf assign} ({\bf native\-\_\-type} fd)
+\item 
+{\bf native\-\_\-type} {\bf release} ()
+\item 
+{\bf native\-\_\-type} {\bf native} ()
+\item 
+void {\bf close} ()
+\item 
+void {\bf close} ({\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf on\-\_\-readable} ({\bf event\-\_\-handler} const \&r)
+\item 
+void {\bf on\-\_\-writeable} ({\bf event\-\_\-handler} const \&r)
+\item 
+void {\bf cancel} ()
+\item 
+{\bf basic\-\_\-io\-\_\-device} \& {\bf lowest\-\_\-layer} ()
+\item 
+void {\bf set\-\_\-non\-\_\-blocking} (bool nonblocking)
+\item 
+void {\bf set\-\_\-non\-\_\-blocking} (bool nonblocking, {\bf system\-::error\-\_\-code} \&e)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf would\-\_\-block} ({\bf system\-::error\-\_\-code} const \&e)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf dont\-\_\-block} ({\bf event\-\_\-handler} const \&c)
+\item 
+bool {\bf dont\-\_\-block} ({\bf io\-\_\-handler} const \&c)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a basic object that allows execution of asynchronous operations. 
+
+It represents a generic \char`\"{}select\char`\"{}able file descriptor or S\-O\-C\-K\-E\-T on Windows platform.
+
+It does following\-:
+
+
+\begin{DoxyItemize}
+\item Connects an object with the event loop -\/ \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}
+\item Allows to connect and disconnect native file descriptor/socket object to it, and close it
+\item Asynchronously poll the object for readability and writeability via \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} object and cancel such operations
+\item Switch blocking and non-\/blocking mode of the descriptor. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!basic\-\_\-io\-\_\-device@{basic\-\_\-io\-\_\-device}}
+\index{basic\-\_\-io\-\_\-device@{basic\-\_\-io\-\_\-device}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{basic\-\_\-io\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::basic\-\_\-io\-\_\-device\-::basic\-\_\-io\-\_\-device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a6635e83332c8e5446846360bfe73ffa4}
+Create a new device not attached to event loop \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!basic\-\_\-io\-\_\-device@{basic\-\_\-io\-\_\-device}}
+\index{basic\-\_\-io\-\_\-device@{basic\-\_\-io\-\_\-device}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{basic\-\_\-io\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::basic\-\_\-io\-\_\-device\-::basic\-\_\-io\-\_\-device (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a0b8f8ffb18b05ec054ae30400e8ad11b}
+Create a new device that is attached to the event loop {\itshape srv} \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!$\sim$basic\-\_\-io\-\_\-device@{$\sim$basic\-\_\-io\-\_\-device}}
+\index{$\sim$basic\-\_\-io\-\_\-device@{$\sim$basic\-\_\-io\-\_\-device}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{$\sim$basic\-\_\-io\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}virtual booster\-::aio\-::basic\-\_\-io\-\_\-device\-::$\sim$basic\-\_\-io\-\_\-device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classbooster_1_1aio_1_1basic__io__device_a35bd2108e6654eb12b9996992ff278bb}
+Destroy the object. If it owns the file descriptor or socket it closes it 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!assign@{assign}}
+\index{assign@{assign}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::assign (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_afba3662e557aa44834257ffc063e0cb1}
+Assign existing file descriptor {\itshape fd} to the device. The ownership is transferred to the object \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!attach@{attach}}
+\index{attach@{attach}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{attach}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::attach (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_ad327ab1cc9323bb8f4c641d0f3eb186a}
+Attach the file descriptor {\itshape fd} to the device. The ownership is not transferred to the object.
+
+If \doxyref{basic\-\_\-io\-\_\-device}{p.}{classbooster_1_1aio_1_1basic__io__device} owns other file descriptor, it is closed. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!cancel@{cancel}}
+\index{cancel@{cancel}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{cancel}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::cancel (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a90aee159a796481187a0721ccd6d96b1}
+Cancel all asynchronous operations. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!close@{close}}
+\index{close@{close}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a8f53c02046939cb90ffdf2f865676e4f}
+Cancels all pending asynchronous events. If the ownership belongs to it closes the file descriptor.
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!close@{close}}
+\index{close@{close}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::close (
+\begin{DoxyParamCaption}
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_aea32fc85e3cf9a07e80bd7e200bdc441}
+Cancels all pending asynchronous events. If the ownership belongs to it closes the file descriptor.
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!dont\-\_\-block@{dont\-\_\-block}}
+\index{dont\-\_\-block@{dont\-\_\-block}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{dont\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::aio\-::basic\-\_\-io\-\_\-device\-::dont\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-\_\-handler} const \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classbooster_1_1aio_1_1basic__io__device_a15d1ca42e67eb46985ff6cb94b931f49}
+Set non-\/blocking mode. If error occurs returns false and the error is reported via callback c \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!dont\-\_\-block@{dont\-\_\-block}}
+\index{dont\-\_\-block@{dont\-\_\-block}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{dont\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::aio\-::basic\-\_\-io\-\_\-device\-::dont\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-handler} const \&}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classbooster_1_1aio_1_1basic__io__device_a3047ab5c9c37b5d533526afe7a455b92}
+Set non-\/blocking mode. If error occurs returns false and the error is reported via callback c \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!get\-\_\-io\-\_\-service@{get\-\_\-io\-\_\-service}}
+\index{get\-\_\-io\-\_\-service@{get\-\_\-io\-\_\-service}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{get\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf io\-\_\-service}\& booster\-::aio\-::basic\-\_\-io\-\_\-device\-::get\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a5213f9255c418b78bdb98d5da96e2a7e}
+Returns the connected \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}, throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if no \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} connected \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!has\-\_\-io\-\_\-service@{has\-\_\-io\-\_\-service}}
+\index{has\-\_\-io\-\_\-service@{has\-\_\-io\-\_\-service}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{has\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::aio\-::basic\-\_\-io\-\_\-device\-::has\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a74dcacdfa8bdf111723f3e0daa26348d}
+Check if the \doxyref{basic\-\_\-io\-\_\-device}{p.}{classbooster_1_1aio_1_1basic__io__device} is connected to the \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!lowest\-\_\-layer@{lowest\-\_\-layer}}
+\index{lowest\-\_\-layer@{lowest\-\_\-layer}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{lowest\-\_\-layer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf basic\-\_\-io\-\_\-device}\& booster\-::aio\-::basic\-\_\-io\-\_\-device\-::lowest\-\_\-layer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a673dfae98eb87a77aef359026156d21f}
+Returns $\ast$this \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!native@{native}}
+\index{native@{native}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{native}]{\setlength{\rightskip}{0pt plus 5cm}{\bf native\-\_\-type} booster\-::aio\-::basic\-\_\-io\-\_\-device\-::native (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_aaec15c09a2a3b3c086797cb6e8fbbd3a}
+Get the underlying file descriptor. Returns invalid\-\_\-socket if the file descriptor was not assigned \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!on\-\_\-readable@{on\-\_\-readable}}
+\index{on\-\_\-readable@{on\-\_\-readable}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{on\-\_\-readable}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::on\-\_\-readable (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-\_\-handler} const \&}]{r}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a62f19c716b2a83bbb24b0ab81f268b4b}
+Start asynchronous polling for readability. The result is reported via callback {\itshape r}.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via {\itshape r}. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!on\-\_\-writeable@{on\-\_\-writeable}}
+\index{on\-\_\-writeable@{on\-\_\-writeable}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{on\-\_\-writeable}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::on\-\_\-writeable (
+\begin{DoxyParamCaption}
+\item[{{\bf event\-\_\-handler} const \&}]{r}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a92348b74bcf7d14985a388f16381423b}
+Start asynchronous polling for writeability. The result is reported via callback {\itshape r}.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via {\itshape r}. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!release@{release}}
+\index{release@{release}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}{\bf native\-\_\-type} booster\-::aio\-::basic\-\_\-io\-\_\-device\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_aecf495a71b20c55a1e5b68180d531916}
+Release the ownership on the current file descriptor. The user is responsible to close it.
+
+\begin{DoxyNote}{Note}
+it just changes the \char`\"{}ownership\char`\"{} flag in the object, nothing else is done 
+\end{DoxyNote}
+\index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!reset\-\_\-io\-\_\-service@{reset\-\_\-io\-\_\-service}}
+\index{reset\-\_\-io\-\_\-service@{reset\-\_\-io\-\_\-service}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{reset\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::reset\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_af680d21d232d2e1f12f8e2bdc2ab8483}
+Detaches the object from \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. Cancels all pending asynchronous operations. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!set\-\_\-io\-\_\-service@{set\-\_\-io\-\_\-service}}
+\index{set\-\_\-io\-\_\-service@{set\-\_\-io\-\_\-service}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{set\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::set\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_acbf4de1f8e1a9d4503d5e2225b0be801}
+Sets new \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. Cancels all pending asynchronous operations on the connected \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service}. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!set\-\_\-non\-\_\-blocking@{set\-\_\-non\-\_\-blocking}}
+\index{set\-\_\-non\-\_\-blocking@{set\-\_\-non\-\_\-blocking}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{set\-\_\-non\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::set\-\_\-non\-\_\-blocking (
+\begin{DoxyParamCaption}
+\item[{bool}]{nonblocking}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_a989ff34ab1e49d27a4f72de344605f39}
+Set the object to blocking or non-\/blocking mode.
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!set\-\_\-non\-\_\-blocking@{set\-\_\-non\-\_\-blocking}}
+\index{set\-\_\-non\-\_\-blocking@{set\-\_\-non\-\_\-blocking}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{set\-\_\-non\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::basic\-\_\-io\-\_\-device\-::set\-\_\-non\-\_\-blocking (
+\begin{DoxyParamCaption}
+\item[{bool}]{nonblocking, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1basic__io__device_ad224749aff0c2a54b46aac8d6b7aa53a}
+Set the object to blocking or non-\/blocking mode.
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::basic\-\_\-io\-\_\-device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}!would\-\_\-block@{would\-\_\-block}}
+\index{would\-\_\-block@{would\-\_\-block}!booster::aio::basic_io_device@{booster\-::aio\-::basic\-\_\-io\-\_\-device}}
+\subsubsection[{would\-\_\-block}]{\setlength{\rightskip}{0pt plus 5cm}static bool booster\-::aio\-::basic\-\_\-io\-\_\-device\-::would\-\_\-block (
+\begin{DoxyParamCaption}
+\item[{{\bf system\-::error\-\_\-code} const \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1aio_1_1basic__io__device_a71ed9f56b136c9da4aeb0e982214f08e}
+Check if a error code {\itshape e} reports that the non-\/blocking operation would block 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/basic\-\_\-io\-\_\-device.\-h\end{DoxyCompactItemize}

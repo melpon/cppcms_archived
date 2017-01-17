@@ -1,0 +1,253 @@
+\section{cppcms\-:\-:service Class Reference}
+\label{classcppcms_1_1service}\index{cppcms\-::service@{cppcms\-::service}}
+
+
+This class represent the central event loop of the Cpp\-C\-M\-S applications.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/service.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:service\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1service}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf service} ({\bf json\-::value} const \&v)
+\item 
+{\bf service} (int argc, char $\ast$argv[$\,$])
+\item 
+{\bf $\sim$service} ()
+\item 
+void {\bf run} ()
+\item 
+void {\bf shutdown} ()
+\item 
+{\bf json\-::value} const \& {\bf settings} ()
+\item 
+{\bf cppcms\-::applications\-\_\-pool} \& {\bf applications\-\_\-pool} ()
+\item 
+{\bf cppcms\-::thread\-\_\-pool} \& {\bf thread\-\_\-pool} ()
+\item 
+{\bf cppcms\-::session\-\_\-pool} \& {\bf session\-\_\-pool} ()
+\item 
+{\bf cppcms\-::views\-::manager} \& {\bf views\-\_\-pool} ()
+\item 
+cppcms\-::cache\-\_\-pool \& {\bf cache\-\_\-pool} ()
+\item 
+{\bf cppcms\-::forwarder} \& {\bf forwarder} ()
+\item 
+{\bf locale\-::generator} const \& {\bf generator} ()
+\item 
+std\-::locale {\bf locale} ()
+\item 
+std\-::locale {\bf locale} (std\-::string const \&name)
+\item 
+{\bf booster\-::aio\-::io\-\_\-service} \& {\bf get\-\_\-io\-\_\-service} ()
+\item 
+void {\bf post} ({\bf booster\-::function}$<$ void()$>$ const \&handler)
+\item 
+void {\bf after\-\_\-fork} ({\bf booster\-::function}$<$ void()$>$ const \&handler)
+\item 
+int {\bf threads\-\_\-no} ()
+\item 
+int {\bf procs\-\_\-no} ()
+\item 
+int {\bf process\-\_\-id} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf json\-::value} {\bf load\-\_\-settings} (int argc, char $\ast$argv[$\,$])
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represent the central event loop of the Cpp\-C\-M\-S applications. 
+
+This is the central class that is responsible for management of Cpp\-C\-M\-S services\-: management of H\-T\-T\-P requests and responses, sessions, cache and much more services. It is the central class that runs during execution of any Cpp\-C\-M\-S service. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::service@{cppcms\-::service}!service@{service}}
+\index{service@{service}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{service}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::service\-::service (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a26f60fd155db4c12bbca92cc463a7760}
+Create a new service, passing all configuration settings via \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} instead of parsing command line parameters. \index{cppcms\-::service@{cppcms\-::service}!service@{service}}
+\index{service@{service}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{service}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::service\-::service (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv[$\,$]}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_ad77580a0a9635690522039bb332118e2}
+Parse command line parameters, get the configuration file and additional options and create the service.
+
+Note for Windows users\-: argv is assumed to be U\-T\-F-\/8 encoded strings, if you want pass non-\/ascii or \char`\"{}wide\char`\"{} parameters you need convert them from U\-T\-F-\/16 to U\-T\-F-\/8. For example you can use \doxyref{booster\-::nowide\-::convert}{p.}{namespacebooster_1_1nowide_a9641be36b3697a2bc5fc5a150ec5dd8b} functions. \index{cppcms\-::service@{cppcms\-::service}!$\sim$service@{$\sim$service}}
+\index{$\sim$service@{$\sim$service}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{$\sim$service}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::service\-::$\sim$service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a77f7c16078dcdcfa204156f256d37569}
+Destroy the service -\/ the last class to go down.
+
+Note, if you have asynchronous applications that are not owned the service class they must be destroyed before it 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::service@{cppcms\-::service}!after\-\_\-fork@{after\-\_\-fork}}
+\index{after\-\_\-fork@{after\-\_\-fork}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{after\-\_\-fork}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::service\-::after\-\_\-fork (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::function}$<$ void()$>$ const \&}]{handler}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_ad67282579ff9dc0f8b9f1b720892b0b2}
+Execute handler after forking processes (on P\-O\-S\-I\-X platforms). This is useful when you want to start various asynchronous applications or services in separate processes. \index{cppcms\-::service@{cppcms\-::service}!applications\-\_\-pool@{applications\-\_\-pool}}
+\index{applications\-\_\-pool@{applications\-\_\-pool}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{applications\-\_\-pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::applications\-\_\-pool}\& cppcms\-::service\-::applications\-\_\-pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_aaf83a77c439800f9ba1ce68961f95b97}
+Get a \doxyref{cppcms\-::applications\-\_\-pool}{p.}{classcppcms_1_1applications__pool} instance of this service \index{cppcms\-::service@{cppcms\-::service}!cache\-\_\-pool@{cache\-\_\-pool}}
+\index{cache\-\_\-pool@{cache\-\_\-pool}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{cache\-\_\-pool}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::cache\-\_\-pool\& cppcms\-::service\-::cache\-\_\-pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_abc975674eecbb0e5140d72528c360c2d}
+Get the cppcms\-::cache\-\_\-pool instance of this service, never used directly by user level applications \index{cppcms\-::service@{cppcms\-::service}!forwarder@{forwarder}}
+\index{forwarder@{forwarder}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{forwarder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::forwarder}\& cppcms\-::service\-::forwarder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_aaf59dcf5c1c74473d41740340eb190ee}
+Get \doxyref{cppcms\-::forwarder}{p.}{classcppcms_1_1forwarder} instance of this service \index{cppcms\-::service@{cppcms\-::service}!generator@{generator}}
+\index{generator@{generator}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{generator}]{\setlength{\rightskip}{0pt plus 5cm}{\bf locale\-::generator} const\& cppcms\-::service\-::generator (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a68f9fcc9c16fda65c4fb54eb2b9f0356}
+Get locale\-::generator instance of this service \index{cppcms\-::service@{cppcms\-::service}!get\-\_\-io\-\_\-service@{get\-\_\-io\-\_\-service}}
+\index{get\-\_\-io\-\_\-service@{get\-\_\-io\-\_\-service}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{get\-\_\-io\-\_\-service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::aio\-::io\-\_\-service}\& cppcms\-::service\-::get\-\_\-io\-\_\-service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_abea811c88c82c9dfaf6cee56df55950c}
+Get low level central event loop of the Cpp\-C\-M\-S service that allows you to connect asynchronous application with generic asynchronous sockets A\-P\-I or create any asynchronous T\-C\-P/\-I\-P servers over it. \index{cppcms\-::service@{cppcms\-::service}!load\-\_\-settings@{load\-\_\-settings}}
+\index{load\-\_\-settings@{load\-\_\-settings}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{load\-\_\-settings}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf json\-::value} cppcms\-::service\-::load\-\_\-settings (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv[$\,$]}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1service_ade73778fd4913b7a8f2b76e9185dfa84}
+Load configuration settings from the command line parameters. This object can be passed to \doxyref{service(json\-::value const \&v)}{p.}{classcppcms_1_1service_a26f60fd155db4c12bbca92cc463a7760} constructor allowing to alter these settings before creating the actual service object. \index{cppcms\-::service@{cppcms\-::service}!locale@{locale}}
+\index{locale@{locale}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{locale}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale cppcms\-::service\-::locale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a666f313ee8231dfa6308bc540ff4dd82}
+Get the default locale for this service. \index{cppcms\-::service@{cppcms\-::service}!locale@{locale}}
+\index{locale@{locale}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{locale}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale cppcms\-::service\-::locale (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a1156b822b3d91cc9a03ddccde8593a7b}
+Get a locale by {\itshape name}, shortcut to \doxyref{generator()}{p.}{classcppcms_1_1service_a68f9fcc9c16fda65c4fb54eb2b9f0356}.get(name); \index{cppcms\-::service@{cppcms\-::service}!post@{post}}
+\index{post@{post}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{post}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::service\-::post (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::function}$<$ void()$>$ const \&}]{handler}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a29410e26d78c56c3f22389db5828cd0c}
+Post an execution handler {\itshape handler} to the event loop queue. This member function is thread safe allowing safe communication between event loop thread (where all asynchronous applications run) and any other threads. \index{cppcms\-::service@{cppcms\-::service}!process\-\_\-id@{process\-\_\-id}}
+\index{process\-\_\-id@{process\-\_\-id}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{process\-\_\-id}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::service\-::process\-\_\-id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a4ab14c6be877768410325f35a4df8f66}
+Get current process identification number. Note, this is not getpid() function.
+
+When Cpp\-C\-M\-S service manages preforked process pool, each process gets its own id starting from 1 to \doxyref{procs\-\_\-no()}{p.}{classcppcms_1_1service_a0ed70fb14eb0f4abffee90a6d2ecf86b} when the parent supervisor process gets an id 0. If one of the forked processes crash, it is replaced with a new process with same id.
+
+So if an application want to run certain activity that can't be executed in multiple processes it can setup an after\-\_\-fork handle that would check the process id and start this activity.
+
+Under Windows and Cygwin it is always 0. \index{cppcms\-::service@{cppcms\-::service}!procs\-\_\-no@{procs\-\_\-no}}
+\index{procs\-\_\-no@{procs\-\_\-no}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{procs\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::service\-::procs\-\_\-no (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a0ed70fb14eb0f4abffee90a6d2ecf86b}
+Get the number of forked processes used by the service. Always 0 on Windows and Cygwin. \index{cppcms\-::service@{cppcms\-::service}!run@{run}}
+\index{run@{run}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{run}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::service\-::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_ad0c0e6d3662d50897dc6259f5b4c6921}
+Start the central even loop of Cpp\-C\-M\-S service. By default, it also install signal handlers on P\-O\-S\-I\-X platforms to handle S\-I\-G\-I\-N\-T, S\-I\-G\-T\-E\-R\-M and S\-I\-G\-U\-S\-R1 signals or uses Set\-Console\-Ctrl\-Handler on Windows platforms waiting on C, B\-R\-E\-A\-K, C\-L\-O\-S\-E and S\-H\-U\-T\-D\-O\-W\-N events.
+
+This even call \doxyref{service\-::shutdown}{p.}{classcppcms_1_1service_a5967d1fc10810ae9e5d51dbb8b97ac47} function that stops the main event loop and shutdowns the service properly.
+
+If you want to disable these handlers, you may set service.\-disable\-\_\-global\-\_\-exit\-\_\-handling option to true. \index{cppcms\-::service@{cppcms\-::service}!session\-\_\-pool@{session\-\_\-pool}}
+\index{session\-\_\-pool@{session\-\_\-pool}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{session\-\_\-pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::session\-\_\-pool}\& cppcms\-::service\-::session\-\_\-pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a3c49081c96953d0b02e8cbd4a729b247}
+Get a \doxyref{cppcms\-::session\-\_\-pool}{p.}{classcppcms_1_1session__pool} instance of this service, never used directly by user level applications \index{cppcms\-::service@{cppcms\-::service}!settings@{settings}}
+\index{settings@{settings}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::value} const\& cppcms\-::service\-::settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a2655891c41745defac52587b4ecae53b}
+Get the configuration setting the service was created with. \index{cppcms\-::service@{cppcms\-::service}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::service\-::shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a5967d1fc10810ae9e5d51dbb8b97ac47}
+Stop the service event loop. This member function is both thread and signal safe. \index{cppcms\-::service@{cppcms\-::service}!thread\-\_\-pool@{thread\-\_\-pool}}
+\index{thread\-\_\-pool@{thread\-\_\-pool}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{thread\-\_\-pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::thread\-\_\-pool}\& cppcms\-::service\-::thread\-\_\-pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_a9f52695695783504530983d5d76f44e7}
+Get a \doxyref{cppcms\-::thread\-\_\-pool}{p.}{classcppcms_1_1thread__pool} instance of this service \index{cppcms\-::service@{cppcms\-::service}!threads\-\_\-no@{threads\-\_\-no}}
+\index{threads\-\_\-no@{threads\-\_\-no}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{threads\-\_\-no}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::service\-::threads\-\_\-no (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_aaa1a532d1d319cf5bba29bddda49f71f}
+Get the size of thread pool each of Cpp\-C\-M\-S processes will be running. \index{cppcms\-::service@{cppcms\-::service}!views\-\_\-pool@{views\-\_\-pool}}
+\index{views\-\_\-pool@{views\-\_\-pool}!cppcms::service@{cppcms\-::service}}
+\subsubsection[{views\-\_\-pool}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::views\-::manager}\& cppcms\-::service\-::views\-\_\-pool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1service_aecbb177352aa32283f8194fa05c810c0}
+Get the \doxyref{cppcms\-::views\-::manager}{p.}{classcppcms_1_1views_1_1manager} instance 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/service.\-h\end{DoxyCompactItemize}

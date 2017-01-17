@@ -1,0 +1,168 @@
+\section{booster\-:\-:aio\-:\-:reactor Class Reference}
+\label{classbooster_1_1aio_1_1reactor}\index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}}
+
+
+This class is an abstraction of platform dependent polling A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/reactor.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:reactor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1aio_1_1reactor}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf event}
+\begin{DoxyCompactList}\small\item\em structure that defines output events \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf reactor} (int hint=use\-\_\-default)
+\item 
+void {\bf select} ({\bf native\-\_\-type} fd, int flags)
+\item 
+void {\bf select} ({\bf native\-\_\-type} fd, int flags, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf remove} ({\bf native\-\_\-type} fd)
+\item 
+void {\bf remove} ({\bf native\-\_\-type} fd, {\bf system\-::error\-\_\-code} \&e)
+\item 
+int {\bf poll} ({\bf event} $\ast$events, int n, int timeout)
+\item 
+int {\bf poll} ({\bf event} $\ast$events, int n, int timeout, {\bf system\-::error\-\_\-code} \&e)
+\item 
+std\-::string {\bf name} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bfseries use\-\_\-default} = 0\label{classbooster_1_1aio_1_1reactor_a4290d35e465605a0668f5a1b2ff21343}
+
+\item 
+static const int {\bfseries use\-\_\-select} = 1\label{classbooster_1_1aio_1_1reactor_a2c828351285c7f2f23af9281f052895a}
+
+\item 
+static const int {\bfseries use\-\_\-poll} = 2\label{classbooster_1_1aio_1_1reactor_acff40a5e096bd011865aa2639a8906cf}
+
+\item 
+static const int {\bfseries use\-\_\-epoll} = 3\label{classbooster_1_1aio_1_1reactor_a4310c6e94162a7749b0d21c5fb511183}
+
+\item 
+static const int {\bfseries use\-\_\-dev\-\_\-poll} = 4\label{classbooster_1_1aio_1_1reactor_a10a8f4cde81683d579f2eced63fd1e66}
+
+\item 
+static const int {\bfseries use\-\_\-kqueue} = 5\label{classbooster_1_1aio_1_1reactor_a2b3d07c09c0294314c2da0fcb5c24b26}
+
+\item 
+static const int {\bfseries use\-\_\-max} = use\-\_\-kqueue\label{classbooster_1_1aio_1_1reactor_ab609c7217451ac2507697939a74eed73}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is an abstraction of platform dependent polling A\-P\-I. 
+
+It abstracts platform specific A\-P\-Is like epoll, /dev/poll, kqueue, poll and select.
+
+It provides platform independent functionality for polling file descriptions in an efficient way 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!reactor@{reactor}}
+\index{reactor@{reactor}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{reactor}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::reactor\-::reactor (
+\begin{DoxyParamCaption}
+\item[{int}]{hint = {\ttfamily use\-\_\-default}}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1reactor_a4c467910e55fb1b26539930a77a0c0ed}
+Create a new polling device using {\itshape hint} recommendation. If provided device is not supported the default is used 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!name@{name}}
+\index{name@{name}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::aio\-::reactor\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1aio_1_1reactor_aaa2cb8e2e4cd06ee4fbcca4ba440d27e}
+Get the actual name of the polling device used. \index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!poll@{poll}}
+\index{poll@{poll}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::aio\-::reactor\-::poll (
+\begin{DoxyParamCaption}
+\item[{{\bf event} $\ast$}]{events, }
+\item[{int}]{n, }
+\item[{int}]{timeout}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1reactor_a0a9b3f7509e31330753a90d2f2668048}
+Poll for the events, wait at most {\itshape timeout} microseconds. Save up to {\itshape n} values to the {\itshape events} vector.
+
+Returns number of events recorded. Returns 0 if timeout occurred.
+
+If error occurs throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} \index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!poll@{poll}}
+\index{poll@{poll}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{poll}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::aio\-::reactor\-::poll (
+\begin{DoxyParamCaption}
+\item[{{\bf event} $\ast$}]{events, }
+\item[{int}]{n, }
+\item[{int}]{timeout, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1reactor_a764ea8fcd94260f3d48049c93ee0b4a1}
+Poll for the events, wait at most {\itshape timeout} microseconds. Save up to {\itshape n} values to the {\itshape events} vector.
+
+Returns number of events recorded. Returns 0 if timeout occurred.
+
+If error occurs, the error code is assigned to {\itshape e} \index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!remove@{remove}}
+\index{remove@{remove}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::reactor\-::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1aio_1_1reactor_aae479014e8805360fe7079936654ee1c}
+Removes the {\itshape fd} from the watch list
+
+If error occurs throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} \index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!remove@{remove}}
+\index{remove@{remove}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::reactor\-::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1aio_1_1reactor_a977f696cabadde69e5fdcabff5643992}
+Removes the {\itshape fd} from the watch list
+
+If error occurs, the error code is assigned to {\itshape e} \index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!select@{select}}
+\index{select@{select}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::reactor\-::select (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd, }
+\item[{int}]{flags}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1reactor_a60a355610d094de83c6187169d07b80c}
+Add {\itshape fd} to watch list, flags can be a or mask of io\-\_\-events\-::in, io\-\_\-events\-::out and io\-\_\-events\-::err
+
+If flags=0 removes the {\itshape fd} from the watch list
+
+If error occurs throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} \index{booster\-::aio\-::reactor@{booster\-::aio\-::reactor}!select@{select}}
+\index{select@{select}!booster::aio::reactor@{booster\-::aio\-::reactor}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::reactor\-::select (
+\begin{DoxyParamCaption}
+\item[{{\bf native\-\_\-type}}]{fd, }
+\item[{int}]{flags, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1reactor_a90d07a9e0823f86ee703befd6d25ab0a}
+Add {\itshape fd} to watch list, flags can be a or mask of io\-\_\-events\-::in, io\-\_\-events\-::out and io\-\_\-events\-::err
+
+If flags=0 removes the {\itshape fd} from the watch list
+
+If error occurs, the error code is assigned to {\itshape e} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/reactor.\-h\end{DoxyCompactItemize}

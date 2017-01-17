@@ -1,0 +1,74 @@
+\section{cppcms\-:\-:sessions\-:\-:encryptor Class Reference}
+\label{classcppcms_1_1sessions_1_1encryptor}\index{cppcms\-::sessions\-::encryptor@{cppcms\-::sessions\-::encryptor}}
+
+
+This is an interface to generic session cookies encryption or signing A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-cookies.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:sessions\-:\-:encryptor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1sessions_1_1encryptor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\-::string {\bf encrypt} (std\-::string const \&plain)=0
+\item 
+virtual bool {\bf decrypt} (std\-::string const \&cipher, std\-::string \&plain)=0
+\item 
+virtual {\bf $\sim$encryptor} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is an interface to generic session cookies encryption or signing A\-P\-I. 
+
+Note for users implementing their own ecryptor classes\-:
+
+
+\begin{DoxyItemize}
+\item Be super paranoid and extremely careful in what you are doing.
+\item Take in mind that this object are created and destroyed much frequently then they are actually accessed, so lazy initialization is your best friend.
+\end{DoxyItemize}
+
+Note this class does not have to be thread safe to use from multiple threads. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::sessions\-::encryptor@{cppcms\-::sessions\-::encryptor}!$\sim$encryptor@{$\sim$encryptor}}
+\index{$\sim$encryptor@{$\sim$encryptor}!cppcms::sessions::encryptor@{cppcms\-::sessions\-::encryptor}}
+\subsubsection[{$\sim$encryptor}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::sessions\-::encryptor\-::$\sim$encryptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1encryptor_a045dc6fa8a3f7b9c15e1c181b7d7643e}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::sessions\-::encryptor@{cppcms\-::sessions\-::encryptor}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!cppcms::sessions::encryptor@{cppcms\-::sessions\-::encryptor}}
+\subsubsection[{decrypt}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::encryptor\-::decrypt (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{cipher, }
+\item[{std\-::string \&}]{plain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1encryptor_a79d46b6fe1b5b252245157d2d0a44670}
+Decrypt the {\itshape cipher} text or check the signature and return the {\itshape plain} text and the session expiration value\-: {\itshape timeout}.
+
+If signature checks or decryption failed return false. \index{cppcms\-::sessions\-::encryptor@{cppcms\-::sessions\-::encryptor}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!cppcms::sessions::encryptor@{cppcms\-::sessions\-::encryptor}}
+\subsubsection[{encrypt}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string cppcms\-::sessions\-::encryptor\-::encrypt (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{plain}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1encryptor_adfaac1dbc3173e15c2c147b6d37480be}
+Encrypt or sign the plain text {\itshape plain} together with {\itshape timeout} and return the encrypted value for a cookie. Don't forget to use base64 encoding in order to create a string that is valid for cookie 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-cookies.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,217 @@
+\section{cppcms\-:\-:http\-:\-:context Class Reference}
+\label{classcppcms_1_1http_1_1context}\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}}
+
+
+context is a central class that holds all specific connection related information. It encapsulates C\-G\-I request and response, cache, session and locale information  
+
+
+
+
+{\ttfamily \#include $<$cppcms/http\-\_\-context.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:http\-:\-:context\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1context}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf completion\-\_\-type} \{ {\bf operation\-\_\-completed}, 
+{\bf operation\-\_\-aborted}
+ \}
+\item 
+typedef {\bf booster\-::callback}\\*
+$<$ void({\bf completion\-\_\-type})$>$ {\bfseries handler}\label{classcppcms_1_1http_1_1context_af6f3005eb3252b98df96f87878e41560}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf http\-::request} \& {\bf request} ()
+\item 
+{\bf http\-::response} \& {\bf response} ()
+\item 
+{\bf json\-::value} const \& {\bf settings} ()
+\item 
+{\bf cache\-\_\-interface} \& {\bf cache} ()
+\item 
+{\bf session\-\_\-interface} \& {\bf session} ()
+\item 
+std\-::locale {\bf locale} ()
+\item 
+void {\bf locale} (std\-::locale const \&new\-\_\-locale)
+\item 
+void {\bf locale} (std\-::string const \&name)
+\item 
+{\bf cppcms\-::service} \& {\bf service} ()
+\item 
+std\-::string {\bf skin} ()
+\item 
+void {\bf skin} (std\-::string const \&name)
+\item 
+void {\bf complete\-\_\-response} ()
+\item 
+void {\bf async\-\_\-complete\-\_\-response} ()
+\item 
+void {\bf async\-\_\-flush\-\_\-output} ({\bf handler} const \&h)
+\item 
+void {\bf async\-\_\-on\-\_\-peer\-\_\-reset} ({\bf booster\-::callback}$<$ void()$>$ const \&h)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+context is a central class that holds all specific connection related information. It encapsulates C\-G\-I request and response, cache, session and locale information 
+
+Instance of this class is created upon client requests, it provides access to all connection related interfaces. This class is unique per each applications hierarchy and destroyed when H\-T\-T\-P request/response is completed 
+
+\subsection{Member Enumeration Documentation}
+\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!completion\-\_\-type@{completion\-\_\-type}}
+\index{completion\-\_\-type@{completion\-\_\-type}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{completion\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::http\-::context\-::completion\-\_\-type}}\label{classcppcms_1_1http_1_1context_a826eb2e00a4d0ad73cfc6b0100c0d06f}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{operation\-\_\-completed@{operation\-\_\-completed}!cppcms\-::http\-::context@{cppcms\-::http\-::context}}\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!operation\-\_\-completed@{operation\-\_\-completed}}\item[{\em 
+operation\-\_\-completed\label{classcppcms_1_1http_1_1context_a826eb2e00a4d0ad73cfc6b0100c0d06faa16dd3b6428f001023d759aa96bbfcd7}
+}]Asynchronous operation completed successfully. \index{operation\-\_\-aborted@{operation\-\_\-aborted}!cppcms\-::http\-::context@{cppcms\-::http\-::context}}\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!operation\-\_\-aborted@{operation\-\_\-aborted}}\item[{\em 
+operation\-\_\-aborted\label{classcppcms_1_1http_1_1context_a826eb2e00a4d0ad73cfc6b0100c0d06fa83b1e94e0179a4f4c9597350fadb104f}
+}]Asynchronous operation was canceled. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!async\-\_\-complete\-\_\-response@{async\-\_\-complete\-\_\-response}}
+\index{async\-\_\-complete\-\_\-response@{async\-\_\-complete\-\_\-response}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{async\-\_\-complete\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::async\-\_\-complete\-\_\-response (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a6d2c2128114b2c9f8cffd0bfe96dcd94}
+Send all pending output data to the client and finalize the connection. Note, you can't use this object for communication any more. \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!async\-\_\-flush\-\_\-output@{async\-\_\-flush\-\_\-output}}
+\index{async\-\_\-flush\-\_\-output@{async\-\_\-flush\-\_\-output}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{async\-\_\-flush\-\_\-output}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::async\-\_\-flush\-\_\-output (
+\begin{DoxyParamCaption}
+\item[{{\bf handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a134469b5dc46667596c360b8b7284dff}
+Send all pending data to user, when operation is complete call handler {\itshape h} with status.
+
+Note\-: if the status is operation\-\_\-aborted, you can't use this connection any more, the peer gone. \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!async\-\_\-on\-\_\-peer\-\_\-reset@{async\-\_\-on\-\_\-peer\-\_\-reset}}
+\index{async\-\_\-on\-\_\-peer\-\_\-reset@{async\-\_\-on\-\_\-peer\-\_\-reset}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{async\-\_\-on\-\_\-peer\-\_\-reset}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::async\-\_\-on\-\_\-peer\-\_\-reset (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::callback}$<$ void()$>$ const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a0f6fe53deabd90fee0ced81a8df6404e}
+Set handler for peer reset events. It is useful to cleanup connections that had timeout or just disconnected by user
+
+Notes\-:
+
+
+\begin{DoxyEnumerate}
+\item if async\-\_\-complete\-\_\-response was called, handler would not be called any more.
+\item If async\-\_\-flush\-\_\-output fails, this does not mean that this handler would be called as well, so you need to check both 
+\end{DoxyEnumerate}\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!cache@{cache}}
+\index{cache@{cache}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{cache}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cache\-\_\-interface}\& cppcms\-::http\-::context\-::cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a03a1a9094f04c6a14d66cb320d8b7ed0}
+Get an interface to Cpp\-C\-M\-S Cache \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!complete\-\_\-response@{complete\-\_\-response}}
+\index{complete\-\_\-response@{complete\-\_\-response}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{complete\-\_\-response}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::complete\-\_\-response (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a073981554e99770a9f082eaa90af1bd9}
+Send all pending output data to the client and finalize the connection. Note, you can't use this object for communication any more. \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!locale@{locale}}
+\index{locale@{locale}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{locale}]{\setlength{\rightskip}{0pt plus 5cm}std\-::locale cppcms\-::http\-::context\-::locale (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a39fde738210daf84deee691f45260e5b}
+Get current context locale 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load().
+
+\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!locale@{locale}}
+\index{locale@{locale}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{locale}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::locale (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{new\-\_\-locale}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a9d6ee6ce1d9007ba1c0d7222fa022fd8}
+Set locale explicitly. Note, it changes the locale of the \doxyref{response()}{p.}{classcppcms_1_1http_1_1context_ac470c44432f9570e227330e974630872}.out() stream as well \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!locale@{locale}}
+\index{locale@{locale}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{locale}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::locale (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a036d52a76868c0736716b19e32b602a3}
+Set locale by name. Similar to locale(\doxyref{service()}{p.}{classcppcms_1_1http_1_1context_a30c62fea3de87dabd6580f2257599a49}.generator(name)).
+
+Note\-: it changes the locale of the \doxyref{response()}{p.}{classcppcms_1_1http_1_1context_ac470c44432f9570e227330e974630872}.out() stream as well \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!request@{request}}
+\index{request@{request}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{request}]{\setlength{\rightskip}{0pt plus 5cm}{\bf http\-::request}\& cppcms\-::http\-::context\-::request (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a79f5c6ad0f4dca64256abb0809d40cba}
+Get an interface to H\-T\-T\-P request 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load().
+
+\index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!response@{response}}
+\index{response@{response}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{response}]{\setlength{\rightskip}{0pt plus 5cm}{\bf http\-::response}\& cppcms\-::http\-::context\-::response (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_ac470c44432f9570e227330e974630872}
+Get an interface to H\-T\-T\-P response \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!service@{service}}
+\index{service@{service}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{service}]{\setlength{\rightskip}{0pt plus 5cm}{\bf cppcms\-::service}\& cppcms\-::http\-::context\-::service (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a30c62fea3de87dabd6580f2257599a49}
+Get the central service instance \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!session@{session}}
+\index{session@{session}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{session}]{\setlength{\rightskip}{0pt plus 5cm}{\bf session\-\_\-interface}\& cppcms\-::http\-::context\-::session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_abb47ca8cc18020efe394d26f590b6f97}
+Get an interface to current session
+
+Note, when using asynchronous Cpp\-C\-M\-S applications, session data is not fetched and is not updated, because session access may be not cheap, So when using \doxyref{session\-\_\-interface}{p.}{classcppcms_1_1session__interface} in asynchronous application make sure you call session\-\_\-inerface\-::load member function \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!settings@{settings}}
+\index{settings@{settings}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{settings}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::value} const\& cppcms\-::http\-::context\-::settings (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_a3cd9ff89c81ae29259cbacbee2749fb4}
+Get global settings. Same as \doxyref{cppcms\-::service\-::settings}{p.}{classcppcms_1_1service_a2655891c41745defac52587b4ecae53b} \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!skin@{skin}}
+\index{skin@{skin}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{skin}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::context\-::skin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_ad6d98b1577946314257b7b9cbef1776c}
+Get current views skin name \index{cppcms\-::http\-::context@{cppcms\-::http\-::context}!skin@{skin}}
+\index{skin@{skin}!cppcms::http::context@{cppcms\-::http\-::context}}
+\subsubsection[{skin}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::context\-::skin (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1context_af1230c69d6824e220e0fcd35b29118bc}
+Set current views skin name 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\-\_\-context.\-h\end{DoxyCompactItemize}

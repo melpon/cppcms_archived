@@ -1,0 +1,57 @@
+\section{cppcms\-:\-:filters\-:\-:strftime Class Reference}
+\label{classcppcms_1_1filters_1_1strftime}\index{cppcms\-::filters\-::strftime@{cppcms\-::filters\-::strftime}}
+
+
+Custom time formating filter.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/filters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries strftime} ({\bf strftime} const \&other)\label{classcppcms_1_1filters_1_1strftime_a54f168e05cc7e626ba95cb66022d3c98}
+
+\item 
+{\bf strftime} const \& {\bfseries operator=} ({\bf strftime} const \&other)\label{classcppcms_1_1filters_1_1strftime_a7f8f73b7076136f733e72a08e76cb080}
+
+\item 
+{\bf strftime} ({\bf streamable} const \&t, std\-::string const \&fmt)
+\item 
+{\bf strftime} ({\bf streamable} const \&{\bf time}, std\-::string const \&timezone, std\-::string const \&fmt)
+\item 
+void {\bfseries operator()} (std\-::ostream \&out) const \label{classcppcms_1_1filters_1_1strftime_a937109f175776e3700112ac161ee5678}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Custom time formating filter. 
+
+Formats date and time to the stream, date and time is represented as time\-\_\-t 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::filters\-::strftime@{cppcms\-::filters\-::strftime}!strftime@{strftime}}
+\index{strftime@{strftime}!cppcms::filters::strftime@{cppcms\-::filters\-::strftime}}
+\subsubsection[{strftime}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::strftime\-::strftime (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{t, }
+\item[{std\-::string const \&}]{fmt}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1strftime_a9ca37055ec93ca8d4d4492ace31d415e}
+Create date and time filter that formats current local-\/time date and time using P\-O\-S\-I\-X time representation {\itshape t} according to strftime like format {\itshape fmt}, see \doxyref{booster\-::locale\-::as\-::ftime}{p.}{group__manipulators_ga3b395c47f31b0354a0ddb09fcf4ed96f} or cppcms\-::locale\-::as\-::ftime for details (depending on your localization backend) \index{cppcms\-::filters\-::strftime@{cppcms\-::filters\-::strftime}!strftime@{strftime}}
+\index{strftime@{strftime}!cppcms::filters::strftime@{cppcms\-::filters\-::strftime}}
+\subsubsection[{strftime}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::strftime\-::strftime (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{time, }
+\item[{std\-::string const \&}]{timezone, }
+\item[{std\-::string const \&}]{fmt}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1strftime_a2f1d7fcf62e8099a7c505a508997f3db}
+Create date and time filter that formats current date and time using P\-O\-S\-I\-X time representation {\itshape t}, in a timezone {\itshape timezone} according to strftime like format {\itshape fmt}, see \doxyref{booster\-::locale\-::as\-::ftime}{p.}{group__manipulators_ga3b395c47f31b0354a0ddb09fcf4ed96f} or cppcms\-::locale\-::as\-::ftime for details (depending on your localization backend) 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/filters.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,222 @@
+\section{cppcms\-:\-:http\-:\-:cookie Class Reference}
+\label{classcppcms_1_1http_1_1cookie}\index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}}
+
+
+Class that represents single H\-T\-T\-P Cookie Generally used in context of {\tt http\-::request} and {\tt http\-::response}.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/http\-\_\-cookie.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf name} () const 
+\item 
+std\-::string {\bf value} () const 
+\item 
+std\-::string {\bf path} () const 
+\item 
+std\-::string {\bf domain} () const 
+\item 
+std\-::string {\bf comment} () const 
+\item 
+bool {\bf secure} () const 
+\item 
+void {\bf name} (std\-::string n)
+\item 
+void {\bf value} (std\-::string v)
+\item 
+void {\bf path} (std\-::string p)
+\item 
+void {\bf domain} (std\-::string)
+\item 
+void {\bf comment} (std\-::string)
+\item 
+void {\bf expires} (time\-\_\-t when)
+\item 
+void {\bf max\-\_\-age} (unsigned a)
+\item 
+void {\bf browser\-\_\-age} ()
+\item 
+void {\bf secure} (bool v)
+\item 
+bool {\bf empty} () const 
+\item 
+{\bfseries cookie} ({\bf cookie} const \&)\label{classcppcms_1_1http_1_1cookie_a499a6443b52d30660481f06242907739}
+
+\item 
+{\bf cookie} const \& {\bfseries operator=} ({\bf cookie} const \&)\label{classcppcms_1_1http_1_1cookie_a14d9c1764f457f432532e288d41265ce}
+
+\item 
+{\bf cookie} (std\-::string {\bf name}, std\-::string {\bf value})
+\item 
+{\bf cookie} (std\-::string {\bf name}, std\-::string {\bf value}, unsigned age)
+\item 
+{\bf cookie} (std\-::string {\bf name}, std\-::string {\bf value}, unsigned age, std\-::string {\bf path}, std\-::string {\bf domain}=std\-::string(), std\-::string {\bf comment}=std\-::string())
+\item 
+{\bf cookie} (std\-::string {\bf name}, std\-::string {\bf value}, std\-::string {\bf path}, std\-::string {\bf domain}=std\-::string(), std\-::string {\bf comment}=std\-::string())\label{classcppcms_1_1http_1_1cookie_a1d0e91155e65430020350e2ab2b34a1d}
+
+\begin{DoxyCompactList}\small\item\em Create cookie with name, value, path, domain and comment, age -\/ browser. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\-::ostream \& {\bfseries operator$<$$<$} (std\-::ostream \&, {\bf cookie} const \&)\label{classcppcms_1_1http_1_1cookie_a70dcba4b7aaf0804d26d88e235311b52}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that represents single H\-T\-T\-P Cookie Generally used in context of {\tt http\-::request} and {\tt http\-::response}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!cookie@{cookie}}
+\index{cookie@{cookie}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{cookie}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::cookie\-::cookie (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name, }
+\item[{std\-::string}]{value}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a8acd1ff854f0c12b6b76991e8c65f39f}
+Create cookie with name and value, age -\/ browser, rest properties undefined. \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!cookie@{cookie}}
+\index{cookie@{cookie}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{cookie}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::cookie\-::cookie (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name, }
+\item[{std\-::string}]{value, }
+\item[{unsigned}]{age}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a9ad5a5b1cff983459b3fbbbe52c2638b}
+Create cookies with name, value and max-\/age, rest properties undefined. \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!cookie@{cookie}}
+\index{cookie@{cookie}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{cookie}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::http\-::cookie\-::cookie (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{name, }
+\item[{std\-::string}]{value, }
+\item[{unsigned}]{age, }
+\item[{std\-::string}]{path, }
+\item[{std\-::string}]{domain = {\ttfamily std\-:\-:string()}, }
+\item[{std\-::string}]{comment = {\ttfamily std\-:\-:string()}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a0f0f0843f124d11cda1dd3a6ab194c2a}
+Create cookie with name, value, max-\/age, path, domain and command 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!browser\-\_\-age@{browser\-\_\-age}}
+\index{browser\-\_\-age@{browser\-\_\-age}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{browser\-\_\-age}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::browser\-\_\-age (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_ae711598846c4cf198100d18e81387fd7}
+Set age according to browser's session (i.\-e. no Max-\/\-Age) \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!comment@{comment}}
+\index{comment@{comment}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{comment}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::cookie\-::comment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_a3d65d0792f011e30a31c0ad1d65cab73}
+Cookie's comment \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!comment@{comment}}
+\index{comment@{comment}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{comment}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::comment (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_abf5ffd21c8f28e9b1f6b60e7de78fe81}
+Set cookie's comment \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!domain@{domain}}
+\index{domain@{domain}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::cookie\-::domain (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_a4f1f52f877462585bfbd65a72d510c5d}
+Cookie's domain \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!domain@{domain}}
+\index{domain@{domain}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::domain (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a77913118efb2bec104e7af3e999c3fc3}
+Set cookie's domain \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!empty@{empty}}
+\index{empty@{empty}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::http\-::cookie\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_ac295303fc67b91e04ed050c8ad2ef539}
+Check if cookie is not assigned -\/ empty \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!expires@{expires}}
+\index{expires@{expires}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{expires}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::expires (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{when}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a4db7c3df34aed3db80424bfd7d7b40f0}
+Set expiration date/time \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!max\-\_\-age@{max\-\_\-age}}
+\index{max\-\_\-age@{max\-\_\-age}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{max\-\_\-age}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::max\-\_\-age (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{a}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a9aa2993f01e32d08b8c9a063d318127d}
+Set max cookie's age \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!name@{name}}
+\index{name@{name}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::cookie\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_a73670fe5dbf1b69907478748dc4ccf47}
+Cookie's Name \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!name@{name}}
+\index{name@{name}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a5254844ef302d1b4ea2f6e031d27a994}
+Set cookie's name \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!path@{path}}
+\index{path@{path}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::cookie\-::path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_a3b5aa9f22d923fe230e747cbb8b41db0}
+Cookie's path \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!path@{path}}
+\index{path@{path}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::path (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{p}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a3afa090f85bff64bdd5085b6b48482c7}
+Set cookie's path \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!secure@{secure}}
+\index{secure@{secure}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{secure}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::http\-::cookie\-::secure (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_a819a66699f59e2c90165bdcba57107d1}
+Check if the cookie is transferred over secure connection only \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!secure@{secure}}
+\index{secure@{secure}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{secure}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::secure (
+\begin{DoxyParamCaption}
+\item[{bool}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_a4b905fc3fdaa374a72bb52d6d892d176}
+Set secure property on the cookies \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!value@{value}}
+\index{value@{value}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::cookie\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1cookie_a5f62fe58389118843d35b474a2c2fed3}
+Cookie's value \index{cppcms\-::http\-::cookie@{cppcms\-::http\-::cookie}!value@{value}}
+\index{value@{value}!cppcms::http::cookie@{cppcms\-::http\-::cookie}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::cookie\-::value (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1cookie_ae85d53dccffa7b940131d4b09f47241e}
+Set cookie's value 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\-\_\-cookie.\-h\end{DoxyCompactItemize}

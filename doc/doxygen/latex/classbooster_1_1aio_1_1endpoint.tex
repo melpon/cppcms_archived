@@ -1,0 +1,165 @@
+\section{booster\-:\-:aio\-:\-:endpoint Class Reference}
+\label{classbooster_1_1aio_1_1endpoint}\index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}}
+
+
+this class represents the connection endpoint, that is generally sockaddr structure in Berkeley sockets A\-P\-I.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/endpoint.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::pair$<$ sockaddr \\*
+const $\ast$, int $>$ {\bf native\-\_\-address\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries endpoint} ({\bf endpoint} const \&)\label{classbooster_1_1aio_1_1endpoint_ae1799d20f79db212429f0340219d2330}
+
+\item 
+{\bf endpoint} const \& {\bfseries operator=} ({\bf endpoint} const \&)\label{classbooster_1_1aio_1_1endpoint_afe01e7f2f33961141d32e341c4aba36f}
+
+\item 
+{\bf endpoint} (std\-::string const \&{\bf ip}, int {\bf port})
+\item 
+void {\bf ip} (std\-::string const \&)
+\item 
+void {\bf port} (int)
+\item 
+std\-::string {\bf ip} () const 
+\item 
+int {\bf port} () const 
+\item 
+{\bf endpoint} (std\-::string const \&)
+\item 
+void {\bf path} (std\-::string const \&)
+\item 
+std\-::string {\bf path} () const 
+\item 
+{\bf family\-\_\-type} {\bf family} () const 
+\item 
+void {\bf raw} (sockaddr const $\ast$p, int size)
+\item 
+{\bf native\-\_\-address\-\_\-type} {\bf raw} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class represents the connection endpoint, that is generally sockaddr structure in Berkeley sockets A\-P\-I. 
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!native\-\_\-address\-\_\-type@{native\-\_\-address\-\_\-type}}
+\index{native\-\_\-address\-\_\-type@{native\-\_\-address\-\_\-type}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{native\-\_\-address\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\-::pair$<$sockaddr const $\ast$,int$>$ {\bf booster\-::aio\-::endpoint\-::native\-\_\-address\-\_\-type}}\label{classbooster_1_1aio_1_1endpoint_a7de97314fcd85738725f92bf6455702d}
+The native sockaddr structure and its size type 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!endpoint@{endpoint}}
+\index{endpoint@{endpoint}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{endpoint}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::endpoint\-::endpoint (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1endpoint_a0e306b2cf16bcd2da25826e702b750e7}
+Create a new I\-P endpoint using {\itshape ip} address and {\itshape port} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the port or the address are invalid or not supported \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!endpoint@{endpoint}}
+\index{endpoint@{endpoint}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{endpoint}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::endpoint\-::endpoint (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1endpoint_aff660ecb8be2f4a323e22958d1915b37}
+Create a Unix domain socket endpoint,
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the path is not valid Unix domain socket path 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!family@{family}}
+\index{family@{family}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{family}]{\setlength{\rightskip}{0pt plus 5cm}{\bf family\-\_\-type} booster\-::aio\-::endpoint\-::family (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1aio_1_1endpoint_aeeca79a9fb9edcedcbf280b58e30091a}
+Get the endpoint family
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if it is not assigned or the endpoint family is not supported \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!ip@{ip}}
+\index{ip@{ip}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{ip}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::endpoint\-::ip (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1endpoint_ad87c61608f6488a41202bf4fe73c9405}
+Set an I\-P address
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the address is invalid or not supported \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!ip@{ip}}
+\index{ip@{ip}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{ip}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::aio\-::endpoint\-::ip (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1aio_1_1endpoint_aecd7790545364e699485adace834c17e}
+Get an ip
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the endpoint is not assigned or does not belong to I\-P protocol \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!path@{path}}
+\index{path@{path}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::endpoint\-::path (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1endpoint_acac4b8a3dae25cf9d94c805536600a01}
+Define a endpoint as a Unix domain socket endpoint
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the path is not valid Unix domain socket path \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!path@{path}}
+\index{path@{path}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{path}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::aio\-::endpoint\-::path (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1aio_1_1endpoint_a532127d089d8875a6e80ebc337e3b442}
+Get a endpoint path.
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if it is not assigned or the endpoint is not Unix domain socket endpoint \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!port@{port}}
+\index{port@{port}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::endpoint\-::port (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1endpoint_ac22a829cf1d4b62a427833537cf36b18}
+Set a port
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the port is invalid \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!port@{port}}
+\index{port@{port}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{port}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::aio\-::endpoint\-::port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1aio_1_1endpoint_a6cb9957c98b8428a64955715c28f2059}
+Get a port
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if the endpoint is not assigned or does not belong to I\-P protocol \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!raw@{raw}}
+\index{raw@{raw}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{raw}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::endpoint\-::raw (
+\begin{DoxyParamCaption}
+\item[{sockaddr const $\ast$}]{p, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1endpoint_a04974d7bb4ff84c19fd5667807176fa9}
+Set the native sockaddr structure as endpoint of size {\itshape size} \index{booster\-::aio\-::endpoint@{booster\-::aio\-::endpoint}!raw@{raw}}
+\index{raw@{raw}!booster::aio::endpoint@{booster\-::aio\-::endpoint}}
+\subsubsection[{raw}]{\setlength{\rightskip}{0pt plus 5cm}{\bf native\-\_\-address\-\_\-type} booster\-::aio\-::endpoint\-::raw (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1aio_1_1endpoint_afd226f00caacd3e5b1ff77c8232ce464}
+Get the native endpoint data structure 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/endpoint.\-h\end{DoxyCompactItemize}

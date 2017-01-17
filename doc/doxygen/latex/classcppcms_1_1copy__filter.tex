@@ -1,0 +1,81 @@
+\section{cppcms\-:\-:copy\-\_\-filter Class Reference}
+\label{classcppcms_1_1copy__filter}\index{cppcms\-::copy\-\_\-filter@{cppcms\-::copy\-\_\-filter}}
+
+
+Copy the output stream part -\/ \char`\"{}tee\char`\"{} filter.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/copy\-\_\-filter.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:copy\-\_\-filter\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1copy__filter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf copy\-\_\-filter} (std\-::ostream \&output)
+\item 
+{\bf $\sim$copy\-\_\-filter} ()
+\item 
+std\-::string {\bf detach} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Copy the output stream part -\/ \char`\"{}tee\char`\"{} filter. 
+
+This simple class designed to \char`\"{}copy\char`\"{} all the output that comes to the stream to internal buffer and the stream itself and return the copied data on detaching the filter.
+
+It is very useful to use with caching, for example\-:
+
+
+\begin{DoxyCode}
+std::string frame;
+\textcolor{keywordflow}{if}(cache().fetch\_frame(\textcolor{stringliteral}{"key"},frame)) \{
+  out() << frame;
+\}
+\textcolor{keywordflow}{else} \{
+  cppcms::copy_filter tee(out());
+  ...
+  \textcolor{comment}{// generate something heavy}
+  ...
+  cache().store\_frame(\textcolor{stringliteral}{"key"},tee.detach());
+\}
+\end{DoxyCode}
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::copy\-\_\-filter@{cppcms\-::copy\-\_\-filter}!copy\-\_\-filter@{copy\-\_\-filter}}
+\index{copy\-\_\-filter@{copy\-\_\-filter}!cppcms::copy_filter@{cppcms\-::copy\-\_\-filter}}
+\subsubsection[{copy\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::copy\-\_\-filter\-::copy\-\_\-filter (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{output}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1copy__filter_a5af43360706ba459dcdfb2bb89b01b7e}
+Create a filter copying all output to internal buffer \index{cppcms\-::copy\-\_\-filter@{cppcms\-::copy\-\_\-filter}!$\sim$copy\-\_\-filter@{$\sim$copy\-\_\-filter}}
+\index{$\sim$copy\-\_\-filter@{$\sim$copy\-\_\-filter}!cppcms::copy_filter@{cppcms\-::copy\-\_\-filter}}
+\subsubsection[{$\sim$copy\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::copy\-\_\-filter\-::$\sim$copy\-\_\-filter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1copy__filter_a9c72ba16b11ffb485f4c6ff79397e608}
+When destroyed, if the stream wasn't detached aborts coping the data, making it exception safe. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::copy\-\_\-filter@{cppcms\-::copy\-\_\-filter}!detach@{detach}}
+\index{detach@{detach}!cppcms::copy_filter@{cppcms\-::copy\-\_\-filter}}
+\subsubsection[{detach}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::copy\-\_\-filter\-::detach (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1copy__filter_a39db5af5ab6f59edbc15f3324c7950df}
+Stop the coping process and return all collected data as string. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/copy\-\_\-filter.\-h\end{DoxyCompactItemize}

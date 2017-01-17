@@ -1,0 +1,179 @@
+\section{cppcms\-:\-:util Namespace Reference}
+\label{namespacecppcms_1_1util}\index{cppcms\-::util@{cppcms\-::util}}
+
+
+This namespace holds various useful helper functions for we developer.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf stackbuf}
+\begin{DoxyCompactList}\small\item\em Very simple output stream buffer that uses stack for small chunks of text and then allocates memory of the default buffer is too small. \end{DoxyCompactList}\item 
+class {\bf steal\-\_\-buffer}
+\begin{DoxyCompactList}\small\item\em This is a special buffer that allows to \char`\"{}steal\char`\"{} some chunk of text from the output stream. \end{DoxyCompactList}\item 
+class {\bf stackstream}
+\begin{DoxyCompactList}\small\item\em Fast output stream object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename C , typename P $>$ }\\details\-::binder0$<$ C, P $>$ {\bf mem\-\_\-bind} (void(C\-::$\ast$mem)(), P obj)
+\item 
+{\footnotesize template$<$typename C , typename P , typename P1 $>$ }\\details\-::binder1$<$ C, P, P1 $>$ {\bf mem\-\_\-bind} (void(C\-::$\ast$mem)(P1), P obj)
+\item 
+{\footnotesize template$<$typename C , typename P , typename P1 , typename P2 $>$ }\\details\-::binder2$<$ C, P, P1, P2 $>$ {\bf mem\-\_\-bind} (void(C\-::$\ast$mem)(P1, P2), P obj)
+\item 
+{\footnotesize template$<$typename C , typename P , typename P1 , typename P2 , typename P3 $>$ }\\details\-::binder3$<$ C, P, P1, P2, \\*
+P3 $>$ {\bf mem\-\_\-bind} (void(C\-::$\ast$mem)(P1, P2, P3), P obj)
+\item 
+{\footnotesize template$<$typename C , typename P , typename P1 , typename P2 , typename P3 , typename P4 $>$ }\\details\-::binder4$<$ C, P, P1, P2, \\*
+P3, P4 $>$ {\bf mem\-\_\-bind} (void(C\-::$\ast$mem)(P1, P2, P3, P4), P obj)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf escape} (std\-::string const \&s)
+\item 
+void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf escape} (char const $\ast$begin, char const $\ast$end, std\-::ostream \&output)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf urlencode} (std\-::string const \&s)
+\item 
+void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf urlencode} (char const $\ast$begin, char const $\ast$end, std\-::ostream \&output)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf urldecode} (std\-::string const \&s)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf urldecode} (char const $\ast$begin, char const $\ast$end)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf md5} (std\-::string const \&input)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf md5hex} (std\-::string const \&input)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace holds various useful helper functions for we developer. 
+
+\subsection{Function Documentation}
+\index{cppcms\-::util@{cppcms\-::util}!escape@{escape}}
+\index{escape@{escape}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::escape (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_af535157bb1c0803e49c0a7156a0afcb7}
+Escape string for inclusion in H\-T\-M\-L page, i.\-e.
+
+
+\begin{DoxyItemize}
+\item $<$ -\/ \&lt;
+\item $>$ -\/ \&gt;
+\item \& -\/ \&amp;
+\item " -\/ \&quot;
+\end{DoxyItemize}
+
+Note, this function does not deal with encodings, so it's up to you to provide valid text encoding 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::render\-\_\-value().
+
+\index{cppcms\-::util@{cppcms\-::util}!escape@{escape}}
+\index{escape@{escape}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{escape}]{\setlength{\rightskip}{0pt plus 5cm}void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::escape (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\-::ostream \&}]{output}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_a9f7fd5462ec383725af5f983b6d8c64e}
+Escape string for inclusion in H\-T\-M\-L page, i.\-e.
+
+
+\begin{DoxyItemize}
+\item $<$ -\/ \&lt;
+\item $>$ -\/ \&gt;
+\item \& -\/ \&amp;
+\item " -\/ \&quot;
+\end{DoxyItemize}
+
+Note, this function does not deal with encodings, so it's up to you to provide valid text encoding \index{cppcms\-::util@{cppcms\-::util}!md5@{md5}}
+\index{md5@{md5}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{md5}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::md5 (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{input}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_a6ea93ae4e06be3d6e66e9b88e1a042ec}
+Make M\-D5 hash of string {\itshape input} converting into binary string of 16 bytes \index{cppcms\-::util@{cppcms\-::util}!md5hex@{md5hex}}
+\index{md5hex@{md5hex}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{md5hex}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::md5hex (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{input}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_a9c064fc0d0d9b72566f850a8f6048a59}
+Make M\-D5 hash of string {\itshape input} converting it into hexadecimal string representing this hash \index{cppcms\-::util@{cppcms\-::util}!mem\-\_\-bind@{mem\-\_\-bind}}
+\index{mem\-\_\-bind@{mem\-\_\-bind}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{mem\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C , typename P $>$ details\-::binder0$<$C,P$>$ cppcms\-::util\-::mem\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{void(C\-::$\ast$)()}]{mem, }
+\item[{P}]{obj}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_acdee27b4470c2ceb0c427bbcc2b115d9}
+Bind a member function {\itshape mem} of object referenced by a pointer {\itshape obj} creating a functional object that has an member function void operator()() const and calls obj-\/$>$mem() \index{cppcms\-::util@{cppcms\-::util}!mem\-\_\-bind@{mem\-\_\-bind}}
+\index{mem\-\_\-bind@{mem\-\_\-bind}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{mem\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C , typename P , typename P1 $>$ details\-::binder1$<$C,P,P1$>$ cppcms\-::util\-::mem\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{void(C\-::$\ast$)(P1)}]{mem, }
+\item[{P}]{obj}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_aaba96521edec60acc940ea89f9028ef8}
+Bind a member function {\itshape mem} of object referenced by a pointer {\itshape obj} creating a functional object that has an member function void operator()(\-P1 p) const and calls obj-\/$>$mem(p) \index{cppcms\-::util@{cppcms\-::util}!mem\-\_\-bind@{mem\-\_\-bind}}
+\index{mem\-\_\-bind@{mem\-\_\-bind}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{mem\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C , typename P , typename P1 , typename P2 $>$ details\-::binder2$<$C,P,P1,P2$>$ cppcms\-::util\-::mem\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{void(C\-::$\ast$)(P1, P2)}]{mem, }
+\item[{P}]{obj}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_a28548befe22972a2fb7d9b71b55e2010}
+Bind a member function {\itshape mem} of object referenced by a pointer {\itshape obj} creating a functional object that has an member function void operator()(\-P1 p1,\-P2 p2) const and calls obj-\/$>$mem(p1,p2) \index{cppcms\-::util@{cppcms\-::util}!mem\-\_\-bind@{mem\-\_\-bind}}
+\index{mem\-\_\-bind@{mem\-\_\-bind}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{mem\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C , typename P , typename P1 , typename P2 , typename P3 $>$ details\-::binder3$<$C,P,P1,P2,P3$>$ cppcms\-::util\-::mem\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{void(C\-::$\ast$)(P1, P2, P3)}]{mem, }
+\item[{P}]{obj}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_af9d4d7f4b3c4bf4ce52681dcb2ed7325}
+Bind a member function {\itshape mem} of object referenced by a pointer {\itshape obj} creating a functional object that has an member function void operator()(\-P1 p1,\-P2 p2,\-P3 p3) const and calls obj-\/$>$mem(p1,p2,p3) \index{cppcms\-::util@{cppcms\-::util}!mem\-\_\-bind@{mem\-\_\-bind}}
+\index{mem\-\_\-bind@{mem\-\_\-bind}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{mem\-\_\-bind}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C , typename P , typename P1 , typename P2 , typename P3 , typename P4 $>$ details\-::binder4$<$C,P,P1,P2,P3,P4$>$ cppcms\-::util\-::mem\-\_\-bind (
+\begin{DoxyParamCaption}
+\item[{void(C\-::$\ast$)(P1, P2, P3, P4)}]{mem, }
+\item[{P}]{obj}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_aa1ad670df9d3183f7872bb5b433ba516}
+Bind a member function {\itshape mem} of object referenced by a pointer {\itshape obj} creating a functional object that has an member function void operator()(\-P1 p1,\-P2 p2,\-P3 p3,\-P4 ) const and calls obj-\/$>$mem(p1,p2,p3,p4) \index{cppcms\-::util@{cppcms\-::util}!urldecode@{urldecode}}
+\index{urldecode@{urldecode}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{urldecode}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::urldecode (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_abbc26469e8add36f920e125ccfbddc21}
+Decode string from U\-R\-L-\/encoding (percent-\/encoding) \index{cppcms\-::util@{cppcms\-::util}!urldecode@{urldecode}}
+\index{urldecode@{urldecode}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{urldecode}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::urldecode (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_ab561ed24ffbef648e7b5dbccb2ab0765}
+Decode text in range [begin,end) from U\-R\-L-\/encoding (percent-\/encoding) \index{cppcms\-::util@{cppcms\-::util}!urlencode@{urlencode}}
+\index{urlencode@{urlencode}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{urlencode}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::urlencode (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_a51a836f177ad4b71b8a9563dddabd113}
+Encode string for U\-R\-L (percent encoding) \index{cppcms\-::util@{cppcms\-::util}!urlencode@{urlencode}}
+\index{urlencode@{urlencode}!cppcms::util@{cppcms\-::util}}
+\subsubsection[{urlencode}]{\setlength{\rightskip}{0pt plus 5cm}void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::util\-::urlencode (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\-::ostream \&}]{output}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1util_aa4d591b8064ae86f0533e13ae39e3814}
+Encode string for U\-R\-L (percent encoding) 

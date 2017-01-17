@@ -1,0 +1,87 @@
+\section{cppcms\-:\-:xss Namespace Reference}
+\label{namespacecppcms_1_1xss}\index{cppcms\-::xss@{cppcms\-::xss}}
+
+
+Namespace that holds Anti-\/\-Cross Site Scripting Filter support.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf rules}
+\begin{DoxyCompactList}\small\item\em The class that holds X\-S\-S filter rules. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf filtering\-\_\-method\-\_\-type} \{ {\bf remove\-\_\-invalid}, 
+{\bf escape\-\_\-invalid}
+ \}
+\begin{DoxyCompactList}\small\item\em The enumerator that defines filtering invalid H\-T\-M\-L method. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I bool {\bf validate} (char const $\ast$begin, char const $\ast$end, {\bf rules} const \&r)
+\begin{DoxyCompactList}\small\item\em Check the input in range [{\itshape begin}, {\itshape end}) according to the rules {\itshape r}. \end{DoxyCompactList}\item 
+C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I bool {\bf validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid} (char const $\ast$begin, char const $\ast$end, {\bf rules} const \&r, std\-::string \&filtered, {\bf filtering\-\_\-method\-\_\-type} method={\bf remove\-\_\-invalid}, char replacement\-\_\-char=0)
+\begin{DoxyCompactList}\small\item\em Validate the input in range [{\itshape begin}, {\itshape end}) according to the rules {\itshape r} and if it is not valid filter it and save filtered text into {\itshape filtered} string using a filtering method {\itshape method}. \end{DoxyCompactList}\item 
+C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I std\-::string {\bf filter} (char const $\ast$begin, char const $\ast$end, {\bf rules} const \&r, {\bf filtering\-\_\-method\-\_\-type} method={\bf remove\-\_\-invalid}, char replacement\-\_\-char=0)\label{namespacecppcms_1_1xss_ac9d867530c2341d2c1f2a2fe68474460}
+
+\begin{DoxyCompactList}\small\item\em Filter the input in range [{\itshape begin}, {\itshape end}) according to the rules {\itshape r} using filtering method {\itshape method}. \end{DoxyCompactList}\item 
+C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I std\-::string {\bf filter} (std\-::string const \&input, {\bf rules} const \&r, {\bf filtering\-\_\-method\-\_\-type} method={\bf remove\-\_\-invalid}, char replacement\-\_\-char=0)\label{namespacecppcms_1_1xss_a6fa533bed13ae11ab7889dc77fefc98e}
+
+\begin{DoxyCompactList}\small\item\em Filter the input text {\itshape input} according to the rules {\itshape r} using filtering method {\itshape method}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace that holds Anti-\/\-Cross Site Scripting Filter support. The classes in this namespace created to provide a filtering for a save handing of H\-T\-M\-L and preventing X\-S\-S attacks 
+
+\subsection{Enumeration Type Documentation}
+\index{cppcms\-::xss@{cppcms\-::xss}!filtering\-\_\-method\-\_\-type@{filtering\-\_\-method\-\_\-type}}
+\index{filtering\-\_\-method\-\_\-type@{filtering\-\_\-method\-\_\-type}!cppcms::xss@{cppcms\-::xss}}
+\subsubsection[{filtering\-\_\-method\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::xss\-::filtering\-\_\-method\-\_\-type}}\label{namespacecppcms_1_1xss_a78682352617884a1eb716ebf2a62343d}
+
+
+The enumerator that defines filtering invalid H\-T\-M\-L method. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{remove\-\_\-invalid@{remove\-\_\-invalid}!cppcms\-::xss@{cppcms\-::xss}}\index{cppcms\-::xss@{cppcms\-::xss}!remove\-\_\-invalid@{remove\-\_\-invalid}}\item[{\em 
+remove\-\_\-invalid\label{namespacecppcms_1_1xss_a78682352617884a1eb716ebf2a62343da5df42d96e38bf54cc8daa31ba8ab7e44}
+}]Remove all invalid H\-T\-M\-L form the input. \index{escape\-\_\-invalid@{escape\-\_\-invalid}!cppcms\-::xss@{cppcms\-::xss}}\index{cppcms\-::xss@{cppcms\-::xss}!escape\-\_\-invalid@{escape\-\_\-invalid}}\item[{\em 
+escape\-\_\-invalid\label{namespacecppcms_1_1xss_a78682352617884a1eb716ebf2a62343dae660331d92070806a4a0bd20ebeee94f}
+}]Escape (convert to text) all invalid H\-T\-M\-L in the input. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{cppcms\-::xss@{cppcms\-::xss}!validate@{validate}}
+\index{validate@{validate}!cppcms::xss@{cppcms\-::xss}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I bool cppcms\-::xss\-::validate (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{rules const \&}]{r}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1xss_a1fda11fdeb929a5aeffd034bf6851523}
+
+
+Check the input in range [{\itshape begin}, {\itshape end}) according to the rules {\itshape r}. 
+
+It does not filters the input it only checks its validity, it would be faster then validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid or filter functions but it does not correct errors. \index{cppcms\-::xss@{cppcms\-::xss}!validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid@{validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid}}
+\index{validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid@{validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid}!cppcms::xss@{cppcms\-::xss}}
+\subsubsection[{validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid}]{\setlength{\rightskip}{0pt plus 5cm}C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I bool cppcms\-::xss\-::validate\-\_\-and\-\_\-filter\-\_\-if\-\_\-invalid (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{rules const \&}]{r, }
+\item[{std\-::string \&}]{filtered, }
+\item[{filtering\-\_\-method\-\_\-type}]{method = {\ttfamily remove\-\_\-invalid}, }
+\item[{char}]{replacement\-\_\-char = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1xss_a9fc3f7e540b755e7499ca0b8653a7623}
+
+
+Validate the input in range [{\itshape begin}, {\itshape end}) according to the rules {\itshape r} and if it is not valid filter it and save filtered text into {\itshape filtered} string using a filtering method {\itshape method}. 
+
+If the data was valid, {\itshape filtered} remains unchanged and the function returns true, otherwise it returns false and the filtered data is saved. 

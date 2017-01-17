@@ -1,0 +1,177 @@
+\section{cppcms\-:\-:rpc\-:\-:json\-\_\-rpc\-\_\-server Class Reference}
+\label{classcppcms_1_1rpc_1_1json__rpc__server}\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+
+
+J\-S\-O\-N-\/\-R\-P\-C service application.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/rpc\-\_\-json.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:rpc\-:\-:json\-\_\-rpc\-\_\-server\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcppcms_1_1rpc_1_1json__rpc__server}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf role\-\_\-type} \{ {\bf any\-\_\-role}, 
+{\bf method\-\_\-role}, 
+{\bf notification\-\_\-role}
+ \}
+\item 
+typedef {\bf booster\-::function}\\*
+$<$ void({\bf json\-::array} const \&)$>$ {\bf method\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf bind} (std\-::string const \&name, {\bf method\-\_\-type} const \&, {\bf role\-\_\-type} type={\bf any\-\_\-role})
+\item 
+void {\bf smd} ({\bf json\-::value} const \&)
+\item 
+void {\bf smd\-\_\-raw} (std\-::string const \&)
+\item 
+void {\bf smd\-\_\-from\-\_\-file} (std\-::string const \&)
+\item 
+virtual void {\bf main} (std\-::string)
+\item 
+{\bf booster\-::shared\-\_\-ptr}$<$ {\bf json\-\_\-call} $>$ {\bf release\-\_\-call} ()
+\item 
+{\bfseries json\-\_\-rpc\-\_\-server} ({\bf cppcms\-::service} \&srv)\label{classcppcms_1_1rpc_1_1json__rpc__server_a1492458530c13f50cb8a807392005232}
+
+\item 
+std\-::string {\bf method} ()
+\item 
+bool {\bf notification} ()
+\item 
+{\bf json\-::array} const \& {\bf params} ()
+\item 
+void {\bf return\-\_\-result} ({\bf json\-::value} const \&)
+\item 
+void {\bf return\-\_\-error} ({\bf json\-::value} const \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+J\-S\-O\-N-\/\-R\-P\-C service application. 
+
+User is expected to derive his own objects from this class in order to implement Json-\/\-R\-P\-C calls similarly to how \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} is used. 
+
+\subsection{Member Typedef Documentation}
+\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!method\-\_\-type@{method\-\_\-type}}
+\index{method\-\_\-type@{method\-\_\-type}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{method\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf booster\-::function}$<$void({\bf json\-::array} const \&)$>$ {\bf cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::method\-\_\-type}}\label{classcppcms_1_1rpc_1_1json__rpc__server_ab0ef1cd599bbe9f8172d640ac099a861}
+Generic type of J\-S\-O\-N-\/\-R\-P\-C method 
+
+\subsection{Member Enumeration Documentation}
+\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!role\-\_\-type@{role\-\_\-type}}
+\index{role\-\_\-type@{role\-\_\-type}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{role\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::role\-\_\-type}}\label{classcppcms_1_1rpc_1_1json__rpc__server_a5ce330908e08891de3f80cd5f0296a69}
+The role of the method -\/ receives notification, returns result or any one of them \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{any\-\_\-role@{any\-\_\-role}!cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!any\-\_\-role@{any\-\_\-role}}\item[{\em 
+any\-\_\-role\label{classcppcms_1_1rpc_1_1json__rpc__server_a5ce330908e08891de3f80cd5f0296a69a1e1067f92a7677919808378b2be871ff}
+}]Method may receive notification and return result. \index{method\-\_\-role@{method\-\_\-role}!cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!method\-\_\-role@{method\-\_\-role}}\item[{\em 
+method\-\_\-role\label{classcppcms_1_1rpc_1_1json__rpc__server_a5ce330908e08891de3f80cd5f0296a69aa2f77fca954746e54791ce5c684369a4}
+}]Method can't be used with notification calls. \index{notification\-\_\-role@{notification\-\_\-role}!cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!notification\-\_\-role@{notification\-\_\-role}}\item[{\em 
+notification\-\_\-role\label{classcppcms_1_1rpc_1_1json__rpc__server_a5ce330908e08891de3f80cd5f0296a69a6f3ea495119f35d4d7295c5038b6a384}
+}]Method should be used with notification calls only. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!bind@{bind}}
+\index{bind@{bind}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::bind (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{{\bf method\-\_\-type} const \&}]{, }
+\item[{{\bf role\-\_\-type}}]{type = {\ttfamily {\bf any\-\_\-role}}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_a12dba74395bd011d5d123732e630c821}
+Bind method J\-S\-O\-N-\/\-R\-P\-C method with name {\itshape name} \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!main@{main}}
+\index{main@{main}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::main (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1rpc_1_1json__rpc__server_a59719adc406c2a762fd1c3363762539c}
+Main function that dispatches J\-S\-O\-N-\/\-R\-P\-C service calls 
+
+Reimplemented from {\bf cppcms\-::application} \doxyref{}{p.}{classcppcms_1_1application_a8c884a9309d107237e8946446feba8f8}.
+
+\index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!method@{method}}
+\index{method@{method}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{method}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::method (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_a4aa002538f975df69299a6252de4f907}
+Get the name of method that was called \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!notification@{notification}}
+\index{notification@{notification}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{notification}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::notification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_ab2db9a30a95180ba144e0832191a6b52}
+Check if method call is notification only. You should not return a value.
+
+Note\-: if you do not add restriction when binding json-\/rpc method on the role of the call you should always check this value. Otherwise trying to call return\-\_\-result or return\-\_\-error would throw. \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!params@{params}}
+\index{params@{params}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{params}]{\setlength{\rightskip}{0pt plus 5cm}{\bf json\-::array} const\& cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::params (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_ae53ca04713cb0ae49fa16ed9c3f852d1}
+Get call parameters as \doxyref{json\-::array}{p.}{namespacecppcms_1_1json_aefdab4e43ce88b19e1a73eecfe02d799} (vector of \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value}) \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!release\-\_\-call@{release\-\_\-call}}
+\index{release\-\_\-call@{release\-\_\-call}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{release\-\_\-call}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::shared\-\_\-ptr}$<${\bf json\-\_\-call}$>$ cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::release\-\_\-call (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_a5280fefaa4610cab03a4eb1a3d84af1d}
+Release \doxyref{json\-\_\-call}{p.}{classcppcms_1_1rpc_1_1json__call} for asynchronous responses. Calls \doxyref{release\-\_\-context()}{p.}{classcppcms_1_1application_a2c7b2090110eacd9e4499c569c9fa017} and assignes it to \doxyref{json\-\_\-call}{p.}{classcppcms_1_1rpc_1_1json__call} object. \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!return\-\_\-error@{return\-\_\-error}}
+\index{return\-\_\-error@{return\-\_\-error}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{return\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::return\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_a14bfd8e7b5a2a8cfec7de5a8e9c1cc61}
+Complete method response with a error. Throws \doxyref{call\-\_\-error}{p.}{classcppcms_1_1rpc_1_1call__error} if the method was called as notification \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!return\-\_\-result@{return\-\_\-result}}
+\index{return\-\_\-result@{return\-\_\-result}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{return\-\_\-result}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::return\-\_\-result (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_a18d9c7ff0aa2aef8fcb25400214c5f43}
+Complete method response with a result. Throws \doxyref{call\-\_\-error}{p.}{classcppcms_1_1rpc_1_1call__error} if the method was called as notification \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!smd@{smd}}
+\index{smd@{smd}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{smd}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::smd (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_ac1e3046c6717b151452a11bdee905198}
+Specify service S\-M\-D \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!smd\-\_\-from\-\_\-file@{smd\-\_\-from\-\_\-file}}
+\index{smd\-\_\-from\-\_\-file@{smd\-\_\-from\-\_\-file}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{smd\-\_\-from\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::smd\-\_\-from\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_ad3116c16f202d2288f467615deae0955}
+Take service S\-M\-D as raw text from file \index{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}!smd\-\_\-raw@{smd\-\_\-raw}}
+\index{smd\-\_\-raw@{smd\-\_\-raw}!cppcms::rpc::json_rpc_server@{cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server}}
+\subsubsection[{smd\-\_\-raw}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::rpc\-::json\-\_\-rpc\-\_\-server\-::smd\-\_\-raw (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1rpc_1_1json__rpc__server_a7de7fe30053e69c978625bf809c53d72}
+Specify service S\-M\-D as raw text rather then J\-S\-O\-N value 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/rpc\-\_\-json.\-h\end{DoxyCompactItemize}

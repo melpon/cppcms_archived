@@ -1,0 +1,57 @@
+\section{cppcms\-:\-:serializable\-\_\-base Class Reference}
+\label{classcppcms_1_1serializable__base}\index{cppcms\-::serializable\-\_\-base@{cppcms\-::serializable\-\_\-base}}
+
+
+Base abstract class for object that can be serialized into std\-::string.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/serialization\-\_\-classes.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:serializable\-\_\-base\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1serializable__base}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf load} ({\bf archive} \&serialized\-\_\-object)=0
+\item 
+virtual void {\bf save} ({\bf archive} \&serialized\-\_\-object) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base abstract class for object that can be serialized into std\-::string. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::serializable\-\_\-base@{cppcms\-::serializable\-\_\-base}!load@{load}}
+\index{load@{load}!cppcms::serializable_base@{cppcms\-::serializable\-\_\-base}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::serializable\-\_\-base\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} \&}]{serialized\-\_\-object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1serializable__base_a4bac9c37cb4abd0120f915709f840191}
+Load object from archive 
+
+Implemented in {\bf cppcms\-::serializable} \doxyref{}{p.}{classcppcms_1_1serializable_aa271b39b72ca4b98a38eae6bbb6b9abc}.
+
+\index{cppcms\-::serializable\-\_\-base@{cppcms\-::serializable\-\_\-base}!save@{save}}
+\index{save@{save}!cppcms::serializable_base@{cppcms\-::serializable\-\_\-base}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::serializable\-\_\-base\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} \&}]{serialized\-\_\-object}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1serializable__base_a0be6684a18d70761900560ebce6514d1}
+Save object to archive 
+
+Implemented in {\bf cppcms\-::serializable} \doxyref{}{p.}{classcppcms_1_1serializable_aa30c580ab6301956562d38b491fc2c84}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/serialization\-\_\-classes.\-h\end{DoxyCompactItemize}

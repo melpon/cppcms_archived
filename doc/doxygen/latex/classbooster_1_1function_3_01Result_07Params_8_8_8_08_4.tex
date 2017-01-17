@@ -1,0 +1,134 @@
+\section{booster\-:\-:function$<$ Result(Params...)$>$ Class Template Reference}
+\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4}\index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}}
+
+
+This is Booster's implementation of std\-::tr1\-::function/booster\-::function.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/function.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Result {\bf result\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf function} ()
+\item 
+{\footnotesize template$<$typename F $>$ }\\{\bf function} (F func)
+\item 
+{\bf function} ({\bf function} const \&other)
+\item 
+{\footnotesize template$<$typename F $>$ }\\{\bf function} const \& {\bf operator=} (F func)
+\item 
+{\bf function} const \& {\bf operator=} ({\bf function} const \&other)
+\item 
+{\bf result\-\_\-type} {\bf operator()} (Params...\-params) const 
+\item 
+bool {\bf empty} () const 
+\item 
+{\bf operator bool} () const 
+\item 
+void {\bf swap} ({\bf function} \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Result, typename... Params$>$class booster\-::function$<$ Result(\-Params...)$>$}
+
+This is Booster's implementation of std\-::tr1\-::function/booster\-::function. 
+
+This function is created from generic object that can be \char`\"{}called\char`\"{} i.\-e. a class with operator() or function pointer that has same signature as the function.
+
+See\-: {\tt http\-://www.\-boost.\-org/doc/html/function.\-html}
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item this code is not taken from Boost and has slightly different interface.
+\item as most of compilers do not support Variadic templates yet, this class is explicitly specialized for Params of size 0 to 8. So maximal amout of parameters that can be used is 8. 
+\end{DoxyItemize}
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!result\-\_\-type@{result\-\_\-type}}
+\index{result\-\_\-type@{result\-\_\-type}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{result\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ typedef Result {\bf booster\-::function}$<$ Result(Params...)$>$\-::{\bf result\-\_\-type}}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_abc74d095a9b28d8c00fad037bf53742e}
+Type of result, for use with boost\-::bind 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!function@{function}}
+\index{function@{function}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\-::function}$<$ Result(Params...)$>$\-::{\bf function} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_a39cbf441d3f10ab347e152db29e18888}
+Default constructor, creates an empty functions \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!function@{function}}
+\index{function@{function}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ template$<$typename F $>$ {\bf booster\-::function}$<$ Result(Params...)$>$\-::{\bf function} (
+\begin{DoxyParamCaption}
+\item[{F}]{func}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_a813e5e994e5452f3f86f6487ce778384}
+Creates a function from a functional {\itshape func} of type F. func should be copyable. It is copied and stored inside function object. \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!function@{function}}
+\index{function@{function}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\-::function}$<$ Result(Params...)$>$\-::{\bf function} (
+\begin{DoxyParamCaption}
+\item[{{\bf function}$<$ Result(Params...)$>$ const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_a6f2c5a556566ce01c466144b482e420f}
+Copy function, Copies underlying functional object. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!empty@{empty}}
+\index{empty@{empty}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ bool {\bf booster\-::function}$<$ Result(Params...)$>$\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_a6aa1d2d5557a0ec1c7f8a06518650cda}
+Return true if the function is empty \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\-::function}$<$ Result(Params...)$>$\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_a2fc8377728ec963ae6dfcf8ce90df232}
+Returns true if the function is not empty \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!operator()@{operator()}}
+\index{operator()@{operator()}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf result\-\_\-type} {\bf booster\-::function}$<$ Result(Params...)$>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{Params...}]{params}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_ad60455fb71fa1b82e0725b96c52f82f0}
+Calls underling functional object. If the function is empty, throws \doxyref{bad\-\_\-function\-\_\-call}{p.}{classbooster_1_1bad__function__call}. \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ template$<$typename F $>$ {\bf function} const\& {\bf booster\-::function}$<$ Result(Params...)$>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{F}]{func}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_ae0d4d0602dde115d033d05a0e1f3421f}
+Assign a functional {\itshape func} of type F. func should be copyable. It is copied and stored inside function object. \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf function} const\& {\bf booster\-::function}$<$ Result(Params...)$>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf function}$<$ Result(Params...)$>$ const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_a6170c08c1f09b52fd0f1510f0c0767b7}
+Assignment operator. Copies underlying functional object. \index{booster\-::function$<$ Result(\-Params...)$>$@{booster\-::function$<$ Result(\-Params...)$>$}!swap@{swap}}
+\index{swap@{swap}!booster::function< Result(Params...)>@{booster\-::function$<$ Result(\-Params...)$>$}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ void {\bf booster\-::function}$<$ Result(Params...)$>$\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf function}$<$ Result(Params...)$>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1function_3_01Result_07Params_8_8_8_08_4_abf0abe4e0e4e21acce5dbdf5c0648400}
+Swaps two functional object. Does not throw. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/function.\-h\end{DoxyCompactItemize}

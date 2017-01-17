@@ -1,0 +1,52 @@
+\section{booster\-:\-:system Namespace Reference}
+\label{namespacebooster_1_1system}\index{booster\-::system@{booster\-::system}}
+
+
+this namespace includes partial implementation of std\-::tr1's/boost's \doxyref{system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} classes  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf error\-\_\-category}
+\begin{DoxyCompactList}\small\item\em this class represents a category of errors. \end{DoxyCompactList}\item 
+class {\bf error\-\_\-code}
+\begin{DoxyCompactList}\small\item\em The lightweight object that carries a error code information and its category. \end{DoxyCompactList}\item 
+class {\bf system\-\_\-error}
+\begin{DoxyCompactList}\small\item\em This is the object that should be thrown in case of the error. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I {\bf error\-\_\-category} const \& {\bfseries get\-\_\-system\-\_\-category} ()\label{namespacebooster_1_1system_ae7eb6a1af98fc7413f9a76e5a4c6e8d0}
+
+\item 
+bool {\bf operator==} ({\bf error\-\_\-code} const \&left, {\bf error\-\_\-code} const \&right)
+\item 
+bool {\bf operator!=} ({\bf error\-\_\-code} const \&left, {\bf error\-\_\-code} const \&right)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this namespace includes partial implementation of std\-::tr1's/boost's \doxyref{system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} classes 
+
+\subsection{Function Documentation}
+\index{booster\-::system@{booster\-::system}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!booster::system@{booster\-::system}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::system\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{error\-\_\-code const \&}]{left, }
+\item[{error\-\_\-code const \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1system_aba83cff6924850e4072efb9c35078de6}
+Compare two error code for inequality \index{booster\-::system@{booster\-::system}!operator==@{operator==}}
+\index{operator==@{operator==}!booster::system@{booster\-::system}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::system\-::operator== (
+\begin{DoxyParamCaption}
+\item[{error\-\_\-code const \&}]{left, }
+\item[{error\-\_\-code const \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1system_abdbdcf41b9aba4de4ec048f524ce0a3c}
+Compare two error code for equality 
+
+References booster\-::system\-::error\-\_\-code\-::category(), and booster\-::system\-::error\-\_\-code\-::value().
+

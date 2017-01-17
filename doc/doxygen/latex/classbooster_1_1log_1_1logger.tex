@@ -1,0 +1,143 @@
+\section{booster\-:\-:log\-:\-:logger Class Reference}
+\label{classbooster_1_1log_1_1logger}\index{booster\-::log\-::logger@{booster\-::log\-::logger}}
+
+
+This is the central class that manages all logging operations.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/log.\-h$>$}
+
+Inheritance diagram for booster\-:\-:log\-:\-:logger\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1log_1_1logger}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf should\-\_\-be\-\_\-logged} ({\bf level\-\_\-type} level, char const $\ast$module)
+\item 
+void {\bf set\-\_\-log\-\_\-level} ({\bf level\-\_\-type} level, char const $\ast$module)
+\item 
+void {\bf reset\-\_\-log\-\_\-level} (char const $\ast$module)
+\item 
+void {\bf set\-\_\-default\-\_\-level} ({\bf level\-\_\-type} level)
+\item 
+void {\bf add\-\_\-sink} ({\bf shared\-\_\-ptr}$<$ {\bf sink} $>$ const \&s)
+\item 
+void {\bf remove\-\_\-sink} ({\bf weak\-\_\-ptr}$<$ {\bf sink} $>$ const \&s)
+\item 
+void {\bf remove\-\_\-all\-\_\-sinks} ()
+\item 
+void {\bf log} ({\bf message} const \&)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf logger} \& {\bf instance} ()
+\item 
+static char const $\ast$ {\bf level\-\_\-to\-\_\-string} ({\bf level\-\_\-type} level)
+\item 
+static {\bf level\-\_\-type} {\bf string\-\_\-to\-\_\-level} (std\-::string const \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the central class that manages all logging operations. 
+
+This is singleton, you access it only via \doxyref{instance()}{p.}{classbooster_1_1log_1_1logger_a2acec1af014efb01dbd7da00666d9a59} static member function.
+
+This class is thread safe 
+
+\subsection{Member Function Documentation}
+\index{booster\-::log\-::logger@{booster\-::log\-::logger}!add\-\_\-sink@{add\-\_\-sink}}
+\index{add\-\_\-sink@{add\-\_\-sink}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{add\-\_\-sink}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::add\-\_\-sink (
+\begin{DoxyParamCaption}
+\item[{{\bf shared\-\_\-ptr}$<$ {\bf sink} $>$ const \&}]{s}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a903a528f998a15496315556035e47fbb}
+Add new logging sink -\/ the target that receives messages. It is defined by it's pointer.
+
+If you plan to remove it, keep the pointer on such logger. \index{booster\-::log\-::logger@{booster\-::log\-::logger}!instance@{instance}}
+\index{instance@{instance}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf logger}\& booster\-::log\-::logger\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1log_1_1logger_a2acec1af014efb01dbd7da00666d9a59}
+Get the instance of the logger \index{booster\-::log\-::logger@{booster\-::log\-::logger}!level\-\_\-to\-\_\-string@{level\-\_\-to\-\_\-string}}
+\index{level\-\_\-to\-\_\-string@{level\-\_\-to\-\_\-string}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{level\-\_\-to\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}static char const$\ast$ booster\-::log\-::logger\-::level\-\_\-to\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1log_1_1logger_aeb3ac1193ce8c3411195238b517cc642}
+Get convert the severity level to string \index{booster\-::log\-::logger@{booster\-::log\-::logger}!log@{log}}
+\index{log@{log}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::log (
+\begin{DoxyParamCaption}
+\item[{{\bf message} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a3a69868bf2acb8f1c2c6ffd617073ac8}
+Send a message to the log, note, the message is sent regardless of its severity, use should\-\_\-be\-\_\-logged before you create the message \index{booster\-::log\-::logger@{booster\-::log\-::logger}!remove\-\_\-all\-\_\-sinks@{remove\-\_\-all\-\_\-sinks}}
+\index{remove\-\_\-all\-\_\-sinks@{remove\-\_\-all\-\_\-sinks}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{remove\-\_\-all\-\_\-sinks}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::remove\-\_\-all\-\_\-sinks (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a329a3022373f48966257f48514164df5}
+Remove all logging sinks from the logger \index{booster\-::log\-::logger@{booster\-::log\-::logger}!remove\-\_\-sink@{remove\-\_\-sink}}
+\index{remove\-\_\-sink@{remove\-\_\-sink}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{remove\-\_\-sink}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::remove\-\_\-sink (
+\begin{DoxyParamCaption}
+\item[{{\bf weak\-\_\-ptr}$<$ {\bf sink} $>$ const \&}]{s}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a2fd74fa1664e9f95333d8affcb383eeb}
+Remove a logging sink using its pointer. Note it is enough to keep weak pointer on it allowing the logger to destroy the sink. \index{booster\-::log\-::logger@{booster\-::log\-::logger}!reset\-\_\-log\-\_\-level@{reset\-\_\-log\-\_\-level}}
+\index{reset\-\_\-log\-\_\-level@{reset\-\_\-log\-\_\-level}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{reset\-\_\-log\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::reset\-\_\-log\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{module}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a079bff363978557caf513747a99cf1b4}
+Reset {\itshape module's} logging severity to default \index{booster\-::log\-::logger@{booster\-::log\-::logger}!set\-\_\-default\-\_\-level@{set\-\_\-default\-\_\-level}}
+\index{set\-\_\-default\-\_\-level@{set\-\_\-default\-\_\-level}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{set\-\_\-default\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::set\-\_\-default\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a844b90e4a6388ebf12f426338ee52540}
+Set default logging level severity \index{booster\-::log\-::logger@{booster\-::log\-::logger}!set\-\_\-log\-\_\-level@{set\-\_\-log\-\_\-level}}
+\index{set\-\_\-log\-\_\-level@{set\-\_\-log\-\_\-level}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{set\-\_\-log\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::logger\-::set\-\_\-log\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{char const $\ast$}]{module}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a6e9b8ec6e8959ab38776f4f852bdbdad}
+Set specific severity level {\itshape level} for a module {\itshape module}. It would be logged with different logging level then others.
+
+Note\-: {\itshape module} string should remain valid all the time this log level is used. It is better to use static strings for these purposes \index{booster\-::log\-::logger@{booster\-::log\-::logger}!should\-\_\-be\-\_\-logged@{should\-\_\-be\-\_\-logged}}
+\index{should\-\_\-be\-\_\-logged@{should\-\_\-be\-\_\-logged}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{should\-\_\-be\-\_\-logged}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::log\-::logger\-::should\-\_\-be\-\_\-logged (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{char const $\ast$}]{module}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1logger_a640ad6d3e76b94c8ce2483e6d98b80c3}
+Test if the message with severity level {\itshape level} of module {\itshape module} should be logged. This is generally called before preparing a message in order to prevent logging messages that shouldn't be logged \index{booster\-::log\-::logger@{booster\-::log\-::logger}!string\-\_\-to\-\_\-level@{string\-\_\-to\-\_\-level}}
+\index{string\-\_\-to\-\_\-level@{string\-\_\-to\-\_\-level}!booster::log::logger@{booster\-::log\-::logger}}
+\subsubsection[{string\-\_\-to\-\_\-level}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf level\-\_\-type} booster\-::log\-::logger\-::string\-\_\-to\-\_\-level (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1log_1_1logger_a72f2825f729ccee025a532c7eb67cb4b}
+Convert string to severity level, if the string is invalid, std\-::invalid\-\_\-argument is thrown 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\-h}\end{DoxyCompactItemize}

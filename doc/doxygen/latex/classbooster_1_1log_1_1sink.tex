@@ -1,0 +1,46 @@
+\section{booster\-:\-:log\-:\-:sink Class Reference}
+\label{classbooster_1_1log_1_1sink}\index{booster\-::log\-::sink@{booster\-::log\-::sink}}
+
+
+This is the abstract interface to general sink -\/ the consumer of the logged messages.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/log.\-h$>$}
+
+Inheritance diagram for booster\-:\-:log\-:\-:sink\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbooster_1_1log_1_1sink}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf log} ({\bf message} const \&m)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the abstract interface to general sink -\/ the consumer of the logged messages. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::log\-::sink@{booster\-::log\-::sink}!log@{log}}
+\index{log@{log}!booster::log::sink@{booster\-::log\-::sink}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::log\-::sink\-::log (
+\begin{DoxyParamCaption}
+\item[{{\bf message} const \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1log_1_1sink_a26ca4b2db51cd3debdf5fed5bac3d5e0}
+Send the message {\itshape m} to log
+
+Note\-: it does not have to be thread safe -\/ in terms that only one message is sent each time and it is promised that are not sent in parallel 
+
+Implemented in {\bf booster\-::log\-::sinks\-::file} \doxyref{}{p.}{classbooster_1_1log_1_1sinks_1_1file_ad2a5335abaff993da082fb124056748a}, and {\bf booster\-::log\-::sinks\-::standard\-\_\-error} \doxyref{}{p.}{classbooster_1_1log_1_1sinks_1_1standard__error_a27c91e3ff6bb9695c926ed2adc5532c8}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\-h}\end{DoxyCompactItemize}

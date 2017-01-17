@@ -1,0 +1,94 @@
+\section{booster\-:\-:locale\-:\-:util Namespace Reference}
+\label{namespacebooster_1_1locale_1_1util}\index{booster\-::locale\-::util@{booster\-::locale\-::util}}
+
+
+This namespace provides various utility function useful for Boost.\-Locale backends implementations.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf base\-\_\-converter}
+\begin{DoxyCompactList}\small\item\em This class represent a simple stateless converter from U\-C\-S-\/4 and to U\-C\-S-\/4 for each single code point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf get\-\_\-system\-\_\-locale} (bool use\-\_\-utf8\-\_\-on\-\_\-windows=false)
+\begin{DoxyCompactList}\small\item\em Return default system locale name in P\-O\-S\-I\-X format. \end{DoxyCompactList}\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::locale {\bf create\-\_\-info} (std\-::locale const \&in, std\-::string const \&name)
+\begin{DoxyCompactList}\small\item\em Installs information facet to locale in based on locale name {\itshape name}. \end{DoxyCompactList}\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::auto\-\_\-ptr\\*
+$<$ {\bf base\-\_\-converter} $>$ {\bf create\-\_\-utf8\-\_\-converter} ()
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::auto\-\_\-ptr\\*
+$<$ {\bf base\-\_\-converter} $>$ {\bf create\-\_\-simple\-\_\-converter} (std\-::string const \&encoding)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::locale {\bf create\-\_\-codecvt} (std\-::locale const \&in, std\-::auto\-\_\-ptr$<$ {\bf base\-\_\-converter} $>$ cvt, {\bf character\-\_\-facet\-\_\-type} type)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace provides various utility function useful for Boost.\-Locale backends implementations. 
+
+\subsection{Function Documentation}
+\index{booster\-::locale\-::util@{booster\-::locale\-::util}!create\-\_\-codecvt@{create\-\_\-codecvt}}
+\index{create\-\_\-codecvt@{create\-\_\-codecvt}!booster::locale::util@{booster\-::locale\-::util}}
+\subsubsection[{create\-\_\-codecvt}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::locale booster\-::locale\-::util\-::create\-\_\-codecvt (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{in, }
+\item[{std\-::auto\-\_\-ptr$<$ base\-\_\-converter $>$}]{cvt, }
+\item[{character\-\_\-facet\-\_\-type}]{type}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1locale_1_1util_a02d7de5c6f9a36233d44cd5744aebca8}
+Install codecvt facet into locale {\itshape in} and return new locale that is based on {\itshape in} and uses new facet.
+
+codecvt facet would convert between narrow and wide/char16\-\_\-t/char32\-\_\-t encodings using {\itshape cvt} converter. If {\itshape cvt} is null pointer, always failure conversion would be used that fails on every first input or output.
+
+Note\-: the codecvt facet handles both U\-T\-F-\/16 and U\-T\-F-\/32 wide encodings, it knows to break and join Unicode code-\/points above 0x\-F\-F\-F\-F to and from surrogate pairs correctly. {\itshape cvt} should be unaware of wide encoding type \index{booster\-::locale\-::util@{booster\-::locale\-::util}!create\-\_\-info@{create\-\_\-info}}
+\index{create\-\_\-info@{create\-\_\-info}!booster::locale::util@{booster\-::locale\-::util}}
+\subsubsection[{create\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::locale booster\-::locale\-::util\-::create\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{in, }
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1locale_1_1util_a6b8caed79bd02d4e0e6ea699d0876c43}
+
+
+Installs information facet to locale in based on locale name {\itshape name}. 
+
+This function installs boost\-::locale\-::info facet into the locale {\itshape in} and returns newly created locale.
+
+Note\-: all information is based only on parsing of string {\itshape name};
+
+The name has following format\-: language[\-\_\-\-C\-O\-U\-N\-T\-R\-Y][.encoding][@variant] Where language is I\-S\-O-\/639 language code like \char`\"{}en\char`\"{} or \char`\"{}ru\char`\"{}, C\-O\-U\-N\-T\-R\-Y is I\-S\-O-\/3166 country identifier like \char`\"{}\-U\-S\char`\"{} or \char`\"{}\-R\-U\char`\"{}. the Encoding is a charracter set name like U\-T\-F-\/8 or I\-S\-O-\/8859-\/1. Variant is backend specific variant like {\ttfamily euro} or calendar=hebrew.
+
+If some parameters are missing they are specified as blanks, default encoding is assumed to be U\-S-\/\-A\-S\-C\-I\-I and missing language is assumed to be \char`\"{}\-C\char`\"{} \index{booster\-::locale\-::util@{booster\-::locale\-::util}!create\-\_\-simple\-\_\-converter@{create\-\_\-simple\-\_\-converter}}
+\index{create\-\_\-simple\-\_\-converter@{create\-\_\-simple\-\_\-converter}!booster::locale::util@{booster\-::locale\-::util}}
+\subsubsection[{create\-\_\-simple\-\_\-converter}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::auto\-\_\-ptr$<${\bf base\-\_\-converter}$>$ booster\-::locale\-::util\-::create\-\_\-simple\-\_\-converter (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{encoding}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1locale_1_1util_a586f96f0e1656d49549b8b0098a98154}
+This function creates a {\itshape \doxyref{base\-\_\-converter}{p.}{classbooster_1_1locale_1_1util_1_1base__converter}} that can be used for conversion between single byte character encodings like I\-S\-O-\/8859-\/1, koi8-\/r, windows-\/1255 and Unicode code points,
+
+If {\itshape encoding} is not supported, empty pointer is returned. You should check if std\-::auto\-\_\-ptr$<$base\-\_\-converter$>$\-::get() != 0 \index{booster\-::locale\-::util@{booster\-::locale\-::util}!create\-\_\-utf8\-\_\-converter@{create\-\_\-utf8\-\_\-converter}}
+\index{create\-\_\-utf8\-\_\-converter@{create\-\_\-utf8\-\_\-converter}!booster::locale::util@{booster\-::locale\-::util}}
+\subsubsection[{create\-\_\-utf8\-\_\-converter}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::auto\-\_\-ptr$<${\bf base\-\_\-converter}$>$ booster\-::locale\-::util\-::create\-\_\-utf8\-\_\-converter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1locale_1_1util_a37392c7bf6da248c5ba8693a980cf640}
+This function creates a {\itshape \doxyref{base\-\_\-converter}{p.}{classbooster_1_1locale_1_1util_1_1base__converter}} that can be used for conversion between U\-T\-F-\/8 and unicode code points \index{booster\-::locale\-::util@{booster\-::locale\-::util}!get\-\_\-system\-\_\-locale@{get\-\_\-system\-\_\-locale}}
+\index{get\-\_\-system\-\_\-locale@{get\-\_\-system\-\_\-locale}!booster::locale::util@{booster\-::locale\-::util}}
+\subsubsection[{get\-\_\-system\-\_\-locale}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string booster\-::locale\-::util\-::get\-\_\-system\-\_\-locale (
+\begin{DoxyParamCaption}
+\item[{bool}]{use\-\_\-utf8\-\_\-on\-\_\-windows = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1locale_1_1util_a5fcca2b7590aba0d0a5a8a7bdb9ab668}
+
+
+Return default system locale name in P\-O\-S\-I\-X format. 
+
+This function tries to detect the locale using, L\-C\-\_\-\-C\-T\-Y\-P\-E, L\-C\-\_\-\-A\-L\-L and L\-A\-N\-G environment variables in this order and if all of them unset, in P\-O\-S\-I\-X platforms it returns \char`\"{}\-C\char`\"{}
+
+On Windows additionally to check the above environment variables, this function tries to creates locale name from I\-S\-O-\/339 and I\-S\-O-\/3199 country codes defined for user default locale. If {\itshape use\-\_\-utf8\-\_\-on\-\_\-windows} is true it sets the encoding to U\-T\-F-\/8, otherwise, if system locale supports A\-N\-S\-I code-\/page it defines the A\-N\-S\-I encoding like windows-\/1252, otherwise it fall-\/backs to U\-T\-F-\/8 encoding if A\-N\-S\-I code-\/page is not available. 

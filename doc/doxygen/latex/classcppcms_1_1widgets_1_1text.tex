@@ -1,0 +1,97 @@
+\section{cppcms\-:\-:widgets\-:\-:text Class Reference}
+\label{classcppcms_1_1widgets_1_1text}\index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}}
+
+
+This class represents an H\-T\-M\-L form input element of type text.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:text\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.734299cm]{classcppcms_1_1widgets_1_1text}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf text} ()
+\item 
+{\bf text} (std\-::string const \&type)
+\item 
+void {\bf size} (int n)
+\item 
+int {\bf size} ()
+\item 
+virtual void {\bf render\-\_\-attributes} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf render\-\_\-value} ({\bf form\-\_\-context} \&context)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents an H\-T\-M\-L form input element of type text. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}!text@{text}}
+\index{text@{text}!cppcms::widgets::text@{cppcms\-::widgets\-::text}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::text\-::text (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1text_a0eb208758d426660568d30d3cf56a6fe}
+Create a text field widget. \index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}!text@{text}}
+\index{text@{text}!cppcms::widgets::text@{cppcms\-::widgets\-::text}}
+\subsubsection[{text}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::text\-::text (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{type}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1text_ab4453d4daa564b778ed05a06a7fe66f5}
+This constructor is provided for use by derived classes where it is required to change the type of the widget, like text, password, etc. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}!render\-\_\-attributes@{render\-\_\-attributes}}
+\index{render\-\_\-attributes@{render\-\_\-attributes}!cppcms::widgets::text@{cppcms\-::widgets\-::text}}
+\subsubsection[{render\-\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::text\-::render\-\_\-attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1text_a5d71259184320fc4a11819cebe2a0154}
+Render standard common attributes like {\itshape id}, {\itshape name}, {\itshape disabled}, etc. 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a6f0354040920a70e3248c94d357774f0}.
+
+\index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}!render\-\_\-value@{render\-\_\-value}}
+\index{render\-\_\-value@{render\-\_\-value}!cppcms::widgets::text@{cppcms\-::widgets\-::text}}
+\subsubsection[{render\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::text\-::render\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1text_acbd7f7a5e7f49e19b73c432232080059}
+Write the actual value of the H\-T\-M\-L tag. Derived classes must implement this. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-html\-\_\-input} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__html__input_afd2f99f7dd7b8ebe75e63f1f005068cb}.
+
+\index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}!size@{size}}
+\index{size@{size}!cppcms::widgets::text@{cppcms\-::widgets\-::text}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::text\-::size (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1text_acdd6d081d3f17291ba374e75cf812e7b}
+Set the H\-T\-M\-L size attribute of the widget. \index{cppcms\-::widgets\-::text@{cppcms\-::widgets\-::text}!size@{size}}
+\index{size@{size}!cppcms::widgets::text@{cppcms\-::widgets\-::text}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::widgets\-::text\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1text_a347d79e1a942ad287ff2c3204ec6362e}
+Get the H\-T\-M\-L size attribute size of the widget. It returns -\/1 if it is undefined. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,218 @@
+\section{booster\-:\-:locale\-:\-:abstract\-\_\-calendar Class Reference}
+\label{classbooster_1_1locale_1_1abstract__calendar}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time\-\_\-facet.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf value\-\_\-type} \{ \\*
+{\bf absolute\-\_\-minimum}, 
+{\bf actual\-\_\-minimum}, 
+{\bf greatest\-\_\-minimum}, 
+{\bf current}, 
+\\*
+{\bf least\-\_\-maximum}, 
+{\bf actual\-\_\-maximum}, 
+{\bf absolute\-\_\-maximum}
+ \}
+\item 
+enum {\bf update\-\_\-type} \{ {\bf move}, 
+{\bf roll}
+ \}
+\item 
+enum {\bf calendar\-\_\-option\-\_\-type} \{ {\bf is\-\_\-gregorian}, 
+{\bf is\-\_\-dst}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf abstract\-\_\-calendar} $\ast$ {\bf clone} () const =0
+\item 
+virtual void {\bf set\-\_\-value} ({\bf period\-::marks\-::period\-\_\-mark} p, int value)=0
+\item 
+virtual void {\bf normalize} ()=0
+\item 
+virtual int {\bf get\-\_\-value} ({\bf period\-::marks\-::period\-\_\-mark} p, {\bf value\-\_\-type} v) const =0
+\item 
+virtual void {\bf set\-\_\-time} ({\bf posix\-\_\-time} const \&p)=0
+\item 
+virtual {\bf posix\-\_\-time} {\bf get\-\_\-time} () const =0
+\item 
+virtual void {\bf set\-\_\-option} ({\bf calendar\-\_\-option\-\_\-type} opt, int v)=0
+\item 
+virtual int {\bf get\-\_\-option} ({\bf calendar\-\_\-option\-\_\-type} opt) const =0
+\item 
+virtual void {\bf adjust\-\_\-value} ({\bf period\-::marks\-::period\-\_\-mark} p, {\bf update\-\_\-type} u, int {\bf difference})=0
+\item 
+virtual int {\bf difference} ({\bf abstract\-\_\-calendar} const $\ast$other, {\bf period\-::marks\-::period\-\_\-mark} p) const =0
+\item 
+virtual void {\bf set\-\_\-timezone} (std\-::string const \&tz)=0
+\item 
+virtual std\-::string {\bf get\-\_\-timezone} () const =0
+\item 
+virtual bool {\bf same} ({\bf abstract\-\_\-calendar} const $\ast$other) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class defines generic calendar class, it is used by \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} and calendar objects internally. It is less useful for end users, but it is build for localization backend implementation 
+
+\subsection{Member Enumeration Documentation}
+\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!calendar\-\_\-option\-\_\-type@{calendar\-\_\-option\-\_\-type}}
+\index{calendar\-\_\-option\-\_\-type@{calendar\-\_\-option\-\_\-type}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{calendar\-\_\-option\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::abstract\-\_\-calendar\-::calendar\-\_\-option\-\_\-type}}\label{classbooster_1_1locale_1_1abstract__calendar_a3cfa6edf8067e10074565f5576385041}
+Information about calendar \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{is\-\_\-gregorian@{is\-\_\-gregorian}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!is\-\_\-gregorian@{is\-\_\-gregorian}}\item[{\em 
+is\-\_\-gregorian\label{classbooster_1_1locale_1_1abstract__calendar_a3cfa6edf8067e10074565f5576385041a43893bbb773ee340797bc49057d0df13}
+}]Check if the calendar is Gregorian. \index{is\-\_\-dst@{is\-\_\-dst}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!is\-\_\-dst@{is\-\_\-dst}}\item[{\em 
+is\-\_\-dst\label{classbooster_1_1locale_1_1abstract__calendar_a3cfa6edf8067e10074565f5576385041ab6bc66122a5168089f8bbde2e3a860c7}
+}]Check if the current time is in daylight time savings. \end{description}
+\end{Desc}
+\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!update\-\_\-type@{update\-\_\-type}}
+\index{update\-\_\-type@{update\-\_\-type}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{update\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::abstract\-\_\-calendar\-::update\-\_\-type}}\label{classbooster_1_1locale_1_1abstract__calendar_aece8b5ccf3031359093c4135cd599bf2}
+A way to update the value \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{move@{move}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!move@{move}}\item[{\em 
+move\label{classbooster_1_1locale_1_1abstract__calendar_aece8b5ccf3031359093c4135cd599bf2ac8a6abeca668f39831cb560eaeaba76a}
+}]Change the value up or down effecting others for example 1990-\/12-\/31 + 1 day = 1991-\/01-\/01. \index{roll@{roll}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!roll@{roll}}\item[{\em 
+roll\label{classbooster_1_1locale_1_1abstract__calendar_aece8b5ccf3031359093c4135cd599bf2aeb1a59d6ddc5edd62b8599b4c5bdf786}
+}]Change the value up or down not effecting others for example 1990-\/12-\/31 + 1 day = 1990-\/12-\/01. \end{description}
+\end{Desc}
+\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::abstract\-\_\-calendar\-::value\-\_\-type}}\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00}
+Type that defines how to fetch the value \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{absolute\-\_\-minimum@{absolute\-\_\-minimum}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!absolute\-\_\-minimum@{absolute\-\_\-minimum}}\item[{\em 
+absolute\-\_\-minimum\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00a881d2272d3fcb6badc6b9abd54356739}
+}]Absolute possible minimum for the value, for example for day is 1. \index{actual\-\_\-minimum@{actual\-\_\-minimum}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!actual\-\_\-minimum@{actual\-\_\-minimum}}\item[{\em 
+actual\-\_\-minimum\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00aa6f6b92122288040704a6296bfd49f2a}
+}]Actual minimal value for this period. \index{greatest\-\_\-minimum@{greatest\-\_\-minimum}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!greatest\-\_\-minimum@{greatest\-\_\-minimum}}\item[{\em 
+greatest\-\_\-minimum\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00aaf1914bf27a3db7bb425d113098b15c2}
+}]Maximal minimum value that can be for this period. \index{current@{current}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!current@{current}}\item[{\em 
+current\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00a028b3c7c24a63a3ebf4e817e9e3edbda}
+}]Current value of this period. \index{least\-\_\-maximum@{least\-\_\-maximum}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!least\-\_\-maximum@{least\-\_\-maximum}}\item[{\em 
+least\-\_\-maximum\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00a93375f197a8d4398969e478b01022064}
+}]The last maximal value for this period, For example for Gregorian calendar day it is 28 \index{actual\-\_\-maximum@{actual\-\_\-maximum}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!actual\-\_\-maximum@{actual\-\_\-maximum}}\item[{\em 
+actual\-\_\-maximum\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00a4bda6b277252cd7f9f1f1cc08c99a550}
+}]Actual maximum, for it can be 28, 29, 30, 31 for day according to current month. \index{absolute\-\_\-maximum@{absolute\-\_\-maximum}!booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}}\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!absolute\-\_\-maximum@{absolute\-\_\-maximum}}\item[{\em 
+absolute\-\_\-maximum\label{classbooster_1_1locale_1_1abstract__calendar_a816ac3e9b4644f56c74654238d55bc00abc0e993c75d2c2b9add870233956a8b2}
+}]Maximal value, for Gregorian day it would be 31. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!adjust\-\_\-value@{adjust\-\_\-value}}
+\index{adjust\-\_\-value@{adjust\-\_\-value}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{adjust\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::abstract\-\_\-calendar\-::adjust\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::marks\-::period\-\_\-mark}}]{p, }
+\item[{{\bf update\-\_\-type}}]{u, }
+\item[{int}]{difference}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a258f29f26e746c48827b66e58d7675ea}
+Adjust period's {\itshape p} value by {\itshape difference} items using a update\-\_\-type {\itshape u}. Note\-: not all values are adjustable \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!clone@{clone}}
+\index{clone@{clone}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf abstract\-\_\-calendar}$\ast$ booster\-::locale\-::abstract\-\_\-calendar\-::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a35ded1c475ee09910b6ad78a0c724f28}
+Make a polymorphic copy of the calendar \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!difference@{difference}}
+\index{difference@{difference}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{difference}]{\setlength{\rightskip}{0pt plus 5cm}virtual int booster\-::locale\-::abstract\-\_\-calendar\-::difference (
+\begin{DoxyParamCaption}
+\item[{{\bf abstract\-\_\-calendar} const $\ast$}]{other, }
+\item[{{\bf period\-::marks\-::period\-\_\-mark}}]{p}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a57121fa4224a48cb54a8caceda8c5942}
+Calculate the difference between this calendar and {\itshape other} in {\itshape p} units \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!get\-\_\-option@{get\-\_\-option}}
+\index{get\-\_\-option@{get\-\_\-option}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{get\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}virtual int booster\-::locale\-::abstract\-\_\-calendar\-::get\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar\-\_\-option\-\_\-type}}]{opt}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a5769c287cdb610a12e2d9d4e959b5f70}
+Get option for calendar, currently only check if it is Gregorian calendar \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!get\-\_\-time@{get\-\_\-time}}
+\index{get\-\_\-time@{get\-\_\-time}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{get\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf posix\-\_\-time} booster\-::locale\-::abstract\-\_\-calendar\-::get\-\_\-time (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a3f02aba2fd6562bc86bb0c495a4a2bb0}
+Get current time point \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!get\-\_\-timezone@{get\-\_\-timezone}}
+\index{get\-\_\-timezone@{get\-\_\-timezone}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{get\-\_\-timezone}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::string booster\-::locale\-::abstract\-\_\-calendar\-::get\-\_\-timezone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_ac75b22076cb7cd0ebeea329c00676260}
+Get current time zone, empty -\/ system one \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!get\-\_\-value@{get\-\_\-value}}
+\index{get\-\_\-value@{get\-\_\-value}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{get\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual int booster\-::locale\-::abstract\-\_\-calendar\-::get\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::marks\-::period\-\_\-mark}}]{p, }
+\item[{{\bf value\-\_\-type}}]{v}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_aaf0edf75d8092670d369a1dc95d670c9}
+Get specific value for period {\itshape p} according to a value\-\_\-type {\itshape v} \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!normalize@{normalize}}
+\index{normalize@{normalize}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{normalize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::abstract\-\_\-calendar\-::normalize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_ac2bf29d14298154b55ad7aef494c503b}
+Recalculate all periods after setting them, should be called after use of \doxyref{set\-\_\-value()}{p.}{classbooster_1_1locale_1_1abstract__calendar_a2c13913b0953e04a4f3264208393751d} function. \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!same@{same}}
+\index{same@{same}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{same}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool booster\-::locale\-::abstract\-\_\-calendar\-::same (
+\begin{DoxyParamCaption}
+\item[{{\bf abstract\-\_\-calendar} const $\ast$}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_af02d55d84b1a5b0504a7dd17a26ac6c6}
+Check of two calendars have same rules \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!set\-\_\-option@{set\-\_\-option}}
+\index{set\-\_\-option@{set\-\_\-option}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{set\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::abstract\-\_\-calendar\-::set\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{{\bf calendar\-\_\-option\-\_\-type}}]{opt, }
+\item[{int}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_ae875df81d6bc987b539c7f83a74a1b56}
+Set option for calendar, for future use \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!set\-\_\-time@{set\-\_\-time}}
+\index{set\-\_\-time@{set\-\_\-time}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{set\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::abstract\-\_\-calendar\-::set\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf posix\-\_\-time} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_ac44ec6740f265aaf109285d95f5fccb9}
+Set current time point \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!set\-\_\-timezone@{set\-\_\-timezone}}
+\index{set\-\_\-timezone@{set\-\_\-timezone}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{set\-\_\-timezone}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::abstract\-\_\-calendar\-::set\-\_\-timezone (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{tz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a9e2fdbaa204f01e4094475785034530a}
+Set time zone, empty -\/ use system \index{booster\-::locale\-::abstract\-\_\-calendar@{booster\-::locale\-::abstract\-\_\-calendar}!set\-\_\-value@{set\-\_\-value}}
+\index{set\-\_\-value@{set\-\_\-value}!booster::locale::abstract_calendar@{booster\-::locale\-::abstract\-\_\-calendar}}
+\subsubsection[{set\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::abstract\-\_\-calendar\-::set\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::marks\-::period\-\_\-mark}}]{p, }
+\item[{int}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1abstract__calendar_a2c13913b0953e04a4f3264208393751d}
+Set specific {\itshape value} for period {\itshape p}, note not all values are settable.
+
+After call of set\-\_\-value you may want to call \doxyref{normalize()}{p.}{classbooster_1_1locale_1_1abstract__calendar_ac2bf29d14298154b55ad7aef494c503b} function to make sure vall periods are updated, if you set sereral fields that are part of single date/time representation you should call set\-\_\-value several times and then call \doxyref{normalize()}{p.}{classbooster_1_1locale_1_1abstract__calendar_ac2bf29d14298154b55ad7aef494c503b}.
+
+If \doxyref{normalize()}{p.}{classbooster_1_1locale_1_1abstract__calendar_ac2bf29d14298154b55ad7aef494c503b} is not called after set\-\_\-value, the behavior is undefined 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time\-\_\-facet.\-h\end{DoxyCompactItemize}

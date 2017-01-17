@@ -1,0 +1,65 @@
+\section{booster\-:\-:mutex Class Reference}
+\label{classbooster_1_1mutex}\index{booster\-::mutex@{booster\-::mutex}}
+
+
+Mutex object.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+Inheritance diagram for booster\-:\-:mutex\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1mutex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries condition\-\_\-variable}\label{classbooster_1_1mutex_a89c9b6aa2256fa5efd92a333d96381d4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mutex object. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::mutex@{booster\-::mutex}!lock@{lock}}
+\index{lock@{lock}!booster::mutex@{booster\-::mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1mutex_aed27cc78d077f6a196b99ad98740b3e6}
+Lock the mutex. If the same thread tries to lock the mutex it holds, the behavior is undefined and would likely lead to deadlock
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{unique\-\_\-lock}{p.}{classbooster_1_1unique__lock} 
+\end{DoxySeeAlso}
+\index{booster\-::mutex@{booster\-::mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!booster::mutex@{booster\-::mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1mutex_afbeee980429de8c9a47ad1ef7e0f69ba}
+Unlock the mutex. If called for unlocked mutex, the behavior is undefined
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{unique\-\_\-lock}{p.}{classbooster_1_1unique__lock} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

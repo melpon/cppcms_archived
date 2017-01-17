@@ -1,0 +1,272 @@
+\section{booster\-:\-:locale\-:\-:collator$<$ Char\-Type $>$ Class Template Reference}
+\label{classbooster_1_1locale_1_1collator}\index{booster\-::locale\-::collator$<$ Char\-Type $>$@{booster\-::locale\-::collator$<$ Char\-Type $>$}}
+
+
+Collation facet.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/collator.\-h$>$}
+
+Inheritance diagram for booster\-:\-:locale\-:\-:collator$<$ Char\-Type $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1locale_1_1collator}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Char\-Type {\bf char\-\_\-type}
+\item 
+typedef std\-::basic\-\_\-string\\*
+$<$ Char\-Type $>$ {\bf string\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf compare} ({\bf level\-\_\-type} level, {\bf char\-\_\-type} const $\ast$b1, {\bf char\-\_\-type} const $\ast$e1, {\bf char\-\_\-type} const $\ast$b2, {\bf char\-\_\-type} const $\ast$e2) const 
+\item 
+{\bf string\-\_\-type} {\bf transform} ({\bf level\-\_\-type} level, {\bf char\-\_\-type} const $\ast$b, {\bf char\-\_\-type} const $\ast$e) const 
+\item 
+long {\bf hash} ({\bf level\-\_\-type} level, {\bf char\-\_\-type} const $\ast$b, {\bf char\-\_\-type} const $\ast$e) const 
+\item 
+int {\bf compare} ({\bf level\-\_\-type} level, {\bf string\-\_\-type} const \&l, {\bf string\-\_\-type} const \&r) const 
+\item 
+long {\bf hash} ({\bf level\-\_\-type} level, {\bf string\-\_\-type} const \&s) const 
+\item 
+{\bf string\-\_\-type} {\bf transform} ({\bf level\-\_\-type} level, {\bf string\-\_\-type} const \&s) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf collator} (size\-\_\-t refs=0)
+\item 
+virtual int {\bf do\-\_\-compare} ({\bf char\-\_\-type} const $\ast$b1, {\bf char\-\_\-type} const $\ast$e1, {\bf char\-\_\-type} const $\ast$b2, {\bf char\-\_\-type} const $\ast$e2) const 
+\item 
+virtual {\bf string\-\_\-type} {\bf do\-\_\-transform} ({\bf char\-\_\-type} const $\ast$b, {\bf char\-\_\-type} const $\ast$e) const 
+\item 
+virtual long {\bf do\-\_\-hash} ({\bf char\-\_\-type} const $\ast$b, {\bf char\-\_\-type} const $\ast$e) const 
+\item 
+virtual int {\bf do\-\_\-compare} ({\bf level\-\_\-type} level, {\bf char\-\_\-type} const $\ast$b1, {\bf char\-\_\-type} const $\ast$e1, {\bf char\-\_\-type} const $\ast$b2, {\bf char\-\_\-type} const $\ast$e2) const =0
+\item 
+virtual {\bf string\-\_\-type} {\bf do\-\_\-transform} ({\bf level\-\_\-type} level, {\bf char\-\_\-type} const $\ast$b, {\bf char\-\_\-type} const $\ast$e) const =0
+\item 
+virtual long {\bf do\-\_\-hash} ({\bf level\-\_\-type} level, {\bf char\-\_\-type} const $\ast$b, {\bf char\-\_\-type} const $\ast$e) const =0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\-Type$>$class booster\-::locale\-::collator$<$ Char\-Type $>$}
+
+Collation facet. 
+
+It reimplements standard C++ std\-::collate, allowing usage of std\-::locale for direct string comparison 
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!char\-\_\-type@{char\-\_\-type}}
+\index{char\-\_\-type@{char\-\_\-type}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{char\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ typedef Char\-Type {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::{\bf char\-\_\-type}}\label{classbooster_1_1locale_1_1collator_ae96a8d2f1bac6295f9dbea5c5f22a009}
+Type of the underlying character \index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!string\-\_\-type@{string\-\_\-type}}
+\index{string\-\_\-type@{string\-\_\-type}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{string\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ typedef std\-::basic\-\_\-string$<$Char\-Type$>$ {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::{\bf string\-\_\-type}}\label{classbooster_1_1locale_1_1collator_a6bb8ffea195f7e4991b77eddf15e3d9f}
+Type of string used with this facet 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!collator@{collator}}
+\index{collator@{collator}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{collator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::{\bf collator} (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{refs = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}\label{classbooster_1_1locale_1_1collator_aa12207d0d38e355a80c2374a4a6b8595}
+constructor of the collator object 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!compare@{compare}}
+\index{compare@{compare}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ int {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b1, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e1, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b2, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1collator_a7109cc3cde851e4a0f7392d7344bf97c}
+Compare two strings in rage [b1,e1), [b2,e2) according using a collation level {\itshape level}. Calls do\-\_\-compare
+
+Returns -\/1 if the first of the two strings sorts before the seconds, returns 1 if sorts after and 0 if they considered equal. 
+
+References booster\-::locale\-::collator$<$ Char\-Type $>$\-::do\-\_\-compare().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!compare@{compare}}
+\index{compare@{compare}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ int {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::compare (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf string\-\_\-type} const \&}]{l, }
+\item[{{\bf string\-\_\-type} const \&}]{r}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1collator_a2756a9012ecbf8bb026b7bf5586d564d}
+Compare two strings {\itshape l} and {\itshape r} using collation level {\itshape level} 
+
+Returns -\/1 if the first of the two strings sorts before the seconds, returns 1 if sorts after and 0 if they considered equal. 
+
+References booster\-::locale\-::collator$<$ Char\-Type $>$\-::do\-\_\-compare().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!do\-\_\-compare@{do\-\_\-compare}}
+\index{do\-\_\-compare@{do\-\_\-compare}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{do\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ virtual int {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::do\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{b1, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e1, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b2, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1collator_a17c522d7978bc89fd412aeb8d7809f04}
+This function is used to override default collation function that does not take in account collation level. Uses primary level 
+
+References booster\-::locale\-::collator\-\_\-base\-::identical.
+
+
+
+Referenced by booster\-::locale\-::collator$<$ Char\-Type $>$\-::compare().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!do\-\_\-compare@{do\-\_\-compare}}
+\index{do\-\_\-compare@{do\-\_\-compare}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{do\-\_\-compare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ virtual int {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::do\-\_\-compare (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b1, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e1, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b2, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e2}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1collator_ad8e79f03cdc362a9195eb81a15f626bd}
+Actual function that performs comparison between the strings. For details see compare member function. Can be overridden. \index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!do\-\_\-hash@{do\-\_\-hash}}
+\index{do\-\_\-hash@{do\-\_\-hash}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{do\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ virtual long {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::do\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{b, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1collator_ab69f3a6a0e13ae1c1d589e6b5b8f7c6e}
+This function is used to override default collation function that does not take in account collation level. Uses primary level 
+
+References booster\-::locale\-::collator\-\_\-base\-::identical.
+
+
+
+Referenced by booster\-::locale\-::collator$<$ Char\-Type $>$\-::hash().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!do\-\_\-hash@{do\-\_\-hash}}
+\index{do\-\_\-hash@{do\-\_\-hash}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{do\-\_\-hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ virtual long {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::do\-\_\-hash (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1collator_ae412e2daa978d73472945ef6e9a4f9f4}
+Actual function that calculates hash. For details see hash member function. Can be overridden. \index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!do\-\_\-transform@{do\-\_\-transform}}
+\index{do\-\_\-transform@{do\-\_\-transform}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{do\-\_\-transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ virtual {\bf string\-\_\-type} {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::do\-\_\-transform (
+\begin{DoxyParamCaption}
+\item[{{\bf char\-\_\-type} const $\ast$}]{b, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1collator_ab03d39b5d1948c53ae755bbc1c6f8908}
+This function is used to override default collation function that does not take in account collation level. Uses primary level 
+
+References booster\-::locale\-::collator\-\_\-base\-::identical.
+
+
+
+Referenced by booster\-::locale\-::collator$<$ Char\-Type $>$\-::transform().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!do\-\_\-transform@{do\-\_\-transform}}
+\index{do\-\_\-transform@{do\-\_\-transform}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{do\-\_\-transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ virtual {\bf string\-\_\-type} {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::do\-\_\-transform (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1collator_a6ff91d0873d513db245f6f44f66b6170}
+Actual function that performs transformation. For details see transform member function. Can be overridden. \index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!hash@{hash}}
+\index{hash@{hash}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ long {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::hash (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1collator_a641910a6170fdcbea24ab8061657397a}
+Calculate a hash of a text in range [b,e). The value can be used for collation sensitive string comparison.
+
+If compare(level,b1,e1,b2,e2) == 0 then hash(level,b1,e1) == hash(level,b2,e2)
+
+Calls do\-\_\-hash 
+
+References booster\-::locale\-::collator$<$ Char\-Type $>$\-::do\-\_\-hash().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!hash@{hash}}
+\index{hash@{hash}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{hash}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ long {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::hash (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf string\-\_\-type} const \&}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1collator_a8c6ae3d41166e2e43d15e97efe1ffa5e}
+Calculate a hash that can be used for collation sensitive string comparison of a string {\itshape s} 
+
+If compare(level,s1,s2) == 0 then hash(level,s1) == hash(level,s2) 
+
+References booster\-::locale\-::collator$<$ Char\-Type $>$\-::do\-\_\-hash().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!transform@{transform}}
+\index{transform@{transform}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf string\-\_\-type} {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::transform (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{b, }
+\item[{{\bf char\-\_\-type} const $\ast$}]{e}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1collator_a475ed44666b45e8ef0570e0ec8f45762}
+Create a binary string that can be compared to other in order to get collation order. The string is created for text in range [b,e). It is useful for collation of multiple strings for text.
+
+The transformation follows these rules\-: 
+\begin{DoxyCode}
+compare(level,b1,e1,b2,e2) == sign( transform(level,b1,e1).compare(transform(level,b2,e2)) );
+\end{DoxyCode}
+
+
+Calls do\-\_\-transform 
+
+References booster\-::locale\-::collator$<$ Char\-Type $>$\-::do\-\_\-transform().
+
+\index{booster\-::locale\-::collator@{booster\-::locale\-::collator}!transform@{transform}}
+\index{transform@{transform}!booster::locale::collator@{booster\-::locale\-::collator}}
+\subsubsection[{transform}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type $>$ {\bf string\-\_\-type} {\bf booster\-::locale\-::collator}$<$ Char\-Type $>$\-::transform (
+\begin{DoxyParamCaption}
+\item[{{\bf level\-\_\-type}}]{level, }
+\item[{{\bf string\-\_\-type} const \&}]{s}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1collator_abc3529e97d5793124bb7a7809217f87f}
+Create a binary string from string {\itshape s}, that can be compared to other, useful for collation of multiple strings.
+
+The transformation follows these rules\-: 
+\begin{DoxyCode}
+compare(level,s1,s2) == sign( transform(level,s1).compare(transform(level,s2)) );
+\end{DoxyCode}
+ 
+
+References booster\-::locale\-::collator$<$ Char\-Type $>$\-::do\-\_\-transform().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/collator.\-h\end{DoxyCompactItemize}

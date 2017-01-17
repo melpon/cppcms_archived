@@ -1,0 +1,80 @@
+\section{booster\-:\-:recursive\-\_\-mutex Class Reference}
+\label{classbooster_1_1recursive__mutex}\index{booster\-::recursive\-\_\-mutex@{booster\-::recursive\-\_\-mutex}}
+
+
+Recursive mutex object.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+Inheritance diagram for booster\-:\-:recursive\-\_\-mutex\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1recursive__mutex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unlock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Recursive mutex object. 
+
+Unlike \doxyref{mutex}{p.}{classbooster_1_1mutex}, when the same thread tries to lock the mutex that is already locked it would succeed and would require to unlock it same times it was locked.
+
+Useful for handling objects locks when the order of functions calls is not known in advice. For example 
+\begin{DoxyCode}
+\textcolor{keywordtype}{void} foo()
+\{
+   unique\_lock<recursive\_mutex> guard(this->lock);
+   bar();
+   baz();
+\}
+\textcolor{keywordtype}{void} bar()
+\{
+   unique\_lock<recursive\_mutex> guard(this->lock);
+   ...
+\}
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See Also}
+\doxyref{unique\-\_\-lock}{p.}{classbooster_1_1unique__lock} 
+
+\doxyref{shared\-\_\-lock}{p.}{classbooster_1_1shared__lock} 
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::recursive\-\_\-mutex@{booster\-::recursive\-\_\-mutex}!lock@{lock}}
+\index{lock@{lock}!booster::recursive_mutex@{booster\-::recursive\-\_\-mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::recursive\-\_\-mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1recursive__mutex_a1a796ee066abe97ee9d434a425fb2637}
+Lock the mutex. \begin{DoxySeeAlso}{See Also}
+\doxyref{unique\-\_\-lock}{p.}{classbooster_1_1unique__lock} 
+\end{DoxySeeAlso}
+\index{booster\-::recursive\-\_\-mutex@{booster\-::recursive\-\_\-mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!booster::recursive_mutex@{booster\-::recursive\-\_\-mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::recursive\-\_\-mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1recursive__mutex_a7f04b5abba7ed8e467f6eb5b589f2142}
+Unlock the mutex, \begin{DoxySeeAlso}{See Also}
+\doxyref{unique\-\_\-lock}{p.}{classbooster_1_1unique__lock} 
+\end{DoxySeeAlso}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,546 @@
+\section{cppcms Namespace Reference}
+\label{namespacecppcms}\index{cppcms@{cppcms}}
+
+
+This is the namespace where all Cpp\-C\-M\-S functionality is placed.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf b64url}
+\begin{DoxyCompactList}\small\item\em this namespace provides functions useful for modified Base64 encoding for U\-R\-L. This encoding does not insert newline characters, do not pad the text with = character and use \char`\"{}\-\_\-\char`\"{} and \char`\"{}-\/\char`\"{} instead of \char`\"{}+\char`\"{} and \char`\"{}/\char`\"{} characters reserved by U\-R\-L format for special purposes. \end{DoxyCompactList}\item 
+{\bf crypto}
+\begin{DoxyCompactList}\small\item\em This namespace holds basic cryptographic utilities useful for save interaction with user. \end{DoxyCompactList}\item 
+{\bf encoding}
+\begin{DoxyCompactList}\small\item\em this Namespace holds various function for dealing with encoding \end{DoxyCompactList}\item 
+{\bf filters}
+\begin{DoxyCompactList}\small\item\em This namespace various filters that can be used in templates for filtering data. \end{DoxyCompactList}\item 
+{\bf http}
+\begin{DoxyCompactList}\small\item\em This namespace represent classes that are directly connected to handing H\-T\-T\-P requests and responses. \end{DoxyCompactList}\item 
+{\bf json}
+\begin{DoxyCompactList}\small\item\em This namespace includes all J\-S\-O\-N parsing and formatting related classes and functions. \end{DoxyCompactList}\item 
+{\bf rpc}
+\begin{DoxyCompactList}\small\item\em This namespace holds A\-P\-I for implementing various R\-P\-C A\-P\-Is, like Json\-R\-P\-C. \end{DoxyCompactList}\item 
+{\bf sessions}
+\begin{DoxyCompactList}\small\item\em this namespace keeps various session storage backends \end{DoxyCompactList}\item 
+{\bf util}
+\begin{DoxyCompactList}\small\item\em This namespace holds various useful helper functions for we developer. \end{DoxyCompactList}\item 
+{\bf views}
+\begin{DoxyCompactList}\small\item\em this namespace holds all classes used for rendering Cpp\-C\-M\-S views. \end{DoxyCompactList}\item 
+{\bf widgets}
+\begin{DoxyCompactList}\small\item\em This namespace includes all the widgets (i.\-e. parts of H\-T\-M\-L forms) supported by cppcms. \end{DoxyCompactList}\item 
+{\bf xss}
+\begin{DoxyCompactList}\small\item\em Namespace that holds Anti-\/\-Cross Site Scripting Filter support. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf application}
+\begin{DoxyCompactList}\small\item\em application class is the base class for all user created applications. \end{DoxyCompactList}\item 
+class {\bf applications\-\_\-pool}
+\begin{DoxyCompactList}\small\item\em Application pool is the central class that holds user created applications. \end{DoxyCompactList}\item 
+class {\bf base\-\_\-content}
+\begin{DoxyCompactList}\small\item\em This is a simple polymorphic class that every content for templates rendering should be derided from it. It does not carry much information with exception of R\-T\-T\-I that allows type-\/safe casting of user provided content instances to target content class that is used by specific template. \end{DoxyCompactList}\item 
+class {\bf base\-\_\-view}
+\begin{DoxyCompactList}\small\item\em This class is base class for all views (skins) rendered by Cpp\-C\-M\-S template engine. \end{DoxyCompactList}\item 
+class {\bf triggers\-\_\-recorder}
+\begin{DoxyCompactList}\small\item\em \doxyref{triggers\-\_\-recorder}{p.}{classcppcms_1_1triggers__recorder} is a class that allows you to record all triggers added in certain scope. \end{DoxyCompactList}\item 
+class {\bf cache\-\_\-interface}
+\begin{DoxyCompactList}\small\item\em This class is the major gateway of the application to Cpp\-C\-M\-S caching abilities. Any access too cache would be done via this class. \end{DoxyCompactList}\item 
+class {\bf copy\-\_\-filter}
+\begin{DoxyCompactList}\small\item\em Copy the output stream part -\/ \char`\"{}tee\char`\"{} filter. \end{DoxyCompactList}\item 
+class {\bf cppcms\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Exception thrown by Cpp\-C\-M\-S framework. \end{DoxyCompactList}\item 
+struct {\bf form\-\_\-flags}
+\begin{DoxyCompactList}\small\item\em This struct holds various flags to control the H\-T\-M\-L generation. \end{DoxyCompactList}\item 
+class {\bf form\-\_\-context}
+\begin{DoxyCompactList}\small\item\em This class represents the context required to generate the widgets' H\-T\-M\-L. \end{DoxyCompactList}\item 
+class {\bf base\-\_\-form}
+\begin{DoxyCompactList}\small\item\em This class is the base class for any form or form widget used in Cpp\-C\-M\-S. \end{DoxyCompactList}\item 
+class {\bf form}
+\begin{DoxyCompactList}\small\item\em The {\itshape form} is a container used to collect other widgets and forms into a single unit. \end{DoxyCompactList}\item 
+class {\bf forwarder}
+\begin{DoxyCompactList}\small\item\em Class responsble for automaticall forwarding of H\-T\-T\-P/\-C\-G\-I requests to other hosts over S\-C\-G\-I. \end{DoxyCompactList}\item 
+class {\bf mount\-\_\-point}
+\begin{DoxyCompactList}\small\item\em This class represents application's mount point or the rule on which specific application is selected to process the query. \end{DoxyCompactList}\item 
+struct {\bf archive\-\_\-traits}
+\begin{DoxyCompactList}\small\item\em Special traits class that describes how to serialize various objects that are not defived from \doxyref{serializable\-\_\-base}{p.}{classcppcms_1_1serializable__base}. \end{DoxyCompactList}\item 
+class {\bf archive\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Error thrown in case of serialization error. \end{DoxyCompactList}\item 
+class {\bf archive}
+\begin{DoxyCompactList}\small\item\em Class that represents a binary archive that can be stored in persistent storage or transfered. \end{DoxyCompactList}\item 
+class {\bf serializable\-\_\-base}
+\begin{DoxyCompactList}\small\item\em Base abstract class for object that can be serialized into std\-::string. \end{DoxyCompactList}\item 
+class {\bf serializable}
+\begin{DoxyCompactList}\small\item\em Abstract class for serialization object. \end{DoxyCompactList}\item 
+struct {\bf serialization\-\_\-traits}
+\begin{DoxyCompactList}\small\item\em This is the traits class for serialization traits. \end{DoxyCompactList}\item 
+class {\bf service}
+\begin{DoxyCompactList}\small\item\em This class represent the central event loop of the Cpp\-C\-M\-S applications. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-api}
+\begin{DoxyCompactList}\small\item\em This class represents the most generic implementation of session storage device. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-api\-\_\-factory}
+\begin{DoxyCompactList}\small\item\em the factory object that generates custom implemented \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} objects \end{DoxyCompactList}\item 
+class {\bf request\-\_\-forgery\-\_\-error}
+\begin{DoxyCompactList}\small\item\em This exception is thrown when C\-S\-R\-F attempt is suspected\-: \end{DoxyCompactList}\item 
+class {\bf session\-\_\-interface}
+\begin{DoxyCompactList}\small\item\em This class provides an access to an application for session management. \end{DoxyCompactList}\item 
+class {\bf session\-\_\-pool}
+\begin{DoxyCompactList}\small\item\em This class provides an access to session management backends an allow customization. \end{DoxyCompactList}\item 
+class {\bf string\-\_\-key}
+\begin{DoxyCompactList}\small\item\em This is a special object that may hold an std\-::string or alternatively reference to external (unowned) chunk of text. \end{DoxyCompactList}\item 
+class {\bf thread\-\_\-pool}
+\begin{DoxyCompactList}\small\item\em This class provides an access to the thread pool where all Cpp\-C\-M\-S synchronous applications are executed. \end{DoxyCompactList}\item 
+class {\bf urandom\-\_\-device}
+\begin{DoxyCompactList}\small\item\em High entropy random number generator. \end{DoxyCompactList}\item 
+class {\bf url\-\_\-dispatcher}
+\begin{DoxyCompactList}\small\item\em This class is used to glue between member function of application class and urls. \end{DoxyCompactList}\item 
+class {\bf url\-\_\-mapper}
+\begin{DoxyCompactList}\small\item\em class for mapping U\-R\-Ls -\/ the opposite of dispatch \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\std\-::auto\-\_\-ptr\\*
+$<$ {\bf applications\-\_\-pool\-::factory} $>$ {\bf applications\-\_\-factory} ()
+\item 
+{\footnotesize template$<$typename T , typename P1 $>$ }\\std\-::auto\-\_\-ptr\\*
+$<$ {\bf applications\-\_\-pool\-::factory} $>$ {\bf applications\-\_\-factory} (P1 p1)
+\item 
+{\footnotesize template$<$typename T , typename P1 , typename P2 $>$ }\\std\-::auto\-\_\-ptr\\*
+$<$ {\bf applications\-\_\-pool\-::factory} $>$ {\bf applications\-\_\-factory} (P1 p1, P2 p2)
+\item 
+void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf forward\-\_\-connection} ({\bf booster\-::shared\-\_\-ptr}$<$ {\bf http\-::context} $>$ cont, std\-::string const \&ip, int port)
+\item 
+{\footnotesize template$<$typename Archivable $>$ }\\{\bf archive} \& {\bf operator\&} ({\bf archive} \&a, Archivable \&object)
+\item 
+{\footnotesize template$<$typename Archivable $>$ }\\{\bf archive} \& {\bf operator$<$$<$} ({\bf archive} \&a, Archivable const \&object)
+\item 
+{\footnotesize template$<$typename Archivable $>$ }\\{\bf archive} \& {\bf operator$>$$>$} ({\bf archive} \&a, Archivable \&object)
+\item 
+std\-::ostream \& {\bf operator$<$$<$} (std\-::ostream \&out, {\bf string\-\_\-key} const \&s)
+\item 
+bool {\bf operator==} ({\bf string\-\_\-key} const \&l, char const $\ast$r)
+\item 
+bool {\bf operator==} (char const $\ast$l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator==} ({\bf string\-\_\-key} const \&l, std\-::string const \&r)
+\item 
+bool {\bf operator==} (std\-::string const \&l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator!=} ({\bf string\-\_\-key} const \&l, char const $\ast$r)
+\item 
+bool {\bf operator!=} (char const $\ast$l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator!=} ({\bf string\-\_\-key} const \&l, std\-::string const \&r)
+\item 
+bool {\bf operator!=} (std\-::string const \&l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$<$=} ({\bf string\-\_\-key} const \&l, char const $\ast$r)
+\item 
+bool {\bf operator$<$=} (char const $\ast$l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$<$=} ({\bf string\-\_\-key} const \&l, std\-::string const \&r)
+\item 
+bool {\bf operator$<$=} (std\-::string const \&l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$>$=} ({\bf string\-\_\-key} const \&l, char const $\ast$r)
+\item 
+bool {\bf operator$>$=} (char const $\ast$l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$>$=} ({\bf string\-\_\-key} const \&l, std\-::string const \&r)
+\item 
+bool {\bf operator$>$=} (std\-::string const \&l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$<$} ({\bf string\-\_\-key} const \&l, char const $\ast$r)
+\item 
+bool {\bf operator$<$} (char const $\ast$l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$<$} ({\bf string\-\_\-key} const \&l, std\-::string const \&r)
+\item 
+bool {\bf operator$<$} (std\-::string const \&l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$>$} ({\bf string\-\_\-key} const \&l, char const $\ast$r)
+\item 
+bool {\bf operator$>$} (char const $\ast$l, {\bf string\-\_\-key} const \&r)
+\item 
+bool {\bf operator$>$} ({\bf string\-\_\-key} const \&l, std\-::string const \&r)
+\item 
+bool {\bf operator$>$} (std\-::string const \&l, {\bf string\-\_\-key} const \&r)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the namespace where all Cpp\-C\-M\-S functionality is placed. 
+
+\subsection{Function Documentation}
+\index{cppcms@{cppcms}!applications\-\_\-factory@{applications\-\_\-factory}}
+\index{applications\-\_\-factory@{applications\-\_\-factory}!cppcms@{cppcms}}
+\subsubsection[{applications\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ std\-::auto\-\_\-ptr$<${\bf applications\-\_\-pool\-::factory}$>$ cppcms\-::applications\-\_\-factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_a12ad9a37fdd93474b1c899e64b3e8b22}
+Create application factory for application of type T, such as T has a constructor T\-::\-T(cppcms\-::service \&s); \index{cppcms@{cppcms}!applications\-\_\-factory@{applications\-\_\-factory}}
+\index{applications\-\_\-factory@{applications\-\_\-factory}!cppcms@{cppcms}}
+\subsubsection[{applications\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P1 $>$ std\-::auto\-\_\-ptr$<${\bf applications\-\_\-pool\-::factory}$>$ cppcms\-::applications\-\_\-factory (
+\begin{DoxyParamCaption}
+\item[{P1}]{p1}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_afc4fc49051725b6b4722bac89b1d1425}
+Create application factory for application of type T, such as T has a constructor T\-::\-T(cppcms\-::service \&s,\-P1); \index{cppcms@{cppcms}!applications\-\_\-factory@{applications\-\_\-factory}}
+\index{applications\-\_\-factory@{applications\-\_\-factory}!cppcms@{cppcms}}
+\subsubsection[{applications\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T , typename P1 , typename P2 $>$ std\-::auto\-\_\-ptr$<${\bf applications\-\_\-pool\-::factory}$>$ cppcms\-::applications\-\_\-factory (
+\begin{DoxyParamCaption}
+\item[{P1}]{p1, }
+\item[{P2}]{p2}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_a655789a2fc0abe59d14af05c65d2f87e}
+Create application factory for application of type T, such as T has a constructor T\-::\-T(cppcms\-::service \&s,\-P1,\-P2); \index{cppcms@{cppcms}!forward\-\_\-connection@{forward\-\_\-connection}}
+\index{forward\-\_\-connection@{forward\-\_\-connection}!cppcms@{cppcms}}
+\subsubsection[{forward\-\_\-connection}]{\setlength{\rightskip}{0pt plus 5cm}void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::forward\-\_\-connection (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::shared\-\_\-ptr}$<$ http\-::context $>$}]{cont, }
+\item[{std\-::string const \&}]{ip, }
+\item[{int}]{port}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_aeb57c3debeb26a8bb3571b51b25224ba}
+Forward the connection handled by {\itshape cont} to other node at I\-P {\itshape ip} listenning to on port {\itshape port} over S\-C\-G\-I protocol.
+
+The context must be released first by calling \doxyref{cppcms\-::application\-::release\-\_\-context()}{p.}{classcppcms_1_1application_a2c7b2090110eacd9e4499c569c9fa017} and it should not be used after this function call.
+
+Please note\-: forwarding would not work for P\-O\-S\-T requests with multipart/form-\/data Content type as they are stored and managed differently. \index{cppcms@{cppcms}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms@{cppcms}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{char const $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a653ed8642606ce0fb8efb8b3c97f20f8}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms@{cppcms}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a9820f03ec2302d486294b10ee1a2742b}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms@{cppcms}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_ad8ef45d8327f9a8d7e356b413c8cfbc1}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms@{cppcms}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a38b8c8fd3e6f93d435365dc5f3b9ee6d}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!cppcms@{cppcms}}
+\subsubsection[{operator\&}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Archivable $>$ {\bf archive}\& cppcms\-::operator\& (
+\begin{DoxyParamCaption}
+\item[{archive \&}]{a, }
+\item[{Archivable \&}]{object}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_a500e8fdc1bc671cf7c589fe38af0e4f0}
+Operator that performs load or store {\itshape object} operations on archive {\itshape } 
+
+References cppcms\-::archive\-\_\-traits$<$ Object $>$\-::load(), and cppcms\-::archive\-::mode().
+
+\index{cppcms@{cppcms}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!cppcms@{cppcms}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{char const $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_af31684a1721271d9aa79a1c774fd6c95}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!cppcms@{cppcms}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_ae4b5d5111bb61d0a64afd093a65c1372}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!cppcms@{cppcms}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_adcc8b7a2d44c732ee1a8b1daa0e72b7c}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!cppcms@{cppcms}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a5cb0ab4e29fb61fab479f54307b33c2c}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cppcms@{cppcms}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Archivable $>$ {\bf archive}\& cppcms\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{archive \&}]{a, }
+\item[{Archivable const \&}]{object}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_a73b97646e02a425fef5059f6395e806b}
+Operator that saves an object to the archive 
+
+References cppcms\-::archive\-\_\-traits$<$ Object $>$\-::save().
+
+\index{cppcms@{cppcms}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cppcms@{cppcms}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cppcms\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{string\-\_\-key const \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_adf40facfcedcb6978cec2b5ea4f4ab2a}
+Write the string to the stream 
+
+References cppcms\-::string\-\_\-key\-::data(), and cppcms\-::string\-\_\-key\-::size().
+
+\index{cppcms@{cppcms}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!cppcms@{cppcms}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{char const $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_ae3b4f72b2813e96902b573d6415ec6f0}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!cppcms@{cppcms}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a1d8c97f441bb9781c0db3d4477911e8d}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!cppcms@{cppcms}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a93a8186e4737300e72a3fbaf8fda345f}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!cppcms@{cppcms}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a35bbb397923405dc1613b19a7891a2e1}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms@{cppcms}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator== (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{char const $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_af296b24aa08655525bae40190f4b2eb6}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms@{cppcms}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator== (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_aee89db69edfbb28b36534999cdeba23d}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms@{cppcms}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator== (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_aed416dc565061413d7cfb4cdb01a8273}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms@{cppcms}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator== (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_ac91b30e087ab759a2080ccfb18b98939}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!cppcms@{cppcms}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{char const $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a8d5602d0c5a84120ef89ac46a7536bc5}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!cppcms@{cppcms}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a7275edbec91acb1c37631b5b711fc5d4}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!cppcms@{cppcms}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a72f6ff9f1dc1c2704dec541e533085ac}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!cppcms@{cppcms}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a8db529d3eb0c32090ad4d1906e0bfd29}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!cppcms@{cppcms}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{char const $\ast$}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_afb2094182823c428dafb5951be4265e5}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!cppcms@{cppcms}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_adecb9fa57602e011ee04b1a868859a16}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!cppcms@{cppcms}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{string\-\_\-key const \&}]{l, }
+\item[{std\-::string const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a3839171453acdb65be4337929d7a36a4}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!cppcms@{cppcms}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{l, }
+\item[{string\-\_\-key const \&}]{r}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacecppcms_a98d6e816aa6cbc2530c9d9d48ef4b6a1}
+Compare two strings 
+
+References cppcms\-::string\-\_\-key\-::unowned().
+
+\index{cppcms@{cppcms}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!cppcms@{cppcms}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Archivable $>$ {\bf archive}\& cppcms\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{archive \&}]{a, }
+\item[{Archivable \&}]{object}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_ab87a69034ad5aff96d0719514ac41b04}
+Operator that loads an object from the archive 
+
+References cppcms\-::archive\-\_\-traits$<$ Object $>$\-::load().
+

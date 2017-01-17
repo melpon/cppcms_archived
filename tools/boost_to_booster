@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# 
+rm -fr trunk
+mkdir -p trunk/boost
+mkdir -p trunk/libs
+URL=https://svn.boost.org/svn/boost/trunk
+svn export $URL/boost/locale  trunk/boost/locale
+svn export $URL/boost/locale.hpp  trunk/boost/locale.hpp
+svn export $URL/libs/locale trunk/libs/locale
+# 
+
+rm -fr boost_locale
+cp -a trunk boost_locale
+./rename.py boost_locale booster
+
+
+#
+# Linux version
+# 
+find boost_locale -name '*.hpp' -exec rename 's/\.hpp/\.h/' '{}' \;
+#
+
+# Cygwin version
+# 
+#find boost_locale -name '*.hpp' -exec rename .hpp .h '{}' \;
+#
+
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/_HPP_INCLUDED/_H_INCLUDED/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/.hpp>/.h>/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/.hpp"/.h"/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/booster\/type_traits\/is_same.h/booster\/traits\/is_base_of.h/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/booster\/locale\/config.h/booster\/config.h/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/booster\/locale\/definitions.h/booster\/config.h/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/booster\/thread\/mutex.h/booster\/thread.h/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/BOOSTER_LOCALE_DECL/BOOSTER_API/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/BOOSTER_SYMBOL_VISIBLE//' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/BOOSTER_LOCALE_SOURCE/BOOSTER_SOURCE/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/BOOSTER_WINDOWS/BOOSTER_WIN_NATIVE/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/<stdexcept>/<booster\/backtrace.h>/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/std::runtime_error/booster::runtime_error/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/std::out_of_range/booster::out_of_range/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/std::invalid_argument/booster::invalid_argument/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/#include <boost\/config\/auto_link.hpp>/#undef BOOST_LIB_NAME/' '{}' \;
+find boost_locale -regextype posix-extended -regex '.*\.(cpp|h|ipp)' -exec sed -i 's/\\example //' '{}' \;
+
+sed -i 's/BOOST_VERSION >= 103600/0/' boost_locale/libs/locale/src/shared/message.cpp
+
+rm -fr booster
+mkdir -p booster/lib/locale
+
+cp -a boost_locale/libs/locale/examples/  boost_locale/libs/locale/src/ boost_locale/libs/locale/test/ booster/lib/locale/
+cp -a boost_locale/booster booster/
+rm booster/booster/locale/config.h
+rm booster/booster/locale/definitions.h
+rm lib/locale/test/Jamfile.v2
+

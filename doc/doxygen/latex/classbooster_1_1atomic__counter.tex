@@ -1,0 +1,74 @@
+\section{booster\-:\-:atomic\-\_\-counter Class Reference}
+\label{classbooster_1_1atomic__counter}\index{booster\-::atomic\-\_\-counter@{booster\-::atomic\-\_\-counter}}
+
+
+Atomic counter is a class that allows perform counting in thread safe way.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/atomic\-\_\-counter.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf atomic\-\_\-counter} (long v)
+\item 
+long {\bf operator++} ()
+\item 
+long {\bf operator-\/-\/} ()
+\item 
+{\bf operator long} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Atomic counter is a class that allows perform counting in thread safe way. 
+
+It is mainly used for reference counting. Under Windows it uses Interlocked A\-P\-I, under other platforms it used built-\/in atomic operations or fails back to pthreads locking implementation.
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item This counter is not safe for use in process shared memory, when pthreads fall-\/back is used
+\item Under P\-O\-S\-I\-X platform pthread\-\_\-mutex\-\_\-t is always present in order to make sure that we can implement or remove pthread fall-\/back at any point not affecting A\-B\-I 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::atomic\-\_\-counter@{booster\-::atomic\-\_\-counter}!atomic\-\_\-counter@{atomic\-\_\-counter}}
+\index{atomic\-\_\-counter@{atomic\-\_\-counter}!booster::atomic_counter@{booster\-::atomic\-\_\-counter}}
+\subsubsection[{atomic\-\_\-counter}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::atomic\-\_\-counter\-::atomic\-\_\-counter (
+\begin{DoxyParamCaption}
+\item[{long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classbooster_1_1atomic__counter_aa196300e2e02b4b640135fcb878ca231}
+Create a counter with initial value v 
+
+\subsection{Member Function Documentation}
+\index{booster\-::atomic\-\_\-counter@{booster\-::atomic\-\_\-counter}!operator long@{operator long}}
+\index{operator long@{operator long}!booster::atomic_counter@{booster\-::atomic\-\_\-counter}}
+\subsubsection[{operator long}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::atomic\-\_\-counter\-::operator long (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1atomic__counter_a30ee8319a82f03810766d74a7212c66a}
+Return current value -\/ atomically \index{booster\-::atomic\-\_\-counter@{booster\-::atomic\-\_\-counter}!operator++@{operator++}}
+\index{operator++@{operator++}!booster::atomic_counter@{booster\-::atomic\-\_\-counter}}
+\subsubsection[{operator++}]{\setlength{\rightskip}{0pt plus 5cm}long booster\-::atomic\-\_\-counter\-::operator++ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1atomic__counter_a2084017688a3105cd45c50b615884a7c}
+Increment and return the result after increment atomically \index{booster\-::atomic\-\_\-counter@{booster\-::atomic\-\_\-counter}!operator-\/-\/@{operator-\/-\/}}
+\index{operator-\/-\/@{operator-\/-\/}!booster::atomic_counter@{booster\-::atomic\-\_\-counter}}
+\subsubsection[{operator-\/-\/}]{\setlength{\rightskip}{0pt plus 5cm}long booster\-::atomic\-\_\-counter\-::operator-\/-\/ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1atomic__counter_afb02b5cb2b749a930d5fac39a2412262}
+Decrement and return the result after decrement atomically 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/atomic\-\_\-counter.\-h\end{DoxyCompactItemize}

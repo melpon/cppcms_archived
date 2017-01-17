@@ -1,0 +1,93 @@
+\section{cppcms\-:\-:util\-:\-:steal\-\_\-buffer$<$ Size $>$ Class Template Reference}
+\label{classcppcms_1_1util_1_1steal__buffer}\index{cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$@{cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$}}
+
+
+This is a special buffer that allows to \char`\"{}steal\char`\"{} some chunk of text from the output stream.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/steal\-\_\-buf.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:util\-:\-:steal\-\_\-buffer$<$ Size $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcppcms_1_1util_1_1steal__buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf steal\-\_\-buffer} (std\-::ostream \&out)
+\item 
+{\bf steal\-\_\-buffer} ()
+\item 
+void {\bf steal} (std\-::ostream \&out)
+\item 
+void {\bf release} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\-\_\-t Size = 128$>$class cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$}
+
+This is a special buffer that allows to \char`\"{}steal\char`\"{} some chunk of text from the output stream. 
+
+It does this by replacing stream's streambuf object with temporary stream buffer that records all data written to the stream and then returns the original buffer upon call to \doxyref{release()}{p.}{classcppcms_1_1util_1_1steal__buffer_a8bbaaa85da5d737ab305ba45d3792ccc} member function it \doxyref{steal\-\_\-buffer}{p.}{classcppcms_1_1util_1_1steal__buffer} destruction.
+
+The {\itshape Size} parameter defines the default chunk of memory allocated on the stack before heap is used. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::util\-::steal\-\_\-buffer@{cppcms\-::util\-::steal\-\_\-buffer}!steal\-\_\-buffer@{steal\-\_\-buffer}}
+\index{steal\-\_\-buffer@{steal\-\_\-buffer}!cppcms::util::steal_buffer@{cppcms\-::util\-::steal\-\_\-buffer}}
+\subsubsection[{steal\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ {\bf cppcms\-::util\-::steal\-\_\-buffer}$<$ Size $>$\-::{\bf steal\-\_\-buffer} (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1steal__buffer_af8253f7fb4d56d4309fda932ed6e8e22}
+Create the buffer and \char`\"{}\-Steal\char`\"{} the buffer from {\itshape out} 
+
+References cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$\-::steal().
+
+\index{cppcms\-::util\-::steal\-\_\-buffer@{cppcms\-::util\-::steal\-\_\-buffer}!steal\-\_\-buffer@{steal\-\_\-buffer}}
+\index{steal\-\_\-buffer@{steal\-\_\-buffer}!cppcms::util::steal_buffer@{cppcms\-::util\-::steal\-\_\-buffer}}
+\subsubsection[{steal\-\_\-buffer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ {\bf cppcms\-::util\-::steal\-\_\-buffer}$<$ Size $>$\-::{\bf steal\-\_\-buffer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1steal__buffer_a9f3a794efa8a56ba44ccb7622307ff22}
+Create an empty buffer 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::util\-::steal\-\_\-buffer@{cppcms\-::util\-::steal\-\_\-buffer}!release@{release}}
+\index{release@{release}!cppcms::util::steal_buffer@{cppcms\-::util\-::steal\-\_\-buffer}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ void {\bf cppcms\-::util\-::steal\-\_\-buffer}$<$ Size $>$\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1steal__buffer_a8bbaaa85da5d737ab305ba45d3792ccc}
+Release the \char`\"{}stolen\char`\"{} buffer back, now the buffer contains all the data that was recorded. 
+
+Referenced by cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$\-::steal().
+
+\index{cppcms\-::util\-::steal\-\_\-buffer@{cppcms\-::util\-::steal\-\_\-buffer}!steal@{steal}}
+\index{steal@{steal}!cppcms::util::steal_buffer@{cppcms\-::util\-::steal\-\_\-buffer}}
+\subsubsection[{steal}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ void {\bf cppcms\-::util\-::steal\-\_\-buffer}$<$ Size $>$\-::steal (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1steal__buffer_ad916ef1c1ac8273fddf97219e15b2d83}
+Steal the buffer from {\itshape out} 
+
+References cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$\-::release().
+
+
+
+Referenced by cppcms\-::util\-::steal\-\_\-buffer$<$ Size $>$\-::steal\-\_\-buffer().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/steal\-\_\-buf.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,88 @@
+\section{booster\-:\-:log\-:\-:sinks\-:\-:file Class Reference}
+\label{classbooster_1_1log_1_1sinks_1_1file}\index{booster\-::log\-::sinks\-::file@{booster\-::log\-::sinks\-::file}}
+
+
+log file based sink -\/ sends messages to log file  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/log.\-h$>$}
+
+Inheritance diagram for booster\-:\-:log\-:\-:sinks\-:\-:file\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbooster_1_1log_1_1sinks_1_1file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf file} ()
+\item 
+void {\bf open} (std\-::string file\-\_\-name)
+\item 
+void {\bf max\-\_\-files} (unsigned limit)
+\item 
+void {\bf append} ()
+\item 
+void {\bf set\-\_\-timezone} (std\-::string const \&name)
+\item 
+virtual void {\bf log} ({\bf message} const \&)\label{classbooster_1_1log_1_1sinks_1_1file_ad2a5335abaff993da082fb124056748a}
+
+\begin{DoxyCompactList}\small\item\em Send message to the log. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+log file based sink -\/ sends messages to log file 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::log\-::sinks\-::file@{booster\-::log\-::sinks\-::file}!file@{file}}
+\index{file@{file}!booster::log::sinks::file@{booster\-::log\-::sinks\-::file}}
+\subsubsection[{file}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::log\-::sinks\-::file\-::file (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1sinks_1_1file_aa4c6bd1485f996a68b138beb27901085}
+Creates new object but does not open a file 
+
+\subsection{Member Function Documentation}
+\index{booster\-::log\-::sinks\-::file@{booster\-::log\-::sinks\-::file}!append@{append}}
+\index{append@{append}!booster::log::sinks::file@{booster\-::log\-::sinks\-::file}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::sinks\-::file\-::append (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1sinks_1_1file_a0fd3a432eca836a03116ca4d987aa3fc}
+Append to output file rather then create new one. \index{booster\-::log\-::sinks\-::file@{booster\-::log\-::sinks\-::file}!max\-\_\-files@{max\-\_\-files}}
+\index{max\-\_\-files@{max\-\_\-files}!booster::log::sinks::file@{booster\-::log\-::sinks\-::file}}
+\subsubsection[{max\-\_\-files}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::sinks\-::file\-::max\-\_\-files (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{limit}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1sinks_1_1file_a6c1bc0a6f42b13432fcde198b5988124}
+Enable file rotation and set the maximal number of files that should be kept.
+
+Each time the log opened, the old files are renamed, if there are more files then {\itshape limit}, the oldest is removed \index{booster\-::log\-::sinks\-::file@{booster\-::log\-::sinks\-::file}!open@{open}}
+\index{open@{open}!booster::log::sinks::file@{booster\-::log\-::sinks\-::file}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::sinks\-::file\-::open (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1sinks_1_1file_ae4569b5691c3ce315a35c40239cc6def}
+Open log file \index{booster\-::log\-::sinks\-::file@{booster\-::log\-::sinks\-::file}!set\-\_\-timezone@{set\-\_\-timezone}}
+\index{set\-\_\-timezone@{set\-\_\-timezone}!booster::log::sinks::file@{booster\-::log\-::sinks\-::file}}
+\subsubsection[{set\-\_\-timezone}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::log\-::sinks\-::file\-::set\-\_\-timezone (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1log_1_1sinks_1_1file_ab6b94e47185d583d40da2cc8f8faadfa}
+Set the time-\/zone name that should be used in the message.
+
+It should have a format G\-M\-T+\-X\-X\-:Y\-Y like \char`\"{}\-G\-M\-T+2\-:00\char`\"{} or \char`\"{}\-G\-M\-T-\/3\char`\"{}. \char`\"{}\-G\-M\-T\char`\"{} can be used as well
+
+If name is empty local time is used which is the default 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\-h}\end{DoxyCompactItemize}

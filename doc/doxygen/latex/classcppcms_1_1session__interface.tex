@@ -1,0 +1,441 @@
+\section{cppcms\-:\-:session\-\_\-interface Class Reference}
+\label{classcppcms_1_1session__interface}\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}}
+
+
+This class provides an access to an application for session management.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-interface.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:session\-\_\-interface\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1session__interface}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bf fixed}, 
+{\bf renew}, 
+{\bf browser}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf is\-\_\-set} (std\-::string const \&key)
+\item 
+void {\bf erase} (std\-::string const \&key)
+\item 
+void {\bf clear} ()
+\item 
+bool {\bf is\-\_\-exposed} (std\-::string const \&key)
+\item 
+void {\bf expose} (std\-::string const \&key, bool val=true)
+\item 
+void {\bf hide} (std\-::string const \&key)
+\item 
+std\-::string \& {\bf operator[$\,$]} (std\-::string const \&key)
+\item 
+void {\bf set} (std\-::string const \&key, std\-::string const \&v)
+\item 
+std\-::string {\bf get} (std\-::string const \&key)
+\item 
+std\-::string {\bf get} (std\-::string const \&key, std\-::string const \&default\-\_\-value)
+\item 
+{\footnotesize template$<$typename T $>$ }\\T {\bf get} (std\-::string const \&key)
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf set} (std\-::string const \&key, T const \&value)
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\void {\bf store\-\_\-data} (std\-::string const \&key, Serializable const \&object)
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\void {\bf fetch\-\_\-data} (std\-::string const \&key, Serializable \&object)
+\item 
+int {\bf age} ()
+\item 
+void {\bf age} (int t)
+\item 
+void {\bf default\-\_\-age} ()
+\item 
+int {\bf expiration} ()
+\item 
+void {\bf expiration} (int h)
+\item 
+void {\bf default\-\_\-expiration} ()
+\item 
+void {\bf on\-\_\-server} (bool srv)
+\item 
+bool {\bf on\-\_\-server} ()
+\item 
+void {\bf set\-\_\-session\-\_\-cookie} (std\-::string const \&data)
+\item 
+void {\bf clear\-\_\-session\-\_\-cookie} ()
+\item 
+std\-::string {\bf get\-\_\-session\-\_\-cookie} ()
+\item 
+bool {\bf load} ()
+\item 
+void {\bf save} ()
+\item 
+bool {\bf is\-\_\-blocking} ()
+\item 
+void {\bf reset\-\_\-session} ()
+\item 
+bool {\bf validate\-\_\-csrf\-\_\-token} (std\-::string const \&str)
+\item 
+void {\bf validate\-\_\-request\-\_\-origin} ()
+\item 
+void {\bf request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required} (bool required)
+\item 
+std\-::string {\bf get\-\_\-csrf\-\_\-token} ()
+\item 
+std\-::string {\bf get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name} ()
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries http\-::response}\label{classcppcms_1_1session__interface_a3d516a63da9c0b8ed3ad797ceb38bb26}
+
+\item 
+class {\bfseries http\-::request}\label{classcppcms_1_1session__interface_a7fde508864edfed427da73f941998012}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides an access to an application for session management. 
+
+Usually it is accessed via \doxyref{application\-::session}{p.}{classcppcms_1_1application_a5180f8d3c58b541cdf1bf832ce4617c9} member function.
+
+Note, when the application is asynchronous, the sessions should be loaded manually as fetching information from session may be not so cheap
+
+Generally, session data is represented as a map of key-\/value strings that can be read and written. All changes in session should be done before headers are written to the output (before requesting an output stream from {\tt http\-::response} object)
+
+Each of the values in session may be also exposed to client as cookie. For example if you want to disclose \char`\"{}foo\char`\"{} session key to the client side (Java Script) and session cookie is cppcms\-\_\-session=S231abc23c34ca242352a then a cookie with name cppcms\-\_\-session\-\_\-foo will be created caring the value of this key.
+
+Notes\-:
+\begin{DoxyItemize}
+\item Be careful with values you pass, cookies can carry quite a limited range of strings so it is your responsibility to make sure that these values are actually legal.
+\item Of course the client side can alter these cookies but this would not have an effect on the actual values fetched using session object. But still remember you should not relay on cookies values on server side for obvious security reasons. 
+\end{DoxyItemize}
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classcppcms_1_1session__interface_a0d133ca2bb1e3e4f147fab7da33a3e98}
+This enum defines the way session timeout is managed \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{fixed@{fixed}!cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}}\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!fixed@{fixed}}\item[{\em 
+fixed\label{classcppcms_1_1session__interface_a0d133ca2bb1e3e4f147fab7da33a3e98a3195f18903eb4d8d08318536c483672d}
+}]Once the session is created it will expire in \doxyref{age()}{p.}{classcppcms_1_1session__interface_a29ccdfae6c44581009e4bf44e1ff0325} second from the moment it created. \index{renew@{renew}!cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}}\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!renew@{renew}}\item[{\em 
+renew\label{classcppcms_1_1session__interface_a0d133ca2bb1e3e4f147fab7da33a3e98a387063fe7e5817e34796b715a806856c}
+}]Once the session expires in \doxyref{age()}{p.}{classcppcms_1_1session__interface_a29ccdfae6c44581009e4bf44e1ff0325} seconds of inactivity, once user sends an H\-T\-T\-P request again it is renewed \index{browser@{browser}!cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}}\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!browser@{browser}}\item[{\em 
+browser\label{classcppcms_1_1session__interface_a0d133ca2bb1e3e4f147fab7da33a3e98afae8670bd6e850bebbc40dd9084d4bd8}
+}]The session is kept as long as browser keeps it (does not get closed). In addition the \char`\"{}renew\char`\"{} expiration policy is valid. So if user does not close his browser but is not active, it will expire in \doxyref{age()}{p.}{classcppcms_1_1session__interface_a29ccdfae6c44581009e4bf44e1ff0325} seconds. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!age@{age}}
+\index{age@{age}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{age}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::session\-\_\-interface\-::age (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a29ccdfae6c44581009e4bf44e1ff0325}
+Get the maximal age of the session in seconds \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!age@{age}}
+\index{age@{age}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{age}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::age (
+\begin{DoxyParamCaption}
+\item[{int}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a48215036e755e93b79e7d2daf6fa351c}
+Set the maximal age of the session in seconds \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!clear@{clear}}
+\index{clear@{clear}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_add27baff3c9b860cd4959e3df4c7e248}
+Remove all keys from the session and delete the session at all. (i.\-e. empty session is automatically deleted) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!clear\-\_\-session\-\_\-cookie@{clear\-\_\-session\-\_\-cookie}}
+\index{clear\-\_\-session\-\_\-cookie@{clear\-\_\-session\-\_\-cookie}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{clear\-\_\-session\-\_\-cookie}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::clear\-\_\-session\-\_\-cookie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a7ccf59522a2c820f7a7019a99cbe12f0}
+Remove the cookie of the current session
+
+This function should be used only by user implementations of session storage \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!default\-\_\-age@{default\-\_\-age}}
+\index{default\-\_\-age@{default\-\_\-age}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{default\-\_\-age}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::default\-\_\-age (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a9de967fcd0a78fb364188ba820ac9839}
+Reset the maximal age of the session to default (session.\-timeout settings value or 24 hours if not set) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!default\-\_\-expiration@{default\-\_\-expiration}}
+\index{default\-\_\-expiration@{default\-\_\-expiration}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{default\-\_\-expiration}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::default\-\_\-expiration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a9b57d3c6015e6aa285e85719b4d2d816}
+Reset the expiration policy to the default (session.\-expire settings value or browser if not set) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!erase@{erase}}
+\index{erase@{erase}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{erase}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::erase (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a146d2e8f98919647f3539fc5bcf87a65}
+Erase specific {\itshape key} from the session \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!expiration@{expiration}}
+\index{expiration@{expiration}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{expiration}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::session\-\_\-interface\-::expiration (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a2470645ebbea145eb4031431ba5b167b}
+Get the expiration policy of the session\-: renew, fixed or browser \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!expiration@{expiration}}
+\index{expiration@{expiration}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{expiration}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::expiration (
+\begin{DoxyParamCaption}
+\item[{int}]{h}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_aa800b5fc3a6fa239984b3b23303ba907}
+Set the expiration policy of the session\-: renew, fixed or browser \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!expose@{expose}}
+\index{expose@{expose}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{expose}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::expose (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{bool}]{val = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a68df1c6860b601fcd0f93ff4b2f510ac}
+Set exposition of the {\itshape key} to client side, if val is true the value will be exposed, otherwise hidden and cookie will be deleted. \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!fetch\-\_\-data@{fetch\-\_\-data}}
+\index{fetch\-\_\-data@{fetch\-\_\-data}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{fetch\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable $>$ void cppcms\-::session\-\_\-interface\-::fetch\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{Serializable \&}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1session__interface_afffaa1dc63fb2740beec5cf4f04fe1c4}
+Fetch an {\itshape object} under {\itshape key} from the session deserializing it.
+
+The serialization is done using \doxyref{cppcms\-::serialization\-\_\-traits}{p.}{structcppcms_1_1serialization__traits}
+
+Throws \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error} if the key is not set, may throw \doxyref{archive\-\_\-error}{p.}{classcppcms_1_1archive__error} if deserialization fails (assuming that serialization uses \doxyref{cppcms\-::archive}{p.}{classcppcms_1_1archive}. 
+
+References cppcms\-::serialization\-\_\-traits$<$ Object $>$\-::load().
+
+\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!get@{get}}
+\index{get@{get}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::session\-\_\-interface\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_af3f4fad5d4b2da4ccea6f201590bbd1c}
+Get a value for a session {\itshape key}. If it is not set, throws \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error}. It is good idea to call is\-\_\-set before you call this function. \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!get@{get}}
+\index{get@{get}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::session\-\_\-interface\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string const \&}]{default\-\_\-value}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_ad64f0533bf1f15e11d184506954eba60}
+Get a value for a session {\itshape key}. If it is not set, returns default\-\_\-value \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!get@{get}}
+\index{get@{get}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T cppcms\-::session\-\_\-interface\-::get (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1session__interface_a5fb960a9dc965e01b38d590abbd1333a}
+Get convert the value that is set for a key {\itshape key} to type T using std\-::iostream. For example you can read a number using int n=session().get$<$int$>$(\char`\"{}number\char`\"{}).
+
+
+\begin{DoxyItemize}
+\item it throws \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error} if a key {\itshape key} not set/
+\item it throws std\-::bad\-\_\-cast of the conversion using std\-::iostream fails
+\end{DoxyItemize}
+
+Note\-: the conversion is locale independent (uses C locale) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!get\-\_\-csrf\-\_\-token@{get\-\_\-csrf\-\_\-token}}
+\index{get\-\_\-csrf\-\_\-token@{get\-\_\-csrf\-\_\-token}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{get\-\_\-csrf\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::session\-\_\-interface\-::get\-\_\-csrf\-\_\-token (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_aba4ea60dc5bdcfef7d9b5c35b3b910b4}
+Get C\-S\-R\-F token that is stored in the session that can be used for validation of the request origin \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name@{get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name}}
+\index{get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name@{get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::session\-\_\-interface\-::get\-\_\-csrf\-\_\-token\-\_\-cookie\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a371b5a1517d85eed166c627beb2f1500}
+Get the cooke name that holds C\-S\-R\-F token. Note it can be used only if security.\-csrf.\-exposed is set to true (which is not by default) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!get\-\_\-session\-\_\-cookie@{get\-\_\-session\-\_\-cookie}}
+\index{get\-\_\-session\-\_\-cookie@{get\-\_\-session\-\_\-cookie}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{get\-\_\-session\-\_\-cookie}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::session\-\_\-interface\-::get\-\_\-session\-\_\-cookie (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a4ce73cad6370ff117382d415260ae22d}
+Get the value of the cookie that represents session on the client
+
+This function should be used only by user implementations of session storage \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!hide@{hide}}
+\index{hide@{hide}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{hide}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::hide (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_adff345bb0fe7e5d5b43d33507bd9aaad}
+Disable exposition of a {\itshape key}. Same as expose(key,false); \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!is\-\_\-blocking@{is\-\_\-blocking}}
+\index{is\-\_\-blocking@{is\-\_\-blocking}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{is\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::session\-\_\-interface\-::is\-\_\-blocking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_acbf723608337b82ef92e30a9c2e68038}
+Returns true if the underlying session back-\/end uses blocking A\-P\-I so it is unsuitable to be called from asynchronous event loop. This can be used to decide how to load session for specific connection.
+
+If the A\-P\-I is blocking you probably should load and save session from thread pool rather then from event loop when using asynchronous applications. \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!is\-\_\-exposed@{is\-\_\-exposed}}
+\index{is\-\_\-exposed@{is\-\_\-exposed}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{is\-\_\-exposed}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::session\-\_\-interface\-::is\-\_\-exposed (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a92683ac57041e4a4346048799806af52}
+Returns true if specific {\itshape key} is exposed to client via cookies \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!is\-\_\-set@{is\-\_\-set}}
+\index{is\-\_\-set@{is\-\_\-set}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{is\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::session\-\_\-interface\-::is\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_ac30ef7d47a60cc572b726bb96c39b509}
+Check if a {\itshape key} is set (assigned some value to it) in the session \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!load@{load}}
+\index{load@{load}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::session\-\_\-interface\-::load (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_ae63e68dd2ec1d615f5a6a85bcee36605}
+Load the session, should be called one when dealing with sessions on asynchronous A\-P\-I where sessions are not loaded by default. This function returns true if any data was loaded. \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!on\-\_\-server@{on\-\_\-server}}
+\index{on\-\_\-server@{on\-\_\-server}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{on\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::on\-\_\-server (
+\begin{DoxyParamCaption}
+\item[{bool}]{srv}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a16e85effcbe3af79872065d2f5106785}
+Set store on server side option for session. If srv is true then the session will be always stored on server side and not in cookies only (required \char`\"{}server\char`\"{} or \char`\"{}both\char`\"{} type storage in session.\-location setting
+
+Rationale\-: client side storage using encrypted or signed cookies is very efficient, however it lacks of one important security feature\-: there is no other way to control their expiration but using timeout. So user may just revert the cookie to the old state to get back in time and restore its own session.
+
+So it is recommended to use server side storage in such critical cases, like soling captcha or playing a game where you can't return to previous status when storing the data in the session object. \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!on\-\_\-server@{on\-\_\-server}}
+\index{on\-\_\-server@{on\-\_\-server}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{on\-\_\-server}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::session\-\_\-interface\-::on\-\_\-server (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a96f2b502e3ca6b8f4f990d03e27242b0}
+Get on\-\_\-server session property \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string\& cppcms\-::session\-\_\-interface\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a2a77c44fc9dc320670e709ae3e70e6eb}
+Get the reference to a value for a {\itshape key}. Note if {\itshape key} is not exist, empty string is created in session object and reference to it returned (similarly to std\-::map's operator[]) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required@{request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required}}
+\index{request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required@{request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::request\-\_\-origin\-\_\-validation\-\_\-is\-\_\-required (
+\begin{DoxyParamCaption}
+\item[{bool}]{required}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_ad1f729ba36121bf7a7fe9ed27d4d6128}
+Set C\-S\-R\-F validation mode.
+
+If {\itshape required} {\ttfamily is} true then \doxyref{validate\-\_\-request\-\_\-origin()}{p.}{classcppcms_1_1session__interface_a20747261049e7780910b84a361163bfe} would throw \doxyref{request\-\_\-forgery\-\_\-error}{p.}{classcppcms_1_1request__forgery__error} if the C\-S\-R\-F token is not valid.
+
+Setting it to false would prevent from \doxyref{validate\-\_\-request\-\_\-origin()}{p.}{classcppcms_1_1session__interface_a20747261049e7780910b84a361163bfe} to do any checks.
+
+\begin{DoxyNote}{Note}
+The default is defined in the configuration property {\ttfamily security.\-csrf.\-automatic}. If its value is not set the default is {\ttfamily true} 
+\end{DoxyNote}
+It is useful when some parts of the application do not require C\-S\-R\-F validation regardless the status of sepecifc session owner \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!reset\-\_\-session@{reset\-\_\-session}}
+\index{reset\-\_\-session@{reset\-\_\-session}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{reset\-\_\-session}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::reset\-\_\-session (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_ad41f55cfc3d1ea1d265e347a1ede6e42}
+When using session id based session -\/ force generation of new session id to prevent session fixation attacks \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!save@{save}}
+\index{save@{save}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::save (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_aa0f2443a9fb6a791f1cce35d03fdbd93}
+Save the session data, generally should not be called as it is saved automatically. However when writing asynchronous application and using custom slow storage devices like S\-Q\-L it may be useful to control when and how \doxyref{save()}{p.}{classcppcms_1_1session__interface_aa0f2443a9fb6a791f1cce35d03fdbd93} is called. \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!set@{set}}
+\index{set@{set}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::set (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a01afa729232be5854dd1812faf914fd0}
+Set value {\itshape v} for a session key {\itshape key} \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!set@{set}}
+\index{set@{set}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void cppcms\-::session\-\_\-interface\-::set (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{T const \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1session__interface_a3ebfb44d6e64806dc852aaa04c803e09}
+Assign a {\itshape value} of type {\itshape T} to {\itshape key} converting it to string using std\-::iostream. For example session().set(\char`\"{}num\char`\"{},100); Note\-: the conversion is locale independent (uses C locale) \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!set\-\_\-session\-\_\-cookie@{set\-\_\-session\-\_\-cookie}}
+\index{set\-\_\-session\-\_\-cookie@{set\-\_\-session\-\_\-cookie}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{set\-\_\-session\-\_\-cookie}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::set\-\_\-session\-\_\-cookie (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{data}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a30150605813c921a095bb026279601ab}
+Set the cookie that represents the current session (the value of the cookie)
+
+This function should be used only by user implementations of session storage \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!store\-\_\-data@{store\-\_\-data}}
+\index{store\-\_\-data@{store\-\_\-data}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{store\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable $>$ void cppcms\-::session\-\_\-interface\-::store\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{Serializable const \&}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1session__interface_a4c36d1af16376b92c21197bb95097be2}
+Serialize an {\itshape object} and store it under a {\itshape key}.
+
+The serialization is done using \doxyref{cppcms\-::serialization\-\_\-traits}{p.}{structcppcms_1_1serialization__traits} 
+
+References cppcms\-::serialization\-\_\-traits$<$ Object $>$\-::save().
+
+\index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!validate\-\_\-csrf\-\_\-token@{validate\-\_\-csrf\-\_\-token}}
+\index{validate\-\_\-csrf\-\_\-token@{validate\-\_\-csrf\-\_\-token}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{validate\-\_\-csrf\-\_\-token}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::session\-\_\-interface\-::validate\-\_\-csrf\-\_\-token (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{str}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_af8dc0753b1853f51938a3c71efa73110}
+Check that the C\-S\-R\-F token is the same as in the session object, it does not do any checks, whether C\-S\-R\-F enabled or the request method is correct. It should be used for custom request handling (like custom content types for R\-E\-S\-Tful services.
+
+Returns true if the token is valid, otherwise returns false \index{cppcms\-::session\-\_\-interface@{cppcms\-::session\-\_\-interface}!validate\-\_\-request\-\_\-origin@{validate\-\_\-request\-\_\-origin}}
+\index{validate\-\_\-request\-\_\-origin@{validate\-\_\-request\-\_\-origin}!cppcms::session_interface@{cppcms\-::session\-\_\-interface}}
+\subsubsection[{validate\-\_\-request\-\_\-origin}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::session\-\_\-interface\-::validate\-\_\-request\-\_\-origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1session__interface_a20747261049e7780910b84a361163bfe}
+Check that there is no Cross Site Request Forgery Attempt.
+
+If C\-S\-R\-F checks enabled it validates that there is a valid C\-S\-R\-F token is submitted via P\-O\-S\-T request or via X-\/\-C\-S\-R\-F-\/\-Token header for A\-J\-A\-X requests.
+
+\begin{DoxyNote}{Note}
+it is checked for P\-O\-S\-T requests only. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-interface.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\section{cppcms\-:\-:views\-:\-:manager Class Reference}
+\label{classcppcms_1_1views_1_1manager}\index{cppcms\-::views\-::manager@{cppcms\-::views\-::manager}}
+
+
+This class controls the views used my application it knows to load them dynamically and reload if needed.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/views\-\_\-pool.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:views\-:\-:manager\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1views_1_1manager}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf manager} ({\bf json\-::value} const \&settings)
+\item 
+void {\bf render} (std\-::string const \&skin, std\-::string const \&template\-\_\-name, std\-::ostream \&out, {\bf base\-\_\-content} \&content)
+\item 
+std\-::string {\bf default\-\_\-skin} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class controls the views used my application it knows to load them dynamically and reload if needed. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::views\-::manager@{cppcms\-::views\-::manager}!manager@{manager}}
+\index{manager@{manager}!cppcms::views::manager@{cppcms\-::views\-::manager}}
+\subsubsection[{manager}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::views\-::manager\-::manager (
+\begin{DoxyParamCaption}
+\item[{{\bf json\-::value} const \&}]{settings}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1manager_a462dc3a2f806ac32c9272ec55299ce14}
+Create new views manager
+
+Usually created by \doxyref{cppcms\-::service()}{p.}{classcppcms_1_1service} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::views\-::manager@{cppcms\-::views\-::manager}!default\-\_\-skin@{default\-\_\-skin}}
+\index{default\-\_\-skin@{default\-\_\-skin}!cppcms::views::manager@{cppcms\-::views\-::manager}}
+\subsubsection[{default\-\_\-skin}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::views\-::manager\-::default\-\_\-skin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1manager_a7bb498f0e79ff5581108988b944ee4cb}
+Get default skin \index{cppcms\-::views\-::manager@{cppcms\-::views\-::manager}!render@{render}}
+\index{render@{render}!cppcms::views::manager@{cppcms\-::views\-::manager}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::views\-::manager\-::render (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{skin, }
+\item[{std\-::string const \&}]{template\-\_\-name, }
+\item[{std\-::ostream \&}]{out, }
+\item[{{\bf base\-\_\-content} \&}]{content}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1manager_a4ca3216f9964e00ef66bb15b55b51701}
+Render a template in a skin. Checks if any of shared objects/dlls should be reloaded 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/views\-\_\-pool.\-h\end{DoxyCompactItemize}

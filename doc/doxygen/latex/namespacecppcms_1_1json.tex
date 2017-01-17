@@ -1,0 +1,135 @@
+\section{cppcms\-:\-:json Namespace Reference}
+\label{namespacecppcms_1_1json}\index{cppcms\-::json@{cppcms\-::json}}
+
+
+This namespace includes all J\-S\-O\-N parsing and formatting related classes and functions.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf null}
+\begin{DoxyCompactList}\small\item\em Special object that is convertible to null json value. \end{DoxyCompactList}\item 
+struct {\bf undefined}
+\begin{DoxyCompactList}\small\item\em Special object that is convertible to undefined json value. \end{DoxyCompactList}\item 
+struct {\bf traits}
+\begin{DoxyCompactList}\small\item\em The type traits schema for converting json values to/from orinary objects i.\-e. serialization from J\-S\-O\-N to C++ object. \end{DoxyCompactList}\item 
+class {\bf bad\-\_\-value\-\_\-cast}
+\begin{DoxyCompactList}\small\item\em The error that is thrown in case of bad conversion of \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} to ordinary value. \end{DoxyCompactList}\item 
+class {\bf value}
+\begin{DoxyCompactList}\small\item\em This class is central representation of json objects. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\-::vector$<$ {\bf value} $>$ {\bf array}\label{namespacecppcms_1_1json_aefdab4e43ce88b19e1a73eecfe02d799}
+
+\begin{DoxyCompactList}\small\item\em The \doxyref{json\-::array}{p.}{namespacecppcms_1_1json_aefdab4e43ce88b19e1a73eecfe02d799} -\/ std\-::vector of \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value}'s. \end{DoxyCompactList}\item 
+typedef std\-::map$<$ {\bf string\-\_\-key}, \\*
+{\bf value} $>$ {\bf object}\label{namespacecppcms_1_1json_a4849268540ccdea30cfa408d6706d0c9}
+
+\begin{DoxyCompactList}\small\item\em The \doxyref{json\-::object}{p.}{namespacecppcms_1_1json_a4849268540ccdea30cfa408d6706d0c9} -\/ std\-::map of \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value}'s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf json\-\_\-type} \{ \\*
+{\bf is\-\_\-undefined}, 
+{\bf is\-\_\-null}, 
+{\bf is\-\_\-boolean}, 
+{\bf is\-\_\-number}, 
+\\*
+{\bf is\-\_\-string}, 
+{\bf is\-\_\-object}, 
+{\bf is\-\_\-array}
+ \}
+\item 
+enum \{ {\bf compact} = 0, 
+{\bf readable} = 1
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries operator==} ({\bf undefined} const \&, {\bf undefined} const \&)\label{namespacecppcms_1_1json_a2069011c390fc360bcf6bc7eb58d1cf1}
+
+\item 
+bool {\bfseries operator!=} ({\bf undefined} const \&, {\bf undefined} const \&)\label{namespacecppcms_1_1json_a3be55642db51461e8eb131fadce85195}
+
+\item 
+bool {\bfseries operator==} ({\bf null} const \&, {\bf null} const \&)\label{namespacecppcms_1_1json_a8225cbee2971b89fc1ce435c0b146b01}
+
+\item 
+bool {\bfseries operator!=} ({\bf null} const \&, {\bf null} const \&)\label{namespacecppcms_1_1json_ac36b1a30bb433743061fdfeca3f9a7e7}
+
+\item 
+std\-::istream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I \& {\bf operator$>$$>$} (std\-::istream \&in, {\bf value} \&v)
+\item 
+std\-::ostream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I \& {\bf operator$<$$<$} (std\-::ostream \&out, {\bf value} const \&v)
+\item 
+std\-::ostream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I \& {\bf operator$<$$<$} (std\-::ostream \&out, {\bf json\-\_\-type})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace includes all J\-S\-O\-N parsing and formatting related classes and functions. 
+
+\subsection{Enumeration Type Documentation}
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{namespacecppcms_1_1json_a797153fcb28b504b4b00310f0ac30393}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{compact@{compact}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!compact@{compact}}\item[{\em 
+compact\label{namespacecppcms_1_1json_a797153fcb28b504b4b00310f0ac30393aa0172afab64ae681c98bad599d7ae1af}
+}]Print J\-S\-O\-N values in most compact format. \index{readable@{readable}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!readable@{readable}}\item[{\em 
+readable\label{namespacecppcms_1_1json_a797153fcb28b504b4b00310f0ac30393a80a22af81fee7e185cbbffb9ee165645}
+}]Print J\-S\-O\-N values in human readable format (with identention) \end{description}
+\end{Desc}
+\index{cppcms\-::json@{cppcms\-::json}!json\-\_\-type@{json\-\_\-type}}
+\index{json\-\_\-type@{json\-\_\-type}!cppcms::json@{cppcms\-::json}}
+\subsubsection[{json\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::json\-::json\-\_\-type}}\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2f}
+The type of json value \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{is\-\_\-undefined@{is\-\_\-undefined}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-undefined@{is\-\_\-undefined}}\item[{\em 
+is\-\_\-undefined\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa81b825f1da773b3b5366d1d4a50d62ee}
+}]Undefined value. \index{is\-\_\-null@{is\-\_\-null}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-null@{is\-\_\-null}}\item[{\em 
+is\-\_\-null\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa22c479e93d944ace38a553dc49826d89}
+}]null value \index{is\-\_\-boolean@{is\-\_\-boolean}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-boolean@{is\-\_\-boolean}}\item[{\em 
+is\-\_\-boolean\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa396df1c896fa7acd285a83aaa3bf8d30}
+}]boolean value \index{is\-\_\-number@{is\-\_\-number}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-number@{is\-\_\-number}}\item[{\em 
+is\-\_\-number\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2faca27ab2ba1425dbb5c177ea0ff379ebd}
+}]numeric value \index{is\-\_\-string@{is\-\_\-string}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-string@{is\-\_\-string}}\item[{\em 
+is\-\_\-string\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa050cdf883f72c2ccacd4e40775875bdc}
+}]string value \index{is\-\_\-object@{is\-\_\-object}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-object@{is\-\_\-object}}\item[{\em 
+is\-\_\-object\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa5c5521179c08fcac7cf56ce66c96baed}
+}]object value \index{is\-\_\-array@{is\-\_\-array}!cppcms\-::json@{cppcms\-::json}}\index{cppcms\-::json@{cppcms\-::json}!is\-\_\-array@{is\-\_\-array}}\item[{\em 
+is\-\_\-array\label{namespacecppcms_1_1json_abb91466c5b2824abd3c0c4c6f77bfd2fa2fe35365aa83ab4c94ed05f036acb7ee}
+}]array value \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{cppcms\-::json@{cppcms\-::json}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cppcms::json@{cppcms\-::json}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I\& cppcms\-::json\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{value const \&}]{v}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1json_aec1a6f4336dbca5132f83d72688b85fd}
+Write json object to output stream \index{cppcms\-::json@{cppcms\-::json}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!cppcms::json@{cppcms\-::json}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I\& cppcms\-::json\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out, }
+\item[{json\-\_\-type}]{}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1json_abe67ac8e29f11a1c9feccf9eb2d4cfdf}
+Write human readable representation of json\-\_\-type \index{cppcms\-::json@{cppcms\-::json}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!cppcms::json@{cppcms\-::json}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std\-::istream C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I\& cppcms\-::json\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{in, }
+\item[{value \&}]{v}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1json_ac3d2d9c2a6b8534037b891a569b7021d}
+Read json object from input stream 

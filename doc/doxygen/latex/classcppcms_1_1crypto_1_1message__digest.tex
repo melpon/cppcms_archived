@@ -1,0 +1,125 @@
+\section{cppcms\-:\-:crypto\-:\-:message\-\_\-digest Class Reference}
+\label{classcppcms_1_1crypto_1_1message__digest}\index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+
+
+this class provides an A\-P\-I to calculate various cryptographic hash functions  
+
+
+
+
+{\ttfamily \#include $<$cppcms/crypto.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:crypto\-:\-:message\-\_\-digest\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1crypto_1_1message__digest}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual unsigned {\bf digest\-\_\-size} () const =0
+\item 
+virtual unsigned {\bf block\-\_\-size} () const =0
+\item 
+virtual void {\bf append} (void const $\ast$ptr, size\-\_\-t size)=0
+\item 
+virtual void {\bf readout} (void $\ast$ptr)=0
+\item 
+virtual {\bf message\-\_\-digest} $\ast$ {\bf clone} () const =0
+\item 
+virtual char const $\ast$ {\bf name} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::auto\-\_\-ptr\\*
+$<$ {\bf message\-\_\-digest} $>$ {\bf md5} ()
+\item 
+static std\-::auto\-\_\-ptr\\*
+$<$ {\bf message\-\_\-digest} $>$ {\bf sha1} ()
+\item 
+static std\-::auto\-\_\-ptr\\*
+$<$ {\bf message\-\_\-digest} $>$ {\bf create\-\_\-by\-\_\-name} (std\-::string const \&{\bf name})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf message\-\_\-digest} ()\label{classcppcms_1_1crypto_1_1message__digest_ae04211af8b554e90bfa742a9521dd431}
+
+\begin{DoxyCompactList}\small\item\em It should be implemented in derived classes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class provides an A\-P\-I to calculate various cryptographic hash functions 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!append@{append}}
+\index{append@{append}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{append}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::message\-\_\-digest\-::append (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1message__digest_a7340ee3a082691ad605cf1f5e8b444bf}
+Add more data of size bytes for processing \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!block\-\_\-size@{block\-\_\-size}}
+\index{block\-\_\-size@{block\-\_\-size}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned cppcms\-::crypto\-::message\-\_\-digest\-::block\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1message__digest_a8f0cb5d4e1f281ebf213916fa409156c}
+Get processing block size, returns 64 or 128, used mostly for correct H\-M\-A\-C calculations \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!clone@{clone}}
+\index{clone@{clone}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf message\-\_\-digest}$\ast$ cppcms\-::crypto\-::message\-\_\-digest\-::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1message__digest_a62e9998bcdafa1be4807f2e08890a8a5}
+Make a polymorphic copy of this object, note the state of copied object is reset to initial \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!create\-\_\-by\-\_\-name@{create\-\_\-by\-\_\-name}}
+\index{create\-\_\-by\-\_\-name@{create\-\_\-by\-\_\-name}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{create\-\_\-by\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::auto\-\_\-ptr$<${\bf message\-\_\-digest}$>$ cppcms\-::crypto\-::message\-\_\-digest\-::create\-\_\-by\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1crypto_1_1message__digest_acb4f17871bd9083fde68971cf320ed25}
+Create message digest by name, more then sha1 and md5 may be supported, if Cpp\-C\-M\-S is compiled with cryptography library like libgcrypt or openssl \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!digest\-\_\-size@{digest\-\_\-size}}
+\index{digest\-\_\-size@{digest\-\_\-size}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{digest\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned cppcms\-::crypto\-::message\-\_\-digest\-::digest\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1message__digest_a48e8e2b72f256195d0299768b4531c51}
+Get the size of message digest, for example for M\-D5 it is 16, for S\-H\-A1 it is 20 \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!md5@{md5}}
+\index{md5@{md5}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{md5}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::auto\-\_\-ptr$<${\bf message\-\_\-digest}$>$ cppcms\-::crypto\-::message\-\_\-digest\-::md5 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1crypto_1_1message__digest_a091d86123275dc03bece3fdbec124a9b}
+Create M\-D5 message digest \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!name@{name}}
+\index{name@{name}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}virtual char const$\ast$ cppcms\-::crypto\-::message\-\_\-digest\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1message__digest_a1cd17278c901e13c67622d8a4f02d847}
+Get the name of the hash function \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!readout@{readout}}
+\index{readout@{readout}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{readout}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::message\-\_\-digest\-::readout (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1message__digest_a21a1f4bb3d63672001cc50c6c5a88e73}
+Read the message digest for the data and reset it into initial state, provided buffer must be \doxyref{digest\-\_\-size()}{p.}{classcppcms_1_1crypto_1_1message__digest_a48e8e2b72f256195d0299768b4531c51} bytes \index{cppcms\-::crypto\-::message\-\_\-digest@{cppcms\-::crypto\-::message\-\_\-digest}!sha1@{sha1}}
+\index{sha1@{sha1}!cppcms::crypto::message_digest@{cppcms\-::crypto\-::message\-\_\-digest}}
+\subsubsection[{sha1}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::auto\-\_\-ptr$<${\bf message\-\_\-digest}$>$ cppcms\-::crypto\-::message\-\_\-digest\-::sha1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1crypto_1_1message__digest_af39ddd68f5a2268c9c3515cfbaef3bc8}
+Create S\-H\-A1 message digest 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/crypto.\-h\end{DoxyCompactItemize}

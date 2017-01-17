@@ -1,0 +1,161 @@
+\section{booster\-:\-:nowide Namespace Reference}
+\label{namespacebooster_1_1nowide}\index{booster\-::nowide@{booster\-::nowide}}
+
+
+This namespace includes implementation of basic S\-T\-L's / S\-T\-D\-L\-Ib's functions such that they accept U\-T\-F-\/8 strings. on Windows. Otherwise it is just an alias of std namespace (i.\-e. not on Windows)  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf bad\-\_\-utf}
+\begin{DoxyCompactList}\small\item\em This exception is thrown if invalid U\-T\-F-\/8 or U\-T\-F-\/16 is given as input. \end{DoxyCompactList}\item 
+class {\bf basic\-\_\-filebuf}
+\item 
+class {\bf basic\-\_\-filebuf$<$ char $>$}
+\item 
+class {\bf basic\-\_\-ifstream}
+\item 
+class {\bf basic\-\_\-ofstream}
+\item 
+class {\bf basic\-\_\-fstream}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf basic\-\_\-filebuf}$<$ char $>$ {\bf filebuf}
+\item 
+typedef {\bf basic\-\_\-ifstream}$<$ char $>$ {\bf ifstream}
+\item 
+typedef {\bf basic\-\_\-ofstream}$<$ char $>$ {\bf ofstream}
+\item 
+typedef {\bf basic\-\_\-fstream}$<$ char $>$ {\bf fstream}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string {\bf convert} (wchar\-\_\-t const $\ast$s)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::wstring {\bf convert} (char const $\ast$s)
+\item 
+std\-::string {\bf convert} (std\-::wstring const \&s)
+\item 
+std\-::wstring {\bf convert} (std\-::string const \&s)
+\item 
+F\-I\-L\-E $\ast$ {\bf fopen} (char const $\ast$file\-\_\-name, char const $\ast$mode)
+\item 
+F\-I\-L\-E $\ast$ {\bf freopen} (char const $\ast$file\-\_\-name, char const $\ast$mode, F\-I\-L\-E $\ast$stream)
+\item 
+int {\bf rename} (char const $\ast$old\-\_\-name, char const $\ast$new\-\_\-name)
+\item 
+int {\bf remove} (char const $\ast$name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace includes implementation of basic S\-T\-L's / S\-T\-D\-L\-Ib's functions such that they accept U\-T\-F-\/8 strings. on Windows. Otherwise it is just an alias of std namespace (i.\-e. not on Windows) 
+
+\subsection{Typedef Documentation}
+\index{booster\-::nowide@{booster\-::nowide}!filebuf@{filebuf}}
+\index{filebuf@{filebuf}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{filebuf}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf basic\-\_\-filebuf}$<$char$>$ {\bf booster\-::nowide\-::filebuf}}\label{namespacebooster_1_1nowide_af9a3f7aff0f973ee8d6782afcc3e9093}
+Same as std\-::filebuf but accepts U\-T\-F-\/8 strings under Windows \index{booster\-::nowide@{booster\-::nowide}!fstream@{fstream}}
+\index{fstream@{fstream}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{fstream}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf basic\-\_\-fstream}$<$char$>$ {\bf booster\-::nowide\-::fstream}}\label{namespacebooster_1_1nowide_a26c228a6232fd9d80df062561a77f828}
+Same as std\-::fstream but accepts U\-T\-F-\/8 strings under Windows \index{booster\-::nowide@{booster\-::nowide}!ifstream@{ifstream}}
+\index{ifstream@{ifstream}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{ifstream}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf basic\-\_\-ifstream}$<$char$>$ {\bf booster\-::nowide\-::ifstream}}\label{namespacebooster_1_1nowide_aa72388695c66c16e78554f6b59f4e358}
+Same as std\-::ifstream but accepts U\-T\-F-\/8 strings under Windows \index{booster\-::nowide@{booster\-::nowide}!ofstream@{ofstream}}
+\index{ofstream@{ofstream}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{ofstream}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf basic\-\_\-ofstream}$<$char$>$ {\bf booster\-::nowide\-::ofstream}}\label{namespacebooster_1_1nowide_a4629258b0534aa7c54c75ceedf17dd60}
+Same as std\-::ofstream but accepts U\-T\-F-\/8 strings under Windows 
+
+\subsection{Function Documentation}
+\index{booster\-::nowide@{booster\-::nowide}!convert@{convert}}
+\index{convert@{convert}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::string booster\-::nowide\-::convert (
+\begin{DoxyParamCaption}
+\item[{wchar\-\_\-t const $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1nowide_a9641be36b3697a2bc5fc5a150ec5dd8b}
+Convert between U\-T\-F-\/16 and U\-T\-F-\/8 string, implemented only on Windows platform 
+
+Referenced by convert(), fopen(), freopen(), remove(), and rename().
+
+\index{booster\-::nowide@{booster\-::nowide}!convert@{convert}}
+\index{convert@{convert}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::wstring booster\-::nowide\-::convert (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{s}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1nowide_a07f2c5a404c93d01d65c7d42d067ca61}
+Convert between U\-T\-F-\/8 and U\-T\-F-\/16 string, implemented only on Windows platform \index{booster\-::nowide@{booster\-::nowide}!convert@{convert}}
+\index{convert@{convert}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::nowide\-::convert (
+\begin{DoxyParamCaption}
+\item[{std\-::wstring const \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1nowide_a25f1886fc2f6536b3330293da59ccace}
+Convert between U\-T\-F-\/16 and U\-T\-F-\/8 string, implemented only on Windows platform 
+
+References convert().
+
+\index{booster\-::nowide@{booster\-::nowide}!convert@{convert}}
+\index{convert@{convert}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{convert}]{\setlength{\rightskip}{0pt plus 5cm}std\-::wstring booster\-::nowide\-::convert (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1nowide_a8ddc9143ac327bb926b1f316d53fad1b}
+Convert between U\-T\-F-\/8 and U\-T\-F-\/16 string, implemented only on Windows platform 
+
+References convert().
+
+\index{booster\-::nowide@{booster\-::nowide}!fopen@{fopen}}
+\index{fopen@{fopen}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{fopen}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ booster\-::nowide\-::fopen (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{file\-\_\-name, }
+\item[{char const $\ast$}]{mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1nowide_a905c2519da73b19b5fc4481785249726}
+Same as C fopen, but accepts U\-T\-F-\/8 string as file name under Windows 
+
+References convert().
+
+\index{booster\-::nowide@{booster\-::nowide}!freopen@{freopen}}
+\index{freopen@{freopen}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{freopen}]{\setlength{\rightskip}{0pt plus 5cm}F\-I\-L\-E$\ast$ booster\-::nowide\-::freopen (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{file\-\_\-name, }
+\item[{char const $\ast$}]{mode, }
+\item[{F\-I\-L\-E $\ast$}]{stream}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1nowide_a9863610cbd032d3d0113b92b6a182f99}
+Same as C freopen, but accepts U\-T\-F-\/8 string as file name under Windows 
+
+References convert().
+
+\index{booster\-::nowide@{booster\-::nowide}!remove@{remove}}
+\index{remove@{remove}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::nowide\-::remove (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1nowide_a9f1d13ccc634e8a0e558a51e38144288}
+Same as C remove, but accepts U\-T\-F-\/8 string as file name under Windows 
+
+References convert().
+
+\index{booster\-::nowide@{booster\-::nowide}!rename@{rename}}
+\index{rename@{rename}!booster::nowide@{booster\-::nowide}}
+\subsubsection[{rename}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::nowide\-::rename (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{old\-\_\-name, }
+\item[{char const $\ast$}]{new\-\_\-name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1nowide_ae94d32a57f960c3239ee20276fc2ce93}
+Same as C rename, but accepts U\-T\-F-\/8 strings as file names under Windows 
+
+References convert().
+

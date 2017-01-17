@@ -1,0 +1,384 @@
+\section{booster\-:\-:ptime Class Reference}
+\label{classbooster_1_1ptime}\index{booster\-::ptime@{booster\-::ptime}}
+
+
+This class represents P\-O\-S\-I\-X time.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/posix\-\_\-time.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ptime} (long long {\bf seconds}=0, int nano=0)
+\item 
+long long {\bf get\-\_\-seconds} () const 
+\item 
+int {\bf get\-\_\-nanoseconds} () const 
+\item 
+int {\bf get\-\_\-milliseconds} () const 
+\item 
+int {\bf get\-\_\-microseconds} () const 
+\item 
+{\bf ptime} {\bf operator+} ({\bf ptime} const \&other) const 
+\item 
+{\bf ptime} {\bf operator-\/} ({\bf ptime} const \&other) const 
+\item 
+bool {\bfseries operator==} ({\bf ptime} const \&other) const \label{classbooster_1_1ptime_ae83531ed69e5c5a18b752e1f8473a85f}
+
+\item 
+bool {\bfseries operator!=} ({\bf ptime} const \&other) const \label{classbooster_1_1ptime_ad22fdf26b2ee1e04f26ee70522687109}
+
+\item 
+bool {\bfseries operator$<$} ({\bf ptime} const \&other) const \label{classbooster_1_1ptime_a00511df2de6462b1ed9d9780de16b802}
+
+\item 
+bool {\bfseries operator$>$} ({\bf ptime} const \&other) const \label{classbooster_1_1ptime_a68bab0f7fb7ef0d947bca6bcce5e0bdd}
+
+\item 
+bool {\bfseries operator$<$=} ({\bf ptime} const \&other) const \label{classbooster_1_1ptime_acd87f43e2068b675e511b4100e1092f4}
+
+\item 
+bool {\bfseries operator$>$=} ({\bf ptime} const \&other) const \label{classbooster_1_1ptime_abd0d062cdfef9cdb11788d1169b06c2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static long long {\bf seconds} ({\bf ptime} const \&p)
+\item 
+static {\bf ptime} {\bf seconds} (long long v)
+\item 
+static long long {\bf milliseconds} ({\bf ptime} const \&p)
+\item 
+static {\bf ptime} {\bf milliseconds} (long long v)
+\item 
+static long long {\bf microseconds} ({\bf ptime} const \&p)
+\item 
+static {\bf ptime} {\bf microseconds} (long long v)
+\item 
+static long long {\bf nanoseconds} ({\bf ptime} const \&p)
+\item 
+static {\bf ptime} {\bf nanoseconds} (long long v)
+\item 
+static {\bf ptime} {\bf minutes} (long long v)
+\item 
+static long long {\bf minutes} ({\bf ptime} const \&p)
+\item 
+static long long {\bf hours} ({\bf ptime} const \&p)
+\item 
+static {\bf ptime} {\bf hours} (long long v)
+\item 
+static long long {\bf days} ({\bf ptime} const \&p)
+\item 
+static {\bf ptime} {\bf days} (long long v)
+\item 
+static double {\bf to\-\_\-number} ({\bf ptime} const \&t)
+\item 
+static {\bf ptime} {\bf from\-\_\-number} (double d)
+\item 
+static {\bf ptime} {\bf local\-\_\-time} (std\-::tm const \&v)
+\item 
+static {\bf ptime} {\bf universal\-\_\-time} (std\-::tm const \&v)
+\item 
+static std\-::tm {\bf local\-\_\-time} ({\bf ptime} const \&v)
+\item 
+static std\-::tm {\bf universal\-\_\-time} ({\bf ptime} const \&v)
+\item 
+static {\bf ptime} {\bf now} ()
+\item 
+static void {\bf millisleep} (long long v)
+\item 
+static void {\bf nanosleep} (long long v)
+\item 
+static void {\bf sleep} ({\bf ptime} const \&v)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf ptime} const {\bf zero}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents P\-O\-S\-I\-X time. 
+
+The time from Jan 1, 1970 in seconds in U\-T\-C (without leap seconds) similar to time\-\_\-t.
+
+ptime internally holds 64 bit integer for seconds part and int for nanoseconds part which gives fine-\/grained time representation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::ptime@{booster\-::ptime}!ptime@{ptime}}
+\index{ptime@{ptime}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{ptime}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::ptime\-::ptime (
+\begin{DoxyParamCaption}
+\item[{long long}]{seconds = {\ttfamily 0}, }
+\item[{int}]{nano = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}\label{classbooster_1_1ptime_a2ee40f08e2ad55fa5db9ffe9dac61028}
+Create the P\-O\-S\-I\-X time from seconds and nanoseconds. 
+
+References booster\-::locale\-::normalize().
+
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::ptime@{booster\-::ptime}!days@{days}}
+\index{days@{days}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{days}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::days (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a41644e39f80551f82e2d64de5a0bb86c}
+Get amount of full days in {\itshape p} 
+
+References get\-\_\-seconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!days@{days}}
+\index{days@{days}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{days}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::days (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a0b2b34f7fce945ee96c183346fc5f515}
+Convert days {\itshape v} to ptime. \index{booster\-::ptime@{booster\-::ptime}!from\-\_\-number@{from\-\_\-number}}
+\index{from\-\_\-number@{from\-\_\-number}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{from\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::from\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{double}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a199a0a6ef03d867f4316ff7d8ec1f253}
+Convert floating point number {\itshape d} that represents P\-O\-S\-I\-X time in seconds to ptime \index{booster\-::ptime@{booster\-::ptime}!get\-\_\-microseconds@{get\-\_\-microseconds}}
+\index{get\-\_\-microseconds@{get\-\_\-microseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{get\-\_\-microseconds}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::ptime\-::get\-\_\-microseconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1ptime_ad008da341205a6b284e0dcfa8a03e42f}
+Get the microseconds fraction part of P\-O\-S\-I\-X time (which is equal to \doxyref{get\-\_\-nanoseconds()}{p.}{classbooster_1_1ptime_a21fbfa8a4d9deb7997581c154b38ddd1} / 1,000) \index{booster\-::ptime@{booster\-::ptime}!get\-\_\-milliseconds@{get\-\_\-milliseconds}}
+\index{get\-\_\-milliseconds@{get\-\_\-milliseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{get\-\_\-milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::ptime\-::get\-\_\-milliseconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1ptime_ac13669629eef813292ff44df3b3aa5ea}
+Get the milliseconds fraction part of P\-O\-S\-I\-X time (which is equal to \doxyref{get\-\_\-nanoseconds()}{p.}{classbooster_1_1ptime_a21fbfa8a4d9deb7997581c154b38ddd1} / 1,000,000) 
+
+Referenced by milliseconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!get\-\_\-nanoseconds@{get\-\_\-nanoseconds}}
+\index{get\-\_\-nanoseconds@{get\-\_\-nanoseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{get\-\_\-nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::ptime\-::get\-\_\-nanoseconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1ptime_a21fbfa8a4d9deb7997581c154b38ddd1}
+Get the nanoseconds fraction part of P\-O\-S\-I\-X time 
+
+Referenced by microseconds(), and nanoseconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!get\-\_\-seconds@{get\-\_\-seconds}}
+\index{get\-\_\-seconds@{get\-\_\-seconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{get\-\_\-seconds}]{\setlength{\rightskip}{0pt plus 5cm}long long booster\-::ptime\-::get\-\_\-seconds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1ptime_a7597a950ab19a4a5c50d3fb399d7a49a}
+Get the seconds part of P\-O\-S\-I\-X time 
+
+Referenced by days(), hours(), microseconds(), milliseconds(), minutes(), and nanoseconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!hours@{hours}}
+\index{hours@{hours}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{hours}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::hours (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a47dbd71419d78a1bb6342ca437f49d44}
+Get amount of full hours in {\itshape p} 
+
+References get\-\_\-seconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!hours@{hours}}
+\index{hours@{hours}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{hours}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::hours (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_aeb89867af9863011ae4129213b94a4a0}
+Convert hours {\itshape v} to ptime. \index{booster\-::ptime@{booster\-::ptime}!local\-\_\-time@{local\-\_\-time}}
+\index{local\-\_\-time@{local\-\_\-time}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::local\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::tm const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_a5d69b8e68c9847834ee984bfd19be8b5}
+Convert local time to P\-O\-S\-I\-X time similar to mktime \index{booster\-::ptime@{booster\-::ptime}!local\-\_\-time@{local\-\_\-time}}
+\index{local\-\_\-time@{local\-\_\-time}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::tm booster\-::ptime\-::local\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_abb98f2612792ef014c47cad98b0f32e9}
+Convert P\-O\-S\-I\-X time {\itshape v} to a local time similar to localtime\-\_\-r \index{booster\-::ptime@{booster\-::ptime}!microseconds@{microseconds}}
+\index{microseconds@{microseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{microseconds}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::microseconds (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a7b05ee9e97eb51fd122552950735683f}
+Get amount of full microseconds in {\itshape p}. Not the same as p.\-get\-\_\-microseconds() as takes seconds as well 
+
+References get\-\_\-nanoseconds(), and get\-\_\-seconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!microseconds@{microseconds}}
+\index{microseconds@{microseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{microseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::microseconds (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a163544059a8ac5c4fbe4b504bf08cb7d}
+Convert a microseconds {\itshape v} to ptime. \index{booster\-::ptime@{booster\-::ptime}!milliseconds@{milliseconds}}
+\index{milliseconds@{milliseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::milliseconds (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a84002a791f752b32c2ffd77e3455f317}
+Get amount of full milliseconds in {\itshape p}. Not the same as p.\-get\-\_\-milliseconds() as takes seconds as well 
+
+References get\-\_\-milliseconds(), and get\-\_\-seconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!milliseconds@{milliseconds}}
+\index{milliseconds@{milliseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{milliseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::milliseconds (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_aa3eadff9df674eddd7b1b4a961acc375}
+Convert a milliseconds {\itshape v} to ptime. \index{booster\-::ptime@{booster\-::ptime}!millisleep@{millisleep}}
+\index{millisleep@{millisleep}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{millisleep}]{\setlength{\rightskip}{0pt plus 5cm}static void booster\-::ptime\-::millisleep (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a020137aee80e7adf54fb07321cab7076}
+Sleep at least {\itshape v} milliseconds \index{booster\-::ptime@{booster\-::ptime}!minutes@{minutes}}
+\index{minutes@{minutes}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{minutes}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::minutes (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_acef77c9946ed3fe30313986333501382}
+Get amount of full minutes in {\itshape p} \index{booster\-::ptime@{booster\-::ptime}!minutes@{minutes}}
+\index{minutes@{minutes}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{minutes}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::minutes (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_abec7001e30ed8100e448ee67f26bd754}
+Convert minutes {\itshape v} to ptime. 
+
+References get\-\_\-seconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!nanoseconds@{nanoseconds}}
+\index{nanoseconds@{nanoseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::nanoseconds (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a75624fe5fa699698af96f9d4ed00327b}
+Get amount of nanoseconds in {\itshape p} Not the same as p.\-get\-\_\-nanoseconds() as takes seconds as well 
+
+References get\-\_\-nanoseconds(), and get\-\_\-seconds().
+
+\index{booster\-::ptime@{booster\-::ptime}!nanoseconds@{nanoseconds}}
+\index{nanoseconds@{nanoseconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{nanoseconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::nanoseconds (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a8704f62953371024ca1bbad8d24325bf}
+Convert a nanoseconds {\itshape v} to ptime. \index{booster\-::ptime@{booster\-::ptime}!nanosleep@{nanosleep}}
+\index{nanosleep@{nanosleep}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{nanosleep}]{\setlength{\rightskip}{0pt plus 5cm}static void booster\-::ptime\-::nanosleep (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a544c8e8fcec68300a80dcad1e4c0da96}
+Sleep at least {\itshape v} nanoseconds \index{booster\-::ptime@{booster\-::ptime}!now@{now}}
+\index{now@{now}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{now}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::now (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_a321448f892d1da5b79723c0a3702918e}
+Get current time \index{booster\-::ptime@{booster\-::ptime}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ptime} booster\-::ptime\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1ptime_abff78521df4e8932ee063323344cd932}
+Add two P\-O\-S\-I\-X time ranges (as numbers) \index{booster\-::ptime@{booster\-::ptime}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{operator-\/}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ptime} booster\-::ptime\-::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1ptime_ace1e7f3d4f80708b8536142ce2c7e01d}
+Subtract one time from other (as number) \index{booster\-::ptime@{booster\-::ptime}!seconds@{seconds}}
+\index{seconds@{seconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{seconds}]{\setlength{\rightskip}{0pt plus 5cm}static long long booster\-::ptime\-::seconds (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a5056017d41a4ace5d5c1efd6dba6b265}
+Get amount of full seconds in {\itshape p} \index{booster\-::ptime@{booster\-::ptime}!seconds@{seconds}}
+\index{seconds@{seconds}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{seconds}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::seconds (
+\begin{DoxyParamCaption}
+\item[{long long}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_a2b572532589ee0a4f7bf5e164ee02d59}
+Convert a seconds {\itshape v} to ptime. \index{booster\-::ptime@{booster\-::ptime}!sleep@{sleep}}
+\index{sleep@{sleep}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{sleep}]{\setlength{\rightskip}{0pt plus 5cm}static void booster\-::ptime\-::sleep (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_a9ae846198eec0a066401c32c785d18ba}
+Sleep at least {\itshape v} amount of time. \index{booster\-::ptime@{booster\-::ptime}!to\-\_\-number@{to\-\_\-number}}
+\index{to\-\_\-number@{to\-\_\-number}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{to\-\_\-number}]{\setlength{\rightskip}{0pt plus 5cm}static double booster\-::ptime\-::to\-\_\-number (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{t}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classbooster_1_1ptime_ad461231cd093b59b82f200e833b7537b}
+Convert {\itshape t} to floating point number that represents P\-O\-S\-I\-X time in seconds \index{booster\-::ptime@{booster\-::ptime}!universal\-\_\-time@{universal\-\_\-time}}
+\index{universal\-\_\-time@{universal\-\_\-time}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{universal\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf ptime} booster\-::ptime\-::universal\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::tm const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_a83379c22964e3cb89cd8f8fbbd9ad7a4}
+Convert universal time to P\-O\-S\-I\-X time similar to timegm or mktime in G\-M\-T timezone \index{booster\-::ptime@{booster\-::ptime}!universal\-\_\-time@{universal\-\_\-time}}
+\index{universal\-\_\-time@{universal\-\_\-time}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{universal\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::tm booster\-::ptime\-::universal\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{{\bf ptime} const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_ab1db356bfe299cac517924a4b4d1ebca}
+Convert P\-O\-S\-I\-X time {\itshape v} to a G\-M\-T time similar to gmtime\-\_\-r 
+
+\subsection{Member Data Documentation}
+\index{booster\-::ptime@{booster\-::ptime}!zero@{zero}}
+\index{zero@{zero}!booster::ptime@{booster\-::ptime}}
+\subsubsection[{zero}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ptime} const booster\-::ptime\-::zero\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1ptime_a7eaf375236ed12966bbde4b25a11d1df}
+Same as \doxyref{ptime()}{p.}{classbooster_1_1ptime_a2ee40f08e2ad55fa5db9ffe9dac61028} -- 0 in terms of P\-O\-S\-I\-X time 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/posix\-\_\-time.\-h\end{DoxyCompactItemize}

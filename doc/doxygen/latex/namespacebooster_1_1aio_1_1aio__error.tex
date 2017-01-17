@@ -1,0 +1,69 @@
+\section{booster\-:\-:aio\-:\-:aio\-\_\-error Namespace Reference}
+\label{namespacebooster_1_1aio_1_1aio__error}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}
+
+
+This namespace includes Booster.\-Aio specific error codes.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf category}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \\*
+{\bf ok}, 
+{\bf canceled}, 
+{\bf select\-\_\-failed}, 
+{\bf eof}, 
+\\*
+{\bf invalid\-\_\-endpoint}, 
+{\bf no\-\_\-service\-\_\-provided}, 
+{\bf prefork\-\_\-not\-\_\-enabled}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I \\*
+{\bf aio\-\_\-error\-::category} const \& {\bf get\-\_\-category} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace includes Booster.\-Aio specific error codes. 
+
+\subsection{Enumeration Type Documentation}
+\subsubsection[{anonymous enum}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{ok@{ok}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!ok@{ok}}\item[{\em 
+ok\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a5ec80f6875c3c27132f977d051ede883}
+}]No error. \index{canceled@{canceled}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!canceled@{canceled}}\item[{\em 
+canceled\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a0d2280b25248e5cc14ddd84129918cc6}
+}]Operation was canceled. \index{select\-\_\-failed@{select\-\_\-failed}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!select\-\_\-failed@{select\-\_\-failed}}\item[{\em 
+select\-\_\-failed\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a958f73cf68ba41bbb57e6c2b4b23ad30}
+}]It was impossible to perform select operation on the file descriptor. \index{eof@{eof}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!eof@{eof}}\item[{\em 
+eof\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799ae96a8c637756351602bf5d76c9de8e52}
+}]End of file occured. \index{invalid\-\_\-endpoint@{invalid\-\_\-endpoint}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!invalid\-\_\-endpoint@{invalid\-\_\-endpoint}}\item[{\em 
+invalid\-\_\-endpoint\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a1ee104f896f1f331d7d46d2c29f58ad1}
+}]The provided endpoint (address) is not valid. \index{no\-\_\-service\-\_\-provided@{no\-\_\-service\-\_\-provided}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!no\-\_\-service\-\_\-provided@{no\-\_\-service\-\_\-provided}}\item[{\em 
+no\-\_\-service\-\_\-provided\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799a070519252c5c0763ca68459abfe4a601}
+}]The \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} was not assigned. \index{prefork\-\_\-not\-\_\-enabled@{prefork\-\_\-not\-\_\-enabled}!booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}}\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!prefork\-\_\-not\-\_\-enabled@{prefork\-\_\-not\-\_\-enabled}}\item[{\em 
+prefork\-\_\-not\-\_\-enabled\label{namespacebooster_1_1aio_1_1aio__error_a743d5de905e0e80479d40213e4371799ae1aa114346de94237f4cd3241c713ba4}
+}]Prefork acceptor support is not enabled. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{booster\-::aio\-::aio\-\_\-error@{booster\-::aio\-::aio\-\_\-error}!get\-\_\-category@{get\-\_\-category}}
+\index{get\-\_\-category@{get\-\_\-category}!booster::aio::aio_error@{booster\-::aio\-::aio\-\_\-error}}
+\subsubsection[{get\-\_\-category}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I {\bf aio\-\_\-error\-::category} const\& booster\-::aio\-::aio\-\_\-error\-::get\-\_\-category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1aio_1_1aio__error_a2f233335395d301c60137804a005688c}
+get aio category object 

@@ -1,0 +1,134 @@
+\section{booster\-:\-:callback$<$ Result(Params...)$>$ Class Template Reference}
+\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4}\index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}}
+
+
+This is Booster's implementation of std\-::tr1\-::callback/booster\-::callback.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/callback.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Result {\bf result\-\_\-type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf callback} ()
+\item 
+{\footnotesize template$<$typename F $>$ }\\{\bf callback} (F func)
+\item 
+{\bf callback} ({\bf callback} const \&other)
+\item 
+{\footnotesize template$<$typename F $>$ }\\{\bf callback} const \& {\bf operator=} (F func)
+\item 
+{\bf callback} const \& {\bf operator=} ({\bf callback} const \&other)
+\item 
+{\bf result\-\_\-type} {\bf operator()} (Params...\-params) const 
+\item 
+bool {\bf empty} () const 
+\item 
+{\bf operator bool} () const 
+\item 
+void {\bf swap} ({\bf callback} \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Result, typename... Params$>$class booster\-::callback$<$ Result(\-Params...)$>$}
+
+This is Booster's implementation of std\-::tr1\-::callback/booster\-::callback. 
+
+This callback is created from generic object that can be \char`\"{}called\char`\"{} i.\-e. a class with operator() or callback pointer that has same signature as the callback.
+
+See\-: {\tt http\-://www.\-boost.\-org/doc/html/function.\-html}
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item this code is not taken from Boost and has slightly different interface.
+\item as most of compilers do not support Variadic templates yet, this class is explicitly specialized for Params of size 0 to 8. So maximal amout of parameters that can be used is 8. 
+\end{DoxyItemize}
+
+\subsection{Member Typedef Documentation}
+\index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!result\-\_\-type@{result\-\_\-type}}
+\index{result\-\_\-type@{result\-\_\-type}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{result\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ typedef Result {\bf booster\-::callback}$<$ Result(Params...)$>$\-::{\bf result\-\_\-type}}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ac2a710604dbf22edf06ccab4e8fffb20}
+Type of result, for use with boost\-::bind 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!callback@{callback}}
+\index{callback@{callback}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\-::callback}$<$ Result(Params...)$>$\-::{\bf callback} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a53778f82188d5ce241ac777e4b67830c}
+Default constructor, creates an empty callbacks \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!callback@{callback}}
+\index{callback@{callback}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ template$<$typename F $>$ {\bf booster\-::callback}$<$ Result(Params...)$>$\-::{\bf callback} (
+\begin{DoxyParamCaption}
+\item[{F}]{func}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ac222ac49bf4e166e80e5378ebd4989aa}
+Creates a callback from a callbackal {\itshape func} of type F. func should be copyable. It is copied and stored inside callback object. \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!callback@{callback}}
+\index{callback@{callback}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{callback}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\-::callback}$<$ Result(Params...)$>$\-::{\bf callback} (
+\begin{DoxyParamCaption}
+\item[{{\bf callback}$<$ Result(Params...)$>$ const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a7652f092533298870d5f714005c5a0a2}
+Copy callback, Copies underlying callbackal object. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!empty@{empty}}
+\index{empty@{empty}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ bool {\bf booster\-::callback}$<$ Result(Params...)$>$\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a602d1091621c7942529205fe562142c2}
+Return true if the callback is empty \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf booster\-::callback}$<$ Result(Params...)$>$\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a1302b4d05c5e9df392664dd7ff5ae437}
+Returns true if the callback is not empty \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!operator()@{operator()}}
+\index{operator()@{operator()}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf result\-\_\-type} {\bf booster\-::callback}$<$ Result(Params...)$>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{Params...}]{params}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_ab704bb943436dab22eaa282df1609181}
+Calls underling callbackal object. If the callback is empty, throws \doxyref{bad\-\_\-callback\-\_\-call}{p.}{classbooster_1_1bad__callback__call}. \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ template$<$typename F $>$ {\bf callback} const\& {\bf booster\-::callback}$<$ Result(Params...)$>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{F}]{func}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_af15f7842f37bbd07bb6bbc25968d5501}
+Assign a callbackal {\itshape func} of type F. func should be copyable. It is copied and stored inside callback object. \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ {\bf callback} const\& {\bf booster\-::callback}$<$ Result(Params...)$>$\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf callback}$<$ Result(Params...)$>$ const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a5647e0e4491a0fd4120aa47e49589b70}
+Assignment operator. Copies underlying callbackal object. \index{booster\-::callback$<$ Result(\-Params...)$>$@{booster\-::callback$<$ Result(\-Params...)$>$}!swap@{swap}}
+\index{swap@{swap}!booster::callback< Result(Params...)>@{booster\-::callback$<$ Result(\-Params...)$>$}}
+\subsubsection[{swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Result , typename... Params$>$ void {\bf booster\-::callback}$<$ Result(Params...)$>$\-::swap (
+\begin{DoxyParamCaption}
+\item[{{\bf callback}$<$ Result(Params...)$>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1callback_3_01Result_07Params_8_8_8_08_4_a900e3aae42c5d48f1b4ef97d529118d7}
+Swaps two callbackal object. Does not throw. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/callback.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,103 @@
+\section{cppcms\-:\-:http\-:\-:file Class Reference}
+\label{classcppcms_1_1http_1_1file}\index{cppcms\-::http\-::file@{cppcms\-::http\-::file}}
+
+
+This class holds a uploaded file, it is generally fetched via \doxyref{widgets\-::file}{p.}{classcppcms_1_1widgets_1_1file} or via {\tt http\-::request\-::files}.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/http\-\_\-file.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:http\-:\-:file\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1http_1_1file}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf name} () const 
+\item 
+std\-::string {\bf mime} () const 
+\item 
+std\-::string {\bf filename} () const 
+\item 
+std\-::istream \& {\bf data} ()
+\item 
+long long {\bf size} ()
+\item 
+void {\bf save\-\_\-to} (std\-::string const \&{\bf filename})
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries request}\label{classcppcms_1_1http_1_1file_a85b2d00ed5d8672f7dbb26f19a0b6123}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds a uploaded file, it is generally fetched via \doxyref{widgets\-::file}{p.}{classcppcms_1_1widgets_1_1file} or via {\tt http\-::request\-::files}. 
+
+It provides full information about uploaded data as it was send by browser and allows to read the file via std\-::istream seek-\/able interface or save to the file system
+
+Note\-: this class does not perform any validations, for checking the data use \doxyref{widgets\-::file}{p.}{classcppcms_1_1widgets_1_1file} that allows to perform numerous checks on the file data. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::http\-::file@{cppcms\-::http\-::file}!data@{data}}
+\index{data@{data}!cppcms::http::file@{cppcms\-::http\-::file}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}std\-::istream\& cppcms\-::http\-::file\-::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1file_a3a95bc7fefe80a75bc098baa3ad8c400}
+Get std\-::istream on the data, please note, you need to call \doxyref{data()}{p.}{classcppcms_1_1http_1_1file_a3a95bc7fefe80a75bc098baa3ad8c400}.seekg(0) when using this stream first time. \index{cppcms\-::http\-::file@{cppcms\-::http\-::file}!filename@{filename}}
+\index{filename@{filename}!cppcms::http::file@{cppcms\-::http\-::file}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::file\-::filename (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1file_aec7aaa5ab4f57aada988507d5d299f6f}
+Get the filename as it was sent by the browser. \index{cppcms\-::http\-::file@{cppcms\-::http\-::file}!mime@{mime}}
+\index{mime@{mime}!cppcms::http::file@{cppcms\-::http\-::file}}
+\subsubsection[{mime}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::file\-::mime (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1file_ab8d8de07a1bf0ce904737dfe53a017bd}
+Get the content-\/type of the file as it was sent by the browser. \index{cppcms\-::http\-::file@{cppcms\-::http\-::file}!name@{name}}
+\index{name@{name}!cppcms::http::file@{cppcms\-::http\-::file}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::http\-::file\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1http_1_1file_ab2691618c7312d598a080d60410bad00}
+Get the name of the P\-O\-S\-T field (i.\-e. $<$input name=\char`\"{}value\char`\"{} ...$>$) \index{cppcms\-::http\-::file@{cppcms\-::http\-::file}!save\-\_\-to@{save\-\_\-to}}
+\index{save\-\_\-to@{save\-\_\-to}!cppcms::http::file@{cppcms\-::http\-::file}}
+\subsubsection[{save\-\_\-to}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::http\-::file\-::save\-\_\-to (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{filename}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1file_a981a2325266c685788f8e241f2154308}
+Save file to file named {\itshape filename}. Throws \doxyref{cppcms\-\_\-error}{p.}{classcppcms_1_1cppcms__error} in case of failure.
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item this function maybe more efficient then just reading the stream and writing it to newly created file, as in case of big files, it would try to move it over the file system
+\item Under Win32 {\itshape filename} should be U\-T\-F-\/8 string 
+\end{DoxyItemize}\index{cppcms\-::http\-::file@{cppcms\-::http\-::file}!size@{size}}
+\index{size@{size}!cppcms::http::file@{cppcms\-::http\-::file}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}long long cppcms\-::http\-::file\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1http_1_1file_aee3dac0ba0afc1128c0a20b72c998238}
+Get the size of the file. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/http\-\_\-file.\-h\end{DoxyCompactItemize}

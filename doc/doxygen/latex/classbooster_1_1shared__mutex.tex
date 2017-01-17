@@ -1,0 +1,75 @@
+\section{booster\-:\-:shared\-\_\-mutex Class Reference}
+\label{classbooster_1_1shared__mutex}\index{booster\-::shared\-\_\-mutex@{booster\-::shared\-\_\-mutex}}
+
+
+Shared mutex or a.\-k.\-a. Read-\/\-Write Lock.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+Inheritance diagram for booster\-:\-:shared\-\_\-mutex\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1shared__mutex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf lock} ()
+\item 
+void {\bf unique\-\_\-lock} ()
+\item 
+void {\bf shared\-\_\-lock} ()
+\item 
+void {\bf unlock} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Shared mutex or a.\-k.\-a. Read-\/\-Write Lock. 
+
+This class provides two options of locking unique -\/ nobody but me can use the object shared anybody with shared lock can use the object. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::shared\-\_\-mutex@{booster\-::shared\-\_\-mutex}!lock@{lock}}
+\index{lock@{lock}!booster::shared_mutex@{booster\-::shared\-\_\-mutex}}
+\subsubsection[{lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::shared\-\_\-mutex\-::lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1shared__mutex_a578a8eefce76463f623384a0c3ec0cf4}
+Same as \doxyref{unique\-\_\-lock()}{p.}{classbooster_1_1shared__mutex_ae8b360af3885be2081eef7eba21a3b52} \index{booster\-::shared\-\_\-mutex@{booster\-::shared\-\_\-mutex}!shared\-\_\-lock@{shared\-\_\-lock}}
+\index{shared\-\_\-lock@{shared\-\_\-lock}!booster::shared_mutex@{booster\-::shared\-\_\-mutex}}
+\subsubsection[{shared\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::shared\-\_\-mutex\-::shared\-\_\-lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__mutex_af699d050ba6c25450a9e7c21dbe80f0e}
+Acquire a shared lock on the object. \begin{DoxySeeAlso}{See Also}
+\doxyref{booster\-::shared\-\_\-lock}{p.}{classbooster_1_1shared__lock}
+\end{DoxySeeAlso}
+Note this function is not recursive \index{booster\-::shared\-\_\-mutex@{booster\-::shared\-\_\-mutex}!unique\-\_\-lock@{unique\-\_\-lock}}
+\index{unique\-\_\-lock@{unique\-\_\-lock}!booster::shared_mutex@{booster\-::shared\-\_\-mutex}}
+\subsubsection[{unique\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::shared\-\_\-mutex\-::unique\-\_\-lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__mutex_ae8b360af3885be2081eef7eba21a3b52}
+Acquire a unique lock on the object. \begin{DoxySeeAlso}{See Also}
+\doxyref{booster\-::unique\-\_\-lock}{p.}{classbooster_1_1unique__lock} 
+\end{DoxySeeAlso}
+\index{booster\-::shared\-\_\-mutex@{booster\-::shared\-\_\-mutex}!unlock@{unlock}}
+\index{unlock@{unlock}!booster::shared_mutex@{booster\-::shared\-\_\-mutex}}
+\subsubsection[{unlock}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::shared\-\_\-mutex\-::unlock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__mutex_a91d7b9c750b217d064e7460a781e9a06}
+Release the lock 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,630 @@
+\section{booster Namespace Reference}
+\label{namespacebooster}\index{booster@{booster}}
+
+
+Booster library namespace. The library that implements Boost Like A\-P\-I in A\-B\-I backward compatible way.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf aio}
+\begin{DoxyCompactList}\small\item\em This namespace povides and A\-P\-I to asynchronous sockets A\-P\-I, asynchronous timer and event loop handing. \end{DoxyCompactList}\item 
+{\bf locale}
+\begin{DoxyCompactList}\small\item\em This is the main namespace that encloses all localization classes. \end{DoxyCompactList}\item 
+{\bf log}
+\begin{DoxyCompactList}\small\item\em This namespace includes Booster.\-Log related classes. \end{DoxyCompactList}\item 
+{\bf nowide}
+\begin{DoxyCompactList}\small\item\em This namespace includes implementation of basic S\-T\-L's / S\-T\-D\-L\-Ib's functions such that they accept U\-T\-F-\/8 strings. on Windows. Otherwise it is just an alias of std namespace (i.\-e. not on Windows) \end{DoxyCompactList}\item 
+{\bf stack\-\_\-trace}
+\begin{DoxyCompactList}\small\item\em Namespace that holds basic operations for implementing stack trace. \end{DoxyCompactList}\item 
+{\bf system}
+\begin{DoxyCompactList}\small\item\em this namespace includes partial implementation of std\-::tr1's/boost's \doxyref{system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} classes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf atomic\-\_\-counter}
+\begin{DoxyCompactList}\small\item\em Atomic counter is a class that allows perform counting in thread safe way. \end{DoxyCompactList}\item 
+class {\bf backtrace}
+\begin{DoxyCompactList}\small\item\em the class that records the stack trace when it is created, \end{DoxyCompactList}\item 
+class {\bf exception}
+\begin{DoxyCompactList}\small\item\em Same as std\-::exception but records stack trace. \end{DoxyCompactList}\item 
+class {\bf bad\-\_\-cast}
+\begin{DoxyCompactList}\small\item\em Same as std\-::bad\-\_\-cast but records stack trace. \end{DoxyCompactList}\item 
+class {\bf runtime\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::runtime\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf range\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::range\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf overflow\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::overflow\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf underflow\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::underflow\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf logic\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::logic\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf domain\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::domain\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf length\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Same as std\-::length\-\_\-error but records stack trace. \end{DoxyCompactList}\item 
+class {\bf invalid\-\_\-argument}
+\begin{DoxyCompactList}\small\item\em Same as std\-::invalid\-\_\-argument but records stack trace. \end{DoxyCompactList}\item 
+class {\bf out\-\_\-of\-\_\-range}
+\begin{DoxyCompactList}\small\item\em Same as std\-::out\-\_\-of\-\_\-range but records stack trace. \end{DoxyCompactList}\item 
+class {\bf bad\-\_\-weak\-\_\-ptr}
+\item 
+class {\bf callback}
+\item 
+struct {\bf callable}
+\item 
+class {\bf bad\-\_\-callback\-\_\-call}
+\begin{DoxyCompactList}\small\item\em this exception is thrown in case of calling unassigned/empty function \end{DoxyCompactList}\item 
+class {\bf callback$<$ Result(\-Params...)$>$}
+\begin{DoxyCompactList}\small\item\em This is Booster's implementation of std\-::tr1\-::callback/booster\-::callback. \end{DoxyCompactList}\item 
+class {\bf clone\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em a smart pointer similar to std\-::auto\-\_\-ptr but it clones (by calling T\-::clone()) underlying object on copy instead of moving its ownership. \end{DoxyCompactList}\item 
+class {\bf copy\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em a smart pointer similar to std\-::auto\-\_\-ptr but it copies underlying object on pointer copy instead of moving its ownership. \end{DoxyCompactList}\item 
+class {\bf enable\-\_\-shared\-\_\-from\-\_\-this}
+\begin{DoxyCompactList}\small\item\em This class is borrowed from boost. \end{DoxyCompactList}\item 
+class {\bf function}
+\item 
+class {\bf bad\-\_\-function\-\_\-call}
+\begin{DoxyCompactList}\small\item\em This exception is thrown in case of an attempt to call to unassigned \doxyref{booster\-::function}{p.}{classbooster_1_1function}. \end{DoxyCompactList}\item 
+class {\bf function$<$ Result(\-Params...)$>$}
+\begin{DoxyCompactList}\small\item\em This is Booster's implementation of std\-::tr1\-::function/booster\-::function. \end{DoxyCompactList}\item 
+class {\bf hold\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em a smart pointer similar to std\-::auto\-\_\-ptr but it is non-\/copyable and underlying object has same constness as the pointer itself (not like in ordinary pointer). \end{DoxyCompactList}\item 
+class {\bf intrusive\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em \doxyref{intrusive\-\_\-ptr}{p.}{classbooster_1_1intrusive__ptr} is the class taken as-\/is from boost. \end{DoxyCompactList}\item 
+class {\bf shared\-\_\-ptr}
+\item 
+class {\bf weak\-\_\-ptr}
+\item 
+class {\bf noncopyable}
+\begin{DoxyCompactList}\small\item\em This class makes impossible to copy any class derived from this one. \end{DoxyCompactList}\item 
+class {\bf regex\-\_\-error}
+\begin{DoxyCompactList}\small\item\em Exception that is thrown in case of creation of invalid regex. \end{DoxyCompactList}\item 
+class {\bf regex}
+\begin{DoxyCompactList}\small\item\em This is a simple wrapper of P\-C\-R\-E library. \end{DoxyCompactList}\item 
+class {\bf ptime}
+\begin{DoxyCompactList}\small\item\em This class represents P\-O\-S\-I\-X time. \end{DoxyCompactList}\item 
+class {\bf refcounted}
+\begin{DoxyCompactList}\small\item\em This class is used as base class for reference counted objects that use \doxyref{intrusive\-\_\-ptr}{p.}{classbooster_1_1intrusive__ptr}. Deriving from this class allows simple way to manage reference counting for single object. \end{DoxyCompactList}\item 
+class {\bf sub\-\_\-match}
+\begin{DoxyCompactList}\small\item\em This class represents a single captures subexpression. \end{DoxyCompactList}\item 
+class {\bf match\-\_\-results}
+\begin{DoxyCompactList}\small\item\em The object that hold the result of matching a regular expression against the text using regex\-\_\-match and regex\-\_\-search functions. \end{DoxyCompactList}\item 
+class {\bf shared\-\_\-object}
+\begin{DoxyCompactList}\small\item\em Class that allows loading dynamic libraries\-: shared objects and dlls. \end{DoxyCompactList}\item 
+class {\bf enable\-\_\-shared\-\_\-from\-\_\-this2}
+\item 
+class {\bf io\-\_\-device}
+\begin{DoxyCompactList}\small\item\em This class is a base class of generic I/\-O device that can be used in very simple manner with \doxyref{booster\-::streambuf}{p.}{classbooster_1_1streambuf} allowing to create iostreams easily. \end{DoxyCompactList}\item 
+class {\bf streambuf}
+\begin{DoxyCompactList}\small\item\em this is an implementation of generic streambuffer \end{DoxyCompactList}\item 
+class {\bf thread}
+\begin{DoxyCompactList}\small\item\em the class that allows to start an execution thread \end{DoxyCompactList}\item 
+class {\bf mutex}
+\begin{DoxyCompactList}\small\item\em Mutex object. \end{DoxyCompactList}\item 
+class {\bf recursive\-\_\-mutex}
+\begin{DoxyCompactList}\small\item\em Recursive mutex object. \end{DoxyCompactList}\item 
+class {\bf recursive\-\_\-shared\-\_\-mutex}
+\begin{DoxyCompactList}\small\item\em Recursuve Shared mutex or a.\-k.\-a. Read-\/\-Write Lock that can be recursively locked by {\bfseries readers}. \end{DoxyCompactList}\item 
+class {\bf shared\-\_\-mutex}
+\begin{DoxyCompactList}\small\item\em Shared mutex or a.\-k.\-a. Read-\/\-Write Lock. \end{DoxyCompactList}\item 
+class {\bf unique\-\_\-lock}
+\begin{DoxyCompactList}\small\item\em a Unique lock guard. \end{DoxyCompactList}\item 
+class {\bf condition\-\_\-variable}
+\begin{DoxyCompactList}\small\item\em This is conditional variable object. \end{DoxyCompactList}\item 
+class {\bf thread\-\_\-specific\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em Thread specific pointer. \end{DoxyCompactList}\item 
+class {\bf shared\-\_\-lock}
+\begin{DoxyCompactList}\small\item\em a Shared lock guard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char {\bfseries uint8\-\_\-t}\label{namespacebooster_adf67309b4931ab82842b162e36287ea4}
+
+\item 
+typedef signed char {\bfseries int8\-\_\-t}\label{namespacebooster_a264fe5ee59a57ef99d22eeda8bcaf406}
+
+\item 
+typedef unsigned short {\bfseries uint16\-\_\-t}\label{namespacebooster_a729d42230ed502a779c3e4ead3a08865}
+
+\item 
+typedef short {\bfseries int16\-\_\-t}\label{namespacebooster_acdfd4af82dd3efda44fa90d450966219}
+
+\item 
+typedef unsigned int {\bfseries uint32\-\_\-t}\label{namespacebooster_a7c849cc27c3b1249d7207ae433d751c4}
+
+\item 
+typedef int {\bfseries int32\-\_\-t}\label{namespacebooster_abf69502c5d2b6fa31c9c0e47f4c5bab7}
+
+\item 
+typedef unsigned long long {\bfseries uint64\-\_\-t}\label{namespacebooster_a0edd9ceb5069fcf0507db309bc41a31f}
+
+\item 
+typedef long long {\bfseries int64\-\_\-t}\label{namespacebooster_a8e7fffaf039f8e4a39befc0b0fac91f5}
+
+\item 
+typedef {\bf sub\-\_\-match}$<$ char const $\ast$ $>$ {\bfseries csub\-\_\-match}\label{namespacebooster_af1aa2bd07031f359b73fc33a4619c2b1}
+
+\item 
+typedef {\bf sub\-\_\-match}\\*
+$<$ std\-::string\-::const\-\_\-iterator $>$ {\bfseries ssub\-\_\-match}\label{namespacebooster_a911424411850d08ab49a443dec3a3b7f}
+
+\item 
+typedef {\bf match\-\_\-results}$<$ char \\*
+const $\ast$ $>$ {\bfseries cmatch}\label{namespacebooster_a2b41c00a1994bd7b0696dd986877f9c1}
+
+\item 
+typedef {\bf match\-\_\-results}\\*
+$<$ std\-::string\-::const\-\_\-iterator $>$ {\bfseries smatch}\label{namespacebooster_a238dc92c62abed6da7ed05ecd8b5eff9}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bfseries intrusive\-\_\-ptr\-\_\-add\-\_\-ref} ({\bf cppcms\-::application} $\ast$p)\label{namespacebooster_a5d30b0e3aadae0af58d411df3ffad9de}
+
+\item 
+void C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bfseries intrusive\-\_\-ptr\-\_\-release} ({\bf cppcms\-::application} $\ast$p)\label{namespacebooster_ace361978aab09affe5a9282cd32dd2da}
+
+\item 
+{\footnotesize template$<$typename E $>$ }\\details\-::trace\-\_\-manip {\bf trace} (E const \&e)
+\begin{DoxyCompactList}\small\item\em manipulator that print stack trace for the exception {\itshape e} if it is derived from backtrace. \end{DoxyCompactList}\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::tm {\bf local\-\_\-time} (time\-\_\-t pt)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::tm {\bf universal\-\_\-time} (time\-\_\-t pt)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t {\bf normalize\-\_\-local\-\_\-time} (std\-::tm \&t)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t {\bf normalize\-\_\-universal\-\_\-time} (std\-::tm \&t)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t {\bf make\-\_\-local\-\_\-time} (std\-::tm const \&t)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t {\bf make\-\_\-universal\-\_\-time} (std\-::tm const \&t)
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\bool {\bfseries operator==} ({\bf intrusive\-\_\-ptr}$<$ T $>$ const \&a, {\bf intrusive\-\_\-ptr}$<$ U $>$ const \&b)\label{namespacebooster_a8fd41bf01addfb68c299ec8a328f4198}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\bool {\bfseries operator!=} ({\bf intrusive\-\_\-ptr}$<$ T $>$ const \&a, {\bf intrusive\-\_\-ptr}$<$ U $>$ const \&b)\label{namespacebooster_ab0c0ec109fe7b28b3f84441b6b936940}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries operator==} ({\bf intrusive\-\_\-ptr}$<$ T $>$ const \&a, T $\ast$b)\label{namespacebooster_ae0207904900693b6ebdda4d3e493ac32}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries operator!=} ({\bf intrusive\-\_\-ptr}$<$ T $>$ const \&a, T $\ast$b)\label{namespacebooster_ad8f4323d90185b926c6a4ba1084f9f83}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries operator==} (T $\ast$a, {\bf intrusive\-\_\-ptr}$<$ T $>$ const \&b)\label{namespacebooster_a30f4aada843b64c7169d268e7af9f9ea}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries operator!=} (T $\ast$a, {\bf intrusive\-\_\-ptr}$<$ T $>$ const \&b)\label{namespacebooster_a46e63754a2e6a3f80716ce600ea1e193}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\bool {\bfseries operator$<$} ({\bf intrusive\-\_\-ptr}$<$ T $>$ const \&a, {\bf intrusive\-\_\-ptr}$<$ T $>$ const \&b)\label{namespacebooster_a57703b01ba9f6e6ef66907c71721a51d}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries swap} ({\bf intrusive\-\_\-ptr}$<$ T $>$ \&lhs, {\bf intrusive\-\_\-ptr}$<$ T $>$ \&rhs)\label{namespacebooster_acc679b9b1a75cde58afaee363b70984e}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ {\bfseries get\-\_\-pointer} ({\bf intrusive\-\_\-ptr}$<$ T $>$ const \&p)\label{namespacebooster_a1e029be1781f165da820c0b923b47e9c}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf intrusive\-\_\-ptr}$<$ T $>$ {\bfseries static\-\_\-pointer\-\_\-cast} ({\bf intrusive\-\_\-ptr}$<$ U $>$ const \&p)\label{namespacebooster_a61d96b7c4642b24c6616895a58de72e3}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf intrusive\-\_\-ptr}$<$ T $>$ {\bfseries const\-\_\-pointer\-\_\-cast} ({\bf intrusive\-\_\-ptr}$<$ U $>$ const \&p)\label{namespacebooster_af51d602584feb62c2b9b5ba00f49a89a}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf intrusive\-\_\-ptr}$<$ T $>$ {\bfseries dynamic\-\_\-pointer\-\_\-cast} ({\bf intrusive\-\_\-ptr}$<$ U $>$ const \&p)\label{namespacebooster_a72522488a1a73216388dabf659a76728}
+
+\item 
+{\footnotesize template$<$class E , class T , class Y $>$ }\\std\-::basic\-\_\-ostream$<$ E, T $>$ \& {\bfseries operator$<$$<$} (std\-::basic\-\_\-ostream$<$ E, T $>$ \&os, {\bf intrusive\-\_\-ptr}$<$ Y $>$ const \&p)\label{namespacebooster_a10f4997402de29f60bd52c36de25899a}
+
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::ostream \& {\bf operator$<$$<$} (std\-::ostream \&, {\bf ptime} const \&)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::istream \& {\bf operator$>$$>$} (std\-::istream \&, {\bf ptime} \&)
+\item 
+void {\bf intrusive\-\_\-ptr\-\_\-add\-\_\-ref} ({\bf refcounted} $\ast$ptr)
+\item 
+void {\bf intrusive\-\_\-ptr\-\_\-release} ({\bf refcounted} $\ast$ptr)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-match} (char const $\ast$begin, char const $\ast$end, {\bf cmatch} \&m, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-match} (std\-::string const \&s, {\bf smatch} \&m, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-match} (char const $\ast$s, {\bf cmatch} \&m, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-search} (char const $\ast$begin, char const $\ast$end, {\bf cmatch} \&m, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-search} (std\-::string const \&s, {\bf smatch} \&m, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-search} (char const $\ast$s, {\bf cmatch} \&m, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-match} (char const $\ast$begin, char const $\ast$end, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-match} (std\-::string const \&s, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-match} (char const $\ast$s, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-search} (char const $\ast$begin, char const $\ast$end, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-search} (std\-::string const \&s, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Regex $>$ }\\bool {\bf regex\-\_\-search} (char const $\ast$s, Regex const \&r, int flags=0)
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator==} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a0c6acb44c4f95cc30a309009002ef205}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator!=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_acb147f80a97f354b9234c9e85b00ddfc}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_ac7d1bf1b7060db93c42903947c18532e}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_ab08908251d0874f00883df207e67fbb0}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a4f74d13802bd7c4e8786dda6e94045ae}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_af5e3e1a1bfa4a67b98f384a3738a32ad}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator==} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_acc718519ff13103c080216838d22dd55}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator!=} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a0c1eede16870afb08110bacb8e80b073}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$=} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a3e6be1775d9c7f6095ed759813709b08}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$=} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a2db1817bb6475da4210039cfaafaf408}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a3da98f4b244d303d9084fd52c7f2a2f8}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a835a26412c809cad1a68cd8c3c5e3a0d}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator==} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_ab028db097c0a7d5b021595f26174b74d}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator!=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_a374798f3305c424529f6872de17ad625}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_a7c673d97f08ae207969417a0a65eea9d}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_aada8af4bd345b0e8f3095ff359a6be26}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_a5b3aac1400381153a851a69039f82a16}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_a8e91571456fbae5e6f306b37b7360721}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator==} (typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_aac730e2b2381914329fe7416a039de99}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator!=} (typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a2d5410cccde35d4e758f8cc0492ed189}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$=} (typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a568598bd5f6cfecb2491dc70d2cb78b6}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$=} (typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a6f931f8a54905fb49240fd73dbc47c33}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$} (typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_af97973ad83a0f1310e4de5879411931b}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$} (typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_ad363f8728fff67876f24eb331194e8b3}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator==} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_a9106963e24016da1f8ba98f340d923ad}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator!=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_a89bc9e308c4d9ce0e115259b1f83e4cc}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_af99f1ba9bdf911b80efe099e2475c7dd}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$=} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_a4796af5de6293df6afe7bf96078e1204}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$<$} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_acf82925a0ad2b8e95e27647ac109d3ef}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\bool {\bfseries operator$>$} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename std\-::iterator\-\_\-traits$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_ad8c2cfb5933e472a0c11a8a455292750}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\{\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type {\bfseries operator+} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a35879860f5db1c1a3705bef80f129972}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\{\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type {\bfseries operator+} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&r)\label{namespacebooster_afe1324a6b4a26c3ce3e8648b3ce8148b}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\{\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type {\bfseries operator+} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type const \&l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a06e660d1da92dc8e07d7d70e586509a5}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\{\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type {\bfseries operator+} ({\bf sub\-\_\-match}$<$ Iterator $>$ const \&l, typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::value\-\_\-type const $\ast$r)\label{namespacebooster_ac6642228c19a21c6c3d35b90b3e6f6be}
+
+\item 
+{\footnotesize template$<$typename Iterator $>$ }\\{\bf sub\-\_\-match}$<$ Iterator $>$\-::string\-\_\-type {\bfseries operator+} (typename {\bf sub\-\_\-match}$<$ Iterator $>$\-::value\-\_\-type const $\ast$l, {\bf sub\-\_\-match}$<$ Iterator $>$ const \&r)\label{namespacebooster_a74a1130bb697bcb8b949c9c75ec72744}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\bool {\bfseries operator==} ({\bf shared\-\_\-ptr}$<$ T $>$ const \&a, {\bf shared\-\_\-ptr}$<$ U $>$ const \&b)\label{namespacebooster_ab5655d2a70dc19a03f688aa357ae0178}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\bool {\bfseries operator!=} ({\bf shared\-\_\-ptr}$<$ T $>$ const \&a, {\bf shared\-\_\-ptr}$<$ U $>$ const \&b)\label{namespacebooster_a802fff9e6f6fc36e4e8a5bd84e02e7be}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\bool {\bfseries operator$<$} ({\bf shared\-\_\-ptr}$<$ T $>$ const \&a, {\bf shared\-\_\-ptr}$<$ U $>$ const \&b)\label{namespacebooster_ada3ecc9967af26f25098a73419965c4d}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries swap} ({\bf shared\-\_\-ptr}$<$ T $>$ \&a, {\bf shared\-\_\-ptr}$<$ T $>$ \&b)\label{namespacebooster_aaec20a95fd3c2cc3ee5e03eb4490a5ed}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries static\-\_\-pointer\-\_\-cast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_ab5756f0668c7311a90450c839ba92348}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries const\-\_\-pointer\-\_\-cast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_a857fbbce2277ab5ac5705f7ec6413991}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries dynamic\-\_\-pointer\-\_\-cast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_a54938c48aefcc71fe8230398e852b612}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries shared\-\_\-static\-\_\-cast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_ae4aeef144b1c95c7e8e7d61ea2183ebb}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries shared\-\_\-dynamic\-\_\-cast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_a06165f34f3108147db7e29aaa82b2472}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries shared\-\_\-polymorphic\-\_\-cast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_a7ec3585587437a57acdbdb024989f377}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\{\bf shared\-\_\-ptr}$<$ T $>$ {\bfseries shared\-\_\-polymorphic\-\_\-downcast} ({\bf shared\-\_\-ptr}$<$ U $>$ const \&r)\label{namespacebooster_a3c264ea70ae9aa190bfabef966b8e405}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ {\bfseries get\-\_\-pointer} ({\bf shared\-\_\-ptr}$<$ T $>$ const \&p)\label{namespacebooster_a0910ad6c6fd507880f0339284966bb90}
+
+\item 
+{\footnotesize template$<$class Y $>$ }\\std\-::ostream \& {\bfseries operator$<$$<$} (std\-::ostream \&os, {\bf shared\-\_\-ptr}$<$ Y $>$ const \&p)\label{namespacebooster_a9dc7e920728c047a099078eb1acfd5bd}
+
+\item 
+{\footnotesize template$<$class D , class T $>$ }\\D $\ast$ {\bfseries get\-\_\-deleter} ({\bf shared\-\_\-ptr}$<$ T $>$ const \&p)\label{namespacebooster_a9e2a11c40ec38b9ec2ab5884f1f62a34}
+
+\item 
+void $\ast$ {\bfseries booster\-\_\-thread\-\_\-func} (void $\ast$)\label{namespacebooster_aac15966cef3ea9dec07064b4dd464a67}
+
+\item 
+{\footnotesize template$<$class T , class U $>$ }\\bool {\bfseries operator$<$} ({\bf weak\-\_\-ptr}$<$ T $>$ const \&a, {\bf weak\-\_\-ptr}$<$ U $>$ const \&b)\label{namespacebooster_a67f3fbedefc20c65592e442183408646}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries swap} ({\bf weak\-\_\-ptr}$<$ T $>$ \&a, {\bf weak\-\_\-ptr}$<$ T $>$ \&b)\label{namespacebooster_a507b7aabb1e7e08b9bb04fc9a3f039e8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Booster library namespace. The library that implements Boost Like A\-P\-I in A\-B\-I backward compatible way. 
+
+\subsection{Function Documentation}
+\index{booster@{booster}!intrusive\-\_\-ptr\-\_\-add\-\_\-ref@{intrusive\-\_\-ptr\-\_\-add\-\_\-ref}}
+\index{intrusive\-\_\-ptr\-\_\-add\-\_\-ref@{intrusive\-\_\-ptr\-\_\-add\-\_\-ref}!booster@{booster}}
+\subsubsection[{intrusive\-\_\-ptr\-\_\-add\-\_\-ref}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::intrusive\-\_\-ptr\-\_\-add\-\_\-ref (
+\begin{DoxyParamCaption}
+\item[{refcounted $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_ae9d6c2a878d56dd52b76c49e7143d4f8}
+Increase reference count \index{booster@{booster}!intrusive\-\_\-ptr\-\_\-release@{intrusive\-\_\-ptr\-\_\-release}}
+\index{intrusive\-\_\-ptr\-\_\-release@{intrusive\-\_\-ptr\-\_\-release}!booster@{booster}}
+\subsubsection[{intrusive\-\_\-ptr\-\_\-release}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::intrusive\-\_\-ptr\-\_\-release (
+\begin{DoxyParamCaption}
+\item[{refcounted $\ast$}]{p}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_ad3b7eca64b0830af6b44fc0f32edbb32}
+Decrease reference count, if it goes to 0, destroy the object \index{booster@{booster}!local\-\_\-time@{local\-\_\-time}}
+\index{local\-\_\-time@{local\-\_\-time}!booster@{booster}}
+\subsubsection[{local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::tm booster\-::local\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{pt}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_ac6c1877d305d5a0acaeefc0aff9f3ade}
+Convert P\-O\-S\-I\-X time to local time. Effectivly works as C localtime \index{booster@{booster}!make\-\_\-local\-\_\-time@{make\-\_\-local\-\_\-time}}
+\index{make\-\_\-local\-\_\-time@{make\-\_\-local\-\_\-time}!booster@{booster}}
+\subsubsection[{make\-\_\-local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t booster\-::make\-\_\-local\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::tm const \&}]{t}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a54c3bdaf4a9d815c709d192309a158cd}
+Converts local time std\-::tm {\itshape t} to P\-O\-S\-I\-X time, effectivly same as mktime but does not modify its parameter \index{booster@{booster}!make\-\_\-universal\-\_\-time@{make\-\_\-universal\-\_\-time}}
+\index{make\-\_\-universal\-\_\-time@{make\-\_\-universal\-\_\-time}!booster@{booster}}
+\subsubsection[{make\-\_\-universal\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t booster\-::make\-\_\-universal\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::tm const \&}]{t}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_aa5c8bd8fc26278d559569fad07677bb2}
+Converts G\-M\-T time std\-::tm {\itshape t} to P\-O\-S\-I\-X time , effectivly same as timegm or mktime in case of G\-M\-T time zone, but does not modify its parameter \index{booster@{booster}!normalize\-\_\-local\-\_\-time@{normalize\-\_\-local\-\_\-time}}
+\index{normalize\-\_\-local\-\_\-time@{normalize\-\_\-local\-\_\-time}!booster@{booster}}
+\subsubsection[{normalize\-\_\-local\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t booster\-::normalize\-\_\-local\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{t}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a06d0f118837b853982af7cfc6840c356}
+Converts local time std\-::tm {\itshape t} to P\-O\-S\-I\-X time normalizing it, effectivly same as mktime \index{booster@{booster}!normalize\-\_\-universal\-\_\-time@{normalize\-\_\-universal\-\_\-time}}
+\index{normalize\-\_\-universal\-\_\-time@{normalize\-\_\-universal\-\_\-time}!booster@{booster}}
+\subsubsection[{normalize\-\_\-universal\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I time\-\_\-t booster\-::normalize\-\_\-universal\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{std\-::tm \&}]{t}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a4411a2ba890968c924baed7c3fe50cd5}
+Converts G\-M\-T time std\-::tm {\itshape t} to P\-O\-S\-I\-X time normalizing it, effectivly same as timegm or mktime in case of G\-M\-T time zone. \index{booster@{booster}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!booster@{booster}}
+\subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::ostream\& booster\-::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{, }
+\item[{ptime const \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a00e1a56adaaf21e028a2646d811ad8e6}
+Write ptime to stream. It is written as double, so it would give expected result when working with booster\-::locale\-::as\-::date\-\_\-time formatter \index{booster@{booster}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!booster@{booster}}
+\subsubsection[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::istream\& booster\-::operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\-::istream \&}]{, }
+\item[{ptime \&}]{}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_ae8d083a8fe4102d1e6ae8ff2788ead24}
+Read ptime from stream. It is read as double, so it would give expected result when working with booster\-::locale\-::as\-::date\-\_\-time formatter \index{booster@{booster}!regex\-\_\-match@{regex\-\_\-match}}
+\index{regex\-\_\-match@{regex\-\_\-match}!booster@{booster}}
+\subsubsection[{regex\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{cmatch \&}]{m, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a77715e8364ad4b323206519be8b88eaf}
+Match an expression {\itshape r} against text in range [{\itshape begin}, {\itshape end} ), return true if found and store matched patters in {\itshape m} \index{booster@{booster}!regex\-\_\-match@{regex\-\_\-match}}
+\index{regex\-\_\-match@{regex\-\_\-match}!booster@{booster}}
+\subsubsection[{regex\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s, }
+\item[{smatch \&}]{m, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a879bbe42caf61472e6f9aebb935a61c6}
+Match an expression {\itshape r} against text {\itshape s}, return true if found and store matched patters in {\itshape m} \index{booster@{booster}!regex\-\_\-match@{regex\-\_\-match}}
+\index{regex\-\_\-match@{regex\-\_\-match}!booster@{booster}}
+\subsubsection[{regex\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{s, }
+\item[{cmatch \&}]{m, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a727aa827080aed626ec5763dc12b2ffd}
+Match an expression {\itshape r} against text {\itshape s}, return true if found and store matched patters in {\itshape m} \index{booster@{booster}!regex\-\_\-match@{regex\-\_\-match}}
+\index{regex\-\_\-match@{regex\-\_\-match}!booster@{booster}}
+\subsubsection[{regex\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a092418414d4a5e74bce753ed47a19dd2}
+Match an expression {\itshape r} against text in range [{\itshape begin}, {\itshape end} ), return true if matched \index{booster@{booster}!regex\-\_\-match@{regex\-\_\-match}}
+\index{regex\-\_\-match@{regex\-\_\-match}!booster@{booster}}
+\subsubsection[{regex\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a8b93d90ab8a74cd44ae8dd419e560a28}
+Match an expression {\itshape r} against text {\itshape s}, return true if matched \index{booster@{booster}!regex\-\_\-match@{regex\-\_\-match}}
+\index{regex\-\_\-match@{regex\-\_\-match}!booster@{booster}}
+\subsubsection[{regex\-\_\-match}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{s, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_ab20d1ab3ae55855ad4258220047a2fe4}
+Match an expression {\itshape r} against text {\itshape s}, return true if matched \index{booster@{booster}!regex\-\_\-search@{regex\-\_\-search}}
+\index{regex\-\_\-search@{regex\-\_\-search}!booster@{booster}}
+\subsubsection[{regex\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{cmatch \&}]{m, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_acdb1e0b2bd1465d0040f787fce65d826}
+Search an expression {\itshape r} in text in rage [{\itshape begin}, {\itshape end}). Return true if found, and store matched subexpressions in {\itshape m} \index{booster@{booster}!regex\-\_\-search@{regex\-\_\-search}}
+\index{regex\-\_\-search@{regex\-\_\-search}!booster@{booster}}
+\subsubsection[{regex\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s, }
+\item[{smatch \&}]{m, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a844865b3d369347716892402eacb698d}
+Search an expression {\itshape r} in text {\itshape s}. Return true if found, and store matched subexpressions in {\itshape m} \index{booster@{booster}!regex\-\_\-search@{regex\-\_\-search}}
+\index{regex\-\_\-search@{regex\-\_\-search}!booster@{booster}}
+\subsubsection[{regex\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{s, }
+\item[{cmatch \&}]{m, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a2b4deaa13f0730d3ffd1ebdeaa79ccff}
+Search an expression {\itshape r} in text {\itshape s}. Return true if found, and store matched subexpressions in {\itshape m} \index{booster@{booster}!regex\-\_\-search@{regex\-\_\-search}}
+\index{regex\-\_\-search@{regex\-\_\-search}!booster@{booster}}
+\subsubsection[{regex\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_af6dd5345f24a1445ae45dc3ffa152485}
+Search an expression {\itshape r} against text in range [{\itshape begin}, {\itshape end} ), return true if found \index{booster@{booster}!regex\-\_\-search@{regex\-\_\-search}}
+\index{regex\-\_\-search@{regex\-\_\-search}!booster@{booster}}
+\subsubsection[{regex\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{s, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a38fb63f66cbf3b3985873a715c932c1d}
+Search an expression {\itshape r} against text {\itshape s}, return true if found \index{booster@{booster}!regex\-\_\-search@{regex\-\_\-search}}
+\index{regex\-\_\-search@{regex\-\_\-search}!booster@{booster}}
+\subsubsection[{regex\-\_\-search}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Regex $>$ bool booster\-::regex\-\_\-search (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{s, }
+\item[{Regex const \&}]{r, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_ab68f663d0c56910dfd67c78892a7ab13}
+Search an expression {\itshape r} against text {\itshape s}, return true if found \index{booster@{booster}!trace@{trace}}
+\index{trace@{trace}!booster@{booster}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename E $>$ details\-::trace\-\_\-manip booster\-::trace (
+\begin{DoxyParamCaption}
+\item[{E const \&}]{e}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a22a7ca7c7225c2b76122bf808220e2a6}
+
+
+manipulator that print stack trace for the exception {\itshape e} if it is derived from backtrace. 
+
+For example\-:
+
+
+\begin{DoxyCode}
+\textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+  std::cerr << e.what() << std::endl;
+  std::cerr << booster::trace(e);
+\}
+\end{DoxyCode}
+ \index{booster@{booster}!universal\-\_\-time@{universal\-\_\-time}}
+\index{universal\-\_\-time@{universal\-\_\-time}!booster@{booster}}
+\subsubsection[{universal\-\_\-time}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I std\-::tm booster\-::universal\-\_\-time (
+\begin{DoxyParamCaption}
+\item[{time\-\_\-t}]{pt}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_a899b18a1f352cd9c95e1ad557f5ba925}
+Convert P\-O\-S\-I\-X time to G\-M\-T time. Effectivly works as C gmtime 

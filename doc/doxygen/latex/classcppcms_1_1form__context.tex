@@ -1,0 +1,169 @@
+\section{cppcms\-:\-:form\-\_\-context Class Reference}
+\label{classcppcms_1_1form__context}\index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}}
+
+
+This class represents the context required to generate the widgets' H\-T\-M\-L.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:form\-\_\-context\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1form__context}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf form\-\_\-context} ()
+\item 
+{\bf form\-\_\-context} ({\bf form\-\_\-context} const \&other)
+\item 
+{\bf form\-\_\-context} const \& {\bf operator=} ({\bf form\-\_\-context} const \&other)
+\item 
+{\bf form\-\_\-context} (std\-::ostream \&output, {\bf html\-\_\-type} ht={\bf form\-\_\-flags\-::as\-\_\-html}, {\bf html\-\_\-list\-\_\-type} hlt={\bf form\-\_\-flags\-::as\-\_\-p})
+\item 
+{\bf $\sim$form\-\_\-context} ()
+\item 
+void {\bf html} ({\bf html\-\_\-type} t)
+\item 
+void {\bf html\-\_\-list} ({\bf html\-\_\-list\-\_\-type} t)
+\item 
+void {\bf widget\-\_\-part} ({\bf widget\-\_\-part\-\_\-type} t)
+\item 
+void {\bf out} (std\-::ostream \&out)
+\item 
+{\bf html\-\_\-type} {\bf html} () const 
+\item 
+{\bf html\-\_\-list\-\_\-type} {\bf html\-\_\-list} () const 
+\item 
+{\bf widget\-\_\-part\-\_\-type} {\bf widget\-\_\-part} () const 
+\item 
+std\-::ostream \& {\bf out} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class represents the context required to generate the widgets' H\-T\-M\-L. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!form\-\_\-context@{form\-\_\-context}}
+\index{form\-\_\-context@{form\-\_\-context}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{form\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-\_\-context\-::form\-\_\-context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_acb8380bb063948e15b6036fecf685144}
+Default constructor. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!form\-\_\-context@{form\-\_\-context}}
+\index{form\-\_\-context@{form\-\_\-context}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{form\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-\_\-context\-::form\-\_\-context (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_a8ceb24817152a1aa7d96fe00baf73331}
+Copy-\/constructor. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!form\-\_\-context@{form\-\_\-context}}
+\index{form\-\_\-context@{form\-\_\-context}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{form\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-\_\-context\-::form\-\_\-context (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{output, }
+\item[{{\bf html\-\_\-type}}]{ht = {\ttfamily {\bf form\-\_\-flags\-::as\-\_\-html}}, }
+\item[{{\bf html\-\_\-list\-\_\-type}}]{hlt = {\ttfamily {\bf form\-\_\-flags\-::as\-\_\-p}}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_ae48ab8f786fb0f7faf41ca9457cd2d8e}
+Create a rendering context.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & the std\-::ostream output to write H\-T\-M\-L to. \\
+\hline
+{\em ht} & flags represents the type of H\-T\-M\-L that should be generated. \\
+\hline
+{\em hlt} & flag defines the style of widgets generation. \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!$\sim$form\-\_\-context@{$\sim$form\-\_\-context}}
+\index{$\sim$form\-\_\-context@{$\sim$form\-\_\-context}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{$\sim$form\-\_\-context}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::form\-\_\-context\-::$\sim$form\-\_\-context (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_a2b7f83248020b6b6733f08d4bf281129}
+Destructor. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!html@{html}}
+\index{html@{html}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{html}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-\_\-context\-::html (
+\begin{DoxyParamCaption}
+\item[{{\bf html\-\_\-type}}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_a484117ce7ad0bb840f63161d169dcf6a}
+Set the H\-T\-M\-L/\-X\-H\-T\-M\-L flag. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!html@{html}}
+\index{html@{html}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{html}]{\setlength{\rightskip}{0pt plus 5cm}{\bf html\-\_\-type} cppcms\-::form\-\_\-context\-::html (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1form__context_aa1176cf5e03a5f3e683362969e2202c8}
+Set the H\-T\-M\-L/\-X\-H\-T\-M\-L flag. The default is {\itshape as\-\_\-html}. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!html\-\_\-list@{html\-\_\-list}}
+\index{html\-\_\-list@{html\-\_\-list}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{html\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-\_\-context\-::html\-\_\-list (
+\begin{DoxyParamCaption}
+\item[{{\bf html\-\_\-list\-\_\-type}}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_a397ccbc677c016e8dd4a74df773b5167}
+Set the widgets rendering style. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!html\-\_\-list@{html\-\_\-list}}
+\index{html\-\_\-list@{html\-\_\-list}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{html\-\_\-list}]{\setlength{\rightskip}{0pt plus 5cm}{\bf html\-\_\-list\-\_\-type} cppcms\-::form\-\_\-context\-::html\-\_\-list (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1form__context_a58cd639c93d6b6d30f6054867c33ac55}
+Get the widget rendering style. The default is {\itshape as\-\_\-p}. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf form\-\_\-context} const\& cppcms\-::form\-\_\-context\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_a2e60ca68963d861f7bff97cab1bfd91b}
+Assignment. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!out@{out}}
+\index{out@{out}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{out}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-\_\-context\-::out (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_a2e5e63fa14dd10b59919235ca6ec5f30}
+Set the output stream. 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::render\-\_\-value().
+
+\index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!out@{out}}
+\index{out@{out}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{out}]{\setlength{\rightskip}{0pt plus 5cm}std\-::ostream\& cppcms\-::form\-\_\-context\-::out (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1form__context_a1452f13f6466760539d105f4bef54367}
+Get the output stream. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!widget\-\_\-part@{widget\-\_\-part}}
+\index{widget\-\_\-part@{widget\-\_\-part}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{widget\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::form\-\_\-context\-::widget\-\_\-part (
+\begin{DoxyParamCaption}
+\item[{{\bf widget\-\_\-part\-\_\-type}}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1form__context_ac61aa78d96c885b394cef62664964716}
+Set the flag for the partial rendering of the widget. \index{cppcms\-::form\-\_\-context@{cppcms\-::form\-\_\-context}!widget\-\_\-part@{widget\-\_\-part}}
+\index{widget\-\_\-part@{widget\-\_\-part}!cppcms::form_context@{cppcms\-::form\-\_\-context}}
+\subsubsection[{widget\-\_\-part}]{\setlength{\rightskip}{0pt plus 5cm}{\bf widget\-\_\-part\-\_\-type} cppcms\-::form\-\_\-context\-::widget\-\_\-part (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1form__context_a1f05f68e18ae7b9a3bdc4a1a94e856e4}
+Get the part of the widget that should be generated. See {\itshape widget\-\_\-part\-\_\-type}. The default is {\itshape first\-\_\-part}. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

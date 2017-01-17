@@ -1,0 +1,49 @@
+\section{cppcms\-:\-:widgets\-:\-:hidden Class Reference}
+\label{classcppcms_1_1widgets_1_1hidden}\index{cppcms\-::widgets\-::hidden@{cppcms\-::widgets\-::hidden}}
+
+
+This widget represents a hidden input form element. It is used to provide information invisible to the user.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:hidden\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.057971cm]{classcppcms_1_1widgets_1_1hidden}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf render} ({\bf form\-\_\-context} \&context)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This widget represents a hidden input form element. It is used to provide information invisible to the user. 
+
+I has the same properties as a text widget has but it does not render any H\-T\-M\-L for \doxyref{message()}{p.}{classcppcms_1_1widgets_1_1base__widget_aa18b1b80d669e94e86a96efa3a86a4f3}, \doxyref{help()}{p.}{classcppcms_1_1widgets_1_1base__widget_a11bcfe32677465e651686556d6b0fc4f} and other informational types.
+
+When you render the form in templates, it is a good idea to render it separately to make sure that no invalid H\-T\-M\-L is created. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::hidden@{cppcms\-::widgets\-::hidden}!render@{render}}
+\index{render@{render}!cppcms::widgets::hidden@{cppcms\-::widgets\-::hidden}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::hidden\-::render (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1hidden_a10e8ebc158a8776c346a567d3f4844df}
+Render the H\-T\-M\-L of the widget. It overrides the default H\-T\-M\-L rendering as hidden widget is never displayed. 
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-widget} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__widget_a4d62e2342bb41a1b80a2ff0af5c9042b}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

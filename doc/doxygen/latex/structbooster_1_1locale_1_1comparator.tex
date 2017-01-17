@@ -1,0 +1,65 @@
+\section{booster\-:\-:locale\-:\-:comparator$<$ Char\-Type, default\-\_\-level $>$ Struct Template Reference}
+\label{structbooster_1_1locale_1_1comparator}\index{booster\-::locale\-::comparator$<$ Char\-Type, default\-\_\-level $>$@{booster\-::locale\-::comparator$<$ Char\-Type, default\-\_\-level $>$}}
+
+
+This class can be used in S\-T\-L algorithms and containers for comparison of strings with a level other than primary.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/collator.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf comparator} (std\-::locale const \&l=std\-::locale(), {\bf collator\-\_\-base\-::level\-\_\-type} level=default\-\_\-level)
+\item 
+bool {\bf operator()} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&left, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&right) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename Char\-Type, collator\-\_\-base\-::level\-\_\-type default\-\_\-level = collator\-\_\-base\-::identical$>$struct booster\-::locale\-::comparator$<$ Char\-Type, default\-\_\-level $>$}
+
+This class can be used in S\-T\-L algorithms and containers for comparison of strings with a level other than primary. 
+
+For example\-:
+
+
+\begin{DoxyCode}
+std::map<std::string,std::string,comparator<char,collator\_base::secondary> > data;
+\end{DoxyCode}
+
+
+Would create a map the keys of which are sorted using secondary collation level 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::comparator@{booster\-::locale\-::comparator}!comparator@{comparator}}
+\index{comparator@{comparator}!booster::locale::comparator@{booster\-::locale\-::comparator}}
+\subsubsection[{comparator}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type , collator\-\_\-base\-::level\-\_\-type default\-\_\-level = collator\-\_\-base\-::identical$>$ {\bf booster\-::locale\-::comparator}$<$ Char\-Type, default\-\_\-level $>$\-::{\bf comparator} (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{l = {\ttfamily std\-:\-:locale()}, }
+\item[{{\bf collator\-\_\-base\-::level\-\_\-type}}]{level = {\ttfamily default\-\_\-level}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1comparator_a91b9aefe26b288fdf17890a3b1d61597}
+Create a comparator class for locale {\itshape l} and with collation leval {\itshape level} 
+
+\begin{DoxyNote}{Note}
+throws std\-::bad\-\_\-cast if l does not have \doxyref{collator}{p.}{classbooster_1_1locale_1_1collator} facet installed 
+\end{DoxyNote}
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::comparator@{booster\-::locale\-::comparator}!operator()@{operator()}}
+\index{operator()@{operator()}!booster::locale::comparator@{booster\-::locale\-::comparator}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Type , collator\-\_\-base\-::level\-\_\-type default\-\_\-level = collator\-\_\-base\-::identical$>$ bool {\bf booster\-::locale\-::comparator}$<$ Char\-Type, default\-\_\-level $>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{left, }
+\item[{std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&}]{right}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1comparator_a9f4726246672b08cd9a30d7431f6945d}
+Compare two strings -- equivalent to return left $<$ right according to collation rules 
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/collator.\-h\end{DoxyCompactItemize}

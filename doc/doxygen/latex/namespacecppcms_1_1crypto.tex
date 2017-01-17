@@ -1,0 +1,22 @@
+\section{cppcms\-:\-:crypto Namespace Reference}
+\label{namespacecppcms_1_1crypto}\index{cppcms\-::crypto@{cppcms\-::crypto}}
+
+
+This namespace holds basic cryptographic utilities useful for save interaction with user.  
+
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf key}
+\begin{DoxyCompactList}\small\item\em Key object, holds the string that represents the binary key. \end{DoxyCompactList}\item 
+class {\bf message\-\_\-digest}
+\begin{DoxyCompactList}\small\item\em this class provides an A\-P\-I to calculate various cryptographic hash functions \end{DoxyCompactList}\item 
+class {\bf hmac}
+\begin{DoxyCompactList}\small\item\em This object calculates the H\-M\-A\-C signature for the input data. \end{DoxyCompactList}\item 
+class {\bf cbc}
+\begin{DoxyCompactList}\small\item\em Cipher-\/block chaining encryption and decryption cryptographic service. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace holds basic cryptographic utilities useful for save interaction with user. One of the limitations of these functions is the fact that they do not use so called cryptographic memory, however it is not required as all secret keys are stored as plain text in configuration files, The only protection that is given is that values of keys are erased when the object is deleted to prevent key-\/leaks due to use of uninitialized memory in user applications. 

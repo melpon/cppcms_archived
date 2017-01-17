@@ -1,0 +1,55 @@
+\section{cppcms\-:\-:filters\-:\-:time Class Reference}
+\label{classcppcms_1_1filters_1_1time}\index{cppcms\-::filters\-::time@{cppcms\-::filters\-::time}}
+
+
+Format local time to ouput stream.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/filters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries time} ({\bf time} const \&other)\label{classcppcms_1_1filters_1_1time_a7b2d7d44feaf5a03a5364d6aa9fdeeb4}
+
+\item 
+{\bf time} const \& {\bfseries operator=} ({\bf time} const \&other)\label{classcppcms_1_1filters_1_1time_afcd6e820be0e7cdb339826be9551e4f3}
+
+\item 
+{\bf time} ({\bf streamable} const \&t)
+\item 
+{\bf time} ({\bf streamable} const \&{\bf time}, std\-::string const \&timezone)
+\item 
+void {\bfseries operator()} (std\-::ostream \&out) const \label{classcppcms_1_1filters_1_1time_a9662838746c60e0db83f9de94a60a561}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Format local time to ouput stream. 
+
+Formats time to the stream, time is represented as number 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::filters\-::time@{cppcms\-::filters\-::time}!time@{time}}
+\index{time@{time}!cppcms::filters::time@{cppcms\-::filters\-::time}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::time\-::time (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1time_a04f32684360f72acc70036617feef1a3}
+Create time filter that formats current local-\/time time using P\-O\-S\-I\-X time representation {\itshape t} \index{cppcms\-::filters\-::time@{cppcms\-::filters\-::time}!time@{time}}
+\index{time@{time}!cppcms::filters::time@{cppcms\-::filters\-::time}}
+\subsubsection[{time}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::time\-::time (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{time, }
+\item[{std\-::string const \&}]{timezone}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1time_ad1ff40c228403203b55b026592e868b8}
+Create time filter that formats current time using P\-O\-S\-I\-X time representation {\itshape t}, in a timezone {\itshape timezone} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/filters.\-h\end{DoxyCompactItemize}

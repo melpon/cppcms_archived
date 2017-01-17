@@ -1,0 +1,139 @@
+\section{booster\-:\-:backtrace Class Reference}
+\label{classbooster_1_1backtrace}\index{booster\-::backtrace@{booster\-::backtrace}}
+
+
+the class that records the stack trace when it is created,  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/backtrace.\-h$>$}
+
+Inheritance diagram for booster\-:\-:backtrace\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classbooster_1_1backtrace}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf backtrace} (size\-\_\-t frames\-\_\-no={\bf default\-\_\-stack\-\_\-size})
+\item 
+size\-\_\-t {\bf stack\-\_\-size} () const 
+\item 
+void $\ast$ {\bf return\-\_\-address} (unsigned frame\-\_\-no) const 
+\item 
+void {\bf trace\-\_\-line} (unsigned frame\-\_\-no, std\-::ostream \&out) const 
+\item 
+std\-::string {\bf trace\-\_\-line} (unsigned frame\-\_\-no) const 
+\item 
+std\-::string {\bf trace} () const 
+\item 
+void {\bf trace} (std\-::ostream \&out) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static size\-\_\-t const {\bf default\-\_\-stack\-\_\-size} = 32
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the class that records the stack trace when it is created, 
+
+It is a base class for all exceptions that record stack trace 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::backtrace@{booster\-::backtrace}!backtrace@{backtrace}}
+\index{backtrace@{backtrace}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{backtrace}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::backtrace\-::backtrace (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{frames\-\_\-no = {\ttfamily {\bf default\-\_\-stack\-\_\-size}}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_ad7953e9c5fb97768afdc66f5fa448514}
+Create stack trace recording at most {\itshape frames\-\_\-no} stack frames 
+
+References booster\-::stack\-\_\-trace\-::trace().
+
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::backtrace@{booster\-::backtrace}!return\-\_\-address@{return\-\_\-address}}
+\index{return\-\_\-address@{return\-\_\-address}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{return\-\_\-address}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ booster\-::backtrace\-::return\-\_\-address (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{frame\-\_\-no}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_a58e276d7fe9856a5e8d0999cb22e7d10}
+Get the returned address for the stack frame number {\itshape frame\-\_\-no} 
+
+References stack\-\_\-size().
+
+\index{booster\-::backtrace@{booster\-::backtrace}!stack\-\_\-size@{stack\-\_\-size}}
+\index{stack\-\_\-size@{stack\-\_\-size}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{stack\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::backtrace\-::stack\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_adb15203da5cb6e2f4c15d16ce703df4f}
+Get the actual number of recorded stack frames 
+
+Referenced by return\-\_\-address().
+
+\index{booster\-::backtrace@{booster\-::backtrace}!trace@{trace}}
+\index{trace@{trace}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::backtrace\-::trace (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_ad50e49567d795065da36b4cf47b3e2f4}
+Get full stack trace as a string 
+
+References booster\-::stack\-\_\-trace\-::get\-\_\-symbols().
+
+\index{booster\-::backtrace@{booster\-::backtrace}!trace@{trace}}
+\index{trace@{trace}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{trace}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::backtrace\-::trace (
+\begin{DoxyParamCaption}
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_a24ca881e26bd7396d827a7d0b755c4bf}
+Print full stack trace to a stream {\itshape out} 
+
+References booster\-::stack\-\_\-trace\-::write\-\_\-symbols().
+
+\index{booster\-::backtrace@{booster\-::backtrace}!trace\-\_\-line@{trace\-\_\-line}}
+\index{trace\-\_\-line@{trace\-\_\-line}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{trace\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::backtrace\-::trace\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{frame\-\_\-no, }
+\item[{std\-::ostream \&}]{out}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_a01b0ebc228110269a5a246ca13c1f77d}
+Print the stack trace frame for the frame {\itshape frame\-\_\-no} to the stream {\itshape out} 
+
+References booster\-::stack\-\_\-trace\-::write\-\_\-symbols().
+
+\index{booster\-::backtrace@{booster\-::backtrace}!trace\-\_\-line@{trace\-\_\-line}}
+\index{trace\-\_\-line@{trace\-\_\-line}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{trace\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::backtrace\-::trace\-\_\-line (
+\begin{DoxyParamCaption}
+\item[{unsigned}]{frame\-\_\-no}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1backtrace_ae487b18c6a4c0ec875933e7ffca59578}
+Get a readable stack trace frame for the frame {\itshape frame\-\_\-no} 
+
+References booster\-::stack\-\_\-trace\-::get\-\_\-symbol().
+
+
+
+\subsection{Member Data Documentation}
+\index{booster\-::backtrace@{booster\-::backtrace}!default\-\_\-stack\-\_\-size@{default\-\_\-stack\-\_\-size}}
+\index{default\-\_\-stack\-\_\-size@{default\-\_\-stack\-\_\-size}!booster::backtrace@{booster\-::backtrace}}
+\subsubsection[{default\-\_\-stack\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t const booster\-::backtrace\-::default\-\_\-stack\-\_\-size = 32\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1backtrace_a0e1bcb70bc3845ca8cca8cf53782b048}
+The default number of recorded frames 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/backtrace.\-h\end{DoxyCompactItemize}

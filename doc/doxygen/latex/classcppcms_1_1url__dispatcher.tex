@@ -1,0 +1,239 @@
+\section{cppcms\-:\-:url\-\_\-dispatcher Class Reference}
+\label{classcppcms_1_1url__dispatcher}\index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+
+
+This class is used to glue between member function of application class and urls.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/url\-\_\-dispatcher.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:url\-\_\-dispatcher\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1url__dispatcher}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf booster\-::function}$<$ void()$>$ {\bfseries handler}\label{classcppcms_1_1url__dispatcher_adc353cf8b6620e77767da76851a7a3c5}
+
+\item 
+typedef {\bf booster\-::function}\\*
+$<$ void(std\-::string)$>$ {\bfseries handler1}\label{classcppcms_1_1url__dispatcher_aceb427ad8c047668e6c2852f00366be9}
+
+\item 
+typedef {\bf booster\-::function}\\*
+$<$ void(std\-::string, \\*
+std\-::string)$>$ {\bfseries handler2}\label{classcppcms_1_1url__dispatcher_a951d46ef8fa723d55f1808f0a379bad3}
+
+\item 
+typedef {\bf booster\-::function}\\*
+$<$ void(std\-::string, \\*
+std\-::string, std\-::string)$>$ {\bfseries handler3}\label{classcppcms_1_1url__dispatcher_a82cff4dea749bf5659ff6211db3c2084}
+
+\item 
+typedef {\bf booster\-::function}\\*
+$<$ void(std\-::string, \\*
+std\-::string, std\-::string, \\*
+std\-::string)$>$ {\bfseries handler4}\label{classcppcms_1_1url__dispatcher_a23a9bdc279312c9c66d92c6e8698da74}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf assign} (std\-::string const \&regex, {\bf handler} {\bf handler})
+\item 
+void {\bf assign} (std\-::string const \&regex, {\bf handler1} {\bf handler}, int exp1)
+\item 
+void {\bf assign} (std\-::string const \&regex, {\bf handler2} {\bf handler}, int exp1, int exp2)
+\item 
+void {\bf assign} (std\-::string const \&regex, {\bf handler3} {\bf handler}, int exp1, int exp2, int exp3)
+\item 
+void {\bf assign} (std\-::string const \&regex, {\bf handler4} {\bf handler}, int exp1, int exp2, int exp3, int exp4)
+\item 
+bool {\bf dispatch} (std\-::string url)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void {\bf assign} (std\-::string const \&regex, void(C\-::$\ast$member)(), C $\ast$object)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void {\bf assign} (std\-::string const \&regex, void(C\-::$\ast$member)(std\-::string), C $\ast$object, int e1)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void {\bf assign} (std\-::string const \&regex, void(C\-::$\ast$member)(std\-::string, std\-::string), C $\ast$object, int e1, int e2)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void {\bf assign} (std\-::string const \&regex, void(C\-::$\ast$member)(std\-::string, std\-::string, std\-::string), C $\ast$object, int e1, int e2, int e3)
+\item 
+{\footnotesize template$<$typename C $>$ }\\void {\bf assign} (std\-::string const \&regex, void(C\-::$\ast$member)(std\-::string, std\-::string, std\-::string, std\-::string), C $\ast$object, int e1, int e2, int e3, int e4)
+\item 
+void {\bf mount} (std\-::string const \&match, {\bf application} \&app, int part)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is used to glue between member function of application class and urls. 
+
+This class is used in context of {\itshape \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application}} with its {\itshape url} member function. It uses regular expression to bind between url and callbacks that actually process the request. It also allows mount sub-\/applications to the root of the primary application. For example\-:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{class }my\_web\_project : \textcolor{keyword}{public} cppcms::application \{
+    users\_app users\_;
+    \textcolor{keywordtype}{void} display\_page(std::string)
+     ...
+public:
+   my\_web\_project() \{
+    url().assign(\textcolor{stringliteral}{"^/page/(\(\backslash\)\(\backslash\)d+)/?$"},bind1st(mem\_fun(&my\_web\_project::display\_page),\textcolor{keyword}{this}),1);
+    ...
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{{\bf handler}}]{handler}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_a26279a7153679003f7ae88b1bbde9f90}
+Assign {\itshape handler} to pattern {\itshape regex} thus if U\-R\-L that matches this pattern requested, {\itshape handler} is called \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{{\bf handler1}}]{handler, }
+\item[{int}]{exp1}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_a563f4a27b3cdee54be5fc14ded009e5e}
+Assign {\itshape handler} to pattern {\itshape regex} thus if U\-R\-L that matches this pattern requested, {\itshape handler} is called with first parameters the string that was matched at position {\itshape exp1}.
+
+For example\-: if regular expression is \char`\"{}$^\wedge$/page/(\textbackslash{}\textbackslash{}d+)/(\textbackslash{}\textbackslash{}w+)\$\char`\"{} , exp1=2, and the url is \char`\"{}/page/13/to\-\_\-be\-\_\-or\-\_\-not\char`\"{}, then handler would be called with \char`\"{}to\-\_\-be\-\_\-or\-\_\-not\char`\"{} as its first parameter \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{{\bf handler2}}]{handler, }
+\item[{int}]{exp1, }
+\item[{int}]{exp2}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_a2e26e1b17dc80a40a5467c028d1b40e9}
+Assign {\itshape handler} to pattern {\itshape regex} thus if U\-R\-L that matches this pattern requested, {\itshape handler} is called with 1st and 2nd parameters the string that was matched at position {\itshape exp1} and {\itshape exp2} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{{\bf handler3}}]{handler, }
+\item[{int}]{exp1, }
+\item[{int}]{exp2, }
+\item[{int}]{exp3}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_a981b6b7695c0b90e58b7d8cf8cad07f4}
+Assign {\itshape handler} to pattern {\itshape regex} thus if U\-R\-L that matches this pattern requested, {\itshape handler} is called with 1st, 2nd and 3rd parameters the string that was matched at position {\itshape exp1}, {\itshape exp2} and {\itshape exp2} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{{\bf handler4}}]{handler, }
+\item[{int}]{exp1, }
+\item[{int}]{exp2, }
+\item[{int}]{exp3, }
+\item[{int}]{exp4}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_af5c9a3e6b3fcccc03df6a277522c541b}
+Assign {\itshape handler} to pattern {\itshape regex} thus if U\-R\-L that matches this pattern requested, {\itshape handler} is called with 1st, 2nd, 3rd and 4th parameters the string that was matched at position {\itshape exp1}, {\itshape exp2}, {\itshape exp3} and {\itshape exp4} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{void(C\-::$\ast$)()}]{member, }
+\item[{C $\ast$}]{object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1url__dispatcher_a52c8ef6f90fda48b95b3f4abe1a92857}
+This template function is a shortcut to assign(regex,callback). It allows assignment of {\itshape member} function of an {\itshape object} with signature void handler() as simple as assign(expr,\&bar\-::foo,this);
+
+In addition to calling {\itshape member} function it calls object-\/$>$init() before call and object-\/$>$clean() after the call of the C is derived from \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{void(C\-::$\ast$)(std\-::string)}]{member, }
+\item[{C $\ast$}]{object, }
+\item[{int}]{e1}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1url__dispatcher_a09832dd54e25dc8dfa6794aebcff747b}
+This template function is a shortcut to assign(regex,callback,int). It allows assignment of {\itshape member} function of an {\itshape object} with signature void handler(string)
+
+In addition to calling {\itshape member} function it calls object-\/$>$init() before call and object-\/$>$clean() after the call of the C is derived from \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{void(C\-::$\ast$)(std\-::string, std\-::string)}]{member, }
+\item[{C $\ast$}]{object, }
+\item[{int}]{e1, }
+\item[{int}]{e2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1url__dispatcher_a42f383a14c42874dde69ab9c025a77c6}
+This template function is a shortcut to assign(regex,callback,int,int). It allows assignment of {\itshape member} function of an {\itshape object} with signature void handler(string,string)
+
+In addition to calling {\itshape member} function it calls object-\/$>$init() before call and object-\/$>$clean() after the call of the C is derived from \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{void(C\-::$\ast$)(std\-::string, std\-::string, std\-::string)}]{member, }
+\item[{C $\ast$}]{object, }
+\item[{int}]{e1, }
+\item[{int}]{e2, }
+\item[{int}]{e3}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1url__dispatcher_a0bd4ff01bc9e362c14e456f4ca4d98bb}
+This template function is a shortcut to assign(regex,callback,int,int,int). It allows assignment of {\itshape member} function of an {\itshape object} with signature void handler(string,string,string)
+
+In addition to calling {\itshape member} function it calls object-\/$>$init() before call and object-\/$>$clean() after the call of the C is derived from \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!assign@{assign}}
+\index{assign@{assign}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename C $>$ void cppcms\-::url\-\_\-dispatcher\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{regex, }
+\item[{void(C\-::$\ast$)(std\-::string, std\-::string, std\-::string, std\-::string)}]{member, }
+\item[{C $\ast$}]{object, }
+\item[{int}]{e1, }
+\item[{int}]{e2, }
+\item[{int}]{e3, }
+\item[{int}]{e4}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1url__dispatcher_a9bb18e0c70c84251e082204aa6a233ab}
+This template function is a shortcut to assign(regex,callback,int,int,int,int). It allows assignment of {\itshape member} function of an {\itshape object} with signature void handler(string,string,string,string)
+
+In addition to calling {\itshape member} function it calls object-\/$>$init() before call and object-\/$>$clean() after the call of the C is derived from \doxyref{cppcms\-::application}{p.}{classcppcms_1_1application} \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!dispatch@{dispatch}}
+\index{dispatch@{dispatch}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{dispatch}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::url\-\_\-dispatcher\-::dispatch (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{url}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_afa6b2ec987c0a230b17767c3220a5b22}
+Try to find match between {\itshape url} and registered handlers and applications. If the match was found, it returns the method, how handler should bd dispatched synchronous or asynchronous, meaning the handler would be executed in thread pool or in the main non-\/blocking loop \index{cppcms\-::url\-\_\-dispatcher@{cppcms\-::url\-\_\-dispatcher}!mount@{mount}}
+\index{mount@{mount}!cppcms::url_dispatcher@{cppcms\-::url\-\_\-dispatcher}}
+\subsubsection[{mount}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::url\-\_\-dispatcher\-::mount (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{match, }
+\item[{{\bf application} \&}]{app, }
+\item[{int}]{part}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1url__dispatcher_a024f81412bbd9d6d1b61ebfabce8aa8c}
+Mount a sub application {\itshape app} to the U\-R\-L dispatcher, using regular expression match.
+
+When mounted the U\-R\-L is checked against match expression and then calls app.\-main(substr) where substr is the matched subexpression part. For example\-:
+
+
+\begin{DoxyCode}
+dispatcher().mount(\textcolor{stringliteral}{"/formums((/.*)?)"},forums,1);
+\end{DoxyCode}
+
+
+For example\-: for url /forums/page/3 it would call {\ttfamily forums\-::main} with value \char`\"{}/page/3\char`\"{} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/url\-\_\-dispatcher.\-h\end{DoxyCompactItemize}

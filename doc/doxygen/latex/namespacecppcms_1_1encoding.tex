@@ -1,0 +1,178 @@
+\section{cppcms\-:\-:encoding Namespace Reference}
+\label{namespacecppcms_1_1encoding}\index{cppcms\-::encoding@{cppcms\-::encoding}}
+
+
+this Namespace holds various function for dealing with encoding  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf valid} (std\-::locale const \&loc, char const $\ast$begin, char const $\ast$end, size\-\_\-t \&count)
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf valid\-\_\-utf8} (char const $\ast$begin, char const $\ast$end, size\-\_\-t \&count)
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf valid} (char const $\ast$encoding, char const $\ast$begin, char const $\ast$end, size\-\_\-t \&count)
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf valid} (std\-::string const \&encoding, char const $\ast$begin, char const $\ast$end, size\-\_\-t \&count)
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf is\-\_\-ascii\-\_\-compatible} (std\-::string const \&encoding)
+\item 
+bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf validate\-\_\-or\-\_\-filter} (std\-::string const \&encoding, char const $\ast$begin, char const $\ast$end, std\-::string \&output, char replace=0)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf to\-\_\-utf8} (std\-::locale const \&loc, char const $\ast$begin, char const $\ast$end)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf to\-\_\-utf8} (char const $\ast$encoding, char const $\ast$begin, char const $\ast$end)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf to\-\_\-utf8} (std\-::locale const \&loc, std\-::string const \&str)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf to\-\_\-utf8} (char const $\ast$encoding, std\-::string const \&str)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf from\-\_\-utf8} (std\-::locale const \&loc, char const $\ast$begin, char const $\ast$end)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf from\-\_\-utf8} (char const $\ast$encoding, char const $\ast$begin, char const $\ast$end)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf from\-\_\-utf8} (std\-::locale const \&loc, std\-::string const \&str)
+\item 
+std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I {\bf from\-\_\-utf8} (char const $\ast$encoding, std\-::string const \&str)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this Namespace holds various function for dealing with encoding 
+
+\subsection{Function Documentation}
+\index{cppcms\-::encoding@{cppcms\-::encoding}!from\-\_\-utf8@{from\-\_\-utf8}}
+\index{from\-\_\-utf8@{from\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{from\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::from\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a3b2867f0d9fa7c291144194e47bcf39c}
+Convert U\-T\-F-\/8 string in range [begin,end) to local 8 bit encoding according to locale {\itshape loc}. If non-\/convertable characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!from\-\_\-utf8@{from\-\_\-utf8}}
+\index{from\-\_\-utf8@{from\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{from\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::from\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{encoding, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_ad688c4e83fceb22978c5a31386534fdc}
+Convert U\-T\-F-\/8 string in range [begin,end) to local 8 bit encoding {\itshape encoding}. If non-\/convertable characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!from\-\_\-utf8@{from\-\_\-utf8}}
+\index{from\-\_\-utf8@{from\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{from\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::from\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc, }
+\item[{std\-::string const \&}]{str}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_aa59ecf1be2492e32849673aac5770de2}
+Convert U\-T\-F-\/8 string {\itshape str} to local 8 bit encoding according to locale {\itshape loc}. If non-\/convertable characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!from\-\_\-utf8@{from\-\_\-utf8}}
+\index{from\-\_\-utf8@{from\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{from\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::from\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{encoding, }
+\item[{std\-::string const \&}]{str}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_ab0457362852f7865d22441a3716154ef}
+Convert U\-T\-F-\/8 string {\itshape str} to local 8 bit encoding {\itshape encoding}. If non-\/convertable characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!is\-\_\-ascii\-\_\-compatible@{is\-\_\-ascii\-\_\-compatible}}
+\index{is\-\_\-ascii\-\_\-compatible@{is\-\_\-ascii\-\_\-compatible}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{is\-\_\-ascii\-\_\-compatible}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::is\-\_\-ascii\-\_\-compatible (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{encoding}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_ae43b9b7fd91174ca049aceaa7a6aac28}
+Returns true if A\-S\-C\-I\-I is strict subset of the encoding, i.\-e. All non-\/\-A\-S\-C\-I\-I characters encoding using bytes $>$= 0x80.
+
+This is very important for X\-M\-L or H\-T\-M\-L parsing to prevent invlaid detenction of H\-T\-M\-L specific characters. So filters that work with encodings that are not A\-S\-C\-I\-I compatible should convert the text to U\-T\-F-\/8 and then convert them back.
+
+These are U\-T\-F-\/8, I\-S\-O-\/8859-\/$\ast$, windows-\/12$\ast$ and koi encodings families. \index{cppcms\-::encoding@{cppcms\-::encoding}!to\-\_\-utf8@{to\-\_\-utf8}}
+\index{to\-\_\-utf8@{to\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{to\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::to\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a8c2080f9f0c90c26f032c3339d4f9fc1}
+Convert string in range [begin,end) from local 8 bit encoding according to locale {\itshape loc} to U\-T\-F-\/8 If illegal characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!to\-\_\-utf8@{to\-\_\-utf8}}
+\index{to\-\_\-utf8@{to\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{to\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::to\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{encoding, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a5d78e2ee0c83bfc9c04215e312e6dfa7}
+Convert string in range [begin,end) from local 8 bit encoding {\itshape encoding} to U\-T\-F-\/8 If illegal characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!to\-\_\-utf8@{to\-\_\-utf8}}
+\index{to\-\_\-utf8@{to\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{to\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::to\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc, }
+\item[{std\-::string const \&}]{str}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a9ddac99b9360c16c84625c4ab431d65b}
+Convert string {\itshape str} from local 8 bit encoding according to locale {\itshape loc} to U\-T\-F-\/8 If illegal characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!to\-\_\-utf8@{to\-\_\-utf8}}
+\index{to\-\_\-utf8@{to\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{to\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::to\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{encoding, }
+\item[{std\-::string const \&}]{str}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a6a25e96c5860241affac4f14bda17a1f}
+Convert string {\itshape str} from local 8 bit encoding according to encoding {\itshape encoding} If illegal characters found, the conversion is aborted and only sucessefully converted part is returned. \index{cppcms\-::encoding@{cppcms\-::encoding}!valid@{valid}}
+\index{valid@{valid}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::valid (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{loc, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{size\-\_\-t \&}]{count}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a487d47612f214a9227dfd5f82a787bd1}
+Note\-: all these function assume that control characters that invalid in H\-T\-M\-L are illegal. For example. N\-U\-L is legal U\-T\-F-\/8 code but it is illegal in terms of H\-T\-M\-L validity thus, valid\-\_\-utf8 would return false. Check if string in range [begin,end) is valid in the locale {\itshape loc} and does not include H\-T\-M\-L illegal characters. Number of codepoints is stored in {\itshape count} \index{cppcms\-::encoding@{cppcms\-::encoding}!valid@{valid}}
+\index{valid@{valid}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::valid (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{encoding, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{size\-\_\-t \&}]{count}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a34dd5550ddb6b28f92fba8f33aeb87a1}
+Check if string in range [begin,end) is valid encoding {\itshape encoding} and does not include H\-T\-M\-L illegal characters. Number of codepoints is stored in {\itshape count} \index{cppcms\-::encoding@{cppcms\-::encoding}!valid@{valid}}
+\index{valid@{valid}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::valid (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{encoding, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{size\-\_\-t \&}]{count}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_ad147f2844d4aa8b897d26c5b23f8daa3}
+Check if string in range [begin,end) is valid encoding {\itshape encoding} and does not include H\-T\-M\-L illegal characters. Number of codepoints is stored in {\itshape count} \index{cppcms\-::encoding@{cppcms\-::encoding}!valid\-\_\-utf8@{valid\-\_\-utf8}}
+\index{valid\-\_\-utf8@{valid\-\_\-utf8}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{valid\-\_\-utf8}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::valid\-\_\-utf8 (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{size\-\_\-t \&}]{count}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_a0c92196f6edf8c01ae4feaf9a7f5d9cf}
+Check if string in range [begin,end) is valid U\-T\-F-\/8 and does not include H\-T\-M\-L illegal characters. Number of codepoints is stored in {\itshape count} \index{cppcms\-::encoding@{cppcms\-::encoding}!validate\-\_\-or\-\_\-filter@{validate\-\_\-or\-\_\-filter}}
+\index{validate\-\_\-or\-\_\-filter@{validate\-\_\-or\-\_\-filter}!cppcms::encoding@{cppcms\-::encoding}}
+\subsubsection[{validate\-\_\-or\-\_\-filter}]{\setlength{\rightskip}{0pt plus 5cm}bool C\-P\-P\-C\-M\-S\-\_\-\-A\-P\-I cppcms\-::encoding\-::validate\-\_\-or\-\_\-filter (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{encoding, }
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\-::string \&}]{output, }
+\item[{char}]{replace = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\label{namespacecppcms_1_1encoding_aaf8b82dfecd193fec3fe65b286e18c0d}
+Check if the {\itshape encoding} is valid for the text in range [{\itshape begin}, {\itshape end}) , if it is valid, returns true otherwise removes all invalid characters (if replace == 0) or replaces them with {\itshape replace} and saves the result to {\itshape output} returning false.
+
+\begin{DoxyNote}{Note}
+the replace functionality is not supported for all encoding, only U\-T\-F-\/8, I\-S\-O-\/8859-\/$\ast$ and single byte windows-\/12\-X\-X, and koi family 
+\end{DoxyNote}

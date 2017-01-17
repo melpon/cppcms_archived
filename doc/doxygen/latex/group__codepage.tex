@@ -1,0 +1,79 @@
+\section{Codepage}
+\label{group__codepage}\index{Codepage@{Codepage}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf booster\-::locale\-::conv\-::conversion\-\_\-error}
+\begin{DoxyCompactList}\small\item\em The excepton that is thrown in case of conversion error. \end{DoxyCompactList}\item 
+class {\bf booster\-::locale\-::conv\-::invalid\-\_\-charset\-\_\-error}
+\begin{DoxyCompactList}\small\item\em This exception is thrown in case of use of unsupported or invalid character set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf booster\-::locale\-::conv\-::method\-\_\-type} \{ {\bf booster\-::locale\-::conv\-::skip} = 0, 
+{\bf booster\-::locale\-::conv\-::stop} = 1, 
+{\bf booster\-::locale\-::conv\-::default\-\_\-method} = skip
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Out , typename Char\-In $>$ }\\std\-::basic\-\_\-string$<$ Char\-Out $>$ {\bf booster\-::locale\-::conv\-::utf\-\_\-to\-\_\-utf} (Char\-In const $\ast$begin, Char\-In const $\ast$end, method\-\_\-type how=default\-\_\-method)
+\item 
+{\footnotesize template$<$typename Char\-Out , typename Char\-In $>$ }\\std\-::basic\-\_\-string$<$ Char\-Out $>$ {\bf booster\-::locale\-::conv\-::utf\-\_\-to\-\_\-utf} (Char\-In const $\ast$str, method\-\_\-type how=default\-\_\-method)
+\item 
+{\footnotesize template$<$typename Char\-Out , typename Char\-In $>$ }\\std\-::basic\-\_\-string$<$ Char\-Out $>$ {\bf booster\-::locale\-::conv\-::utf\-\_\-to\-\_\-utf} (std\-::basic\-\_\-string$<$ Char\-In $>$ const \&str, method\-\_\-type how=default\-\_\-method)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Enumeration Type Documentation}
+\index{Codepage@{Codepage}!method\-\_\-type@{method\-\_\-type}}
+\index{method\-\_\-type@{method\-\_\-type}!Codepage@{Codepage}}
+\subsubsection[{method\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::conv\-::method\-\_\-type}}\label{group__codepage_ga29f11d96dbc042d8bb27917969f480ea}
+enum that defines conversion policy \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{skip@{skip}!Codepage@{Codepage}}\index{Codepage@{Codepage}!skip@{skip}}\item[{\em 
+skip\label{group__codepage_gga29f11d96dbc042d8bb27917969f480eaa19e2bc810b9f966c8898b912cb147284}
+}]Skip illegal/unconvertable characters. \index{stop@{stop}!Codepage@{Codepage}}\index{Codepage@{Codepage}!stop@{stop}}\item[{\em 
+stop\label{group__codepage_gga29f11d96dbc042d8bb27917969f480eaa0072564714f69c613ee79f58729ea4ad}
+}]Stop conversion and throw \doxyref{conversion\-\_\-error}{p.}{classbooster_1_1locale_1_1conv_1_1conversion__error}. \index{default\-\_\-method@{default\-\_\-method}!Codepage@{Codepage}}\index{Codepage@{Codepage}!default\-\_\-method@{default\-\_\-method}}\item[{\em 
+default\-\_\-method\label{group__codepage_gga29f11d96dbc042d8bb27917969f480eaa2c54fe09a179d78b4bc7942a9490a22b}
+}]Default method -\/ skip. \end{description}
+\end{Desc}
+
+
+\subsection{Function Documentation}
+\index{Codepage@{Codepage}!utf\-\_\-to\-\_\-utf@{utf\-\_\-to\-\_\-utf}}
+\index{utf\-\_\-to\-\_\-utf@{utf\-\_\-to\-\_\-utf}!Codepage@{Codepage}}
+\subsubsection[{utf\-\_\-to\-\_\-utf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Out , typename Char\-In $>$ std\-::basic\-\_\-string$<$Char\-Out$>$ booster\-::locale\-::conv\-::utf\-\_\-to\-\_\-utf (
+\begin{DoxyParamCaption}
+\item[{Char\-In const $\ast$}]{begin, }
+\item[{Char\-In const $\ast$}]{end, }
+\item[{method\-\_\-type}]{how = {\ttfamily default\-\_\-method}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gadf9370318223b9cfcb3d73d31c617576}
+Convert a Unicode text in range [begin,end) to other Unicode encoding 
+
+References booster\-::locale\-::conv\-::stop.
+
+\index{Codepage@{Codepage}!utf\-\_\-to\-\_\-utf@{utf\-\_\-to\-\_\-utf}}
+\index{utf\-\_\-to\-\_\-utf@{utf\-\_\-to\-\_\-utf}!Codepage@{Codepage}}
+\subsubsection[{utf\-\_\-to\-\_\-utf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Out , typename Char\-In $>$ std\-::basic\-\_\-string$<$Char\-Out$>$ booster\-::locale\-::conv\-::utf\-\_\-to\-\_\-utf (
+\begin{DoxyParamCaption}
+\item[{Char\-In const $\ast$}]{str, }
+\item[{method\-\_\-type}]{how = {\ttfamily default\-\_\-method}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_ga7dd92989e771789eb008e126479dbcdb}
+Convert a Unicode N\-U\-L terminated string {\itshape str} other Unicode encoding \index{Codepage@{Codepage}!utf\-\_\-to\-\_\-utf@{utf\-\_\-to\-\_\-utf}}
+\index{utf\-\_\-to\-\_\-utf@{utf\-\_\-to\-\_\-utf}!Codepage@{Codepage}}
+\subsubsection[{utf\-\_\-to\-\_\-utf}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Char\-Out , typename Char\-In $>$ std\-::basic\-\_\-string$<$Char\-Out$>$ booster\-::locale\-::conv\-::utf\-\_\-to\-\_\-utf (
+\begin{DoxyParamCaption}
+\item[{std\-::basic\-\_\-string$<$ Char\-In $>$ const \&}]{str, }
+\item[{method\-\_\-type}]{how = {\ttfamily default\-\_\-method}}
+\end{DoxyParamCaption}
+)}\label{group__codepage_gaa99dcc6db792bfa4fa58134a303fb3da}
+Convert a Unicode string {\itshape str} other Unicode encoding 

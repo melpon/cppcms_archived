@@ -1,0 +1,426 @@
+\section{cppcms\-:\-:widgets\-:\-:base\-\_\-widget Class Reference}
+\label{classcppcms_1_1widgets_1_1base__widget}\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+
+
+this class is the base class of all renderable widgets which can be used with Cpp\-C\-M\-S form system.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:base\-\_\-widget\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.057971cm]{classcppcms_1_1widgets_1_1base__widget}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf base\-\_\-widget} ()
+\item 
+bool {\bf set} ()
+\item 
+bool {\bf valid} ()
+\item 
+std\-::string {\bf id} ()
+\item 
+std\-::string {\bf name} ()
+\item 
+{\bf locale\-::message} {\bf message} ()
+\item 
+bool {\bf has\-\_\-message} ()
+\item 
+{\bf locale\-::message} {\bf error\-\_\-message} ()
+\item 
+bool {\bf has\-\_\-error\-\_\-message} ()
+\item 
+{\bf locale\-::message} {\bf help} ()
+\item 
+bool {\bf has\-\_\-help} ()
+\item 
+bool {\bf disabled} ()
+\item 
+void {\bf disabled} (bool)
+\item 
+std\-::string {\bf attributes\-\_\-string} ()
+\item 
+void {\bf set} (bool)
+\item 
+void {\bf valid} (bool)
+\item 
+void {\bf id} (std\-::string)
+\item 
+void {\bf name} (std\-::string)
+\item 
+void {\bf message} (std\-::string)
+\item 
+void {\bf message} ({\bf locale\-::message} const \&)
+\item 
+void {\bf error\-\_\-message} (std\-::string)
+\item 
+void {\bf error\-\_\-message} ({\bf locale\-::message} const \&)
+\item 
+void {\bf help} (std\-::string)
+\item 
+void {\bf help} ({\bf locale\-::message} const \&msg)
+\item 
+void {\bf attributes\-\_\-string} (std\-::string v)
+\item 
+virtual void {\bf render} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf render\-\_\-input} ({\bf form\-\_\-context} \&context)=0
+\item 
+virtual void {\bf clear} ()
+\item 
+virtual bool {\bf validate} ()
+\item 
+virtual void {\bf render\-\_\-attributes} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf parent} ({\bf base\-\_\-form} $\ast$subform)
+\item 
+virtual {\bf form} $\ast$ {\bf parent} ()
+\item 
+void {\bf pre\-\_\-load} ({\bf http\-::context} \&)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf auto\-\_\-generate} ({\bf form\-\_\-context} $\ast$context=0)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+this class is the base class of all renderable widgets which can be used with Cpp\-C\-M\-S form system. 
+
+All cppcms widgets are derived from this class. Users who want to create their own custom widgets must derive them from this class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!base\-\_\-widget@{base\-\_\-widget}}
+\index{base\-\_\-widget@{base\-\_\-widget}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{base\-\_\-widget}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::base\-\_\-widget\-::base\-\_\-widget (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a2ac4411c0e621b40e28b0c3da8226515}
+Default constructor. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!attributes\-\_\-string@{attributes\-\_\-string}}
+\index{attributes\-\_\-string@{attributes\-\_\-string}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{attributes\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::widgets\-::base\-\_\-widget\-::attributes\-\_\-string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_ad91d5bafd0f677f194b021f6e1462fe6}
+Get the general user defined attribute string that can be added to the widget. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!attributes\-\_\-string@{attributes\-\_\-string}}
+\index{attributes\-\_\-string@{attributes\-\_\-string}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{attributes\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::attributes\-\_\-string (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{v}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a61f4235facbbeae2221cc3341692816a}
+Set general H\-T\-M\-L attributes that are not directly supported For example\-:
+
+
+\begin{DoxyCode}
+my\_widget.attributes\_string(\textcolor{stringliteral}{"style='direction:rtl' onclick='return foo()'"});
+\end{DoxyCode}
+
+
+This string is inserted as-\/is just after render\-\_\-input\-\_\-start. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!auto\-\_\-generate@{auto\-\_\-generate}}
+\index{auto\-\_\-generate@{auto\-\_\-generate}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{auto\-\_\-generate}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::auto\-\_\-generate (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} $\ast$}]{context = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{classcppcms_1_1widgets_1_1base__widget_ac5095a05367edccbf09f494d9d6db5e6}
+This function should be called by overloadeding the load/render methods before the loading/rendering starts. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!clear@{clear}}
+\index{clear@{clear}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-widget\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_a957f7c7a63f5ea9489b52c3ec1043b81}
+Clear the form. It also calls set(false). 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a69e995615d0cd577245480eb80ec834a}.
+
+
+
+Reimplemented in {\bf cppcms\-::widgets\-::select\-\_\-base} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__base_ac30a6f632f3a423aff9aac4c13d95b6f}, {\bf cppcms\-::widgets\-::select\-\_\-multiple} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__multiple_a8c4d064583a42de69a9eb6400f446174}, and {\bf cppcms\-::widgets\-::numeric$<$ T $>$} \doxyref{}{p.}{classcppcms_1_1widgets_1_1numeric_ac8b010ab4af4e999bc63f8f2d6de782f}.
+
+
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::clear().
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!disabled@{disabled}}
+\index{disabled@{disabled}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{disabled}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-widget\-::disabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a1c13127fbab256250251ad47f2d94dd4}
+Get the H\-T\-M\-L {\ttfamily disabled} attribute. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!disabled@{disabled}}
+\index{disabled@{disabled}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{disabled}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::disabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a8ef75516b30690b1fd0bdd36784ab55c}
+Set/\-Unset the H\-T\-M\-L {\ttfamily disabled} attribute. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!error\-\_\-message@{error\-\_\-message}}
+\index{error\-\_\-message@{error\-\_\-message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{error\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}{\bf locale\-::message} cppcms\-::widgets\-::base\-\_\-widget\-::error\-\_\-message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a7bcf3d357b3112d492bb7dd0d021e483}
+Get the error message that would be displayed near the widget if the widget validation failed. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!error\-\_\-message@{error\-\_\-message}}
+\index{error\-\_\-message@{error\-\_\-message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{error\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::error\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_af18b8ac8a1bf73da6818a3d5449e5987}
+Set the error message that is displayed for invalid widgets.
+
+If it is not set, a simple \char`\"{}$\ast$\char`\"{} is shown instead. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!error\-\_\-message@{error\-\_\-message}}
+\index{error\-\_\-message@{error\-\_\-message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{error\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::error\-\_\-message (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a9c8e5ab2f264dbb4534d9c53ca1103be}
+Set the translatable error message that is displayed for invalid widgets.
+
+If it is not set, a simple \char`\"{}$\ast$\char`\"{} is shown instead. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!has\-\_\-error\-\_\-message@{has\-\_\-error\-\_\-message}}
+\index{has\-\_\-error\-\_\-message@{has\-\_\-error\-\_\-message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{has\-\_\-error\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-widget\-::has\-\_\-error\-\_\-message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a2fc78787d3a15200b0436c00647f5299}
+Check if an error message is set. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!has\-\_\-help@{has\-\_\-help}}
+\index{has\-\_\-help@{has\-\_\-help}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{has\-\_\-help}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-widget\-::has\-\_\-help (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a2932b7d598bf2d9cc34583c87ca625a3}
+Check if a help message is set. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!has\-\_\-message@{has\-\_\-message}}
+\index{has\-\_\-message@{has\-\_\-message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{has\-\_\-message}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-widget\-::has\-\_\-message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a3166e364657999977accbaacef547c49}
+Check if a message is set. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!help@{help}}
+\index{help@{help}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{help}]{\setlength{\rightskip}{0pt plus 5cm}{\bf locale\-::message} cppcms\-::widgets\-::base\-\_\-widget\-::help (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a11bcfe32677465e651686556d6b0fc4f}
+Get the eventual long description of the wigget. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!help@{help}}
+\index{help@{help}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{help}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::help (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a4ec743c4910b39fd4de28bbed5f0fa33}
+Set a longer help message that describes this widget. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!help@{help}}
+\index{help@{help}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{help}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::help (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{msg}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a35d76aab23f4f067bb575c8bf03fa11c}
+Set a translatable help message that describes this widget. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!id@{id}}
+\index{id@{id}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::widgets\-::base\-\_\-widget\-::id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_aca2eb9140d6900f140e4bdfada731776}
+Get the H\-T\-M\-L {\itshape id} attribute. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!id@{id}}
+\index{id@{id}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::id (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a400e8416cfbe4826665dd7f84db1422c}
+Set the H\-T\-M\-L {\ttfamily id} attribute of the widget. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!message@{message}}
+\index{message@{message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}{\bf locale\-::message} cppcms\-::widgets\-::base\-\_\-widget\-::message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_aa18b1b80d669e94e86a96efa3a86a4f3}
+Get the short message that would be displayed near the widget. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!message@{message}}
+\index{message@{message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::message (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a3d966eee8ee87cc284a3a4c781b22bc4}
+Set a short description for the widget. Generally, it is a good idea to define this value.
+
+The short message can also be set using the \doxyref{base\-\_\-widget}{p.}{classcppcms_1_1widgets_1_1base__widget} constructor. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!message@{message}}
+\index{message@{message}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::message (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a2d9b4c43b109f74c3daf514ad8510a0c}
+Set a short translatable description for the widget. Generally, it is a good idea to define this value.
+
+The short message can also be set using the \doxyref{base\-\_\-widget}{p.}{classcppcms_1_1widgets_1_1base__widget} constructor. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!name@{name}}
+\index{name@{name}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::widgets\-::base\-\_\-widget\-::name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a1c530e58db8631a1da3875e05ada174b}
+Get the H\-T\-M\-L {\itshape name} attribute. 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load().
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!name@{name}}
+\index{name@{name}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::name (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_af3f99c2708986a4b5dadf35d6f1c7744}
+Set the H\-T\-M\-L {\ttfamily name} attribute of the widget. Note\-: if this attribute is not set, the widget will not be able to be loaded from the P\-O\-S\-T/\-G\-E\-T data. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!parent@{parent}}
+\index{parent@{parent}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-widget\-::parent (
+\begin{DoxyParamCaption}
+\item[{{\bf base\-\_\-form} $\ast$}]{subform}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_aacf20e24298b292a833640e601123a07}
+Set the parent of this widget. It is used internally; you should not use it. It is called when the form is added or attached to another form. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a10c4c5ff417028c72a919740a868bfcd}.
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!parent@{parent}}
+\index{parent@{parent}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{parent}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf form}$\ast$ cppcms\-::widgets\-::base\-\_\-widget\-::parent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_a19bb5e10c4e167d6d3f0056d00387264}
+Get the parent of this form. If this is the topmost form, N\-U\-L\-L is returned. It is assumed that the parent is always a form. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_aff998866cd4e17f4c9cf9c7ede1837e5}.
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!pre\-\_\-load@{pre\-\_\-load}}
+\index{pre\-\_\-load@{pre\-\_\-load}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{pre\-\_\-load}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::pre\-\_\-load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_ad62dc6a5b2fd15aeebdcff8656056459}
+This function should be called before actual loading of widgets, it performs cross widgets validation and causes automatic generation of undefined names 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load().
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!render@{render}}
+\index{render@{render}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-widget\-::render (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_a4d62e2342bb41a1b80a2ff0af5c9042b}
+Render the full widget together with error messages and decorations as paragraphs or table elements to the output set in {\itshape \doxyref{cppcms\-::form\-\_\-context\-::out()}{p.}{classcppcms_1_1form__context_a2e5e63fa14dd10b59919235ca6ec5f30}}. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_adb1c6edd653196f575fcacb2aa0fd995}.
+
+
+
+Reimplemented in {\bf cppcms\-::widgets\-::hidden} \doxyref{}{p.}{classcppcms_1_1widgets_1_1hidden_a10e8ebc158a8776c346a567d3f4844df}.
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!render\-\_\-attributes@{render\-\_\-attributes}}
+\index{render\-\_\-attributes@{render\-\_\-attributes}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{render\-\_\-attributes}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-widget\-::render\-\_\-attributes (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_a6f0354040920a70e3248c94d357774f0}
+Render standard common attributes like {\itshape id}, {\itshape name}, {\itshape disabled}, etc. 
+
+Reimplemented in {\bf cppcms\-::widgets\-::text} \doxyref{}{p.}{classcppcms_1_1widgets_1_1text_a5d71259184320fc4a11819cebe2a0154}.
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!render\-\_\-input@{render\-\_\-input}}
+\index{render\-\_\-input@{render\-\_\-input}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{render\-\_\-input}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::base\-\_\-widget\-::render\-\_\-input (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_a03394613be620bb0d6aeb62818f56b8f}
+This is a virtual member function that should be implemented by each widget. It executes the actual rendering of the H\-T\-M\-L form. 
+
+Implemented in {\bf cppcms\-::widgets\-::radio} \doxyref{}{p.}{classcppcms_1_1widgets_1_1radio_ae34173f78d1df5ac05053b5349b03131}, {\bf cppcms\-::widgets\-::select} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select_a4bced34474dcca17418fd20a21d4b529}, {\bf cppcms\-::widgets\-::select\-\_\-base} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__base_ab1119401ddea3d4beb266e8a7cb9afee}, {\bf cppcms\-::widgets\-::select\-\_\-multiple} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__multiple_aa31c3a9b5fb0cd21aae7e4e85e797433}, {\bf cppcms\-::widgets\-::textarea} \doxyref{}{p.}{classcppcms_1_1widgets_1_1textarea_ac7fac283b705a87071f013edd286ed31}, and {\bf cppcms\-::widgets\-::base\-\_\-html\-\_\-input} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__html__input_adfab958294d9a6027d0b77c25afba2c1}.
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!set@{set}}
+\index{set@{set}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-widget\-::set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f}
+Check if a value has been assigned to the widget. It is usually true when the user has assigned a value to the widget or when the widget is loaded.
+
+If there is a reasonable default value for the widget then \doxyref{set()}{p.}{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f} should be true. For widgets like file or numeric where explicit parsing is required, the \doxyref{set()}{p.}{classcppcms_1_1widgets_1_1base__widget_afd814f0d448866c0f316e38e05fc8d3f} value would indicate that user provided some value (i.\-e. uploaded a file or entered a number). 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load(), cppcms\-::widgets\-::numeric$<$ T $>$\-::render\-\_\-value(), cppcms\-::widgets\-::numeric$<$ T $>$\-::validate(), and cppcms\-::widgets\-::numeric$<$ T $>$\-::value().
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!set@{set}}
+\index{set@{set}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::set (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_a84878484abb38a8d4ecd0c381cdd3652}
+Set the existence of content for the widget. By default the widget is not set. By convention, trying to fetch a value from a widget that is \char`\"{}unset\char`\"{} will throw an exception. Call set(true) to change the state to \char`\"{}set\char`\"{} and call set(false) to change it to \char`\"{}unset\char`\"{}. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!valid@{valid}}
+\index{valid@{valid}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::base\-\_\-widget\-::valid (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_aa2949f029c69841e124d6211b80e32e9}
+After having executed the validation process, each widget can be tested for validity. 
+
+Referenced by cppcms\-::widgets\-::numeric$<$ T $>$\-::load(), and cppcms\-::widgets\-::numeric$<$ T $>$\-::validate().
+
+\index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!valid@{valid}}
+\index{valid@{valid}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{valid}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::base\-\_\-widget\-::valid (
+\begin{DoxyParamCaption}
+\item[{bool}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1base__widget_af68ec22a5e9d0f797284e08f7a87607c}
+Set th validity state of the widget. By default the widget is valid. If it fails to pass the validation, its validity state is changed by calling this function.
+
+Note\-: a widget may be \char`\"{}unset\char`\"{} and still be valid. Conversely, it may be set but be not-\/valid. \index{cppcms\-::widgets\-::base\-\_\-widget@{cppcms\-::widgets\-::base\-\_\-widget}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::base_widget@{cppcms\-::widgets\-::base\-\_\-widget}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::widgets\-::base\-\_\-widget\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1base__widget_a090169cd0b61fdaceac8ed1b0ca47749}
+Validate the form. If not overridden, it sets the widget to {\itshape valid}. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_af7d0a7b4c760b43ea3161181906ee4d0}.
+
+
+
+Reimplemented in {\bf cppcms\-::widgets\-::file} \doxyref{}{p.}{classcppcms_1_1widgets_1_1file_addfa723594f3658578787843fa030486}, {\bf cppcms\-::widgets\-::select\-\_\-base} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__base_aa2af8d30009d2e366d0608b9503a6551}, {\bf cppcms\-::widgets\-::select\-\_\-multiple} \doxyref{}{p.}{classcppcms_1_1widgets_1_1select__multiple_a0e1c51984aeeb59f5bfa402a5eae2fbf}, {\bf cppcms\-::widgets\-::regex\-\_\-field} \doxyref{}{p.}{classcppcms_1_1widgets_1_1regex__field_a054bf9405d82e1129032b93397ad053e}, {\bf cppcms\-::widgets\-::password} \doxyref{}{p.}{classcppcms_1_1widgets_1_1password_a62059db5f0ff7c43635f2a6ae3455d11}, {\bf cppcms\-::widgets\-::numeric$<$ T $>$} \doxyref{}{p.}{classcppcms_1_1widgets_1_1numeric_a79f8e92aa9991836949978d1b367fe9c}, and {\bf cppcms\-::widgets\-::base\-\_\-text} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__text_a8accbd9e605d1e4dc87337afff6d5b38}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

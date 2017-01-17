@@ -1,0 +1,157 @@
+\section{booster\-:\-:aio\-:\-:acceptor Class Reference}
+\label{classbooster_1_1aio_1_1acceptor}\index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}}
+
+
+this class represents a socket that accepts incoming connections  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/acceptor.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:acceptor\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbooster_1_1aio_1_1acceptor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf acceptor} ()
+\item 
+{\bf acceptor} ({\bf io\-\_\-service} \&srv)
+\item 
+void {\bf open} ({\bf family\-\_\-type} d)
+\item 
+void {\bf open} ({\bf family\-\_\-type} d, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf accept} ({\bf stream\-\_\-socket} \&s)
+\item 
+void {\bf accept} ({\bf stream\-\_\-socket} \&s, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf bind} ({\bf endpoint} const \&ep)
+\item 
+void {\bf bind} ({\bf endpoint} const \&ep, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf listen} (int backlog)
+\item 
+void {\bf listen} (int backlog, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf async\-\_\-accept} ({\bf stream\-\_\-socket} \&s, {\bf event\-\_\-handler} const \&h)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+this class represents a socket that accepts incoming connections 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!acceptor@{acceptor}}
+\index{acceptor@{acceptor}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{acceptor}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::acceptor\-::acceptor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_ac28c6165bed8d65f9db932c5a65d9909}
+Create a new acceptor object \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!acceptor@{acceptor}}
+\index{acceptor@{acceptor}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{acceptor}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::acceptor\-::acceptor (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_af6c68d8cbfb59da3579b3cbbb0b21b8a}
+Create a new acceptor object with assigned \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} {\itshape srv}) 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!accept@{accept}}
+\index{accept@{accept}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::accept (
+\begin{DoxyParamCaption}
+\item[{{\bf stream\-\_\-socket} \&}]{s}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_aebf231cf0aa40375984830cb2627f249}
+Accepts a new incoming connection to the socket {\itshape s} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!accept@{accept}}
+\index{accept@{accept}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{accept}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::accept (
+\begin{DoxyParamCaption}
+\item[{{\bf stream\-\_\-socket} \&}]{s, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_a151ca53f90616d2f96e15c35017ea0e9}
+Accepts a new incoming connection to the socket {\itshape s} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!async\-\_\-accept@{async\-\_\-accept}}
+\index{async\-\_\-accept@{async\-\_\-accept}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{async\-\_\-accept}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::async\-\_\-accept (
+\begin{DoxyParamCaption}
+\item[{{\bf stream\-\_\-socket} \&}]{s, }
+\item[{{\bf event\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_a3cddf6da3919067e25c3d39e39381a58}
+Accept the connection asynchronously. The reference {\itshape s} must be valid until h is called.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via the callback {\itshape h}. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!bind@{bind}}
+\index{bind@{bind}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::bind (
+\begin{DoxyParamCaption}
+\item[{{\bf endpoint} const \&}]{ep}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_ac80b06a28bc8d2ec76134fa4d3b52c53}
+Bind the opended socket the \doxyref{endpoint}{p.}{classbooster_1_1aio_1_1endpoint} {\itshape ep} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!bind@{bind}}
+\index{bind@{bind}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::bind (
+\begin{DoxyParamCaption}
+\item[{{\bf endpoint} const \&}]{ep, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_a20bd5aa0a450945fa0cca580b0ca540b}
+Bind the opended socket the \doxyref{endpoint}{p.}{classbooster_1_1aio_1_1endpoint} {\itshape ep} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!listen@{listen}}
+\index{listen@{listen}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::listen (
+\begin{DoxyParamCaption}
+\item[{int}]{backlog}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_abb92e6f71d3147ec154f68a63d0fc0bc}
+Starts listening on the socket with backlog parameter {\itshape backlog} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!listen@{listen}}
+\index{listen@{listen}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{listen}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::listen (
+\begin{DoxyParamCaption}
+\item[{int}]{backlog, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_a763dc1e68e4e83b574c7bec08687c770}
+Starts listening on the socket with backlog parameter {\itshape backlog} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!open@{open}}
+\index{open@{open}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf family\-\_\-type}}]{d}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_a6859beda7cbd58a13d33238142cc381c}
+Opens a new stream socket of a \doxyref{family\-\_\-type}{p.}{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa} {\itshape d} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::acceptor@{booster\-::aio\-::acceptor}!open@{open}}
+\index{open@{open}!booster::aio::acceptor@{booster\-::aio\-::acceptor}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::acceptor\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf family\-\_\-type}}]{d, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1acceptor_aa15b6d876aaded5bb2a4c46e67ebb974}
+Opens a new stream socket of a \doxyref{family\-\_\-type}{p.}{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa} {\itshape d} 
+
+If a error occurs it is assigned to {\itshape e}. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/acceptor.\-h\end{DoxyCompactItemize}

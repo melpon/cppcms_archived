@@ -1,0 +1,46 @@
+\section{booster\-:\-:log\-:\-:sinks\-:\-:standard\-\_\-error Class Reference}
+\label{classbooster_1_1log_1_1sinks_1_1standard__error}\index{booster\-::log\-::sinks\-::standard\-\_\-error@{booster\-::log\-::sinks\-::standard\-\_\-error}}
+
+
+stderr based sink -\/ sends messages to standard error output  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/log.\-h$>$}
+
+Inheritance diagram for booster\-:\-:log\-:\-:sinks\-:\-:standard\-\_\-error\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbooster_1_1log_1_1sinks_1_1standard__error}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf log} ({\bf message} const \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+stderr based sink -\/ sends messages to standard error output 
+
+\subsection{Member Function Documentation}
+\index{booster\-::log\-::sinks\-::standard\-\_\-error@{booster\-::log\-::sinks\-::standard\-\_\-error}!log@{log}}
+\index{log@{log}!booster::log::sinks::standard_error@{booster\-::log\-::sinks\-::standard\-\_\-error}}
+\subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::log\-::sinks\-::standard\-\_\-error\-::log (
+\begin{DoxyParamCaption}
+\item[{{\bf message} const \&}]{m}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classbooster_1_1log_1_1sinks_1_1standard__error_a27c91e3ff6bb9695c926ed2adc5532c8}
+Send the message {\itshape m} to log
+
+Note\-: it does not have to be thread safe -\/ in terms that only one message is sent each time and it is promised that are not sent in parallel 
+
+Implements {\bf booster\-::log\-::sink} \doxyref{}{p.}{classbooster_1_1log_1_1sink_a26ca4b2db51cd3debdf5fed5bac3d5e0}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/{\bf log.\-h}\end{DoxyCompactItemize}

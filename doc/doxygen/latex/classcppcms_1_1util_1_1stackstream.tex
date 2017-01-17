@@ -1,0 +1,99 @@
+\section{cppcms\-:\-:util\-:\-:stackstream$<$ Size $>$ Class Template Reference}
+\label{classcppcms_1_1util_1_1stackstream}\index{cppcms\-::util\-::stackstream$<$ Size $>$@{cppcms\-::util\-::stackstream$<$ Size $>$}}
+
+
+Fast output stream object.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/steal\-\_\-buf.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:util\-:\-:stackstream$<$ Size $>$\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1util_1_1stackstream}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf stackstream} ()
+\item 
+char $\ast$ {\bf begin} ()
+\item 
+char $\ast$ {\bf end} ()
+\item 
+char $\ast$ {\bf c\-\_\-str} ()
+\item 
+std\-::string {\bf str} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$size\-\_\-t Size = 128$>$class cppcms\-::util\-::stackstream$<$ Size $>$}
+
+Fast output stream object. 
+
+This is a special ostream that uses stack in order to receive the data and faster then std\-::stringstream for small chunks, also it is not limited for any particular size. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::util\-::stackstream@{cppcms\-::util\-::stackstream}!stackstream@{stackstream}}
+\index{stackstream@{stackstream}!cppcms::util::stackstream@{cppcms\-::util\-::stackstream}}
+\subsubsection[{stackstream}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ {\bf cppcms\-::util\-::stackstream}$<$ Size $>$\-::{\bf stackstream} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackstream_a94af2084a35118bd66514e2b59322afc}
+Create a new stackstream 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::util\-::stackstream@{cppcms\-::util\-::stackstream}!begin@{begin}}
+\index{begin@{begin}!cppcms::util::stackstream@{cppcms\-::util\-::stackstream}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ char$\ast$ {\bf cppcms\-::util\-::stackstream}$<$ Size $>$\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackstream_a84861599804e5017b8b2ee0c0e5dde97}
+Get the pointer to the first character in the range 
+
+References cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$\-::begin().
+
+\index{cppcms\-::util\-::stackstream@{cppcms\-::util\-::stackstream}!c\-\_\-str@{c\-\_\-str}}
+\index{c\-\_\-str@{c\-\_\-str}!cppcms::util::stackstream@{cppcms\-::util\-::stackstream}}
+\subsubsection[{c\-\_\-str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ char$\ast$ {\bf cppcms\-::util\-::stackstream}$<$ Size $>$\-::c\-\_\-str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackstream_a29ec96184a4ae7f01c048c5a99bad5c8}
+Get a N\-U\-L terminated recorded string 
+
+References cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$\-::c\-\_\-str().
+
+\index{cppcms\-::util\-::stackstream@{cppcms\-::util\-::stackstream}!end@{end}}
+\index{end@{end}!cppcms::util::stackstream@{cppcms\-::util\-::stackstream}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ char$\ast$ {\bf cppcms\-::util\-::stackstream}$<$ Size $>$\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackstream_a79fc6032ef3d65983aeac7695d4eca2b}
+Get the pointer to the one past last character in the range 
+
+References cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$\-::end().
+
+\index{cppcms\-::util\-::stackstream@{cppcms\-::util\-::stackstream}!str@{str}}
+\index{str@{str}!cppcms::util::stackstream@{cppcms\-::util\-::stackstream}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}template$<$size\-\_\-t Size = 128$>$ std\-::string {\bf cppcms\-::util\-::stackstream}$<$ Size $>$\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1util_1_1stackstream_a26da2f74e271eae8d14286f9d990f2a1}
+Get a recorded string 
+
+References cppcms\-::util\-::stackbuf$<$ On\-Stack\-Size $>$\-::str().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/steal\-\_\-buf.\-h\end{DoxyCompactItemize}

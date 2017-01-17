@@ -1,0 +1,296 @@
+\section{booster\-:\-:aio\-:\-:stream\-\_\-socket Class Reference}
+\label{classbooster_1_1aio_1_1stream__socket}\index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}}
+
+
+This object represents a stream socket\-: T\-C\-P/\-I\-P I\-Pv4 or I\-Pv6 or Unix domain stream socket.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/aio/stream\-\_\-socket.\-h$>$}
+
+Inheritance diagram for booster\-:\-:aio\-:\-:stream\-\_\-socket\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classbooster_1_1aio_1_1stream__socket}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf how\-\_\-type} \{ {\bfseries shut\-\_\-rd}, 
+{\bfseries shut\-\_\-wr}, 
+{\bfseries shut\-\_\-rdwr}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf stream\-\_\-socket} ()
+\item 
+{\bf stream\-\_\-socket} ({\bf io\-\_\-service} \&srv)
+\item 
+void {\bf open} ({\bf family\-\_\-type} d)
+\item 
+void {\bf open} ({\bf family\-\_\-type} d, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf shutdown} ({\bf how\-\_\-type} h)
+\item 
+void {\bf shutdown} ({\bf how\-\_\-type} h, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf connect} ({\bf endpoint} const \&ep)
+\item 
+void {\bf connect} ({\bf endpoint} const \&ep, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf async\-\_\-connect} ({\bf endpoint} const \&ep, {\bf event\-\_\-handler} const \&h)
+\item 
+size\-\_\-t {\bf read\-\_\-some} ({\bf mutable\-\_\-buffer} const \&{\bf buffer})
+\item 
+size\-\_\-t {\bf read\-\_\-some} ({\bf mutable\-\_\-buffer} const \&{\bf buffer}, {\bf system\-::error\-\_\-code} \&e)
+\item 
+size\-\_\-t {\bf write\-\_\-some} ({\bf const\-\_\-buffer} const \&{\bf buffer})
+\item 
+size\-\_\-t {\bf write\-\_\-some} ({\bf const\-\_\-buffer} const \&{\bf buffer}, {\bf system\-::error\-\_\-code} \&e)
+\item 
+size\-\_\-t {\bf read} ({\bf mutable\-\_\-buffer} const \&{\bf buffer})
+\item 
+size\-\_\-t {\bf write} ({\bf const\-\_\-buffer} const \&{\bf buffer})
+\item 
+size\-\_\-t {\bf read} ({\bf mutable\-\_\-buffer} const \&{\bf buffer}, {\bf system\-::error\-\_\-code} \&e)
+\item 
+size\-\_\-t {\bf write} ({\bf const\-\_\-buffer} const \&{\bf buffer}, {\bf system\-::error\-\_\-code} \&e)
+\item 
+void {\bf async\-\_\-read\-\_\-some} ({\bf mutable\-\_\-buffer} const \&{\bf buffer}, {\bf io\-\_\-handler} const \&h)
+\item 
+void {\bf async\-\_\-write\-\_\-some} ({\bf const\-\_\-buffer} const \&{\bf buffer}, {\bf io\-\_\-handler} const \&h)
+\item 
+void {\bf async\-\_\-read} ({\bf mutable\-\_\-buffer} const \&{\bf buffer}, {\bf io\-\_\-handler} const \&h)
+\item 
+void {\bf async\-\_\-write} ({\bf const\-\_\-buffer} const \&{\bf buffer}, {\bf io\-\_\-handler} const \&h)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This object represents a stream socket\-: T\-C\-P/\-I\-P I\-Pv4 or I\-Pv6 or Unix domain stream socket. 
+
+\subsection{Member Enumeration Documentation}
+\index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!how\-\_\-type@{how\-\_\-type}}
+\index{how\-\_\-type@{how\-\_\-type}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{how\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::aio\-::stream\-\_\-socket\-::how\-\_\-type}}\label{classbooster_1_1aio_1_1stream__socket_a60eccf83af0bcbdb1ef8cad07f929612}
+Shutdown option type 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!stream\-\_\-socket@{stream\-\_\-socket}}
+\index{stream\-\_\-socket@{stream\-\_\-socket}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{stream\-\_\-socket}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::stream\-\_\-socket\-::stream\-\_\-socket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a25573d1e44404731c9e6c66bfd1faf9c}
+Create a new (closed) stream socket \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!stream\-\_\-socket@{stream\-\_\-socket}}
+\index{stream\-\_\-socket@{stream\-\_\-socket}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{stream\-\_\-socket}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::aio\-::stream\-\_\-socket\-::stream\-\_\-socket (
+\begin{DoxyParamCaption}
+\item[{{\bf io\-\_\-service} \&}]{srv}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_ad3fedf03c0b451ec7327a562c2649846}
+Create a new (closed) stream socket and attach the object to \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} {\itshape srv} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!async\-\_\-connect@{async\-\_\-connect}}
+\index{async\-\_\-connect@{async\-\_\-connect}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{async\-\_\-connect}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::async\-\_\-connect (
+\begin{DoxyParamCaption}
+\item[{{\bf endpoint} const \&}]{ep, }
+\item[{{\bf event\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a39e10795d0aae743f8fd168f1b362982}
+Connect asynchronously to the remote endpoint {\itshape ep}.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via the callback {\itshape h}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!async\-\_\-read@{async\-\_\-read}}
+\index{async\-\_\-read@{async\-\_\-read}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{async\-\_\-read}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::async\-\_\-read (
+\begin{DoxyParamCaption}
+\item[{{\bf mutable\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf io\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a8352a7b239da7e658c52b740488ed45a}
+Read asynchronously from the socket to the {\itshape buffer} until all required mount of data is transfered.
+
+The error and the amount of bytes that are transfered are reported via callback. During the operation the buffers (the data range it points to) must remain valid.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via the callback {\itshape h}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!async\-\_\-read\-\_\-some@{async\-\_\-read\-\_\-some}}
+\index{async\-\_\-read\-\_\-some@{async\-\_\-read\-\_\-some}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{async\-\_\-read\-\_\-some}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::async\-\_\-read\-\_\-some (
+\begin{DoxyParamCaption}
+\item[{{\bf mutable\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf io\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a2356852e6558809ed3545518e27c6652}
+Read asynchronously from the socket to the {\itshape buffer}.
+
+The error and the amount of bytes that are transfered are reported via callback. During the operation the buffers (the data range it points to) must remain valid.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via the callback {\itshape h}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!async\-\_\-write@{async\-\_\-write}}
+\index{async\-\_\-write@{async\-\_\-write}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{async\-\_\-write}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::async\-\_\-write (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf io\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a2df677bc5eececeef8ed09aaf528b9df}
+Write asynchronously to the socket from the {\itshape buffer} until all required mount of data is transfered.
+
+The error and the amount of bytes that are transfered are reported via callback. During the operation the buffers (the data range it points to) must remain valid.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via the callback {\itshape h}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!async\-\_\-write\-\_\-some@{async\-\_\-write\-\_\-some}}
+\index{async\-\_\-write\-\_\-some@{async\-\_\-write\-\_\-some}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{async\-\_\-write\-\_\-some}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::async\-\_\-write\-\_\-some (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf io\-\_\-handler} const \&}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a308fc269e21d4d7ec2769ec5ec8cd905}
+Write asynchronously to the socket from the {\itshape buffer}.
+
+The error and the amount of bytes that are transfered are reported via callback. During the operation the buffers (the data range it points to) must remain valid.
+
+If \doxyref{io\-\_\-service}{p.}{classbooster_1_1aio_1_1io__service} is not assigned throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}, all other errors reported via the callback {\itshape h}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!connect@{connect}}
+\index{connect@{connect}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::connect (
+\begin{DoxyParamCaption}
+\item[{{\bf endpoint} const \&}]{ep}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a90ca80653836ebf54dc08d4c991924fa}
+Connect to the remote endpoint {\itshape ep} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!connect@{connect}}
+\index{connect@{connect}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{connect}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::connect (
+\begin{DoxyParamCaption}
+\item[{{\bf endpoint} const \&}]{ep, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a08d968d3da29855ae812020fd20dc1c2}
+Connect to the remote endpoint {\itshape ep} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!open@{open}}
+\index{open@{open}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf family\-\_\-type}}]{d}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a11631f60985dcd7af2dbd6449060b9d1}
+Opens a new stream socket of a \doxyref{family\-\_\-type}{p.}{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa} {\itshape d} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!open@{open}}
+\index{open@{open}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::open (
+\begin{DoxyParamCaption}
+\item[{{\bf family\-\_\-type}}]{d, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a81eb8df84de4657256f4bd809a1df0ca}
+Opens a new stream socket of a \doxyref{family\-\_\-type}{p.}{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa} {\itshape d} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!read@{read}}
+\index{read@{read}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::read (
+\begin{DoxyParamCaption}
+\item[{{\bf mutable\-\_\-buffer} const \&}]{buffer}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a9480f07dd7154b7585fd4e8cb776c3d3}
+Read from the socket to the {\itshape buffer} until all required data is transferred. Returns the number of bytes transfered
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!read@{read}}
+\index{read@{read}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{read}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::read (
+\begin{DoxyParamCaption}
+\item[{{\bf mutable\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a558889cc4508f7f67026bdde9c859a5f}
+Read from the socket to the {\itshape buffer} until all required data is transferred. Returns the number of bytes transfered
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!read\-\_\-some@{read\-\_\-some}}
+\index{read\-\_\-some@{read\-\_\-some}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{read\-\_\-some}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::read\-\_\-some (
+\begin{DoxyParamCaption}
+\item[{{\bf mutable\-\_\-buffer} const \&}]{buffer}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a0416891623fd14c651c95f3a4edbfe27}
+Read from the socket to the {\itshape buffer}. Returns the number of bytes transfered
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!read\-\_\-some@{read\-\_\-some}}
+\index{read\-\_\-some@{read\-\_\-some}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{read\-\_\-some}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::read\-\_\-some (
+\begin{DoxyParamCaption}
+\item[{{\bf mutable\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a078a322dccddc15c78c24c5954e9ba59}
+Read from the socket to the {\itshape buffer}. Returns the number of bytes transfered
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::shutdown (
+\begin{DoxyParamCaption}
+\item[{{\bf how\-\_\-type}}]{h}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a17310137de737d56dbc5378ad880ac09}
+Notify the other side on connection shutdown of a type {\itshape h} 
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!shutdown@{shutdown}}
+\index{shutdown@{shutdown}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::aio\-::stream\-\_\-socket\-::shutdown (
+\begin{DoxyParamCaption}
+\item[{{\bf how\-\_\-type}}]{h, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_ac9bbaa26e220c20a9bb18d49e1b16fc1}
+Notify the other side on connection shutdown of a type {\itshape h} 
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!write@{write}}
+\index{write@{write}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::write (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-buffer} const \&}]{buffer}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_aa5bccafe26b786cf8687835a2aa4562c}
+Write to the socket from the {\itshape buffer} until all required data is transferred. Returns the number of bytes transfered
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!write@{write}}
+\index{write@{write}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::write (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_a4ac9cf3a5cb86461bafe6e6168a6f856}
+Write to the socket from the {\itshape buffer} until all required data is transferred. Returns the number of bytes transfered
+
+If a error occurs it is assigned to {\itshape e}. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!write\-\_\-some@{write\-\_\-some}}
+\index{write\-\_\-some@{write\-\_\-some}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{write\-\_\-some}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::write\-\_\-some (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-buffer} const \&}]{buffer}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_adf1bcad8ecedbe9f97326247888925e0}
+Write to the socket from the {\itshape buffer}. Returns the number of bytes transfered
+
+Throws \doxyref{system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error} if error occurs. \index{booster\-::aio\-::stream\-\_\-socket@{booster\-::aio\-::stream\-\_\-socket}!write\-\_\-some@{write\-\_\-some}}
+\index{write\-\_\-some@{write\-\_\-some}!booster::aio::stream_socket@{booster\-::aio\-::stream\-\_\-socket}}
+\subsubsection[{write\-\_\-some}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::aio\-::stream\-\_\-socket\-::write\-\_\-some (
+\begin{DoxyParamCaption}
+\item[{{\bf const\-\_\-buffer} const \&}]{buffer, }
+\item[{{\bf system\-::error\-\_\-code} \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1aio_1_1stream__socket_ae1a0a13eab815fbe458cdf2ec5700572}
+Write to the socket from the {\itshape buffer}. Returns the number of bytes transfered
+
+If a error occurs it is assigned to {\itshape e}. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/aio/stream\-\_\-socket.\-h\end{DoxyCompactItemize}

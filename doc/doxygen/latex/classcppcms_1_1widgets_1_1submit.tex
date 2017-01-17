@@ -1,0 +1,85 @@
+\section{cppcms\-:\-:widgets\-:\-:submit Class Reference}
+\label{classcppcms_1_1widgets_1_1submit}\index{cppcms\-::widgets\-::submit@{cppcms\-::widgets\-::submit}}
+
+
+Submit button widget.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:submit\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{classcppcms_1_1widgets_1_1submit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf value} ()
+\item 
+void {\bf value} (std\-::string val)
+\item 
+void {\bf value} ({\bf locale\-::message} const \&msg)
+\item 
+virtual void {\bf render\-\_\-value} ({\bf form\-\_\-context} \&context)
+\item 
+virtual void {\bf load} ({\bf http\-::context} \&context)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Submit button widget. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::submit@{cppcms\-::widgets\-::submit}!load@{load}}
+\index{load@{load}!cppcms::widgets::submit@{cppcms\-::widgets\-::submit}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::submit\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf http\-::context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1submit_a9d3c6b1ba7dfc9e1db899dc0067659b1}
+Load the form information from the provided {\tt http\-::context} {\itshape context}. A user can call this function to load all information from the raw P\-O\-S\-T/\-G\-E\-T data into the internal widget representation. 
+
+Implements {\bf cppcms\-::base\-\_\-form} \doxyref{}{p.}{classcppcms_1_1base__form_a5f9c5bbfba18076e898ec95827656bc1}.
+
+\index{cppcms\-::widgets\-::submit@{cppcms\-::widgets\-::submit}!render\-\_\-value@{render\-\_\-value}}
+\index{render\-\_\-value@{render\-\_\-value}!cppcms::widgets::submit@{cppcms\-::widgets\-::submit}}
+\subsubsection[{render\-\_\-value}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::widgets\-::submit\-::render\-\_\-value (
+\begin{DoxyParamCaption}
+\item[{{\bf form\-\_\-context} \&}]{context}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1submit_aeb759bc831400b0ceb964e69ad3d6121}
+Write the actual value of the H\-T\-M\-L tag. Derived classes must implement this. 
+
+Implements {\bf cppcms\-::widgets\-::base\-\_\-html\-\_\-input} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__html__input_afd2f99f7dd7b8ebe75e63f1f005068cb}.
+
+\index{cppcms\-::widgets\-::submit@{cppcms\-::widgets\-::submit}!value@{value}}
+\index{value@{value}!cppcms::widgets::submit@{cppcms\-::widgets\-::submit}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::widgets\-::submit\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1submit_ac18b487004df081215617455b5263a96}
+Return true if this specific button was pressed. \index{cppcms\-::widgets\-::submit@{cppcms\-::widgets\-::submit}!value@{value}}
+\index{value@{value}!cppcms::widgets::submit@{cppcms\-::widgets\-::submit}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::submit\-::value (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{val}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1submit_a121e277b1c1af386467ffcc2626a8297}
+Set the text on the button. \index{cppcms\-::widgets\-::submit@{cppcms\-::widgets\-::submit}!value@{value}}
+\index{value@{value}!cppcms::widgets::submit@{cppcms\-::widgets\-::submit}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::submit\-::value (
+\begin{DoxyParamCaption}
+\item[{{\bf locale\-::message} const \&}]{msg}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1submit_a44f1f46b43ec175aa7f5562aedc2d429}
+Set the text on the button. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

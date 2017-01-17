@@ -1,0 +1,107 @@
+\section{booster\-:\-:system\-:\-:system\-\_\-error Class Reference}
+\label{classbooster_1_1system_1_1system__error}\index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}}
+
+
+This is the object that should be thrown in case of the error.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/system\-\_\-error.\-h$>$}
+
+Inheritance diagram for booster\-:\-:system\-:\-:system\-\_\-error\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classbooster_1_1system_1_1system__error}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf system\-\_\-error} ({\bf error\-\_\-code} const \&e)
+\item 
+{\bf system\-\_\-error} ({\bf error\-\_\-code} const \&e, std\-::string const \&message)
+\item 
+{\bf system\-\_\-error} ({\bf error\-\_\-code} const \&e, char const $\ast$message)
+\item 
+{\bf system\-\_\-error} (int ev, {\bf error\-\_\-category} const \&category, char const $\ast$message)
+\item 
+{\bf system\-\_\-error} (int ev, {\bf error\-\_\-category} const \&category, std\-::string const \&message)
+\item 
+{\bf system\-\_\-error} (int ev, {\bf error\-\_\-category} const \&category)
+\item 
+{\bf error\-\_\-code} const \& {\bf code} () const 
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This is the object that should be thrown in case of the error. 
+
+It consists of two parts\-: the \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} object and the optional error message that would be added to the error code itself. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!system\-\_\-error@{system\-\_\-error}}
+\index{system\-\_\-error@{system\-\_\-error}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{system\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::system\-\_\-error\-::system\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf error\-\_\-code} const \&}]{e}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_af04ef578acfb61e7c07027793fa28b4c}
+Create a system error from \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} {\itshape e} \index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!system\-\_\-error@{system\-\_\-error}}
+\index{system\-\_\-error@{system\-\_\-error}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{system\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::system\-\_\-error\-::system\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf error\-\_\-code} const \&}]{e, }
+\item[{std\-::string const \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_a27492753370d3737b0541b7da2b800e9}
+Create a system error from \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} {\itshape e} and additional message \index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!system\-\_\-error@{system\-\_\-error}}
+\index{system\-\_\-error@{system\-\_\-error}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{system\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::system\-\_\-error\-::system\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{{\bf error\-\_\-code} const \&}]{e, }
+\item[{char const $\ast$}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_aaac8c103c092ebaece4ac53c9d547a65}
+Create a system error from \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} {\itshape e} and an additional message {\itshape message} \index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!system\-\_\-error@{system\-\_\-error}}
+\index{system\-\_\-error@{system\-\_\-error}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{system\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::system\-\_\-error\-::system\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{int}]{ev, }
+\item[{{\bf error\-\_\-category} const \&}]{category, }
+\item[{char const $\ast$}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_a22410b71c27c49e13558285f131a7731}
+Create a system error from \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} defined by integer code {\itshape ev}, a error category {\itshape category} and an additional message {\itshape message} \index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!system\-\_\-error@{system\-\_\-error}}
+\index{system\-\_\-error@{system\-\_\-error}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{system\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::system\-\_\-error\-::system\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{int}]{ev, }
+\item[{{\bf error\-\_\-category} const \&}]{category, }
+\item[{std\-::string const \&}]{message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_aa47a2972992f9c036d4f4154d7f79962}
+Create a system error from \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} defined by integer code {\itshape ev}, a error category {\itshape category} and an additional message {\itshape message} \index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!system\-\_\-error@{system\-\_\-error}}
+\index{system\-\_\-error@{system\-\_\-error}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{system\-\_\-error}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::system\-\_\-error\-::system\-\_\-error (
+\begin{DoxyParamCaption}
+\item[{int}]{ev, }
+\item[{{\bf error\-\_\-category} const \&}]{category}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_a4fd1589ed1af1d1b7703678db7edbcba}
+Create a system error from \doxyref{error\-\_\-code}{p.}{classbooster_1_1system_1_1error__code} defined by integer code {\itshape ev}, a error category {\itshape category} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::system\-::system\-\_\-error@{booster\-::system\-::system\-\_\-error}!code@{code}}
+\index{code@{code}!booster::system::system_error@{booster\-::system\-::system\-\_\-error}}
+\subsubsection[{code}]{\setlength{\rightskip}{0pt plus 5cm}{\bf error\-\_\-code} const\& booster\-::system\-::system\-\_\-error\-::code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1system__error_a6e37765a3573641a5842098cbf6d1d77}
+Get the error code for the thrown error 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/system\-\_\-error.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,127 @@
+\section{booster\-:\-:locale\-:\-:util\-:\-:base\-\_\-converter Class Reference}
+\label{classbooster_1_1locale_1_1util_1_1base__converter}\index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+
+
+This class represent a simple stateless converter from U\-C\-S-\/4 and to U\-C\-S-\/4 for each single code point.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/util.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bf max\-\_\-len} () const 
+\item 
+virtual bool {\bf is\-\_\-thread\-\_\-safe} () const 
+\item 
+virtual {\bf base\-\_\-converter} $\ast$ {\bf clone} () const 
+\item 
+virtual uint32\-\_\-t {\bf to\-\_\-unicode} (char const $\ast$\&begin, char const $\ast$end)
+\item 
+virtual uint32\-\_\-t {\bf from\-\_\-unicode} (uint32\-\_\-t u, char $\ast$begin, char const $\ast$end)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint32\-\_\-t {\bf illegal} =utf\-::illegal
+\item 
+static const uint32\-\_\-t {\bf incomplete} =utf\-::incomplete
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represent a simple stateless converter from U\-C\-S-\/4 and to U\-C\-S-\/4 for each single code point. 
+
+This class is used for creation of std\-::codecvt facet for converting utf-\/16/utf-\/32 encoding to encoding supported by this converter
+
+Please note, this converter should be fully stateless. Fully stateless means it should never assume that it is called in any specific order on the text. Even if the encoding itself seems to be stateless like windows-\/1255 or shift-\/jis, some encoders (most notably iconv) can actually compose several code-\/point into one or decompose them in case composite characters are found. So be very careful when implementing these converters for certain character set. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!clone@{clone}}
+\index{clone@{clone}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf base\-\_\-converter}$\ast$ booster\-::locale\-::util\-::base\-\_\-converter\-::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_af97b1e816b0af4f2b6f28b58e4c695a4}
+Create a polymorphic copy of this object, usually called only if \doxyref{is\-\_\-thread\-\_\-safe()}{p.}{classbooster_1_1locale_1_1util_1_1base__converter_a72ec8097bd2a14e38c77804eb7200aad} return false \index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!from\-\_\-unicode@{from\-\_\-unicode}}
+\index{from\-\_\-unicode@{from\-\_\-unicode}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{from\-\_\-unicode}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\-\_\-t booster\-::locale\-::util\-::base\-\_\-converter\-::from\-\_\-unicode (
+\begin{DoxyParamCaption}
+\item[{uint32\-\_\-t}]{u, }
+\item[{char $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_a6f5cab3627d6102a2f10e3feb8f672dd}
+Convert a single code-\/point {\itshape u} into encoding and store it in [begin,end) range.
+
+If u is invalid Unicode code-\/point, or it can not be mapped correctly to represented character set, {\itshape illegal} should be returned
+
+If u can be converted to a sequence of bytes c1, ... , c\-N (1$<$= N $<$= \doxyref{max\-\_\-len()}{p.}{classbooster_1_1locale_1_1util_1_1base__converter_ac4002ac4a7fc59416e54ba623b08962b} ) then
+
+
+\begin{DoxyEnumerate}
+\item If end -\/ begin $>$= N, c1, ... c\-N are written starting at begin and N is returned
+\item If end -\/ begin $<$ N, incomplete is returned, it is unspecified what would be stored in bytes in range [begin,end) 
+\end{DoxyEnumerate}
+
+References illegal, and incomplete.
+
+\index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!is\-\_\-thread\-\_\-safe@{is\-\_\-thread\-\_\-safe}}
+\index{is\-\_\-thread\-\_\-safe@{is\-\_\-thread\-\_\-safe}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{is\-\_\-thread\-\_\-safe}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool booster\-::locale\-::util\-::base\-\_\-converter\-::is\-\_\-thread\-\_\-safe (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_a72ec8097bd2a14e38c77804eb7200aad}
+Returns true if calling the functions from\-\_\-unicode, to\-\_\-unicode, and max\-\_\-len is thread safe.
+
+Rule of thumb\-: if this class' implementation uses simple tables that are unchanged or is purely algorithmic like U\-T\-F-\/8 -\/ so it does not share any mutable bit for independent to\-\_\-unicode, from\-\_\-unicode calls, you may set it to true, otherwise, for example if you use iconv\-\_\-t descriptor or U\-Converter as conversion object return false, and this object will be cloned for each use. \index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!max\-\_\-len@{max\-\_\-len}}
+\index{max\-\_\-len@{max\-\_\-len}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{max\-\_\-len}]{\setlength{\rightskip}{0pt plus 5cm}virtual int booster\-::locale\-::util\-::base\-\_\-converter\-::max\-\_\-len (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_ac4002ac4a7fc59416e54ba623b08962b}
+Return the maximal length that one Unicode code-\/point can be converted to, for example for U\-T\-F-\/8 it is 4, for Shift-\/\-J\-I\-S it is 2 and I\-S\-O-\/8859-\/1 is 1 \index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!to\-\_\-unicode@{to\-\_\-unicode}}
+\index{to\-\_\-unicode@{to\-\_\-unicode}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{to\-\_\-unicode}]{\setlength{\rightskip}{0pt plus 5cm}virtual uint32\-\_\-t booster\-::locale\-::util\-::base\-\_\-converter\-::to\-\_\-unicode (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$\&}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_ae7296d14ecad648c8f2383625b1f33f9}
+Convert a single character starting at begin and ending at most at end to Unicode code-\/point.
+
+if valid input sequence found in [{\itshape begin},{\itshape code\-\_\-point\-\_\-end}) such as {\itshape begin} $<$ {\itshape code\-\_\-point\-\_\-end} \&\& {\itshape code\-\_\-point\-\_\-end} $<$= {\itshape end} it is converted to its Unicode code point equivalent, {\itshape begin} is set to {\itshape code\-\_\-point\-\_\-end} 
+
+if incomplete input sequence found in [{\itshape begin},{\itshape end}), i.\-e. there my be such {\itshape code\-\_\-point\-\_\-end} that {\itshape code\-\_\-point\-\_\-end} $>$ {\itshape end} and [{\itshape begin}, {\itshape code\-\_\-point\-\_\-end}) would be valid input sequence, then {\itshape incomplete} is returned begin stays unchanged, for example for U\-T\-F-\/8 conversion a $\ast$begin = 0xc2, {\itshape begin} +1 = {\itshape end} is such situation.
+
+if invalid input sequence found, i.\-e. there there is a sequence [{\itshape begin}, {\itshape code\-\_\-point\-\_\-end}) such as {\itshape code\-\_\-point\-\_\-end} $<$= {\itshape end} that is illegal for this encoding, {\itshape illegal} is returned and begin stays unchanged. For example if $\ast$begin = 0x\-F\-F and begin $<$ end for U\-T\-F-\/8, then {\itshape illegal} is returned. 
+
+References illegal, and incomplete.
+
+
+
+\subsection{Member Data Documentation}
+\index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!illegal@{illegal}}
+\index{illegal@{illegal}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{illegal}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\-\_\-t booster\-::locale\-::util\-::base\-\_\-converter\-::illegal =utf\-::illegal\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_a197c10ed8f3db4eeb49bc078267e8986}
+This value should be returned when an illegal input sequence or code-\/point is observed\-: For example if a U\-C\-S-\/32 code-\/point is in the range reserved for U\-T\-F-\/16 surrogates or an invalid U\-T\-F-\/8 sequence is found 
+
+Referenced by from\-\_\-unicode(), and to\-\_\-unicode().
+
+\index{booster\-::locale\-::util\-::base\-\_\-converter@{booster\-::locale\-::util\-::base\-\_\-converter}!incomplete@{incomplete}}
+\index{incomplete@{incomplete}!booster::locale::util::base_converter@{booster\-::locale\-::util\-::base\-\_\-converter}}
+\subsubsection[{incomplete}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\-\_\-t booster\-::locale\-::util\-::base\-\_\-converter\-::incomplete =utf\-::incomplete\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1locale_1_1util_1_1base__converter_a54adb87f55ba276c81db2ddef9d42bcc}
+This value is returned in following cases\-: The of incomplete input sequence was found or insufficient output buffer was provided so complete output could not be written. 
+
+Referenced by from\-\_\-unicode(), and to\-\_\-unicode().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/util.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,198 @@
+\section{booster\-:\-:shared\-\_\-object Class Reference}
+\label{classbooster_1_1shared__object}\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}}
+
+
+Class that allows loading dynamic libraries\-: shared objects and dlls.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/shared\-\_\-object.\-h$>$}
+
+Inheritance diagram for booster\-:\-:shared\-\_\-object\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classbooster_1_1shared__object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf shared\-\_\-object} ()
+\item 
+{\bf $\sim$shared\-\_\-object} ()
+\item 
+{\bf shared\-\_\-object} (std\-::string const \&file\-\_\-name)
+\item 
+bool {\bf is\-\_\-open} () const 
+\item 
+bool {\bf open} (std\-::string const \&file\-\_\-name)
+\item 
+bool {\bf open} (std\-::string const \&file\-\_\-name, std\-::string \&error\-\_\-message)
+\item 
+void {\bf close} ()
+\item 
+void $\ast$ {\bf resolve\-\_\-symbol} (std\-::string const \&{\bf name}) const 
+\item 
+{\footnotesize template$<$typename T $>$ }\\void {\bf symbol} (T \&s, std\-::string const \&{\bf name}) const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::string {\bf name} (std\-::string const \&module)
+\item 
+static std\-::string {\bf name} (std\-::string const \&module, std\-::string const \&soversion)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that allows loading dynamic libraries\-: shared objects and dlls. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!shared\-\_\-object@{shared\-\_\-object}}
+\index{shared\-\_\-object@{shared\-\_\-object}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{shared\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::shared\-\_\-object\-::shared\-\_\-object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__object_af515898ef086b5fa287492f3748efb1f}
+Create an empty shared object \index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!$\sim$shared\-\_\-object@{$\sim$shared\-\_\-object}}
+\index{$\sim$shared\-\_\-object@{$\sim$shared\-\_\-object}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{$\sim$shared\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::shared\-\_\-object\-::$\sim$shared\-\_\-object (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__object_a4073b8fb5a462cf53b8dbcdad20255b0}
+If the shared object was open unloads it, If private copy of D\-L\-L was made it is removed from the file system \index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!shared\-\_\-object@{shared\-\_\-object}}
+\index{shared\-\_\-object@{shared\-\_\-object}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{shared\-\_\-object}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::shared\-\_\-object\-::shared\-\_\-object (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__object_a22b17516e3e7fd5a8f3ea09f2fbf57e8}
+Create shared object and load it, \begin{DoxySeeAlso}{See Also}
+open(std\-::string const\&,bool);
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & -\/ the name of the file, U\-T\-F-\/8 encoded under Windows\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxyref{booster\-::system\-::system\-\_\-error}{p.}{classbooster_1_1system_1_1system__error}} & if it is impossible to load it \\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!close@{close}}
+\index{close@{close}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{close}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::shared\-\_\-object\-::close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__object_a4dcfcacca3ba8950f84b104bd028011a}
+Unload the shared object \index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!is\-\_\-open@{is\-\_\-open}}
+\index{is\-\_\-open@{is\-\_\-open}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{is\-\_\-open}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::shared\-\_\-object\-::is\-\_\-open (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1shared__object_aba12f0a84d0900f8c6e0aef8a3d27b60}
+Check if the shared object was loaded \index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!name@{name}}
+\index{name@{name}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string booster\-::shared\-\_\-object\-::name (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{module}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1shared__object_a2430f1a6ec468f30640138e32a8544e8}
+Format the O\-S specific name name of the library according to its name. Uses C\-Make convensions.
+
+For example library \char`\"{}foo\char`\"{} is converted to the name
+
+
+\begin{DoxyItemize}
+\item libfoo.\-so under Linux, Free\-B\-S\-D, Solaris
+\item libfoo.\-dylib under Darwin/\-Mac O\-S X
+\item libfoo.\-dll under Windows using gcc/mingw
+\item foo.\-dll under Windows using M\-S\-V\-C
+\item cygfoo.\-dll under Cygwin 
+\end{DoxyItemize}\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!name@{name}}
+\index{name@{name}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{name}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::string booster\-::shared\-\_\-object\-::name (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{module, }
+\item[{std\-::string const \&}]{soversion}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1shared__object_a52ee3e02ed530fed280525028dcfbad7}
+Format the O\-S specific name name of the library according to its name and its soversion. Uses C\-Make convensions.
+
+For example library \char`\"{}foo\char`\"{} and soversion \char`\"{}1\char`\"{} is converted to the name
+
+
+\begin{DoxyItemize}
+\item libfoo.\-so.\-1 under Linux, Free\-B\-S\-D, Solaris
+\item libfoo.\-1.\-dylib under Darwin/\-Mac O\-S X
+\item libfoo-\/1.\-dll under Windows using gcc/mingw
+\item foo-\/1.\-dll under Windows using M\-S\-V\-C
+\item cygfoo-\/1.\-dll under Cygwin 
+\end{DoxyItemize}\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!open@{open}}
+\index{open@{open}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::shared\-\_\-object\-::open (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__object_ac87465cf461ef979adfc30958d0a2b65}
+Load shared object or dll
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & -\/ the name of the file, U\-T\-F-\/8 encoded under Windows \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the shared object was loaded 
+\end{DoxyReturn}
+\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!open@{open}}
+\index{open@{open}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::shared\-\_\-object\-::open (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{file\-\_\-name, }
+\item[{std\-::string \&}]{error\-\_\-message}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1shared__object_a76e45e3c5b0aad4b7d41ca613d2ee0bb}
+Load shared object or dll
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-\_\-name} & -\/ the name of the file, U\-T\-F-\/8 encoded under Windows \\
+\hline
+{\em error\-\_\-message} & -\/ the error message \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the shared object was loaded 
+\end{DoxyReturn}
+\index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!resolve\-\_\-symbol@{resolve\-\_\-symbol}}
+\index{resolve\-\_\-symbol@{resolve\-\_\-symbol}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{resolve\-\_\-symbol}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ booster\-::shared\-\_\-object\-::resolve\-\_\-symbol (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1shared__object_a7aa6aaa233e7c7d588ae24da822c28e6}
+Resolve symbol in the shared object dll. If it can't be resolved, N\-U\-L\-L is returned
+
+If the shared object was not opened, it would throw \doxyref{booster\-::runtime\-\_\-error}{p.}{classbooster_1_1runtime__error} \index{booster\-::shared\-\_\-object@{booster\-::shared\-\_\-object}!symbol@{symbol}}
+\index{symbol@{symbol}!booster::shared_object@{booster\-::shared\-\_\-object}}
+\subsubsection[{symbol}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void booster\-::shared\-\_\-object\-::symbol (
+\begin{DoxyParamCaption}
+\item[{T \&}]{s, }
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1shared__object_a4156d283c30ac84dcecb2eed993a489c}
+Resolve symbol in the shared object dll. If it can't be 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/shared\-\_\-object.\-h\end{DoxyCompactItemize}

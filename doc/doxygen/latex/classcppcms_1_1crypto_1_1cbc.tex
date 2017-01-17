@@ -1,0 +1,156 @@
+\section{cppcms\-:\-:crypto\-:\-:cbc Class Reference}
+\label{classcppcms_1_1crypto_1_1cbc}\index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}}
+
+
+Cipher-\/block chaining encryption and decryption cryptographic service.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/crypto.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:crypto\-:\-:cbc\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1crypto_1_1cbc}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf cbc\-\_\-type} \{ {\bf aes128} = 0, 
+{\bf aes192} = 1, 
+{\bf aes256} = 2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual unsigned {\bf block\-\_\-size} () const =0
+\item 
+virtual unsigned {\bf key\-\_\-size} () const =0
+\item 
+virtual void {\bf set\-\_\-key} ({\bf key} const \&)=0
+\item 
+virtual void {\bf set\-\_\-iv} (void const $\ast$ptr, size\-\_\-t size)=0
+\item 
+virtual void {\bf set\-\_\-nonce\-\_\-iv} ()=0
+\item 
+virtual void {\bf encrypt} (void const $\ast$in, void $\ast$out, unsigned len)=0
+\item 
+virtual void {\bf decrypt} (void const $\ast$in, void $\ast$out, unsigned len)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\-::auto\-\_\-ptr$<$ {\bf cbc} $>$ {\bf create} ({\bf cbc\-\_\-type} type)
+\item 
+static std\-::auto\-\_\-ptr$<$ {\bf cbc} $>$ {\bf create} (std\-::string const \&name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cipher-\/block chaining encryption and decryption cryptographic service. 
+
+\begin{DoxyNote}{Note}
+In order to use it, you {\bfseries must} compile Cpp\-C\-M\-S with Open\-S\-S\-L (libcrypto) or G\-N\-U-\/\-T\-L\-S (libgcrypt) library. 
+\end{DoxyNote}
+
+
+\subsection{Member Enumeration Documentation}
+\index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!cbc\-\_\-type@{cbc\-\_\-type}}
+\index{cbc\-\_\-type@{cbc\-\_\-type}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{cbc\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::crypto\-::cbc\-::cbc\-\_\-type}}\label{classcppcms_1_1crypto_1_1cbc_a6a4d426a4322e3fe8f3596e60f2933f1}
+C\-B\-C encryption type \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{aes128@{aes128}!cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}}\index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!aes128@{aes128}}\item[{\em 
+aes128\label{classcppcms_1_1crypto_1_1cbc_a6a4d426a4322e3fe8f3596e60f2933f1ad8d07a81acc5674e21906667ff004244}
+}]A\-E\-S-\/128. \index{aes192@{aes192}!cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}}\index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!aes192@{aes192}}\item[{\em 
+aes192\label{classcppcms_1_1crypto_1_1cbc_a6a4d426a4322e3fe8f3596e60f2933f1a509f84b5870914ba7ffe3bb2a5d077bf}
+}]A\-E\-S-\/192. \index{aes256@{aes256}!cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}}\index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!aes256@{aes256}}\item[{\em 
+aes256\label{classcppcms_1_1crypto_1_1cbc_a6a4d426a4322e3fe8f3596e60f2933f1ab6206d852671df0c9bf1f01b4c972715}
+}]A\-E\-S-\/256. \end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!block\-\_\-size@{block\-\_\-size}}
+\index{block\-\_\-size@{block\-\_\-size}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{block\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned cppcms\-::crypto\-::cbc\-::block\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_a97247cdede2da296b0e92a0cfe73dad2}
+Get the size of the block C\-B\-C works on \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!create@{create}}
+\index{create@{create}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::auto\-\_\-ptr$<${\bf cbc}$>$ cppcms\-::crypto\-::cbc\-::create (
+\begin{DoxyParamCaption}
+\item[{{\bf cbc\-\_\-type}}]{type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1crypto_1_1cbc_a9e31bba9d06e9cfa4a3c7876c79270ec}
+Create a new cbc object that performs encryption using {\itshape type} method.
+
+If the encryption method is not supported returns an empty pointer! \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!create@{create}}
+\index{create@{create}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}static std\-::auto\-\_\-ptr$<${\bf cbc}$>$ cppcms\-::crypto\-::cbc\-::create (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1crypto_1_1cbc_a2ccb0697ce396cdc8a547038bbc90bcb}
+Create a new cbc object that performs encryption using algorithm {\itshape name} 
+
+If the encryption method is not supported returns an empty pointer!
+
+Currently supported aes128, aes192, aes256, with names \char`\"{}aes\char`\"{} = \char`\"{}aes-\/128\char`\"{} = \char`\"{}aes128\char`\"{} , \char`\"{}aes-\/192\char`\"{} \char`\"{}aes192\char`\"{}, \char`\"{}aes-\/256\char`\"{} = \char`\"{}aes256\char`\"{}. They require Cpp\-C\-M\-S to be compiled with Open\-S\-S\-L or G\-N\-U-\/\-T\-L\-S library \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{decrypt}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::cbc\-::decrypt (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{in, }
+\item[{void $\ast$}]{out, }
+\item[{unsigned}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_a7e54bd18f956d72b84c53b96e9f99538}
+Decrypt the data {\itshape in} to {\itshape out} of size {\itshape len}. {\itshape len} should be multiple of \doxyref{block\-\_\-size()}{p.}{classcppcms_1_1crypto_1_1cbc_a97247cdede2da296b0e92a0cfe73dad2} \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{encrypt}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::cbc\-::encrypt (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{in, }
+\item[{void $\ast$}]{out, }
+\item[{unsigned}]{len}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_a7f2131e5822dc997b9833f7880733c5a}
+Encrypt the data {\itshape in} to {\itshape out} of size {\itshape len}. {\itshape len} should be multiple of \doxyref{block\-\_\-size()}{p.}{classcppcms_1_1crypto_1_1cbc_a97247cdede2da296b0e92a0cfe73dad2} \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!key\-\_\-size@{key\-\_\-size}}
+\index{key\-\_\-size@{key\-\_\-size}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{key\-\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned cppcms\-::crypto\-::cbc\-::key\-\_\-size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_a6dc620ac7b8ba0c80b8b96a701584bed}
+Get the required key size in bytes \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!set\-\_\-iv@{set\-\_\-iv}}
+\index{set\-\_\-iv@{set\-\_\-iv}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{set\-\_\-iv}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::cbc\-::set\-\_\-iv (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{size}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_ad8f668cb42c5735d4d735c8a48bbeeae}
+Set initial vector value, size should be equal to \doxyref{block\-\_\-size()}{p.}{classcppcms_1_1crypto_1_1cbc_a97247cdede2da296b0e92a0cfe73dad2} \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!set\-\_\-key@{set\-\_\-key}}
+\index{set\-\_\-key@{set\-\_\-key}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{set\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::cbc\-::set\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{{\bf key} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_a2a742877fcae62664e33a18083870a7d}
+Set the key value \index{cppcms\-::crypto\-::cbc@{cppcms\-::crypto\-::cbc}!set\-\_\-nonce\-\_\-iv@{set\-\_\-nonce\-\_\-iv}}
+\index{set\-\_\-nonce\-\_\-iv@{set\-\_\-nonce\-\_\-iv}!cppcms::crypto::cbc@{cppcms\-::crypto\-::cbc}}
+\subsubsection[{set\-\_\-nonce\-\_\-iv}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::crypto\-::cbc\-::set\-\_\-nonce\-\_\-iv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1crypto_1_1cbc_a6c3435793b136c8797a3a9ca75746aee}
+Set randomly created initial vector value 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/crypto.\-h\end{DoxyCompactItemize}

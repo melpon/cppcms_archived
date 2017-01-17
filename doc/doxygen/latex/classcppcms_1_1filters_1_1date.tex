@@ -1,0 +1,53 @@
+\section{cppcms\-:\-:filters\-:\-:date Class Reference}
+\label{classcppcms_1_1filters_1_1date}\index{cppcms\-::filters\-::date@{cppcms\-::filters\-::date}}
+
+
+Formats date to the stream, date is represented as number -\/ P\-O\-S\-I\-X time, a plain number.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/filters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries date} ({\bf date} const \&other)\label{classcppcms_1_1filters_1_1date_ab53643381fd5cc58c4350747ac86f049}
+
+\item 
+{\bf date} const \& {\bfseries operator=} ({\bf date} const \&other)\label{classcppcms_1_1filters_1_1date_a4530a894d551d081f0f480d6de2087b5}
+
+\item 
+{\bf date} ({\bf streamable} const \&{\bf time})
+\item 
+{\bf date} ({\bf streamable} const \&{\bf time}, std\-::string const \&timezone)
+\item 
+void {\bfseries operator()} (std\-::ostream \&out) const \label{classcppcms_1_1filters_1_1date_aba324cd826342dcec5f64d12ebb846a1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Formats date to the stream, date is represented as number -\/ P\-O\-S\-I\-X time, a plain number. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::filters\-::date@{cppcms\-::filters\-::date}!date@{date}}
+\index{date@{date}!cppcms::filters::date@{cppcms\-::filters\-::date}}
+\subsubsection[{date}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::date\-::date (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{time}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1date_a0f3c8e723f9500a635901705bad074fc}
+Create date filter that formats current local-\/time date using P\-O\-S\-I\-X time representation {\itshape time} \index{cppcms\-::filters\-::date@{cppcms\-::filters\-::date}!date@{date}}
+\index{date@{date}!cppcms::filters::date@{cppcms\-::filters\-::date}}
+\subsubsection[{date}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::date\-::date (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{time, }
+\item[{std\-::string const \&}]{timezone}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1date_afada03ed77f7c09f36043b9d6ff8fd28}
+Create date filter that formats current date using P\-O\-S\-I\-X time representation {\itshape time}, in a timezone {\itshape timezone} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/filters.\-h\end{DoxyCompactItemize}

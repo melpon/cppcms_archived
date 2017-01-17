@@ -1,0 +1,65 @@
+\section{cppcms\-:\-:session\-\_\-api\-\_\-factory Class Reference}
+\label{classcppcms_1_1session__api__factory}\index{cppcms\-::session\-\_\-api\-\_\-factory@{cppcms\-::session\-\_\-api\-\_\-factory}}
+
+
+the factory object that generates custom implemented \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} objects  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-api.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf requires\-\_\-gc} ()=0
+\item 
+virtual void {\bf gc} ()=0
+\item 
+virtual {\bf booster\-::shared\-\_\-ptr}\\*
+$<$ {\bf session\-\_\-api} $>$ {\bf get} ()=0
+\item 
+virtual {\bf $\sim$session\-\_\-api\-\_\-factory} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+the factory object that generates custom implemented \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} objects 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::session\-\_\-api\-\_\-factory@{cppcms\-::session\-\_\-api\-\_\-factory}!$\sim$session\-\_\-api\-\_\-factory@{$\sim$session\-\_\-api\-\_\-factory}}
+\index{$\sim$session\-\_\-api\-\_\-factory@{$\sim$session\-\_\-api\-\_\-factory}!cppcms::session_api_factory@{cppcms\-::session\-\_\-api\-\_\-factory}}
+\subsubsection[{$\sim$session\-\_\-api\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::session\-\_\-api\-\_\-factory\-::$\sim$session\-\_\-api\-\_\-factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1session__api__factory_a52d0465b91bcd8fdea504ee367a07fd1}
+Destructor and cleanup function 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::session\-\_\-api\-\_\-factory@{cppcms\-::session\-\_\-api\-\_\-factory}!gc@{gc}}
+\index{gc@{gc}!cppcms::session_api_factory@{cppcms\-::session\-\_\-api\-\_\-factory}}
+\subsubsection[{gc}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::session\-\_\-api\-\_\-factory\-::gc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api__factory_ad5b34da5ef4554f2537d865d64dd31fc}
+The actual garbage collection job (may do nothing). \index{cppcms\-::session\-\_\-api\-\_\-factory@{cppcms\-::session\-\_\-api\-\_\-factory}!get@{get}}
+\index{get@{get}!cppcms::session_api_factory@{cppcms\-::session\-\_\-api\-\_\-factory}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf booster\-::shared\-\_\-ptr}$<${\bf session\-\_\-api}$>$ cppcms\-::session\-\_\-api\-\_\-factory\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api__factory_a0e956d6b28d5a52299e61e368a6ee7b4}
+Return a pointer to the \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} object. Note it may be shared between multiple requests or may be created each time per request \index{cppcms\-::session\-\_\-api\-\_\-factory@{cppcms\-::session\-\_\-api\-\_\-factory}!requires\-\_\-gc@{requires\-\_\-gc}}
+\index{requires\-\_\-gc@{requires\-\_\-gc}!cppcms::session_api_factory@{cppcms\-::session\-\_\-api\-\_\-factory}}
+\subsubsection[{requires\-\_\-gc}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::session\-\_\-api\-\_\-factory\-::requires\-\_\-gc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1session__api__factory_a94812c4b4fbcf8192460770d23fa066f}
+Return true if this session A\-P\-I requires Garbage collection\-: i.\-e. execution of special function time to time to clear expired sessions from the memory 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-api.\-h\end{DoxyCompactItemize}

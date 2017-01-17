@@ -1,0 +1,55 @@
+\section{cppcms\-:\-:filters\-:\-:datetime Class Reference}
+\label{classcppcms_1_1filters_1_1datetime}\index{cppcms\-::filters\-::datetime@{cppcms\-::filters\-::datetime}}
+
+
+Format date and time to ouput stream.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/filters.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries datetime} ({\bf datetime} const \&other)\label{classcppcms_1_1filters_1_1datetime_a4c69cb76179ac3d2c535cd2d6887ba26}
+
+\item 
+{\bf datetime} const \& {\bfseries operator=} ({\bf datetime} const \&other)\label{classcppcms_1_1filters_1_1datetime_acb2d8eda9e9895feafe117ad003e7a44}
+
+\item 
+{\bf datetime} ({\bf streamable} const \&t)
+\item 
+{\bf datetime} ({\bf streamable} const \&{\bf time}, std\-::string const \&timezone)
+\item 
+void {\bfseries operator()} (std\-::ostream \&out) const \label{classcppcms_1_1filters_1_1datetime_a3abbf58652bed8ea9c641d08bd091d59}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Format date and time to ouput stream. 
+
+Formats date and time to the stream, date and time is represented as time\-\_\-t 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::filters\-::datetime@{cppcms\-::filters\-::datetime}!datetime@{datetime}}
+\index{datetime@{datetime}!cppcms::filters::datetime@{cppcms\-::filters\-::datetime}}
+\subsubsection[{datetime}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::datetime\-::datetime (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{t}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1datetime_a8f514a9fd1c724441a3ffbb5fd3c0a63}
+Create date and time filter that formats current local-\/time date and time using P\-O\-S\-I\-X time representation {\itshape t} \index{cppcms\-::filters\-::datetime@{cppcms\-::filters\-::datetime}!datetime@{datetime}}
+\index{datetime@{datetime}!cppcms::filters::datetime@{cppcms\-::filters\-::datetime}}
+\subsubsection[{datetime}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::filters\-::datetime\-::datetime (
+\begin{DoxyParamCaption}
+\item[{{\bf streamable} const \&}]{time, }
+\item[{std\-::string const \&}]{timezone}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1filters_1_1datetime_a250c6eedf8ac21addf46c37543ce4578}
+Create date and time filter that formats current date and time using P\-O\-S\-I\-X time representation {\itshape t}, in a timezone {\itshape timezone} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/filters.\-h\end{DoxyCompactItemize}

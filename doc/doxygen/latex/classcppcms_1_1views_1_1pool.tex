@@ -1,0 +1,105 @@
+\section{cppcms\-:\-:views\-:\-:pool Class Reference}
+\label{classcppcms_1_1views_1_1pool}\index{cppcms\-::views\-::pool@{cppcms\-::views\-::pool}}
+
+
+This is a singleton object that holds all views in the process. Any view is registered and unregistered via this object.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/views\-\_\-pool.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:views\-:\-:pool\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1views_1_1pool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf add} ({\bf generator} const \&{\bf generator})
+\item 
+void {\bf remove} ({\bf generator} const \&{\bf generator})
+\item 
+void {\bf render} (std\-::string const \&skin, std\-::string const \&template\-\_\-name, std\-::ostream \&out, {\bf base\-\_\-content} \&content)
+\item 
+std\-::vector$<$ std\-::string $>$ {\bf enumerate} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf pool} \& {\bf instance} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a singleton object that holds all views in the process. Any view is registered and unregistered via this object. 
+
+It is usually not used directly 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::views\-::pool@{cppcms\-::views\-::pool}!add@{add}}
+\index{add@{add}!cppcms::views::pool@{cppcms\-::views\-::pool}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::views\-::pool\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf generator} const \&}]{generator}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1pool_a5fb76fd2c680a576b3623e7797174b23}
+Add new skin to pool
+
+This function is thread safe \index{cppcms\-::views\-::pool@{cppcms\-::views\-::pool}!enumerate@{enumerate}}
+\index{enumerate@{enumerate}!cppcms::views::pool@{cppcms\-::views\-::pool}}
+\subsubsection[{enumerate}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ cppcms\-::views\-::pool\-::enumerate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1pool_a621128b85e611545edc9b94197e29daa}
+Get all loaded views
+
+This function is thread safe \index{cppcms\-::views\-::pool@{cppcms\-::views\-::pool}!instance@{instance}}
+\index{instance@{instance}!cppcms::views::pool@{cppcms\-::views\-::pool}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf pool}\& cppcms\-::views\-::pool\-::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1views_1_1pool_a383476ac2ed9a006290454ec1e9ad670}
+Get the singleton instance of the views pool \index{cppcms\-::views\-::pool@{cppcms\-::views\-::pool}!remove@{remove}}
+\index{remove@{remove}!cppcms::views::pool@{cppcms\-::views\-::pool}}
+\subsubsection[{remove}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::views\-::pool\-::remove (
+\begin{DoxyParamCaption}
+\item[{{\bf generator} const \&}]{generator}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1pool_a0083f914a4af6ca460be16819eb7b0e8}
+Remove the skin from pool
+
+This function is thread safe \index{cppcms\-::views\-::pool@{cppcms\-::views\-::pool}!render@{render}}
+\index{render@{render}!cppcms::views::pool@{cppcms\-::views\-::pool}}
+\subsubsection[{render}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::views\-::pool\-::render (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{skin, }
+\item[{std\-::string const \&}]{template\-\_\-name, }
+\item[{std\-::ostream \&}]{out, }
+\item[{{\bf base\-\_\-content} \&}]{content}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1views_1_1pool_abdcc8cffcd62efe199709f9eab948dad}
+Render Skin
+
+This member function is used to render templates. Generally you should not use it directly, unless you have very good reasons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em skin} & -\/ the name of the skin that should be used \\
+\hline
+{\em template\-\_\-name} & -\/ the name of template (class) that should be rendered. \\
+\hline
+{\em out} & -\/ the output stream into which the view should be rendered \\
+\hline
+{\em content} & -\/ the content that should be rendered using this view.\\
+\hline
+\end{DoxyParams}
+This function is thread safe 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/views\-\_\-pool.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+\section{cppcms\-:\-:urandom\-\_\-device Class Reference}
+\label{classcppcms_1_1urandom__device}\index{cppcms\-::urandom\-\_\-device@{cppcms\-::urandom\-\_\-device}}
+
+
+High entropy random number generator.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/urandom.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:urandom\-\_\-device\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1urandom__device}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf urandom\-\_\-device} ()
+\item 
+{\bf $\sim$urandom\-\_\-device} ()
+\item 
+void {\bf generate} (void $\ast$ptr, unsigned n)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+High entropy random number generator. 
+
+This is cryptographic random number generator that uses /dev/urandom on P\-O\-S\-I\-X platforms and Crypto\-A\-P\-I's Crypt\-Gen\-Random function under M\-S Windows 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::urandom\-\_\-device@{cppcms\-::urandom\-\_\-device}!urandom\-\_\-device@{urandom\-\_\-device}}
+\index{urandom\-\_\-device@{urandom\-\_\-device}!cppcms::urandom_device@{cppcms\-::urandom\-\_\-device}}
+\subsubsection[{urandom\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::urandom\-\_\-device\-::urandom\-\_\-device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1urandom__device_a7d5eb5ad9a75c3f55f0c3c9936d59d47}
+Create a new random number generator \index{cppcms\-::urandom\-\_\-device@{cppcms\-::urandom\-\_\-device}!$\sim$urandom\-\_\-device@{$\sim$urandom\-\_\-device}}
+\index{$\sim$urandom\-\_\-device@{$\sim$urandom\-\_\-device}!cppcms::urandom_device@{cppcms\-::urandom\-\_\-device}}
+\subsubsection[{$\sim$urandom\-\_\-device}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::urandom\-\_\-device\-::$\sim$urandom\-\_\-device (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1urandom__device_a48f6cbd2b2d9a9b004ee8f206cd5b44b}
+Destory it 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::urandom\-\_\-device@{cppcms\-::urandom\-\_\-device}!generate@{generate}}
+\index{generate@{generate}!cppcms::urandom_device@{cppcms\-::urandom\-\_\-device}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::urandom\-\_\-device\-::generate (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ptr, }
+\item[{unsigned}]{n}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1urandom__device_a4e009705cfc313305bdc3e1e70e66fb0}
+Fill a buffer pointer by {\itshape ptr} of {\itshape n} bytes with random numbers 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/urandom.\-h\end{DoxyCompactItemize}

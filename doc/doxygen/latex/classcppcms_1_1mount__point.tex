@@ -1,0 +1,313 @@
+\section{cppcms\-:\-:mount\-\_\-point Class Reference}
+\label{classcppcms_1_1mount__point}\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}}
+
+
+This class represents application's mount point or the rule on which specific application is selected to process the query.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/mount\-\_\-point.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf selection\-\_\-type} \{ {\bf match\-\_\-path\-\_\-info}, 
+{\bf match\-\_\-script\-\_\-name}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf booster\-::regex} {\bf host} () const 
+\item 
+{\bf booster\-::regex} {\bf script\-\_\-name} () const 
+\item 
+{\bf booster\-::regex} {\bf path\-\_\-info} () const 
+\item 
+int {\bf group} () const 
+\item 
+{\bf selection\-\_\-type} {\bf selection} () const 
+\item 
+void {\bf host} ({\bf booster\-::regex} const \&)
+\item 
+void {\bf script\-\_\-name} ({\bf booster\-::regex} const \&)
+\item 
+void {\bf path\-\_\-info} ({\bf booster\-::regex} const \&)
+\item 
+void {\bf group} (int)
+\item 
+void {\bf selection} ({\bf selection\-\_\-type})
+\item 
+std\-::pair$<$ bool, std\-::string $>$ {\bf match} (std\-::string const \&h, std\-::string const \&s, std\-::string const \&p) const 
+\item 
+std\-::pair$<$ bool, std\-::string $>$ {\bf match} (char const $\ast$h, char const $\ast$s, char const $\ast$p) const 
+\item 
+{\bf mount\-\_\-point} ()
+\item 
+{\bf $\sim$mount\-\_\-point} ()\label{classcppcms_1_1mount__point_a2b17254c4ed6319526a1813a9bad1d7a}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+{\bf mount\-\_\-point} ({\bf mount\-\_\-point} const \&)
+\item 
+{\bf mount\-\_\-point} const \& {\bf operator=} ({\bf mount\-\_\-point} const \&)
+\item 
+{\bf mount\-\_\-point} (std\-::string const \&path, int {\bf group})
+\item 
+{\bf mount\-\_\-point} (std\-::string const \&script)
+\item 
+{\bf mount\-\_\-point} (std\-::string const \&script, std\-::string const \&path, int {\bf group})
+\item 
+{\bf mount\-\_\-point} ({\bf selection\-\_\-type} sel, std\-::string const \&selected\-\_\-part, int {\bf group})
+\item 
+{\bf mount\-\_\-point} ({\bf selection\-\_\-type} sel, std\-::string const \&non\-\_\-selected\-\_\-part)
+\item 
+{\bf mount\-\_\-point} ({\bf selection\-\_\-type} sel, std\-::string const \&non\-\_\-selected\-\_\-part, std\-::string const \&selected\-\_\-part, int {\bf group})
+\item 
+{\bf mount\-\_\-point} ({\bf selection\-\_\-type} sel, {\bf booster\-::regex} const \&http\-\_\-host, {\bf booster\-::regex} const \&script, {\bf booster\-::regex} const \&path, int {\bf group})
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represents application's mount point or the rule on which specific application is selected to process the query. 
+
+It is used by \doxyref{applications\-\_\-pool}{p.}{classcppcms_1_1applications__pool} class for mounting applications, and by forwarding managers to match forwarding requests 
+
+\subsection{Member Enumeration Documentation}
+\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!selection\-\_\-type@{selection\-\_\-type}}
+\index{selection\-\_\-type@{selection\-\_\-type}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{selection\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf cppcms\-::mount\-\_\-point\-::selection\-\_\-type}}\label{classcppcms_1_1mount__point_a7b5f464f1e0f23c8b0d4565ae12e2aa4}
+Type that describes what parameter should be passed to \doxyref{application\-::main(std\-::string)}{p.}{classcppcms_1_1application_a8c884a9309d107237e8946446feba8f8} function
+
+When the application selected specific string is passed for matching with application's member function or application's children. This can be C\-G\-I variable P\-A\-T\-H\-\_\-\-I\-N\-F\-O or S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E or their substring taken with regular expression.
+
+If selection is {\itshape match\-\_\-path\-\_\-info} then P\-A\-T\-H\-\_\-\-I\-N\-F\-O passed for matching, otherwide S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E is used for matching.
+
+For example if your service works with S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E /app and the U\-R\-L is pointing to /app/page/20 such as S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E is \char`\"{}/app\char`\"{} and P\-A\-T\-H\-\_\-\-I\-N\-F\-O is \char`\"{}/page/20\char`\"{} then the last one will be used for dispatching by \doxyref{cppcms\-::application\-::main}{p.}{classcppcms_1_1application_a8c884a9309d107237e8946446feba8f8} function.
+
+But you may also work with \char`\"{}$\ast$.\-cgi\char`\"{} style U\-R\-L if your application process all queries comping from \char`\"{}$\ast$.\-cgi\char`\"{} and you have \char`\"{}dummy scripts\char`\"{} at \char`\"{}/cgi-\/bin/users.\-cgi\char`\"{} and \char`\"{}/cgi-\/bin/app.\-cgi\char`\"{} and you want to match against S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E rather then P\-A\-T\-H\-\_\-\-I\-N\-F\-O you can use {\itshape match\-\_\-script\-\_\-name} option and the script name will be used for matching. \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{match\-\_\-path\-\_\-info@{match\-\_\-path\-\_\-info}!cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}}\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!match\-\_\-path\-\_\-info@{match\-\_\-path\-\_\-info}}\item[{\em 
+match\-\_\-path\-\_\-info\label{classcppcms_1_1mount__point_a7b5f464f1e0f23c8b0d4565ae12e2aa4a88da65dd23dba0b70cb4efbf3d7aa426}
+}]Pass P\-A\-T\-H\-\_\-\-I\-N\-F\-O to applications. \index{match\-\_\-script\-\_\-name@{match\-\_\-script\-\_\-name}!cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}}\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!match\-\_\-script\-\_\-name@{match\-\_\-script\-\_\-name}}\item[{\em 
+match\-\_\-script\-\_\-name\label{classcppcms_1_1mount__point_a7b5f464f1e0f23c8b0d4565ae12e2aa4a4c80763773e075b9bb19eab406014cff}
+}]Pass S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E to applications. \end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_aae3ebe5c33cc8552479bc13911b79277}
+Create default mount point, it uses P\-A\-T\-H\-\_\-\-I\-N\-F\-O for url-\/dispatching and gives no restriction on U\-R\-L \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf mount\-\_\-point} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a4e339bc51a6d430638c56d398a1ddd73}
+Copy constructor \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{path, }
+\item[{int}]{group}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a8aed02e81a2442db463910d47ac8d27a}
+Create a mount point that checks P\-A\-T\-H\-\_\-\-I\-N\-F\-O only and passes matched {\itshape group} for dispatching \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{script}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a4f062b2e5482a7073e8fce820978a32f}
+Create a mount point that checks S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E, and passes P\-A\-T\-H\-\_\-\-I\-N\-F\-O for dispatching \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{script, }
+\item[{std\-::string const \&}]{path, }
+\item[{int}]{group}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a164fb60f91341a45f4fbe75814353c7b}
+Create a mount point that checks S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E, P\-A\-T\-H\-\_\-\-I\-N\-F\-O only and passes matched P\-A\-T\-H\-\_\-\-I\-N\-F\-O's {\itshape group} for dispatching \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf selection\-\_\-type}}]{sel, }
+\item[{std\-::string const \&}]{selected\-\_\-part, }
+\item[{int}]{group}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_aac0b2a08cd18f8fc58af86083ce8a741}
+Create a mount point with selection rule {\itshape sel}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sel} & selection rule use S\-C\-R\-I\-P\-T\-\_\-\-I\-N\-F\-O or P\-A\-T\-H\-\_\-\-N\-A\-M\-E for U\-R\-L based dispatching \\
+\hline
+{\em selected\-\_\-part} & is a regular expression for matching against P\-A\-T\-H\-\_\-\-I\-N\-F\-O or S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E according {\itshape sel} \\
+\hline
+{\em group} & regular expression subgroup of {\itshape selected\-\_\-part} for U\-R\-L dispatching \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf selection\-\_\-type}}]{sel, }
+\item[{std\-::string const \&}]{non\-\_\-selected\-\_\-part}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_ac206db2a1d3104fe5a578e1c3fec693c}
+Create a mount point with selection rule {\itshape sel}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sel} & -- selection rule use S\-C\-R\-I\-P\-T\-\_\-\-I\-N\-F\-O or P\-A\-T\-H\-\_\-\-N\-A\-M\-E for U\-R\-L based dispatching \\
+\hline
+{\em non\-\_\-selected\-\_\-part} & is a regular expression for matching against P\-A\-T\-H\-\_\-\-I\-N\-F\-O or S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E according to opposite of {\itshape sel}, if sel is match\-\_\-path\-\_\-info then non\-\_\-selected\-\_\-part checked against S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E otherwise it is checked against P\-A\-T\-H\-\_\-\-I\-N\-F\-O \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf selection\-\_\-type}}]{sel, }
+\item[{std\-::string const \&}]{non\-\_\-selected\-\_\-part, }
+\item[{std\-::string const \&}]{selected\-\_\-part, }
+\item[{int}]{group}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a96b6ff911c111a4927692c0a499665f8}
+Create a mount point with selection rule {\itshape sel}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sel} & -- selection rule use S\-C\-R\-I\-P\-T\-\_\-\-I\-N\-F\-O or P\-A\-T\-H\-\_\-\-N\-A\-M\-E for U\-R\-L based dispatching \\
+\hline
+{\em non\-\_\-selected\-\_\-part} & is a regular expression for matching against P\-A\-T\-H\-\_\-\-I\-N\-F\-O or S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E according to opposite of {\itshape sel}, if sel is match\-\_\-path\-\_\-info then non\-\_\-selected\-\_\-part checked against S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E otherwise it is checked against P\-A\-T\-H\-\_\-\-I\-N\-F\-O \\
+\hline
+{\em selected\-\_\-part} & is a regular expression for matching against P\-A\-T\-H\-\_\-\-I\-N\-F\-O or S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E according {\itshape sel} \\
+\hline
+{\em group} & regular expression subgroup of {\itshape selected\-\_\-part} for U\-R\-L dispatching \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!mount\-\_\-point@{mount\-\_\-point}}
+\index{mount\-\_\-point@{mount\-\_\-point}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{mount\-\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::mount\-\_\-point\-::mount\-\_\-point (
+\begin{DoxyParamCaption}
+\item[{{\bf selection\-\_\-type}}]{sel, }
+\item[{{\bf booster\-::regex} const \&}]{http\-\_\-host, }
+\item[{{\bf booster\-::regex} const \&}]{script, }
+\item[{{\bf booster\-::regex} const \&}]{path, }
+\item[{int}]{group}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a1ddfb79e0ef680197c805c5ea3700897}
+Create fully defined mount rule for matching against, {\itshape http\-\_\-host} -\/ H\-T\-T\-P\-\_\-\-H\-O\-S\-T, {\itshape script} -\/ S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E, {\itshape path} -\/ P\-A\-T\-H\-\_\-\-I\-N\-F\-O, and use subgroup {\itshape group} of regular expression selected with {\itshape sel} definition.
+
+Note\-: if regular expression is empty, no checks are performed. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!group@{group}}
+\index{group@{group}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{group}]{\setlength{\rightskip}{0pt plus 5cm}int cppcms\-::mount\-\_\-point\-::group (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_a40689dd2e3d98ce16fdc8f6841109255}
+Get regular expression subgroup that is passes to application for U\-R\-L dispatching \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!group@{group}}
+\index{group@{group}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{group}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::mount\-\_\-point\-::group (
+\begin{DoxyParamCaption}
+\item[{int}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a60870c497d0a9c03627309b6710d6d1c}
+Set regular expression subgroup that is passes to application for U\-R\-L dispatching \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!host@{host}}
+\index{host@{host}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{host}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::regex} cppcms\-::mount\-\_\-point\-::host (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_ae38ef8deef2af5bc66e4ce5628f9ff23}
+Get regular expression for H\-T\-T\-P\-\_\-\-H\-O\-S\-T C\-G\-I variable matching, if empty, no restrictions given \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!host@{host}}
+\index{host@{host}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{host}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::mount\-\_\-point\-::host (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_aa3a0c87c1c903098154339a929c72a7a}
+Set regular expression for H\-T\-T\-P\-\_\-\-H\-O\-S\-T C\-G\-I variable matching, if empty, no restrictions given \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!match@{match}}
+\index{match@{match}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{match}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$bool,std\-::string$>$ cppcms\-::mount\-\_\-point\-::match (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{h, }
+\item[{std\-::string const \&}]{s, }
+\item[{std\-::string const \&}]{p}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_ad4eb5b59de0f8e3d661c27723991b738}
+Match {\itshape h} -\/ H\-T\-T\-P\-\_\-\-H\-O\-S\-T, {\itshape s} -\/ S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E, {\itshape p} -\/ P\-A\-T\-H\-\_\-\-I\-N\-F\-O against mount point and return true and selected U\-R\-L path for application Otherwise return false and empty string \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!match@{match}}
+\index{match@{match}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{match}]{\setlength{\rightskip}{0pt plus 5cm}std\-::pair$<$bool,std\-::string$>$ cppcms\-::mount\-\_\-point\-::match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{h, }
+\item[{char const $\ast$}]{s, }
+\item[{char const $\ast$}]{p}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_a230af9ce16369ae236a7e29fbddce76a}
+Match {\itshape h} -\/ H\-T\-T\-P\-\_\-\-H\-O\-S\-T, {\itshape s} -\/ S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E, {\itshape p} -\/ P\-A\-T\-H\-\_\-\-I\-N\-F\-O against mount point and return true and selected U\-R\-L path for application Otherwise return false and empty string \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mount\-\_\-point} const\& cppcms\-::mount\-\_\-point\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf mount\-\_\-point} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a513664144ba63fd2f641cbe055e47d76}
+Assignment variable \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!path\-\_\-info@{path\-\_\-info}}
+\index{path\-\_\-info@{path\-\_\-info}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{path\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::regex} cppcms\-::mount\-\_\-point\-::path\-\_\-info (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_a831db352e740d41963ddf533c4879618}
+Get regular expression for P\-A\-T\-H\-\_\-\-I\-N\-F\-O C\-G\-I variable matching, if empty, no restrictions given \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!path\-\_\-info@{path\-\_\-info}}
+\index{path\-\_\-info@{path\-\_\-info}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{path\-\_\-info}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::mount\-\_\-point\-::path\-\_\-info (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a55cd350292db2185abaa2e6942d8d652}
+Set regular expression for P\-A\-T\-H\-\_\-\-I\-N\-F\-O C\-G\-I variable matching, if empty, no restrictions given \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!script\-\_\-name@{script\-\_\-name}}
+\index{script\-\_\-name@{script\-\_\-name}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{script\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}{\bf booster\-::regex} cppcms\-::mount\-\_\-point\-::script\-\_\-name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_a0ce20fb41b5f44da80c98a39a3f3e13a}
+Get regular expression for S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E C\-G\-I variable matching, if empty, no restrictions given \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!script\-\_\-name@{script\-\_\-name}}
+\index{script\-\_\-name@{script\-\_\-name}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{script\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::mount\-\_\-point\-::script\-\_\-name (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a682f8080d3b579591f88d4e70bdecfcd}
+Set regular expression for S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E C\-G\-I variable matching, if empty, no restrictions given \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!selection@{selection}}
+\index{selection@{selection}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{selection}]{\setlength{\rightskip}{0pt plus 5cm}{\bf selection\-\_\-type} cppcms\-::mount\-\_\-point\-::selection (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1mount__point_a492d752d321d9b6ac230e7be678fba64}
+Get S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E/\-P\-A\-T\-H\-\_\-\-I\-N\-F\-O selection \index{cppcms\-::mount\-\_\-point@{cppcms\-::mount\-\_\-point}!selection@{selection}}
+\index{selection@{selection}!cppcms::mount_point@{cppcms\-::mount\-\_\-point}}
+\subsubsection[{selection}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::mount\-\_\-point\-::selection (
+\begin{DoxyParamCaption}
+\item[{{\bf selection\-\_\-type}}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1mount__point_a4d439da184f7398735bf32aa5aab9f67}
+Get S\-C\-R\-I\-P\-T\-\_\-\-N\-A\-M\-E/\-P\-A\-T\-H\-\_\-\-I\-N\-F\-O selection 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/mount\-\_\-point.\-h\end{DoxyCompactItemize}

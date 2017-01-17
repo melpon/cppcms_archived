@@ -1,0 +1,140 @@
+\section{booster\-:\-:locale\-:\-:localization\-\_\-backend\-\_\-manager Class Reference}
+\label{classbooster_1_1locale_1_1localization__backend__manager}\index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+
+
+Localization backend manager is a class that holds various backend and allows creation of their combination or selection.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/localization\-\_\-backend.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf localization\-\_\-backend\-\_\-manager} ()
+\item 
+{\bf localization\-\_\-backend\-\_\-manager} ({\bf localization\-\_\-backend\-\_\-manager} const \&)
+\item 
+{\bf localization\-\_\-backend\-\_\-manager} \\*
+const \& {\bf operator=} ({\bf localization\-\_\-backend\-\_\-manager} const \&)
+\item 
+{\bf $\sim$localization\-\_\-backend\-\_\-manager} ()
+\item 
+std\-::auto\-\_\-ptr\\*
+$<$ {\bf localization\-\_\-backend} $>$ {\bf get} () const 
+\item 
+void {\bf add\-\_\-backend} (std\-::string const \&name, std\-::auto\-\_\-ptr$<$ {\bf localization\-\_\-backend} $>$ backend)
+\item 
+void {\bf remove\-\_\-all\-\_\-backends} ()
+\item 
+std\-::vector$<$ std\-::string $>$ {\bf get\-\_\-all\-\_\-backends} () const 
+\item 
+void {\bf select} (std\-::string const \&backend\-\_\-name, {\bf locale\-\_\-category\-\_\-type} category=all\-\_\-categories)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf localization\-\_\-backend\-\_\-manager} {\bf global} ({\bf localization\-\_\-backend\-\_\-manager} const \&)
+\item 
+static {\bf localization\-\_\-backend\-\_\-manager} {\bf global} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Localization backend manager is a class that holds various backend and allows creation of their combination or selection. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!localization\-\_\-backend\-\_\-manager@{localization\-\_\-backend\-\_\-manager}}
+\index{localization\-\_\-backend\-\_\-manager@{localization\-\_\-backend\-\_\-manager}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{localization\-\_\-backend\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::localization\-\_\-backend\-\_\-manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_ae23211b40400d309ec7363b146e74aa6}
+New empty \doxyref{localization\-\_\-backend\-\_\-manager}{p.}{classbooster_1_1locale_1_1localization__backend__manager} \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!localization\-\_\-backend\-\_\-manager@{localization\-\_\-backend\-\_\-manager}}
+\index{localization\-\_\-backend\-\_\-manager@{localization\-\_\-backend\-\_\-manager}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{localization\-\_\-backend\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::localization\-\_\-backend\-\_\-manager (
+\begin{DoxyParamCaption}
+\item[{{\bf localization\-\_\-backend\-\_\-manager} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_a95c5c9e349d57f3bed3911f47990f55e}
+Copy \doxyref{localization\-\_\-backend\-\_\-manager}{p.}{classbooster_1_1locale_1_1localization__backend__manager} \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!$\sim$localization\-\_\-backend\-\_\-manager@{$\sim$localization\-\_\-backend\-\_\-manager}}
+\index{$\sim$localization\-\_\-backend\-\_\-manager@{$\sim$localization\-\_\-backend\-\_\-manager}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{$\sim$localization\-\_\-backend\-\_\-manager}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::$\sim$localization\-\_\-backend\-\_\-manager (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_abfb0ec6ebec33c18e8f0fbb5c9cafe7a}
+Destructor 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!add\-\_\-backend@{add\-\_\-backend}}
+\index{add\-\_\-backend@{add\-\_\-backend}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{add\-\_\-backend}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::add\-\_\-backend (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::auto\-\_\-ptr$<$ {\bf localization\-\_\-backend} $>$}]{backend}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_a3ee8a95e87fb64d71fe963c1274430fe}
+Add new backend to the manager, each backend should be uniquely defined by its name.
+
+This library provides\-: \char`\"{}icu\char`\"{}, \char`\"{}posix\char`\"{}, \char`\"{}winapi\char`\"{} and \char`\"{}std\char`\"{} backends. \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!get@{get}}
+\index{get@{get}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}std\-::auto\-\_\-ptr$<${\bf localization\-\_\-backend}$>$ booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1localization__backend__manager_ac114839487bec3a0e53a28e424324423}
+Create new localization backend according to current settings. \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!get\-\_\-all\-\_\-backends@{get\-\_\-all\-\_\-backends}}
+\index{get\-\_\-all\-\_\-backends@{get\-\_\-all\-\_\-backends}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{get\-\_\-all\-\_\-backends}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$std\-::string$>$ booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::get\-\_\-all\-\_\-backends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1locale_1_1localization__backend__manager_a0d8b631fb9c9fc528b826a4cdee4f82d}
+Get list of all available backends \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!global@{global}}
+\index{global@{global}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{global}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf localization\-\_\-backend\-\_\-manager} booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::global (
+\begin{DoxyParamCaption}
+\item[{{\bf localization\-\_\-backend\-\_\-manager} const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1locale_1_1localization__backend__manager_a5b21d0ca70a83a7891d3bb0682b2023e}
+Set new global backend manager, the old one is returned.
+
+This function is thread safe \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!global@{global}}
+\index{global@{global}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{global}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf localization\-\_\-backend\-\_\-manager} booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::global (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classbooster_1_1locale_1_1localization__backend__manager_a57d6a12033684abbaad42b41bd82d57d}
+Get global backend manager
+
+This function is thread safe \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf localization\-\_\-backend\-\_\-manager} const\& booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf localization\-\_\-backend\-\_\-manager} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_a0f7ae3e7356b11b610187f70da418ceb}
+Assign \doxyref{localization\-\_\-backend\-\_\-manager}{p.}{classbooster_1_1locale_1_1localization__backend__manager} \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!remove\-\_\-all\-\_\-backends@{remove\-\_\-all\-\_\-backends}}
+\index{remove\-\_\-all\-\_\-backends@{remove\-\_\-all\-\_\-backends}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{remove\-\_\-all\-\_\-backends}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::remove\-\_\-all\-\_\-backends (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_a795112d0bbac49283b09dfc61792433f}
+Clear backend \index{booster\-::locale\-::localization\-\_\-backend\-\_\-manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}!select@{select}}
+\index{select@{select}!booster::locale::localization_backend_manager@{booster\-::locale\-::localization\-\_\-backend\-\_\-manager}}
+\subsubsection[{select}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::localization\-\_\-backend\-\_\-manager\-::select (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{backend\-\_\-name, }
+\item[{{\bf locale\-\_\-category\-\_\-type}}]{category = {\ttfamily all\-\_\-categories}}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1locale_1_1localization__backend__manager_a1a69294d0c138dcea0cd8f7281537982}
+Select specific backend by name for a category {\itshape category}. It allows combining different backends for user preferences. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/localization\-\_\-backend.\-h\end{DoxyCompactItemize}

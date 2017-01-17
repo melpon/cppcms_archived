@@ -1,0 +1,54 @@
+\section{cppcms\-:\-:json\-:\-:traits$<$ T $>$ Struct Template Reference}
+\label{structcppcms_1_1json_1_1traits}\index{cppcms\-::json\-::traits$<$ T $>$@{cppcms\-::json\-::traits$<$ T $>$}}
+
+
+The type traits schema for converting json values to/from orinary objects i.\-e. serialization from J\-S\-O\-N to C++ object.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/json.\-h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static T {\bf get} ({\bf value} const \&v)
+\item 
+static void {\bf set} ({\bf value} \&v, T const \&in)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$struct cppcms\-::json\-::traits$<$ T $>$}
+
+The type traits schema for converting json values to/from orinary objects i.\-e. serialization from J\-S\-O\-N to C++ object. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::json\-::traits@{cppcms\-::json\-::traits}!get@{get}}
+\index{get@{get}!cppcms::json::traits@{cppcms\-::json\-::traits}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static T {\bf cppcms\-::json\-::traits}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+\item[{{\bf value} const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{structcppcms_1_1json_1_1traits_addb350df14a3d88c7b369afbf374a9d1}
+Convert json value {\itshape v} to an object of type T and return it 
+
+Referenced by cppcms\-::json\-::value\-::get\-\_\-value().
+
+\index{cppcms\-::json\-::traits@{cppcms\-::json\-::traits}!set@{set}}
+\index{set@{set}!cppcms::json::traits@{cppcms\-::json\-::traits}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static void {\bf cppcms\-::json\-::traits}$<$ T $>$\-::set (
+\begin{DoxyParamCaption}
+\item[{{\bf value} \&}]{v, }
+\item[{T const \&}]{in}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{structcppcms_1_1json_1_1traits_a108986e2db89a3fee2d6247cc0bd3d80}
+Convert an object {\itshape in} to a \doxyref{json\-::value}{p.}{classcppcms_1_1json_1_1value} {\itshape v} 
+
+Referenced by cppcms\-::json\-::value\-::set\-\_\-value().
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/json.\-h\end{DoxyCompactItemize}

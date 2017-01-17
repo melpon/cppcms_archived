@@ -1,0 +1,183 @@
+\section{booster\-:\-:regex Class Reference}
+\label{classbooster_1_1regex}\index{booster\-::regex@{booster\-::regex}}
+
+
+This is a simple wrapper of P\-C\-R\-E library.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/perl\-\_\-regex.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef char {\bfseries value\-\_\-type}\label{classbooster_1_1regex_a12322d1aefdc3def36c0350a61a1b3ab}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf regex} ({\bf regex} const \&)
+\item 
+{\bf regex} const \& {\bf operator=} ({\bf regex} const \&)
+\item 
+{\bf regex} (std\-::string const \&pattern, int {\bf flags}={\bf normal})
+\item 
+void {\bf assign} (std\-::string const \&pattern, int {\bf flags}={\bf normal})
+\item 
+int {\bf flags} () const 
+\item 
+std\-::string {\bf str} () const 
+\item 
+unsigned {\bf mark\-\_\-count} () const 
+\item 
+bool {\bf match} (char const $\ast$begin, char const $\ast$end, int {\bf flags}=0) const 
+\item 
+bool {\bf match} (char const $\ast$begin, char const $\ast$end, std\-::vector$<$ std\-::pair$<$ int, int $>$ $>$ \&marks, int {\bf flags}=0) const 
+\item 
+bool {\bf search} (char const $\ast$begin, char const $\ast$end, int {\bf flags}=0) const 
+\item 
+bool {\bf search} (char const $\ast$begin, char const $\ast$end, std\-::vector$<$ std\-::pair$<$ int, int $>$ $>$ \&marks, int {\bf flags}=0) const 
+\item 
+bool {\bf empty} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bf perl} = 0\label{classbooster_1_1regex_a3ce1a94f765bab7e6fc73be28f4cf8b5}
+
+\begin{DoxyCompactList}\small\item\em Constant for expression type -\/ Perl Compatible Regex. \end{DoxyCompactList}\item 
+static const int {\bf normal} = 0\label{classbooster_1_1regex_a6f66b784a98e7aebe53dc9745085d7b6}
+
+\begin{DoxyCompactList}\small\item\em Constant for expression type -\/ synonym of perl, default. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a simple wrapper of P\-C\-R\-E library. 
+
+It is designed to be used with \doxyref{sub\-\_\-match}{p.}{classbooster_1_1sub__match}, \doxyref{match\-\_\-results}{p.}{classbooster_1_1match__results}, regex\-\_\-match and regex\-\_\-search template functions.
+
+It provides A\-P\-I similar to ones of Boost.\-Regex but it is also much simplified. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::regex@{booster\-::regex}!regex@{regex}}
+\index{regex@{regex}!booster::regex@{booster\-::regex}}
+\subsubsection[{regex}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::regex\-::regex (
+\begin{DoxyParamCaption}
+\item[{{\bf regex} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1regex_a17b2313caa9212c37d4228aacaa6ced8}
+Copy regular expression. Note. This is much more efficient then creating a new expression with same patter. \index{booster\-::regex@{booster\-::regex}!regex@{regex}}
+\index{regex@{regex}!booster::regex@{booster\-::regex}}
+\subsubsection[{regex}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::regex\-::regex (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{pattern, }
+\item[{int}]{flags = {\ttfamily {\bf normal}}}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1regex_a7e6af85360eada29c9058621a859edbd}
+Create regular expression using a {\itshape patter} and special {\itshape flags}. Note, at this point flags should be normal or perl only (which are equivalent). May be extended in future.
+
+Throws \doxyref{regex\-\_\-error}{p.}{classbooster_1_1regex__error} in case of invalid expression. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::regex@{booster\-::regex}!assign@{assign}}
+\index{assign@{assign}!booster::regex@{booster\-::regex}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::regex\-::assign (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{pattern, }
+\item[{int}]{flags = {\ttfamily {\bf normal}}}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1regex_a8a83c9a38940e84c7e65e620df931831}
+Assigns regular expression using a {\itshape patter} and special {\itshape flags}. Note, at this point flags should be normal or perl only (which are equivalent). May be extended in future.
+
+Throws \doxyref{regex\-\_\-error}{p.}{classbooster_1_1regex__error} in case of invalid expression. \index{booster\-::regex@{booster\-::regex}!empty@{empty}}
+\index{empty@{empty}!booster::regex@{booster\-::regex}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::regex\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_a93a5d8ed362713a9644317afc6579a8c}
+Returns true if the expression wasn't assigned. \index{booster\-::regex@{booster\-::regex}!flags@{flags}}
+\index{flags@{flags}!booster::regex@{booster\-::regex}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::regex\-::flags (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_a5ca2c641e0370d08103c1045121d487d}
+Get expression flags. Now always 0. \index{booster\-::regex@{booster\-::regex}!mark\-\_\-count@{mark\-\_\-count}}
+\index{mark\-\_\-count@{mark\-\_\-count}!booster::regex@{booster\-::regex}}
+\subsubsection[{mark\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}unsigned booster\-::regex\-::mark\-\_\-count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_a46d067d75f6596b2be4eb057fb51b8cc}
+Get number of captured subexpressions. \index{booster\-::regex@{booster\-::regex}!match@{match}}
+\index{match@{match}!booster::regex@{booster\-::regex}}
+\subsubsection[{match}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::regex\-::match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_ab7e7fec3c289c57b53caea3056a1f5d0}
+Match the expression in the text in range [begin,end) exactly. Parameter {\itshape flags} currently unused.
+
+Return true if matches \index{booster\-::regex@{booster\-::regex}!match@{match}}
+\index{match@{match}!booster::regex@{booster\-::regex}}
+\subsubsection[{match}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::regex\-::match (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\-::vector$<$ std\-::pair$<$ int, int $>$ $>$ \&}]{marks, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_a9bbf4f1d7e1eadbea04229ca45ea4da3}
+Match the expression in the text in range [begin,end) exactly. Parameter {\itshape flags} currently unused.
+
+Return true if matches, and stores captured sub-\/patterns in {\itshape marks}. Each pair represents a text in rage [begin+first,begin+second).
+
+If no such patter was captured, returns (-\/1,-\/1) as pair. \index{booster\-::regex@{booster\-::regex}!operator=@{operator=}}
+\index{operator=@{operator=}!booster::regex@{booster\-::regex}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf regex} const\& booster\-::regex\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf regex} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classbooster_1_1regex_a989d7d97f3d9eea5bd267daf078b1f43}
+Copy regular expression. Note. This is much more efficient then creating a new expression with same patter. \index{booster\-::regex@{booster\-::regex}!search@{search}}
+\index{search@{search}!booster::regex@{booster\-::regex}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::regex\-::search (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_a80c6864577dcbce67f27eacf08462e3e}
+Search the expression in the text in range [begin,end). Parameter {\itshape flags} currently unused.
+
+Return true if found. \index{booster\-::regex@{booster\-::regex}!search@{search}}
+\index{search@{search}!booster::regex@{booster\-::regex}}
+\subsubsection[{search}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::regex\-::search (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end, }
+\item[{std\-::vector$<$ std\-::pair$<$ int, int $>$ $>$ \&}]{marks, }
+\item[{int}]{flags = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_aee189eda3849e0bb7c70dbcea278ef00}
+Search the expression in the text in range [begin,end). Parameter {\itshape flags} currently unused.
+
+Return true if found, and stores captured sub-\/patterns in {\itshape marks}. Each pair represents a text in rage [begin+first,begin+second).
+
+If no such patter was captured, returns (-\/1,-\/1) as pair. \index{booster\-::regex@{booster\-::regex}!str@{str}}
+\index{str@{str}!booster::regex@{booster\-::regex}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::regex\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classbooster_1_1regex_aeba45c4391e08e677b0972eb8a4e8f65}
+Get the string that the regular expression was created with. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/perl\-\_\-regex.\-h\end{DoxyCompactItemize}

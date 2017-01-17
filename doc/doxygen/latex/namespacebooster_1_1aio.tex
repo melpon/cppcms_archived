@@ -1,0 +1,270 @@
+\section{booster\-:\-:aio Namespace Reference}
+\label{namespacebooster_1_1aio}\index{booster\-::aio@{booster\-::aio}}
+
+
+This namespace povides and A\-P\-I to asynchronous sockets A\-P\-I, asynchronous timer and event loop handing.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf aio\-\_\-error}
+\begin{DoxyCompactList}\small\item\em This namespace includes Booster.\-Aio specific error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf acceptor}
+\begin{DoxyCompactList}\small\item\em this class represents a socket that accepts incoming connections \end{DoxyCompactList}\item 
+class {\bf basic\-\_\-io\-\_\-device}
+\begin{DoxyCompactList}\small\item\em This is a basic object that allows execution of asynchronous operations. \end{DoxyCompactList}\item 
+class {\bf basic\-\_\-socket}
+\begin{DoxyCompactList}\small\item\em This class represents a basic Socket object. \end{DoxyCompactList}\item 
+class {\bf buffer\-\_\-impl}
+\begin{DoxyCompactList}\small\item\em This is a base class that represents a buffer -\/ a set of contiguous chunks of memory that can be transfered over network. \end{DoxyCompactList}\item 
+class {\bf mutable\-\_\-buffer}
+\begin{DoxyCompactList}\small\item\em A mutable buffer -\/ a buffer for read operations. \end{DoxyCompactList}\item 
+class {\bf const\-\_\-buffer}
+\begin{DoxyCompactList}\small\item\em An immutable buffer -\/ buffer for write operations. \end{DoxyCompactList}\item 
+class {\bf deadline\-\_\-timer}
+\begin{DoxyCompactList}\small\item\em A timer object. \end{DoxyCompactList}\item 
+class {\bf endpoint}
+\begin{DoxyCompactList}\small\item\em this class represents the connection endpoint, that is generally sockaddr structure in Berkeley sockets A\-P\-I. \end{DoxyCompactList}\item 
+class {\bf io\-\_\-service}
+\begin{DoxyCompactList}\small\item\em this is the central event loop that dispatches all requests. \end{DoxyCompactList}\item 
+class {\bf reactor}
+\begin{DoxyCompactList}\small\item\em This class is an abstraction of platform dependent polling A\-P\-I. \end{DoxyCompactList}\item 
+class {\bf stream\-\_\-socket}
+\begin{DoxyCompactList}\small\item\em This object represents a stream socket\-: T\-C\-P/\-I\-P I\-Pv4 or I\-Pv6 or Unix domain stream socket. \end{DoxyCompactList}\item 
+struct {\bf io\-\_\-events}
+\begin{DoxyCompactList}\small\item\em the struct that collects multiple event types for polling. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unspecified {\bf native\-\_\-type}
+\item 
+typedef {\bf callback}$<$ void({\bf system\-::error\-\_\-code} \\*
+const \&)$>$ {\bf event\-\_\-handler}
+\item 
+typedef {\bf callback}$<$ void()$>$ {\bf handler}
+\item 
+typedef {\bf callback}$<$ void({\bf system\-::error\-\_\-code} \\*
+const \&, size\-\_\-t)$>$ {\bf io\-\_\-handler}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf family\-\_\-type} \{ {\bfseries pf\-\_\-unix}, 
+{\bfseries pf\-\_\-inet}, 
+{\bfseries pf\-\_\-inet6}
+ \}
+\item 
+enum {\bf socket\-\_\-type} \{ {\bfseries sock\-\_\-stream}, 
+{\bfseries sock\-\_\-datagram}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf const\-\_\-buffer} {\bf buffer} (void const $\ast$p, size\-\_\-t n)
+\item 
+{\bf mutable\-\_\-buffer} {\bf buffer} (void $\ast$p, size\-\_\-t n)
+\item 
+{\bf const\-\_\-buffer} {\bf buffer} (std\-::vector$<$ char $>$ const \&d)
+\item 
+{\bf mutable\-\_\-buffer} {\bf buffer} (std\-::vector$<$ char $>$ \&d)
+\item 
+{\bf const\-\_\-buffer} {\bf buffer} (std\-::string const \&d)
+\item 
+{\bf const\-\_\-buffer} {\bf operator+} ({\bf const\-\_\-buffer} const \&buf, size\-\_\-t n)
+\item 
+{\bf mutable\-\_\-buffer} {\bf operator+} ({\bf mutable\-\_\-buffer} const \&buf, size\-\_\-t n)
+\item 
+{\bf const\-\_\-buffer} \& {\bf operator+=} ({\bf const\-\_\-buffer} \&buf, size\-\_\-t n)
+\item 
+{\bf mutable\-\_\-buffer} \& {\bf operator+=} ({\bf mutable\-\_\-buffer} \&buf, size\-\_\-t n)
+\item 
+{\bf const\-\_\-buffer} {\bf operator+} ({\bf const\-\_\-buffer} const \&b1, {\bf const\-\_\-buffer} const \&b2)
+\item 
+{\bf const\-\_\-buffer} \& {\bf operator+=} ({\bf const\-\_\-buffer} \&b1, {\bf const\-\_\-buffer} const \&b2)
+\item 
+{\bf mutable\-\_\-buffer} {\bf operator+} ({\bf mutable\-\_\-buffer} const \&b1, {\bf mutable\-\_\-buffer} const \&b2)
+\item 
+{\bf mutable\-\_\-buffer} \& {\bf operator+=} ({\bf mutable\-\_\-buffer} \&b1, {\bf mutable\-\_\-buffer} const \&b2)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I void {\bf socket\-\_\-pair} ({\bf stream\-\_\-socket} \&s1, {\bf stream\-\_\-socket} \&s2, {\bf system\-::error\-\_\-code} \&e)
+\item 
+B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I void {\bf socket\-\_\-pair} ({\bf stream\-\_\-socket} \&s1, {\bf stream\-\_\-socket} \&s2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace povides and A\-P\-I to asynchronous sockets A\-P\-I, asynchronous timer and event loop handing. 
+
+\subsection{Typedef Documentation}
+\index{booster\-::aio@{booster\-::aio}!event\-\_\-handler@{event\-\_\-handler}}
+\index{event\-\_\-handler@{event\-\_\-handler}!booster::aio@{booster\-::aio}}
+\subsubsection[{event\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf callback}$<$void({\bf system\-::error\-\_\-code} const \&)$>$ {\bf booster\-::aio\-::event\-\_\-handler}}\label{namespacebooster_1_1aio_a6f0da1262eee438aff012673690a0930}
+Completion callback -\/ the callback that receives an operation completion result -\/ error\-\_\-code. \index{booster\-::aio@{booster\-::aio}!handler@{handler}}
+\index{handler@{handler}!booster::aio@{booster\-::aio}}
+\subsubsection[{handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf callback}$<$void()$>$ {\bf booster\-::aio\-::handler}}\label{namespacebooster_1_1aio_ab53e9a02670be9c7c93a1b54cec00c97}
+General job handler -\/ the operation that should be executed \index{booster\-::aio@{booster\-::aio}!io\-\_\-handler@{io\-\_\-handler}}
+\index{io\-\_\-handler@{io\-\_\-handler}!booster::aio@{booster\-::aio}}
+\subsubsection[{io\-\_\-handler}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf callback}$<$void({\bf system\-::error\-\_\-code} const \&,size\-\_\-t)$>$ {\bf booster\-::aio\-::io\-\_\-handler}}\label{namespacebooster_1_1aio_ade0aeea672877a3dde3b8ce4b9ac34e5}
+I\-O completion callback -\/ the callback that receives an operation completion result -\/ error\-\_\-code and the amount of bytes transferred \index{booster\-::aio@{booster\-::aio}!native\-\_\-type@{native\-\_\-type}}
+\index{native\-\_\-type@{native\-\_\-type}!booster::aio@{booster\-::aio}}
+\subsubsection[{native\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}typedef unspecified {\bf booster\-::aio\-::native\-\_\-type}}\label{namespacebooster_1_1aio_ae7a1db68591232cb0423fbdf7924a204}
+Native socket type. int on P\-O\-S\-I\-X platforms and unsigned on Windows. 
+
+\subsection{Enumeration Type Documentation}
+\index{booster\-::aio@{booster\-::aio}!family\-\_\-type@{family\-\_\-type}}
+\index{family\-\_\-type@{family\-\_\-type}!booster::aio@{booster\-::aio}}
+\subsubsection[{family\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::aio\-::family\-\_\-type}}\label{namespacebooster_1_1aio_a272e1f9b8b2b4e0cf3289749cd51baaa}
+Socket family type \index{booster\-::aio@{booster\-::aio}!socket\-\_\-type@{socket\-\_\-type}}
+\index{socket\-\_\-type@{socket\-\_\-type}!booster::aio@{booster\-::aio}}
+\subsubsection[{socket\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::aio\-::socket\-\_\-type}}\label{namespacebooster_1_1aio_a0416bbe59893fe8f42b1a12fad7f6e10}
+Socket protocol type 
+
+\subsection{Function Documentation}
+\index{booster\-::aio@{booster\-::aio}!buffer@{buffer}}
+\index{buffer@{buffer}!booster::aio@{booster\-::aio}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer} booster\-::aio\-::buffer (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{p, }
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_a8709496809748da12acf960948652ebb}
+Create a buffer from P\-O\-D object of size {\itshape n} 
+
+References booster\-::aio\-::buffer\-\_\-impl$<$ Pointer $>$\-::add().
+
+
+
+Referenced by buffer().
+
+\index{booster\-::aio@{booster\-::aio}!buffer@{buffer}}
+\index{buffer@{buffer}!booster::aio@{booster\-::aio}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mutable\-\_\-buffer} booster\-::aio\-::buffer (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{p, }
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_acd3ab70f34520ec4eeb131639ef0b746}
+Create a buffer from P\-O\-D object of size {\itshape n} 
+
+References booster\-::aio\-::buffer\-\_\-impl$<$ Pointer $>$\-::add().
+
+\index{booster\-::aio@{booster\-::aio}!buffer@{buffer}}
+\index{buffer@{buffer}!booster::aio@{booster\-::aio}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer} booster\-::aio\-::buffer (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ char $>$ const \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_abf99cbd82d159d955d5a37c48039d292}
+Create a buffer from std\-::vector$<$char$>$ 
+
+References buffer().
+
+\index{booster\-::aio@{booster\-::aio}!buffer@{buffer}}
+\index{buffer@{buffer}!booster::aio@{booster\-::aio}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mutable\-\_\-buffer} booster\-::aio\-::buffer (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ char $>$ \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_abca0c99a6f5080071ac9c9a4188b9ad3}
+Create a buffer from std\-::vector$<$char$>$ 
+
+References buffer().
+
+\index{booster\-::aio@{booster\-::aio}!buffer@{buffer}}
+\index{buffer@{buffer}!booster::aio@{booster\-::aio}}
+\subsubsection[{buffer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer} booster\-::aio\-::buffer (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{d}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_af4fd416237768c6e2e320b7ada6b4732}
+Create a buffer from std\-::string 
+
+References buffer().
+
+\index{booster\-::aio@{booster\-::aio}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer} booster\-::aio\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const\-\_\-buffer const \&}]{buf, }
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_a1bda2efb9d7167f1aca2fa06612adb87}
+Create a new buffer by \char`\"{}consuming\char`\"{} {\itshape n} bytes. For example if the buffer has 100 bytes then adding 50 to it would create a buffer with remaining 50 bytes \index{booster\-::aio@{booster\-::aio}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mutable\-\_\-buffer} booster\-::aio\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{mutable\-\_\-buffer const \&}]{buf, }
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_add7a9b112a6eb9a9214b81a0352773cf}
+Create a new buffer by \char`\"{}consuming\char`\"{} {\itshape n} bytes. For example if the buffer has 100 bytes then adding 50 to it would create a buffer with remaining 50 bytes \index{booster\-::aio@{booster\-::aio}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer} booster\-::aio\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{const\-\_\-buffer const \&}]{b1, }
+\item[{const\-\_\-buffer const \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_a69b4fe0c3c90776b1f78e64fddcaf993}
+Append two buffers \index{booster\-::aio@{booster\-::aio}!operator+@{operator+}}
+\index{operator+@{operator+}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mutable\-\_\-buffer} booster\-::aio\-::operator+ (
+\begin{DoxyParamCaption}
+\item[{mutable\-\_\-buffer const \&}]{b1, }
+\item[{mutable\-\_\-buffer const \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_a12f66b4c6c2fe0b9e87f78acef7d74f0}
+Append two buffers \index{booster\-::aio@{booster\-::aio}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer}\& booster\-::aio\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const\-\_\-buffer \&}]{buf, }
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_aafb4db2691cce1b26ae0048cf2f403c4}
+Consume {\itshape n} bytes from the buffer. \index{booster\-::aio@{booster\-::aio}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mutable\-\_\-buffer}\& booster\-::aio\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{mutable\-\_\-buffer \&}]{buf, }
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_a78b5c8fccc73b0204dc5310e99fe6621}
+Consume {\itshape n} bytes from the buffer. \index{booster\-::aio@{booster\-::aio}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf const\-\_\-buffer}\& booster\-::aio\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{const\-\_\-buffer \&}]{b1, }
+\item[{const\-\_\-buffer const \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_ac8ecd08f2407553936f8aa85b76e5e97}
+Append one buffer to another \index{booster\-::aio@{booster\-::aio}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!booster::aio@{booster\-::aio}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf mutable\-\_\-buffer}\& booster\-::aio\-::operator+= (
+\begin{DoxyParamCaption}
+\item[{mutable\-\_\-buffer \&}]{b1, }
+\item[{mutable\-\_\-buffer const \&}]{b2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{namespacebooster_1_1aio_adccc2822fb875403cd9f008a083f9716}
+Append one buffer to another \index{booster\-::aio@{booster\-::aio}!socket\-\_\-pair@{socket\-\_\-pair}}
+\index{socket\-\_\-pair@{socket\-\_\-pair}!booster::aio@{booster\-::aio}}
+\subsubsection[{socket\-\_\-pair}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I void booster\-::aio\-::socket\-\_\-pair (
+\begin{DoxyParamCaption}
+\item[{stream\-\_\-socket \&}]{s1, }
+\item[{stream\-\_\-socket \&}]{s2, }
+\item[{system\-::error\-\_\-code \&}]{e}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1aio_ab0f739e8f35ccc4404a047402038ea78}
+Create a connected pair of stream sockets, under U\-N\-I\-X creates unix-\/domain-\/sockets under windows A\-F\-\_\-\-I\-N\-E\-T sockets \index{booster\-::aio@{booster\-::aio}!socket\-\_\-pair@{socket\-\_\-pair}}
+\index{socket\-\_\-pair@{socket\-\_\-pair}!booster::aio@{booster\-::aio}}
+\subsubsection[{socket\-\_\-pair}]{\setlength{\rightskip}{0pt plus 5cm}B\-O\-O\-S\-T\-E\-R\-\_\-\-A\-P\-I void booster\-::aio\-::socket\-\_\-pair (
+\begin{DoxyParamCaption}
+\item[{stream\-\_\-socket \&}]{s1, }
+\item[{stream\-\_\-socket \&}]{s2}
+\end{DoxyParamCaption}
+)}\label{namespacebooster_1_1aio_a7ace35801747751d7acda2701a3da0a1}
+Create a connected pair of stream sockets, under U\-N\-I\-X creates unix-\/domain-\/sockets under windows A\-F\-\_\-\-I\-N\-E\-T sockets, throws booster\-::system\-\_\-error on error 

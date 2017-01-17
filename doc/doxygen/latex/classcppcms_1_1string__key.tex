@@ -1,0 +1,391 @@
+\section{cppcms\-:\-:string\-\_\-key Class Reference}
+\label{classcppcms_1_1string__key}\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}}
+
+
+This is a special object that may hold an std\-::string or alternatively reference to external (unowned) chunk of text.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/string\-\_\-key.\-h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef char const $\ast$ {\bf const\-\_\-iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf string\-\_\-key} ()
+\item 
+{\bf string\-\_\-key} (char const $\ast$key)
+\item 
+{\bf string\-\_\-key} (std\-::string const \&key)
+\item 
+size\-\_\-t {\bf size} () const 
+\item 
+size\-\_\-t {\bf length} () const 
+\item 
+void {\bf clear} ()
+\item 
+bool {\bf empty} () const 
+\item 
+size\-\_\-t {\bf find} (char c, size\-\_\-t pos=0) const 
+\item 
+{\bf string\-\_\-key} {\bf substr} (size\-\_\-t pos=0, size\-\_\-t n={\bf npos}) const 
+\item 
+{\bf string\-\_\-key} {\bf unowned\-\_\-substr} (size\-\_\-t pos=0, size\-\_\-t n={\bf npos}) const 
+\item 
+char const \& {\bf operator[$\,$]} (size\-\_\-t n) const 
+\item 
+char const \& {\bf at} (size\-\_\-t n) const 
+\item 
+char const $\ast$ {\bf begin} () const 
+\item 
+char const $\ast$ {\bf end} () const 
+\item 
+bool {\bf operator$<$} ({\bf string\-\_\-key} const \&other) const 
+\item 
+bool {\bf operator$>$} ({\bf string\-\_\-key} const \&other) const 
+\item 
+bool {\bf operator$>$=} ({\bf string\-\_\-key} const \&other) const 
+\item 
+bool {\bf operator$<$=} ({\bf string\-\_\-key} const \&other) const 
+\item 
+bool {\bf operator==} ({\bf string\-\_\-key} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf string\-\_\-key} const \&other) const 
+\item 
+char const $\ast$ {\bf data} () const 
+\item 
+std\-::string {\bf str} () const 
+\item 
+{\bf operator std\-::string} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf string\-\_\-key} {\bf unowned} (std\-::string const \&v)
+\item 
+static {\bf string\-\_\-key} {\bf unowned} (char const $\ast${\bf str})
+\item 
+static {\bf string\-\_\-key} {\bf unowned} (char const $\ast${\bf begin}, char const $\ast${\bf end})
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\-\_\-t {\bf npos} = -\/1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a special object that may hold an std\-::string or alternatively reference to external (unowned) chunk of text. 
+
+It is designed to be used for efficiency and reduce amount of memory allocations and copies.
+
+It has interface that is roughly similar to the interface of std\-::string, but it does not provide a members that can mutate it or provide a N\-U\-L terminated string c\-\_\-str(). 
+
+\subsection{Member Typedef Documentation}
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!const\-\_\-iterator@{const\-\_\-iterator}}
+\index{const\-\_\-iterator@{const\-\_\-iterator}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{const\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}typedef char const$\ast$ {\bf cppcms\-::string\-\_\-key\-::const\-\_\-iterator}}\label{classcppcms_1_1string__key_ac60506231d19bbe6abae39c2db86910e}
+Iterator type 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!string\-\_\-key@{string\-\_\-key}}
+\index{string\-\_\-key@{string\-\_\-key}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{string\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::string\-\_\-key\-::string\-\_\-key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a10e6c1fd10e5754e796721a5d71b51f1}
+Default constructor -\/ empty key 
+
+Referenced by substr(), unowned(), and unowned\-\_\-substr().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!string\-\_\-key@{string\-\_\-key}}
+\index{string\-\_\-key@{string\-\_\-key}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{string\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::string\-\_\-key\-::string\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_acbb8116418aad5e8546bcb83b603a537}
+Create a new string copying the {\itshape key} \index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!string\-\_\-key@{string\-\_\-key}}
+\index{string\-\_\-key@{string\-\_\-key}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{string\-\_\-key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::string\-\_\-key\-::string\-\_\-key (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_abd4d92cbb40510cf79e92a158848e5a9}
+Create a new string copying the {\itshape key} 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!at@{at}}
+\index{at@{at}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{at}]{\setlength{\rightskip}{0pt plus 5cm}char const\& cppcms\-::string\-\_\-key\-::at (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a955c4095427efaef348ce7f2e5669cab}
+Get a character at position {\itshape n}, if {\itshape n} is not valid position, throws std\-::out\-\_\-of\-\_\-range exception 
+
+References begin(), and size().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!begin@{begin}}
+\index{begin@{begin}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\-::string\-\_\-key\-::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a231c297c98dcac5214b04e565ce3cd78}
+Get a pointer to the first character in the string 
+
+Referenced by at(), data(), empty(), find(), operator$<$(), operator==(), operator[$\,$](), size(), substr(), and unowned\-\_\-substr().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!clear@{clear}}
+\index{clear@{clear}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::string\-\_\-key\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a675d37bc701f9055a57b82a648c37363}
+Clear the string \index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!data@{data}}
+\index{data@{data}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\-::string\-\_\-key\-::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_aaa00209d111b2f72db905c8f7c55dd42}
+Get the pointer to the first character in the string. Note it should not be N\-U\-L terminated 
+
+References begin().
+
+
+
+Referenced by cppcms\-::operator$<$$<$().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!empty@{empty}}
+\index{empty@{empty}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a66e9ccdb3fa4eab2f939aff5facc347d}
+Check if the string is empty 
+
+References begin(), and end().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!end@{end}}
+\index{end@{end}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\-::string\-\_\-key\-::end (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a66de1e8ed7f91d7c2186746932a4fc5b}
+Get a pointer to the one past last character in the string 
+
+Referenced by empty(), operator$<$(), operator==(), size(), substr(), unowned(), and unowned\-\_\-substr().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!find@{find}}
+\index{find@{find}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{find}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cppcms\-::string\-\_\-key\-::find (
+\begin{DoxyParamCaption}
+\item[{char}]{c, }
+\item[{size\-\_\-t}]{pos = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a6a87a2f39e6fe45e7a99341ba8e2e140}
+Find first occurrence of a character {\ttfamily in} the string starting from position {\itshape pos}. Returns npos if not character found. 
+
+References begin(), npos, and size().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!length@{length}}
+\index{length@{length}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{length}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cppcms\-::string\-\_\-key\-::length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a19fbfd9c56e221ac9834231385cfb6f2}
+Same as \doxyref{size()}{p.}{classcppcms_1_1string__key_a51f2e1ad5238ca8b77028c791f4a482c} 
+
+References size().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator std\-::string@{operator std\-::string}}
+\index{operator std\-::string@{operator std\-::string}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator std\-::string}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::string\-\_\-key\-::operator std\-::string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a891dde7ed7adcdc07692740d515db584}
+Convert the key to the std\-::string 
+
+References str().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-key} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_ab0d08eab700784696b473c5394c205ef}
+Compare two strings \index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-key} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a7a6520c3dbd171f14867a894af9daa57}
+Compare two strings 
+
+References begin(), and end().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::operator$<$= (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-key} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a7d8bef929b51085462d0dc228934eca0}
+Compare two strings \index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator==@{operator==}}
+\index{operator==@{operator==}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-key} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_ac9bb623c4095da819fc77ace7552f986}
+Compare two strings 
+
+References begin(), and end().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::operator$>$ (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-key} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a12f39e76ba22a4aced9864574a1d4186}
+Compare two strings \index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::string\-\_\-key\-::operator$>$= (
+\begin{DoxyParamCaption}
+\item[{{\bf string\-\_\-key} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a1df477a94ff7e3e2ec0c402e583b2dac}
+Compare two strings \index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}char const\& cppcms\-::string\-\_\-key\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_ae321cd9d09ddeeff5ddec08bcd595dc3}
+Get a character at position {\itshape n} 
+
+References begin().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!size@{size}}
+\index{size@{size}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cppcms\-::string\-\_\-key\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a51f2e1ad5238ca8b77028c791f4a482c}
+String size in bytes 
+
+References begin(), and end().
+
+
+
+Referenced by at(), find(), length(), cppcms\-::operator$<$$<$(), and unowned\-\_\-substr().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!str@{str}}
+\index{str@{str}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{str}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string cppcms\-::string\-\_\-key\-::str (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_ab23bfb946ce82af1f78dd174ab5b24aa}
+Create std\-::string from the key 
+
+Referenced by operator std\-::string(), and unowned().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!substr@{substr}}
+\index{substr@{substr}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{substr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string\-\_\-key} cppcms\-::string\-\_\-key\-::substr (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{pos = {\ttfamily 0}, }
+\item[{size\-\_\-t}]{n = {\ttfamily {\bf npos}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a6904d5382abfee49dfb688f2409fdb18}
+Create a substring from this string starting from character {\itshape pos} of size at most {\itshape n} 
+
+References begin(), end(), string\-\_\-key(), and unowned\-\_\-substr().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!unowned@{unowned}}
+\index{unowned@{unowned}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{unowned}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf string\-\_\-key} cppcms\-::string\-\_\-key\-::unowned (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{v}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classcppcms_1_1string__key_ab41db9f5aaf593fc01ccc68ad372813d}
+Create a string from {\itshape v} without copying the memory. {\itshape v} should remain valid as long as this object is used 
+
+References string\-\_\-key().
+
+
+
+Referenced by cppcms\-::operator!=(), cppcms\-::operator$<$(), cppcms\-::operator$<$=(), cppcms\-::operator==(), cppcms\-::operator$>$(), and cppcms\-::operator$>$=().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!unowned@{unowned}}
+\index{unowned@{unowned}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{unowned}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf string\-\_\-key} cppcms\-::string\-\_\-key\-::unowned (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classcppcms_1_1string__key_a101ce47f27ce359be8491775046d6f49}
+Create a string from {\itshape str} without copying the memory. {\itshape str} should remain valid as long as this object is used 
+
+References end(), str(), and string\-\_\-key().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!unowned@{unowned}}
+\index{unowned@{unowned}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{unowned}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf string\-\_\-key} cppcms\-::string\-\_\-key\-::unowned (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{begin, }
+\item[{char const $\ast$}]{end}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}\label{classcppcms_1_1string__key_a069b613a4af7eab3f9a4dba6116f154e}
+Create a string from {\itshape characters} at rang [begin,end) without copying the memory. The range should remain valid as long as this object is used 
+
+References string\-\_\-key().
+
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!unowned\-\_\-substr@{unowned\-\_\-substr}}
+\index{unowned\-\_\-substr@{unowned\-\_\-substr}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{unowned\-\_\-substr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf string\-\_\-key} cppcms\-::string\-\_\-key\-::unowned\-\_\-substr (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{pos = {\ttfamily 0}, }
+\item[{size\-\_\-t}]{n = {\ttfamily {\bf npos}}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1string__key_a4e487e2a28af556c2e9d168bd82907f0}
+Create a substring from this string starting from character {\itshape pos} of size at most {\itshape n} such that the memory is not copied but only reference by the created substring 
+
+References begin(), end(), size(), and string\-\_\-key().
+
+
+
+Referenced by substr().
+
+
+
+\subsection{Member Data Documentation}
+\index{cppcms\-::string\-\_\-key@{cppcms\-::string\-\_\-key}!npos@{npos}}
+\index{npos@{npos}!cppcms::string_key@{cppcms\-::string\-\_\-key}}
+\subsubsection[{npos}]{\setlength{\rightskip}{0pt plus 5cm}const size\-\_\-t cppcms\-::string\-\_\-key\-::npos = -\/1\hspace{0.3cm}{\ttfamily [static]}}\label{classcppcms_1_1string__key_af3a1d4bce554ed4118ea642998cf3083}
+The last position of the character in the string 
+
+Referenced by find().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/string\-\_\-key.\-h\end{DoxyCompactItemize}

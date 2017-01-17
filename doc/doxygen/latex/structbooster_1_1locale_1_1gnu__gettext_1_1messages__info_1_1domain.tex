@@ -1,0 +1,80 @@
+\section{booster\-:\-:locale\-:\-:gnu\-\_\-gettext\-:\-:messages\-\_\-info\-:\-:domain Struct Reference}
+\label{structbooster_1_1locale_1_1gnu__gettext_1_1messages__info_1_1domain}\index{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}}
+
+
+This type represents G\-N\-U Gettext domain name for the messages.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/gnu\-\_\-gettext.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf domain} (std\-::string const \&n)
+\item 
+bool {\bf operator==} ({\bf domain} const \&other) const 
+\item 
+bool {\bf operator!=} ({\bf domain} const \&other) const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\-::string {\bf name}\label{structbooster_1_1locale_1_1gnu__gettext_1_1messages__info_1_1domain_ab32a01da627a4a09b1b202d3b1300445}
+
+\begin{DoxyCompactList}\small\item\em The name of the domain. \end{DoxyCompactList}\item 
+std\-::string {\bf encoding}\label{structbooster_1_1locale_1_1gnu__gettext_1_1messages__info_1_1domain_abd80ccbde7068ceffcfc7a5864b1a744}
+
+\begin{DoxyCompactList}\small\item\em The character encoding for the domain. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This type represents G\-N\-U Gettext domain name for the messages. 
+
+It consists of two parameters\-:
+
+
+\begin{DoxyItemize}
+\item name -\/ the name of the domain -\/ used for opening the file name
+\item encoding -\/ the encoding of the keys in the sources, default -\/ U\-T\-F-\/8 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}!domain@{domain}}
+\index{domain@{domain}!booster::locale::gnu_gettext::messages_info::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}}
+\subsubsection[{domain}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain\-::domain (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1gnu__gettext_1_1messages__info_1_1domain_a370acf3762cf19dc9546b87486b2e53e}
+Create a domain object from the name that can hold an encoding after symbol \char`\"{}/\char`\"{} such that if n is \char`\"{}hello/cp1255\char`\"{} then the name would be \char`\"{}hello\char`\"{} and \char`\"{}encoding\char`\"{} would be \char`\"{}cp1255\char`\"{} and if n is \char`\"{}hello\char`\"{} then the name would be the same but encoding would be \char`\"{}\-U\-T\-F-\/8\char`\"{} 
+
+References encoding, and name.
+
+
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!booster::locale::gnu_gettext::messages_info::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain\-::operator!= (
+\begin{DoxyParamCaption}
+\item[{{\bf domain} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1gnu__gettext_1_1messages__info_1_1domain_afe58497d272f37848eb5f186e1ab1ab9}
+Check whether two objects are distinct, only names are compared, encoding is ignored \index{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}!operator==@{operator==}}
+\index{operator==@{operator==}!booster::locale::gnu_gettext::messages_info::domain@{booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool booster\-::locale\-::gnu\-\_\-gettext\-::messages\-\_\-info\-::domain\-::operator== (
+\begin{DoxyParamCaption}
+\item[{{\bf domain} const \&}]{other}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{structbooster_1_1locale_1_1gnu__gettext_1_1messages__info_1_1domain_a7f9f0c06978b4ac52dc12e6119d16eaa}
+Check whether two objects are equivalent, only names are compared, encoding is ignored 
+
+References name.
+
+
+
+The documentation for this struct was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/gnu\-\_\-gettext.\-h\end{DoxyCompactItemize}

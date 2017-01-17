@@ -1,0 +1,338 @@
+\section{cppcms\-:\-:cache\-\_\-interface Class Reference}
+\label{classcppcms_1_1cache__interface}\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}}
+
+
+This class is the major gateway of the application to Cpp\-C\-M\-S caching abilities. Any access too cache would be done via this class.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/cache\-\_\-interface.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:cache\-\_\-interface\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1cache__interface}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf rise} (std\-::string const \&trigger)
+\item 
+void {\bf add\-\_\-trigger} (std\-::string const \&trigger)
+\item 
+void {\bf clear} ()
+\item 
+void {\bf reset} ()
+\item 
+bool {\bf stats} (unsigned \&keys, unsigned \&triggers)
+\item 
+bool {\bf has\-\_\-cache} ()
+\item 
+bool {\bf nocache} ()
+\item 
+bool {\bf fetch\-\_\-page} (std\-::string const \&key)
+\item 
+void {\bf store\-\_\-page} (std\-::string const \&key, int timeout=-\/1)
+\item 
+bool {\bf fetch\-\_\-frame} (std\-::string const \&key, std\-::string \&result, bool notriggers=false)
+\item 
+void {\bf store\-\_\-frame} (std\-::string const \&key, std\-::string const \&frame, std\-::set$<$ std\-::string $>$ const \&triggers=std\-::set$<$ std\-::string $>$(), int timeout=-\/1, bool notriggers=false)
+\item 
+void {\bf store\-\_\-frame} (std\-::string const \&key, std\-::string const \&frame, int timeout, bool notriggers=false)
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\bool {\bf fetch\-\_\-data} (std\-::string const \&key, Serializable \&data, bool notriggers=false)
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\void {\bf store\-\_\-data} (std\-::string const \&key, Serializable const \&data, std\-::set$<$ std\-::string $>$ const \&triggers=std\-::set$<$ std\-::string $>$(), int timeout=-\/1, bool notriggers=false)
+\item 
+{\footnotesize template$<$typename Serializable $>$ }\\void {\bf store\-\_\-data} (std\-::string const \&key, Serializable const \&data, int timeout, bool notriggers=false)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries triggers\-\_\-recorder}\label{classcppcms_1_1cache__interface_a2b9a3918416586289327d30cb43172df}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is the major gateway of the application to Cpp\-C\-M\-S caching abilities. Any access too cache would be done via this class. 
+
+Cpp\-C\-M\-S cache model supports following concepts\-:
+
+
+\begin{DoxyItemize}
+\item {\itshape key} the unique identification of the object in cache
+\item {\itshape timeout} -- the maximal time the cached object remains valid
+\item {\itshape trigger} -- special key that allows fast invalidation of multiple cache objects.
+\end{DoxyItemize}
+
+The first two concepts are quite popular and available in most of Web framework, but the last one is very unique to Cpp\-C\-M\-S that gives fine grained cache invalidation tools.
+
+Each time the page is created it automatically receives some triggers during the process of creation. When some object is fetched from the cache or stored into it, it adds triggers to the major page. This provides semi-\/automatic triggers management.
+
+For example\-:
+
+
+\begin{DoxyCode}
+ \textcolor{keywordflow}{if}(cache().fetch_page(\textcolor{stringliteral}{"main\_page"}))
+   \textcolor{keywordflow}{return};
+\textcolor{keywordflow}{if}(!cache().fetch_frame(\textcolor{stringliteral}{"article\_"}+\textcolor{keywordtype}{id},article)) \{
+   article=generate\_article\_from\_data\_base(\textcolor{keywordtype}{id});
+   cache.store\_frame(\textcolor{stringliteral}{"article\_"}+\textcolor{keywordtype}{id},article);
+ \}
+ \textcolor{comment}{// Generate some HTML here using article }
+ cache.store\_page(\textcolor{stringliteral}{"main"});
+\end{DoxyCode}
+
+
+Let's assume that \char`\"{}main\-\_\-page\char`\"{} wasn't found in cache, then we try to fetch a frame that holds only a single article \char`\"{}article\-\_\-123\char`\"{}, if it is fetched, the result is stored in a string article and the trigger \char`\"{}article\-\_\-123\char`\"{} is automatically added to set of triggers that \char`\"{}main\-\_\-page\char`\"{} depends on them.
+
+When the article updated, and \char`\"{}article\-\_\-123\char`\"{} key is risen, it would automatically invalidate \char`\"{}main\-\_\-page\char`\"{} as well.
+
+Cpp\-C\-M\-S \doxyref{cache\-\_\-interface}{p.}{classcppcms_1_1cache__interface} allows storing arbitrary object in cache, For this purpose they should be \char`\"{}serializable\char`\"{}. This can be done by specializing a class cppcms\-::setialization\-\_\-traits 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!add\-\_\-trigger@{add\-\_\-trigger}}
+\index{add\-\_\-trigger@{add\-\_\-trigger}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{add\-\_\-trigger}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::add\-\_\-trigger (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{trigger}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_ade0f913aea74b4ebe66c8216f33c2b2a}
+Add a trigger {\itshape trigger} to the list of dependencies of current page. \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!clear@{clear}}
+\index{clear@{clear}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_a71e212f0774f242d2967e66b88fb6aa6}
+Clear all Cpp\-C\-M\-S cache -\/ use carefully \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!fetch\-\_\-data@{fetch\-\_\-data}}
+\index{fetch\-\_\-data@{fetch\-\_\-data}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{fetch\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable $>$ bool cppcms\-::cache\-\_\-interface\-::fetch\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{Serializable \&}]{data, }
+\item[{bool}]{notriggers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1cache__interface_ae6d127d4ee07ebbe3d18012a9c59522c}
+Fetch a serializeable object from the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that uniquely defines the frame. \\
+\hline
+{\em data} & -- an object store fetched data \\
+\hline
+{\em notriggers} & -- if true, no triggers that an object is dependent on would be added to dependencies of the current page, otherwise (false, default), the all triggers that the object is dependent on, including the {\itshape key} itself would be added as dependent triggers to current rendered page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if the entry was found. 
+\end{DoxyReturn}
+
+
+References cppcms\-::serialization\-\_\-traits$<$ Object $>$\-::load().
+
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!fetch\-\_\-frame@{fetch\-\_\-frame}}
+\index{fetch\-\_\-frame@{fetch\-\_\-frame}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{fetch\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::cache\-\_\-interface\-::fetch\-\_\-frame (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string \&}]{result, }
+\item[{bool}]{notriggers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_a25287fde30642730132f58d6ccd77183}
+Fetch a string (usually some H\-T\-M\-L part) from the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that uniquely defines the frame. \\
+\hline
+{\em result} & -- string to store fetched value \\
+\hline
+{\em notriggers} & -- if true, no triggers that a frame is dependent on would be added to dependencies of the current page, otherwise (false, default), the all triggers that page is dependent on, including the {\itshape key} itself would be added as dependent triggers to current rendered page. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns true if the entry was found. 
+\end{DoxyReturn}
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!fetch\-\_\-page@{fetch\-\_\-page}}
+\index{fetch\-\_\-page@{fetch\-\_\-page}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{fetch\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::cache\-\_\-interface\-::fetch\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_ab3fc6d636f0525d500091b4279821688}
+Fetch a page from the cache with a key {\itshape key}. If the page exists, it is written to output and true is returned. Otherwise false is returned. \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!has\-\_\-cache@{has\-\_\-cache}}
+\index{has\-\_\-cache@{has\-\_\-cache}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{has\-\_\-cache}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::cache\-\_\-interface\-::has\-\_\-cache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_af004bf7322d1819fa429812329f6eb8a}
+Returns true if caching system is enabled \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!nocache@{nocache}}
+\index{nocache@{nocache}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{nocache}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::cache\-\_\-interface\-::nocache (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_a27fdba45f36dd18a1f622061ca50a3e1}
+Opposite of {\itshape has\-\_\-cache} \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!reset@{reset}}
+\index{reset@{reset}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_ab609740399d76d2cadbe67b5d7c94e3c}
+Remove all triggers added to current page so far \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!rise@{rise}}
+\index{rise@{rise}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{rise}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::rise (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{trigger}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_ab8b0d3640a005269e4c01d5c5be09553}
+Rise a trigger {\itshape trigger}. All cached objects that depend on this trigger would be invalidated \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!stats@{stats}}
+\index{stats@{stats}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{stats}]{\setlength{\rightskip}{0pt plus 5cm}bool cppcms\-::cache\-\_\-interface\-::stats (
+\begin{DoxyParamCaption}
+\item[{unsigned \&}]{keys, }
+\item[{unsigned \&}]{triggers}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_a12fcde54f1aa6f1810b12b8bc88ca7ed}
+Get statistics about items stored in cache. May require O(n) complexity, use with care.
+
+
+\begin{DoxyParams}{Parameters}
+{\em keys} & -- the number of items stored in cache \\
+\hline
+{\em triggers} & -- the number of various triggers existing in the cache.\\
+\hline
+\end{DoxyParams}
+Returns false if caching system is disabled. \index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!store\-\_\-data@{store\-\_\-data}}
+\index{store\-\_\-data@{store\-\_\-data}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{store\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable $>$ void cppcms\-::cache\-\_\-interface\-::store\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{Serializable const \&}]{data, }
+\item[{std\-::set$<$ std\-::string $>$ const \&}]{triggers = {\ttfamily std\-:\-:set$<$std\-:\-:string$>$()}, }
+\item[{int}]{timeout = {\ttfamily -\/1}, }
+\item[{bool}]{notriggers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1cache__interface_a1d7ce108ecc1fbae0368d7c521188561}
+Store a serializeable object to the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that uniquely defines the object. \\
+\hline
+{\em data} & -- the actual object \\
+\hline
+{\em triggers} & -- the set of triggers that the key should depend on ({\itshape key} is added automatically) \\
+\hline
+{\em timeout} & -- maximal object lifetime, -\/1 is infinity \\
+\hline
+{\em notriggers} & -- if {\itshape notriggers} is true no frame dependent triggers would be added to the current page trigger set. Otherwise (default) current page would depend on the {\itshape key} and {\itshape triggers} as its dependent triggers. \\
+\hline
+\end{DoxyParams}
+
+
+References cppcms\-::serialization\-\_\-traits$<$ Object $>$\-::save().
+
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!store\-\_\-data@{store\-\_\-data}}
+\index{store\-\_\-data@{store\-\_\-data}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{store\-\_\-data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename Serializable $>$ void cppcms\-::cache\-\_\-interface\-::store\-\_\-data (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{Serializable const \&}]{data, }
+\item[{int}]{timeout, }
+\item[{bool}]{notriggers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classcppcms_1_1cache__interface_a30b038c3933fbb0abe8c8f2dec78703e}
+Store a serializeable object to the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that uniquely defines the object. \\
+\hline
+{\em data} & -- the actual object \\
+\hline
+{\em timeout} & -- maximal object lifetime, -\/1 is infinity \\
+\hline
+{\em notriggers} & -- if {\itshape notriggers} is true {\itshape key} added to the current page trigger set. Otherwise (default) current page would depend on the {\itshape key} \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!store\-\_\-frame@{store\-\_\-frame}}
+\index{store\-\_\-frame@{store\-\_\-frame}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{store\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::store\-\_\-frame (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string const \&}]{frame, }
+\item[{std\-::set$<$ std\-::string $>$ const \&}]{triggers = {\ttfamily std\-:\-:set$<$~std\-:\-:string~$>$()}, }
+\item[{int}]{timeout = {\ttfamily -\/1}, }
+\item[{bool}]{notriggers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_ab2cdec66d555a62f64c8d014e32b11e0}
+Store a string (usually some H\-T\-M\-L part) to the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that uniquely defines the frame. \\
+\hline
+{\em frame} & -- the actual value \\
+\hline
+{\em triggers} & -- the set of triggers that the key should depend on ({\itshape key} is added automatically) \\
+\hline
+{\em timeout} & -- maximal object lifetime, -\/1 is infinity \\
+\hline
+{\em notriggers} & -- if {\itshape notriggers} is true no frame dependent triggers would be added to the current page trigger set. Otherwise (default) current page would depend on the {\itshape key} and {\itshape triggers} as its dependent triggers. \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!store\-\_\-frame@{store\-\_\-frame}}
+\index{store\-\_\-frame@{store\-\_\-frame}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{store\-\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::store\-\_\-frame (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{std\-::string const \&}]{frame, }
+\item[{int}]{timeout, }
+\item[{bool}]{notriggers = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_a2e5102e99a4bf81c311e3e171a4a5539}
+Store a string (usually some H\-T\-M\-L part) to the cache.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that uniquely defines the frame. \\
+\hline
+{\em frame} & -- the actual value \\
+\hline
+{\em timeout} & -- maximal object lifetime, -\/1 is infinity \\
+\hline
+{\em notriggers} & -- if {\itshape notriggers} is true {\itshape key} added to the current page trigger set. Otherwise (default) current page would depend on the {\itshape key} \\
+\hline
+\end{DoxyParams}
+\index{cppcms\-::cache\-\_\-interface@{cppcms\-::cache\-\_\-interface}!store\-\_\-page@{store\-\_\-page}}
+\index{store\-\_\-page@{store\-\_\-page}!cppcms::cache_interface@{cppcms\-::cache\-\_\-interface}}
+\subsubsection[{store\-\_\-page}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::cache\-\_\-interface\-::store\-\_\-page (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{key, }
+\item[{int}]{timeout = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1cache__interface_a5f471a4daf6bd7993e591e461bfd0c99}
+Store page with key {\itshape akey} in cache, with timeout {\itshape timeout}.
+
+This function stores a page with dependencies on all triggers that were added so far.
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & -- the key that defines the cache. \\
+\hline
+{\em timeout} & -- maximal valid time of the page. {\itshape timeout=-\/1} means infinite. Use with care.\\
+\hline
+\end{DoxyParams}
+Note\-: store\-\_\-page does not rise the trigger {\itshape key}, only replaces the value. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/cache\-\_\-interface.\-h\end{DoxyCompactItemize}

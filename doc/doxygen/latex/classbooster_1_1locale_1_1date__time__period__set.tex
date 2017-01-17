@@ -1,0 +1,100 @@
+\section{booster\-:\-:locale\-:\-:date\-\_\-time\-\_\-period\-\_\-set Class Reference}
+\label{classbooster_1_1locale_1_1date__time__period__set}\index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+
+
+this class that represents a set of periods,  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/date\-\_\-time.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf date\-\_\-time\-\_\-period\-\_\-set} ()
+\item 
+{\bf date\-\_\-time\-\_\-period\-\_\-set} ({\bf period\-::period\-\_\-type} f)
+\item 
+{\bf date\-\_\-time\-\_\-period\-\_\-set} ({\bf date\-\_\-time\-\_\-period} const \&fl)
+\item 
+void {\bf add} ({\bf date\-\_\-time\-\_\-period} f)
+\item 
+size\-\_\-t {\bf size} () const 
+\item 
+{\bf date\-\_\-time\-\_\-period} const \& {\bf operator[$\,$]} (size\-\_\-t n) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class that represents a set of periods, 
+
+It is generally created by operations on periods\-: 1995$\ast$year + 3$\ast$month + 1$\ast$day. Note\-: operations are not commutative. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}!date\-\_\-time\-\_\-period\-\_\-set@{date\-\_\-time\-\_\-period\-\_\-set}}
+\index{date\-\_\-time\-\_\-period\-\_\-set@{date\-\_\-time\-\_\-period\-\_\-set}!booster::locale::date_time_period_set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+\subsubsection[{date\-\_\-time\-\_\-period\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::date\-\_\-time\-\_\-period\-\_\-set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__period__set_aa118edb2f0dd6012ba2ea2d690f0f71f}
+Default constructor -\/ empty set \index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}!date\-\_\-time\-\_\-period\-\_\-set@{date\-\_\-time\-\_\-period\-\_\-set}}
+\index{date\-\_\-time\-\_\-period\-\_\-set@{date\-\_\-time\-\_\-period\-\_\-set}!booster::locale::date_time_period_set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+\subsubsection[{date\-\_\-time\-\_\-period\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::date\-\_\-time\-\_\-period\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{{\bf period\-::period\-\_\-type}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__period__set_ae580201592e89ba073ea965e69135b53}
+Create a set of single period with value 1 \index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}!date\-\_\-time\-\_\-period\-\_\-set@{date\-\_\-time\-\_\-period\-\_\-set}}
+\index{date\-\_\-time\-\_\-period\-\_\-set@{date\-\_\-time\-\_\-period\-\_\-set}!booster::locale::date_time_period_set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+\subsubsection[{date\-\_\-time\-\_\-period\-\_\-set}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::date\-\_\-time\-\_\-period\-\_\-set (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period} const \&}]{fl}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__period__set_a58606adb3f81eb5ee6b895ce718797ee}
+Create a set of single period {\itshape fl} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}!add@{add}}
+\index{add@{add}!booster::locale::date_time_period_set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::add (
+\begin{DoxyParamCaption}
+\item[{{\bf date\-\_\-time\-\_\-period}}]{f}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__period__set_a0b0ed8a1051da165a73687247b22cb44}
+Append \doxyref{date\-\_\-time\-\_\-period}{p.}{structbooster_1_1locale_1_1date__time__period} {\itshape f} to the set 
+
+References size().
+
+
+
+Referenced by booster\-::locale\-::operator+(), and booster\-::locale\-::operator-\/().
+
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}!operator[$\,$]@{operator[]}}
+\index{operator[$\,$]@{operator[]}!booster::locale::date_time_period_set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf date\-\_\-time\-\_\-period} const\& booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::operator[$\,$] (
+\begin{DoxyParamCaption}
+\item[{size\-\_\-t}]{n}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__period__set_a32f99861f9841e3f7f0f21554df4bea5}
+Get item at position {\itshape n} the set, n should be in range [0,size) 
+
+References size().
+
+\index{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}!size@{size}}
+\index{size@{size}!booster::locale::date_time_period_set@{booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t booster\-::locale\-::date\-\_\-time\-\_\-period\-\_\-set\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1locale_1_1date__time__period__set_ae17a871279b5645287399043466f124a}
+Get number if items in list 
+
+Referenced by add(), booster\-::locale\-::operator+(), booster\-::locale\-::operator-\/(), and operator[$\,$]().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/date\-\_\-time.\-h\end{DoxyCompactItemize}

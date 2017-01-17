@@ -1,0 +1,207 @@
+\section{booster\-:\-:locale Namespace Reference}
+\label{namespacebooster_1_1locale}\index{booster\-::locale@{booster\-::locale}}
+
+
+This is the main namespace that encloses all localization classes.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+{\bf as}
+\begin{DoxyCompactList}\small\item\em This namespace includes all manipulators that can be used on I\-O streams. \end{DoxyCompactList}\item 
+{\bf flags}
+\begin{DoxyCompactList}\small\item\em This namespace holds additional formatting flags that can be set using \doxyref{ios\-\_\-info}{p.}{classbooster_1_1locale_1_1ios__info}. \end{DoxyCompactList}\item 
+{\bf gnu\-\_\-gettext}
+\begin{DoxyCompactList}\small\item\em This namespace holds classes that provide G\-N\-U Gettext message catalogs support. \end{DoxyCompactList}\item 
+{\bf period}
+\begin{DoxyCompactList}\small\item\em Namespace that contains various types for manipulation with dates. \end{DoxyCompactList}\item 
+{\bf time\-\_\-zone}
+\begin{DoxyCompactList}\small\item\em namespace that holds functions for operating with global time zone \end{DoxyCompactList}\item 
+{\bf utf}
+\begin{DoxyCompactList}\small\item\em Namespace that holds basic operations on U\-T\-F encoded sequences. \end{DoxyCompactList}\item 
+{\bf util}
+\begin{DoxyCompactList}\small\item\em This namespace provides various utility function useful for Boost.\-Locale backends implementations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf collator\-\_\-base}
+\begin{DoxyCompactList}\small\item\em a base class that includes collation level flags \end{DoxyCompactList}\item 
+class {\bf collator}
+\begin{DoxyCompactList}\small\item\em Collation facet. \end{DoxyCompactList}\item 
+struct {\bf comparator}
+\begin{DoxyCompactList}\small\item\em This class can be used in S\-T\-L algorithms and containers for comparison of strings with a level other than primary. \end{DoxyCompactList}\item 
+class {\bf converter\-\_\-base}
+\begin{DoxyCompactList}\small\item\em This class provides base flags for text manipulation. It is used as base for converter facet. \end{DoxyCompactList}\item 
+class {\bf converter}
+\item 
+class {\bf converter$<$ char $>$}
+\item 
+class {\bf converter$<$ wchar\-\_\-t $>$}
+\item 
+class {\bf date\-\_\-time\-\_\-error}
+\begin{DoxyCompactList}\small\item\em This error is thrown in case of invalid state that occurred. \end{DoxyCompactList}\item 
+struct {\bf date\-\_\-time\-\_\-period}
+\begin{DoxyCompactList}\small\item\em This class represents a pair of period\-\_\-type and the integer values that describes its amount. For example 3 days or 4 years. \end{DoxyCompactList}\item 
+class {\bf date\-\_\-time\-\_\-period\-\_\-set}
+\begin{DoxyCompactList}\small\item\em this class that represents a set of periods, \end{DoxyCompactList}\item 
+class {\bf calendar}
+\begin{DoxyCompactList}\small\item\em this class provides an access to general calendar information. \end{DoxyCompactList}\item 
+class {\bf date\-\_\-time}
+\begin{DoxyCompactList}\small\item\em this class represents a date time and allows to perform various operation according to the locale settings. \end{DoxyCompactList}\item 
+class {\bf date\-\_\-time\-\_\-duration}
+\begin{DoxyCompactList}\small\item\em This class represents a period\-: a pair of two \doxyref{date\-\_\-time}{p.}{classbooster_1_1locale_1_1date__time} objects. \end{DoxyCompactList}\item 
+struct {\bf posix\-\_\-time}
+\item 
+class {\bf abstract\-\_\-calendar}
+\item 
+class {\bf calendar\-\_\-facet}
+\begin{DoxyCompactList}\small\item\em the facet that generates calendar for specific locale \end{DoxyCompactList}\item 
+class {\bf basic\-\_\-format}
+\begin{DoxyCompactList}\small\item\em a printf like class that allows type-\/safe and locale aware message formatting \end{DoxyCompactList}\item 
+class {\bf ios\-\_\-info}
+\begin{DoxyCompactList}\small\item\em This class holds an external data -\/ beyond existing fmtflags that std\-::ios\-\_\-base holds. \end{DoxyCompactList}\item 
+class {\bf generator}
+\begin{DoxyCompactList}\small\item\em the major class used for locale generation \end{DoxyCompactList}\item 
+class {\bf hold\-\_\-ptr}
+\begin{DoxyCompactList}\small\item\em a smart pointer similar to std\-::auto\-\_\-ptr but it is non-\/copyable and the underlying object has the same constness as the pointer itself (unlike an ordinary pointer). \end{DoxyCompactList}\item 
+class {\bf info}
+\begin{DoxyCompactList}\small\item\em a facet that holds general information about locale \end{DoxyCompactList}\item 
+class {\bf localization\-\_\-backend}
+\begin{DoxyCompactList}\small\item\em this class represents a localization backend that can be used for localizing your application. \end{DoxyCompactList}\item 
+class {\bf localization\-\_\-backend\-\_\-manager}
+\begin{DoxyCompactList}\small\item\em Localization backend manager is a class that holds various backend and allows creation of their combination or selection. \end{DoxyCompactList}\item 
+class {\bf message\-\_\-format}
+\begin{DoxyCompactList}\small\item\em This facet provides message formatting abilities. \end{DoxyCompactList}\item 
+class {\bf basic\-\_\-message}
+\begin{DoxyCompactList}\small\item\em This class represents a message that can be converted to a specific locale message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf basic\-\_\-format}$<$ char $>$ {\bf format}
+\item 
+typedef {\bf basic\-\_\-format}$<$ wchar\-\_\-t $>$ {\bf wformat}
+\item 
+typedef uint32\-\_\-t {\bf character\-\_\-facet\-\_\-type}\label{namespacebooster_1_1locale_ae1ac6c82a8ca19ea3bf4f32c49c4bb14}
+
+\begin{DoxyCompactList}\small\item\em type that specifies the character type that locales can be generated for \end{DoxyCompactList}\item 
+typedef uint32\-\_\-t {\bf locale\-\_\-category\-\_\-type}\label{namespacebooster_1_1locale_ab5326456ae652d09ab6893c4ac4d1057}
+
+\begin{DoxyCompactList}\small\item\em a type used for more fine grained generation of facets \end{DoxyCompactList}\item 
+typedef {\bf basic\-\_\-message}$<$ char $>$ {\bf message}
+\item 
+typedef {\bf basic\-\_\-message}$<$ wchar\-\_\-t $>$ {\bf wmessage}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf norm\-\_\-type} \{ \\*
+{\bf norm\-\_\-nfd}, 
+{\bf norm\-\_\-nfc}, 
+{\bf norm\-\_\-nfkd}, 
+{\bf norm\-\_\-nfkc}, 
+\\*
+{\bf norm\-\_\-default} = norm\-\_\-nfc
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf normalize} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, {\bf norm\-\_\-type} n={\bf norm\-\_\-default}, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf normalize} (Char\-Type const $\ast$str, {\bf norm\-\_\-type} n={\bf norm\-\_\-default}, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf normalize} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, {\bf norm\-\_\-type} n={\bf norm\-\_\-default}, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-upper} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-upper} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-upper} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-lower} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-lower} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-lower} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-title} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-title} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf to\-\_\-title} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf fold\-\_\-case} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf fold\-\_\-case} (Char\-Type const $\ast$str, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf fold\-\_\-case} (Char\-Type const $\ast$begin, Char\-Type const $\ast$end, std\-::locale const \&loc=std\-::locale())
+\item 
+{\bf date\-\_\-time\-\_\-period\-\_\-set} {\bf operator+} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&a, {\bf date\-\_\-time\-\_\-period\-\_\-set} const \&b)
+\item 
+{\bf date\-\_\-time\-\_\-period\-\_\-set} {\bf operator-\/} ({\bf date\-\_\-time\-\_\-period\-\_\-set} const \&a, {\bf date\-\_\-time\-\_\-period\-\_\-set} const \&b)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \& {\bf operator$<$$<$} (std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&out, {\bf date\-\_\-time} const \&t)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-istream$<$ Char\-Type $>$ \& {\bf operator$>$$>$} (std\-::basic\-\_\-istream$<$ Char\-Type $>$ \&in, {\bf date\-\_\-time} \&t)
+\item 
+{\bf date\-\_\-time\-\_\-duration} {\bf operator-\/} ({\bf date\-\_\-time} const \&later, {\bf date\-\_\-time} const \&earlier)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \& {\bf operator$<$$<$} (std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&out, {\bf basic\-\_\-format}$<$ Char\-Type $>$ const \&fmt)
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \& {\bf operator$<$$<$} (std\-::basic\-\_\-ostream$<$ Char\-Type $>$ \&out, {\bf basic\-\_\-message}$<$ Char\-Type $>$ const \&msg)
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf Indirect message translation function family}\par
+{\em \label{group__message_boost_locale_translate_family}%
+}\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (Char\-Type const $\ast$msg)\label{group__message_ga1e19b04292af4a56d7b3b0e204eef9ab}
+
+\begin{DoxyCompactList}\small\item\em Translate a message, {\itshape msg} is not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (Char\-Type const $\ast$context, Char\-Type const $\ast$msg)\label{group__message_gaa6b5e26be335f12706ad100511370271}
+
+\begin{DoxyCompactList}\small\item\em Translate a message in context, {\itshape msg} and {\itshape context} are not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (Char\-Type const $\ast$single, Char\-Type const $\ast$plural, int n)\label{group__message_ga8f7af44648fc76d60414905acced7bab}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message form, {\itshape single} and {\itshape plural} are not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (Char\-Type const $\ast$context, Char\-Type const $\ast$single, Char\-Type const $\ast$plural, int n)\label{group__message_ga3e14314807728ae638ade1ce2d319a11}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message from in constext, {\itshape context}, {\itshape single} and {\itshape plural} are not copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&msg)\label{group__message_gabd16e791be7bd808ea346bbe276e1755}
+
+\begin{DoxyCompactList}\small\item\em Translate a message, {\itshape msg} is copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&context, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&msg)\label{group__message_ga8152471156fffd00a8235c6ae72c2108}
+
+\begin{DoxyCompactList}\small\item\em Translate a message in context,{\itshape context} and {\itshape msg} is copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&context, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&single, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&plural, int n)\label{group__message_ga07fdc05d5cffac2d24366df517ecc567}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message form in constext, {\itshape context}, {\itshape single} and {\itshape plural} are copied. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\{\bf basic\-\_\-message}$<$ Char\-Type $>$ {\bf translate} (std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&single, std\-::basic\-\_\-string$<$ Char\-Type $>$ const \&plural, int n)\label{group__message_ga4790a494bd1f76e839a9e4eeba4ea378}
+
+\begin{DoxyCompactList}\small\item\em Translate a plural message form, {\itshape single} and {\itshape plural} are copied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Direct message translation functions family}\par
+{\em \label{group__message_boost_locale_gettext_family}%
+}\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf gettext} (Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf ngettext} (Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf dgettext} (char const $\ast$domain, Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf dngettext} (char const $\ast$domain, Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf pgettext} (Char\-Type const $\ast$context, Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf npgettext} (Char\-Type const $\ast$context, Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf dpgettext} (char const $\ast$domain, Char\-Type const $\ast$context, Char\-Type const $\ast$id, std\-::locale const \&loc=std\-::locale())
+\item 
+{\footnotesize template$<$typename Char\-Type $>$ }\\std\-::basic\-\_\-string$<$ Char\-Type $>$ {\bf dnpgettext} (char const $\ast$domain, Char\-Type const $\ast$context, Char\-Type const $\ast$s, Char\-Type const $\ast$p, int n, std\-::locale const \&loc=std\-::locale())
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+This is the main namespace that encloses all localization classes. 

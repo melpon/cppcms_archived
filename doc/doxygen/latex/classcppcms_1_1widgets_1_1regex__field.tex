@@ -1,0 +1,83 @@
+\section{cppcms\-:\-:widgets\-:\-:regex\-\_\-field Class Reference}
+\label{classcppcms_1_1widgets_1_1regex__field}\index{cppcms\-::widgets\-::regex\-\_\-field@{cppcms\-::widgets\-::regex\-\_\-field}}
+
+
+This class is extending a simple text widget by using additional regular expression validation.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/form.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:widgets\-:\-:regex\-\_\-field\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.734299cm]{classcppcms_1_1widgets_1_1regex__field}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf regex\-\_\-field} ({\bf booster\-::regex} const \&e)
+\item 
+{\bf regex\-\_\-field} (std\-::string const \&e)
+\item 
+void {\bf regex} ({\bf booster\-::regex} const \&e)
+\item 
+virtual bool {\bf validate} ()
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class is extending a simple text widget by using additional regular expression validation. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::widgets\-::regex\-\_\-field@{cppcms\-::widgets\-::regex\-\_\-field}!regex\-\_\-field@{regex\-\_\-field}}
+\index{regex\-\_\-field@{regex\-\_\-field}!cppcms::widgets::regex_field@{cppcms\-::widgets\-::regex\-\_\-field}}
+\subsubsection[{regex\-\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::regex\-\_\-field\-::regex\-\_\-field (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1regex__field_a4310f0742c17f7f260668100e678621e}
+Create a widget using the regular expression {\itshape e}. \index{cppcms\-::widgets\-::regex\-\_\-field@{cppcms\-::widgets\-::regex\-\_\-field}!regex\-\_\-field@{regex\-\_\-field}}
+\index{regex\-\_\-field@{regex\-\_\-field}!cppcms::widgets::regex_field@{cppcms\-::widgets\-::regex\-\_\-field}}
+\subsubsection[{regex\-\_\-field}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::widgets\-::regex\-\_\-field\-::regex\-\_\-field (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1regex__field_adb2f062c476dc8f1a51e2d3f85d3ddf3}
+Create a widget using the regular expression {\itshape e}. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::widgets\-::regex\-\_\-field@{cppcms\-::widgets\-::regex\-\_\-field}!regex@{regex}}
+\index{regex@{regex}!cppcms::widgets::regex_field@{cppcms\-::widgets\-::regex\-\_\-field}}
+\subsubsection[{regex}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::widgets\-::regex\-\_\-field\-::regex (
+\begin{DoxyParamCaption}
+\item[{{\bf booster\-::regex} const \&}]{e}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1widgets_1_1regex__field_ace997015f1d7924a6ee239e5ffb1b3b4}
+Set the regular expression. \index{cppcms\-::widgets\-::regex\-\_\-field@{cppcms\-::widgets\-::regex\-\_\-field}!validate@{validate}}
+\index{validate@{validate}!cppcms::widgets::regex_field@{cppcms\-::widgets\-::regex\-\_\-field}}
+\subsubsection[{validate}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::widgets\-::regex\-\_\-field\-::validate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1widgets_1_1regex__field_a054bf9405d82e1129032b93397ad053e}
+Validate the widget content according to the rules and to the charset encoding.
+
+Notes\-:
+
+
+\begin{DoxyItemize}
+\item The charset validation is very efficient for variable length U\-T\-F-\/8 encoding as well as for most popular fixed length encodings like I\-S\-O-\/8859-\/$\ast$, windows-\/125$\ast$ and koi8$\ast$. For other encodings, character set conversion is used for the actual validation.
+\item Special characters (that are not allowed in H\-T\-M\-L) are assumed to be forbidden, even if they are valid code points (like N\-U\-L = 0 or D\-E\-L=127). 
+\end{DoxyItemize}
+
+Reimplemented from {\bf cppcms\-::widgets\-::base\-\_\-text} \doxyref{}{p.}{classcppcms_1_1widgets_1_1base__text_a8accbd9e605d1e4dc87337afff6d5b38}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/form.\-h\end{DoxyCompactItemize}

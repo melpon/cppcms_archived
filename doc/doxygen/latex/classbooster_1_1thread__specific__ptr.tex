@@ -1,0 +1,116 @@
+\section{booster\-:\-:thread\-\_\-specific\-\_\-ptr$<$ T $>$ Class Template Reference}
+\label{classbooster_1_1thread__specific__ptr}\index{booster\-::thread\-\_\-specific\-\_\-ptr$<$ T $>$@{booster\-::thread\-\_\-specific\-\_\-ptr$<$ T $>$}}
+
+
+Thread specific pointer.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/thread.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf thread\-\_\-specific\-\_\-ptr} ()
+\item 
+{\bf $\sim$thread\-\_\-specific\-\_\-ptr} ()
+\item 
+T $\ast$ {\bf get} () const 
+\item 
+T $\ast$ {\bf operator-\/$>$} () const 
+\item 
+T \& {\bf operator$\ast$} () const 
+\item 
+void {\bf reset} (T $\ast$new\-\_\-val=0)
+\item 
+T $\ast$ {\bf release} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$class booster\-::thread\-\_\-specific\-\_\-ptr$<$ T $>$}
+
+Thread specific pointer. 
+
+Thread specific pointer is N\-U\-L\-L for all threads. So on first use it is expected to be initialized.
+
+The object would be destroyed when the thread exists. If \doxyref{thread\-\_\-specific\-\_\-ptr}{p.}{classbooster_1_1thread__specific__ptr} was destroyed before the thread that uses it exited the object would still exist and would be cleaned up on thread exit.
+
+Of course an access to \doxyref{thread\-\_\-specific\-\_\-ptr}{p.}{classbooster_1_1thread__specific__ptr} object would lead to undefined behavior and would likely is going to crash your program.
+
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+On Windows platform, when Cpp\-C\-M\-S and Booster are compiled {\bfseries statically} (not used as D\-L\-L) then T\-L\-S cleanup for the threads that where not created with \doxyref{booster\-::thread}{p.}{classbooster_1_1thread} would not be executed.
+
+So when using \doxyref{thread\-\_\-specific\-\_\-ptr}{p.}{classbooster_1_1thread__specific__ptr} on Windows platform make sure that you do one of the following\-:
+
+
+\begin{DoxyItemize}
+\item Use \doxyref{booster\-::thread\-\_\-specific\-\_\-ptr}{p.}{classbooster_1_1thread__specific__ptr} only from threads created by \doxyref{booster\-::thread}{p.}{classbooster_1_1thread} (or main thread)
+\item Link dynamically with booster library (use it as D\-L\-L) 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!thread\-\_\-specific\-\_\-ptr@{thread\-\_\-specific\-\_\-ptr}}
+\index{thread\-\_\-specific\-\_\-ptr@{thread\-\_\-specific\-\_\-ptr}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{thread\-\_\-specific\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::{\bf thread\-\_\-specific\-\_\-ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_a86fc9e3c8007518051bda222df7cc4ac}
+Create a new thread specific pointer \index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!$\sim$thread\-\_\-specific\-\_\-ptr@{$\sim$thread\-\_\-specific\-\_\-ptr}}
+\index{$\sim$thread\-\_\-specific\-\_\-ptr@{$\sim$thread\-\_\-specific\-\_\-ptr}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{$\sim$thread\-\_\-specific\-\_\-ptr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::$\sim${\bf thread\-\_\-specific\-\_\-ptr} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_ab6e26da5ba7b9fa181e697b78dc61e66}
+Destroy the thread specific pointer 
+
+\subsection{Member Function Documentation}
+\index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!get@{get}}
+\index{get@{get}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_a73392979265d977d81ab144086c848f4}
+Get thread specific value, if not initialized returns N\-U\-L\-L \index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T\& {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::operator$\ast$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_a27c60dc7aa904cda9b6b4f2d10b30c99}
+Dereference pointer, if it is N\-U\-L\-L the behavior is undefined \index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!operator-\/$>$@{operator-\/$>$}}
+\index{operator-\/$>$@{operator-\/$>$}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{operator-\/$>$}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::operator-\/$>$ (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_a18a707977b7a0fb66b88899f1b075ec0}
+Dereference pointer, if it is N\-U\-L\-L the behavior is undefined \index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!release@{release}}
+\index{release@{release}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::release (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_abd39adddb389816a4bab2ac0352ef544}
+Release exiting pointer and set thread specific pointer to 0.
+
+The caller is responsible to destroy the returned object \index{booster\-::thread\-\_\-specific\-\_\-ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}!reset@{reset}}
+\index{reset@{reset}!booster::thread_specific_ptr@{booster\-::thread\-\_\-specific\-\_\-ptr}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void {\bf booster\-::thread\-\_\-specific\-\_\-ptr}$<$ T $>$\-::reset (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{new\-\_\-val = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1thread__specific__ptr_a4863968a62520b244720daed3662517c}
+Reset the thread specific pointer and set its value to {\itshape new\-\_\-val}.
+
+If previous object was not N\-U\-L\-L it would be destroyed 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/thread.\-h\end{DoxyCompactItemize}

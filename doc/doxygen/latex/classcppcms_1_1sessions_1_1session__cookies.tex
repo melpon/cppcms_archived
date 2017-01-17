@@ -1,0 +1,110 @@
+\section{cppcms\-:\-:sessions\-:\-:session\-\_\-cookies Class Reference}
+\label{classcppcms_1_1sessions_1_1session__cookies}\index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+
+
+The implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} using encrypted or signed cookies.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-cookies.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:sessions\-:\-:session\-\_\-cookies\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcppcms_1_1sessions_1_1session__cookies}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf session\-\_\-cookies} (std\-::auto\-\_\-ptr$<$ {\bf encryptor} $>$ {\bf encryptor})
+\item 
+{\bf $\sim$session\-\_\-cookies} ()
+\item 
+virtual void {\bf save} ({\bf session\-\_\-interface} \&, std\-::string const \&data, time\-\_\-t timeout, bool newone, bool on\-\_\-server)
+\item 
+virtual bool {\bf load} ({\bf session\-\_\-interface} \&, std\-::string \&data, time\-\_\-t \&timeout)
+\item 
+virtual bool {\bf is\-\_\-blocking} ()
+\item 
+virtual void {\bf clear} ({\bf session\-\_\-interface} \&)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api} using encrypted or signed cookies. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}!session\-\_\-cookies@{session\-\_\-cookies}}
+\index{session\-\_\-cookies@{session\-\_\-cookies}!cppcms::sessions::session_cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+\subsubsection[{session\-\_\-cookies}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::sessions\-::session\-\_\-cookies\-::session\-\_\-cookies (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf encryptor} $>$}]{encryptor}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1sessions_1_1session__cookies_a117c931f8d28ecba03979d777e18c3af}
+Create a new object passing it a pointer ecryptor as parameter \index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}!$\sim$session\-\_\-cookies@{$\sim$session\-\_\-cookies}}
+\index{$\sim$session\-\_\-cookies@{$\sim$session\-\_\-cookies}!cppcms::sessions::session_cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+\subsubsection[{$\sim$session\-\_\-cookies}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::sessions\-::session\-\_\-cookies\-::$\sim$session\-\_\-cookies (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1sessions_1_1session__cookies_a47c99d1d0a00287ca26fe8e37959b15b}
+Destroy it and destroy an encryptor it was created with 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}!clear@{clear}}
+\index{clear@{clear}!cppcms::sessions::session_cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-cookies\-::clear (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__cookies_a911f8f3841860ea49f08adaf93edd6a1}
+Delete session, see \doxyref{session\-\_\-api\-::clear}{p.}{classcppcms_1_1session__api_ab755441f1f95bf01d138560d9fb68bca} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_ab755441f1f95bf01d138560d9fb68bca}.
+
+\index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}!is\-\_\-blocking@{is\-\_\-blocking}}
+\index{is\-\_\-blocking@{is\-\_\-blocking}!cppcms::sessions::session_cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+\subsubsection[{is\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-cookies\-::is\-\_\-blocking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__cookies_adc1f55578b79db6ec48a982e8fca9364}
+See \doxyref{session\-\_\-api\-::is\-\_\-blocking}{p.}{classcppcms_1_1session__api_ac110761dd1b104702a8863221716547d} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_ac110761dd1b104702a8863221716547d}.
+
+\index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}!load@{load}}
+\index{load@{load}!cppcms::sessions::session_cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-cookies\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{, }
+\item[{std\-::string \&}]{data, }
+\item[{time\-\_\-t \&}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__cookies_ae863147e8c605fcdfce047154ade22d4}
+Load session from cookies, see \doxyref{session\-\_\-api\-::load}{p.}{classcppcms_1_1session__api_a6fad2ca45e09b43c9eae519f38888611} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_a6fad2ca45e09b43c9eae519f38888611}.
+
+\index{cppcms\-::sessions\-::session\-\_\-cookies@{cppcms\-::sessions\-::session\-\_\-cookies}!save@{save}}
+\index{save@{save}!cppcms::sessions::session_cookies@{cppcms\-::sessions\-::session\-\_\-cookies}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-cookies\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{, }
+\item[{std\-::string const \&}]{data, }
+\item[{time\-\_\-t}]{timeout, }
+\item[{bool}]{newone, }
+\item[{bool}]{on\-\_\-server}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__cookies_aa4ccbed688edfd0387b64f5f2a9b24f5}
+Save session to cookies, see \doxyref{session\-\_\-api\-::save}{p.}{classcppcms_1_1session__api_a9388c15001d0e55d31b6d54c9a1edca0} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_a9388c15001d0e55d31b6d54c9a1edca0}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-cookies.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,95 @@
+\section{cppcms\-:\-:serializable Class Reference}
+\label{classcppcms_1_1serializable}\index{cppcms\-::serializable@{cppcms\-::serializable}}
+
+
+Abstract class for serialization object.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/serialization\-\_\-classes.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:serializable\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcppcms_1_1serializable}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf serialize} ({\bf archive} \&a)=0
+\item 
+virtual void {\bf load} ({\bf archive} \&a)
+\item 
+virtual void {\bf save} ({\bf archive} \&a) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class for serialization object. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::serializable@{cppcms\-::serializable}!load@{load}}
+\index{load@{load}!cppcms::serializable@{cppcms\-::serializable}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::serializable\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1serializable_aa271b39b72ca4b98a38eae6bbb6b9abc}
+Calls serialize member functions 
+
+Implements {\bf cppcms\-::serializable\-\_\-base} \doxyref{}{p.}{classcppcms_1_1serializable__base_a4bac9c37cb4abd0120f915709f840191}.
+
+
+
+References serialize().
+
+\index{cppcms\-::serializable@{cppcms\-::serializable}!save@{save}}
+\index{save@{save}!cppcms::serializable@{cppcms\-::serializable}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::serializable\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} \&}]{a}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1serializable_aa30c580ab6301956562d38b491fc2c84}
+Const-\/casts and calls serialize member function 
+
+Implements {\bf cppcms\-::serializable\-\_\-base} \doxyref{}{p.}{classcppcms_1_1serializable__base_a0be6684a18d70761900560ebce6514d1}.
+
+
+
+References serialize().
+
+\index{cppcms\-::serializable@{cppcms\-::serializable}!serialize@{serialize}}
+\index{serialize@{serialize}!cppcms::serializable@{cppcms\-::serializable}}
+\subsubsection[{serialize}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::serializable\-::serialize (
+\begin{DoxyParamCaption}
+\item[{{\bf archive} \&}]{a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1serializable_a2d9c85316161dde48e10e4e9a7669c02}
+Abstract function that should be implemented for correct serialization of an object, it allows implementing only one function for load and save instead of two.
+
+For example\-:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{struct }persone : \textcolor{keyword}{public} serializable \{
+  \textcolor{keywordtype}{double} age;
+  std::string name;
+  std::vector<std::string> kids\_names;
+
+  \textcolor{keywordtype}{void} serialize(archive &a) 
+  \{
+       a & age & name & kids\_names;
+  \}
+\};
+\end{DoxyCode}
+ 
+
+Referenced by load(), and save().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/serialization\-\_\-classes.\-h\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+\section{cppcms\-:\-:sessions\-:\-:session\-\_\-dual Class Reference}
+\label{classcppcms_1_1sessions_1_1session__dual}\index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+
+
+Client and Server side storage implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api}.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-dual.\-h$>$}
+
+Inheritance diagram for cppcms\-:\-:sessions\-:\-:session\-\_\-dual\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcppcms_1_1sessions_1_1session__dual}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf session\-\_\-dual} (std\-::auto\-\_\-ptr$<$ {\bf encryptor} $>$ enc, {\bf booster\-::shared\-\_\-ptr}$<$ {\bf session\-\_\-storage} $>$ storage, size\-\_\-t data\-\_\-size\-\_\-limit)
+\item 
+virtual {\bf $\sim$session\-\_\-dual} ()
+\item 
+virtual void {\bf save} ({\bf session\-\_\-interface} \&, std\-::string const \&data, time\-\_\-t timeout, bool new\-\_\-session, bool on\-\_\-server)
+\item 
+virtual bool {\bf load} ({\bf session\-\_\-interface} \&, std\-::string \&data, time\-\_\-t \&timeout)
+\item 
+virtual void {\bf clear} ({\bf session\-\_\-interface} \&)
+\item 
+virtual bool {\bf is\-\_\-blocking} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Client and Server side storage implementation of \doxyref{session\-\_\-api}{p.}{classcppcms_1_1session__api}. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}!session\-\_\-dual@{session\-\_\-dual}}
+\index{session\-\_\-dual@{session\-\_\-dual}!cppcms::sessions::session_dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+\subsubsection[{session\-\_\-dual}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::sessions\-::session\-\_\-dual\-::session\-\_\-dual (
+\begin{DoxyParamCaption}
+\item[{std\-::auto\-\_\-ptr$<$ {\bf encryptor} $>$}]{enc, }
+\item[{{\bf booster\-::shared\-\_\-ptr}$<$ {\bf session\-\_\-storage} $>$}]{storage, }
+\item[{size\-\_\-t}]{data\-\_\-size\-\_\-limit}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1sessions_1_1session__dual_a4994c2633446444172072560d9badc30}
+Create a new object using encryptor {\itshape enc} and \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} {\itshape storage}. {\itshape data\-\_\-size\-\_\-limit} represents the maximal data size that can be stored on client side, if the data size is bigger then that the session data will be stored on server \index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}!$\sim$session\-\_\-dual@{$\sim$session\-\_\-dual}}
+\index{$\sim$session\-\_\-dual@{$\sim$session\-\_\-dual}!cppcms::sessions::session_dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+\subsubsection[{$\sim$session\-\_\-dual}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::sessions\-::session\-\_\-dual\-::$\sim$session\-\_\-dual (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__dual_ab94a395e366694cca35ed82d678e839a}
+Destroy the object\-: release pointer to {\itshape storage} and delete an encryptor it was created with. 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}!clear@{clear}}
+\index{clear@{clear}!cppcms::sessions::session_dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+\subsubsection[{clear}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-dual\-::clear (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__dual_a5dd7ec9523785c68a07050ba1235c73c}
+See \doxyref{session\-\_\-api\-::clear}{p.}{classcppcms_1_1session__api_ab755441f1f95bf01d138560d9fb68bca} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_ab755441f1f95bf01d138560d9fb68bca}.
+
+\index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}!is\-\_\-blocking@{is\-\_\-blocking}}
+\index{is\-\_\-blocking@{is\-\_\-blocking}!cppcms::sessions::session_dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+\subsubsection[{is\-\_\-blocking}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-dual\-::is\-\_\-blocking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__dual_a0599c839c6815015277be36cd061b826}
+see \doxyref{session\-\_\-api\-::is\-\_\-blocking}{p.}{classcppcms_1_1session__api_ac110761dd1b104702a8863221716547d} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_ac110761dd1b104702a8863221716547d}.
+
+\index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}!load@{load}}
+\index{load@{load}!cppcms::sessions::session_dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+\subsubsection[{load}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-dual\-::load (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{, }
+\item[{std\-::string \&}]{data, }
+\item[{time\-\_\-t \&}]{timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__dual_a2cfb3baf2a5c031eb307cd12f386f886}
+See \doxyref{session\-\_\-api\-::load}{p.}{classcppcms_1_1session__api_a6fad2ca45e09b43c9eae519f38888611} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_a6fad2ca45e09b43c9eae519f38888611}.
+
+\index{cppcms\-::sessions\-::session\-\_\-dual@{cppcms\-::sessions\-::session\-\_\-dual}!save@{save}}
+\index{save@{save}!cppcms::sessions::session_dual@{cppcms\-::sessions\-::session\-\_\-dual}}
+\subsubsection[{save}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-dual\-::save (
+\begin{DoxyParamCaption}
+\item[{{\bf session\-\_\-interface} \&}]{, }
+\item[{std\-::string const \&}]{data, }
+\item[{time\-\_\-t}]{timeout, }
+\item[{bool}]{new\-\_\-session, }
+\item[{bool}]{on\-\_\-server}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__dual_a17e40652c13b789101ed01c16026ae61}
+See \doxyref{session\-\_\-api\-::save}{p.}{classcppcms_1_1session__api_a9388c15001d0e55d31b6d54c9a1edca0} 
+
+Implements {\bf cppcms\-::session\-\_\-api} \doxyref{}{p.}{classcppcms_1_1session__api_a9388c15001d0e55d31b6d54c9a1edca0}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-dual.\-h\end{DoxyCompactItemize}

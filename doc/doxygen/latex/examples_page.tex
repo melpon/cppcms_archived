@@ -1,0 +1,4436 @@
+Basics\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Our First 'Hello World' Program}{p.}{_ex_hello_world}
+\item \doxyref{Using Cpp\-C\-M\-S template system}{p.}{_ex_templates}
+\item \doxyref{Using nice U\-R\-Ls and a mapping between modules and U\-R\-Ls}{p.}{_ex_url_mapping}
+\item \doxyref{Using applications hierarchy and U\-R\-L mapping}{p.}{_ex_hierarchy}
+\item \doxyref{Views Inheritance}{p.}{_ex_templates_inheritance}
+\end{DoxyItemize}
+
+Forms\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Using Cpp\-C\-M\-S forms}{p.}{_ex_forms}
+\item \doxyref{Uploading files with Cpp\-C\-M\-S}{p.}{_ex_uploads}
+\end{DoxyItemize}
+
+Important Tasks\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Using Cpp\-C\-M\-S Cache}{p.}{_ex_basic_cache}
+\item \doxyref{Localizing Cpp\-C\-M\-S Applications}{p.}{_ex_localization}
+\item \doxyref{Using Sessions}{p.}{_ex_sessions}
+\item \doxyref{Using Serialization Services}{p.}{_ex_serialization}
+\end{DoxyItemize}
+
+Security\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{X\-S\-S filters and their use example}{p.}{_ex_xss}
+\end{DoxyItemize}
+
+J\-S\-O\-N\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Using J\-S\-O\-N A\-P\-I}{p.}{_ex_json}
+\item \doxyref{Simple Json\-R\-P\-C example}{p.}{_ex_json_rpc}
+\end{DoxyItemize}
+
+Comet\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Basic Comet Example}{p.}{_ex_chat}
+\item \doxyref{Implementing chat using asynchronous J\-S\-O\-N R\-P\-C calls}{p.}{_ex_json_rpc_chat}
+\item \doxyref{Asynchonous I/\-O examples}{p.}{_ex_aio}
+\end{DoxyItemize}
+
+Applications\-:
+
+
+\begin{DoxyItemize}
+\item \doxyref{Full Message Board Application Example using Cache, Sessions, Cpp\-D\-B library and more}{p.}{_ex_message_board} 
+\end{DoxyItemize}\section{Our First 'Hello World' Program}\label{ex_hello_world}
+
+\begin{DoxyItemize}
+\item \doxyref{hello\-\_\-world/\-Makefile Makefile}{p.}{_ex_hello_world____Makefile}
+\item \doxyref{hello\-\_\-world/config.\-js Configuration File}{p.}{_ex_hello_world____config__js}
+\item \doxyref{hello\-\_\-world/hello.\-cpp Source File}{p.}{_ex_hello_world____hello__cpp} 
+\end{DoxyItemize}\subsection{hello\-\_\-world/\-Makefile Makefile}\label{ex_hello_world____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+
+all: hello
+
+hello: hello.cpp
+        $(CXX) -O2 -Wall -g hello.cpp -o hello $\{LIBS\}
+
+clean:
+        rm -fr hello hello.exe cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{hello\-\_\-world/config.js Configuration File}\label{ex_hello_world____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \}
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{hello\-\_\-world/hello.cpp Source File}\label{ex_hello_world____hello__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keyword}{class }my\_hello\_world : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    my\_hello\_world(cppcms::service &srv) :
+        cppcms::application(srv) 
+    \{
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} main(std::string url);
+\};
+
+\textcolor{keywordtype}{void} my\_hello\_world::main(std::string \textcolor{comment}{/*url*/})
+\{
+    response().out()<<
+        \textcolor{stringliteral}{"<html>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<body>\(\backslash\)n"}
+        \textcolor{stringliteral}{"  <h1>Hello World</h1>\(\backslash\)n"}
+        \textcolor{stringliteral}{"</body>\(\backslash\)n"}
+        \textcolor{stringliteral}{"</html>\(\backslash\)n"};
+\}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service srv(argc,argv);
+        srv.applications_pool().mount(cppcms::applications\_factory<my\_hello\_world>());
+        srv.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Using Cpp\-C\-M\-S template system}\label{ex_templates}
+
+\begin{DoxyItemize}
+\item \doxyref{templates/content.\-h Header File}{p.}{_ex_templates____content__h}
+\item \doxyref{templates/\-Makefile Makefile for static templates linking}{p.}{_ex_templates____Makefile}
+\item \doxyref{templates/config-\/dyn.\-js Configuration File for dynamic templates loading}{p.}{_ex_templates____config-dyn__js}
+\item \doxyref{templates/first.\-tmpl Template File}{p.}{_ex_templates____first__tmpl}
+\item \doxyref{templates/hello-\/tmpl.\-cpp Source File}{p.}{_ex_templates____hello-tmpl__cpp}
+\item \doxyref{templates/config.\-js Configuration File for static templates linking}{p.}{_ex_templates____config__js}
+\item \doxyref{templates/\-Makefile.\-dyn Makefile for dynamic templates loading}{p.}{_ex_templates____Makefile__dyn} 
+\end{DoxyItemize}\subsection{templates/content.h Header File}\label{ex_templates____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{keyword}{namespace }content  \{
+    \textcolor{keyword}{struct }message : \textcolor{keyword}{public} cppcms::base_content \{
+        std::string text;
+    \};
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{templates/\-Makefile Makefile for static templates linking}\label{ex_templates____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello-tmpl
+
+hello-tmpl: hello-tmpl.cpp my\_skin.cpp content.h
+        $(CXX) -Wall hello-tmpl.cpp my\_skin.cpp -o hello-tmpl $\{LIBS\}
+
+my\_skin.cpp: first.tmpl content.h
+        cppcms\_tmpl\_cc first.tmpl -o my\_skin.cpp
+
+clean:
+        rm -fr hello-tmpl *.exe *.so my\_skin.cpp cppcms\_rundir
+
+\end{DoxyCodeInclude}
+ \subsection{templates/config-\/dyn.js Configuration File for dynamic templates loading}\label{ex_templates____config-dyn__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \},
+        \textcolor{stringliteral}{"views"} : \{
+                \textcolor{stringliteral}{"paths"} : [ \textcolor{stringliteral}{"."} ],
+                \textcolor{stringliteral}{"skins"} : [ \textcolor{stringliteral}{"my\_skin"} ]
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{templates/first.tmpl Template File}\label{ex_templates____first__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin my\_skin %>
+<% view message uses content::message %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+<body>
+<h1><%= text %> World!</h1>
+</body>
+<html>
+<% end \textcolor{keyword}{template} %>
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{templates/hello-\/tmpl.cpp Source File}\label{ex_templates____hello-tmpl__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{preprocessor}{#include "content.h"}
+
+\textcolor{keyword}{class }my\_hello\_world : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    my\_hello\_world(cppcms::service &s) :
+       cppcms::application(s)
+    \{
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/*url*/})
+    \{
+        content::message c;
+        c.text=\textcolor{stringliteral}{">>>Hello<<<"};
+        render(\textcolor{stringliteral}{"message"},c);
+    \}
+\};
+
+
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service srv(argc,argv);
+        srv.applications_pool().mount(cppcms::applications\_factory<my\_hello\_world>());
+        srv.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+
+\end{DoxyCodeInclude}
+ \subsection{templates/config.js Configuration File for static templates linking}\label{ex_templates____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{templates/\-Makefile.dyn Makefile for dynamic templates loading}\label{ex_templates____Makefile__dyn}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello-tmpl libmy\_skin.so
+
+my\_skin.cpp: first.tmpl
+        cppcms\_tmpl\_cc first.tmpl -o my\_skin.cpp
+
+libmy\_skin.so: content.h my\_skin.cpp
+        g++ -shared -fPIC my\_skin.cpp -o libmy\_skin.so $\{LIBS\}
+
+hello-tmpl: hello-tmpl.cpp 
+        g++ -Wall -rdynamic hello-tmpl.cpp -o hello-tmpl $\{LIBS\}
+
+clean:
+        rm -f *.fcgi *.exe my\_skin.cpp *.so hello-tmpl
+\end{DoxyCodeInclude}
+ \section{Using nice U\-R\-Ls and a mapping between modules and U\-R\-Ls}\label{ex_url_mapping}
+
+\begin{DoxyItemize}
+\item \doxyref{url\-\_\-mapping/\-Makefile Makefile}{p.}{_ex_url_mapping____Makefile}
+\item \doxyref{url\-\_\-mapping/config.\-js Configuration File}{p.}{_ex_url_mapping____config__js}
+\item \doxyref{url\-\_\-mapping/hello.\-cpp Source File}{p.}{_ex_url_mapping____hello__cpp} 
+\end{DoxyItemize}\subsection{url\-\_\-mapping/\-Makefile Makefile}\label{ex_url_mapping____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello
+
+hello: hello.cpp
+        $(CXX) $(CXXFLAGS) -Wall hello.cpp -o hello $(LIBS)
+
+clean:
+        rm -fr hello *.exe *.so cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{url\-\_\-mapping/config.js Configuration File}\label{ex_url_mapping____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{url\-\_\-mapping/hello.cpp Source File}\label{ex_url_mapping____hello__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_mapper.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <stdlib.h>}
+
+
+\textcolor{keyword}{class }hello: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    hello(cppcms::service &srv) :
+        cppcms::application(srv) 
+    \{
+        dispatcher().assign(\textcolor{stringliteral}{"/number/(\(\backslash\)\(\backslash\)d+)"},&hello::number,\textcolor{keyword}{this},1);
+        mapper().assign(\textcolor{stringliteral}{"number"},\textcolor{stringliteral}{"/number/\{1\}"});
+        
+        dispatcher().assign(\textcolor{stringliteral}{"/smile"},&hello::smile,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"smile"},\textcolor{stringliteral}{"/smile"});
+
+        dispatcher().assign(\textcolor{stringliteral}{""},&hello::welcome,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{""});
+
+        mapper().root(\textcolor{stringliteral}{"/hello"});
+    \}
+    \textcolor{keywordtype}{void} number(std::string num)
+    \{
+        \textcolor{keywordtype}{int} no = atoi(num.c\_str());
+        response().out() << \textcolor{stringliteral}{"The number is "} << no << \textcolor{stringliteral}{"<br/>\(\backslash\)n"};
+        response().out() << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/"}) << \textcolor{stringliteral}{"'>Go back</a>"};
+    \}
+    \textcolor{keywordtype}{void} smile()
+    \{
+        response().out() << \textcolor{stringliteral}{":-) <br/>\(\backslash\)n"};
+        response().out() << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/"}) << \textcolor{stringliteral}{"'>Go back</a>"};
+    \}
+    \textcolor{keywordtype}{void} welcome()
+    \{
+        response().out() << 
+            \textcolor{stringliteral}{"<h1> Wellcome To Page with links </h1>\(\backslash\)n"}
+            \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/number"},1)  << \textcolor{stringliteral}{"'>1</a><br>\(\backslash\)n"}
+            \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/number"},15) << \textcolor{stringliteral}{"'>15</a><br>\(\backslash\)n"}
+            \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/smile"}) << \textcolor{stringliteral}{"' >:-)</a><br>\(\backslash\)n"};
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<hello>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Using applications hierarchy and U\-R\-L mapping}\label{ex_hierarchy}
+
+\begin{DoxyItemize}
+\item \doxyref{hierarchy/\-Makefile Makefile}{p.}{_ex_hierarchy____Makefile}
+\item \doxyref{hierarchy/config.\-js Configuration File}{p.}{_ex_hierarchy____config__js}
+\item \doxyref{hierarchy/myapp.\-cpp Source File}{p.}{_ex_hierarchy____myapp__cpp} 
+\end{DoxyItemize}\subsection{hierarchy/\-Makefile Makefile}\label{ex_hierarchy____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean myapp
+
+myapp: myapp.cpp
+        $(CXX) $(CXXFLAGS) -Wall myapp.cpp -o myapp $(LIBS)
+
+clean:
+        rm -fr myapp *.exe *.so cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{hierarchy/config.js Configuration File}\label{ex_hierarchy____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/myapp"}
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{hierarchy/myapp.cpp Source File}\label{ex_hierarchy____myapp__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_mapper.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <stdlib.h>}
+
+
+\textcolor{keyword}{class }numbers : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    numbers(cppcms::service &srv) : cppcms::application(srv)
+    \{
+        dispatcher().assign(\textcolor{stringliteral}{""},&numbers::all,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{""});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/odd"},&numbers::odd,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"odd"},\textcolor{stringliteral}{"/odd"});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/even"},&numbers::even,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"even"},\textcolor{stringliteral}{"/even"});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/prime"},&numbers::prime,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"prime"},\textcolor{stringliteral}{"/prime"});
+    \}
+
+    \textcolor{keywordtype}{void} all()
+    \{
+        response().out() 
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/"})       << \textcolor{stringliteral}{"'>Top</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/letters"})<< \textcolor{stringliteral}{"'>Letters</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"."})       << \textcolor{stringliteral}{"'>All Numbers</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"odd"})     << \textcolor{stringliteral}{"'>Odd Numbers</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"even"})    << \textcolor{stringliteral}{"'>Even Numbers</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"prime"})   << \textcolor{stringliteral}{"'>Prime Numbers</a><br>"}
+            << \textcolor{stringliteral}{"1,2,3,4,5,6,7,8,9,10,..."};
+    \}
+
+    \textcolor{keywordtype}{void} prime()
+    \{
+        response().out() << \textcolor{stringliteral}{"2,3,5,7,..."};
+    \}
+    \textcolor{keywordtype}{void} odd()
+    \{
+        response().out() << \textcolor{stringliteral}{"1,3,5,7,9,..."};
+    \}
+    \textcolor{keywordtype}{void} even()
+    \{
+        response().out() << \textcolor{stringliteral}{"2,4,6,8,10,..."};
+    \}
+\};
+
+\textcolor{keyword}{class }letters : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    letters(cppcms::service &srv) : cppcms::application(srv)
+    \{
+        dispatcher().assign(\textcolor{stringliteral}{""},&letters::all,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{""});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/capital"},&letters::capital,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"capital"},\textcolor{stringliteral}{"/capital"});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/small"},&letters::small,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"small"},\textcolor{stringliteral}{"/small"});
+
+    \}
+
+    \textcolor{keywordtype}{void} all()
+    \{
+        response().out() 
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/"})       << \textcolor{stringliteral}{"'>Top</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/numbers"})<< \textcolor{stringliteral}{"'>Numbers</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"."})       << \textcolor{stringliteral}{"'>All Letters</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"capital"}) << \textcolor{stringliteral}{"'>Capital Letters</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"small"})   << \textcolor{stringliteral}{"'>Small Letters</a><br>"}
+            << \textcolor{stringliteral}{"Aa, Bb, Cc, Dd,..."};
+    \}
+
+    \textcolor{keywordtype}{void} capital()
+    \{
+        response().out() << \textcolor{stringliteral}{"A,B,C,D,..."};
+    \}
+    \textcolor{keywordtype}{void} small()
+    \{
+        response().out() << \textcolor{stringliteral}{"a,b,c,d,..."};
+    \}
+\};
+
+
+
+\textcolor{keyword}{class }myapp: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    myapp(cppcms::service &srv) :
+        cppcms::application(srv) 
+    \{
+        attach( \textcolor{keyword}{new} numbers(srv),
+                \textcolor{stringliteral}{"numbers"}, \textcolor{stringliteral}{"/numbers\{1\}"}, \textcolor{comment}{// mapping}
+                \textcolor{stringliteral}{"/numbers(/(.*))?"}, 1);   \textcolor{comment}{// dispatching}
+        attach( \textcolor{keyword}{new} letters(srv),
+                \textcolor{stringliteral}{"letters"}, \textcolor{stringliteral}{"/letters\{1\}"}, \textcolor{comment}{// mapping}
+                \textcolor{stringliteral}{"/letters(/(.*))?"}, 1);   \textcolor{comment}{// dispatching}
+
+        dispatcher().assign(\textcolor{stringliteral}{""},&myapp::describe,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{""}); \textcolor{comment}{// default URL}
+        
+        mapper().root(\textcolor{stringliteral}{"/myapp"});
+    \}
+    \textcolor{keywordtype}{void} describe()
+    \{
+        response().out() 
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/numbers"})<< \textcolor{stringliteral}{"'>Numbers</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/letters"})<< \textcolor{stringliteral}{"'>Letters</a><br>"}
+            << \textcolor{stringliteral}{"<a href='"} << url(\textcolor{stringliteral}{"/numbers/odd"})<< \textcolor{stringliteral}{"'>Odd Numbers</a><br>"};
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<myapp>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Views Inheritance}\label{ex_templates_inheritance}
+
+\begin{DoxyItemize}
+\item \doxyref{templates\-\_\-inheritance/content.\-h Header File}{p.}{_ex_templates_inheritance____content__h}
+\item \doxyref{templates\-\_\-inheritance/\-Makefile Makefile}{p.}{_ex_templates_inheritance____Makefile}
+\item \doxyref{templates\-\_\-inheritance/news.\-tmpl Template File}{p.}{_ex_templates_inheritance____news__tmpl}
+\item \doxyref{templates\-\_\-inheritance/page.\-tmpl Template File}{p.}{_ex_templates_inheritance____page__tmpl}
+\item \doxyref{templates\-\_\-inheritance/intro.\-tmpl Template File}{p.}{_ex_templates_inheritance____intro__tmpl}
+\item \doxyref{templates\-\_\-inheritance/config.\-js Configuration File}{p.}{_ex_templates_inheritance____config__js}
+\item \doxyref{templates\-\_\-inheritance/master.\-tmpl Template File}{p.}{_ex_templates_inheritance____master__tmpl}
+\item \doxyref{templates\-\_\-inheritance/myapp.\-cpp Source File}{p.}{_ex_templates_inheritance____myapp__cpp} 
+\end{DoxyItemize}\subsection{templates\-\_\-inheritance/content.h Header File}\label{ex_templates_inheritance____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{keyword}{namespace }content  \{
+    \textcolor{keyword}{struct }master : \textcolor{keyword}{public} cppcms::base_content \{
+        std::string title;
+    \};
+    \textcolor{keyword}{struct }page : \textcolor{keyword}{public} master \{
+        std::string page\_title, page\_content;
+    \};
+    \textcolor{keyword}{struct }news : \textcolor{keyword}{public} master \{
+        std::list<std::string> news\_list;
+    \};
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/\-Makefile Makefile}\label{ex_templates_inheritance____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: myapp
+
+myapp: myapp.cpp my\_skin.cpp content.h
+        $(CXX) $(CXXFLAGS) -Wall myapp.cpp my\_skin.cpp -o myapp $\{LIBS\}
+
+my\_skin.cpp: master.tmpl page.tmpl news.tmpl intro.tmpl content.h
+        cppcms\_tmpl\_cc master.tmpl page.tmpl news.tmpl intro.tmpl -o my\_skin.cpp
+
+clean:
+        rm -fr myapp *.exe my\_skin.cpp cppcms\_rundir
+
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/news.tmpl Template File}\label{ex_templates_inheritance____news__tmpl}
+
+\begin{DoxyCodeInclude}
+<% skin myskin %>
+<% view news uses content::news extends master %>
+<% \textcolor{keyword}{template} title() %><% include master::title() %> :: News<% end %>
+<% \textcolor{keyword}{template} page\_content() %>
+<% \textcolor{keywordflow}{foreach} message in news\_list %>
+    <ul>
+    <% item %>
+        <li><%= message %></li>
+    <% end %>
+    </ul>
+<% end \textcolor{keywordflow}{foreach} %>
+<% end \textcolor{keyword}{template} %> 
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/page.tmpl Template File}\label{ex_templates_inheritance____page__tmpl}
+
+\begin{DoxyCodeInclude}
+<% skin myskin %>
+<% view page uses content::page extends master %>
+
+<% \textcolor{keyword}{template} title() %><% include master::title() %> :: <%= page\_title %><% end %>
+<% \textcolor{keyword}{template} page\_content() %>
+<%= page\_content | raw %>
+<% end \textcolor{keyword}{template} %> 
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/intro.tmpl Template File}\label{ex_templates_inheritance____intro__tmpl}
+
+\begin{DoxyCodeInclude}
+<% skin myskin %>
+<% view intro uses content::master extends master %>
+<% \textcolor{keyword}{template} page\_content() %>
+<p><a href=\textcolor{stringliteral}{'<% url "/page" %>'}>The Page</a></p>
+<p><a href=\textcolor{stringliteral}{'<% url "/news" %>'}>The News</a></p>
+<% end \textcolor{keyword}{template} %> 
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/config.js Configuration File}\label{ex_templates_inheritance____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/myapp"}
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/master.tmpl Template File}\label{ex_templates_inheritance____master__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin myskin %>
+<% view master uses content::master %>
+
+<% \textcolor{keyword}{template} title() %><%= title %><% end %>
+<% \textcolor{keyword}{template} page\_content() %>Override  Me<% end %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+<head>
+    <title><% include title() %></title>
+</head>
+<body>
+<h1><% include title() %></h1>
+<div \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"content"}>
+<% include page\_content() %>
+</div>
+</body>
+</html>
+<% end \textcolor{keyword}{template} %> 
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{templates\-\_\-inheritance/myapp.cpp Source File}\label{ex_templates_inheritance____myapp__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{preprocessor}{#include "content.h"}
+
+\textcolor{keyword}{class }myapp  : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    myapp(cppcms::service &s) :
+       cppcms::application(s)
+    \{
+        dispatcher().assign(\textcolor{stringliteral}{""},&myapp::intro,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{""});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/news"},&myapp::news,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"news"},\textcolor{stringliteral}{"/news"});
+
+        dispatcher().assign(\textcolor{stringliteral}{"/page"},&myapp::page,\textcolor{keyword}{this});
+        mapper().assign(\textcolor{stringliteral}{"page"},\textcolor{stringliteral}{"/page"});
+
+        mapper().root(\textcolor{stringliteral}{"/myapp"});
+    \}
+    \textcolor{keywordtype}{void} ini(content::master &c)
+    \{
+        c.title = \textcolor{stringliteral}{"My Web Site"};
+    \}
+    \textcolor{keywordtype}{void} intro()
+    \{
+        content::master c;
+        ini(c);
+        render(\textcolor{stringliteral}{"intro"},c);
+    \}
+    \textcolor{keywordtype}{void} page()
+    \{
+        content::page c;
+        ini(c);
+        c.page\_title = \textcolor{stringliteral}{"About"};
+        c.page\_content = \textcolor{stringliteral}{"<p>A page about this web site</p>"};
+        render(\textcolor{stringliteral}{"page"},c);
+    \}
+    \textcolor{keywordtype}{void} news()
+    \{
+        content::news c;
+        ini(c);
+        c.news\_list.push\_back(\textcolor{stringliteral}{"This is the latest message!"});
+        c.news\_list.push\_back(\textcolor{stringliteral}{"This is the next message."});
+        c.news\_list.push\_back(\textcolor{stringliteral}{"This is the last message!"});
+        render(\textcolor{stringliteral}{"news"},c);
+    \}
+\};
+
+
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service srv(argc,argv);
+        srv.applications_pool().mount(cppcms::applications\_factory<myapp>());
+        srv.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+
+\end{DoxyCodeInclude}
+ \section{Using Cpp\-C\-M\-S forms}\label{ex_forms}
+
+\begin{DoxyItemize}
+\item \doxyref{forms/content.\-h Header File}{p.}{_ex_forms____content__h}
+\item \doxyref{forms/\-Makefile Makefile}{p.}{_ex_forms____Makefile}
+\item \doxyref{forms/view.\-tmpl Template File}{p.}{_ex_forms____view__tmpl}
+\item \doxyref{forms/config.\-js Configuration File}{p.}{_ex_forms____config__js}
+\item \doxyref{forms/hello.\-cpp Source File}{p.}{_ex_forms____hello__cpp} 
+\end{DoxyItemize}\subsection{forms/content.h Header File}\label{ex_forms____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <cppcms/form.h>}
+
+\textcolor{preprocessor}{#include <iostream>}
+
+
+\textcolor{keyword}{namespace }content  \{
+ 
+\textcolor{keyword}{struct }info\_form : \textcolor{keyword}{public} cppcms::form \{
+    cppcms::widgets::text name;
+    cppcms::widgets::radio sex;
+    cppcms::widgets::select marital;
+    cppcms::widgets::numeric<double> age;
+    cppcms::widgets::submit submit;
+    info\_form()
+    \{
+        name.message(\textcolor{stringliteral}{"Your Name"});
+        sex.message(\textcolor{stringliteral}{"Sex"});
+        marital.message(\textcolor{stringliteral}{"Marital Status"});
+        age.message(\textcolor{stringliteral}{"Your Age"});
+        submit.value(\textcolor{stringliteral}{"Send"});
+        add(name);
+        add(sex);
+        add(marital);
+        add(age);
+        add(submit);
+        sex.add(\textcolor{stringliteral}{"Male"},\textcolor{stringliteral}{"male"});
+        sex.add(\textcolor{stringliteral}{"Female"},\textcolor{stringliteral}{"female"});
+        marital.add(\textcolor{stringliteral}{"Single"},\textcolor{stringliteral}{"single"});
+        marital.add(\textcolor{stringliteral}{"Married"},\textcolor{stringliteral}{"married"});
+        marital.add(\textcolor{stringliteral}{"Divorced"},\textcolor{stringliteral}{"divorced"});
+        name.non\_empty();
+        age.range(0,120);
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} validate()
+    \{
+        \textcolor{keywordflow}{if}(!form::validate()) 
+            \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+        \textcolor{keywordflow}{if}(marital.selected\_id()!=\textcolor{stringliteral}{"single"} && age.value()<18) \{
+            marital.valid(\textcolor{keyword}{false});
+            \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+        \}
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+\};
+
+\textcolor{keyword}{struct }message : \textcolor{keyword}{public} cppcms::base_content \{
+    std::string name,state,sex;
+    \textcolor{keywordtype}{double} age;
+    info\_form info;
+\};
+
+\} \textcolor{comment}{// content}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{forms/\-Makefile Makefile}\label{ex_forms____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello 
+
+hello: hello.cpp view.cpp content.h
+        $(CXX) -Wall hello.cpp view.cpp -o hello $(LIBS)
+
+view.cpp: view.tmpl content.h
+        cppcms\_tmpl\_cc view.tmpl -o view.cpp
+
+clean:
+        rm -fr *.exe *.so view.cpp cppcms\_rundir hello
+\end{DoxyCodeInclude}
+ \subsection{forms/view.tmpl Template File}\label{ex_forms____view__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin view %>
+<% view message uses content::message %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+    <body>
+    <% \textcolor{keywordflow}{if} not empty name %>
+            <h1>Hello <%= name %></h1>
+            <p>You are <%= sex %>, <%= state %></p>
+            <p>Your age is <%= age %></p>
+    <% \textcolor{keywordflow}{else} %>
+        <h1>Input your details</h1>
+    <% end %>
+    <form method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{""} >
+    <% form as\_p info %>
+    </form>
+  </body>
+<html>
+<% end \textcolor{keyword}{template} %>
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{forms/config.js Configuration File}\label{ex_forms____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \},
+\}
+\end{DoxyCodeInclude}
+ \subsection{forms/hello.cpp Source File}\label{ex_forms____hello__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include "content.h"}
+
+\textcolor{keyword}{using namespace }std;
+\textcolor{keyword}{class }hello: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    hello(cppcms::service &s) :
+        cppcms::application(s) 
+    \{
+    \}
+
+    \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/*unused*/})
+    \{
+        content::message c;
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+            c.info.load(context());
+            \textcolor{keywordflow}{if}(c.info.validate()) \{
+                c.name=c.info.name.value();
+                c.sex=c.info.sex.selected\_id();
+                c.state=c.info.marital.selected\_id();
+                c.age=c.info.age.value();
+                c.info.clear();
+            \}
+        \}
+        render(\textcolor{stringliteral}{"message"},c);
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<hello>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        cerr<<e.what()<<endl;
+    \}
+\}
+
+
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Uploading files with Cpp\-C\-M\-S}\label{ex_uploads}
+
+\begin{DoxyItemize}
+\item \doxyref{uploads/content.\-h Header File}{p.}{_ex_uploads____content__h}
+\item \doxyref{uploads/\-Makefile Makefile}{p.}{_ex_uploads____Makefile}
+\item \doxyref{uploads/uploader.\-cpp Source File}{p.}{_ex_uploads____uploader__cpp}
+\item \doxyref{uploads/view.\-tmpl Template File}{p.}{_ex_uploads____view__tmpl}
+\item \doxyref{uploads/index.\-html Header File}{p.}{_ex_uploads____index__html}
+\item \doxyref{uploads/config.\-js Configuration File}{p.}{_ex_uploads____config__js} 
+\end{DoxyItemize}\subsection{uploads/content.h Header File}\label{ex_uploads____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <cppcms/form.h>}
+
+\textcolor{preprocessor}{#include <iostream>}
+
+
+\textcolor{keyword}{namespace }content  \{
+ 
+\textcolor{keyword}{struct }file\_form : \textcolor{keyword}{public} cppcms::form \{
+    cppcms::widgets::text description;
+    cppcms::widgets::file image;
+    cppcms::widgets::submit submit;
+    file\_form()
+    \{
+        description.message(\textcolor{stringliteral}{"Image Description"});
+        description.non\_empty();
+        
+        image.message(\textcolor{stringliteral}{"Image to upload"});
+        image.help(\textcolor{stringliteral}{"PNG or JPEG only allowed under 100Kb"});
+        image.non\_empty();
+
+        \textcolor{comment}{// Sanity checks on the image}
+
+        \textcolor{comment}{// size 100k}
+        image.limits(0,100*1024);
+        \textcolor{comment}{// Filename with proper extension (optional)}
+        image.filename(booster::regex(\textcolor{stringliteral}{".*\(\backslash\)\(\backslash\).(jpg|jpeg|png)"}));
+        \textcolor{comment}{// Correct mime type (optional)}
+        image.mime(booster::regex(\textcolor{stringliteral}{"image/(png|jpeg)"}));
+
+        \textcolor{comment}{// And the most important (more then two above) the}
+        \textcolor{comment}{// magic numbers for each file and this the most important}
+        \textcolor{comment}{// validation}
+        \textcolor{comment}{//}
+        \textcolor{comment}{// Note: this what really defines the file type, other can be}
+        \textcolor{comment}{// easily changed}
+        image.add\_valid\_magic(\textcolor{stringliteral}{"\(\backslash\)x89\(\backslash\)x50\(\backslash\)x4e\(\backslash\)x47\(\backslash\)x0D\(\backslash\)x0A\(\backslash\)x1A\(\backslash\)x0A"}); \textcolor{comment}{// png}
+        image.add\_valid\_magic(\textcolor{stringliteral}{"\(\backslash\)xff\(\backslash\)xd8"}); \textcolor{comment}{// jpeg}
+
+        submit.value(\textcolor{stringliteral}{"Upload"});
+
+        add(description);
+        add(image);
+        add(submit);
+    \}
+\};
+
+\textcolor{keyword}{struct }upload : \textcolor{keyword}{public} cppcms::base_content \{
+    file\_form info;
+\};
+
+\} \textcolor{comment}{// content}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{uploads/\-Makefile Makefile}\label{ex_uploads____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean uploader 
+
+uploader: uploader.cpp view.cpp content.h
+        $(CXX) -Wall $(CXXFLAGS) uploader.cpp view.cpp -o uploader $(LIBS)
+
+view.cpp: view.tmpl content.h
+        cppcms\_tmpl\_cc view.tmpl -o view.cpp
+
+clean:
+        rm -fr *.exe *.so view.cpp cppcms\_rundir uploader
+\end{DoxyCodeInclude}
+ \subsection{uploads/uploader.cpp Source File}\label{ex_uploads____uploader__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_file.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include "content.h"}
+
+\textcolor{keyword}{using namespace }std;
+\textcolor{keyword}{class }uploader: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    uploader(cppcms::service &s) :
+        cppcms::application(s) 
+    \{
+    \}
+
+    \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/*unused*/})
+    \{
+        content::upload c;
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+            c.info.load(context());
+            \textcolor{keywordflow}{if}(c.info.validate()) \{
+                \textcolor{comment}{// Create file name}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// Note:}
+                \textcolor{comment}{// NEVER, NEVER, NEVER use user supplied file name!}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// Use it to display or for general information only.}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// If you would try to save the file under user supplied name you}
+                \textcolor{comment}{// may open yourself to multiple security issues like directory}
+                \textcolor{comment}{// traversal and more.}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// So create your own name. If you want to keep the connection with original}
+                \textcolor{comment}{// name you may use sha1 hash and then save it.}
+                \textcolor{comment}{//}
+                std::string new\_name = \textcolor{stringliteral}{"latest\_image"};
+                \textcolor{keywordflow}{if}(c.info.image.value()->mime() == \textcolor{stringliteral}{"image/png"})
+                    new\_name += \textcolor{stringliteral}{".png"};
+                \textcolor{keywordflow}{else}
+                    new\_name += \textcolor{stringliteral}{".jpg"}; \textcolor{comment}{// we had validated mime-type}
+
+                \textcolor{comment}{//}
+                \textcolor{comment}{// Note: save\_to is more efficient then reading file from}
+                \textcolor{comment}{// c.info.image.value()->data() stream and writing it}
+                \textcolor{comment}{// as save to would try to move the saved file over file-system}
+                \textcolor{comment}{// and it would be more efficient.}
+                \textcolor{comment}{//}
+                c.info.image.value()->save\_to(\textcolor{stringliteral}{"./uploads/"} + new\_name); 
+                c.info.clear();
+            \}
+        \}
+        render(\textcolor{stringliteral}{"upload"},c);
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<uploader>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        cerr<<e.what()<<endl;
+    \}
+\}
+
+
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{uploads/view.tmpl Template File}\label{ex_uploads____view__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin view %>
+<% view upload uses content::upload %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+   <body>
+    <!-- Specify enctype=\textcolor{stringliteral}{"multipart/form-data"} to be able to upload files -->
+
+    <form method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{""} enctype=\textcolor{stringliteral}{"multipart/form-data"} >
+    <% form as\_p info %>
+    </form>
+   <p>Uploaded images</p>
+   <iframe src=\textcolor{stringliteral}{"/uploads/"} width=\textcolor{stringliteral}{'800'} height=\textcolor{stringliteral}{'300'}></iframe>
+  </body>
+<html>
+<% end \textcolor{keyword}{template} %>
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{uploads/index.html Header File}\label{ex_uploads____index__html}
+
+\begin{DoxyCodeInclude}
+<html>
+<head>
+<meta HTTP-EQUIV=\textcolor{stringliteral}{"REFRESH"} content=\textcolor{stringliteral}{"0; url=/uploader"}>
+</head>
+<body><a href=\textcolor{stringliteral}{"/uploader"}>Follow the link</a></body>
+</html>
+\end{DoxyCodeInclude}
+ \subsection{uploads/config.js Configuration File}\label{ex_uploads____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/uploader"}
+        \},
+        \textcolor{stringliteral}{"file\_server"} : \{
+                \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true},
+                \textcolor{stringliteral}{"listing"} : \textcolor{keyword}{true},
+                \textcolor{stringliteral}{"document\_root"} : \textcolor{stringliteral}{"."}
+        \},
+\}
+\end{DoxyCodeInclude}
+ \section{Using Cpp\-C\-M\-S Cache}\label{ex_basic_cache}
+
+\begin{DoxyItemize}
+\item \doxyref{basic\-\_\-cache/content.\-h Header File}{p.}{_ex_basic_cache____content__h}
+\item \doxyref{basic\-\_\-cache/\-Makefile Makefile}{p.}{_ex_basic_cache____Makefile}
+\item \doxyref{basic\-\_\-cache/view.\-tmpl Template File}{p.}{_ex_basic_cache____view__tmpl}
+\item \doxyref{basic\-\_\-cache/config.\-js Configuration File}{p.}{_ex_basic_cache____config__js}
+\item \doxyref{basic\-\_\-cache/hello.\-cpp Source File}{p.}{_ex_basic_cache____hello__cpp} 
+\end{DoxyItemize}\subsection{basic\-\_\-cache/content.h Header File}\label{ex_basic_cache____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <cppcms/form.h>}
+\textcolor{preprocessor}{#include <string>}
+
+
+
+\textcolor{keyword}{namespace }content  \{
+ 
+\textcolor{keyword}{struct }input\_form : \textcolor{keyword}{public} cppcms::form \{
+    cppcms::widgets::numeric<int> arg;
+    cppcms::widgets::submit submit;
+
+    input\_form()
+    \{
+        arg.message(\textcolor{stringliteral}{"N"});
+        submit.value(\textcolor{stringliteral}{"Calc"});
+        add(arg);
+        add(submit);
+        arg.non\_empty();
+    \}
+\};
+
+\textcolor{keyword}{struct }message : \textcolor{keyword}{public} cppcms::base_content \{
+    \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} fact;
+    \textcolor{keywordtype}{int} arg;
+    input\_form info;
+\};
+
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{basic\-\_\-cache/\-Makefile Makefile}\label{ex_basic_cache____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello 
+
+hello: hello.cpp view.cpp content.h
+        $(CXX) -Wall hello.cpp view.cpp -o hello $(LIBS)
+
+view.cpp: view.tmpl content.h
+        cppcms\_tmpl\_cc view.tmpl -o view.cpp
+
+clean:
+        rm -fr hello *.exe *.so view.cpp cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{basic\-\_\-cache/view.tmpl Template File}\label{ex_basic_cache____view__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin view %>
+<% view message uses content::message %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+    <body>
+    <h1>Factorial Calculator</h1>
+    <h2><%= arg %>! = <%= fact %></h2>
+    <form method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{""} >
+    <% form as\_p info %>
+    </form>
+  </body>
+<html>
+<% end \textcolor{keyword}{template} %>
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{basic\-\_\-cache/config.js Configuration File}\label{ex_basic_cache____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \},
+        \textcolor{stringliteral}{"cache"} : \{
+                \textcolor{stringliteral}{"backend"} : \textcolor{stringliteral}{"thread\_shared"},
+                \textcolor{stringliteral}{"limit"} : 100,
+        \}
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{basic\-\_\-cache/hello.cpp Source File}\label{ex_basic_cache____hello__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/cache\_interface.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <sstream>}
+\textcolor{preprocessor}{#include "content.h"}
+
+\textcolor{keyword}{class }hello: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    hello(cppcms::service &s) :
+        cppcms::application(s) 
+    \{
+    \}
+    \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/*unused*/})
+    \{
+        content::message c;
+        c.arg=0;
+        c.fact=1;
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+            c.info.load(context());
+            \textcolor{keywordflow}{if}(c.info.validate()) \{
+                c.arg=c.info.arg.value(); 
+                c.info.clear();
+            \}
+            \textcolor{keywordflow}{else} \{ \textcolor{comment}{// No cache should be used}
+               render(\textcolor{stringliteral}{"message"},c);
+               \textcolor{keywordflow}{return};
+            \}
+        \}
+
+        std::ostringstream key;
+        key << \textcolor{stringliteral}{"factorial\_"} << c.arg;
+        \textcolor{keywordflow}{if}(cache().fetch\_page(key.str()))
+            \textcolor{keywordflow}{return};
+        \textcolor{keywordtype}{long} \textcolor{keywordtype}{long} \textcolor{keywordtype}{int} f=1;
+        \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=1;i<=c.arg;i++) \{
+            f*=i;
+        \}
+        c.fact=f;
+        render(\textcolor{stringliteral}{"message"},c);
+        cache().store_page(key.str(),3600);
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<hello>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Localizing Cpp\-C\-M\-S Applications}\label{ex_localization}
+
+\begin{DoxyItemize}
+\item \doxyref{localization/content.\-h Header File}{p.}{_ex_localization____content__h}
+\item \doxyref{localization/\-Makefile Makefile}{p.}{_ex_localization____Makefile}
+\item \doxyref{localization/view.\-tmpl Template File}{p.}{_ex_localization____view__tmpl}
+\item \doxyref{localization/config.\-js Configuration File}{p.}{_ex_localization____config__js}
+\item \doxyref{localization/hello.\-cpp Source File}{p.}{_ex_localization____hello__cpp}
+\item \doxyref{localization/locale/he/\-L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S/hello.\-po Gettext Dictionary File}{p.}{_ex_localization____locale_he_LC_MESSAGES_hello__po} 
+\end{DoxyItemize}\subsection{localization/content.h Header File}\label{ex_localization____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{keyword}{namespace }content  \{
+    \textcolor{keyword}{struct }message : \textcolor{keyword}{public} cppcms::base_content \{
+        std::string message;
+    \};
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{localization/\-Makefile Makefile}\label{ex_localization____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello locale/he/LC\_MESSAGES/hello.mo
+
+hello: hello.cpp view.cpp content.h
+        $(CXX) $(CXXFLAGS) -Wall hello.cpp view.cpp -o hello $(LIBS)
+
+view.cpp: view.tmpl content.h
+        cppcms\_tmpl\_cc -d hello view.tmpl -o view.cpp
+
+locale/he/LC\_MESSAGES/hello.mo: locale/he/LC\_MESSAGES/hello.po
+        msgfmt locale/he/LC\_MESSAGES/hello.po -o locale/he/LC\_MESSAGES/hello.mo
+
+clean:
+        rm -fr hello *.exe *.so view.cpp locale/he/LC\_MESSAGES/hello.mo cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{localization/view.tmpl Template File}\label{ex_localization____view__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin view %>
+<% view message uses content::message %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+    <head>
+    <meta http-equiv=\textcolor{stringliteral}{"Content-Type"} content=\textcolor{stringliteral}{"text/html; charset=utf-8"} >
+    </head>
+    <% \textcolor{keywordflow}{if} rtl %>
+    <body dir=\textcolor{stringliteral}{"rtl"}>
+    <% \textcolor{keywordflow}{else} %>
+    <body>
+    <% end %>
+    <h1><% gt \textcolor{stringliteral}{"We want to say"} %></h1>
+    <p><%= message %></p>
+    <p><a href=\textcolor{stringliteral}{"he\_IL"}>he</a>/<a href=\textcolor{stringliteral}{"en\_US"}>en</a></p>
+  </body>
+<html>
+<% end \textcolor{keyword}{template} %>
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{localization/config.js Configuration File}\label{ex_localization____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \},
+        \textcolor{stringliteral}{"localization"} : \{
+                \textcolor{stringliteral}{"messages"} : \{
+                        \textcolor{stringliteral}{"paths"} : [ \textcolor{stringliteral}{"./locale"} ],
+                        \textcolor{stringliteral}{"domains"} : [ \textcolor{stringliteral}{"hello"} ]
+                \},
+                \textcolor{stringliteral}{"locales"} : [ \textcolor{stringliteral}{"he\_IL.UTF-8"}, \textcolor{stringliteral}{"en\_US.UTF-8"} ]
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{localization/hello.cpp Source File}\label{ex_localization____hello__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include "content.h"}
+
+
+\textcolor{keyword}{class }hello: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    hello(cppcms::service &srv) :
+        cppcms::application(srv) 
+    \{
+        dispatcher().assign(\textcolor{stringliteral}{"^/(en\_US|he\_IL)/?$"},&hello::say\_hello,\textcolor{keyword}{this},1);
+        dispatcher().assign(\textcolor{stringliteral}{"^(.*)$"},&hello::redirect,\textcolor{keyword}{this});
+    \}
+    \textcolor{keywordtype}{void} redirect()
+    \{
+        response().set_redirect_header(request().script\_name() + \textcolor{stringliteral}{"/en\_US"});
+    \}
+    \textcolor{keywordtype}{void} say\_hello(std::string lang)
+    \{
+        context().locale(lang + \textcolor{stringliteral}{".UTF-8"});
+        content::message c;
+        c.message=translate(\textcolor{stringliteral}{"Hello World"});
+        render(\textcolor{stringliteral}{"message"},c);
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<hello>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{localization/locale/he/\-L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S/hello.po Gettext Dictionary File}\label{ex_localization____locale_he_LC_MESSAGES_hello__po}
+
+\begin{DoxyCodeInclude}
+msgid \textcolor{stringliteral}{""}
+msgstr \textcolor{stringliteral}{""}
+\textcolor{stringliteral}{"Content-Type: text/plain; charset=utf-8\(\backslash\)n"}
+\textcolor{stringliteral}{"Content-Transfer-Encoding: 8bit\(\backslash\)n"}
+
+\textcolor{preprocessor}{#: view.tmpl:6}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"LTR"}
+msgstr \textcolor{stringliteral}{"RTL"}
+
+\textcolor{preprocessor}{#: view.tmpl:11}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"We want to say"}
+msgstr \textcolor{stringliteral}{"אנחנו רוצים לומר"}
+
+\textcolor{preprocessor}{#: hello.cpp:21}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Hello World"}
+msgstr \textcolor{stringliteral}{"שלום עולם"}
+\end{DoxyCodeInclude}
+ \section{Using Sessions}\label{ex_sessions}
+
+\begin{DoxyItemize}
+\item \doxyref{sessions/content.\-h Header File}{p.}{_ex_sessions____content__h}
+\item \doxyref{sessions/\-Makefile Makefile}{p.}{_ex_sessions____Makefile}
+\item \doxyref{sessions/view.\-tmpl Template File}{p.}{_ex_sessions____view__tmpl}
+\item \doxyref{sessions/config.\-js Configuration File}{p.}{_ex_sessions____config__js}
+\item \doxyref{sessions/hello.\-cpp Source File}{p.}{_ex_sessions____hello__cpp} 
+\end{DoxyItemize}\subsection{sessions/content.h Header File}\label{ex_sessions____content__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef CONTENT\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define CONTENT\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/view.h>}
+\textcolor{preprocessor}{#include <cppcms/form.h>}
+
+\textcolor{preprocessor}{#include <iostream>}
+
+
+\textcolor{keyword}{namespace }content  \{
+ 
+\textcolor{keyword}{struct }info\_form : \textcolor{keyword}{public} cppcms::form \{
+    cppcms::widgets::text name;
+    cppcms::widgets::radio sex;
+    cppcms::widgets::select martial;
+    cppcms::widgets::numeric<double> age;
+    cppcms::widgets::submit submit;
+    info\_form()
+    \{
+        name.message(\textcolor{stringliteral}{"Your Name"});
+        sex.message(\textcolor{stringliteral}{"Sex"});
+        martial.message(\textcolor{stringliteral}{"Martial State"});
+        age.message(\textcolor{stringliteral}{"Your Age"});
+        submit.value(\textcolor{stringliteral}{"Send"});
+        add(name);
+        add(sex);
+        add(martial);
+        add(age);
+        add(submit);
+        sex.add(\textcolor{stringliteral}{"Male"},\textcolor{stringliteral}{"m"});
+        sex.add(\textcolor{stringliteral}{"Female"},\textcolor{stringliteral}{"f"});
+        martial.add(\textcolor{stringliteral}{"Single"},\textcolor{stringliteral}{"s"});
+        martial.add(\textcolor{stringliteral}{"Married"},\textcolor{stringliteral}{"m"});
+        martial.add(\textcolor{stringliteral}{"Divorced"},\textcolor{stringliteral}{"d"});
+        name.non\_empty();
+        age.range(0,120);
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{bool} validate()
+    \{
+        \textcolor{keywordflow}{if}(!form::validate()) 
+            \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+        \textcolor{keywordflow}{if}(martial.selected\_id()!=\textcolor{stringliteral}{"s"} && age.value()<18) \{
+            martial.valid(\textcolor{keyword}{false});
+            \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+        \}
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+    \}
+\};
+
+\textcolor{keyword}{struct }message : \textcolor{keyword}{public} cppcms::base_content \{
+    std::string name,who;
+    \textcolor{keywordtype}{double} age;
+    info\_form info;
+\};
+
+\} \textcolor{comment}{// content}
+
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{sessions/\-Makefile Makefile}\label{ex_sessions____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+all: clean hello
+
+hello: hello.cpp view.cpp content.h
+        $(CXX) -Wall hello.cpp view.cpp -o hello $(LIBS)
+
+view.cpp: view.tmpl content.h
+        cppcms\_tmpl\_cc view.tmpl -o view.cpp
+
+clean:
+        rm -fr hello *.exe *.so view.cpp cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{sessions/view.tmpl Template File}\label{ex_sessions____view__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"content.h"} %>
+<% skin view %>
+<% view message uses content::message %>
+<% \textcolor{keyword}{template} render() %>
+<html>
+<body>
+    <h1>Hello <%= who %> <%= name %></h1>
+    <% \textcolor{keywordflow}{if} (content.age != -1.0) %>
+        <p>Your age is <%= age %></p>
+        <h2>Change details</h2>
+    <% \textcolor{keywordflow}{else} %>
+        <h2>Input your details</h2>
+    <% end %>
+    <form method=\textcolor{stringliteral}{"post"} action=\textcolor{stringliteral}{""} >
+    <% form as\_p info %>
+    </form>
+  </body>
+<html>
+<% end \textcolor{keyword}{template} %>
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{sessions/config.js Configuration File}\label{ex_sessions____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/hello"}
+        \},
+        \textcolor{stringliteral}{"session"} : \{
+                \textcolor{stringliteral}{"expire"} : \textcolor{stringliteral}{"renew"},
+                \textcolor{stringliteral}{"timeout"} : 604800,
+                \textcolor{stringliteral}{"location"} : \textcolor{stringliteral}{"client"},
+                \textcolor{stringliteral}{"client"} :      \{
+                        \textcolor{stringliteral}{"hmac"} :        \textcolor{stringliteral}{"sha1"},
+                        \textcolor{stringliteral}{"hmac\_key"} :    \textcolor{stringliteral}{"3891bbf7f845fd4277008a63d72640fc13bb9a31"}
+                \}
+
+        \},
+\}
+\end{DoxyCodeInclude}
+ \subsection{sessions/hello.cpp Source File}\label{ex_sessions____hello__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/session\_interface.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{preprocessor}{#include "content.h"}
+
+\textcolor{keyword}{using namespace }std;
+
+\textcolor{keyword}{class }hello: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    hello(cppcms::service &s) :
+        cppcms::application(s) 
+    \{
+    \}
+    \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/* unused */})
+    \{
+        content::message c;
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+            c.info.load(context());
+            \textcolor{keywordflow}{if}(c.info.validate()) \{
+                session()[\textcolor{stringliteral}{"name"}]=c.info.name.value();
+                session()[\textcolor{stringliteral}{"sex"}]=c.info.sex.selected\_id();
+                session()[\textcolor{stringliteral}{"state"}]=c.info.martial.selected\_id();
+                session().set(\textcolor{stringliteral}{"age"},c.info.age.value());
+                c.info.clear();
+            \}
+        \}
+
+        \textcolor{keywordflow}{if}(session().is\_set(\textcolor{stringliteral}{"name"})) \{
+            c.name=session()[\textcolor{stringliteral}{"name"}];
+            \textcolor{keywordflow}{if}(session()[\textcolor{stringliteral}{"sex"}]==\textcolor{stringliteral}{"m"}) \{
+                c.who=\textcolor{stringliteral}{"Mr"};
+            \}
+            \textcolor{keywordflow}{else} \{
+                \textcolor{keywordflow}{if}(session()[\textcolor{stringliteral}{"state"}]==\textcolor{stringliteral}{"s"}) \{
+                    c.who=\textcolor{stringliteral}{"Miss"};
+                \}
+                \textcolor{keywordflow}{else} \{
+                    c.who=\textcolor{stringliteral}{"Mrs"};
+                \}
+            \}
+            c.age=session().get<\textcolor{keywordtype}{double}>(\textcolor{stringliteral}{"age"});
+        \}
+        \textcolor{keywordflow}{else} \{
+            c.name=\textcolor{stringliteral}{"Visitor"};
+            c.age=-1;
+        \}
+        render(\textcolor{stringliteral}{"message"},c);
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service app(argc,argv);
+        app.applications\_pool().mount(cppcms::applications\_factory<hello>());
+        app.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        cerr<<e.what()<<endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Using Serialization Services}\label{ex_serialization}
+
+\begin{DoxyItemize}
+\item \doxyref{serialization/\-Makefile Makefile}{p.}{_ex_serialization____Makefile}
+\item \doxyref{serialization/external\-\_\-serialization.\-cpp Source File}{p.}{_ex_serialization____external_serialization__cpp}
+\item \doxyref{serialization/serialization.\-cpp Source File}{p.}{_ex_serialization____serialization__cpp} 
+\end{DoxyItemize}\subsection{serialization/\-Makefile Makefile}\label{ex_serialization____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+
+all: serialization external\_serialization
+
+serialization: serialization.cpp
+        $(CXX) $(CXXFLAGS) -O2 -Wall -g serialization.cpp -o serialization $\{LIBS\}
+
+external\_serialization: external\_serialization.cpp
+        $(CXX) $(CXXFLAGS) -O2 -Wall -g external\_serialization.cpp -o external\_serialization $\{LIBS\} -
+      lboost\_serialization
+
+clean:
+        rm -f *.exe serialization external\_serialization
+\end{DoxyCodeInclude}
+ \subsection{serialization/external\-\_\-serialization.cpp Source File}\label{ex_serialization____external_serialization__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/serialization.h>}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/cache\_interface.h>}
+\textcolor{preprocessor}{#include <cppcms/session\_interface.h>}
+\textcolor{preprocessor}{#include <boost/archive/binary\_oarchive.hpp>}
+\textcolor{preprocessor}{#include <boost/archive/binary\_iarchive.hpp>}
+\textcolor{preprocessor}{#include <sstream>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keyword}{struct }person \{
+
+    std::string name;
+    std::string family;
+
+    \textcolor{keyword}{template}<\textcolor{keyword}{typename} Archive>
+    \textcolor{keywordtype}{void} serialize(Archive &a,\textcolor{keywordtype}{unsigned} \textcolor{comment}{/*version*/})
+    \{
+        a & name & family;
+    \}
+\};
+
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} T>
+\textcolor{keywordtype}{void} load\_from\_boost(std::string \textcolor{keyword}{const} &src,T &obj)
+\{
+    std::stringbuf ss(src);
+    \{
+        boost::archive::binary\_iarchive oa(ss);
+        oa >> obj;
+    \}
+\}
+
+
+\textcolor{keyword}{template}<\textcolor{keyword}{typename} T>
+\textcolor{keywordtype}{void} save\_with\_boost(T \textcolor{keyword}{const} &obj,std::string &tgt)
+\{
+    std::stringbuf ss;
+    \{
+        boost::archive::binary\_oarchive oa(ss);
+        oa << obj;
+    \}
+    tgt=ss.str();
+\}
+
+\textcolor{keywordtype}{void} init\_person(person &john)
+\{
+    john.name = \textcolor{stringliteral}{"John"};
+    john.family = \textcolor{stringliteral}{"Jonson"};
+\}
+
+\textcolor{comment}{/* Specialize */}
+\textcolor{keyword}{namespace }cppcms \{
+    \textcolor{keyword}{template}<>
+    \textcolor{keyword}{struct }serialization\_traits<person> \{
+        \textcolor{keyword}{static} \textcolor{keywordtype}{void} save(person \textcolor{keyword}{const} &obj,std::string &tgt)
+        \{
+            save\_with\_boost(obj,tgt);
+        \}
+        \textcolor{keyword}{static} \textcolor{keywordtype}{void} load(std::string \textcolor{keyword}{const} &src,person &obj)
+        \{
+            load\_from\_boost(src,obj);
+        \}
+    \};
+\}
+
+
+\textcolor{keyword}{class }app : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    app(cppcms::service &s) : cppcms::application(s)
+    \{
+    \}
+
+    \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/*url*/})
+    \{
+        \{
+            person john;
+            session().fetch_data(\textcolor{stringliteral}{"me"},john);
+        \}
+        \{
+            person john;
+            \textcolor{keywordflow}{if}(!cache().fetch\_data(\textcolor{stringliteral}{"john"},john)) \{
+                init\_person(john);
+                cache().store_data(\textcolor{stringliteral}{"john"},john);
+            \}
+        \}
+    \}
+\};
+
+\textcolor{keywordtype}{int} main()
+\{
+    \{ \textcolor{comment}{// Generic way}
+        std::string buffer;
+        \{
+            person john;
+            init\_person(john);
+            cppcms::serialization_traits<person>::save(john,buffer);
+        \}
+        \{
+            person john;
+            cppcms::serialization_traits<person>::load(buffer,john);
+            std::cout << john.name << std::endl;
+        \}
+
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+
+
+
+
+
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{serialization/serialization.cpp Source File}\label{ex_serialization____serialization__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/serialization.h>}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/cache\_interface.h>}
+\textcolor{preprocessor}{#include <cppcms/session\_interface.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+
+\textcolor{comment}{// POD structure}
+\textcolor{keyword}{struct }physical \{
+    \textcolor{keywordtype}{int} age;
+    \textcolor{keywordtype}{double} height;
+\};
+
+
+\textcolor{keyword}{struct }child : \textcolor{keyword}{public} cppcms::serializable \{
+    std::string name;
+    physical parameters;
+
+        \textcolor{keywordtype}{void} serialize(cppcms::archive &a)
+    \{
+        a & name & cppcms::as\_pod(parameters);
+    \}
+
+\};
+
+\textcolor{keyword}{struct }person : \textcolor{keyword}{public} cppcms::serializable \{
+
+    std::string name;
+    std::string family;
+    std::string occupation;
+    std::string martial\_state;
+    \textcolor{keywordtype}{double} salary;
+    physical parameters;
+    std::list<child> children;
+    std::vector<std::string> friends;
+
+    \textcolor{keywordtype}{void} serialize(cppcms::archive &a)
+    \{
+        a & name & family & occupation & martial\_state 
+          & salary & cppcms::as\_pod(parameters) & children & friends;
+    \}
+\};
+
+\textcolor{keywordtype}{void} init\_person(person &john)
+\{
+    john.name = \textcolor{stringliteral}{"John"};
+    john.family = \textcolor{stringliteral}{"Jonson"};
+    john.occupation = \textcolor{stringliteral}{"Programmer"};
+    john.martial\_state = \textcolor{stringliteral}{"married"};
+    john.parameters.age = 30;
+    john.parameters.height = 1.80;
+    john.salary = 1500;
+    john.children.push\_back(child());
+    john.children.back().name = \textcolor{stringliteral}{"Tom"};
+    john.children.back().parameters.age = 5;
+    john.children.back().parameters.height = 1.0;
+    john.friends.push\_back(\textcolor{stringliteral}{"Gorge"});
+\}
+
+\textcolor{keyword}{class }app : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    app(cppcms::service &s) : cppcms::application(s)
+    \{
+    \}
+
+    \textcolor{keywordtype}{void} main(std::string \textcolor{comment}{/*url*/})
+    \{
+        \{
+            person me;
+            \textcolor{keywordflow}{if}(session().is\_set(\textcolor{stringliteral}{"me"})) \{
+                session().fetch_data(\textcolor{stringliteral}{"me"},me);
+                me.salary += 1;
+                session().store_data(\textcolor{stringliteral}{"me"},me);
+            \}
+        \}
+        \{
+            person john;
+            \textcolor{keywordflow}{if}(!cache().fetch\_data(\textcolor{stringliteral}{"john"},john)) \{
+                init\_person(john);
+                cache().store_data(\textcolor{stringliteral}{"john"},john);
+            \}
+        \}
+    \}
+\};
+
+\textcolor{keywordtype}{int} main()
+\{
+    \{ \textcolor{comment}{// Using archive directly}
+        std::string buffer; 
+        \{
+            person john;
+            init\_person(john);
+            cppcms::archive a;
+            john.save(a);
+            buffer = a.str();
+        \}
+        \{
+            person john;
+            cppcms::archive a;
+            a.str(buffer);
+            john.load(a);
+            std::cout << john.name << \textcolor{stringliteral}{" "} << john.children.front().name << \textcolor{stringliteral}{" "} << john.friends.front() << 
+      std::endl;
+        \}
+    \}
+    \{ \textcolor{comment}{// Generic way}
+        std::string buffer;
+        \{
+            person john;
+            init\_person(john);
+            cppcms::serialization_traits<person>::save(john,buffer);
+        \}
+        \{
+            person john;
+            cppcms::serialization_traits<person>::load(buffer,john);
+            std::cout << john.name << \textcolor{stringliteral}{" "} << john.children.front().name << \textcolor{stringliteral}{" "} << john.friends.front() << 
+      std::endl;
+        \}
+
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+
+
+
+
+
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{X\-S\-S filters and their use example}\label{ex_xss}
+
+\begin{DoxyItemize}
+\item \doxyref{xss/\-Makefile Makefile}{p.}{_ex_xss____Makefile}
+\item \doxyref{xss/tinymce\-\_\-profile.\-js Configuration File}{p.}{_ex_xss____tinymce_profile__js}
+\item \doxyref{xss/comment\-\_\-profile.\-js Configuration File}{p.}{_ex_xss____comment_profile__js}
+\item \doxyref{xss/xss.\-cpp Source File}{p.}{_ex_xss____xss__cpp}
+\item \doxyref{xss/config.\-js Configuration File}{p.}{_ex_xss____config__js} 
+\end{DoxyItemize}\subsection{xss/\-Makefile Makefile}\label{ex_xss____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+
+all: xss
+
+xss: xss.cpp
+        $(CXX) $(CXXFLAGS) -O2 -Wall -g xss.cpp -o xss $\{LIBS\}
+
+clean:
+        rm -fr xss xss.exe cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{xss/tinymce\-\_\-profile.js Configuration File}\label{ex_xss____tinymce_profile__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{comment}{//}
+        \textcolor{comment}{// Profile for simple tinymce }
+        \textcolor{comment}{// theme with autolink plugin}
+        \textcolor{comment}{//}
+        \textcolor{stringliteral}{"encoding"} : \textcolor{stringliteral}{"UTF-8"},
+        \textcolor{stringliteral}{"entities"} : [ \textcolor{stringliteral}{"nbsp"} ],
+        \textcolor{stringliteral}{"tags"} : \{
+                \textcolor{stringliteral}{"opening\_and\_closing"} : [ 
+                        \textcolor{stringliteral}{"p"},
+                        \textcolor{stringliteral}{"ul"},\textcolor{stringliteral}{"ol"},\textcolor{stringliteral}{"li"}, \textcolor{comment}{// lists}
+                        \textcolor{stringliteral}{"strong"}, \textcolor{stringliteral}{"em"}, 
+                        \textcolor{stringliteral}{"span"},
+                        \textcolor{stringliteral}{"a"}
+                ],
+                \textcolor{stringliteral}{"stand\_alone"} : [ \textcolor{stringliteral}{"br"} , \textcolor{stringliteral}{"hr"} ]
+        \},
+        \textcolor{stringliteral}{"attributes"} : [
+                \{
+                        \textcolor{stringliteral}{"tags"} : [ \textcolor{stringliteral}{"a"} ],
+                        \textcolor{stringliteral}{"attributes"} : [ \textcolor{stringliteral}{"href"} ],
+                        \textcolor{stringliteral}{"type"} : \textcolor{stringliteral}{"absolute\_uri"}
+                \},
+                \{
+                        \textcolor{stringliteral}{"tags"} : [ \textcolor{stringliteral}{"span"} ],
+                        \textcolor{stringliteral}{"attributes"} : [ \textcolor{stringliteral}{"style"} ],
+                        \textcolor{stringliteral}{"type"} : \textcolor{stringliteral}{"regex"},
+                        \textcolor{stringliteral}{"expression"} : \textcolor{stringliteral}{"(\(\backslash\)\(\backslash\)s*text-decoration\(\backslash\)\(\backslash\)s*:\(\backslash\)\(\backslash\)s*(underline|line-through)\(\backslash\)\(\backslash\)s*;)*"}
+                \}
+        ]
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{xss/comment\-\_\-profile.js Configuration File}\label{ex_xss____comment_profile__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"encoding"} : \textcolor{stringliteral}{"UTF-8"},
+        \textcolor{stringliteral}{"tags"} : \{
+                \textcolor{stringliteral}{"opening\_and\_closing"} : [ 
+                        \textcolor{stringliteral}{"b"}, \textcolor{stringliteral}{"i"}, \textcolor{stringliteral}{"tt"},
+                        \textcolor{stringliteral}{"strong"}, \textcolor{stringliteral}{"em"}, 
+                        \textcolor{stringliteral}{"blockquote"} ,
+                        \textcolor{stringliteral}{"a"}
+                ],
+                \textcolor{stringliteral}{"stand\_alone"} : [ \textcolor{stringliteral}{"br"}, \textcolor{stringliteral}{"hr"} ]
+        \},
+        \textcolor{stringliteral}{"attributes"} : [
+                \{
+                        \textcolor{stringliteral}{"tags"} : [ \textcolor{stringliteral}{"a"} ],
+                        \textcolor{stringliteral}{"attributes"} : [ \textcolor{stringliteral}{"href"} ],
+                        \textcolor{stringliteral}{"type"} : \textcolor{stringliteral}{"uri"}
+                \}
+        ]
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{xss/xss.cpp Source File}\label{ex_xss____xss__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_request.h>}
+\textcolor{preprocessor}{#include <cppcms/filters.h>}
+\textcolor{preprocessor}{#include <cppcms/xss.h>}
+\textcolor{preprocessor}{#include <cppcms/json.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+
+\textcolor{comment}{// Loading rules is expencive but once it is loaded}
+\textcolor{comment}{// we can access same object from multiple threads}
+\textcolor{comment}{// so just create one global object}
+cppcms::xss::rules global\_rules;
+
+\textcolor{keyword}{class }my\_xss : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    my\_xss(cppcms::service &srv) :
+        cppcms::application(srv) 
+    \{
+    \}
+    \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} main(std::string url);
+\};
+
+\textcolor{keywordtype}{void} my\_xss::main(std::string \textcolor{comment}{/*url*/})
+\{
+    std::string text;
+
+    text = request().post(\textcolor{stringliteral}{"xss"});
+
+
+    response().out() <<  
+        \textcolor{stringliteral}{"<!DOCTYPE html PUBLIC \(\backslash\)"-//W3C//DTD XHTML 1.1//EN\(\backslash\)" \(\backslash\)"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd
+      \(\backslash\)">"}
+        \textcolor{stringliteral}{"<html>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<head><title>XSS Test</title>\(\backslash\)n"};
+
+    \textcolor{keywordflow}{if}(settings().\textcolor{keyword}{get}(\textcolor{stringliteral}{"filters.tinymce"},\textcolor{keyword}{false})==\textcolor{keyword}{true}) \{
+        response().out() <<
+            \textcolor{stringliteral}{"<script type=\(\backslash\)"text/javascript\(\backslash\)" src=\(\backslash\)"/tinymce/jscripts/tiny\_mce/tiny\_mce.js\(\backslash\)" ></script >\(\backslash\)n"}
+            \textcolor{stringliteral}{"<script type=\(\backslash\)"text/javascript\(\backslash\)" >\(\backslash\)n"}
+            \textcolor{stringliteral}{"tinyMCE.init(\{ \(\backslash\)n"}
+            \textcolor{stringliteral}{"  mode : \(\backslash\)"textareas\(\backslash\)",\(\backslash\)n"}
+            \textcolor{stringliteral}{"  plugins : \(\backslash\)"autolink\(\backslash\)",\(\backslash\)n"}
+            \textcolor{stringliteral}{"  theme : \(\backslash\)"simple\(\backslash\)" \});\(\backslash\)n"}
+            \textcolor{stringliteral}{"</script>\(\backslash\)n"};
+    \}
+
+    response().out() <<  
+        \textcolor{stringliteral}{"<body>\(\backslash\)n"}
+        \textcolor{stringliteral}{"  <h1>Test XSS Filters</h1>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<form method='post' action='/xss'>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<textarea name='xss' cols='80' rows='25' >"} 
+        << cppcms::filters::escape(text) << 
+        \textcolor{stringliteral}{"</textarea><br>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<input type='submit' value='Send' />\(\backslash\)n"}
+        \textcolor{stringliteral}{"</form>\(\backslash\)n"}
+        \textcolor{stringliteral}{" <table border='1'>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<tr><td>Original</td><td><code><pre>"}
+        << cppcms::filters::escape(text)
+        <<\textcolor{stringliteral}{"</pre></code></td></tr>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<tr><td>Filtered</td><td><code><pre>"}
+        << cppcms::filters::escape(cppcms::xss::filter(text,global\_rules))
+        <<\textcolor{stringliteral}{"</pre></code></td></tr>\(\backslash\)n"}
+        \textcolor{stringliteral}{"<tr><td>Filtered HTML</td><td>"}
+        << cppcms::xss::filter(text,global\_rules)
+        <<\textcolor{stringliteral}{"</td></tr>\(\backslash\)n"}
+        <<\textcolor{stringliteral}{"</table>\(\backslash\)n"}
+        \textcolor{stringliteral}{"</body>\(\backslash\)n"}
+        \textcolor{stringliteral}{"</html>\(\backslash\)n"};
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service srv(argc,argv);
+        \textcolor{comment}{// Load rules from the profile file that the path we store in }
+        \textcolor{comment}{// configuration file}
+        global\_rules = cppcms::xss::rules(srv.settings().get<std::string>(\textcolor{stringliteral}{"filters.profile"}));
+        srv.applications_pool().mount(cppcms::applications\_factory<my\_xss>());
+        srv.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{xss/config.js Configuration File}\label{ex_xss____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"filters"} : \{
+                \textcolor{comment}{//}
+                \textcolor{comment}{// Basic profile for example for blog comments}
+                \textcolor{comment}{//}
+                \textcolor{stringliteral}{"profile"} : \textcolor{stringliteral}{"comment\_profile.js"}
+                \textcolor{comment}{// }
+
+                
+                \textcolor{comment}{//}
+                \textcolor{comment}{// Profile for simple TinyMCE configuration with rich content.}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// To use download TinyMCE and extract in this diectory,}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// "tinymce" : true,}
+                \textcolor{comment}{// "profile" : "tinymce\_profile.js",}
+                \textcolor{comment}{//}
+
+        \},
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/xss"}
+        \},
+        \textcolor{stringliteral}{"file\_server"} : \{
+                \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true}
+        \}
+\}
+
+\end{DoxyCodeInclude}
+ \section{Using J\-S\-O\-N A\-P\-I}\label{ex_json}
+
+\begin{DoxyItemize}
+\item \doxyref{json/\-Makefile Makefile}{p.}{_ex_json____Makefile}
+\item \doxyref{json/json.\-cpp Source File}{p.}{_ex_json____json__cpp} 
+\end{DoxyItemize}\subsection{json/\-Makefile Makefile}\label{ex_json____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms 
+
+
+all: json
+
+json: json.cpp
+        $(CXX) $(CXXFLAGS) -O2 -Wall -g json.cpp -o json $\{LIBS\}
+
+clean:
+        rm -fr json
+\end{DoxyCodeInclude}
+ \subsection{json/json.cpp Source File}\label{ex_json____json__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/json.h>}
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <sstream>}
+
+\textcolor{keyword}{struct }person \{
+    std::string name;
+    \textcolor{keywordtype}{double} salary;
+    std::vector<std::string> kids\_names;
+\};
+
+\textcolor{keyword}{namespace }cppcms \{
+    \textcolor{keyword}{namespace }json \{
+
+        \textcolor{comment}{//}
+        \textcolor{comment}{// We specilize cppcms::json::traits structure to convert}
+        \textcolor{comment}{// objects to and from json values}
+        \textcolor{comment}{//}
+
+        \textcolor{keyword}{template}<>
+        \textcolor{keyword}{struct }traits<person> \{
+            \textcolor{comment}{// this function should throw}
+            \textcolor{comment}{// cppcms::json::bad\_value\_cast in case}
+            \textcolor{comment}{// of invalid or impossible conversion, }
+            \textcolor{comment}{// this would give an easy way to substitute}
+            \textcolor{comment}{// a default value in case of fault}
+            \textcolor{keyword}{static} person \textcolor{keyword}{get}(value \textcolor{keyword}{const} &v)
+            \{
+                person p;
+                \textcolor{keywordflow}{if}(v.type()!=is_object)
+                    \textcolor{keywordflow}{throw} bad\_value\_cast();
+                
+                p.name=v.get<std::string>(\textcolor{stringliteral}{"name"});
+                p.salary=v.get<\textcolor{keywordtype}{double}>(\textcolor{stringliteral}{"salary"});
+                p.kids\_names=
+                    v.get<std::vector<std::string> >(\textcolor{stringliteral}{"kids\_names"});
+                \textcolor{comment}{// this works because generic vector and string specialized}
+                \textcolor{keywordflow}{return} p;
+            \}
+            \textcolor{keyword}{static} \textcolor{keywordtype}{void} set(value &v,person \textcolor{keyword}{const} &in)
+            \{
+                v.set(\textcolor{stringliteral}{"name"},in.name);
+                v.set(\textcolor{stringliteral}{"salary"},in.salary);
+                v.set(\textcolor{stringliteral}{"kids\_names"},in.kids\_names);
+            \}
+        \};
+    \} \textcolor{comment}{// json}
+\} \textcolor{comment}{// cppcms}
+
+\textcolor{keywordtype}{int} main()
+\{
+    cppcms::json::value my\_object;
+    \textcolor{comment}{// Create object data}
+    my\_object[\textcolor{stringliteral}{"name"}]=\textcolor{stringliteral}{"Moshe"};
+    my\_object[\textcolor{stringliteral}{"salary"}]=1000.0;
+    my\_object[\textcolor{stringliteral}{"kids\_names"}][0]=\textcolor{stringliteral}{"Yossi"};
+    my\_object[\textcolor{stringliteral}{"kids\_names"}][1]=\textcolor{stringliteral}{"Yonni"};
+    
+    \textcolor{comment}{// this is additional data}
+    my\_object[\textcolor{stringliteral}{"data"}][\textcolor{stringliteral}{"weight"}]=85;
+    my\_object[\textcolor{stringliteral}{"data"}][\textcolor{stringliteral}{"height"}]=1.80;
+
+    \textcolor{comment}{// Get values using path.}
+    std::string name=my\_object.get<std::string>(\textcolor{stringliteral}{"name"});
+    \textcolor{keywordtype}{double} salary = my\_object.get<\textcolor{keywordtype}{double}>(\textcolor{stringliteral}{"salary"});
+    \textcolor{keywordtype}{int} weight = my\_object.get<\textcolor{keywordtype}{int}>(\textcolor{stringliteral}{"data.weight"});
+    \textcolor{keywordtype}{double} height = my\_object.get<\textcolor{keywordtype}{double}>(\textcolor{stringliteral}{"data.height"});
+    
+    \textcolor{comment}{// get values using default value if not set}
+    std::string eyes\_color = my\_object.get(\textcolor{stringliteral}{"data.eyes\_color"},\textcolor{stringliteral}{"brown"});
+
+    \textcolor{comment}{// load person object from the object}
+    \textcolor{comment}{// using above traits}
+    person moshe = my\_object.get_value<person>();
+
+    \textcolor{comment}{// save person object to json object}
+    cppcms::json::value other = moshe;
+
+    \textcolor{comment}{// write data to output}
+    std::cout << other << std::endl;
+
+    \textcolor{comment}{// write data formatter nicely}
+    my\_object.save(std::cout,cppcms::json::readable);
+
+    \textcolor{comment}{// save object to stream and load it back}
+    std::stringstream tmp;
+    tmp << my\_object;
+    cppcms::json::value reloaded;
+    reloaded.load(tmp,\textcolor{keyword}{true});
+\}
+
+
+
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Simple Json\-R\-P\-C example}\label{ex_json_rpc}
+
+\begin{DoxyItemize}
+\item \doxyref{json\-\_\-rpc/usingrpc.\-html Using Json\-R\-P\-C Object}{p.}{_ex_json_rpc____usingrpc__html}
+\item \doxyref{json\-\_\-rpc/rpc.\-cpp Source File}{p.}{_ex_json_rpc____rpc__cpp}
+\item \doxyref{json\-\_\-rpc/\-Makefile Makefile}{p.}{_ex_json_rpc____Makefile}
+\item \doxyref{json\-\_\-rpc/index.\-html Json\-R\-P\-C Client Using X\-M\-L\-Http\-Request}{p.}{_ex_json_rpc____index__html}
+\item \doxyref{json\-\_\-rpc/config.\-js Configuration File}{p.}{_ex_json_rpc____config__js} 
+\end{DoxyItemize}\subsection{json\-\_\-rpc/usingrpc.html Using Json\-R\-P\-C Object}\label{ex_json_rpc____usingrpc__html}
+
+\begin{DoxyCodeInclude}
+<html>
+<head>
+<script type=\textcolor{stringliteral}{"text/javascript"} src=\textcolor{stringliteral}{"/scripts/json2.js"}></script>
+<script type=\textcolor{stringliteral}{"text/javascript"} src=\textcolor{stringliteral}{"/scripts/jsonrpc.js"}></script>
+</head>
+<body>
+<script type=\textcolor{stringliteral}{"text/javascript"}>
+
+var rpc = \textcolor{keyword}{new} JsonRPC(\textcolor{stringliteral}{'/rpc'},[\textcolor{stringliteral}{'div'},\textcolor{stringliteral}{'sum'}], [\textcolor{stringliteral}{'notify'}]);
+
+\textcolor{keyword}{function} getX()
+\{
+        \textcolor{keywordflow}{return} parseInt(document.getElementById(\textcolor{charliteral}{'x'}).value);
+\}
+\textcolor{keyword}{function} getY()
+\{
+        \textcolor{keywordflow}{return} parseInt(document.getElementById(\textcolor{charliteral}{'y'}).value);
+\}
+
+\textcolor{keyword}{function} setResult(r)
+\{
+        document.getElementById(\textcolor{stringliteral}{'result'}).innerHTML += r + \textcolor{stringliteral}{'<br>'};
+\}
+
+\textcolor{keyword}{function} call() 
+\{
+        var x = getX();
+        var y = getY();
+        \textcolor{comment}{//  Synchronous call}
+        
+        \textcolor{comment}{/*      }
+\textcolor{comment}{        try \{}
+\textcolor{comment}{                setResult(x+'/'+y+ '=' + rpc.div(x,y));}
+\textcolor{comment}{                setResult(x+'+'+y+ '=' + rpc.sum(x,y));}
+\textcolor{comment}{                rpc.notify('test');}
+\textcolor{comment}{        \}}
+\textcolor{comment}{        catch(e) \{}
+\textcolor{comment}{                setResult(e.message);}
+\textcolor{comment}{        \}}
+\textcolor{comment}{        */}
+
+        \textcolor{comment}{// Asynchronous call}
+        
+        
+        rpc.div.on\_error = \textcolor{keyword}{function}(e) \{ setResult(e.error); \}
+        rpc.div.on\_result = \textcolor{keyword}{function}(r) \{ setResult(x + \textcolor{charliteral}{'/'} + y + \textcolor{charliteral}{'='} + r ); \}
+        
+        rpc.sum.on\_error = \textcolor{keyword}{function}(e) \{ setResult(e.error); \}
+        rpc.sum.on\_result = \textcolor{keyword}{function}(r) \{ setResult(x + \textcolor{charliteral}{'+'} + y + \textcolor{charliteral}{'='}  + r); \}
+
+        rpc.notify.on\_error = \textcolor{keyword}{function}() \{ setResult(\textcolor{stringliteral}{'Notification error:'} + e.error); \}
+        rpc.notify.on\_result = \textcolor{keyword}{function}() \{ setResult(\textcolor{stringliteral}{'Notification Called'}); \}
+        
+        rpc.div(x,y);
+        rpc.sum(x,y);
+        rpc.notify(\textcolor{stringliteral}{'test'});
+        
+        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+\}
+</script>
+<p><a href=\textcolor{stringliteral}{"/"}>Using plain XMLHttpRequest</a></p>
+<form onsubmit=\textcolor{stringliteral}{"return call();"}>
+<p>
+<input type=\textcolor{stringliteral}{"text"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"x"} />
+<input type=\textcolor{stringliteral}{"submit"} value=\textcolor{stringliteral}{"?"} />
+<input type=\textcolor{stringliteral}{"text"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"y"} /> = 
+</p>
+<p \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"result"}></p>
+</form>
+</body>
+</html>
+
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc/rpc.cpp Source File}\label{ex_json_rpc____rpc__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/rpc\_json.h>}
+
+
+\textcolor{keyword}{class }json\_service : \textcolor{keyword}{public} cppcms::rpc::json_rpc_server \{
+\textcolor{keyword}{public}:
+    json\_service(cppcms::service &srv) : cppcms::rpc::json\_rpc\_server(srv)
+    \{
+        bind(\textcolor{stringliteral}{"sum"},cppcms::rpc::json\_method(&json\_service::sum,\textcolor{keyword}{this}),method\_role);
+        bind(\textcolor{stringliteral}{"div"},cppcms::rpc::json\_method(&json\_service::div,\textcolor{keyword}{this}),method\_role);
+        bind(\textcolor{stringliteral}{"notify"},cppcms::rpc::json\_method(&json\_service::notify,\textcolor{keyword}{this}),notification\_role);
+        bind(\textcolor{stringliteral}{"both"},cppcms::rpc::json\_method(&json\_service::both,\textcolor{keyword}{this}));
+    \}
+    \textcolor{keywordtype}{void} sum(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y)
+    \{
+        std::cout << \textcolor{stringliteral}{"Sum Called"} << std::endl;
+        return_result(x+y);
+    \}
+    \textcolor{keywordtype}{void} div(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y)
+    \{
+        std::cout << \textcolor{stringliteral}{"Div Called"} << std::endl;
+        \textcolor{keywordflow}{if}(y==0)
+                return_error(\textcolor{stringliteral}{"Division by zero"});
+        \textcolor{keywordflow}{else}
+                return_result(x/y);
+    \}
+    \textcolor{keywordtype}{void} notify(std::string msg)
+    \{
+        std::cout << \textcolor{stringliteral}{"We got notification "} << msg << std::endl;
+    \}
+    \textcolor{keywordtype}{void} both(std::string msg)
+    \{
+        \textcolor{keywordflow}{if}(notification())
+            std::cout << \textcolor{stringliteral}{"We got notification "} << msg << std::endl;
+        \textcolor{keywordflow}{else}
+                return_result(\textcolor{stringliteral}{"call:"}+msg);
+    \}
+\};
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} **argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service srv(argc,argv);
+        srv.applications_pool().mount( cppcms::applications\_factory<json\_service>());
+        srv.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr << e.what() << std::endl;
+        \textcolor{keywordflow}{return} 1;
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc/\-Makefile Makefile}\label{ex_json_rpc____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+
+all: rpc
+
+rpc: rpc.cpp
+        $(CXX) $(CXXFLAGS) -O2 -Wall -g rpc.cpp -o rpc $\{LIBS\}
+
+clean:
+        rm -fr rpc rpc.exe cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc/index.html Json\-R\-P\-C Client Using X\-M\-L\-Http\-Request}\label{ex_json_rpc____index__html}
+
+\begin{DoxyCodeInclude}
+<html>
+<body>
+<script type=\textcolor{stringliteral}{"text/javascript"}>
+\textcolor{keyword}{function} call() \{
+        
+        var xhr = \textcolor{keyword}{new} XMLHttpRequest();
+        xhr.open(\textcolor{stringliteral}{"post"}, \textcolor{stringliteral}{'/rpc'});
+        \textcolor{comment}{// Required by JSON-RPC over HTTP}
+        xhr.setRequestHeader(\textcolor{stringliteral}{"Content-Type"},\textcolor{stringliteral}{"application/json"});
+
+        \textcolor{comment}{// It is better to use real formatter like JSON.js}
+        var x=parseInt(document.getElementById(\textcolor{charliteral}{'x'}).value);
+        var y=parseInt(document.getElementById(\textcolor{charliteral}{'y'}).value);
+        var request = \textcolor{stringliteral}{'\{"method":"div","params":['} + x + \textcolor{charliteral}{','} + y +\textcolor{stringliteral}{'],"id":1\}'};
+
+        xhr.onreadystatechange = \textcolor{keyword}{function}() \{
+                \textcolor{keywordflow}{if} (xhr.readyState === 4) \{
+                        var res;
+                        \textcolor{keywordflow}{if}(xhr.status === 200) \{
+                                \textcolor{comment}{// Don't call eval in real code use some parser}
+                                var result = eval(\textcolor{charliteral}{'('} + xhr.responseText + \textcolor{charliteral}{')'});
+                                \textcolor{keywordflow}{if}(result.error==null) \{
+                                        res = result.result;
+                                \}
+                                \textcolor{keywordflow}{else} \{
+                                        res = result.error;
+                                \}
+                        \}
+                        \textcolor{keywordflow}{else} \{
+                                res = \textcolor{stringliteral}{'Invalid Status '} + xhr.status;
+                        \}
+                        document.getElementById(\textcolor{stringliteral}{'result'}).innerHTML = res;
+                \}
+        \}
+        xhr.send(request); 
+        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+\}
+</script>
+<p><a href=\textcolor{stringliteral}{"usingrpc.html"}>Using jsonrpc.js</a></p>
+<form onsubmit=\textcolor{stringliteral}{"return call();"}>
+<p>
+<input type=\textcolor{stringliteral}{"text"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"x"} />
+<input type=\textcolor{stringliteral}{"submit"} value=\textcolor{stringliteral}{"/"} />
+<input type=\textcolor{stringliteral}{"text"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"y"} /> = 
+<span \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"result"}></span>
+</p>
+</form>
+</body>
+</html>
+
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc/config.js Configuration File}\label{ex_json_rpc____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/rpc"}
+        \},
+        \textcolor{stringliteral}{"file\_server"} : \{ 
+                \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true},
+                \textcolor{stringliteral}{"alias"} : [
+                        \{ 
+                                \textcolor{stringliteral}{"url"} : \textcolor{stringliteral}{"/scripts"} ,
+                                \textcolor{stringliteral}{"path"} : \textcolor{stringliteral}{"../../contrib/client\_side/jsonrpc"} 
+                        \}
+                ]
+        \}
+\}
+
+\end{DoxyCodeInclude}
+ \section{Basic Comet Example}\label{ex_chat}
+
+\begin{DoxyItemize}
+\item \doxyref{chat/the\-\_\-chat.\-html Header File}{p.}{_ex_chat____the_chat__html}
+\item \doxyref{chat/\-Makefile Makefile}{p.}{_ex_chat____Makefile}
+\item \doxyref{chat/config.\-js Configuration File}{p.}{_ex_chat____config__js}
+\item \doxyref{chat/chat.\-cpp Source File}{p.}{_ex_chat____chat__cpp} 
+\end{DoxyItemize}\subsection{chat/the\-\_\-chat.html Header File}\label{ex_chat____the_chat__html}
+
+\begin{DoxyCodeInclude}
+<!DOCTYPE html PUBLIC \textcolor{stringliteral}{"-//W3C//DTD XHTML 1.0 Strict//EN"}
+    \textcolor{stringliteral}{"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"}>
+<html>
+<head>
+        <meta http-equiv=\textcolor{stringliteral}{"Content-Type"} content=\textcolor{stringliteral}{"text/html; charset=UTF-8"} />
+        <script type=\textcolor{stringliteral}{"text/javascript"} src=\textcolor{stringliteral}{"http://o.aolcdn.com/dojo/1.3.0/dojo/dojo.xd.js"}></script>
+        <title>Chat Room</title>
+</head>
+<body>
+<h1>Chat room</h1>
+<script type=\textcolor{stringliteral}{"text/javascript"}>
+        var message\_count = 0;
+        \textcolor{keyword}{function} send\_data() \{
+                var kw = \{
+                        url : \textcolor{stringliteral}{"/chat/post"},
+                        form : \textcolor{stringliteral}{"theform"}
+                \};
+                dojo.xhrPost(kw);
+                dojo.byId(\textcolor{stringliteral}{"message"}).value=\textcolor{stringliteral}{""};
+                \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+        \}
+        \textcolor{keyword}{function} read\_data() \{
+                dojo.xhrGet( \{
+                        url: \textcolor{stringliteral}{"/chat/get/"} + message\_count,
+                        timeout: 10000,
+                        handleAs: \textcolor{stringliteral}{"text"},
+                        load: \textcolor{keyword}{function}(response, ioArgs) \{
+                                dojo.byId(\textcolor{stringliteral}{"messages"}).innerHTML = response + \textcolor{stringliteral}{'<br/>'} + dojo.byId(\textcolor{stringliteral}{"messages"}
+      ).innerHTML;
+                                message\_count++;
+                                read\_data();
+                                \textcolor{keywordflow}{return} response;
+                        \},
+                        error: \textcolor{keyword}{function}(response,ioArgs) \{
+                                read\_data();
+                                \textcolor{keywordflow}{return} response;
+                        \}
+
+                \});
+        \}
+        dojo.addOnLoad(read\_data);
+</script>
+<form \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"theform"} >
+        <input \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"message"} type=\textcolor{stringliteral}{"text"} name=\textcolor{stringliteral}{"message"} value=\textcolor{stringliteral}{""} />
+        <input type=\textcolor{stringliteral}{"submit"} value=\textcolor{stringliteral}{"Send"} onclick=\textcolor{stringliteral}{"return send\_data()"}/>
+</form>
+<div \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"messages"}>
+</div>
+</body>
+\end{DoxyCodeInclude}
+ \subsection{chat/\-Makefile Makefile}\label{ex_chat____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+
+all: chat
+
+chat: chat.cpp
+        $(CXX) $(CXXFLAGS) -O2 -Wall -g chat.cpp -o chat $\{LIBS\}
+
+clean:
+        rm -fr chat chat.exe cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{chat/config.js Configuration File}\label{ex_chat____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/chat"}
+        \},
+        \textcolor{stringliteral}{"file\_server"} : \{
+                \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true},
+                \textcolor{stringliteral}{"document\_root"} : \textcolor{stringliteral}{"."}
+        \},
+
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{chat/chat.cpp Source File}\label{ex_chat____chat__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{comment}{//                                                                             }
+\textcolor{comment}{//  Copyright (C) 2008-2012  Artyom Beilis (Tonkikh) <artyomtnk@yahoo.com>     }
+\textcolor{comment}{//                                                                             }
+\textcolor{comment}{//  See accompanying file COPYING.TXT file for licensing details.}
+\textcolor{comment}{//}
+\textcolor{comment}{}\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_request.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_context.h>}
+\textcolor{preprocessor}{#include <booster/intrusive\_ptr.h>}
+
+\textcolor{preprocessor}{#include <set>}
+
+\textcolor{preprocessor}{#ifdef USE\_STD\_TR1\_BIND}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{  #include <tr1/functional>}
+  \textcolor{keyword}{using} std::tr1::bind;
+\textcolor{preprocessor}{#elif defined USE\_STD\_BIND}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{  #include <functional>}
+  \textcolor{keyword}{using} std::bind;
+\textcolor{preprocessor}{#else}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{  #include <boost/bind.hpp>}
+  \textcolor{keyword}{using} boost::bind;
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}
+
+\textcolor{keyword}{class }chat : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+    chat(cppcms::service &srv) : cppcms::application(srv)
+    \{
+        dispatcher().assign(\textcolor{stringliteral}{"/post"},&chat::post,\textcolor{keyword}{this});
+        dispatcher().assign(\textcolor{stringliteral}{"/get/(\(\backslash\)\(\backslash\)d+)"},&chat::get,\textcolor{keyword}{this},1);
+        dispatcher().assign(\textcolor{stringliteral}{".*"},&chat::redirect,\textcolor{keyword}{this});
+    \}
+    \textcolor{keywordtype}{void} redirect()
+    \{
+        response().set_redirect_header(\textcolor{stringliteral}{"/the\_chat.html"});
+    \}
+    \textcolor{keywordtype}{void} post()
+    \{
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+            messages\_.push\_back(request().post(\textcolor{stringliteral}{"message"}));
+            broadcast();
+        \}
+    \}
+    \textcolor{keywordtype}{void} \textcolor{keyword}{get}(std::string no)
+    \{
+        \textcolor{keywordtype}{unsigned} pos=atoi(no.c\_str());
+        \textcolor{keywordflow}{if}(pos < messages\_.size()) \{
+            response().set_plain_text_header();
+            response().out()<<messages\_[pos];
+            \textcolor{keywordflow}{return};
+        \}
+        \textcolor{keywordflow}{if}(pos > messages\_.size() )\{
+            response().status(404);
+            \textcolor{keywordflow}{return};
+        \}
+        
+        booster::shared_ptr<cppcms::http::context> context=release_context();
+        waiters\_.insert(context);
+        context->async_on_peer_reset(
+            bind(
+                &chat::remove\_context,
+                booster::intrusive_ptr<chat>(\textcolor{keyword}{this}),
+                context));
+    \}
+    \textcolor{keywordtype}{void} remove\_context(booster::shared_ptr<cppcms::http::context> context)
+    \{
+        waiters\_.erase(context);
+    \}
+    \textcolor{keywordtype}{void} broadcast()
+    \{
+        \textcolor{keywordflow}{for}(waiters\_type::iterator it=waiters\_.begin();it!=waiters\_.end();++it) \{
+            booster::shared_ptr<cppcms::http::context> waiter = *it;
+
+            waiter->response().set_plain_text_header();
+            waiter->response().out() << messages\_.back();
+            waiter->async_complete_response();
+
+        \}
+        waiters\_.clear();
+    \}
+\textcolor{keyword}{private}:
+    std::vector<std::string> messages\_;
+    \textcolor{keyword}{typedef} std::set<booster::shared\_ptr<cppcms::http::context> > waiters\_type;
+    waiters\_type waiters\_;
+\};
+
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} **argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service service(argc,argv);
+        booster::intrusive_ptr<chat> c=\textcolor{keyword}{new} chat(service);
+        service.applications\_pool().mount(c);
+        service.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<\textcolor{stringliteral}{"Catched exception: "}<<e.what()<<std::endl;
+        \textcolor{keywordflow}{return} 1;
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Implementing chat using asynchronous J\-S\-O\-N R\-P\-C calls}\label{ex_json_rpc_chat}
+
+\begin{DoxyItemize}
+\item \doxyref{json\-\_\-rpc\-\_\-chat/\-Makefile Makefile}{p.}{_ex_json_rpc_chat____Makefile}
+\item \doxyref{json\-\_\-rpc\-\_\-chat/index.\-html Header File}{p.}{_ex_json_rpc_chat____index__html}
+\item \doxyref{json\-\_\-rpc\-\_\-chat/config.\-js Configuration File}{p.}{_ex_json_rpc_chat____config__js}
+\item \doxyref{json\-\_\-rpc\-\_\-chat/chat.\-cpp Source File}{p.}{_ex_json_rpc_chat____chat__cpp} 
+\end{DoxyItemize}\subsection{json\-\_\-rpc\-\_\-chat/\-Makefile Makefile}\label{ex_json_rpc_chat____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lcppcms -lbooster
+
+
+all: chat
+
+chat: chat.cpp
+        $(CXX) -O2 -Wall $(CXXFLAGS) -g chat.cpp -o chat $\{LIBS\}
+
+clean:
+        rm -fr chat chat.exe cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc\-\_\-chat/index.html Header File}\label{ex_json_rpc_chat____index__html}
+
+\begin{DoxyCodeInclude}
+<!DOCTYPE html PUBLIC \textcolor{stringliteral}{"-//W3C//DTD XHTML 1.0 Strict//EN"}
+    \textcolor{stringliteral}{"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"}>
+<html>
+<head>
+        <meta http-equiv=\textcolor{stringliteral}{"Content-Type"} content=\textcolor{stringliteral}{"text/html; charset=UTF-8"} />
+        <script type=\textcolor{stringliteral}{"text/javascript"} src=\textcolor{stringliteral}{"/scripts/json2.js"}></script>
+        <script type=\textcolor{stringliteral}{"text/javascript"} src=\textcolor{stringliteral}{"/scripts/jsonrpc.js"}></script>
+        <title>Chat Room</title>
+
+        <script type=\textcolor{stringliteral}{"text/javascript"}>
+                \textcolor{comment}{// Global values:}
+                
+                \textcolor{comment}{// RPC object with two methods:}
+                \textcolor{comment}{//}
+                \textcolor{comment}{// get(counter), returns array of objects with properties author and message}
+                \textcolor{comment}{// post(author,message) posts new chat message}
+                \textcolor{comment}{//}
+                rpc = \textcolor{keyword}{new} JsonRPC(\textcolor{stringliteral}{'/chat'},[\textcolor{stringliteral}{'get'}],[\textcolor{stringliteral}{'post'}]);
+                \textcolor{comment}{// Messages counter - where to get new messages from, parameter for rpc.get}
+                message\_count = 0;
+
+                \textcolor{keyword}{function} make\_error(what,e)
+                \{
+                        document.getElementById(\textcolor{stringliteral}{'error\_message'}).innerHTML = what + \textcolor{stringliteral}{': '} + e.type +\textcolor{stringliteral}{': '} + e
+      .error;
+                \}
+
+                rpc.get.on\_result = \textcolor{keyword}{function}(messages) \{
+                        var messagesHtml = document.getElementById(\textcolor{stringliteral}{'messages'});
+                        
+                        \textcolor{keywordflow}{for}(var i=0;i<messages.length;i++) \{
+                                m=messages[i];
+                                messagesHtml.innerHTML+=\textcolor{stringliteral}{'<dt>'} + m.author +\textcolor{stringliteral}{'</dt>'} +
+                                        \textcolor{stringliteral}{'<dd>'} + m.message + \textcolor{stringliteral}{'</dd>'};
+                                message\_count++;
+                        \}
+
+                        restart();
+                \}
+
+                rpc.get.on\_error = \textcolor{keyword}{function}(e) \{
+                        make\_error(\textcolor{stringliteral}{'Getting New Messages'},e);
+                        document.getElementById(\textcolor{stringliteral}{'reconnect'}).disabled = \textcolor{keyword}{false};
+                \}
+         
+                rpc.post.on\_result = \textcolor{keyword}{function}() \{
+                        \textcolor{comment}{// reset the form content}
+                        document.getElementById(\textcolor{stringliteral}{"message"}).value = \textcolor{stringliteral}{''};
+                \}
+                rpc.post.on\_error = \textcolor{keyword}{function}(e) \{
+                        make\_error(\textcolor{stringliteral}{'Posting New Messages'},e);
+                \}
+
+                \textcolor{keyword}{function} restart()
+                \{
+                        rpc.get(message\_count);
+                \}
+                
+                \textcolor{keyword}{function} reconnect\_to\_server()
+                \{
+                        message\_count = 0;
+                        document.getElementById(\textcolor{stringliteral}{'error\_message'}).innerHTML = \textcolor{stringliteral}{''};
+                        document.getElementById(\textcolor{stringliteral}{'messages'}).innerHTML = \textcolor{stringliteral}{''};
+                        document.getElementById(\textcolor{stringliteral}{'reconnect'}).disabled = \textcolor{keyword}{true};
+                        restart();
+                        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+                \}
+                
+                \textcolor{keyword}{function} send\_data() \{
+                        author = document.getElementById(\textcolor{stringliteral}{'author'}).value;
+                        message = document.getElementById(\textcolor{stringliteral}{"message"}).value;
+                        rpc.post(author,message);
+                        \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+                \}
+        </script>
+
+
+</head>
+<body onload=\textcolor{stringliteral}{'restart()'}>
+<h1>Chat room</h1>
+<form \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"theform"} >
+        <p>Name: <input \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"author"} type=\textcolor{stringliteral}{"text"} value=\textcolor{stringliteral}{""} /></p>
+        <p>
+        Message: <input \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"message"} type=\textcolor{stringliteral}{"text"} value=\textcolor{stringliteral}{""} /></p>
+        <input type=\textcolor{stringliteral}{"submit"} value=\textcolor{stringliteral}{"Send"} onclick=\textcolor{stringliteral}{"return send\_data()"}/>
+        <input disabled=\textcolor{stringliteral}{"disabled"} \textcolor{keywordtype}{id}=\textcolor{stringliteral}{'reconnect'} type=\textcolor{stringliteral}{'submit'} value=\textcolor{stringliteral}{'Reconnect'} onclick=\textcolor{stringliteral}{'return
+       reconnect\_to\_server()'}>
+        </p>
+        <p \textcolor{keywordtype}{id}=\textcolor{stringliteral}{'error\_message'}></p>
+</form>
+<dl \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"messages"}>
+</dl>
+</body>
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc\-\_\-chat/config.js Configuration File}\label{ex_json_rpc_chat____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/chat"}
+        \},
+        \textcolor{stringliteral}{"file\_server"} : \{
+                \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true},
+                \textcolor{stringliteral}{"alias"} : [
+                        \{ 
+                                \textcolor{stringliteral}{"url"} : \textcolor{stringliteral}{"/scripts"} ,
+                                \textcolor{stringliteral}{"path"} : \textcolor{stringliteral}{"../../contrib/client\_side/jsonrpc"} 
+                        \}
+                ],
+                \textcolor{stringliteral}{"document\_root"} : \textcolor{stringliteral}{"."}
+        \},
+
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{json\-\_\-rpc\-\_\-chat/chat.cpp Source File}\label{ex_json_rpc_chat____chat__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{comment}{//                                                                             }
+\textcolor{comment}{//  Copyright (C) 2008-2012  Artyom Beilis (Tonkikh) <artyomtnk@yahoo.com>     }
+\textcolor{comment}{//                                                                             }
+\textcolor{comment}{//  See accompanying file COPYING.TXT file for licensing details.}
+\textcolor{comment}{//}
+\textcolor{comment}{}\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_response.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_request.h>}
+\textcolor{preprocessor}{#include <cppcms/http\_context.h>}
+\textcolor{preprocessor}{#include <cppcms/rpc\_json.h>}
+\textcolor{preprocessor}{#include <cppcms/json.h>}
+\textcolor{preprocessor}{#include <booster/intrusive\_ptr.h>}
+\textcolor{preprocessor}{#include <booster/aio/deadline\_timer.h>}
+\textcolor{preprocessor}{#include <booster/system\_error.h>}
+
+\textcolor{preprocessor}{#include <set>}
+
+\textcolor{preprocessor}{#include <boost/bind.hpp>}
+\textcolor{keyword}{using} boost::bind;
+
+
+\textcolor{keyword}{class }chat : \textcolor{keyword}{public} cppcms::rpc::json_rpc_server \{
+\textcolor{keyword}{public}:
+    chat(cppcms::service &srv) : 
+        cppcms::rpc::json\_rpc\_server(srv),
+        timer\_(srv.get\_io\_service())
+    \{
+        \textcolor{comment}{// Our main methods}
+        bind(\textcolor{stringliteral}{"post"},cppcms::rpc::json\_method(&chat::post,\textcolor{keyword}{this}),notification\_role);
+        bind(\textcolor{stringliteral}{"get"},cppcms::rpc::json\_method(&chat::get,\textcolor{keyword}{this}),method\_role);
+        
+        \textcolor{comment}{// Add timeouts to the system}
+        last\_wake\_ = time(0);
+        on\_timer(booster::system::error_code());
+    \}
+
+    \textcolor{comment}{// Handle new message call}
+    \textcolor{keywordtype}{void} post(std::string \textcolor{keyword}{const} &author,std::string \textcolor{keyword}{const} &message)
+    \{
+        cppcms::json::value obj;
+        obj[\textcolor{stringliteral}{"author"}]=author;
+        obj[\textcolor{stringliteral}{"message"}]=message;
+        messages\_.push\_back(obj);
+        broadcast(messages\_.size()-1);
+    \}
+
+    \textcolor{keywordtype}{void} on\_timer(booster::system::error_code \textcolor{keyword}{const} &e)
+    \{
+        \textcolor{keywordflow}{if}(e) \textcolor{keywordflow}{return}; \textcolor{comment}{// cancelation}
+
+        \textcolor{comment}{// check idle connections for more then 10 seconds}
+        \textcolor{keywordflow}{if}(time(0) - last\_wake\_ > 10) \{
+            broadcast(messages\_.size());
+        \}
+        \textcolor{comment}{// restart timer}
+        timer\_.expires\_from\_now(booster::ptime::seconds(1));
+        timer\_.async\_wait(boost::bind(&chat::on\_timer,
+      booster::intrusive_ptr<chat>(\textcolor{keyword}{this}),\_1));
+    \}
+
+    \textcolor{comment}{// Handle request}
+    \textcolor{keywordtype}{void} \textcolor{keyword}{get}(\textcolor{keywordtype}{unsigned} from)
+    \{
+        \textcolor{keywordflow}{if}(from < messages\_.size()) \{
+            \textcolor{comment}{// not long polling - return result now}
+            return_result(make\_response(from));
+            \textcolor{keywordflow}{return};
+        \}
+        \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(from == messages\_.size()) \{
+            \textcolor{comment}{// Can't answer now}
+
+            \textcolor{comment}{// Add long polling request to the list}
+
+            booster::shared_ptr<cppcms::rpc::json_call> call=release_call();
+            waiters\_.insert(call);
+
+            \textcolor{comment}{// set disconnect callback}
+            call->context().async_on_peer_reset(
+                boost::bind(
+                    &chat::remove\_context,
+                    booster::intrusive_ptr<chat>(\textcolor{keyword}{this}),
+                    call));
+        \}
+        \textcolor{keywordflow}{else} \{
+            return_error(\textcolor{stringliteral}{"Invalid position"});
+        \}
+    \}
+
+    \textcolor{comment}{// handle client disconnect}
+    \textcolor{keywordtype}{void} remove\_context(booster::shared_ptr<cppcms::rpc::json_call> call)
+    \{
+        waiters\_.erase(call);
+    \}
+
+    \textcolor{keywordtype}{void} broadcast(\textcolor{keywordtype}{size\_t} from)
+    \{
+        \textcolor{comment}{// update timeout}
+        last\_wake\_ = time(0);
+        \textcolor{comment}{// Prepare response}
+        cppcms::json::value response = make\_response(from);
+        \textcolor{comment}{// Send it to everybody}
+        \textcolor{keywordflow}{for}(waiters\_type::iterator waiter=waiters\_.begin();waiter!=waiters\_.end();++waiter) \{
+            booster::shared_ptr<cppcms::rpc::json_call> call = *waiter;
+            call->return_result(response);
+        \}
+        waiters\_.clear();
+    \}
+
+    \textcolor{comment}{// Prepare response to the client}
+    cppcms::json::value make\_response(\textcolor{keywordtype}{size\_t} n)
+    \{
+        cppcms::json::value v;
+
+        \textcolor{comment}{// Small optimization}
+        v=cppcms::json::array();
+        cppcms::json::array &ar  = v.array();
+        ar.reserve(messages\_.size() - n);
+
+        \textcolor{comment}{// prepare all messages}
+        \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} i=n;i<messages\_.size();i++) \{
+            ar.push\_back(messages\_[i]);
+        \}
+        \textcolor{keywordflow}{return} v;
+    \}
+\textcolor{keyword}{private}:
+
+    \textcolor{comment}{// message store}
+    std::vector<cppcms::json::value> messages\_;
+
+    \textcolor{comment}{// long poll requests}
+    \textcolor{keyword}{typedef} std::set<booster::shared\_ptr<cppcms::rpc::json\_call> > waiters\_type;
+    waiters\_type waiters\_;
+
+    \textcolor{comment}{// timer for resetting idle requests}
+    booster::aio::deadline_timer timer\_;
+    time\_t last\_wake\_;
+\};
+
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} **argv)
+\{
+    \textcolor{keywordflow}{try} \{
+        cppcms::service service(argc,argv);
+        booster::intrusive_ptr<chat> c=\textcolor{keyword}{new} chat(service);
+        service.applications\_pool().mount(c);
+        service.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<\textcolor{stringliteral}{"Catched exception: "}<<e.what()<<std::endl;
+        \textcolor{keywordflow}{return} 1;
+    \}
+    \textcolor{keywordflow}{return} 0;
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Asynchonous I/\-O examples}\label{ex_aio}
+
+\begin{DoxyItemize}
+\item \doxyref{aio/\-Makefile Makefile}{p.}{_ex_aio____Makefile}
+\item \doxyref{aio/echo\-\_\-server.\-cpp Source File}{p.}{_ex_aio____echo_server__cpp} 
+\end{DoxyItemize}\subsection{aio/\-Makefile Makefile}\label{ex_aio____Makefile}
+
+\begin{DoxyCodeInclude}
+LIBS=-lbooster
+
+
+all: echo\_server
+
+echo\_server: echo\_server.cpp
+        $(CXX) $(CXXFLAGS) -std=c++0x -O2 -Wall -g echo\_server.cpp -o echo\_server $\{LIBS\}
+
+clean:
+        rm -fr echo\_server echo\_server.exe cppcms\_rundir
+\end{DoxyCodeInclude}
+ \subsection{aio/echo\-\_\-server.cpp Source File}\label{ex_aio____echo_server__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <booster/shared\_ptr.h>}
+\textcolor{preprocessor}{#include <booster/enable\_shared\_from\_this.h>}
+
+\textcolor{preprocessor}{#include <booster/aio/io\_service.h>}
+\textcolor{preprocessor}{#include <booster/aio/buffer.h>}
+\textcolor{preprocessor}{#include <booster/aio/endpoint.h>}
+\textcolor{preprocessor}{#include <booster/aio/acceptor.h>}
+\textcolor{preprocessor}{#include <booster/aio/stream\_socket.h>}
+
+\textcolor{preprocessor}{#include <iostream>}
+\textcolor{preprocessor}{#include <functional>}
+
+
+\textcolor{keyword}{class }echo\_session : \textcolor{keyword}{public} booster::enable_shared_from_this<echo\_session> \{
+\textcolor{keyword}{public}:
+    echo\_session(booster::aio::io_service &s) : socket\_(s)
+    \{
+    \}
+
+    \textcolor{keywordtype}{void} run()
+    \{
+        socket\_.async\_read\_some(
+            booster::aio::buffer(buffer\_,\textcolor{keyword}{sizeof}(buffer\_)),
+                std::bind(&echo\_session::on\_read,shared\_from\_this(),
+                        std::placeholders::\_1,
+                        std::placeholders::\_2));
+                        
+    \}
+    \textcolor{keywordtype}{void} on\_read(booster::system::error_code \textcolor{keyword}{const} &e,\textcolor{keywordtype}{size\_t} tr)
+    \{
+        \textcolor{keywordflow}{if}(e) \textcolor{keywordflow}{return};
+
+        socket\_.async\_write(booster::aio::buffer(buffer\_,tr),
+                std::bind(&echo\_session::on\_written,shared\_from\_this(),std::placeholders::\_1));
+    \}
+
+    \textcolor{keywordtype}{void} on\_written(booster::system::error_code \textcolor{keyword}{const} &e)
+    \{
+        \textcolor{keywordflow}{if}(e) \textcolor{keywordflow}{return};
+        
+        run();
+    \}
+    
+\textcolor{keyword}{private}:
+
+    \textcolor{keyword}{friend} \textcolor{keyword}{class }echo\_acceptor;
+
+    \textcolor{keywordtype}{char} buffer\_[1024];
+    booster::aio::stream_socket socket\_;
+\};
+
+
+\textcolor{keyword}{class }echo\_acceptor \{
+\textcolor{keyword}{public}:
+    echo\_acceptor(booster::aio::io_service &srv) : acceptor\_(srv)
+    \{
+        booster::aio::endpoint ep(\textcolor{stringliteral}{"0.0.0.0"},8080);
+        acceptor\_.open(ep.family());
+        acceptor\_.set\_option(booster::aio::acceptor::reuse\_address,\textcolor{keyword}{true});
+        acceptor\_.bind(ep);
+        acceptor\_.listen(10);
+    \}
+    \textcolor{keywordtype}{void} run()
+    \{
+        new\_session\_.reset(\textcolor{keyword}{new} echo\_session(acceptor\_.get\_io\_service()));
+        acceptor\_.async\_accept(new\_session\_->socket\_,
+            std::bind(&echo\_acceptor::on\_accepted,\textcolor{keyword}{this},std::placeholders::\_1));
+    \}
+    \textcolor{keywordtype}{void} on\_accepted(booster::system::error_code \textcolor{keyword}{const} &e)
+    \{
+        \textcolor{keywordflow}{if}(e) \{
+            std::cout << e.message() << std::endl;
+            run();
+        \}
+        \textcolor{keywordflow}{else} \{
+            new\_session\_->run();
+            run();
+        \}
+    \}
+\textcolor{keyword}{private}:
+    booster::aio::acceptor acceptor\_;
+    booster::shared_ptr<echo_session> new\_session\_;
+\};
+
+
+\textcolor{keywordtype}{int} main()
+\{
+    \textcolor{keywordflow}{try} \{
+        booster::aio::io_service srv;
+
+\textcolor{preprocessor}{        #if !defined(\_WIN32) && !defined(\_\_CYGWIN\_\_)}
+\textcolor{preprocessor}{}        booster::aio::basic_io_device stdin\_device(srv);
+        stdin\_device.attach(0);
+        std::cout << \textcolor{stringliteral}{"Press any key to stop"} << std::endl;
+        stdin\_device.on\_readable(std::bind(&booster::aio::io_service::stop,&srv));
+\textcolor{preprocessor}{        #endif}
+\textcolor{preprocessor}{}
+        echo\_acceptor acc(srv);
+        acc.run();
+
+        srv.run();
+    \}
+    \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+        std::cerr<<e.what()<<std::endl;
+    \}
+\}
+\textcolor{comment}{// vim: tabstop=4 expandtab shiftwidth=4 softtabstop=4}
+\end{DoxyCodeInclude}
+ \section{Full Message Board Application Example using Cache, Sessions, Cpp\-D\-B library and more}\label{ex_message_board}
+
+\begin{DoxyItemize}
+\item \doxyref{message\-\_\-board/model/sqlite3.\-sql S\-Q\-L Script File}{p.}{_ex_message_board____model_sqlite3__sql}
+\item \doxyref{message\-\_\-board/model/mysql.\-sql S\-Q\-L Script File}{p.}{_ex_message_board____model_mysql__sql}
+\item \doxyref{message\-\_\-board/apps/thread.\-h Header File}{p.}{_ex_message_board____apps_thread__h}
+\item \doxyref{message\-\_\-board/apps/forums.\-h Header File}{p.}{_ex_message_board____apps_forums__h}
+\item \doxyref{message\-\_\-board/apps/mb.\-h Header File}{p.}{_ex_message_board____apps_mb__h}
+\item \doxyref{message\-\_\-board/apps/master.\-cpp Source File}{p.}{_ex_message_board____apps_master__cpp}
+\item \doxyref{message\-\_\-board/apps/mb.\-cpp Source File}{p.}{_ex_message_board____apps_mb__cpp}
+\item \doxyref{message\-\_\-board/apps/master.\-h Header File}{p.}{_ex_message_board____apps_master__h}
+\item \doxyref{message\-\_\-board/apps/thread.\-cpp Source File}{p.}{_ex_message_board____apps_thread__cpp}
+\item \doxyref{message\-\_\-board/apps/forums.\-cpp Source File}{p.}{_ex_message_board____apps_forums__cpp}
+\item \doxyref{message\-\_\-board/apps/main.\-cpp Source File}{p.}{_ex_message_board____apps_main__cpp}
+\item \doxyref{message\-\_\-board/\-C\-Make\-Lists.\-txt C\-Make Build Script}{p.}{_ex_message_board____CMakeLists__txt}
+\item \doxyref{message\-\_\-board/media/style-\/ltr.\-css C\-S\-S Media File}{p.}{_ex_message_board____media_style-ltr__css}
+\item \doxyref{message\-\_\-board/media/style.\-css C\-S\-S Media File}{p.}{_ex_message_board____media_style__css}
+\item \doxyref{message\-\_\-board/media/style-\/rtl.\-css C\-S\-S Media File}{p.}{_ex_message_board____media_style-rtl__css}
+\item \doxyref{message\-\_\-board/view/thread.\-tmpl Template File}{p.}{_ex_message_board____view_thread__tmpl}
+\item \doxyref{message\-\_\-board/view/forums.\-tmpl Template File}{p.}{_ex_message_board____view_forums__tmpl}
+\item \doxyref{message\-\_\-board/view/master.\-tmpl Template File}{p.}{_ex_message_board____view_master__tmpl}
+\item \doxyref{message\-\_\-board/config.\-js Configuration File}{p.}{_ex_message_board____config__js}
+\item \doxyref{message\-\_\-board/data/thread.\-h Header File}{p.}{_ex_message_board____data_thread__h}
+\item \doxyref{message\-\_\-board/data/forums.\-h Header File}{p.}{_ex_message_board____data_forums__h}
+\item \doxyref{message\-\_\-board/data/data.\-h Header File}{p.}{_ex_message_board____data_data__h}
+\item \doxyref{message\-\_\-board/data/master.\-h Header File}{p.}{_ex_message_board____data_master__h}
+\item \doxyref{message\-\_\-board/locale/he/\-L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S/mb.\-po Gettext Dictionary File}{p.}{_ex_message_board____locale_he_LC_MESSAGES_mb__po} 
+\end{DoxyItemize}\subsection{message\-\_\-board/model/sqlite3.sql S\-Q\-L Script File}\label{ex_message_board____model_sqlite3__sql}
+
+\begin{DoxyCodeInclude}
+begin;
+drop table \textcolor{keywordflow}{if} exists threads;
+drop table \textcolor{keywordflow}{if} exists messages;
+
+create table threads (
+    \textcolor{keywordtype}{id} integer primary key autoincrement not null,
+    title varchar(256) not null
+);
+
+create table messages (
+    \textcolor{keywordtype}{id} integer primary key autoincrement not null,
+    reply\_to integer not null,
+    thread\_id integer not null,
+    author varchar(256) not null,
+    content text not null
+);
+
+commit;
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/model/mysql.sql S\-Q\-L Script File}\label{ex_message_board____model_mysql__sql}
+
+\begin{DoxyCodeInclude}
+drop table \textcolor{keywordflow}{if} exists threads;
+drop table \textcolor{keywordflow}{if} exists messages;
+
+create table threads (
+        \textcolor{keywordtype}{id} integer auto\_increment primary key not null,
+        title varchar(256) not null
+) Engine = InnoDB;
+
+create table messages (
+        \textcolor{keywordtype}{id} integer auto\_increment primary key not null,
+        reply\_to integer not null,
+        thread\_id integer not null,
+        author varchar(256) not null,
+        content text not null
+) Engine = InnoDB;
+
+
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/thread.h Header File}\label{ex_message_board____apps_thread__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef APPS\_THREAD\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define APPS\_THREAD\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <string>}
+
+\textcolor{preprocessor}{#include <apps/master.h>}
+\textcolor{preprocessor}{#include <data/thread.h>}
+
+\textcolor{keyword}{namespace }apps \{
+
+\textcolor{keyword}{class }thread\_shared : \textcolor{keyword}{public} master
+\{
+\textcolor{keyword}{public}:
+        thread\_shared(cppcms::service &s);
+        \textcolor{keywordtype}{bool} prepare(data::thread\_shared &c,\textcolor{keywordtype}{int} \textcolor{keywordtype}{id});
+
+\};
+
+\textcolor{keyword}{class }flat\_thread : \textcolor{keyword}{public} thread\_shared \{
+\textcolor{keyword}{public}:
+
+        flat\_thread(cppcms::service &s);
+        \textcolor{keywordtype}{void} prepare(std::string \textcolor{keywordtype}{id}); 
+\};
+
+\textcolor{keyword}{class }tree\_thread : \textcolor{keyword}{public} thread\_shared \{
+\textcolor{keyword}{public}:
+
+        tree\_thread(cppcms::service &s);
+        \textcolor{keywordtype}{void} prepare(std::string \textcolor{keywordtype}{id});
+\};
+
+\textcolor{keyword}{typedef} data::tree\_t tree\_t;
+
+\textcolor{keyword}{class }reply : \textcolor{keyword}{public} thread\_shared \{
+\textcolor{keyword}{public}:
+
+        reply(cppcms::service &s);
+        \textcolor{keywordtype}{void} prepare(std::string \textcolor{keywordtype}{id});
+\};
+
+
+\} \textcolor{comment}{// apps}
+
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/forums.h Header File}\label{ex_message_board____apps_forums__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef APPS\_FORUMS\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define APPS\_FORUMS\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#include <cppcms/application.h>}
+
+\textcolor{preprocessor}{#include <apps/master.h>}
+\textcolor{preprocessor}{#include <data/forums.h>}
+
+\textcolor{keyword}{namespace }apps \{
+
+
+        \textcolor{keyword}{class }forums : \textcolor{keyword}{public} master\{
+        \textcolor{keyword}{public}:
+                
+                forums(cppcms::service &s);
+                \textcolor{keywordtype}{void} prepare(std::string page);
+        \textcolor{keyword}{private}:
+                \textcolor{keywordtype}{void} prepare\_content(data::forums &c,std::string \textcolor{keyword}{const} &page);
+        \};
+
+\}
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/mb.h Header File}\label{ex_message_board____apps_mb__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef MB\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define MB\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <cppcms/application.h>}
+
+\textcolor{keyword}{namespace }apps \{
+
+\textcolor{keyword}{class }mb : \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+
+        mb(cppcms::service &s);
+
+\};
+
+
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/master.cpp Source File}\label{ex_message_board____apps_master__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "master.h"}
+
+\textcolor{preprocessor}{#include <cppcms/json.h>}
+\textcolor{preprocessor}{#include <cppcms/session\_interface.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_mapper.h>}
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keyword}{namespace }apps \{
+
+master::master(cppcms::service &srv) : cppcms::application(srv)
+\{       
+        conn\_str\_ = settings().get<std::string>(\textcolor{stringliteral}{"mb.connection\_string"});
+        media\_=settings().get<std::string>(\textcolor{stringliteral}{"mb.media"});
+\}
+
+\textcolor{keywordtype}{void} master::init()
+\{
+        sql.open(conn\_str\_);
+        \textcolor{keywordflow}{if}(!session().is\_set(\textcolor{stringliteral}{"view"}) || session()[\textcolor{stringliteral}{"view"}]==\textcolor{stringliteral}{"tree"}) \{
+                parent()->mapper().set\_value(\textcolor{stringliteral}{"method"},\textcolor{stringliteral}{"tree"});
+        \}
+        \textcolor{keywordflow}{else} \{
+                parent()->mapper().set\_value(\textcolor{stringliteral}{"method"},\textcolor{stringliteral}{"flat"});
+        \}
+\}
+\textcolor{keywordtype}{void} master::clear()
+\{
+        sql.close();
+\}
+
+\textcolor{keywordtype}{void} master::prepare(data::master &c)
+\{
+        c.media=media\_;
+\}
+
+
+\} \textcolor{comment}{// namespace apps}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/mb.cpp Source File}\label{ex_message_board____apps_mb__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <apps/mb.h>}
+\textcolor{preprocessor}{#include <apps/forums.h>}
+\textcolor{preprocessor}{#include <apps/thread.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_mapper.h>}
+\textcolor{preprocessor}{#include <cppcms/json.h>}
+
+
+
+\textcolor{keyword}{namespace }apps \{
+
+
+mb::mb(cppcms::service &s) : cppcms::application(s)
+\{
+
+        attach( \textcolor{keyword}{new} forums(s),
+                \textcolor{stringliteral}{"forums"},
+                \textcolor{stringliteral}{"/\{1\}"},
+                \textcolor{stringliteral}{"(/(\(\backslash\)\(\backslash\)d+)?)?"},2);
+
+        attach( \textcolor{keyword}{new} flat\_thread(s),
+                \textcolor{stringliteral}{"flat\_thread"},
+                \textcolor{stringliteral}{"/flat/\{1\}"},
+                \textcolor{stringliteral}{"/flat/(\(\backslash\)\(\backslash\)d+)"},1);
+
+
+        attach( \textcolor{keyword}{new} tree\_thread(s),
+                \textcolor{stringliteral}{"tree\_thread"},
+                \textcolor{stringliteral}{"/tree/\{1\}"},
+                \textcolor{stringliteral}{"/tree/(\(\backslash\)\(\backslash\)d+)"},1);
+
+        attach( \textcolor{keyword}{new} reply(s),
+                \textcolor{stringliteral}{"comment"},
+                \textcolor{stringliteral}{"/comment/\{1\}"},
+                \textcolor{stringliteral}{"/comment/(\(\backslash\)\(\backslash\)d+)"},1);
+        
+        \textcolor{comment}{// Generic mapping}
+        mapper().root(settings().get<std::string>(\textcolor{stringliteral}{"mb.root"}));
+        mapper().assign(\textcolor{stringliteral}{"user\_thread"},\textcolor{stringliteral}{"/\{method\}/\{1\}"});
+\}
+
+\} \textcolor{comment}{// apps}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/master.h Header File}\label{ex_message_board____apps_master__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef APPS\_MASTER\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define APPS\_MASTER\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#include <cppcms/application.h>}
+\textcolor{preprocessor}{#include <cppdb/frontend.h>}
+
+\textcolor{preprocessor}{#include <data/master.h>}
+
+\textcolor{keyword}{namespace }apps \{
+
+\textcolor{keyword}{class }master: \textcolor{keyword}{public} cppcms::application \{
+\textcolor{keyword}{public}:
+
+        master(cppcms::service &w);
+        \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} init();
+        \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} clear();
+
+\textcolor{keyword}{protected}:
+        \textcolor{keywordtype}{void} prepare(data::master &c);
+        cppdb::session sql;
+\textcolor{keyword}{private}:
+        std::string conn\_str\_;
+        std::string media\_;
+\};
+
+
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/thread.cpp Source File}\label{ex_message_board____apps_thread__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <apps/thread.h>}
+\textcolor{preprocessor}{#include <cppcms/util.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_mapper.h>}
+\textcolor{preprocessor}{#include <cppcms/session\_interface.h>}
+\textcolor{preprocessor}{#include <cppcms/cache\_interface.h>}
+
+
+
+\textcolor{keyword}{namespace }data \{
+
+reply\_form::reply\_form()
+\{
+        \textcolor{keyword}{using} cppcms::locale::translate;
+        author.message(translate(\textcolor{stringliteral}{"Author"}));
+        comment.message(translate(\textcolor{stringliteral}{"Comment"}));
+        send.value(translate(\textcolor{stringliteral}{"Send"}));
+        add(author);
+        add(comment);
+        add(send);
+        author.limits(1,64);
+        comment.limits(1,256);
+\}
+
+
+\} \textcolor{comment}{// data}
+
+\textcolor{keyword}{namespace }\{
+        std::string text2html(std::string \textcolor{keyword}{const} &s)
+        \{
+                std::string tmp=cppcms::util::escape(s);
+                std::string res;
+                res.reserve(tmp.size());
+                \textcolor{keywordflow}{for}(\textcolor{keywordtype}{unsigned} i=0;i<tmp.size();i++) \{
+                        \textcolor{keywordflow}{if}(tmp[i]==\textcolor{charliteral}{'\(\backslash\)n'}) \{
+                                res+=\textcolor{stringliteral}{"<br />"};
+                        \}
+                        res+=tmp[i];
+                \}
+                \textcolor{keywordflow}{return} res;
+        \}
+\}
+
+
+\textcolor{keyword}{namespace }apps \{
+
+thread\_shared::thread\_shared(cppcms::service &s) : apps::master(s)
+\{
+\}
+
+
+\textcolor{keywordtype}{bool} thread\_shared::prepare(data::thread\_shared &c,\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})
+\{
+        master::prepare(c);
+        c.thread\_id = id;
+        
+
+        cppdb::result r;
+        r=sql<<\textcolor{stringliteral}{"SELECT title FROM threads WHERE id=?"} << \textcolor{keywordtype}{id} << cppdb::row;
+        \textcolor{keywordflow}{if}(r.empty()) \{
+                response().make\_error\_response(404);
+                \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+        \}
+        
+        r>> c.title;
+        c.text2html = text2html;
+        \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+
+\}
+
+flat\_thread::flat\_thread(cppcms::service &s) : thread\_shared(s)
+\{
+        dispatcher().assign(\textcolor{stringliteral}{".*"},&flat\_thread::prepare,\textcolor{keyword}{this},0);
+        mapper().assign(\textcolor{stringliteral}{"\{1\}"});
+\}
+
+
+\textcolor{keywordtype}{void} flat\_thread::prepare(std::string sid)
+\{
+        std::string key = \textcolor{stringliteral}{"flat\_thread\_"} + sid;
+        
+        \textcolor{keywordflow}{if}(cache().fetch\_page(key))
+                \textcolor{keywordflow}{return};
+
+        cache().add\_trigger(\textcolor{stringliteral}{"thread\_"} + sid);
+        
+        data::flat\_thread c;
+        \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = atoi(sid.c\_str());
+        \textcolor{keywordflow}{if}(!thread\_shared::prepare(c,\textcolor{keywordtype}{id}))
+                \textcolor{keywordflow}{return};
+        cppdb::result r;
+        r=sql<< \textcolor{stringliteral}{"SELECT id,author,content "}
+                \textcolor{stringliteral}{"FROM messages WHERE thread\_id=? "}
+                \textcolor{stringliteral}{"ORDER BY id"} << id;
+        
+        c.messages.reserve(10);
+        \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;r.next();i++) \{
+                c.messages.resize(i+1);
+                r>>c.messages[i].msg\_id>>c.messages[i].author>>c.messages[i].content;
+        \}
+        session()[\textcolor{stringliteral}{"view"}]=\textcolor{stringliteral}{"flat"};
+        render(\textcolor{stringliteral}{"flat\_thread"},c);
+
+        cache().store\_page(key);
+\}
+
+\textcolor{keyword}{typedef} std::map<int,std::map<int,data::msg> > msg\_ord\_t;
+
+\textcolor{keyword}{namespace }\{
+
+\textcolor{keywordtype}{void} make\_tree(data::tree\_t &messages,std::map<\textcolor{keywordtype}{int},std::map<int,data::msg> > &content,\textcolor{keywordtype}{int} start)
+\{
+        std::pair<msg\_ord\_t::iterator,msg\_ord\_t::iterator>
+                range=content.equal\_range(start);
+        \textcolor{keywordflow}{for}(msg\_ord\_t::iterator p=range.first;p!=range.second;++p) \{
+                \textcolor{keywordflow}{for}(std::map<int,data::msg>::iterator p2=p->second.begin(),e=p->second.end();p2!=e;++p2) \{
+                        data::tree\_thread::tree\_msg &m=messages[p2->first];
+                        m.author=p2->second.author;
+                        m.content=p2->second.content;
+                        m.msg\_id=p2->second.msg\_id;
+                        make\_tree(m.repl,content,p2->first);
+                \}
+        \}
+        
+\}
+
+\} \textcolor{comment}{// anon}
+
+tree\_thread::tree\_thread(cppcms::service &s) : thread\_shared(s)
+\{
+        dispatcher().assign(\textcolor{stringliteral}{".*"},&tree\_thread::prepare,\textcolor{keyword}{this},0);
+        mapper().assign(\textcolor{stringliteral}{"\{1\}"});
+\}
+
+
+
+\textcolor{keywordtype}{void} tree\_thread::prepare(std::string sid)
+\{
+        std::string key = \textcolor{stringliteral}{"tree\_thread\_"} + sid;
+        
+        \textcolor{keywordflow}{if}(cache().fetch\_page(key))
+                \textcolor{keywordflow}{return};
+
+        cache().add\_trigger(\textcolor{stringliteral}{"thread\_"} + sid);
+
+        \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = atoi(sid.c\_str());
+        data::tree\_thread c;
+        \textcolor{keywordflow}{if}(!thread\_shared::prepare(c,\textcolor{keywordtype}{id}))
+                \textcolor{keywordflow}{return};
+        cppdb::result r;
+        r=sql<< \textcolor{stringliteral}{"SELECT reply\_to,id,author,content "}
+                \textcolor{stringliteral}{"FROM messages WHERE thread\_id=? "}
+                \textcolor{stringliteral}{"ORDER BY reply\_to,id DESC"} << id;
+        msg\_ord\_t all;
+        \textcolor{keywordflow}{while}(r.next()) \{
+                \textcolor{keywordtype}{int} msg\_id,rpl\_id;
+                std::string author,comment;
+                r>>rpl\_id>>msg\_id;
+                data::msg &message=all[rpl\_id][msg\_id];
+                r>>message.author>>message.content;
+                message.msg\_id=msg\_id;
+        \}
+        
+        make\_tree(c.messages,all,0);
+
+        session()[\textcolor{stringliteral}{"view"}]=\textcolor{stringliteral}{"tree"};
+        render(\textcolor{stringliteral}{"tree\_thread"},c);
+
+        cache().store\_page(key);
+\}
+
+reply::reply(cppcms::service &srv) : thread\_shared(srv)
+\{
+        dispatcher().assign(\textcolor{stringliteral}{".*"},&reply::prepare,\textcolor{keyword}{this},0);
+        mapper().assign(\textcolor{stringliteral}{"\{1\}"});
+\}
+
+\textcolor{keywordtype}{void} reply::prepare(std::string smid)
+\{
+        \textcolor{keywordtype}{int} mid;
+        mid=atoi(smid.c\_str());
+
+        data::reply c;
+        
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+                c.form.load(context());
+                \textcolor{keywordflow}{if}(c.form.validate()) \{
+                        cppdb::transaction tr(sql);
+                        cppdb::result r;
+                        r=sql<<\textcolor{stringliteral}{"SELECT thread\_id FROM messages WHERE id=?"} << mid << cppdb::row;
+                        \textcolor{keywordflow}{if}(r.empty()) \{
+                                response().make\_error\_response(404);
+                                \textcolor{keywordflow}{return};
+                        \}
+                        \textcolor{keywordtype}{int} tid = r.get<\textcolor{keywordtype}{int}>(0);
+                        \textcolor{comment}{// we want this as string for trigger}
+                        std::string stid = r.get<std::string>(0);
+                        r.clear();
+                        sql<<   \textcolor{stringliteral}{"INSERT INTO messages(reply\_to,thread\_id,author,content) "}
+                                \textcolor{stringliteral}{"VALUES(?,?,?,?) "} 
+                                << mid << tid << c.form.author.value() << c.form.comment.value() 
+                                << cppdb::exec;
+
+                        cache().rise(\textcolor{stringliteral}{"thread\_"} + stid);
+                        tr.commit();
+
+                        response().set\_redirect\_header(url(\textcolor{stringliteral}{"/user\_thread"},tid));
+                        \textcolor{keywordflow}{return};
+                \}
+        \}
+
+        cppdb::result r;
+        r=sql<< \textcolor{stringliteral}{"SELECT threads.id,author,content,title "}
+                \textcolor{stringliteral}{"FROM messages "}
+                \textcolor{stringliteral}{"JOIN threads ON thread\_id=threads.id "}
+                \textcolor{stringliteral}{"WHERE messages.id=?"} << mid << cppdb::row;
+        \textcolor{keywordflow}{if}(r.empty()) \{
+                response().make\_error\_response(404);
+                \textcolor{keywordflow}{return};
+        \}
+
+        \textcolor{keywordtype}{int} tid;
+
+        r>>tid>>c.author>>c.content>>c.title;
+        c.thread\_id = tid;
+        c.msg\_id = mid;
+        
+        \textcolor{keywordflow}{if}(!thread\_shared::prepare(c,tid))
+                \textcolor{keywordflow}{return};
+
+        render(\textcolor{stringliteral}{"reply"},c);
+\}
+
+\} \textcolor{comment}{// namespace apps}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/forums.cpp Source File}\label{ex_message_board____apps_forums__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include "forums.h"}
+\textcolor{preprocessor}{#include <cppcms/url\_dispatcher.h>}
+\textcolor{preprocessor}{#include <cppcms/url\_mapper.h>}
+\textcolor{preprocessor}{#include <cppcms/session\_interface.h>}
+\textcolor{preprocessor}{#include <cppcms/cache\_interface.h>}
+\textcolor{preprocessor}{#include <boost/lexical\_cast.hpp>}
+
+\textcolor{keyword}{namespace }data \{
+
+new\_topic\_form::new\_topic\_form() 
+\{
+        \textcolor{keyword}{using} cppcms::locale::translate;
+        title.message(translate(\textcolor{stringliteral}{"Title"}));
+        author.message(translate(\textcolor{stringliteral}{"Author"}));
+        comment.message(translate(\textcolor{stringliteral}{"Comment"}));
+        submit.value(translate(\textcolor{stringliteral}{"Create"}));
+        add(title);
+        add(author);
+        add(comment);
+        add(submit);
+        title.non\_empty();
+        author.limits(1,64);
+        comment.limits(1,256);
+\}
+
+\} \textcolor{comment}{// data}
+
+\textcolor{keyword}{namespace }apps \{
+
+forums::forums(cppcms::service &srv) : master(srv)
+\{
+        mapper().assign(\textcolor{stringliteral}{"\{1\}"}); \textcolor{comment}{// with id}
+        mapper().assign(\textcolor{stringliteral}{""});    \textcolor{comment}{// default}
+        dispatcher().assign(\textcolor{stringliteral}{".*"},&forums::prepare,\textcolor{keyword}{this},0);
+\}
+
+\textcolor{keywordtype}{void} forums::prepare\_content(data::forums &c,std::string \textcolor{keyword}{const} &page)
+\{
+        master::prepare(c);
+        
+        \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} topics\_per\_page=10;
+        \textcolor{keywordtype}{int} offset= page.empty() ? 0 : atoi(page.c\_str());
+        
+        cppdb::result r;
+
+        r=sql<< \textcolor{stringliteral}{"SELECT id,title "}
+                \textcolor{stringliteral}{"FROM threads "}
+                \textcolor{stringliteral}{"ORDER BY id DESC "}
+                \textcolor{stringliteral}{"LIMIT ?,?"} << offset*topics\_per\_page << topics\_per\_page;
+        
+        c.topics.reserve(topics\_per\_page);      
+        
+        \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;r.next();i++) \{
+                c.topics.resize(c.topics.size()+1);
+                r>>c.topics[i].id>>c.topics[i].title;
+        \}
+        \textcolor{keywordflow}{if}(c.topics.size()==topics\_per\_page) \{
+                c.next=offset+1;
+        \}
+        \textcolor{keywordflow}{else} \{
+                c.next = 0;
+        \}
+        \textcolor{keywordflow}{if}(offset>0) \{
+                c.prev=offset-1;
+        \}
+        \textcolor{keywordflow}{else} \{
+                c.prev = 0;
+        \}
+        render(\textcolor{stringliteral}{"forums"},c);
+\}
+
+\textcolor{keywordtype}{void} forums::prepare(std::string page)
+\{
+        \textcolor{keywordflow}{if}(request().request\_method()==\textcolor{stringliteral}{"POST"}) \{
+                data::forums c;
+
+                c.form.load(context());
+                \textcolor{keywordflow}{if}(c.form.validate()) \{
+                        cppdb::transaction tr(sql);
+                        cppdb::statement st;
+                        st= sql <<\textcolor{stringliteral}{"INSERT INTO threads(title) VALUES(?)"} 
+                                << c.form.title.value() << cppdb::exec;
+                        \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}=st.last\_insert\_id();
+                        sql<<   \textcolor{stringliteral}{"INSERT INTO messages(thread\_id,reply\_to,content,author) "}
+                                \textcolor{stringliteral}{"VALUES (?,0,?,?)"}
+                                << \textcolor{keywordtype}{id} << c.form.comment.value() << c.form.author.value() << cppdb::exec;
+                        
+                        \textcolor{comment}{// We need to invalidate all pages on new post}
+                        cache().rise(\textcolor{stringliteral}{"new\_thread"});
+                        tr.commit();
+
+                        response().set\_redirect\_header(url(\textcolor{stringliteral}{"/user\_thread"},\textcolor{keywordtype}{id}));
+                        \textcolor{keywordflow}{return};
+                \}
+                \textcolor{keywordflow}{else} \{
+                        prepare\_content(c,page);
+                \}
+        \}
+        \textcolor{keywordflow}{else} \{
+                std::string key = \textcolor{stringliteral}{"main\_page\_"} + page;
+                \textcolor{keywordflow}{if}(cache().fetch\_page(key))
+                        \textcolor{keywordflow}{return};
+                \textcolor{comment}{// Add some shared key for all main\_page\_}
+                cache().add\_trigger(\textcolor{stringliteral}{"new\_thread"});
+                
+                data::forums c;
+                prepare\_content(c,page);
+
+                cache().store\_page(key);
+
+        \}
+        
+\}
+
+
+\} \textcolor{comment}{// namespace apps}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/apps/main.cpp Source File}\label{ex_message_board____apps_main__cpp}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#include <apps/mb.h>}
+\textcolor{preprocessor}{#include <cppcms/service.h>}
+\textcolor{preprocessor}{#include <cppcms/applications\_pool.h>}
+
+\textcolor{preprocessor}{#include <iostream>}
+
+\textcolor{keywordtype}{int} main(\textcolor{keywordtype}{int} argc,\textcolor{keywordtype}{char} ** argv)
+\{
+        \textcolor{keywordflow}{try} \{
+
+                cppcms::service app(argc,argv);
+                app.applications\_pool().mount(cppcms::applications\_factory<apps::mb>());
+                app.run();
+        \}
+        \textcolor{keywordflow}{catch}(std::exception \textcolor{keyword}{const} &e) \{
+                std::cerr<<e.what()<<std::endl;
+        \}
+\}
+
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/\-C\-Make\-Lists.txt C\-Make Build Script}\label{ex_message_board____CMakeLists__txt}
+
+\begin{DoxyCodeInclude}
+cmake\_minimum\_required(VERSION 2.6)
+project(cppcms)
+
+include\_directories($\{CMAKE\_SOURCE\_DIR\})
+
+# Options 
+
+option(STATIC\_VIEW \textcolor{stringliteral}{"Build Static View instead of dynamically loaded one"} OFF)
+
+\textcolor{keywordflow}{if}(WIN32 OR CYGWIN)
+        add\_definitions(-DDLL\_EXPORT)
+endif()
+
+
+\textcolor{preprocessor}{# Dependencies}
+\textcolor{preprocessor}{}
+find\_library(LIB\_BOOSTER booster)
+find\_library(LIB\_CPPCMS cppcms)
+find\_library(LIB\_CPPDB cppdb)
+find\_program(EXE\_TMPL\_CC cppcms\_tmpl\_cc)
+find\_program(EXE\_MSGFMT msgfmt)
+find\_program(EXE\_SQLITE3 sqlite3)
+
+find\_path(INC\_BOOSTER booster/config.h)
+find\_path(INC\_CPPCMS cppcms/config.h)
+find\_path(INC\_CPPDB cppdb/frontend.h)
+
+\textcolor{preprocessor}{# Sources}
+\textcolor{preprocessor}{}
+set(VIEW\_NAME simple)
+
+set(VIEW\_TEMPLATES 
+        view/master.tmpl
+        view/forums.tmpl 
+        view/thread.tmpl)
+
+set(MB\_SRC
+        apps/master.cpp
+        apps/thread.cpp
+        apps/forums.cpp
+        apps/mb.cpp
+        apps/main.cpp)
+
+set(MB\_LANG he)
+
+\textcolor{preprocessor}{# Actual Build}
+\textcolor{preprocessor}{}
+include\_directories($\{INC\_BOOSTER\})
+include\_directories($\{INC\_CPPCMS\})
+include\_directories($\{INC\_CPPDB\})
+
+set(VIEW\_SRC \textcolor{stringliteral}{"$\{CMAKE\_CURRENT\_BINARY\_DIR\}/$\{VIEW\_NAME\}.cpp"})
+
+add\_custom\_command(
+        OUTPUT $\{VIEW\_SRC\}
+        COMMAND $\{EXE\_TMPL\_CC\}
+                -s \textcolor{stringliteral}{"$\{VIEW\_NAME\}"}
+                $\{TMPL\_CC\_PARAMS\}
+                -o $\{VIEW\_SRC\}
+                $\{VIEW\_TEMPLATES\}
+        WORKING\_DIRECTORY $\{CMAKE\_CURRENT\_SOURCE\_DIR\}
+        DEPENDS $\{VIEW\_TEMPLATES\})
+
+
+\textcolor{keywordflow}{if}(STATIC\_VIEW)
+        set(MB\_SRC $\{MB\_SRC\} $\{VIEW\_SRC\})
+\textcolor{keywordflow}{else}()
+        add\_library($\{VIEW\_NAME\} SHARED $\{VIEW\_SRC\})
+        target\_link\_libraries($\{VIEW\_NAME\} $\{LIB\_CPPCMS\})
+        target\_link\_libraries($\{VIEW\_NAME\} $\{LIB\_BOOSTER\})
+endif()
+
+
+add\_executable(mb $\{MB\_SRC\})
+target\_link\_libraries(mb $\{LIB\_CPPCMS\})
+target\_link\_libraries(mb $\{LIB\_BOOSTER\})
+target\_link\_libraries(mb $\{LIB\_CPPDB\})
+
+\textcolor{keywordflow}{if}(EXE\_MSGFMT)
+        set(MO\_FILES)
+        foreach(LANG $\{MB\_LANG\}) 
+                set(PO locale/$\{LANG\}/LC\_MESSAGES/mb.po)
+                set(MO $\{CMAKE\_CURRENT\_BINARY\_DIR\}/locale/$\{LANG\}/LC\_MESSAGES/mb.mo)
+                file(MAKE\_DIRECTORY \textcolor{stringliteral}{"$\{CMAKE\_CURRENT\_BINARY\_DIR\}/locale/$\{LANG\}/LC\_MESSAGES"})
+                set(MO\_FILES $\{MO\_FILES\} $\{MO\})
+                add\_custom\_command(
+                        OUTPUT $\{MO\}
+                        COMMAND $\{EXE\_MSGFMT\} $\{PO\} -o $\{MO\}
+                        WORKING\_DIRECTORY $\{CMAKE\_CURRENT\_SOURCE\_DIR\}
+                        DEPENDS $\{PO\})
+        endforeach()
+        add\_custom\_target(create-mo ALL DEPENDS $\{MO\_FILES\})
+\textcolor{keywordflow}{else}()
+        message("-- msgfmt not found, translations not generatied")
+endif()
+
+if(EXE\_SQLITE3)
+        add\_custom\_command(
+                OUTPUT $\{CMAKE\_CURRENT\_BINARY\_DIR\}/mb.db
+                COMMAND $\{EXE\_SQLITE3\} < $\{CMAKE\_CURRENT\_SOURCE\_DIR\}/model/sqlite3.sql $\{
+      CMAKE\_CURRENT\_BINARY\_DIR\}/mb.db)
+        add\_custom\_target(sqlitedb ALL DEPENDS $\{CMAKE\_CURRENT\_BINARY\_DIR\}/mb.db)
+endif()
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/media/style-\/ltr.css C\-S\-S Media File}\label{ex_message_board____media_style-ltr__css}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#links \{ float:left \}}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#body \{ float:right \}}
+\textcolor{preprocessor}{}body \{ direction:ltr \}
+
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/media/style.css C\-S\-S Media File}\label{ex_message_board____media_style__css}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#page \{}
+\textcolor{preprocessor}{}        width:750px;
+        margin:20px \textcolor{keyword}{auto};
+        padding-left:10px;
+        padding-right:10px;
+\}
+
+\textcolor{preprocessor}{#links \{}
+\textcolor{preprocessor}{}        width:180px;
+\}
+
+\textcolor{preprocessor}{#body \{}
+\textcolor{preprocessor}{}        width:540px;
+\}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/media/style-\/rtl.css C\-S\-S Media File}\label{ex_message_board____media_style-rtl__css}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#links \{ float:right \}}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#body \{ float:left \}}
+\textcolor{preprocessor}{}body \{ direction:rtl \}
+
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/view/thread.tmpl Template File}\label{ex_message_board____view_thread__tmpl}
+
+\begin{DoxyCodeInclude}
+<% skin %>
+
+<% view base\_thread uses data::thread\_shared  extends master %>
+
+<% \textcolor{keyword}{template} msg\_header(data::msg &m) %>
+        <%= m.author %>, <a href=\textcolor{stringliteral}{"<% url "}/comment\textcolor{stringliteral}{" using m.msg\_id %>"}><% gt \textcolor{stringliteral}{"reply"} %></a>
+<% end %>
+
+<% \textcolor{keyword}{template} msg\_cnt(data::msg  &m) %>
+<p><%= m.content | ext text2html %></p>
+<% end %>
+
+<% \textcolor{keyword}{template} msg(data::msg &m) %>
+<dt><% include msg\_header(m) %></dt>
+<dd><% include msg\_cnt(m) %></dd>
+<% end %>
+
+<% \textcolor{keyword}{template} title() %><% gt \textcolor{stringliteral}{"Disussion: \{1\}"} \textcolor{keyword}{using} title %><% end \textcolor{keyword}{template} %>
+
+<% \textcolor{keyword}{template} links() %>
+<% include master::links() %>
+        <p>
+                <a href=\textcolor{stringliteral}{"<% url "}/flat\_thread\textcolor{stringliteral}{" using thread\_id %>"}><% gt \textcolor{stringliteral}{"Flat View"}%></a>
+                | <a href=\textcolor{stringliteral}{"<% url "}/tree\_thread\textcolor{stringliteral}{" using thread\_id %>"}><% gt \textcolor{stringliteral}{"Tree View"} %></a>
+        </p>
+<% end %>
+
+<% end view %>
+
+
+<% view flat\_thread uses data::flat\_thread  extends base\_thread %>
+
+<% \textcolor{keyword}{template} body() %>
+        <% \textcolor{keywordflow}{foreach} message in messages %>
+                <dl>
+                <% item %><% include msg(message) %><% end %>
+                </dl>
+        <% empty %>
+                <h2><% gt \textcolor{stringliteral}{"There are no comments."} %></h2>
+        <% end %>
+<% end \textcolor{keyword}{template} %>
+
+<% end view %>
+
+
+<% view tree\_thread uses data::tree\_thread  extends base\_thread %>
+
+<% \textcolor{keyword}{template} display(data::tree\_t &tree) %>
+        <% \textcolor{keywordflow}{foreach} message in tree %>
+                <dl>
+                <% item %>
+                        <dt><% include msg\_header(message.second) %></dt>
+                        <dd>
+                                <% include msg\_cnt(message.second) %>
+                                <% include display(message.second.repl) %>
+                        </dd>
+                <% end %>
+                </dl>
+        <% end %>
+<% end \textcolor{keyword}{template} %>
+
+<% \textcolor{keyword}{template} body() %>
+        <% \textcolor{keywordflow}{if} empty messages %>
+                <h2><% gt \textcolor{stringliteral}{"There are no comments."} %></h2>
+        <% \textcolor{keywordflow}{else} %>
+                <% include display(messages) %>
+        <% end %>
+<% end \textcolor{keyword}{template} %>
+
+<% end view %>
+
+
+<% view reply uses data::reply extends master %>
+
+<% \textcolor{keyword}{template} title() %><% gt \textcolor{stringliteral}{"Comment to thread: \{1\}"} \textcolor{keyword}{using} title %><% end %>
+
+<% \textcolor{keyword}{template} links() %>
+        <% include master::links() %>
+        <p><a href=\textcolor{stringliteral}{"<% url "}/user\_thread\textcolor{stringliteral}{" using thread\_id %>"}><% gt \textcolor{stringliteral}{"Back to thread"} %></a></p>
+<% end %>
+
+<% \textcolor{keyword}{template} body() %>
+        <% \textcolor{keywordflow}{if} not empty content %>
+                <dl>
+                        <dt><%= author %></dt>
+                        <dd><%= content | ext text2html %></dd>
+                </dl>
+        <% end %>
+        <form action=\textcolor{stringliteral}{""} method=\textcolor{stringliteral}{"post"} ><% csrf %>
+        <table>
+                <% form as\_table form.author %>
+                <tr>
+                        <th>
+                        <%= form.comment.message() %>: 
+                        <% \textcolor{keywordflow}{if} form.comment.valid() %>
+                                <%= form.comment.error\_message() %>
+                        <% end %>
+                        </th>
+                        <td>
+                        <% form begin form.comment %> rows=\textcolor{stringliteral}{"24"} cols=\textcolor{stringliteral}{"80"} <% form end form.comment %> 
+                        </td>
+                </tr>
+                <% form as\_table form.send %>
+        </table>
+        </form>
+<% end \textcolor{keyword}{template} %>
+
+<% end view %>
+
+<% end skin %>
+
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/view/forums.tmpl Template File}\label{ex_message_board____view_forums__tmpl}
+
+\begin{DoxyCodeInclude}
+<% skin %>
+<% view forums uses data::forums  extends master %>
+<% \textcolor{keyword}{template} body() %>
+        <% \textcolor{keywordflow}{foreach} topic in topics %>
+                <ul>
+                <% item %>
+                <li><a href=\textcolor{stringliteral}{"<% url "}/user\_thread\textcolor{stringliteral}{" using topic.id %>"}><%= topic.title %></a></li>
+                <% end %>
+                </ul>
+        <% empty %>
+                <h2><% gt \textcolor{stringliteral}{"No Topics"} %></h2>
+        <% end %>
+        <h2><% gt \textcolor{stringliteral}{"Create New Disussion"} %></h2>
+        <form action=\textcolor{stringliteral}{"<% url "}/forums\textcolor{stringliteral}{" %>"} method=\textcolor{stringliteral}{"post"} ><% csrf script %>
+        <% form as\_p form %>
+        </form>
+<% end \textcolor{keyword}{template} %>
+
+<% \textcolor{keyword}{template} links() %>
+        <% include master::links() %>
+        <p>
+        <% \textcolor{keywordflow}{if} next %>
+        <a href=\textcolor{stringliteral}{"<% url "}/forums\textcolor{stringliteral}{" using next %>"}><% gt \textcolor{stringliteral}{"Next Page"} %></a>
+        <% end %>
+        <% \textcolor{keywordflow}{if} prev %>
+        <a href=\textcolor{stringliteral}{"<% url "}/forums\textcolor{stringliteral}{" using prev  %>"}><% gt \textcolor{stringliteral}{"Prev Page"} %></a>
+        <% end %>
+        </p>
+<% end \textcolor{keyword}{template} %>
+
+
+<% end view %>
+<% end skin %>
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/view/master.tmpl Template File}\label{ex_message_board____view_master__tmpl}
+
+\begin{DoxyCodeInclude}
+<% c++ #include \textcolor{stringliteral}{"data/data.h"} %>
+<% xhtml %>
+<% skin %>
+<% view master uses data::master %>
+
+<% \textcolor{keyword}{template} title() %><% gt \textcolor{stringliteral}{"Welcome to the Message Board"}  %><% end \textcolor{keyword}{template} %>
+
+<% \textcolor{keyword}{template} header() %>
+<title><% include title() %></title>
+<meta http-equiv=\textcolor{stringliteral}{"Content-Type"} content=\textcolor{stringliteral}{"text/html; charset=utf-8"} />
+<link href=\textcolor{stringliteral}{"<%= media %>/style.css"} rel=\textcolor{stringliteral}{"stylesheet"} type=\textcolor{stringliteral}{"text/css"} />
+<link href=\textcolor{stringliteral}{"<%= media %>/style-<% if rtl %>rtl<% else %>ltr<%end%>.css"} rel=\textcolor{stringliteral}{"stylesheet"} type=\textcolor{stringliteral}{"text/css"} />
+<% end \textcolor{keyword}{template} %>
+
+<% \textcolor{keyword}{template} render() %>
+<!DOCTYPE html PUBLIC \textcolor{stringliteral}{"-//W3C//DTD XHTML 1.0 Strict//EN"}
+    \textcolor{stringliteral}{"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"}>
+<html xmlns=\textcolor{stringliteral}{"http://www.w3.org/1999/xhtml"}>
+<head>
+<% include header() %>
+</head>
+<body>
+        <div \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"page"}>
+                <div \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"links"}>
+                        <% include links() %>
+                </div>
+                <div \textcolor{keywordtype}{id}=\textcolor{stringliteral}{"body"}>
+                        <h1><% include title() %></h1>
+                        <% include body() %>
+                </div>
+        </div>
+</body>
+</html>
+<% end \textcolor{keyword}{template} %>
+
+<% \textcolor{keyword}{template} body() %><% end %>
+<% \textcolor{keyword}{template} links() %>
+<p><a href=\textcolor{stringliteral}{"<% url "}/forums\textcolor{stringliteral}{" %>"}><% gt \textcolor{stringliteral}{"Home"} %></a></p>
+<% end %>
+<% end view %>
+<% end skin %>
+
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/config.js Configuration File}\label{ex_message_board____config__js}
+
+\begin{DoxyCodeInclude}
+\{
+        
+        \textcolor{stringliteral}{"mb"} : \{
+                \textcolor{stringliteral}{"media"} : \textcolor{stringliteral}{"/media"},
+                \textcolor{stringliteral}{"root"} : \textcolor{stringliteral}{""},
+                \textcolor{stringliteral}{"connection\_string"} : \textcolor{stringliteral}{"sqlite3:db=mb.db;@pool\_size=10"}
+                \textcolor{comment}{//"connection\_string" : "mysql:database=test;user=root;password=root;@pool\_size=10"}
+        \},
+        \textcolor{stringliteral}{"service"} : \{
+                \textcolor{stringliteral}{"api"} : \textcolor{stringliteral}{"http"},
+                \textcolor{stringliteral}{"port"} : 8080
+        \},
+        \textcolor{stringliteral}{"http"} : \{
+                \textcolor{stringliteral}{"script"} : \textcolor{stringliteral}{"/mb"},
+                \textcolor{stringliteral}{"rewrite"} : [
+                        \{ \textcolor{stringliteral}{"regex"} : \textcolor{stringliteral}{"/media(/.*)?"}, \textcolor{stringliteral}{"pattern"} : \textcolor{stringliteral}{"$0"} \},
+                        \{ \textcolor{stringliteral}{"regex"} : \textcolor{stringliteral}{"/favion\(\backslash\)\(\backslash\).ico"}, \textcolor{stringliteral}{"pattern"} : \textcolor{stringliteral}{"$0"} \},
+                        \{ \textcolor{stringliteral}{"regex"} : \textcolor{stringliteral}{".*"} , \textcolor{stringliteral}{"pattern"} : \textcolor{stringliteral}{"/mb$0"} \}
+                ]
+        \},
+        \textcolor{stringliteral}{"views"} : \{
+                 \textcolor{stringliteral}{"paths"} : [ \textcolor{stringliteral}{"./"} ],
+                 \textcolor{stringliteral}{"skins"} : [ \textcolor{stringliteral}{"simple"} ],
+        \},
+        \textcolor{stringliteral}{"file\_server"} : \{
+                \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true},
+                \textcolor{stringliteral}{"document\_root"} : \textcolor{stringliteral}{"../"}
+        \},
+        \textcolor{stringliteral}{"session"} : \{
+                \textcolor{stringliteral}{"expire"} : \textcolor{stringliteral}{"renew"},
+                \textcolor{stringliteral}{"timeout"} : 604800,
+                \textcolor{stringliteral}{"location"} : \textcolor{stringliteral}{"client"},
+                \textcolor{stringliteral}{"client"} : \{
+                        \textcolor{stringliteral}{"hmac"} : \textcolor{stringliteral}{"sha1"},
+                        \textcolor{stringliteral}{"hmac\_key"} : \textcolor{stringliteral}{"232074faa0fd37de20858bf8cd0a7d04"}
+                \}
+        \},
+        \textcolor{stringliteral}{"cache"} : \{
+                \textcolor{stringliteral}{"backend"} : \textcolor{stringliteral}{"thread\_shared"},
+                \textcolor{stringliteral}{"limit"} : 100,
+        \},
+        \textcolor{stringliteral}{"security"} : \{
+                \textcolor{stringliteral}{"csrf"} : \{
+                        \textcolor{stringliteral}{"enable"} : \textcolor{keyword}{true},
+                        \textcolor{stringliteral}{"exposed"} : \textcolor{keyword}{true}
+                \}
+        \},
+        \textcolor{stringliteral}{"localization"} : \{
+                \textcolor{stringliteral}{"messages"} : \{
+                        \textcolor{stringliteral}{"paths"} : [ \textcolor{stringliteral}{"./locale"} ],
+                        \textcolor{stringliteral}{"domains"} : [ \textcolor{stringliteral}{"mb"} ]
+                \},
+                \textcolor{stringliteral}{"locales"} : [ 
+                        \textcolor{stringliteral}{"en\_US.UTF-8"},
+                        \textcolor{stringliteral}{"he\_IL.UTF-8"}
+                ]
+        \}
+\}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/data/thread.h Header File}\label{ex_message_board____data_thread__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef DATA\_THREAD\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define DATA\_THREAD\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#include <string>}
+
+\textcolor{preprocessor}{#include <data/master.h>}
+\textcolor{preprocessor}{#include <booster/function.h>}
+
+\textcolor{keyword}{namespace }data \{
+
+\textcolor{keyword}{struct }reply\_form : \textcolor{keyword}{public} cppcms::form \{
+        cppcms::widgets::text author;
+        cppcms::widgets::textarea comment;
+        cppcms::widgets::submit send;
+        reply\_form();
+\};
+
+
+\textcolor{keyword}{struct }msg \{
+        std::string author;
+        std::string content;
+        \textcolor{keywordtype}{int} msg\_id;
+        msg() : msg\_id(0) \{\}
+\};
+
+
+\textcolor{keyword}{class }thread\_shared : \textcolor{keyword}{public} master
+\{
+\textcolor{keyword}{public}:
+        thread\_shared() 
+        \{
+                thread\_id = 0;
+        \}
+        \textcolor{keywordtype}{int} thread\_id;
+        std::string title;
+        std::string (*text2html)(std::string \textcolor{keyword}{const} &);
+
+\};
+
+\textcolor{keyword}{class }flat\_thread : \textcolor{keyword}{public} thread\_shared \{
+\textcolor{keyword}{public}:
+        std::vector<msg> messages;
+
+\};
+
+\textcolor{keyword}{class }tree\_thread : \textcolor{keyword}{public} thread\_shared \{
+\textcolor{keyword}{public}:
+        \textcolor{keyword}{struct }tree\_msg : \textcolor{keyword}{public} msg \{
+                \textcolor{keyword}{typedef} std::map<int,tree\_msg> tree\_t;
+                tree\_t repl;
+        \};
+        tree\_msg::tree\_t messages;
+
+\};
+
+\textcolor{keyword}{typedef} tree\_thread::tree\_msg::tree\_t tree\_t;
+
+\textcolor{keyword}{class }reply : \textcolor{keyword}{public} thread\_shared , \textcolor{keyword}{public} msg \{
+\textcolor{keyword}{public}:
+        reply\_form form;
+
+\};
+
+
+\} \textcolor{comment}{// data}
+
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/data/forums.h Header File}\label{ex_message_board____data_forums__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef DATA\_FORUMS\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define DATA\_FORUMS\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <data/master.h>}
+
+\textcolor{keyword}{namespace }data \{
+
+        \textcolor{keyword}{struct }new\_topic\_form : \textcolor{keyword}{public} cppcms::form \{
+                cppcms::widgets::text title;
+                cppcms::widgets::text author;
+                cppcms::widgets::textarea comment;
+                cppcms::widgets::submit submit;
+                new\_topic\_form();
+        \};
+
+
+        \textcolor{keyword}{class }forums : \textcolor{keyword}{public} master\{
+        \textcolor{keyword}{public}:
+                forums() : next(0),prev(0) \{\}
+                \textcolor{keyword}{struct }topic \{
+                        topic() : id(0) \{\}
+                        std::string title;
+                        \textcolor{keywordtype}{int} id;
+                \};
+                std::vector<topic> topics;
+                \textcolor{keywordtype}{int} next,prev;
+                new\_topic\_form form;
+        \};
+
+\}
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/data/data.h Header File}\label{ex_message_board____data_data__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef DATA\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define DATA\_H}
+\textcolor{preprocessor}{}
+\textcolor{preprocessor}{#include <data/forums.h>}
+\textcolor{preprocessor}{#include <data/thread.h>}
+
+\textcolor{preprocessor}{#endif}
+\textcolor{preprocessor}{}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/data/master.h Header File}\label{ex_message_board____data_master__h}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{#ifndef DATA\_MASTER\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#define DATA\_MASTER\_H}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#include <cppcms/view.h>}
+
+\textcolor{keyword}{namespace }data \{
+
+        \textcolor{keyword}{class }master: \textcolor{keyword}{public} cppcms::base_content \{
+        \textcolor{keyword}{public}:
+                std::string media;
+        \};
+
+
+\}
+
+
+\textcolor{preprocessor}{#endif}
+\end{DoxyCodeInclude}
+ \subsection{message\-\_\-board/locale/he/\-L\-C\-\_\-\-M\-E\-S\-S\-A\-G\-E\-S/mb.po Gettext Dictionary File}\label{ex_message_board____locale_he_LC_MESSAGES_mb__po}
+
+\begin{DoxyCodeInclude}
+\textcolor{preprocessor}{# Copyright (C) Artyom Beilis}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{# This file is distributed under the same license as the mb package.}
+\textcolor{preprocessor}{}\textcolor{preprocessor}{#}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{""}
+msgstr \textcolor{stringliteral}{""}
+\textcolor{stringliteral}{"Report-Msgid-Bugs-To: \(\backslash\)n"}
+\textcolor{stringliteral}{"POT-Creation-Date: 2010-01-14 16:22+0200\(\backslash\)n"}
+\textcolor{stringliteral}{"MIME-Version: 1.0\(\backslash\)n"}
+\textcolor{stringliteral}{"Content-Type: text/plain; charset=utf-8\(\backslash\)n"}
+\textcolor{stringliteral}{"Content-Transfer-Encoding: 8bit\(\backslash\)n"}
+
+\textcolor{preprocessor}{#: src/forums.cpp:15}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Title"}
+msgstr \textcolor{stringliteral}{"כותרת"}
+
+\textcolor{preprocessor}{#: src/forums.cpp:16 src/thread.cpp:16}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Author"}
+msgstr \textcolor{stringliteral}{"מחבר"}
+
+\textcolor{preprocessor}{#: src/forums.cpp:17 src/thread.cpp:17}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Comment"}
+msgstr \textcolor{stringliteral}{"הערה"}
+
+\textcolor{preprocessor}{#: src/forums.cpp:18}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Create"}
+msgstr \textcolor{stringliteral}{"צור"}
+
+\textcolor{preprocessor}{#: src/thread.cpp:18}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Send"}
+msgstr \textcolor{stringliteral}{"שלח"}
+
+\textcolor{preprocessor}{#: master.tmpl:5}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Welcome to the Message Board"}
+msgstr \textcolor{stringliteral}{"ברוכים הבאים ללוח מודעות"}
+
+\textcolor{preprocessor}{#: master.tmpl:11}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"LTR"}
+msgstr \textcolor{stringliteral}{"RTL"}
+
+\textcolor{preprocessor}{#: master.tmpl:37}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Home"}
+msgstr \textcolor{stringliteral}{"בית"}
+
+\textcolor{preprocessor}{#: forums.tmpl:11}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"No Topics"}
+msgstr \textcolor{stringliteral}{"אין דיונים"}
+
+\textcolor{preprocessor}{#: forums.tmpl:13}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Create New Disussion"}
+msgstr \textcolor{stringliteral}{"צור דיון "}
+
+\textcolor{preprocessor}{#: forums.tmpl:23}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Next Page"}
+msgstr \textcolor{stringliteral}{"הדף הבא"}
+
+\textcolor{preprocessor}{#: forums.tmpl:26}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Prev Page"}
+msgstr \textcolor{stringliteral}{"הדף הקודם"}
+
+\textcolor{preprocessor}{#: thread.tmpl:6}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"reply"}
+msgstr \textcolor{stringliteral}{"הגב"}
+
+\textcolor{preprocessor}{#: thread.tmpl:18}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Disussion: \{1\}"}
+msgstr \textcolor{stringliteral}{"דיון: \{1\}"}
+
+\textcolor{preprocessor}{#: thread.tmpl:23}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Flat View"}
+msgstr \textcolor{stringliteral}{"מבנה סדרתי"}
+
+\textcolor{preprocessor}{#: thread.tmpl:24}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Tree View"}
+msgstr \textcolor{stringliteral}{"מבנה עץ"}
+
+\textcolor{preprocessor}{#: thread.tmpl:39 thread.tmpl:64}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"There is no comments"}
+msgstr \textcolor{stringliteral}{"אין הערות"}
+
+\textcolor{preprocessor}{#: thread.tmpl:75}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Comment to thread: \{1\}"}
+msgstr \textcolor{stringliteral}{"הגב לדיון \{1\}"}
+
+\textcolor{preprocessor}{#: thread.tmpl:79}
+\textcolor{preprocessor}{}msgid \textcolor{stringliteral}{"Back to thread"}
+msgstr \textcolor{stringliteral}{"בחזרה לדיון"}
+\end{DoxyCodeInclude}
+ 

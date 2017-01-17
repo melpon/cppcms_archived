@@ -1,0 +1,78 @@
+\section{booster\-:\-:locale\-:\-:localization\-\_\-backend Class Reference}
+\label{classbooster_1_1locale_1_1localization__backend}\index{booster\-::locale\-::localization\-\_\-backend@{booster\-::locale\-::localization\-\_\-backend}}
+
+
+this class represents a localization backend that can be used for localizing your application.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/locale/localization\-\_\-backend.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf localization\-\_\-backend} $\ast$ {\bf clone} () const =0
+\item 
+virtual void {\bf set\-\_\-option} (std\-::string const \&name, std\-::string const \&value)=0
+\item 
+virtual void {\bf clear\-\_\-options} ()=0
+\item 
+virtual std\-::locale {\bf install} (std\-::locale const \&base, {\bf locale\-\_\-category\-\_\-type} category, {\bf character\-\_\-facet\-\_\-type} type=nochar\-\_\-facet)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+this class represents a localization backend that can be used for localizing your application. 
+
+Backends are usually registered inside the localization backends manager and allow transparent support of different backends, so a user can switch the backend by simply linking the application to the correct one.
+
+Backends may support different tuning options, but these are the default options available to the user for all of them
+
+
+\begin{DoxyEnumerate}
+\item {\ttfamily locale} -\/ the name of the locale in P\-O\-S\-I\-X format like en\-\_\-\-U\-S.\-U\-T\-F-\/8
+\item {\ttfamily use\-\_\-ansi\-\_\-encoding} -\/ select system locale using A\-N\-S\-I codepages rather then U\-T\-F-\/8 under Windows by default
+\item {\ttfamily message\-\_\-path} -\/ path to the location of message catalogs (vector of strings)
+\item {\ttfamily message\-\_\-application} -\/ the name of applications that use message catalogs (vector of strings)
+\end{DoxyEnumerate}
+
+Each backend can be installed with a different default priotiry so when you work with two different backends, you can specify priotiry so this backend will be chosen according to their priority. 
+
+\subsection{Member Function Documentation}
+\index{booster\-::locale\-::localization\-\_\-backend@{booster\-::locale\-::localization\-\_\-backend}!clear\-\_\-options@{clear\-\_\-options}}
+\index{clear\-\_\-options@{clear\-\_\-options}!booster::locale::localization_backend@{booster\-::locale\-::localization\-\_\-backend}}
+\subsubsection[{clear\-\_\-options}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::localization\-\_\-backend\-::clear\-\_\-options (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1localization__backend_aa9e90a550a188d7d2ddb9aed16a48196}
+Clear all options \index{booster\-::locale\-::localization\-\_\-backend@{booster\-::locale\-::localization\-\_\-backend}!clone@{clone}}
+\index{clone@{clone}!booster::locale::localization_backend@{booster\-::locale\-::localization\-\_\-backend}}
+\subsubsection[{clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf localization\-\_\-backend}$\ast$ booster\-::locale\-::localization\-\_\-backend\-::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1localization__backend_a0110b0a52e35f68317591ca4cfc1cbc9}
+Make a polymorphic copy of the backend \index{booster\-::locale\-::localization\-\_\-backend@{booster\-::locale\-::localization\-\_\-backend}!install@{install}}
+\index{install@{install}!booster::locale::localization_backend@{booster\-::locale\-::localization\-\_\-backend}}
+\subsubsection[{install}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\-::locale booster\-::locale\-::localization\-\_\-backend\-::install (
+\begin{DoxyParamCaption}
+\item[{std\-::locale const \&}]{base, }
+\item[{{\bf locale\-\_\-category\-\_\-type}}]{category, }
+\item[{{\bf character\-\_\-facet\-\_\-type}}]{type = {\ttfamily nochar\-\_\-facet}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1localization__backend_a29de0dfc4ee6529e249489b7f0ddc9f1}
+Create a facet for category {\itshape category} and character type {\itshape type} \index{booster\-::locale\-::localization\-\_\-backend@{booster\-::locale\-::localization\-\_\-backend}!set\-\_\-option@{set\-\_\-option}}
+\index{set\-\_\-option@{set\-\_\-option}!booster::locale::localization_backend@{booster\-::locale\-::localization\-\_\-backend}}
+\subsubsection[{set\-\_\-option}]{\setlength{\rightskip}{0pt plus 5cm}virtual void booster\-::locale\-::localization\-\_\-backend\-::set\-\_\-option (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{name, }
+\item[{std\-::string const \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classbooster_1_1locale_1_1localization__backend_a8ed1dd7b56df93ab205b03ff25212988}
+Set option for backend, for example \char`\"{}locale\char`\"{} or \char`\"{}encoding\char`\"{} 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/locale/localization\-\_\-backend.\-h\end{DoxyCompactItemize}

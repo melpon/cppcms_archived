@@ -1,0 +1,150 @@
+\section{cppcms\-:\-:crypto\-:\-:key Class Reference}
+\label{classcppcms_1_1crypto_1_1key}\index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}}
+
+
+Key object, holds the string that represents the binary key.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/crypto.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf key} ()
+\item 
+{\bf key} ({\bf key} const \&other)
+\item 
+{\bf key} const \& {\bf operator=} ({\bf key} const \&)
+\item 
+{\bf $\sim$key} ()
+\item 
+{\bf key} (void const $\ast${\bf data}, size\-\_\-t length)
+\item 
+{\bf key} (char const $\ast$s)
+\item 
+{\bf key} (std\-::string const \&)
+\item 
+char const $\ast$ {\bf data} () const 
+\item 
+size\-\_\-t {\bf size} () const 
+\item 
+void {\bf reset} ()
+\item 
+void {\bf set} (void const $\ast$ptr, size\-\_\-t len)
+\item 
+void {\bf set\-\_\-hex} (char const $\ast$ptr, size\-\_\-t len)
+\item 
+void {\bf read\-\_\-from\-\_\-file} (std\-::string const \&file\-\_\-name)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Key object, holds the string that represents the binary key. 
+
+When the key is destroyed it zeros all the memory it uses to prevent accidental leaks of the highly confidential data 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!key@{key}}
+\index{key@{key}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::key\-::key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_a65d8b4b370eaa9075bd4779e910e6ee1}
+Create an empty key on 0 length \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!key@{key}}
+\index{key@{key}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::key\-::key (
+\begin{DoxyParamCaption}
+\item[{{\bf key} const \&}]{other}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_a965229ae71eb45baa70db64ff220fde7}
+Copy the key \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!$\sim$key@{$\sim$key}}
+\index{$\sim$key@{$\sim$key}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{$\sim$key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::key\-::$\sim$key (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_acc7dcc76b5856e6c6dca6d809d67d93b}
+Destroy they key object clearing the area used by it. \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!key@{key}}
+\index{key@{key}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::key\-::key (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{data, }
+\item[{size\-\_\-t}]{length}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_ad379843066b503b767d9c09b9520357c}
+Create a key using binary representation pointed by {\itshape data} of {\itshape length} bytes \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!key@{key}}
+\index{key@{key}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::key\-::key (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{s}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classcppcms_1_1crypto_1_1key_a412bdfe0e479f7cb1ca1983e0043c47a}
+Create a key using the hexadecimal representation \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!key@{key}}
+\index{key@{key}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{key}]{\setlength{\rightskip}{0pt plus 5cm}cppcms\-::crypto\-::key\-::key (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\label{classcppcms_1_1crypto_1_1key_a0e7edb80d47bbb9ef85bc5c1acac6351}
+Create a key using the hexadecimal representation 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!data@{data}}
+\index{data@{data}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char const$\ast$ cppcms\-::crypto\-::key\-::data (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1crypto_1_1key_abac90cca357f76eafe045b28c1ff99b7}
+Get the pointer to data, never returns N\-U\-L\-L even if \doxyref{size()}{p.}{classcppcms_1_1crypto_1_1key_a296bf5c22a832932f50021acbe407413} == 0 \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!operator=@{operator=}}
+\index{operator=@{operator=}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf key} const\& cppcms\-::crypto\-::key\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf key} const \&}]{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_a76c089335ede2640b6712bdcfad19e96}
+Assign the key \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!read\-\_\-from\-\_\-file@{read\-\_\-from\-\_\-file}}
+\index{read\-\_\-from\-\_\-file@{read\-\_\-from\-\_\-file}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{read\-\_\-from\-\_\-file}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::crypto\-::key\-::read\-\_\-from\-\_\-file (
+\begin{DoxyParamCaption}
+\item[{std\-::string const \&}]{file\-\_\-name}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_ad2da3b4f7588fec0be931e57b94ea629}
+Read the key from file. Under windows file\-\_\-name should be U\-T\-F-\/8 encoded string. \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!reset@{reset}}
+\index{reset@{reset}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::crypto\-::key\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_a56230060f6b07bc25fb1dfb51b2f81f0}
+Clear the key -\/ and clear the area it was stored it \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!set@{set}}
+\index{set@{set}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::crypto\-::key\-::set (
+\begin{DoxyParamCaption}
+\item[{void const $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_afd55f8a1cae411f556c7f0aa67056984}
+Set the binary value for the key \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!set\-\_\-hex@{set\-\_\-hex}}
+\index{set\-\_\-hex@{set\-\_\-hex}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{set\-\_\-hex}]{\setlength{\rightskip}{0pt plus 5cm}void cppcms\-::crypto\-::key\-::set\-\_\-hex (
+\begin{DoxyParamCaption}
+\item[{char const $\ast$}]{ptr, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}\label{classcppcms_1_1crypto_1_1key_a3df4daa7529fc2355c0d8979a056434f}
+Set the value for the key using hexadecimal representation \index{cppcms\-::crypto\-::key@{cppcms\-::crypto\-::key}!size@{size}}
+\index{size@{size}!cppcms::crypto::key@{cppcms\-::crypto\-::key}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t cppcms\-::crypto\-::key\-::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classcppcms_1_1crypto_1_1key_a296bf5c22a832932f50021acbe407413}
+Get the size of the key 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/crypto.\-h\end{DoxyCompactItemize}

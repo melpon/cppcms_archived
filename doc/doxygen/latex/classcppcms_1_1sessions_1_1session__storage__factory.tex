@@ -1,0 +1,65 @@
+\section{cppcms\-:\-:sessions\-:\-:session\-\_\-storage\-\_\-factory Class Reference}
+\label{classcppcms_1_1sessions_1_1session__storage__factory}\index{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}}
+
+
+The factory is an interface to a factory that creates \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} objects, it should be thread safe.  
+
+
+
+
+{\ttfamily \#include $<$cppcms/session\-\_\-storage.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf booster\-::shared\-\_\-ptr}\\*
+$<$ {\bf session\-\_\-storage} $>$ {\bf get} ()=0
+\item 
+virtual bool {\bf requires\-\_\-gc} ()=0
+\item 
+virtual void {\bf gc\-\_\-job} ()
+\item 
+virtual {\bf $\sim$session\-\_\-storage\-\_\-factory} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The factory is an interface to a factory that creates \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} objects, it should be thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}!$\sim$session\-\_\-storage\-\_\-factory@{$\sim$session\-\_\-storage\-\_\-factory}}
+\index{$\sim$session\-\_\-storage\-\_\-factory@{$\sim$session\-\_\-storage\-\_\-factory}!cppcms::sessions::session_storage_factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}}
+\subsubsection[{$\sim$session\-\_\-storage\-\_\-factory}]{\setlength{\rightskip}{0pt plus 5cm}virtual cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory\-::$\sim$session\-\_\-storage\-\_\-factory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__storage__factory_a31aa43e7e81f5caae749eb70dc974f6e}
+Delete the object, cleanup 
+
+\subsection{Member Function Documentation}
+\index{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}!gc\-\_\-job@{gc\-\_\-job}}
+\index{gc\-\_\-job@{gc\-\_\-job}!cppcms::sessions::session_storage_factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}}
+\subsubsection[{gc\-\_\-job}]{\setlength{\rightskip}{0pt plus 5cm}virtual void cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory\-::gc\-\_\-job (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\label{classcppcms_1_1sessions_1_1session__storage__factory_af2b55c5abdbc738309482dd87184a674}
+Actual garbage collection job (if required). If requires\-\_\-gc returns true it will be called once-\/in-\/a-\/while to remove all expired objects from the D\-B. \index{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}!get@{get}}
+\index{get@{get}!cppcms::sessions::session_storage_factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}}
+\subsubsection[{get}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf booster\-::shared\-\_\-ptr}$<${\bf session\-\_\-storage}$>$ cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory\-::get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1session__storage__factory_a0305a9fd11b4572ceedc2add673d402c}
+Get a pointer to \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage}. Note if the returned pointer is same for different calls \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} implementation should be thread safe. \index{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}!requires\-\_\-gc@{requires\-\_\-gc}}
+\index{requires\-\_\-gc@{requires\-\_\-gc}!cppcms::sessions::session_storage_factory@{cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory}}
+\subsubsection[{requires\-\_\-gc}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool cppcms\-::sessions\-::session\-\_\-storage\-\_\-factory\-::requires\-\_\-gc (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{classcppcms_1_1sessions_1_1session__storage__factory_a9aaac656478b174fb81ef8555f1537e1}
+Return true if \doxyref{session\-\_\-storage}{p.}{classcppcms_1_1sessions_1_1session__storage} requires garbage collection -\/ removal of expired session time-\/to-\/time 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+cppcms/session\-\_\-storage.\-h\end{DoxyCompactItemize}

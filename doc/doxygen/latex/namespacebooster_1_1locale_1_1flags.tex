@@ -1,0 +1,85 @@
+\section{booster\-:\-:locale\-:\-:flags Namespace Reference}
+\label{namespacebooster_1_1locale_1_1flags}\index{booster\-::locale\-::flags@{booster\-::locale\-::flags}}
+
+
+This namespace holds additional formatting flags that can be set using \doxyref{ios\-\_\-info}{p.}{classbooster_1_1locale_1_1ios__info}.  
+
+
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf display\-\_\-flags\-\_\-type} \{ \\*
+{\bfseries posix} = 0, 
+{\bfseries number} = 1, 
+{\bfseries currency} = 2, 
+{\bfseries percent} = 3, 
+\\*
+{\bfseries date} = 4, 
+{\bfseries time} = 5, 
+{\bfseries datetime} = 6, 
+{\bfseries strftime} = 7, 
+\\*
+{\bfseries spellout} = 8, 
+{\bfseries ordinal} = 9, 
+{\bfseries display\-\_\-flags\-\_\-mask} = 31, 
+{\bfseries currency\-\_\-default} = 0 $<$$<$ 5, 
+\\*
+{\bfseries currency\-\_\-iso} = 1 $<$$<$ 5, 
+{\bfseries currency\-\_\-national} = 2 $<$$<$ 5, 
+{\bfseries currency\-\_\-flags\-\_\-mask} = 3 $<$$<$ 5, 
+{\bfseries time\-\_\-default} = 0 $<$$<$ 7, 
+\\*
+{\bfseries time\-\_\-short} = 1 $<$$<$ 7, 
+{\bfseries time\-\_\-medium} = 2 $<$$<$ 7, 
+{\bfseries time\-\_\-long} = 3 $<$$<$ 7, 
+{\bfseries time\-\_\-full} = 4 $<$$<$ 7, 
+\\*
+{\bfseries time\-\_\-flags\-\_\-mask} = 7 $<$$<$ 7, 
+{\bfseries date\-\_\-default} = 0 $<$$<$ 10, 
+{\bfseries date\-\_\-short} = 1 $<$$<$ 10, 
+{\bfseries date\-\_\-medium} = 2 $<$$<$ 10, 
+\\*
+{\bfseries date\-\_\-long} = 3 $<$$<$ 10, 
+{\bfseries date\-\_\-full} = 4 $<$$<$ 10, 
+{\bfseries date\-\_\-flags\-\_\-mask} = 7 $<$$<$ 10, 
+{\bfseries datetime\-\_\-flags\-\_\-mask} = date\-\_\-flags\-\_\-mask $\vert$ time\-\_\-flags\-\_\-mask
+ \}
+\item 
+enum {\bf pattern\-\_\-type} \{ {\bf datetime\-\_\-pattern}, 
+{\bf time\-\_\-zone\-\_\-id}
+ \}
+\item 
+enum {\bf value\-\_\-type} \{ {\bf domain\-\_\-id}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This namespace holds additional formatting flags that can be set using \doxyref{ios\-\_\-info}{p.}{classbooster_1_1locale_1_1ios__info}. 
+
+\subsection{Enumeration Type Documentation}
+\index{booster\-::locale\-::flags@{booster\-::locale\-::flags}!display\-\_\-flags\-\_\-type@{display\-\_\-flags\-\_\-type}}
+\index{display\-\_\-flags\-\_\-type@{display\-\_\-flags\-\_\-type}!booster::locale::flags@{booster\-::locale\-::flags}}
+\subsubsection[{display\-\_\-flags\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::flags\-::display\-\_\-flags\-\_\-type}}\label{namespacebooster_1_1locale_1_1flags_af1d33fdd35a274f6f9d7a773bf38046c}
+Formatting flags, each one of them has corresponding manipulation in namespace {\itshape as} \index{booster\-::locale\-::flags@{booster\-::locale\-::flags}!pattern\-\_\-type@{pattern\-\_\-type}}
+\index{pattern\-\_\-type@{pattern\-\_\-type}!booster::locale::flags@{booster\-::locale\-::flags}}
+\subsubsection[{pattern\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::flags\-::pattern\-\_\-type}}\label{namespacebooster_1_1locale_1_1flags_a148ec748cc1ca1f37a0e1d2980422a40}
+Special string patters that can be used for text formatting \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{datetime\-\_\-pattern@{datetime\-\_\-pattern}!booster\-::locale\-::flags@{booster\-::locale\-::flags}}\index{booster\-::locale\-::flags@{booster\-::locale\-::flags}!datetime\-\_\-pattern@{datetime\-\_\-pattern}}\item[{\em 
+datetime\-\_\-pattern\label{namespacebooster_1_1locale_1_1flags_a148ec748cc1ca1f37a0e1d2980422a40a609caada4dc2992579394ea296cbba19}
+}]strftime like formatting \index{time\-\_\-zone\-\_\-id@{time\-\_\-zone\-\_\-id}!booster\-::locale\-::flags@{booster\-::locale\-::flags}}\index{booster\-::locale\-::flags@{booster\-::locale\-::flags}!time\-\_\-zone\-\_\-id@{time\-\_\-zone\-\_\-id}}\item[{\em 
+time\-\_\-zone\-\_\-id\label{namespacebooster_1_1locale_1_1flags_a148ec748cc1ca1f37a0e1d2980422a40a95a8803ba8e0dd03986410d44c01d3ef}
+}]time zone name \end{description}
+\end{Desc}
+\index{booster\-::locale\-::flags@{booster\-::locale\-::flags}!value\-\_\-type@{value\-\_\-type}}
+\index{value\-\_\-type@{value\-\_\-type}!booster::locale::flags@{booster\-::locale\-::flags}}
+\subsubsection[{value\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf booster\-::locale\-::flags\-::value\-\_\-type}}\label{namespacebooster_1_1locale_1_1flags_abcb427b92fe7f43eb44265244b5b5403}
+Special integer values that can be used for formatting \begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{domain\-\_\-id@{domain\-\_\-id}!booster\-::locale\-::flags@{booster\-::locale\-::flags}}\index{booster\-::locale\-::flags@{booster\-::locale\-::flags}!domain\-\_\-id@{domain\-\_\-id}}\item[{\em 
+domain\-\_\-id\label{namespacebooster_1_1locale_1_1flags_abcb427b92fe7f43eb44265244b5b5403a1f61c252adb9384dd3f9d495022d2a36}
+}]Domain code -\/ for message formatting. \end{description}
+\end{Desc}

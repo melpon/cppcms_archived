@@ -1,0 +1,101 @@
+\section{booster\-:\-:system\-:\-:error\-\_\-code Class Reference}
+\label{classbooster_1_1system_1_1error__code}\index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}}
+
+
+The lightweight object that carries a error code information and its category.  
+
+
+
+
+{\ttfamily \#include $<$booster/booster/system\-\_\-error.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf error\-\_\-code} ()
+\item 
+{\bf error\-\_\-code} (int val, {\bf error\-\_\-category} const \&cat)
+\item 
+int {\bf value} () const 
+\item 
+const {\bf error\-\_\-category} \& {\bf category} () const 
+\item 
+std\-::string {\bf message} () const 
+\item 
+{\bf operator bool} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The lightweight object that carries a error code information and its category. 
+
+It is a pair\-: an integer code and a reference to the \doxyref{error\-\_\-category}{p.}{classbooster_1_1system_1_1error__category} object. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}!error\-\_\-code@{error\-\_\-code}}
+\index{error\-\_\-code@{error\-\_\-code}!booster::system::error_code@{booster\-::system\-::error\-\_\-code}}
+\subsubsection[{error\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::error\-\_\-code\-::error\-\_\-code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1error__code_a625d65582098a0f9a10088d8b05e442f}
+Create an empty error object -\/ no error \index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}!error\-\_\-code@{error\-\_\-code}}
+\index{error\-\_\-code@{error\-\_\-code}!booster::system::error_code@{booster\-::system\-::error\-\_\-code}}
+\subsubsection[{error\-\_\-code}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::error\-\_\-code\-::error\-\_\-code (
+\begin{DoxyParamCaption}
+\item[{int}]{val, }
+\item[{{\bf error\-\_\-category} const \&}]{cat}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1error__code_a176989d1072e0d0d26de34a8acae7368}
+Create a error object withing specific category {\itshape cat} with code {\itshape val} 
+
+\subsection{Member Function Documentation}
+\index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}!category@{category}}
+\index{category@{category}!booster::system::error_code@{booster\-::system\-::error\-\_\-code}}
+\subsubsection[{category}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf error\-\_\-category}\& booster\-::system\-::error\-\_\-code\-::category (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1error__code_af063bf2c5108716cfc4585a21da70d74}
+Get the reference to the specific category 
+
+Referenced by booster\-::system\-::operator==().
+
+\index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}!message@{message}}
+\index{message@{message}!booster::system::error_code@{booster\-::system\-::error\-\_\-code}}
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string booster\-::system\-::error\-\_\-code\-::message (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1error__code_a304406537e92ff530247270ee8b904a0}
+Convert the error code to the human readable string 
+
+References booster\-::system\-::error\-\_\-category\-::message(), and booster\-::system\-::error\-\_\-category\-::name().
+
+\index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!booster::system::error_code@{booster\-::system\-::error\-\_\-code}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}booster\-::system\-::error\-\_\-code\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1error__code_af7071f3cf4df1b26408efbfb2bf662a8}
+Convert to bool -\/ returns true of it is a error and false if it is not (\doxyref{value()}{p.}{classbooster_1_1system_1_1error__code_a8ef75140e93bdc6b540ac41703970272}==0) 
+
+References value().
+
+\index{booster\-::system\-::error\-\_\-code@{booster\-::system\-::error\-\_\-code}!value@{value}}
+\index{value@{value}!booster::system::error_code@{booster\-::system\-::error\-\_\-code}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}int booster\-::system\-::error\-\_\-code\-::value (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\label{classbooster_1_1system_1_1error__code_a8ef75140e93bdc6b540ac41703970272}
+Get the numeric code of the error 
+
+Referenced by operator bool(), and booster\-::system\-::operator==().
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+booster/system\-\_\-error.\-h\end{DoxyCompactItemize}
